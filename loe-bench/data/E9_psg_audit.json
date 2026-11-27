@@ -1,0 +1,3856 @@
+{
+  "archive": {
+    "wayback-20100106001629.html": {
+      "captured": "2010-01-06",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 21,
+        "unique": 14
+      },
+      "kinds": {
+        "new": 35
+      },
+      "moiety_match_rate": 0.9714285714285714,
+      "moiety_rows_matched": 34,
+      "new_vs_current_month_agreement_rate": 0.07142857142857142,
+      "no_current_match_rate": 0.6,
+      "rows": 35,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "020936"
+          ],
+          "date_text": "12/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Paroxetine",
+          "kind": "new",
+          "line": 801,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194662.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 33,
+          "source": "wayback-20100106001629.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "040330",
+            "040341",
+            "040434"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Acetaminophen; Oxycodone HCl",
+          "kind": "new",
+          "line": 506,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194590.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-20100106001629.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018731"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Buspirone",
+          "kind": "new",
+          "line": 552,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194596.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 8,
+          "source": "wayback-20100106001629.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "050592"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Suspension",
+          "ingredient": "Dexamethasone;Tobramycin",
+          "kind": "new",
+          "line": 576,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194598.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Ophthalmic",
+          "row": 10,
+          "source": "wayback-20100106001629.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "012546"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Diethylpropion HCl",
+          "kind": "new",
+          "line": 585,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194599.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-20100106001629.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "088482",
+            "088483"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Disulfiram",
+          "kind": "new",
+          "line": 594,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194601.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 12,
+          "source": "wayback-20100106001629.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.07142857142857142,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 14,
+        "dated_pairs": 14,
+        "new_same_month": 1,
+        "same_month": 1
+      }
+    },
+    "wayback-20110105200742.html": {
+      "captured": "2011-01-05",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 11,
+        "unique": 8
+      },
+      "kinds": {
+        "new": 14,
+        "revision": 5
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 19,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.5789473684210527,
+      "rows": 19,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "070589"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2010",
+          "form": "Capsule",
+          "ingredient": "Amantadine HCl",
+          "kind": "new",
+          "line": 464,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM238047.pdf",
+          "recommended_by": "2010-12-31",
+          "route": "Oral",
+          "row": 3,
+          "source": "wayback-20110105200742.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018972"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2010",
+          "form": "Tablet",
+          "ingredient": "Amiodarone HCl",
+          "kind": "new",
+          "line": 464,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM238049.pdf",
+          "recommended_by": "2010-12-31",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-20110105200742.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022568"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2010",
+          "form": "Tablet",
+          "ingredient": "Donepezil HCl",
+          "kind": "new",
+          "line": 464,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM238054.pdf",
+          "recommended_by": "2010-12-31",
+          "route": "Oral",
+          "row": 6,
+          "source": "wayback-20110105200742.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022233"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2010",
+          "form": "Capsule",
+          "ingredient": "Palonosetron HCl",
+          "kind": "new",
+          "line": 464,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM238060.pdf",
+          "recommended_by": "2010-12-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-20110105200742.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "073645"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2010",
+          "form": "Tablet",
+          "ingredient": "Protriptyline HCl",
+          "kind": "new",
+          "line": 464,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM238061.pdf",
+          "recommended_by": "2010-12-31",
+          "route": "Oral",
+          "row": 12,
+          "source": "wayback-20110105200742.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.125,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 7,
+        "dated_new_pairs": 6,
+        "dated_pairs": 8,
+        "new_same_month": 0,
+        "same_month": 1
+      }
+    },
+    "wayback-20120105165500.html": {
+      "captured": "2012-01-05",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 5,
+        "unique": 5
+      },
+      "kinds": {
+        "new": 6,
+        "revision": 4
+      },
+      "moiety_match_rate": 0.7,
+      "moiety_rows_matched": 7,
+      "new_vs_current_month_agreement_rate": 0.3333333333333333,
+      "no_current_match_rate": 0.5,
+      "rows": 10,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "022573"
+          ],
+          "date_text": "11/2011",
+          "form": "Tablet, Chewable",
+          "ingredient": "Ethinyl Estradiol; Norethindone",
+          "kind": "new",
+          "line": 444,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM281398.pdf",
+          "recommended_by": "2011-11-30",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-20120105165500.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021284"
+          ],
+          "date_text": "10/2011",
+          "form": "Capsules, Extended Release",
+          "ingredient": "Methylophenidate HCl",
+          "kind": "new",
+          "line": 444,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM281454.pdf",
+          "recommended_by": "2011-10-31",
+          "route": "Oral",
+          "row": 7,
+          "source": "wayback-20120105165500.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022078"
+          ],
+          "date_text": "11/2011",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Niacin; Simvastatin",
+          "kind": "revision",
+          "line": 444,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM201261.pdf",
+          "recommended_by": "2011-11-30",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-20120105165500.html",
+          "stage": "Draft",
+          "table": 2
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "022573"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2011",
+          "form": "Tablet, Chewable",
+          "ingredient": "Ethinyl Estradiol; Norethindone",
+          "kind": "new",
+          "line": 444,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM281398.pdf",
+          "recommended_by": "2011-11-30",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-20120105165500.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "050804"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2011",
+          "form": "Suspension",
+          "ingredient": "Loteprednol Etabonate; Tobramycin",
+          "kind": "new",
+          "line": 444,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM281453.pdf",
+          "recommended_by": "2011-10-31",
+          "route": "Ophthalmic",
+          "row": 6,
+          "source": "wayback-20120105165500.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021284"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2011",
+          "form": "Capsules, Extended Release",
+          "ingredient": "Methylophenidate HCl",
+          "kind": "new",
+          "line": 444,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM281454.pdf",
+          "recommended_by": "2011-10-31",
+          "route": "Oral",
+          "row": 7,
+          "source": "wayback-20120105165500.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "074557",
+            "074558"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2011",
+          "form": "Powder",
+          "ingredient": "Cholestyramine",
+          "kind": "revision",
+          "line": 444,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM273910.pdf",
+          "recommended_by": "2011-11-30",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-20120105165500.html",
+          "stage": "Draft",
+          "table": 2
+        },
+        {
+          "applications": [
+            "022078"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2011",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Niacin; Simvastatin",
+          "kind": "revision",
+          "line": 444,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM201261.pdf",
+          "recommended_by": "2011-11-30",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-20120105165500.html",
+          "stage": "Draft",
+          "table": 2
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.2,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 4,
+        "dated_new_pairs": 3,
+        "dated_pairs": 5,
+        "new_same_month": 1,
+        "same_month": 1
+      }
+    },
+    "wayback-20130303105251.html": {
+      "captured": "2013-03-03",
+      "continuity_counts": {
+        "ambiguous": 1,
+        "no_match": 5,
+        "unique": 17
+      },
+      "kinds": {
+        "new": 10,
+        "revision": 13
+      },
+      "moiety_match_rate": 0.9130434782608695,
+      "moiety_rows_matched": 21,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.21739130434782608,
+      "rows": 23,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "200175"
+          ],
+          "date_text": "12/2012",
+          "form": "Tablet",
+          "ingredient": "Amlodipine Besylate, Hydrochlorothiazide, Olmesartan Medoxomil",
+          "kind": "new",
+          "line": 424,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM333007.pdf",
+          "recommended_by": "2012-12-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-20130303105251.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021097",
+            "021892",
+            "079247"
+          ],
+          "date_text": "12/2012",
+          "form": "Tablet",
+          "ingredient": "Sodium phosphate dibasic anhydrous & sodium phosphate monobasic monohydrate",
+          "kind": "new",
+          "line": 424,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM333058.pdf",
+          "recommended_by": "2012-12-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-20130303105251.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "200175"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2012",
+          "form": "Tablet",
+          "ingredient": "Amlodipine Besylate, Hydrochlorothiazide, Olmesartan Medoxomil",
+          "kind": "new",
+          "line": 424,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM333007.pdf",
+          "recommended_by": "2012-12-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-20130303105251.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "050802",
+            "050803"
+          ],
+          "continuity": "ambiguous",
+          "date_text": "12/2012",
+          "form": "Gel",
+          "ingredient": "Clindamycin Phosphate; Tretinoin",
+          "kind": "new",
+          "line": 424,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM333014.pdf",
+          "recommended_by": "2012-12-31",
+          "route": "Topical",
+          "row": 6,
+          "source": "wayback-20130303105251.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022180"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2012",
+          "form": "Injection",
+          "ingredient": "Ferumoxytol",
+          "kind": "new",
+          "line": 424,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM333051.pdf",
+          "recommended_by": "2012-12-31",
+          "route": "Intravenous",
+          "row": 8,
+          "source": "wayback-20130303105251.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021097",
+            "021892",
+            "079247"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2012",
+          "form": "Tablet",
+          "ingredient": "Sodium phosphate dibasic anhydrous & sodium phosphate monobasic monohydrate",
+          "kind": "new",
+          "line": 424,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM333058.pdf",
+          "recommended_by": "2012-12-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-20130303105251.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [],
+          "continuity": "no_match",
+          "date_text": "12/2012",
+          "form": "Tablet",
+          "ingredient": "Diflunisal",
+          "kind": "revision",
+          "line": 424,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/ucm085605.pdf",
+          "recommended_by": "2012-12-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-20130303105251.html",
+          "stage": "Draft",
+          "table": 2
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.11764705882352941,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 15,
+        "dated_new_pairs": 6,
+        "dated_pairs": 17,
+        "new_same_month": 0,
+        "same_month": 2
+      }
+    },
+    "wayback-20140209210934.html": {
+      "captured": "2014-02-09",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 15,
+        "unique": 17
+      },
+      "kinds": {
+        "new": 12,
+        "revision": 20
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 32,
+      "new_vs_current_month_agreement_rate": 0.125,
+      "no_current_match_rate": 0.46875,
+      "rows": 32,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "075078"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2013",
+          "form": "Capsule",
+          "ingredient": "Etodolac",
+          "kind": "new",
+          "line": 430,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM373686.pdf",
+          "recommended_by": "2013-11-30",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-20140209210934.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "075074"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2013",
+          "form": "Tablet",
+          "ingredient": "Etodolac",
+          "kind": "new",
+          "line": 430,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM373687.pdf",
+          "recommended_by": "2013-11-30",
+          "route": "Oral",
+          "row": 6,
+          "source": "wayback-20140209210934.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018612",
+            "020066"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2013",
+          "form": "Chewing Gum",
+          "ingredient": "Nicotine Polacrilex",
+          "kind": "new",
+          "line": 430,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM373704.pdf",
+          "recommended_by": "2013-11-30",
+          "route": "Buccal",
+          "row": 12,
+          "source": "wayback-20140209210934.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "202088"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2013",
+          "form": "Tablet, Disintegrating",
+          "ingredient": "Phentermine Hydrochloride",
+          "kind": "new",
+          "line": 430,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM373705.pdf",
+          "recommended_by": "2013-11-30",
+          "route": "Oral",
+          "row": 13,
+          "source": "wayback-20140209210934.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "040422"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2013",
+          "form": "Tablet",
+          "ingredient": "Amphetamine Aspartate; Amphetamine Sulfate; Dextroamphetamine Saccharate; Dextroamphetamine Sulfate",
+          "kind": "revision",
+          "line": 430,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/ucm082244.pdf",
+          "recommended_by": "2013-11-30",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-20140209210934.html",
+          "stage": "Draft",
+          "table": 2
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.29411764705882354,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 12,
+        "dated_new_pairs": 8,
+        "dated_pairs": 17,
+        "new_same_month": 1,
+        "same_month": 5
+      }
+    },
+    "wayback-20150101131202.html": {
+      "captured": "2015-01-01",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 26,
+        "unique": 27
+      },
+      "kinds": {
+        "new": 31,
+        "revision": 22
+      },
+      "moiety_match_rate": 0.9811320754716981,
+      "moiety_rows_matched": 52,
+      "new_vs_current_month_agreement_rate": 0.25,
+      "no_current_match_rate": 0.49056603773584906,
+      "rows": 53,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "021742"
+          ],
+          "date_text": "12/2014",
+          "form": "Tablet",
+          "ingredient": "Nebivolol",
+          "kind": "revision",
+          "line": 387,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM249250.pdf",
+          "recommended_by": "2014-12-31",
+          "route": "Oral",
+          "row": 20,
+          "source": "wayback-20150101131202.html",
+          "stage": "Draft",
+          "table": 2
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [],
+          "continuity": "no_match",
+          "date_text": "12/2014",
+          "form": "Tablet",
+          "ingredient": "Acetaminophen; Aspirin; Caffeine",
+          "kind": "new",
+          "line": 387,
+          "link": "http://wcms.fda.gov/ucm/resources/wcm/3rdparty/fckeditor/editor//downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM428192.pdf",
+          "recommended_by": "2014-12-31",
+          "route": "Oral",
+          "row": 3,
+          "source": "wayback-20150101131202.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021478"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2014",
+          "form": "Cream, 5%",
+          "ingredient": "Acyclovir",
+          "kind": "new",
+          "line": 387,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM428195.pdf",
+          "recommended_by": "2014-12-31",
+          "route": "Topical",
+          "row": 5,
+          "source": "wayback-20150101131202.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "202971"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2014",
+          "form": "Injectable Suspension, Extended Release",
+          "ingredient": "Aripiprazole",
+          "kind": "new",
+          "line": 387,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM428196.pdf",
+          "recommended_by": "2014-12-31",
+          "route": "Intramuscular",
+          "row": 6,
+          "source": "wayback-20150101131202.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "020934"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2014",
+          "form": "Foam, aerosol",
+          "ingredient": "Betamethasone valerate",
+          "kind": "new",
+          "line": 387,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM428199.pdf",
+          "recommended_by": "2014-12-31",
+          "route": "Topical",
+          "row": 8,
+          "source": "wayback-20150101131202.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "204251"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2014",
+          "form": "Drops, Suspension",
+          "ingredient": "Brimonidine tartrate; Brinzolamide",
+          "kind": "new",
+          "line": 387,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM428201.pdf",
+          "recommended_by": "2014-12-31",
+          "route": "Ophthalmic",
+          "row": 10,
+          "source": "wayback-20150101131202.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [
+        {
+          "applications": [
+            "020748"
+          ],
+          "date_text": "122004",
+          "form": "Cream",
+          "ingredient": "Adapalene",
+          "kind": "revision",
+          "line": 387,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191958.pdf",
+          "recommended_by": null,
+          "route": "Topical",
+          "row": 4,
+          "source": "wayback-20150101131202.html",
+          "stage": "Draft",
+          "table": 2
+        }
+      ],
+      "version_month_agreement_rate": 0.2692307692307692,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 19,
+        "dated_new_pairs": 16,
+        "dated_pairs": 26,
+        "new_same_month": 4,
+        "same_month": 7
+      }
+    },
+    "wayback-20160123092143.html": {
+      "captured": "2016-01-23",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 21,
+        "unique": 40
+      },
+      "kinds": {
+        "new": 42,
+        "revision": 19
+      },
+      "moiety_match_rate": 0.9836065573770492,
+      "moiety_rows_matched": 60,
+      "new_vs_current_month_agreement_rate": 0.1724137931034483,
+      "no_current_match_rate": 0.3442622950819672,
+      "rows": 61,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "206619"
+          ],
+          "date_text": "9/2015",
+          "form": "Tablets, Co-packaged",
+          "ingredient": "I. Ombitasvir; paritaprevir; ritonavir, and II. Dasabuvir sodium",
+          "kind": "new",
+          "line": 725,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM461146.pdf",
+          "recommended_by": "2015-09-30",
+          "route": "Oral",
+          "row": 33,
+          "source": "wayback-20160123092143.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "203791"
+          ],
+          "continuity": "no_match",
+          "date_text": "9/2015",
+          "form": "Tablet, buccal",
+          "ingredient": "Acyclovir",
+          "kind": "new",
+          "line": 433,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM460920.pdf",
+          "recommended_by": "2015-09-30",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-20160123092143.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "020033"
+          ],
+          "continuity": "no_match",
+          "date_text": "9/2015",
+          "form": "Tablet",
+          "ingredient": "Benazepril HCl; Hydrochlorothiazide",
+          "kind": "new",
+          "line": 465,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM460926.pdf",
+          "recommended_by": "2015-09-30",
+          "route": "Oral",
+          "row": 7,
+          "source": "wayback-20160123092143.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "200063"
+          ],
+          "continuity": "no_match",
+          "date_text": "9/2015",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Bupropion HCl; Naltrexone HCl",
+          "kind": "new",
+          "line": 485,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM460930.pdf",
+          "recommended_by": "2015-09-30",
+          "route": "Oral",
+          "row": 9,
+          "source": "wayback-20160123092143.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "019906"
+          ],
+          "continuity": "no_match",
+          "date_text": "9/2015",
+          "form": "Capsule",
+          "ingredient": "Clomipramine HCl",
+          "kind": "new",
+          "line": 525,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM460986.pdf",
+          "recommended_by": "2015-09-30",
+          "route": "Oral",
+          "row": 13,
+          "source": "wayback-20160123092143.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022331"
+          ],
+          "continuity": "no_match",
+          "date_text": "9/2015",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Clonidine HCl",
+          "kind": "new",
+          "line": 535,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM460989.pdf",
+          "recommended_by": "2015-09-30",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-20160123092143.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.225,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 31,
+        "dated_new_pairs": 29,
+        "dated_pairs": 40,
+        "new_same_month": 5,
+        "same_month": 9
+      }
+    },
+    "wayback-early-20090606125904.html": {
+      "captured": "2009-06-06",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 11,
+        "unique": 10
+      },
+      "kinds": {
+        "new": 21
+      },
+      "moiety_match_rate": 0.9523809523809523,
+      "moiety_rows_matched": 20,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.5238095238095238,
+      "rows": 21,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "011757"
+          ],
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 506,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 12,
+          "source": "wayback-early-20090606125904.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 428,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-early-20090606125904.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021180"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Ethinyl Estradiol; Norelgestromin",
+          "kind": "new",
+          "line": 455,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162407.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 7,
+          "source": "wayback-early-20090606125904.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "019813"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Fentanyl",
+          "kind": "new",
+          "line": 479,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162427.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 9,
+          "source": "wayback-early-20090606125904.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 488,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 10,
+          "source": "wayback-early-20090606125904.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 506,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 12,
+          "source": "wayback-early-20090606125904.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 10,
+        "dated_new_pairs": 10,
+        "dated_pairs": 10,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090611070530.html": {
+      "captured": "2009-06-11",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 11,
+        "unique": 10
+      },
+      "kinds": {
+        "new": 21
+      },
+      "moiety_match_rate": 0.9523809523809523,
+      "moiety_rows_matched": 20,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.5238095238095238,
+      "rows": 21,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "011757"
+          ],
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 507,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 12,
+          "source": "wayback-early-20090611070530.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 429,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-early-20090611070530.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021180"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Ethinyl Estradiol; Norelgestromin",
+          "kind": "new",
+          "line": 456,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162407.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 7,
+          "source": "wayback-early-20090611070530.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "019813"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Fentanyl",
+          "kind": "new",
+          "line": 480,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162427.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 9,
+          "source": "wayback-early-20090611070530.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 489,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 10,
+          "source": "wayback-early-20090611070530.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 507,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 12,
+          "source": "wayback-early-20090611070530.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 10,
+        "dated_new_pairs": 10,
+        "dated_pairs": 10,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090619154340.html": {
+      "captured": "2009-06-19",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 11,
+        "unique": 10
+      },
+      "kinds": {
+        "new": 21
+      },
+      "moiety_match_rate": 0.9523809523809523,
+      "moiety_rows_matched": 20,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.5238095238095238,
+      "rows": 21,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "011757"
+          ],
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 507,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 12,
+          "source": "wayback-early-20090619154340.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 429,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-early-20090619154340.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021180"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Ethinyl Estradiol; Norelgestromin",
+          "kind": "new",
+          "line": 456,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162407.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 7,
+          "source": "wayback-early-20090619154340.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "019813"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Fentanyl",
+          "kind": "new",
+          "line": 480,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162427.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 9,
+          "source": "wayback-early-20090619154340.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 489,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 10,
+          "source": "wayback-early-20090619154340.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 507,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 12,
+          "source": "wayback-early-20090619154340.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 10,
+        "dated_new_pairs": 10,
+        "dated_pairs": 10,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090709165113.html": {
+      "captured": "2009-07-09",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 11,
+        "unique": 11
+      },
+      "kinds": {
+        "new": 22
+      },
+      "moiety_match_rate": 0.9545454545454546,
+      "moiety_rows_matched": 21,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.5,
+      "rows": 22,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "011757"
+          ],
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 520,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090709165113.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 442,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-early-20090709165113.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021180"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Ethinyl Estradiol; Norelgestromin",
+          "kind": "new",
+          "line": 469,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162407.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 8,
+          "source": "wayback-early-20090709165113.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "019813"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Fentanyl",
+          "kind": "new",
+          "line": 493,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162427.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 10,
+          "source": "wayback-early-20090709165113.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 502,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090709165113.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 520,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090709165113.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 11,
+        "dated_new_pairs": 11,
+        "dated_pairs": 11,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090717132735.html": {
+      "captured": "2009-07-17",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 11,
+        "unique": 11
+      },
+      "kinds": {
+        "new": 22
+      },
+      "moiety_match_rate": 0.9545454545454546,
+      "moiety_rows_matched": 21,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.5,
+      "rows": 22,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "011757"
+          ],
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 530,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090717132735.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 452,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-early-20090717132735.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021180"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Ethinyl Estradiol; Norelgestromin",
+          "kind": "new",
+          "line": 479,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162407.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 8,
+          "source": "wayback-early-20090717132735.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "019813"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Fentanyl",
+          "kind": "new",
+          "line": 503,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162427.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 10,
+          "source": "wayback-early-20090717132735.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 512,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090717132735.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 530,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090717132735.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 11,
+        "dated_new_pairs": 11,
+        "dated_pairs": 11,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090721115114.html": {
+      "captured": "2009-07-21",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 11,
+        "unique": 11
+      },
+      "kinds": {
+        "new": 22
+      },
+      "moiety_match_rate": 0.9545454545454546,
+      "moiety_rows_matched": 21,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.5,
+      "rows": 22,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "011757"
+          ],
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 530,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090721115114.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 452,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-early-20090721115114.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021180"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Ethinyl Estradiol; Norelgestromin",
+          "kind": "new",
+          "line": 479,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162407.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 8,
+          "source": "wayback-early-20090721115114.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "019813"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Film, Extend Release",
+          "ingredient": "Fentanyl",
+          "kind": "new",
+          "line": 503,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162427.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Transdermal",
+          "row": 10,
+          "source": "wayback-early-20090721115114.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 512,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090721115114.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprenisolone Acetate",
+          "kind": "new",
+          "line": 530,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090721115114.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 11,
+        "dated_new_pairs": 11,
+        "dated_pairs": 11,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090726164910.html": {
+      "captured": "2009-07-26",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 9,
+        "unique": 13
+      },
+      "kinds": {
+        "new": 22
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 22,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.4090909090909091,
+      "rows": 22,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 453,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-early-20090726164910.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 513,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090726164910.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprednisolone Acetate",
+          "kind": "new",
+          "line": 531,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090726164910.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "017854"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Metoclopramide HCl",
+          "kind": "new",
+          "line": 540,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162435.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-early-20090726164910.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "087190",
+            "088023"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Capsule",
+          "ingredient": "Phentermine HCl",
+          "kind": "new",
+          "line": 567,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162457.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 17,
+          "source": "wayback-early-20090726164910.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 13,
+        "dated_pairs": 13,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090731110002.html": {
+      "captured": "2009-07-31",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 9,
+        "unique": 13
+      },
+      "kinds": {
+        "new": 22
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 22,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.4090909090909091,
+      "rows": 22,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 452,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-early-20090731110002.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 512,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090731110002.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprednisolone Acetate",
+          "kind": "new",
+          "line": 530,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090731110002.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "017854"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Metoclopramide HCl",
+          "kind": "new",
+          "line": 539,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162435.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-early-20090731110002.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "087190",
+            "088023"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Capsule",
+          "ingredient": "Phentermine HCl",
+          "kind": "new",
+          "line": 566,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162457.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 17,
+          "source": "wayback-early-20090731110002.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 13,
+        "dated_pairs": 13,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090809030930.html": {
+      "captured": "2009-08-09",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 10,
+        "unique": 13
+      },
+      "kinds": {
+        "new": 23
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 23,
+      "new_vs_current_month_agreement_rate": 0.0,
+      "no_current_match_rate": 0.43478260869565216,
+      "rows": 23,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "020780"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Ciprofloxacin",
+          "kind": "new",
+          "line": 452,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162400.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 5,
+          "source": "wayback-early-20090809030930.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021925"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Glimepiride; Pioglitazone HCl",
+          "kind": "new",
+          "line": 512,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162429.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090809030930.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "011757"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Suspension",
+          "ingredient": "Methylprednisolone Acetate",
+          "kind": "new",
+          "line": 530,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162434.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Injection",
+          "row": 13,
+          "source": "wayback-early-20090809030930.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "017854"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Tablet",
+          "ingredient": "Metoclopramide HCl",
+          "kind": "new",
+          "line": 539,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162435.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-early-20090809030930.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "087190",
+            "088023"
+          ],
+          "continuity": "no_match",
+          "date_text": "5/2009",
+          "form": "Capsule",
+          "ingredient": "Phentermine HCl",
+          "kind": "new",
+          "line": 566,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM162457.pdf",
+          "recommended_by": "2009-05-31",
+          "route": "Oral",
+          "row": 17,
+          "source": "wayback-early-20090809030930.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.0,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 13,
+        "dated_pairs": 13,
+        "new_same_month": 0,
+        "same_month": 0
+      }
+    },
+    "wayback-early-20090821063432.html": {
+      "captured": "2009-08-21",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 5,
+        "unique": 15
+      },
+      "kinds": {
+        "new": 20
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 20,
+      "new_vs_current_month_agreement_rate": 0.13333333333333333,
+      "no_current_match_rate": 0.25,
+      "rows": 20,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "078502"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Capsule",
+          "ingredient": "Calcium Acetate",
+          "kind": "new",
+          "line": 478,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179176.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Oral",
+          "row": 6,
+          "source": "wayback-early-20090821063432.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "040431"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Tablet",
+          "ingredient": "Fludrocortisone Acetate",
+          "kind": "new",
+          "line": 523,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179181.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090821063432.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021897"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Suspension, Extended Release",
+          "ingredient": "Naltrexone",
+          "kind": "new",
+          "line": 532,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179182.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Intramuscular",
+          "row": 12,
+          "source": "wayback-early-20090821063432.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "017874"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Film, Extended Release",
+          "ingredient": "Scopolamine",
+          "kind": "new",
+          "line": 586,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179189.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Transdermal",
+          "row": 18,
+          "source": "wayback-early-20090821063432.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "012041",
+            "014901"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Suspension",
+          "ingredient": "Triamcinolone Acetonide",
+          "kind": "new",
+          "line": 622,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179193.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Injectable",
+          "row": 22,
+          "source": "wayback-early-20090821063432.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.13333333333333333,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 15,
+        "dated_pairs": 15,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20090912090529.html": {
+      "captured": "2009-09-12",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 5,
+        "unique": 15
+      },
+      "kinds": {
+        "new": 20
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 20,
+      "new_vs_current_month_agreement_rate": 0.13333333333333333,
+      "no_current_match_rate": 0.25,
+      "rows": 20,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "078502"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Capsule",
+          "ingredient": "Calcium Acetate",
+          "kind": "new",
+          "line": 490,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179176.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Oral",
+          "row": 6,
+          "source": "wayback-early-20090912090529.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "040431"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Tablet",
+          "ingredient": "Fludrocortisone Acetate",
+          "kind": "new",
+          "line": 535,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179181.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090912090529.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021897"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Suspension, Extended Release",
+          "ingredient": "Naltrexone",
+          "kind": "new",
+          "line": 544,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179182.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Intramuscular",
+          "row": 12,
+          "source": "wayback-early-20090912090529.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "017874"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Film, Extended Release",
+          "ingredient": "Scopolamine",
+          "kind": "new",
+          "line": 598,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179189.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Transdermal",
+          "row": 18,
+          "source": "wayback-early-20090912090529.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "012041",
+            "014901"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Suspension",
+          "ingredient": "Triamcinolone Acetonide",
+          "kind": "new",
+          "line": 634,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179193.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Injectable",
+          "row": 22,
+          "source": "wayback-early-20090912090529.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.13333333333333333,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 15,
+        "dated_pairs": 15,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20090920104146.html": {
+      "captured": "2009-09-20",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 5,
+        "unique": 15
+      },
+      "kinds": {
+        "new": 20
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 20,
+      "new_vs_current_month_agreement_rate": 0.13333333333333333,
+      "no_current_match_rate": 0.25,
+      "rows": 20,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "078502"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Capsule",
+          "ingredient": "Calcium Acetate",
+          "kind": "new",
+          "line": 490,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179176.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Oral",
+          "row": 6,
+          "source": "wayback-early-20090920104146.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "040431"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Tablet",
+          "ingredient": "Fludrocortisone Acetate",
+          "kind": "new",
+          "line": 535,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179181.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20090920104146.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021897"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Suspension, Extended Release",
+          "ingredient": "Naltrexone",
+          "kind": "new",
+          "line": 544,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179182.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Intramuscular",
+          "row": 12,
+          "source": "wayback-early-20090920104146.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "017874"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Film, Extended Release",
+          "ingredient": "Scopolamine",
+          "kind": "new",
+          "line": 598,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179189.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Transdermal",
+          "row": 18,
+          "source": "wayback-early-20090920104146.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "012041",
+            "014901"
+          ],
+          "continuity": "no_match",
+          "date_text": "8/2009",
+          "form": "Suspension",
+          "ingredient": "Triamcinolone Acetonide",
+          "kind": "new",
+          "line": 634,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM179193.pdf",
+          "recommended_by": "2009-08-31",
+          "route": "Injectable",
+          "row": 22,
+          "source": "wayback-early-20090920104146.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.13333333333333333,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 15,
+        "dated_pairs": 15,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20091102011218.html": {
+      "captured": "2009-11-02",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 7,
+        "unique": 11
+      },
+      "kinds": {
+        "new": 18
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 18,
+      "new_vs_current_month_agreement_rate": 0.18181818181818182,
+      "no_current_match_rate": 0.3888888888888889,
+      "rows": 18,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "021324"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Capsule",
+          "ingredient": "Budesonide",
+          "kind": "new",
+          "line": 465,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188518.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 3,
+          "source": "wayback-early-20091102011218.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "075288",
+            "075406"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Ethinyl Estradiol; Norgestrel",
+          "kind": "new",
+          "line": 551,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188532.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091102011218.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "072721",
+            "072723"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Ethinyl Estradiol; Norgestrel",
+          "kind": "new",
+          "line": 564,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188534.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 12,
+          "source": "wayback-early-20091102011218.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "020786",
+            "021704"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Fexofenadine HCl; Pseudoephedrine HCl",
+          "kind": "new",
+          "line": 577,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188535.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 13,
+          "source": "wayback-early-20091102011218.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022386"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Metformin HCl; Repaglinide",
+          "kind": "new",
+          "line": 590,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188536.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-early-20091102011218.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.18181818181818182,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 9,
+        "dated_new_pairs": 11,
+        "dated_pairs": 11,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20091105233312.html": {
+      "captured": "2009-11-05",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 6,
+        "unique": 12
+      },
+      "kinds": {
+        "new": 18
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 18,
+      "new_vs_current_month_agreement_rate": 0.16666666666666666,
+      "no_current_match_rate": 0.3333333333333333,
+      "rows": 18,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "021324"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Capsule",
+          "ingredient": "Budesonide",
+          "kind": "new",
+          "line": 465,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188518.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 3,
+          "source": "wayback-early-20091105233312.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "075288",
+            "075406"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Ethinyl Estradiol; Norgestrel",
+          "kind": "new",
+          "line": 551,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188532.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091105233312.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "020786",
+            "021704"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Fexofenadine HCl; Pseudoephedrine HCl",
+          "kind": "new",
+          "line": 577,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188535.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 13,
+          "source": "wayback-early-20091105233312.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022386"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Metformin HCl; Repaglinide",
+          "kind": "new",
+          "line": 590,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188536.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-early-20091105233312.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018520"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Suppository",
+          "ingredient": "Miconazole Nitrate",
+          "kind": "new",
+          "line": 617,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188539.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Vaginal",
+          "row": 17,
+          "source": "wayback-early-20091105233312.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.16666666666666666,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 10,
+        "dated_new_pairs": 12,
+        "dated_pairs": 12,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20091115071420.html": {
+      "captured": "2009-11-15",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 6,
+        "unique": 12
+      },
+      "kinds": {
+        "new": 18
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 18,
+      "new_vs_current_month_agreement_rate": 0.16666666666666666,
+      "no_current_match_rate": 0.3333333333333333,
+      "rows": 18,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "021324"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Capsule",
+          "ingredient": "Budesonide",
+          "kind": "new",
+          "line": 478,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188518.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 3,
+          "source": "wayback-early-20091115071420.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "075288",
+            "075406"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Ethinyl Estradiol; Norgestrel",
+          "kind": "new",
+          "line": 564,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188532.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091115071420.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "020786",
+            "021704"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Fexofenadine HCl; Pseudoephedrine HCl",
+          "kind": "new",
+          "line": 590,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188535.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 13,
+          "source": "wayback-early-20091115071420.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022386"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Metformin HCl; Repaglinide",
+          "kind": "new",
+          "line": 603,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188536.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-early-20091115071420.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018520"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Suppository",
+          "ingredient": "Miconazole Nitrate",
+          "kind": "new",
+          "line": 630,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188539.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Vaginal",
+          "row": 17,
+          "source": "wayback-early-20091115071420.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.16666666666666666,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 10,
+        "dated_new_pairs": 12,
+        "dated_pairs": 12,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20091121053935.html": {
+      "captured": "2009-11-21",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 6,
+        "unique": 12
+      },
+      "kinds": {
+        "new": 18
+      },
+      "moiety_match_rate": 1.0,
+      "moiety_rows_matched": 18,
+      "new_vs_current_month_agreement_rate": 0.16666666666666666,
+      "no_current_match_rate": 0.3333333333333333,
+      "rows": 18,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "021324"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Capsule",
+          "ingredient": "Budesonide",
+          "kind": "new",
+          "line": 479,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188518.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 3,
+          "source": "wayback-early-20091121053935.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "075288",
+            "075406"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Ethinyl Estradiol; Norgestrel",
+          "kind": "new",
+          "line": 565,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188532.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091121053935.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "020786",
+            "021704"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Fexofenadine HCl; Pseudoephedrine HCl",
+          "kind": "new",
+          "line": 591,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188535.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 13,
+          "source": "wayback-early-20091121053935.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "022386"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Tablet",
+          "ingredient": "Metformin HCl; Repaglinide",
+          "kind": "new",
+          "line": 604,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188536.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-early-20091121053935.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018520"
+          ],
+          "continuity": "no_match",
+          "date_text": "10/2009",
+          "form": "Suppository",
+          "ingredient": "Miconazole Nitrate",
+          "kind": "new",
+          "line": 631,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM188539.pdf",
+          "recommended_by": "2009-10-31",
+          "route": "Vaginal",
+          "row": 17,
+          "source": "wayback-early-20091121053935.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.16666666666666666,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 10,
+        "dated_new_pairs": 12,
+        "dated_pairs": 12,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20091128013816.html": {
+      "captured": "2009-11-28",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 5,
+        "unique": 6
+      },
+      "kinds": {
+        "new": 11
+      },
+      "moiety_match_rate": 0.8181818181818182,
+      "moiety_rows_matched": 9,
+      "new_vs_current_month_agreement_rate": 0.3333333333333333,
+      "no_current_match_rate": 0.45454545454545453,
+      "rows": 11,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "020520",
+            "021698"
+          ],
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Raniditine HCl",
+          "kind": "new",
+          "line": 557,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191786.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091128013816.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018703"
+          ],
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Raniditine HCl",
+          "kind": "new",
+          "line": 570,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191788.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 12,
+          "source": "wayback-early-20091128013816.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "018891"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Film, Extended Relese",
+          "ingredient": "Clonidine",
+          "kind": "new",
+          "line": 497,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191775.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Transdermal",
+          "row": 5,
+          "source": "wayback-early-20091128013816.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "074538"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Ethinyl Estradiol; Levonorgestrel",
+          "kind": "new",
+          "line": 506,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191777.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 6,
+          "source": "wayback-early-20091128013816.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021947"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Tablet, Buccal",
+          "ingredient": "Fentanyl Citrate",
+          "kind": "new",
+          "line": 539,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191781.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 9,
+          "source": "wayback-early-20091128013816.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "020520",
+            "021698"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Raniditine HCl",
+          "kind": "new",
+          "line": 557,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191786.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091128013816.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018703"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Raniditine HCl",
+          "kind": "new",
+          "line": 570,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191788.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 12,
+          "source": "wayback-early-20091128013816.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.3333333333333333,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 4,
+        "dated_new_pairs": 6,
+        "dated_pairs": 6,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20091208092238.html": {
+      "captured": "2009-12-08",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 5,
+        "unique": 11
+      },
+      "kinds": {
+        "new": 16
+      },
+      "moiety_match_rate": 0.875,
+      "moiety_rows_matched": 14,
+      "new_vs_current_month_agreement_rate": 0.2,
+      "no_current_match_rate": 0.3125,
+      "rows": 16,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "020520",
+            "021698"
+          ],
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Raniditine HCl",
+          "kind": "new",
+          "line": 602,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191786.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 16,
+          "source": "wayback-early-20091208092238.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018703"
+          ],
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Raniditine HCl",
+          "kind": "new",
+          "line": 615,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191788.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 17,
+          "source": "wayback-early-20091208092238.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "018891"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Film, Extended Relese",
+          "ingredient": "Clonidine",
+          "kind": "new",
+          "line": 542,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191775.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Transdermal",
+          "row": 10,
+          "source": "wayback-early-20091208092238.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "074538"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Ethinyl Estradiol; Levonorgestrel",
+          "kind": "new",
+          "line": 551,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191777.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091208092238.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "021947"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Tablet, Buccal",
+          "ingredient": "Fentanyl Citrate",
+          "kind": "new",
+          "line": 584,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191781.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 14,
+          "source": "wayback-early-20091208092238.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "020520",
+            "021698"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Raniditine HCl",
+          "kind": "new",
+          "line": 602,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191786.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 16,
+          "source": "wayback-early-20091208092238.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018703"
+          ],
+          "continuity": "no_match",
+          "date_text": "11/2009",
+          "form": "Tablet",
+          "ingredient": "Raniditine HCl",
+          "kind": "new",
+          "line": 615,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM191788.pdf",
+          "recommended_by": "2009-11-30",
+          "route": "Oral",
+          "row": 17,
+          "source": "wayback-early-20091208092238.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [
+        {
+          "applications": [
+            "017962"
+          ],
+          "date_text": "",
+          "form": "Capsule",
+          "ingredient": "Bromocriptine Mesylate",
+          "kind": "new",
+          "line": 524,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM192038.pdf",
+          "recommended_by": null,
+          "route": "Oral",
+          "row": 8,
+          "source": "wayback-early-20091208092238.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "version_month_agreement_rate": 0.2,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 8,
+        "dated_new_pairs": 10,
+        "dated_pairs": 10,
+        "new_same_month": 2,
+        "same_month": 2
+      }
+    },
+    "wayback-early-20091221145441.html": {
+      "captured": "2009-12-21",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 21,
+        "unique": 14
+      },
+      "kinds": {
+        "new": 35
+      },
+      "moiety_match_rate": 0.9714285714285714,
+      "moiety_rows_matched": 34,
+      "new_vs_current_month_agreement_rate": 0.07142857142857142,
+      "no_current_match_rate": 0.6,
+      "rows": 35,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "020936"
+          ],
+          "date_text": "12/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Paroxetine",
+          "kind": "new",
+          "line": 803,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194662.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 33,
+          "source": "wayback-early-20091221145441.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "040330",
+            "040341",
+            "040434"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Acetaminophen; Oxycodone HCl",
+          "kind": "new",
+          "line": 508,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194590.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-early-20091221145441.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018731"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Buspirone",
+          "kind": "new",
+          "line": 554,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194596.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 8,
+          "source": "wayback-early-20091221145441.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "050592"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Suspension",
+          "ingredient": "Dexamethasone;Tobramycin",
+          "kind": "new",
+          "line": 578,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194598.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Ophthalmic",
+          "row": 10,
+          "source": "wayback-early-20091221145441.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "012546"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Diethylpropion HCl",
+          "kind": "new",
+          "line": 587,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194599.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091221145441.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "088482",
+            "088483"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Disulfiram",
+          "kind": "new",
+          "line": 596,
+          "link": "http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194601.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 12,
+          "source": "wayback-early-20091221145441.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.07142857142857142,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 14,
+        "dated_pairs": 14,
+        "new_same_month": 1,
+        "same_month": 1
+      }
+    },
+    "wayback-early-20091228051047.html": {
+      "captured": "2009-12-28",
+      "continuity_counts": {
+        "ambiguous": 0,
+        "no_match": 21,
+        "unique": 14
+      },
+      "kinds": {
+        "new": 35
+      },
+      "moiety_match_rate": 0.9714285714285714,
+      "moiety_rows_matched": 34,
+      "new_vs_current_month_agreement_rate": 0.07142857142857142,
+      "no_current_match_rate": 0.6,
+      "rows": 35,
+      "source_scope": "RECENT_UPDATES_ONLY",
+      "unmatched_moiety_examples": [
+        {
+          "applications": [
+            "020936"
+          ],
+          "date_text": "12/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Paroxetine",
+          "kind": "new",
+          "line": 801,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194662.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 33,
+          "source": "wayback-early-20091228051047.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unresolved_continuity_examples": [
+        {
+          "applications": [
+            "040330",
+            "040341",
+            "040434"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Acetaminophen; Oxycodone HCl",
+          "kind": "new",
+          "line": 506,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194590.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 4,
+          "source": "wayback-early-20091228051047.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "018731"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Buspirone",
+          "kind": "new",
+          "line": 552,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194596.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 8,
+          "source": "wayback-early-20091228051047.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "050592"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Suspension",
+          "ingredient": "Dexamethasone;Tobramycin",
+          "kind": "new",
+          "line": 576,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194598.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Ophthalmic",
+          "row": 10,
+          "source": "wayback-early-20091228051047.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "012546"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet, Extended Release",
+          "ingredient": "Diethylpropion HCl",
+          "kind": "new",
+          "line": 585,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194599.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 11,
+          "source": "wayback-early-20091228051047.html",
+          "stage": "Draft",
+          "table": 1
+        },
+        {
+          "applications": [
+            "088482",
+            "088483"
+          ],
+          "continuity": "no_match",
+          "date_text": "12/2009",
+          "form": "Tablet",
+          "ingredient": "Disulfiram",
+          "kind": "new",
+          "line": 594,
+          "link": "http://www.fda.gov:80/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM194601.pdf",
+          "recommended_by": "2009-12-31",
+          "route": "Oral",
+          "row": 12,
+          "source": "wayback-early-20091228051047.html",
+          "stage": "Draft",
+          "table": 1
+        }
+      ],
+      "unusable_recommendation_dates": [],
+      "version_month_agreement_rate": 0.07142857142857142,
+      "version_month_counts": {
+        "current_earlier": 0,
+        "current_later": 13,
+        "dated_new_pairs": 14,
+        "dated_pairs": 14,
+        "new_same_month": 1,
+        "same_month": 1
+      }
+    }
+  },
+  "current": {
+    "moiety_match_rate": 0.9914703493095045,
+    "moiety_rows_matched": 2441,
+    "row_first_posting_observed": 146,
+    "row_revision_observed": 57,
+    "rows": 2462,
+    "unmatched_moiety_examples": [
+      {
+        "applications": [
+          "088831",
+          "207313"
+        ],
+        "date_text": "10/01/2025",
+        "first_posting_evidence": null,
+        "first_posting_observed": null,
+        "form": "Capsule",
+        "ingredient": "Acetaminophen; Butalbital",
+        "kind": "latest",
+        "line": 1468,
+        "link": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/PSG_088831.pdf",
+        "moiety_key": null,
+        "observed_revisions": [],
+        "recommended_by": "2025-10-01",
+        "route": "Oral",
+        "row": 23,
+        "source": "fda-letter-A.html",
+        "stage": "Draft",
+        "table": 1
+      },
+      {
+        "applications": [
+          "089987"
+        ],
+        "date_text": "02/22/2019",
+        "first_posting_evidence": null,
+        "first_posting_observed": null,
+        "form": "Tablet",
+        "ingredient": "Acetaminophen; Butalbital",
+        "kind": "latest",
+        "line": 1522,
+        "link": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/Acetaminophen Butalbital Oral Tablet ANDA 89987 RV Feb 2019.pdf",
+        "moiety_key": null,
+        "observed_revisions": [],
+        "recommended_by": "2019-02-22",
+        "route": "Oral",
+        "row": 24,
+        "source": "fda-letter-A.html",
+        "stage": "Draft",
+        "table": 1
+      },
+      {
+        "applications": [
+          "040885",
+          "089007"
+        ],
+        "date_text": "11/28/2018",
+        "first_posting_evidence": null,
+        "first_posting_observed": null,
+        "form": "Capsule",
+        "ingredient": "Acetaminophen; Butalbital; Caffeine",
+        "kind": "latest",
+        "line": 1566,
+        "link": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/Acetaminophen;Butalbital;Caffeine_A89007 A0885 A40885_RV Oct 2018.pdf",
+        "moiety_key": null,
+        "observed_revisions": [],
+        "recommended_by": "2018-11-28",
+        "route": "Oral",
+        "row": 25,
+        "source": "fda-letter-A.html",
+        "stage": "Draft",
+        "table": 1
+      },
+      {
+        "applications": [
+          "040511"
+        ],
+        "date_text": "11/28/2018",
+        "first_posting_evidence": null,
+        "first_posting_observed": null,
+        "form": "Tablet",
+        "ingredient": "Acetaminophen; Butalbital; Caffeine",
+        "kind": "latest",
+        "line": 1620,
+        "link": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/Acetaminophen; Butalbital; Caffeine_Oraltablet_ANDA 040511_RV Oct 2018.pdf",
+        "moiety_key": null,
+        "observed_revisions": [],
+        "recommended_by": "2018-11-28",
+        "route": "Oral",
+        "row": 26,
+        "source": "fda-letter-A.html",
+        "stage": "Draft",
+        "table": 1
+      },
+      {
+        "applications": [
+          "040109"
+        ],
+        "date_text": "10/28/2011",
+        "first_posting_evidence": null,
+        "first_posting_observed": null,
+        "form": "Tablet",
+        "ingredient": "Acetaminophen; Caffeine; Dihydrocodeine Bitartrate",
+        "kind": "latest",
+        "line": 1708,
+        "link": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/Acetaminophen;_Caffeine;_Dihydrocodeine_Bitartrate_tab_40316__40109_RC4-09.pdf",
+        "moiety_key": null,
+        "observed_revisions": [],
+        "recommended_by": "2011-10-28",
+        "route": "Oral",
+        "row": 28,
+        "source": "fda-letter-A.html",
+        "stage": "Final",
+        "table": 1
+      },
+      {
+        "applications": [
+          "204785"
+        ],
+        "date_text": "02/22/2019",
+        "first_posting_evidence": null,
+        "first_posting_observed": null,
+        "form": "Capsule",
+        "ingredient": "Acetaminophen; Caffeine; Dihydrocodeine Bitartrate",
+        "kind": "latest",
+        "line": 1752,
+        "link": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/Acetaminophen; Caffeine; Dihydrocodeine Bitartrate Oral Capsule ANDA 204785 RC Feb 2019.pdf",
+        "moiety_key": null,
+        "observed_revisions": [],
+        "recommended_by": "2019-02-22",
+        "route": "Oral",
+        "row": 29,
+        "source": "fda-letter-A.html",
+        "stage": "Draft",
+        "table": 1
+      },
+      {
+        "applications": [
+          "085055"
+        ],
+        "date_text": "05/15/2019",
+        "first_posting_evidence": null,
+        "first_posting_observed": null,
+        "form": "Tablet",
+        "ingredient": "Acetaminophen; Codeine Phosphate",
+        "kind": "latest",
+        "line": 1796,
+        "link": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/Acetaminophen; Codeine Phosphate Tablet ANDA 085055 PSG Page RC May 2019.pdf",
+        "moiety_key": null,
+        "observed_revisions": [],
+        "recommended_by": "2019-05-15",
+        "route": "Oral",
+        "row": 30,
+        "source": "fda-letter-A.html",
+        "stage": "Draft",
+        "table": 1
+      },
+      {
+        "applications": [
+          "200656"
+        ],
+        "date_text": "11/06/2025",
+        "first_posting_evidence": null,
+        "first_posting_observed": null,
+        "form": "Emulsion",
+        "ingredient": "Amino Acids; Calcium Chloride; Dextrose; Magnesium Sulfate; Potassium Chloride; Sodium Acetate; Sodium Glycerophosphate; Soyb",
+        "kind": "latest",
+        "line": 5322,
+        "link": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/PSG_200656.pdf",
+        "moiety_key": null,
+        "observed_revisions": [],
+        "recommended_by": "2025-11-06",
+        "route": "Intravenous",
+        "row": 109,
+        "source": "fda-letter-A.html",
+        "stage": "Draft",
+        "table": 1
+      }
+    ]
+  },
+  "inventory": {
+    "file": "E9_psg_inventory.json",
+    "sha256": "a59803722e575bcf93380d809427592f7e8717d04d80c8fc155b2e75b2db977c"
+  },
+  "skipped_archives": []
+}

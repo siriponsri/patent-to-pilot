@@ -9,6 +9,7 @@ from . import evidence_graph as graph
 from .baselines import AgeHazardTable, Logistic
 from .common import add_months
 from .metrics import brier, ece, paired_cluster_bootstrap_ci, risk_coverage
+from .psg import PSG_FEATURES
 from .seal import TEST_FIRST, TestSealError
 from .t2_features import CHALLENGE_FEATURES, MODEL_FEATURES
 
@@ -145,7 +146,7 @@ def _metrics(predictions, labels, verdicts):
             "coverage": answered / len(labels), "answered": answered, "by_verdict": by_verdict}
 
 
-def evaluate(train, validation, horizon, *, with_challenge=False):
+def evaluate(train, validation, horizon, *, with_challenge=False, with_psg=False):
     """Score validation only. Seal both sets before stripping cutoff metadata."""
     require_development_cutoffs(row["t"] for row in validation)
     require_development_cutoffs(row["t"] for row in train)
@@ -164,6 +165,8 @@ def evaluate(train, validation, horizon, *, with_challenge=False):
     base_features = (*MODEL_FEATURES, AGE_SIGNAL)
     if with_challenge:
         base_features += CHALLENGE_FEATURES
+    if with_psg:
+        base_features += PSG_FEATURES
     model_features = {"M1": base_features, "M3": (*base_features, *VERDICT_FEATURES)}
     train_inputs = {arm: _with_labels(_inputs(train, age_train, arm == "M3"), train)
                     for arm in model_features}

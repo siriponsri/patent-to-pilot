@@ -131,9 +131,10 @@ def _remaining(records, cutoff):
 
 
 class AsOfBuilder:
-    def __init__(self, history: OBHistory, *, key_mode=None, gsrs_path=None, linker=None, challenge=None):
+    def __init__(self, history: OBHistory, *, key_mode=None, gsrs_path=None, linker=None, challenge=None, psg=None):
         self.history = history
         self.challenge = challenge
+        self.psg = psg
         self._indexes = {}
         if key_mode is None:
             key_mode = "moiety" if linker or history.data_dir is not None or gsrs_path else "legacy"
@@ -191,5 +192,7 @@ class AsOfBuilder:
         state = challenge.state if challenge is not None else None
         if challenge is not None:
             x.update(challenge_present=float(state == T3.TRUE), challenge_missing=float(state == T3.UNKNOWN))
+        if self.psg is not None:
+            x.update(self.psg.model_values(key, cutoff))
         verdict = verdict_label(build_assignment(snapshot, cutoff, horizon, challenge_evidence=state))
         return AsOfFeatures(x, snapshot, verdict, status, challenge)
