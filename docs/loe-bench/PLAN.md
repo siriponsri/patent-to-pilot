@@ -73,6 +73,8 @@ This follows the argument that reusing a test set without adaptive selection pro
 
 If the gate fails, C′ is reported as feasibility evidence and confirmation rests with Track A.
 
+**Proposed amendment after T4b (awaiting owner approval).** The percentile bootstrap is slightly anti-conservative: at a nominal one-sided α = 0.025 the H1 type-I is 2.81% (MC CI 2.53–3.12%). Use the 98th-percentile bound, a nominal α = 0.020 per step, which gives an empirical type-I of 2.24% (1.99–2.52%) and keeps power ≥ 80% in every simulated scenario.
+
 **Owner approval (27 November 2026).** The owner approved this design and the full, open disclosure of the earlier exposure in the preregistration and the manuscript.
 
 ## Confirmatory criteria v2 (main planner proposal, owner-approved 27 November 2026)
@@ -174,10 +176,9 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | DEVX | Fixed-order development trials of K07, K09, K10, K08 and K06 under one budget | GPT-6.2 Sol high | E7b | merged: K07 adopted; K06, K08, K09 and K10 rejected |
 | 2 | DOCS | Project-wide documentation review | GPT-6.2 Sol high | — | dispatched |
 | 2 | T4 | Power simulation for criteria v2 (H1 at Δ = −0.010) from the development structure | GPT-6.2 Sol xhigh | FIX2c | merged but NOT ACCEPTED: power about 100% even with 30 clusters, MDE 0.0039, which looks optimistic beside the development CI half-width of about 0.01; type-I 2.75% (MC CI 1.54–4.86%) |
-| 2 | T4b | Calibrate generator variance against the empirical development bootstrap; firm up type-I | GPT-6.2 Sol xhigh | T4 | dispatched |
+| 2 | T4b | Calibrate generator variance against the empirical development bootstrap; firm up type-I | GPT-6.2 Sol xhigh | T4 | merged: variance passes 6/6 (simulated SD 0.91–1.04× empirical); H1 power ≥ 80% from 30 event clusters at Δ = −0.010; MDE about 0.0039 at 75 clusters; type-I 2.81% (2.53–3.12) at α = 0.025 and 2.24% (1.99–2.52) at α = 0.020 |
 | 2 | — | (Superseded by the separate T7, T2, T4 and T1 rows. Executors are GPT models from Wave 2.) | — | — | superseded |
-| 2 | T1 | Threshold and abstention-policy calibration on development data | GPT-6.2 Sol high | DEVX, T4b | waiting |
-| 2 | K20 | Trial: long NBER training window (stale editions) vs short fresh window | GPT-6.2 Sol high | E8, T4b | waiting |
+| 2 | K20+T1 | Long-window trial (pre-declared rule), then threshold and policy freeze | GPT-6.2 Sol high | E8, T4b | dispatched |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
 | 3 | — | G3b prediction freeze, T3 ablation (GPT-6.2 Sol xhigh), T9 re-score and T12 table builder (GPT-6 Luna high, scripted), L1 arm run (GPU proposal to the owner first) | GPT | G2 | waiting |
