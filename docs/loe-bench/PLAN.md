@@ -75,6 +75,43 @@ If the gate fails, C′ is reported as feasibility evidence and confirmation res
 
 **Owner approval (27 November 2026).** The owner approved this design and the full, open disclosure of the earlier exposure in the preregistration and the manuscript.
 
+## Proposed confirmatory criteria v2 (main planner, 27 November 2026, awaiting owner approval)
+
+The owner authorized the main planner to propose better criteria grounded in verified references. This proposal uses development (validation) evidence only. The test set remains sealed.
+
+**Development evidence behind it (T2b, 24 months):**
+
+| Contrast | ΔAURC80 | 95% CI |
+|---|---|---|
+| M1 − B1 | −0.0073 | −0.0153 to −0.00004 |
+| M3 − B1 | −0.0032 | −0.0119 to +0.0054 |
+| M3 − M1 | +0.0040 | −0.0001 to +0.0099 |
+
+83% of rows are CONTESTED because the challenge leaf has no data. E6 is addressing that.
+
+**Confirmatory family: fixed-sequence testing**, each step one-sided at α = 0.025 and taken only after the previous step succeeds. This is the procedure in FDA guidance [*Multiple Endpoints in Clinical Trials* (2022), section "The Fixed-Sequence Method"](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/multiple-endpoints-clinical-trials), verified by the main planner in the guidance PDF. It replaces Holm because the hypotheses have a natural order of relevance, and each step keeps the full α.
+
+1. **H1:** ΔAURC80(M3 − B1) < 0 at 24 months on the C′ test. The proposed system must beat the strongest incumbent heuristic, the age clock. This restores the owner package's original H1.
+2. **H2** (only if H1 succeeds): ΔAURC80(M3 − M1) < 0 at 24 months. This tests the incremental value of the graph and abstention policy over a matched flat model.
+3. **H3** (only if H2 succeeds): ΔAURC80(M3 − B1) < 0 at 12 months.
+
+**Secondary, non-confirmatory** (each reported with a CI and no claim):
+
+- M1 − B1, which asks whether as-of regulatory evidence beats the age clock
+- E-AURC, which is AURC minus the oracle AURC and separates ranking quality from base error ([Geifman et al. 2019](https://arxiv.org/abs/1805.08206), verified)
+- selective risk at 70% coverage, referral rate, Brier score, and ECE with bin counts
+- the strict post-2023 cohort and Track B, both descriptive
+
+**Unchanged:**
+
+- AURC80 is normalized over the common 0–80% coverage range, and both arms must reach 80%.
+- The paired bootstrap resamples whole drug clusters ([Field & Welsh 2007](https://doi.org/10.1111/j.1467-9868.2007.00593.x), verified), with at least 2,000 draws.
+- Δ ≤ −0.010 is reported as the practical-usefulness threshold, separately from statistical success.
+- The C′ gate still applies: at least 50 event clusters and fresh, availability-proven editions. Otherwise C′ is reported as feasibility, and confirmation rests with Track A.
+- T4 estimates power for H1 at Δ = −0.010 before preregistration.
+
+The Westfall & Krishen (2001) gatekeeping reference could not be verified, so it is not cited.
+
 ## Planner evidence (D32)
 
 | Claim or task | Primary paper | Benchmark or competitor | Status |
@@ -122,6 +159,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | E2b | Backfill Orange Book editions per CP2 list | GPT-6.2 Sol high | CP2 | merged: 15/16 cutoffs fresh; 2011-01-01 has no edition |
 | 2 | T2 | M1/M2/M3 arms, as-of features, test seal, development validation only | GPT-6.2 Sol high | FIX1, CP2 | merged: seal works; stale editions gave 0 OPEN rows |
 | 2 | T2b | Rerun with availability-proven editions and a shared age base | GPT-6.2 Sol high | E2b | merged (development only). At 24 months, M1−B1 = −0.0073 (CI below 0) and M3−M1 = +0.0040 (CI includes 0). 83% of rows are CONTESTED. |
+| 2 | FIX2 | UNII active-moiety key | GPT-6.2 Sol high | T7 | not merged: fresh audit 0 false merges, 11/60 false splits |
+| 2 | FIX2b | Close FIX2 false splits (name-to-UNII lookup, union-find), fresh audit with seed 20261130 | GPT-6.2 Sol high | FIX2 | dispatched |
 | 2 | E6 | As-of FDA Paragraph IV certification list for the challenge leaf | GPT-6.2 Sol high | T2b | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft, then co-reviewer | Sonnet, then GPT | T4 | waiting |
