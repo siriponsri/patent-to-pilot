@@ -1,0 +1,83 @@
+{
+  "t0": "2026-11-27",
+  "fetched_at_utc": "2026-11-27T10:23:14.478072+00:00",
+  "code_commit_sha": "5f34a509691b1a4567b9348b7619e462ef2eca9b",
+  "code_note": "openfda_fetch.py unmodified at this commit",
+  "raw_location_outside_git": "_private_artifacts/loe-bench/raw-20261127",
+  "scope": "inputs only; no predictions",
+  "files": [
+    {
+      "name": "ob_nda",
+      "endpoint": "orangebook",
+      "query": "products.application_type:N",
+      "records": 10922,
+      "sha256": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:N&limit=1000&skip=<k*1000>",
+      "raw_file": "ob_nda.jsonl"
+    },
+    {
+      "name": "ob_anda_pre1982",
+      "endpoint": "orangebook",
+      "query": "products.application_type:A+AND+approved_prior_to_1982:true",
+      "records": 3196,
+      "sha256": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:A+AND+approved_prior_to_1982:true&limit=1000&skip=<k*1000>",
+      "raw_file": "ob_anda_pre1982.jsonl"
+    },
+    {
+      "name": "ob_anda_to2009",
+      "endpoint": "orangebook",
+      "query": "products.application_type:A+AND+approval_date:[19000101+TO+20091231]",
+      "records": 13595,
+      "sha256": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:A+AND+approval_date:[19000101+TO+20091231]&limit=1000&skip=<k*1000>",
+      "raw_file": "ob_anda_to2009.jsonl"
+    },
+    {
+      "name": "ob_anda_2010s",
+      "endpoint": "orangebook",
+      "query": "products.application_type:A+AND+approval_date:[20100101+TO+20191231]",
+      "records": 11576,
+      "sha256": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:A+AND+approval_date:[20100101+TO+20191231]&limit=1000&skip=<k*1000>",
+      "raw_file": "ob_anda_2010s.jsonl"
+    },
+    {
+      "name": "ob_anda_2020plus",
+      "endpoint": "orangebook",
+      "query": "products.application_type:A+AND+approval_date:[20200101+TO+20991231]",
+      "records": 9701,
+      "sha256": "9f8752a5afb834feb59e635dd00be17e2f089ab36447b191de06eaccf3a51b54",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:A+AND+approval_date:[20200101+TO+20991231]&limit=1000&skip=<k*1000>",
+      "raw_file": "ob_anda_2020plus.jsonl"
+    },
+    {
+      "name": "df_nda",
+      "endpoint": "drugsfda",
+      "query": "application_number:NDA*",
+      "records": 5921,
+      "sha256": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+      "url_template": "https://api.fda.gov/drug/drugsfda.json?search=application_number:NDA*&limit=1000&skip=<k*1000>",
+      "raw_file": "df_nda.jsonl"
+    },
+    {
+      "name": "df_anda",
+      "endpoint": "drugsfda",
+      "query": "application_number:ANDA*",
+      "records": 23072,
+      "sha256": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "url_template": "https://api.fda.gov/drug/drugsfda.json?search=application_number:ANDA*&limit=1000&skip=<k*1000>",
+      "raw_file": "df_anda.jsonl"
+    },
+    {
+      "name": "df_bla",
+      "endpoint": "drugsfda",
+      "query": "application_number:BLA*",
+      "records": 488,
+      "sha256": "eb1847a21319af05b816fe225f14794884bf38734683e66107b59770a1db7dcc",
+      "url_template": "https://api.fda.gov/drug/drugsfda.json?search=application_number:BLA*&limit=1000&skip=<k*1000>",
+      "raw_file": "df_bla.jsonl"
+    }
+  ],
+  "total_records": 78471
+}
