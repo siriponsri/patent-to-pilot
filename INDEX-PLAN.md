@@ -1,4 +1,6 @@
 #
+
+**Pending owner decision.** [D39 public opportunity discovery](docs/ra-pharma/ip-pharma/D39-DECISION-REQUEST.md) proposes twelve batches, with a four-batch option. No Research dispatch or Product release.
 **D38 closed after independent review.** [Planner impact review and handback](docs/ra-pharma/ip-pharma/D38-IMPACT-REVIEW.md). Two ties on two synthetic inventories. Keep the checklist and park the proposed Product feature. Operator benefit remains unmeasured.
 
 **D36 reviewed.** Prioritize a synthetic rituximab evidence-readiness desk check for owner decision. Generic formulation and Thai market sizing are parked. [Planner review](docs/ra-pharma/ip-pharma/D36-REVIEW.md)
