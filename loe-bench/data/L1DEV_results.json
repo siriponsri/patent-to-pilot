@@ -1,0 +1,346 @@
+{
+  "arm": "L1",
+  "horizons": {
+    "12": {
+      "L1_cutoffs": [
+        {
+          "boundary_tie_rows": 162,
+          "capacity": 106,
+          "cutoff": "2012-01-01",
+          "expected_queued_events": 9.160493827160494,
+          "rows": 533
+        },
+        {
+          "boundary_tie_rows": 193,
+          "capacity": 107,
+          "cutoff": "2013-01-01",
+          "expected_queued_events": 5.544041450777202,
+          "rows": 539
+        },
+        {
+          "boundary_tie_rows": 164,
+          "capacity": 108,
+          "cutoff": "2014-01-01",
+          "expected_queued_events": 7.902439024390244,
+          "rows": 544
+        },
+        {
+          "boundary_tie_rows": 210,
+          "capacity": 109,
+          "cutoff": "2015-01-01",
+          "expected_queued_events": 8.823809523809526,
+          "rows": 545
+        }
+      ],
+      "actions": {
+        "ABSTAIN_REFER_TO_EVALUATOR": 552,
+        "PREDICT_ENTRY": 1609
+      },
+      "contrasts": {
+        "L1-B1": {
+          "average_precision": {
+            "ci95": [
+              -0.06601390727029764,
+              -0.007058362930739081
+            ],
+            "estimate": -0.030082639175084074,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.05123190600858332,
+              -0.0041948704272067585
+            ],
+            "estimate": -0.02760282831130821,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.24450512889093454,
+              -0.020477055916556818
+            ],
+            "estimate": -0.1318801797095837,
+            "undefined_draws": 0
+          }
+        },
+        "L1-M3": {
+          "average_precision": {
+            "ci95": [
+              -0.2157754160134673,
+              -0.07637017236102883
+            ],
+            "estimate": -0.12678956552053428,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.0754467683746128,
+              -0.03159174863621281
+            ],
+            "estimate": -0.054812130636889625,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.3493603445273473,
+              -0.15319757594828268
+            ],
+            "estimate": -0.26188017970958377,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "drug_clusters": 609,
+      "event_rows": 90,
+      "levels": {
+        "B1": {
+          "average_precision": {
+            "ci95": [
+              0.06663354669666953,
+              0.1325557627394862
+            ],
+            "estimate": 0.09189364186078915,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.0740045325423638,
+              0.12841378177309198
+            ],
+            "estimate": 0.10069767441860464,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.37999367088607594,
+              0.582299935389067
+            ],
+            "estimate": 0.4811111111111111,
+            "undefined_draws": 0
+          }
+        },
+        "L1": {
+          "average_precision": {
+            "ci95": [
+              0.047753075659357075,
+              0.07870028211036716
+            ],
+            "estimate": 0.06181100268570507,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.05486203974244807,
+              0.09204516153360497
+            ],
+            "estimate": 0.07309484610729643,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.2867051577284423,
+              0.41290094049548265
+            ],
+            "estimate": 0.3492309314015274,
+            "undefined_draws": 0
+          }
+        },
+        "M3": {
+          "average_precision": {
+            "ci95": [
+              0.13492143699450318,
+              0.28106458614083674
+            ],
+            "estimate": 0.18860056820623936,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.0979020979020979,
+              0.15741339869281043
+            ],
+            "estimate": 0.12790697674418605,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.5,
+              0.7073170731707317
+            ],
+            "estimate": 0.6111111111111112,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "parse_errors": {},
+      "queue_slots": 430,
+      "rows": 2161,
+      "valid_json": 2161
+    },
+    "24": {
+      "L1_cutoffs": [
+        {
+          "boundary_tie_rows": 306,
+          "capacity": 107,
+          "cutoff": "2013-01-01",
+          "expected_queued_events": 11.53921568627451,
+          "rows": 539
+        },
+        {
+          "boundary_tie_rows": 303,
+          "capacity": 108,
+          "cutoff": "2014-01-01",
+          "expected_queued_events": 14.478547854785479,
+          "rows": 544
+        }
+      ],
+      "actions": {
+        "ABSTAIN_REFER_TO_EVALUATOR": 211,
+        "PREDICT_ENTRY": 872
+      },
+      "contrasts": {
+        "L1-B1": {
+          "average_precision": {
+            "ci95": [
+              -0.11674558990291317,
+              -0.016188564201296784
+            ],
+            "estimate": -0.056424108274806956,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.08849933070641193,
+              -0.005452802929031918
+            ],
+            "estimate": -0.04681660368499228,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.21090444999777758,
+              -0.013301206011577355
+            ],
+            "estimate": -0.11061065705794876,
+            "undefined_draws": 0
+          }
+        },
+        "L1-M3": {
+          "average_precision": {
+            "ci95": [
+              -0.20506090053019646,
+              -0.0467652150424497
+            ],
+            "estimate": -0.10543201870672542,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.13895449805765614,
+              -0.03622989892830324
+            ],
+            "estimate": -0.08828947190204657,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.3209398668755548,
+              -0.08913018780882322
+            ],
+            "estimate": -0.20859600504329684,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "drug_clusters": 561,
+      "event_rows": 91,
+      "levels": {
+        "B1": {
+          "average_precision": {
+            "ci95": [
+              0.12098205510797007,
+              0.24608009728075889
+            ],
+            "estimate": 0.17288309997487353,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.11380217394236086,
+              0.22322971723044385
+            ],
+            "estimate": 0.16782945736434107,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.3009507832998919,
+              0.49224785018902656
+            ],
+            "estimate": 0.39652014652014644,
+            "undefined_draws": 0
+          }
+        },
+        "L1": {
+          "average_precision": {
+            "ci95": [
+              0.08632780137483756,
+              0.1495910471268727
+            ],
+            "estimate": 0.11645899170006657,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.09003922201684599,
+              0.15503672526198262
+            ],
+            "estimate": 0.12101285367934879,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.25123995308829933,
+              0.32141633715019996
+            ],
+            "estimate": 0.2859094894621977,
+            "undefined_draws": 0
+          }
+        },
+        "M3": {
+          "average_precision": {
+            "ci95": [
+              0.15076540266635302,
+              0.3294269115104908
+            ],
+            "estimate": 0.221891010406792,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.14351851851851852,
+              0.27443887347983775
+            ],
+            "estimate": 0.20930232558139536,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.37345149830089586,
+              0.6027655724993537
+            ],
+            "estimate": 0.4945054945054945,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "parse_errors": {},
+      "queue_slots": 215,
+      "rows": 1083,
+      "valid_json": 1083
+    }
+  },
+  "input_sha256": "b4fcbb06eac119cb1433c9b7855e0f38160313d1c74da937d1b41b2cf9a57837",
+  "output_sha256": "2b0d5d04ed00a6040ff49efeae9bcd9145803495e1f0c47c1e2bc94fb2f80741",
+  "status": "DEVELOPMENT_ONLY"
+}
