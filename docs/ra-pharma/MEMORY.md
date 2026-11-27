@@ -1,5 +1,7 @@
 #
 
+The [research handover](research-handover/README.md) indexes the merged evidence at 830457e6. The owner archive includes 93 original Markdown files, three guides and a Thai owner summary.
+
 ## Research history integrated on main
 
 The owner requested a history-preserving merge of the Research lane through `e495570db4e966af94163a7b01a468e8c554341a` into Planner main at `6229792a`. All 26 incoming commits are represented, including the prospective freezes, failed screens and negative comparisons. Start from the [D39 queue](research/ip-pharma/d39/BATCH4-QUEUE.json) and [Planner disposition](ip-pharma/D39-DECISION-REQUEST.md). No further batch is active. The manual workflow remains the incumbent. New platform comparisons require a separately released evaluation. Product remains on its own branch. The integrated full pytest suite reported only the eight documented SACR r2/r3 supervisor budget failures. The merged Research documentation tree matched its source revision and the staged whitespace check passed.

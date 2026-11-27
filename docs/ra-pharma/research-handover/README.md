@@ -1,0 +1,5 @@
+# Research handover | 27 November 2026
+
+**D39 closed at Batch 4 with an empty deep-review queue.** Keep the manual workflow. No matched ChatGPT or NotebookLM run, local-model execution, operator timing, or market-share estimate was established. Open the [experiment register](EXPERIMENTS.md) for the evidence and the [file catalog](CATALOG.md) for the complete included Markdown set.
+
+The source is merged main at `830457e6a36cf2f42a9bb658da6c2901b1be25a8`. The shared memory gives the final Planner disposition. Lane memories preserve what the executor knew at handback, so an older pending-review entry may precede a later closeout. The archive contains the merged RA Pharma, IP Pharma, Research and Product-context Markdown plus repository instructions, handoff and owner decision register. The separate Product branch and older standalone programs are outside this snapshot. The evaluator key is omitted; protected evaluation data and private artifacts are excluded. Original files retain their wording and relative paths. Open the pinned repository link in the catalog for referenced non-Markdown ledgers, locks or attachments. The package contains no new experiment.
