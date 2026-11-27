@@ -15,6 +15,7 @@ from typing import Dict, Optional
 
 from .common import add_months
 from .kleene import And, Leaf, Or, T3, evaluate, rank_unknown_for_request
+from .regulatory_graph import build_v2_assignment
 from .voi import voi
 
 ROOT = And((Leaf("L_excl"), Or((Leaf("L_pat"), Leaf("L_challenge")))))
@@ -31,8 +32,12 @@ def _clock_state(dates, end: date) -> T3:
 
 
 def build_assignment(snap: dict, t: date, horizon_months: int,
-                     challenge_evidence: Optional[T3] = None) -> Dict[str, T3]:
+                     challenge_evidence: Optional[T3] = None, *, graph_version: str = "v1") -> Dict[str, T3]:
     end = add_months(t, horizon_months)
+    if graph_version == "v2":
+        return build_v2_assignment(snap, t, end, challenge_evidence)
+    if graph_version != "v1":
+        raise ValueError(f"unsupported evidence graph version: {graph_version}")
     return {
         "L_excl": _clock_state(snap.get("excl_exp"), end),
         "L_pat": _clock_state(snap.get("patent_exp"), end),
@@ -48,7 +53,7 @@ def decide(snap: dict, t: date, horizon_months: int, p_model: float,
            lo: float = 0.25, hi: float = 0.75,
            reveal_probabilities: Optional[Dict[str, float]] = None, *,
            prior_truth_probability: float = 0.5, blocked_conflict_action: str = ABSTAIN,
-           challenge_evidence: Optional[T3] = None) -> dict:
+           challenge_evidence: Optional[T3] = None, graph_version: str = "v1") -> dict:
     """Use the configured conflict action for BLOCKED with p_model >= hi.
 
     The default refers conflicts to the evaluator. Other BLOCKED rows predict
@@ -58,7 +63,8 @@ def decide(snap: dict, t: date, horizon_months: int, p_model: float,
         raise ValueError("require 0 <= lo < hi <= 1 and p_model in [0, 1]")
     if blocked_conflict_action not in (ABSTAIN, PREDICT_ENTRY, PREDICT_NO_ENTRY):
         raise ValueError("invalid BLOCKED conflict action")
-    a = build_assignment(snap, t, horizon_months, challenge_evidence=challenge_evidence)
+    a = build_assignment(snap, t, horizon_months, challenge_evidence=challenge_evidence,
+                         graph_version=graph_version)
     v = verdict_label(a)
     conflict = v == "BLOCKED" and p_model >= hi
     if v == "BLOCKED":

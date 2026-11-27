@@ -197,6 +197,7 @@ def evaluate(train, validation, horizon, *, with_challenge=False):
         Prediction(p, graph.decide(
             row["asof"].snapshot, row["t"], horizon, p, lo=LO, hi=HI,
             challenge_evidence=row["asof"].challenge.state if row["asof"].challenge else None,
+            graph_version=getattr(row["asof"], "graph_version", "v1"),
         )["action"])
         for row, p in zip(validation, calibrated["M3"], strict=True)
     ]

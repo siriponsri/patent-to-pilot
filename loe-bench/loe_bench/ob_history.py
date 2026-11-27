@@ -64,20 +64,20 @@ def _read_table(text: str, fallback_cols: List[str]) -> List[Dict[str, str]]:
 
 def parse_products(text: str) -> List[dict]:
     out = []
-    for r in _read_table(text, PRODUCT_COLS_NOTYPE):
+    for position, r in enumerate(_read_table(text, PRODUCT_COLS_NOTYPE), 1):
         out.append(dict(appl_no=norm_appl_no(r.get("appl_no")), product_no=r.get("product_no", ""),
                         appl_type=r.get("appl_type", ""), ingredient=r.get("ingredient", ""),
                         ingredient_key=ingredient_key_ob(r.get("ingredient", "")),
                         trade_name=r.get("trade_name", ""), rld=r.get("rld", ""), type=r.get("type", ""),
                         approval_date=parse_ob_date(r.get("approval_date")),
                         approval_date_text=r.get("approval_date", ""), form_route=r.get("df;route", ""),
-                        strength=r.get("strength", "")))
+                        strength=r.get("strength", ""), locator=f"products data row {position}"))
     return out
 
 
 def parse_patents(text: str) -> List[dict]:
     out = []
-    for r in _read_table(text, PATENT_COLS_NOTYPE):
+    for position, r in enumerate(_read_table(text, PATENT_COLS_NOTYPE), 1):
         has_sub = "submission_date" in r
         out.append(dict(appl_no=norm_appl_no(r.get("appl_no")), product_no=r.get("product_no", ""),
                         patent_no=r.get("patent_no", ""),
@@ -87,16 +87,19 @@ def parse_patents(text: str) -> List[dict]:
                         drug_product=r.get("drug_product_flag", "") == "Y",
                         use_code=r.get("patent_use_code", ""), delist=r.get("delist_flag", "") == "Y",
                         submission_date=parse_ob_date(r.get("submission_date")) if has_sub else None,
-                        has_submission_col=has_sub))
+                        has_submission_col=has_sub, locator=f"patent data row {position}",
+                        has_scope_flags=all(r.get(field) in {"", "Y", "N"} for field in
+                                            ("drug_substance_flag", "drug_product_flag"))))
     return out
 
 
 def parse_exclusivity(text: str) -> List[dict]:
     out = []
-    for r in _read_table(text, EXCL_COLS_NOTYPE):
+    for position, r in enumerate(_read_table(text, EXCL_COLS_NOTYPE), 1):
         out.append(dict(appl_no=norm_appl_no(r.get("appl_no")), product_no=r.get("product_no", ""),
                         appl_type=r.get("appl_type", ""),
-                        code=r.get("exclusivity_code", ""), expiry=parse_ob_date(r.get("exclusivity_date"))))
+                        code=r.get("exclusivity_code", ""), expiry=parse_ob_date(r.get("exclusivity_date")),
+                        locator=f"exclusivity data row {position}"))
     return out
 
 
