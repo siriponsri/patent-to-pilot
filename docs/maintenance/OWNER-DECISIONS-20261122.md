@@ -169,3 +169,5 @@ The owner approved the D36 proposed desk check, conditional on Planner reviewing
 The owner approved up to twelve sequential public desk-research batches, Thailand first with US comparators and USD 0 incremental service spend. Planner reviews each batch and reports at 4, 8 and close. The first release covers the prospective discovery lock only. See the [approved scope](../ra-pharma/ip-pharma/D39-DECISION-REQUEST.md).
 
 Owner authorized impact-driven redirection within D39. The [Planner field evidence review](../ra-pharma/ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.
+
+Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.

@@ -1,5 +1,7 @@
 #
 
+Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.
+
 Owner authorized impact-driven redirection within D39. The [Planner field evidence review](docs/ra-pharma/ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.
 
 **Owner approved option A.** [D39 public opportunity discovery](docs/ra-pharma/ip-pharma/D39-DECISION-REQUEST.md) authorizes up to twelve batches. Planner verified the Batch 1 lock at ddd3c5c7 and released Batch 2 only. Product held.
