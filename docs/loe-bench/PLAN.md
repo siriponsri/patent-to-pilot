@@ -230,3 +230,25 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 3 | — | G3b prediction freeze, T3 ablation (GPT-6.2 Sol xhigh), T9 re-score and T12 table builder (GPT-6 Luna high, scripted), L1 arm run (GPU proposal to the owner first) | GPT | G2 | waiting |
 | 3 | — | Thai-context demo | GPT-6.2 Sol high, reviewed by Claude | E5, G3b | waiting |
 | End | — | Owner document pack: expert review, journal check, customer discovery, OSF steps, Paper 53 venue, NBER commercial-use clearance, Thai data access | Main planner | G5 | waiting |
+
+## Main-planner decisions on CP5 (preregistration critique, 27 November 2026)
+
+1. **C′ gate.** Every scheduled test cutoff must have a verified, availability-proven edition.
+   - The blinded gate script returns exactly one of four results: PASS, COVERAGE_FAIL, EVENT_FAIL (fewer than 50 event-drug clusters) or TECHNICAL_FAIL.
+   - A TECHNICAL_FAIL allows one documented retry on identical inputs after the infrastructure is fixed.
+   - Any FAIL leaves H1–H3 untested on C′, and C′ is reported as feasibility evidence.
+   - The main planner runs the gate once, after the OSF submission and before any test scoring.
+2. **Order after registration.**
+   1. Run the C′ gate.
+   2. Score C′ with the frozen development-trained models.
+   3. Retrain the frozen recipe on every label window closed by t0.
+   4. Make Track A predictions for B1, B3, M1, M3 and L1 (exploratory), hash them, git-tag them, add them to the OSF registration, and do all of this **before 2027-01-31 23:59 UTC**. No outcome source dated after t0 may be fetched before the freeze.
+   - Track A windows mature on 2027-11-27 (12 months) and 2028-11-27 (24 months).
+   - Track A runs the same H1–H3 fixed sequence as a separate family at α = 0.025. It is confirmatory only if C′ was not confirmatory, and otherwise it is a replication.
+3. **Inference.** α = 0.025 (T4c rule). The lower bound is `np.quantile(differences, alpha, method="linear")` over all 2,000 paired draws. Earlier successful steps stand if a later step is unevaluable. An undefined secondary metric never affects the primary family.
+4. **Disclosure additions.**
+   - T4 and T4b used observed test-period NDA-only candidate inventories (row and cluster counts, with no outcomes).
+   - E1 generated a profile containing test-split prevalence, which was not read.
+   - Chronology: T1v3 failed its acceptance check. After seeing those results, the main planner removed auto-clear safety from acceptance, and FREEZE kept it as a secondary measure.
+5. **Scope of claims.** US small-molecule NME histories only. H2 measures the difference in queue capture, not reviewer benefit or any causal effect. OPEN is not an FTO determination. Track B is descriptive.
+6. **L1.** Use the pinned L1_FROZEN_CONFIG.json if it exists before submission, otherwise mark L1 NOT_RUN.
