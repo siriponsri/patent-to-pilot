@@ -21,6 +21,19 @@ def parse_pb_date(s: str) -> Optional[date]:
     return None
 
 
+def read_pb_text(path: str) -> str:
+    """Read a Purple Book CSV: strip a UTF-8 BOM, fall back to cp1252 (some monthly files are not valid UTF-8)."""
+    raw = open(path, "rb").read()
+    try:
+        return raw.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        return raw.decode("cp1252", errors="replace")
+
+
+# column renamed by FDA in some releases (e.g. Aug-Oct 2023, Oct 2026 use 'License Type', 'Marketing Status')
+_ALIASES = {"License Type": "BLA Type", "Marketing Status": "Mkt. Status"}
+
+
 def parse_purplebook(text: str) -> List[dict]:
     rows, header = [], None
     # parse line-by-line: a stray quote must not swallow following rows
@@ -34,7 +47,7 @@ def parse_purplebook(text: str) -> List[dict]:
         if not cells:
             continue
         if cells[0].strip() == "N/R/U":
-            header = [c.strip() for c in cells]
+            header = [_ALIASES.get(c.strip(), c.strip()) for c in cells]
             continue
         # first cell is N/R/U or blank (blank = 'listed in current release' sections)
         if header is None or cells[0].strip() not in ("N", "R", "U", "") or len(cells) < 20 or not cells[1].strip():
