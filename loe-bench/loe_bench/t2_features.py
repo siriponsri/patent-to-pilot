@@ -58,6 +58,7 @@ def _product_id(row):
 class _EditionIndex:
     def __init__(self, edition, registry=None, linker=None):
         self.by_key = defaultdict(set)
+        self.linked_products = defaultdict(list)
         self.patents = defaultdict(list)
         self.exclusivities = defaultdict(list)
         self.linkage_counts = Counter()
@@ -103,6 +104,7 @@ class _EditionIndex:
             self.linkage_counts[method] += 1
             if key is not None:
                 self.by_key[key].add(product_id)
+                self.linked_products[key].append(row)
                 self.linkage_counts["matched"] += 1
             else:
                 self.unmatched_examples.setdefault(method, dict(
