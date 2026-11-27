@@ -1,0 +1,2981 @@
+{
+  "private_root": "ptp-b1e-research-d37-20261127",
+  "frame_counts": {
+    "original_nda_count": 5375,
+    "unknown_original": 24,
+    "original_ndas_in_period": 496,
+    "orange_product_keys": 936,
+    "fda_only_product_keys": 38,
+    "product_dispositions": {
+      "ELIGIBLE": 304,
+      "KNOWN_OVERLAP": 15,
+      "NO_LISTED_GRANT": 15,
+      "OUTSIDE_FORM_ROUTE": 382,
+      "OUTSIDE_RX_RLD": 164,
+      "UNKNOWN_MOIETY_OR_CLASS": 56
+    },
+    "eligible_groups": 171,
+    "selected_groups": 24
+  },
+  "funnel": {
+    "selected_groups": 24,
+    "exact_key_matched": 24,
+    "label_verified": 24,
+    "quality_review_verified": 22,
+    "exact_edition_pair": 22,
+    "locally_usable_pair": 22,
+    "unresolved_family": 24,
+    "known_overlap_in_prefix": 0,
+    "known_overlap_before_grouping": 15,
+    "unknown_local_rights_groups": 1,
+    "redistribution_unassessed_groups": 24
+  },
+  "accounting": {
+    "slots": {
+      "exact_metadata": 24,
+      "package_page": 24,
+      "label_identity": 24,
+      "quality_identity": 24
+    },
+    "attempted": 96,
+    "http_200": 96,
+    "downloaded_bytes": 130375236,
+    "retained_source_bytes": 129376297,
+    "request_wall_s": 147.432,
+    "first_dispatch_utc": "2026-11-27T04:02:35.217985+00:00",
+    "last_settlement_utc": "2026-11-27T04:05:35.289189+00:00",
+    "extractor_wall_s": 4.2372,
+    "extractor_cpu_s": 3.5782,
+    "included_marker_counts": {
+      "label": 0,
+      "quality": 36
+    },
+    "pass_1_runtime": {
+      "collection_wall_s": 33.602,
+      "python_process_cpu_s": 1.234,
+      "new_service_charges_usd": 0
+    },
+    "pass_2_runtime": {
+      "collection_wall_s": 126.059,
+      "python_process_cpu_s": 6.203,
+      "new_service_charges_usd": 0
+    },
+    "human_active_time": "NOT_MEASURED",
+    "new_service_charges_usd": 0
+  },
+  "rights_disposition": {
+    "rank": 14,
+    "slot": "quality_identity",
+    "disposition": "RIGHTS_HOLD_DISCARDED",
+    "reason": "Express confidentiality and nondisclosure legend on PDF p. 2; local retention and downstream rights unresolved.",
+    "removed_files": [
+      "14-quality_identity.pdf",
+      "14-quality-scope.json"
+    ],
+    "original_sha256": "badadd5177eb7f504c99145270f081387231ca9007421643cd48905500a80d50"
+  },
+  "rows": [
+    {
+      "rank": 1,
+      "case": {
+        "nda": "212608",
+        "product": "001",
+        "date": "2020-01-09",
+        "orig": 1,
+        "ingredient": "AVAPRITINIB",
+        "dosage": "TABLET;ORAL",
+        "strength": "100MG",
+        "moieties": [
+          "513P80B4YJ"
+        ],
+        "grants": [
+          "11964980",
+          "11999744",
+          "12060354",
+          "9200002",
+          "9944651",
+          "9994575"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "AYVAKIT",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/2",
+        "original_edition_locator": "/results/0/submissions/3",
+        "original_index_ids": {
+          "Label": "61542",
+          "Review": "61883"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 61883 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-01-09",
+          "edition_locator": "FDA original submission Label document ID 61542",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 17,
+            "text_pages": 17,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0604,
+            "extraction_cpu_s": 0.0469
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-01-09",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 55,
+            "text_pages": 55,
+            "marker_count": 0,
+            "extraction_wall_s": 0.1267,
+            "extraction_cpu_s": 0.1094
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 2,
+      "case": {
+        "nda": "213138",
+        "product": "001",
+        "date": "2020-01-24",
+        "orig": 1,
+        "ingredient": "FIDAXOMICIN",
+        "dosage": "FOR SUSPENSION;ORAL",
+        "strength": "40MG/ML",
+        "moieties": [
+          "Z5N076G8YQ"
+        ],
+        "grants": [
+          "7378508",
+          "7863249",
+          "7906489",
+          "8859510",
+          "9808530"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "DIFICID",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/0",
+        "original_index_ids": {
+          "Label": "61697",
+          "Review": "63569"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 63569 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-01-24",
+          "edition_locator": "FDA original submission Label document ID 61697",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 18,
+            "text_pages": 18,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0385,
+            "extraction_cpu_s": 0.0156
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-01-24",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 51,
+            "text_pages": 51,
+            "marker_count": 0,
+            "extraction_wall_s": 0.1167,
+            "extraction_cpu_s": 0.0938
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 3,
+      "case": {
+        "nda": "213491",
+        "product": "001",
+        "date": "2020-02-14",
+        "orig": 1,
+        "ingredient": "CYSTEAMINE BITARTRATE",
+        "dosage": "GRANULE, DELAYED RELEASE;ORAL",
+        "strength": "EQ 75MG BASE/PACKET",
+        "moieties": [
+          "5UX2SD1KE2"
+        ],
+        "grants": [
+          "10143665",
+          "10328037",
+          "10548859",
+          "10905662",
+          "8026284",
+          "9173851",
+          "9192590",
+          "9198882",
+          "9233077",
+          "9925156",
+          "9925157",
+          "9925158"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "PROCYSBI",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/1",
+        "original_edition_locator": "/results/0/submissions/1",
+        "original_index_ids": {
+          "Label": "61912",
+          "Review": "63335"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 63335 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-02-14",
+          "edition_locator": "FDA original submission Label document ID 61912",
+          "scope_locator": "PDF p. 5 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 22,
+            "text_pages": 22,
+            "marker_count": 0,
+            "extraction_wall_s": 0.1147,
+            "extraction_cpu_s": 0.0938
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-02-14",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 41,
+            "text_pages": 41,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0757,
+            "extraction_cpu_s": 0.0781
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 4,
+      "case": {
+        "nda": "212728",
+        "product": "001",
+        "date": "2020-02-27",
+        "orig": 1,
+        "ingredient": "RIMEGEPANT SULFATE",
+        "dosage": "TABLET, ORALLY DISINTEGRATING;ORAL",
+        "strength": "EQ 75MG BASE",
+        "moieties": [
+          "997WVV895X"
+        ],
+        "grants": [
+          "11083724",
+          "8314117",
+          "8759372"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "NURTEC ODT",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/1",
+        "original_index_ids": {
+          "Label": "61988",
+          "Review": "62340"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 62340 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-02-27",
+          "edition_locator": "FDA original submission Label document ID 61988",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 17,
+            "text_pages": 17,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0388,
+            "extraction_cpu_s": 0.0312
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-02-27",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 31,
+            "text_pages": 31,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0913,
+            "extraction_cpu_s": 0.0781
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 5,
+      "case": {
+        "nda": "212801",
+        "product": "001",
+        "date": "2020-03-06",
+        "orig": 1,
+        "ingredient": "OSILODROSTAT PHOSPHATE",
+        "dosage": "TABLET;ORAL",
+        "strength": "EQ 1MG BASE",
+        "moieties": [
+          "5YL4IQ1078"
+        ],
+        "grants": [
+          "10143680",
+          "10709691",
+          "8314097",
+          "8609862",
+          "8835646",
+          "9434754"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "ISTURISA",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/2",
+        "original_edition_locator": "/results/0/submissions/1",
+        "original_index_ids": {
+          "Label": "62085",
+          "Review": "62442"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 62442 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-03-06",
+          "edition_locator": "FDA original submission Label document ID 62085",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 16,
+            "text_pages": 16,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0608,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-03-06",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 24,
+            "text_pages": 24,
+            "marker_count": 0,
+            "extraction_wall_s": 0.1008,
+            "extraction_cpu_s": 0.0469
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 6,
+      "case": {
+        "nda": "209899",
+        "product": "001",
+        "date": "2020-03-25",
+        "orig": 1,
+        "ingredient": "OZANIMOD HYDROCHLORIDE",
+        "dosage": "CAPSULE;ORAL",
+        "strength": "EQ 0.23MG BASE",
+        "moieties": [
+          "Z80293URPV"
+        ],
+        "grants": [
+          "10239846",
+          "11680050",
+          "8481573",
+          "8796318",
+          "9382217"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "ZEPOSIA",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/3",
+        "original_index_ids": {
+          "Label": "62339",
+          "Review": "62646"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 62646 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-03-25",
+          "edition_locator": "FDA original submission Label document ID 62339",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 22,
+            "text_pages": 22,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0803,
+            "extraction_cpu_s": 0.0469
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-03-25",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 33,
+            "text_pages": 33,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0783,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 7,
+      "case": {
+        "nda": "213756",
+        "product": "001",
+        "date": "2020-04-10",
+        "orig": 1,
+        "ingredient": "SELUMETINIB SULFATE",
+        "dosage": "CAPSULE;ORAL",
+        "strength": "EQ 10MG BASE",
+        "moieties": [
+          "6UH91I579U"
+        ],
+        "grants": [
+          "11813246",
+          "12220403",
+          "12318367",
+          "12364684",
+          "7425637",
+          "8178693",
+          "9156795",
+          "9562017"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "KOSELUGO",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/1",
+        "original_edition_locator": "/results/0/submissions/5",
+        "original_index_ids": {
+          "Label": "62540",
+          "Review": "62883"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 62883 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-04-10",
+          "edition_locator": "FDA original submission Label document ID 62540",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 28,
+            "text_pages": 28,
+            "marker_count": 0,
+            "extraction_wall_s": 0.1198,
+            "extraction_cpu_s": 0.1094
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-04-10",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 37,
+            "text_pages": 37,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0933,
+            "extraction_cpu_s": 0.0938
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 8,
+      "case": {
+        "nda": "213411",
+        "product": "001",
+        "date": "2020-04-17",
+        "orig": 1,
+        "ingredient": "TUCATINIB",
+        "dosage": "TABLET;ORAL",
+        "strength": "50MG",
+        "moieties": [
+          "234248D0HH"
+        ],
+        "grants": [
+          "11207324",
+          "11504370",
+          "11666572",
+          "12048698",
+          "8648087",
+          "9457093",
+          "9693989"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "TUKYSA",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/1",
+        "original_index_ids": {
+          "Label": "62591",
+          "Review": "63055"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 63055 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-04-17",
+          "edition_locator": "FDA original submission Label document ID 62591",
+          "scope_locator": "PDF p. 4 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 20,
+            "text_pages": 20,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0608,
+            "extraction_cpu_s": 0.0469
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-04-17",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 28,
+            "text_pages": 28,
+            "marker_count": 1,
+            "extraction_wall_s": 0.1289,
+            "extraction_cpu_s": 0.0938
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 9,
+      "case": {
+        "nda": "213736",
+        "product": "001",
+        "date": "2020-04-17",
+        "orig": 1,
+        "ingredient": "PEMIGATINIB",
+        "dosage": "TABLET;ORAL",
+        "strength": "4.5MG",
+        "moieties": [
+          "Y6BX7BL23K"
+        ],
+        "grants": [
+          "10131667",
+          "11466004",
+          "11628162",
+          "12552792",
+          "9611267"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "PEMAZYRE",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/1",
+        "original_edition_locator": "/results/0/submissions/2",
+        "original_index_ids": {
+          "Label": "62593",
+          "Review": "63054"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 63054 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-04-17",
+          "edition_locator": "FDA original submission Label document ID 62593",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 19,
+            "text_pages": 19,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0657,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-04-17",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 34,
+            "text_pages": 34,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0762,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 10,
+      "case": {
+        "nda": "212489",
+        "product": "001",
+        "date": "2020-04-24",
+        "orig": 1,
+        "ingredient": "OPICAPONE",
+        "dosage": "CAPSULE;ORAL",
+        "strength": "25MG",
+        "moieties": [
+          "Y5929UIJ5N"
+        ],
+        "grants": [
+          "10071085",
+          "10583130",
+          "12129247",
+          "8168793",
+          "8524746",
+          "8907099",
+          "9550759",
+          "9630955",
+          "9745290"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "ONGENTYS",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/1",
+        "original_edition_locator": "/results/0/submissions/0",
+        "original_index_ids": {
+          "Label": "62680",
+          "Review": "63296"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 63296 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-04-24",
+          "edition_locator": "FDA original submission Label document ID 62680",
+          "scope_locator": "PDF p. 2 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 16,
+            "text_pages": 16,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0419,
+            "extraction_cpu_s": 0.0312
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-04-24",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 33,
+            "text_pages": 33,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0696,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 11,
+      "case": {
+        "nda": "210296",
+        "product": "001",
+        "date": "2020-04-28",
+        "orig": 1,
+        "ingredient": "MONOMETHYL FUMARATE",
+        "dosage": "CAPSULE, DELAYED RELEASE;ORAL",
+        "strength": "95MG",
+        "moieties": [
+          "45IUB1PX8R"
+        ],
+        "grants": [
+          "10098863",
+          "10105335",
+          "10105336",
+          "10105337",
+          "10918615",
+          "10918616",
+          "10918617",
+          "10945985",
+          "11590095",
+          "11903918",
+          "9326947",
+          "9326965",
+          "9511043",
+          "9517209",
+          "9566259",
+          "9636318",
+          "9636319",
+          "9814691",
+          "9814692",
+          "9820960",
+          "9820961"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "BAFIERTAM",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/4",
+        "original_index_ids": {
+          "Label": "62736",
+          "Review": "65392"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 65392 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-04-28",
+          "edition_locator": "FDA original submission Label document ID 62736",
+          "scope_locator": "PDF p. 2 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 19,
+            "text_pages": 19,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0631,
+            "extraction_cpu_s": 0.0469
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-04-28",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 33,
+            "text_pages": 33,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0815,
+            "extraction_cpu_s": 0.0781
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 12,
+      "case": {
+        "nda": "212157",
+        "product": "001",
+        "date": "2020-05-05",
+        "orig": 1,
+        "ingredient": "CELECOXIB",
+        "dosage": "SOLUTION;ORAL",
+        "strength": "25MG/ML",
+        "moieties": [
+          "JCX84Q7J1L"
+        ],
+        "grants": [
+          "10376527",
+          "10722456",
+          "10799517",
+          "9572819",
+          "9795620",
+          "9949990"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "ELYXYB",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/1",
+        "original_index_ids": {
+          "Label": "62826",
+          "Review": "64110"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 64110 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-05-05",
+          "edition_locator": "FDA original submission Label document ID 62826",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 30,
+            "text_pages": 30,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0846,
+            "extraction_cpu_s": 0.0781
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-05-05",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 28,
+            "text_pages": 28,
+            "marker_count": 0,
+            "extraction_wall_s": 0.1187,
+            "extraction_cpu_s": 0.1094
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 13,
+      "case": {
+        "nda": "213591",
+        "product": "001",
+        "date": "2020-05-06",
+        "orig": 1,
+        "ingredient": "CAPMATINIB HYDROCHLORIDE",
+        "dosage": "TABLET;ORAL",
+        "strength": "EQ 150MG BASE",
+        "moieties": [
+          "TY34L4F9OZ"
+        ],
+        "grants": [
+          "10596178",
+          "12084449",
+          "12208101",
+          "7767675",
+          "8420645",
+          "8461330",
+          "8901123"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "TABRECTA",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/2",
+        "original_index_ids": {
+          "Label": "62842",
+          "Review": "63374"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 63374 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-05-06",
+          "edition_locator": "FDA original submission Label document ID 62842",
+          "scope_locator": "PDF p. 3 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 14,
+            "text_pages": 14,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0511,
+            "extraction_cpu_s": 0.0312
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-05-06",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 38,
+            "text_pages": 38,
+            "marker_count": 0,
+            "extraction_wall_s": 0.1027,
+            "extraction_cpu_s": 0.0938
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 14,
+      "case": {
+        "nda": "213973",
+        "product": "001",
+        "date": "2020-05-15",
+        "orig": 1,
+        "ingredient": "RIPRETINIB",
+        "dosage": "TABLET;ORAL",
+        "strength": "50MG",
+        "moieties": [
+          "9XW757O13D"
+        ],
+        "grants": [
+          "10966966",
+          "11185535",
+          "11266635",
+          "11344536",
+          "11395818",
+          "11426390",
+          "11433056",
+          "11529336",
+          "11534432",
+          "11576903",
+          "11576904",
+          "11612591",
+          "11779572",
+          "11793795",
+          "11801237",
+          "11813251",
+          "11844788",
+          "11850240",
+          "11850241",
+          "11896585",
+          "11903933",
+          "11911370",
+          "11918564",
+          "11969414",
+          "11969415",
+          "12023325",
+          "12023326",
+          "12023327",
+          "12023328",
+          "12059410",
+          "12059411",
+          "12064422",
+          "12213967",
+          "12213968",
+          "12226406",
+          "12295944",
+          "12318373",
+          "12318374",
+          "12708617",
+          "8188113",
+          "8461179",
+          "RE48731"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "QINLOCK",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/0",
+        "original_index_ids": {
+          "Label": "63053",
+          "Review": "63589"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 63589 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-05-15",
+          "edition_locator": "FDA original submission Label document ID 63053",
+          "scope_locator": "PDF p. 3 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 18,
+            "text_pages": 18,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0715,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "RIGHTS_HOLD_DISCARDED",
+          "reason": "Express confidentiality and nondisclosure legend on PDF p. 2; local retention and downstream rights unresolved.",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-05-15",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover",
+          "scope_locator": "PDF p. 2 publication/rights legend",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "marker_count": null,
+            "status": "NA_RIGHTS_HOLD"
+          },
+          "local_read": "UNKNOWN_AFTER_NOTICE",
+          "retention": "DISCARDED_AFTER_NOTICE",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": false,
+      "locally_usable_pair": false,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 15,
+      "case": {
+        "nda": "212269",
+        "product": "001",
+        "date": "2020-05-19",
+        "orig": 1,
+        "ingredient": "DEFERIPRONE",
+        "dosage": "TABLET;ORAL",
+        "strength": "1GM",
+        "moieties": [
+          "2BTY8KH53L"
+        ],
+        "grants": [
+          "10780055",
+          "10940115",
+          "10940116",
+          "11357731",
+          "11458103",
+          "11723874"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "FERRIPROX",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/2",
+        "original_index_ids": {
+          "Label": "63165",
+          "Review": "65391"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 65391 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product; the original label expressly includes both 1,000 mg tablet formulations",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-05-19",
+          "edition_locator": "FDA original submission Label document ID 63165",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 16,
+            "text_pages": 16,
+            "marker_count": 0,
+            "extraction_wall_s": 0.047,
+            "extraction_cpu_s": 0.0469
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "SCOPE_UNRESOLVED",
+          "reason": "The 1,000 mg label covers two distinguishable tablet formulations. The formulation qualifier on the quality scope table is redacted, so exact variant coverage remains unresolved.",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-05-19",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope); combined label PDF p. 1",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 39,
+            "text_pages": 39,
+            "marker_count": 3,
+            "extraction_wall_s": 0.1743,
+            "extraction_cpu_s": 0.1562
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": false,
+      "locally_usable_pair": false,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 16,
+      "case": {
+        "nda": "213983",
+        "product": "001",
+        "date": "2020-06-12",
+        "orig": 1,
+        "ingredient": "DOLUTEGRAVIR SODIUM",
+        "dosage": "TABLET, FOR SUSPENSION;ORAL",
+        "strength": "EQ 5MG BASE",
+        "moieties": [
+          "DKO1W9H7M1"
+        ],
+        "grants": [
+          "8129385",
+          "9242986"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "TIVICAY PD",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/0",
+        "original_index_ids": {
+          "Label": "63566",
+          "Review": "65174"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 65174 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-06-12",
+          "edition_locator": "FDA original submission Label document ID 63566",
+          "scope_locator": "PDF p. 1 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 52,
+            "text_pages": 52,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0963,
+            "extraction_cpu_s": 0.0781
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-06-12",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 38,
+            "text_pages": 38,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0962,
+            "extraction_cpu_s": 0.0938
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 17,
+      "case": {
+        "nda": "212102",
+        "product": "001",
+        "date": "2020-06-25",
+        "orig": 1,
+        "ingredient": "FENFLURAMINE HYDROCHLORIDE",
+        "dosage": "SOLUTION;ORAL",
+        "strength": "EQ 2.2MG BASE/ML",
+        "moieties": [
+          "2DS058H2CF"
+        ],
+        "grants": [
+          "10452815",
+          "10478441",
+          "10478442",
+          "10603290",
+          "10947183",
+          "11040018",
+          "11406606",
+          "11759440",
+          "11786487",
+          "12097206",
+          "12734137",
+          "9549909",
+          "9603814",
+          "9603815",
+          "9610260"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "FINTEPLA",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/9",
+        "original_index_ids": {
+          "Label": "63743",
+          "Review": "65530"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 65530 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-06-25",
+          "edition_locator": "FDA original submission Label document ID 63743",
+          "scope_locator": "PDF p. 4 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 33,
+            "text_pages": 33,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0968,
+            "extraction_cpu_s": 0.0938
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-06-25",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 39,
+            "text_pages": 39,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0933,
+            "extraction_cpu_s": 0.0781
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 18,
+      "case": {
+        "nda": "213687",
+        "product": "001",
+        "date": "2020-06-30",
+        "orig": 1,
+        "ingredient": "TRIHEPTANOIN",
+        "dosage": "LIQUID;ORAL",
+        "strength": "100% W/W",
+        "moieties": [
+          "2P6O7CFW5K"
+        ],
+        "grants": [
+          "12551461",
+          "12766123",
+          "12766124",
+          "8697748"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "DOJOLVI",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/0",
+        "original_index_ids": {
+          "Label": "63761",
+          "Review": "64123"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 64123 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-06-30",
+          "edition_locator": "FDA original submission Label document ID 63761",
+          "scope_locator": "PDF p. 4 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 12,
+            "text_pages": 12,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0461,
+            "extraction_cpu_s": 0.0469
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product; visually checked p. 2 scope table because character mapping is garbled",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-06-30",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 28,
+            "text_pages": 28,
+            "marker_count": 0,
+            "extraction_wall_s": 0.04,
+            "extraction_cpu_s": 0.0312,
+            "status": "TEXT_LAYER_PRESENT_WITH_GARBLED_SCOPE_ENCODING"
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 19,
+      "case": {
+        "nda": "212576",
+        "product": "001",
+        "date": "2020-07-07",
+        "orig": 1,
+        "ingredient": "CEDAZURIDINE; DECITABINE",
+        "dosage": "TABLET;ORAL",
+        "strength": "100MG;35MG",
+        "moieties": [
+          "39IS23Q1EW",
+          "776B62CQ27"
+        ],
+        "grants": [
+          "11963971",
+          "12195496",
+          "12239653",
+          "12697347",
+          "8268800",
+          "8618075",
+          "9567363"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "INQOVI",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/0",
+        "original_index_ids": {
+          "Label": "63820",
+          "Review": "64100"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 64100 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-07-07",
+          "edition_locator": "FDA original submission Label document ID 63820",
+          "scope_locator": "PDF p. 3 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 24,
+            "text_pages": 24,
+            "marker_count": 0,
+            "extraction_wall_s": 0.067,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-07-07",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 36,
+            "text_pages": 36,
+            "marker_count": 8,
+            "extraction_wall_s": 0.2093,
+            "extraction_cpu_s": 0.2188
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 20,
+      "case": {
+        "nda": "212690",
+        "product": "001",
+        "date": "2020-07-21",
+        "orig": 1,
+        "ingredient": "CALCIUM OXYBATE; MAGNESIUM OXYBATE; POTASSIUM OXYBATE; SODIUM OXYBATE",
+        "dosage": "SOLUTION;ORAL",
+        "strength": "0.234GM/ML;0.096GM/ML;0.13GM/ML;0.04GM/ML",
+        "moieties": [
+          "30IW36W5B2"
+        ],
+        "grants": [
+          "10195168",
+          "10213400",
+          "10675258",
+          "10864181",
+          "11253494",
+          "11426373",
+          "11554102",
+          "11986446",
+          "12138233",
+          "12582622",
+          "8591922",
+          "8772306",
+          "8901173",
+          "9050302",
+          "9132107",
+          "9486426"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "XYWAV",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/2",
+        "original_index_ids": {
+          "Label": "63994",
+          "Review": "67442"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 67442 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-07-21",
+          "edition_locator": "FDA original submission Label document ID 63994",
+          "scope_locator": "PDF p. 5 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 30,
+            "text_pages": 30,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0955,
+            "extraction_cpu_s": 0.0781
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-07-21",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 25,
+            "text_pages": 25,
+            "marker_count": 4,
+            "extraction_wall_s": 0.1202,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 21,
+      "case": {
+        "nda": "213674",
+        "product": "001",
+        "date": "2020-08-04",
+        "orig": 1,
+        "ingredient": "ENZALUTAMIDE",
+        "dosage": "TABLET;ORAL",
+        "strength": "40MG",
+        "moieties": [
+          "93T0T9GKNU"
+        ],
+        "grants": [
+          "11839689",
+          "12161628",
+          "12502357",
+          "7709517",
+          "8183274",
+          "9126941"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "XTANDI",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/1",
+        "original_edition_locator": "/results/0/submissions/5",
+        "original_index_ids": {
+          "Label": "64201",
+          "Review": "65975"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 65975 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-08-04",
+          "edition_locator": "FDA original submission Label document ID 64201",
+          "scope_locator": "PDF p. 2 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 34,
+            "text_pages": 34,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0806,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-08-04",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 37,
+            "text_pages": 37,
+            "marker_count": 0,
+            "extraction_wall_s": 0.1562,
+            "extraction_cpu_s": 0.1406
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 22,
+      "case": {
+        "nda": "213535",
+        "product": "001",
+        "date": "2020-08-07",
+        "orig": 1,
+        "ingredient": "RISDIPLAM",
+        "dosage": "FOR SOLUTION;ORAL",
+        "strength": "0.75MG/ML",
+        "moieties": [
+          "76RS4S2ET1"
+        ],
+        "grants": [
+          "11534444",
+          "11827646",
+          "11938136",
+          "12122789",
+          "12350273",
+          "9586955",
+          "9969754"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "EVRYSDI",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/6",
+        "original_index_ids": {
+          "Label": "64248",
+          "Review": "64492"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 64492 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-08-07",
+          "edition_locator": "FDA original submission Label document ID 64248",
+          "scope_locator": "PDF p. 3 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 30,
+            "text_pages": 30,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0694,
+            "extraction_cpu_s": 0.0625
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-08-07",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 23,
+            "text_pages": 23,
+            "marker_count": 1,
+            "extraction_wall_s": 0.0732,
+            "extraction_cpu_s": 0.0469
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 23,
+      "case": {
+        "nda": "214120",
+        "product": "001",
+        "date": "2020-09-01",
+        "orig": 1,
+        "ingredient": "AZACITIDINE",
+        "dosage": "TABLET;ORAL",
+        "strength": "200MG",
+        "moieties": [
+          "M801H13NRU"
+        ],
+        "grants": [
+          "11571436",
+          "12053482",
+          "8846628"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "ONUREG",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/0",
+        "original_index_ids": {
+          "Label": "64467",
+          "Review": "66059"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 66059 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-09-01",
+          "edition_locator": "FDA original submission Label document ID 64467",
+          "scope_locator": "PDF p. 5 (dosage forms and strengths)",
+          "source_link_basis": [
+            "FDA pinned ApplicationDocs ORIG label"
+          ],
+          "text_proxy": {
+            "pages": 23,
+            "text_pages": 23,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0562,
+            "extraction_cpu_s": 0.0312
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-09-01",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 2 scope",
+          "scope_locator": "PDF p. 2 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 41,
+            "text_pages": 41,
+            "marker_count": 6,
+            "extraction_wall_s": 0.1151,
+            "extraction_cpu_s": 0.1094
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    },
+    {
+      "rank": 24,
+      "case": {
+        "nda": "213721",
+        "product": "001",
+        "date": "2020-09-04",
+        "orig": 1,
+        "ingredient": "PRALSETINIB",
+        "dosage": "CAPSULE;ORAL",
+        "strength": "100MG",
+        "moieties": [
+          "1WPE73O1WV"
+        ],
+        "grants": [
+          "10030005",
+          "11273160",
+          "11872192",
+          "11963958",
+          "12448366",
+          "12539303",
+          "12655128",
+          "12692251"
+        ],
+        "exposure": "EXPOSURE_UNKNOWN"
+      },
+      "brand": "GAVRETO",
+      "metadata": {
+        "status": "EXACT_KEY_MATCHED",
+        "issuer": "US FDA",
+        "edition": "2026-11-25",
+        "attempt_slot": "exact_metadata",
+        "product_locator": "/results/0/products/0",
+        "original_edition_locator": "/results/0/submissions/9",
+        "original_index_ids": {
+          "Review": "64757"
+        },
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "FDA_METADATA_CC0_SUBJECT_TO_TERMS",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "package": {
+        "status": "ORIGINAL_PACKAGE_INDEX_VERIFIED",
+        "issuer": "US FDA",
+        "attempt_slot": "package_page",
+        "locator": "ApplicationDocsID 64757 in FDA ORIG manifest",
+        "local_read": "PUBLIC_METADATA",
+        "retention": "PRIVATE_RESEARCH_COPY",
+        "redistribution": "UNASSESSED",
+        "cloud": "NOT_AUTHORIZED"
+      },
+      "sources": {
+        "label": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product",
+          "issuer": "US FDA",
+          "attempt_slot": "label_identity",
+          "edition": "ORIG 1, approved 2020-09-04",
+          "edition_locator": "Original issuer package label entry, Orig1s000 filename and September 2020 revision in PDF p. 2",
+          "scope_locator": "PDF p. 5 (dosage forms and strengths)",
+          "source_link_basis": [
+            "pdfFiles.lbl=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 27,
+            "text_pages": 27,
+            "marker_count": 0,
+            "extraction_wall_s": 0.0914,
+            "extraction_cpu_s": 0.0781
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        },
+        "quality": {
+          "status": "VERIFIED",
+          "reason": "Issuer original edition and scoped form/strength match the selected product; p. 2 identity and p. 4 product scope strength",
+          "issuer": "US FDA",
+          "attempt_slot": "quality_identity",
+          "edition": "ORIG 1, approved 2020-09-04",
+          "edition_locator": "Original issuer package Product Quality Review link; PDF p. 1 cover and p. 4 scope",
+          "scope_locator": "PDF p. 4 (product-quality scope)",
+          "source_link_basis": [
+            "pdfFiles.chemR=1; pdfFilenames"
+          ],
+          "text_proxy": {
+            "pages": 42,
+            "text_pages": 42,
+            "marker_count": 13,
+            "extraction_wall_s": 0.1541,
+            "extraction_cpu_s": 0.1406
+          },
+          "local_read": "PUBLIC_SCOPED_INSPECTION",
+          "retention": "PRIVATE_RESEARCH_COPY",
+          "redistribution": "UNASSESSED",
+          "cloud": "NOT_AUTHORIZED"
+        }
+      },
+      "exact_edition_pair": true,
+      "locally_usable_pair": true,
+      "optional": {
+        "other_regulator": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No jurisdiction-specific product crosswalk was frozen for this US key; the optional lookup was omitted."
+        },
+        "prosecution": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "The group can have multiple listed grants. No single prosecution representative was locked; the optional lookup was omitted."
+        },
+        "litigation": {
+          "status": "NOT_CHECKED",
+          "requests": 0,
+          "reason": "No case ID or exact NDA-to-case lookup was locked; the optional lookup was omitted."
+        }
+      }
+    }
+  ]
+}

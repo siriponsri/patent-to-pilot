@@ -1,0 +1,21 @@
+PREFIX patent: <http://data.epo.org/linked-data/def/patent/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# One exploratory metadata export. Exclude every returned family from a future held study.
+SELECT ?family (MIN(STR(?publication)) AS ?representative_uri)
+       (COUNT(DISTINCT ?publication) AS ?issue_publications)
+WHERE {
+  VALUES ?day { "2021-08-18"^^xsd:date "2021-08-25"^^xsd:date }
+  ?publication patent:publicationDate ?day ;
+      patent:application/patent:familyMemberOf ?family ;
+      patent:classificationIPCInventive ?ipc ;
+      patent:titleOfInvention ?title ;
+      dcterms:abstract ?abstract .
+  FILTER(STRSTARTS(STR(?publication), "http://data.epo.org/linked-data/data/publication/EP/"))
+  FILTER((STRENDS(STR(?publication), "/A1/-") || STRENDS(STR(?publication), "/A2/-")) &&
+         LANGMATCHES(LANG(?title), "en") && LANGMATCHES(LANG(?abstract), "en"))
+}
+GROUP BY ?family
+ORDER BY STR(?family)
+LIMIT 24

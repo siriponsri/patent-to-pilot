@@ -1,0 +1,29 @@
+{
+  "status": "held for independent exact-commit release",
+  "scope": "one exposed D31 Thai OCS engineering pilot",
+  "starting_revision": "c6528a561029f9e921dbddc1c0cd8284d16f189f",
+  "source_directory": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-a-20261126",
+  "corpus_sha256": "f67208e38a8653dee9a8766e9033741bc00aaf98a69c553941d685283ad15e63",
+  "canonical_sha256": "b8377df7d38941ff8617c2ec8f69800e1e05dbfcfeb9578f8be39a35f47369a5",
+  "enrollment_sha256": "1aa21ba3c8716da8b71b7d69074fff9efbc9b4548df2350a39f95500591c214d",
+  "acquisitions_sha256": "c1f5911d7e13da36783e65b81bd39e4783a3c98c11ae095a72a4c49381ca601e",
+  "queries": {
+    "path": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-planner-20261126/queries.json",
+    "sha256": "7564b6d65c4da0d45ef77e05cb950f0adb2a8bd6647780ad483e39ff290ecace"
+  },
+  "key": {
+    "path": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-planner-20261126/key.json",
+    "sha256": "4ae8e66db55ce2c30e5b561922bec6db9ff5c6f32d685b7eaab9f3c0f5ea8981"
+  },
+  "implementation": {
+    "docs/ra-pharma/research/official-correspondence/PROTOCOL.md": "c7d7730a90c6f675b5712810e518f4b68a80b0830776487e7c94d6a3e95a91a4",
+    "scripts/research/ra_pharma/ocs_correspondence.py": "591fda8f4443cac7f835df2d2f749ac99785ed2feae5117f055899d93e70543f",
+    "scripts/research/ra_pharma/ocs_correspondence_score.py": "4d0d5cce1d7dfb8a0011964b462cd1b8e31cfcc9aa439cb7a2f7510d76cc6357"
+  },
+  "original": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-a-20261126/d31-original.json",
+  "cap_pages": 3,
+  "cap_spans": 2,
+  "span_width": 360,
+  "v1_hold_sha256": "4677782b7b9bcb08e509518fdd92405757a687de66f143f078a7a7d572091377",
+  "version": 2
+}

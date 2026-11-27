@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    "docs/ra-pharma/research/FIXTURES.md": "1f1c9098dc148b675780dbea9f6c0a6210abf82ed9784fbc1828a77064ed3a10",
+    "docs/ra-pharma/research/PROTOCOL.md": "3816f8379d028895e6d9b7f5885bfc497b321013eb6867680551ee4efce0b176",
+    "docs/ra-pharma/research/fixtures/diagnostic-key.json": "2966fe4f5165969c24cd8f862fa364b30ca5b0c0afc0ccc7a97789ad6a038f8d",
+    "docs/ra-pharma/research/fixtures/diagnostic-runtime.json": "fde0b4b600253f7fbc435b3b7c9e60856751a6577ccc8163eaf618fa4b92e684",
+    "docs/ra-pharma/research/fixtures/train-key.json": "ab86891f9c8f22fcb8c3818138b6c51f2844f4943752f5d0c875e647730fe259",
+    "docs/ra-pharma/research/fixtures/train-runtime.json": "608105063ae44b9cf059ff42eaf86a94f843789e648f74b6a463207c113efc37",
+    "scripts/research/ra_pharma/fixture_policy.py": "231c674c1feda5e22a08412115af655cf4b9d2dfecae76ca979e91b30312c3b9",
+    "scripts/research/ra_pharma/fixture_run.py": "d5e8daae3bfc59fe8ba233f17cab4722dcf1bd3bc52cc194ee1386186778eaa1"
+  },
+  "output_path": "docs/ra-pharma/research/fixtures/original",
+  "scope": "authored synthetic engineering fixtures only"
+}

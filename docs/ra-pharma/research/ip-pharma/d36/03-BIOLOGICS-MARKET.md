@@ -1,0 +1,21 @@
+# Biologics market | Intravenous rituximab
+
+**US CY2023 and Thailand FY2025/FY2026 evidence, reviewed 27 November 2026. PARK Thai share and revenue sizing.** The intended operator is a hospital pharmacy procurement analyst or biosimilars market-access analyst. Decide whether published Thai evidence supports a brand-mix and realized-spend baseline for one payer. The current alternative is a manual reconciliation of Thai FDA registrations, hospital procurement records and payer utilization reports. ASPE's US claims workflow supplies a worked reference for how to specify the denominator. [M1–M5](EVIDENCE.md)
+
+## Observed US claims and dated competition
+
+- Traditional Medicare Part B fee-for-service in CY2023. Table 1 reports 62% of about 64,000 beneficiaries with a Rituxan or included IV biosimilar claim had a biosimilar claim. Table 5 gives 39,213 biosimilar users. The Table 1 denominator is rounded. Program spending was USD 684 million total and USD 292 million on biosimilars, excluding beneficiary out-of-pocket spending. [M1, Tables 1 and 5](EVIDENCE.md)
+- Table 2 separately reports 62% of furnished units. Its numerator is biosimilar units and denominator is units of Rituxan plus included biosimilars. The same rounded percentage in the two tables describes different units of analysis. The reported volume-weighted biosimilar payment limit was 44% of the reference payment limit. The report's USD 541 million 2023 savings estimate is against a modeled no-competition scenario. [M1, Tables 2–3](EVIDENCE.md)
+- ASPE Figure 2 identifies Truxima, Ruxience and Riabni for the historical group. The reviewed Purple Book snapshot also lists Zimrixby among biosimilars and lists Truxima under interchangeables. Present-day listing and 2023 claims competition have different dates and evidence roles. A license record alone cannot establish distribution, purchases or use. [M1 Figure 2, M2](EVIDENCE.md)
+
+## Thai source feasibility
+
+| Layer | Verified public evidence | Missing for same-payer sizing |
+|---|---|---|
+| Registration | Thai FDA's 30 June 2025 registry snapshot identifies TRUXIMA (1C 1/61(NBS)) as 10 mg/mL infusion solution. The same authority indexes REDDITUX (1C 2/62(NBS)); the records differ in product identity. [M3a, M3b](EVIDENCE.md) | Current commercial supply and a verified product-to-claims crosswalk. TRUXIMA's displayed TMT field is blank. |
+| Procurement plan | In the Thai hospital FY2569 plan, p. 30/56 item 668, code 1091180, records 100 REDDITUX 500 mg vials at THB 5,350 each (THB 535,000 planned), with 56 vials in the source's FY2568 historical use column. The plan was printed before that fiscal year ended. [M4](EVIDENCE.md) | Completed award, actual paid amount, all comparable products, observation cutoff for the history column and payer allocation. |
+| Payer utilization | NHSO reports 2,690 people accessing rituximab 100 or 500 mg/vial in the FY2568 E(2) program. The prior FY2567 count was 2,236. The FY2568 report specifies fund data to 30 September 2025, processed 9 February 2026. [M5, Table 2-14 row 20 and source note](EVIDENCE.md) | Eligible patients, brand/biosimilar breakdown, normalized units, and paid THB by brand for the same program and fiscal period. |
+
+**Strongest objection to sizing.** NHSO demonstrates real molecule-level access in a specific program, and the hospital plan names a competing brand. Joining the two would mix people with vials, program utilization with a hospital plan, and potentially different payer and time coverage. The 113,867 E(2) total counts use across drugs with possible repeat persons. It cannot be used as a denominator for rituximab biosimilar share. Thai biosimilar uptake, payer spend and national market value remain unknown from this review. US prices and uptake are jurisdiction-specific. [M1, M4, M5](EVIDENCE.md)
+
+**Smallest decision-changing check.** Try to reconcile one published payer and fiscal year against a brand-coded utilization or paid-claims table for a defined hospital cohort, with a complete register of included reference and biosimilar products. Compute a bounded share only if numerator and denominator cover the same patients or normalized units and period, and products map to verifiable codes. Add spend only if paid THB for the same cohort is available. Missing either condition keeps the corresponding estimate parked.

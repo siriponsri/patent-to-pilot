@@ -1,0 +1,50 @@
+# B1 preflight receipt · 27 November 2026
+
+**BLOCKED_FRAME.** Both FDA input snapshots passed independent integrity verification. The required dated US grant-to-family crosswalk and a coverage-attested exposed-family exclusion set are unavailable in the permitted local evidence reviewed. B1 stopped before eligibility scanning, family grouping and case lookup.
+
+## Authority and checkout
+
+D35 releases the descriptive B1 preflight with a USD 0 service-charge cap. The [frozen Planner dispatch](https://github.com/siriponsri/patent-to-pilot/blob/6ee17111910ae76206fc46ab9ce05cb560208fe0/docs/ra-pharma/ip-pharma/B1-PLANNER.md) governs this pass. Read-only DT-06 in the original Product checkout at `docs/owner/owner-note-27112026/DT-06_B1_EXECUTION_PROTOCOL.md` matched its manifest entry, SHA-256 `5c47d41e86e5b50de9d7ec2db72479938ec3c88d5e8b5ff849f7513b1632bb1d`. DT-06 Preflight items 3–5 require pinned snapshots and exclusions before lookup. Incoming checkout and live origin research ref agreed at `58855f6e13d1d35a6aad3307d014e08f0020af34`. The checkout was clean, with one worktree for this branch. The assignment designated the executor sole writer of these lane records.
+
+## Source verification
+
+Paths below are relative to the shared private artifact root. Python 3.12.10 computed SHA-256 directly from the retained ZIPs, streamed every member through ZIP CRC verification and inspected only the four listed headers. No data rows were parsed for eligible matters. Publisher dates and ZIP member timestamps describe different provenance fields.
+
+| Source ID and retained path | Version, bytes and SHA-256 | Exact locator and authorized use |
+| --- | --- | --- |
+| FDA-ORA · `ptp-b1-frame-20261127/drugsatfda.zip` | FDA update 25 November 2026, ZIP members dated 24 November. 6,122,502 bytes. `b5f97ad97d5ac78437dcb305808f9f8e1a6caee7983904d96f85adadbd13269f` | `Submissions.txt` header fields `ApplNo`, `SubmissionType`, `SubmissionNo`, `SubmissionStatus`, `SubmissionStatusDate`. `Products.txt` header fields `ApplNo`, `ProductNo`, `Form`, `Strength`, `ActiveIngredient`. Intended for a local original-approval date join. [FDA table definitions and download](https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files) |
+| FDA-OB · `ptp-ip-pharma-landscape-20261126/orange-book.zip` | 13 November 2026 snapshot. 1,104,034 bytes. `d4dbc9d85df4fbd78c5e448f130a55b05054f529d2054a46df10735437792241` | `products.txt` header fields `Appl_Type`, `Appl_No`, `Product_No`, `Type`, `Ingredient`, `DF;Route`. `patent.txt` shares the exact product key and supplies `Patent_No`. Intended for local NDA/RX and listed-grant metadata. [FDA product and patent definitions and download](https://www.fda.gov/drugs/drug-approvals-and-databases/orange-book-data-files) |
+
+For each ZIP, local read and processing of agency metadata are authorized under the dispatch. Cloud import and redistribution are UNKNOWN. FDA's website policy generally allows reuse of agency website content subject to exceptions. That policy does not resolve rights for each archive edition or applicant document. Source-specific label and review rights remain NOT_ATTEMPTED. [FDA website policy, Linking to or Copying Information](https://www.fda.gov/about-fda/about-website/website-policies)
+
+## Family and exposure boundary
+
+The product and patent headers supply keys for an exact listing join. They provide no general patent-family ID. A dated family crosswalk must normalize grant and publication aliases and define how it handles missing, conflicting and related records. The exclusion artifact must use the same family definition and establish coverage of known project and demo exposures.
+
+- The [frozen six-ingredient FDA pilot](https://github.com/siriponsri/patent-to-pilot/blob/6ee17111910ae76206fc46ab9ce05cb560208fe0/docs/ra-pharma/ip-pharma/FDA-PILOT.md) supplies the six seed names (apixaban, rivaroxaban, sitagliptin phosphate, omeprazole, metformin hydrochloride and empagliflozin). The dispatch extends exclusion to combinations and aliases. The [ELIQUIS receipt](../ELIQUIS-DOSSIER.md) and [three closed-case receipt](../ACCESS-RECOVERY-RECEIPT.md) supply exposed NDA seeds 220073, 220963, 221109 and 219379. These references supply some identities without establishing family closure.
+- The [Product receipt at b690f9f9](https://github.com/siriponsri/patent-to-pilot/blob/b690f9f9/docs/ra-pharma/product/RECEIPT-P1-P5.md) records a fictional dossier with a real reused patent and separate development example. The [successor intake](../../successor/README.md#exclusion-feasibility) documents further legacy display seeds and unresolved coverage. Its permissible exposure-only file `ptp-is1-successor-preflight-20261126/epo-sandbox-exclude-families.txt` has 24 distinct nonempty identifiers, 1,441 bytes and SHA-256 `753753272378a5726dfbf9064363de29929c5daa2c7f1529db58d035bf598ddd`. It is a bounded sample. The older [HT-M2 family report](../../../../healthtech/audits/luna-long-run-20261029-family-mapping-20261029/REPORT.md) documents a cohort-limited evaluator mapping for device patents. Only the public report was inspected. No evaluator mapping or old contaminated label file was opened.
+- The B1, FDA landscape, recovery and IP Pharma Phase 1/review private directories were checked by filename. The retained materials include the FDA snapshots, earlier case sources and acquisition receipts. This inventory yielded no B1 crosswalk or coverage-attested exclusion artifact. Project and demo scope was checked through the safe receipts above, without opening private case bodies.
+
+| Public route checked on 27 November 2026 | Finding |
+| --- | --- |
+| EPO DOCDB | Worldwide bibliographic data with DOCDB simple family IDs. EPO lists it as free under database-specific terms. Its stated approximately 200 GB compressed backfile exceeds the observed 56.1 GB free at the private root. The public distribution portal returned a JavaScript-only page to text fetch, so an applicable manifest, bounded subset and byte-level coverage remain unverified. No terms accepted or data downloaded. [DOCDB scope and delivery](https://www.epo.org/en/searching-for-patents/data/bulk-data-sets/docdb) · [EPO price list](https://www.epo.org/en/service-support/ordering/patent-information-products) · [Distribution portal](https://publication-bdds.apps.epo.org/raw-data/products) |
+| EPO Linked Open EP Data and OPS | Linked Open EP Data can supply simple-family identifiers for its documented EP-centered scope. US publications without the requisite EP linkage are not assured coverage. OPS is credentialed and its live family route does not supply a frozen local bulk snapshot. Neither establishes the project's exclusion inventory. [Linked-data coverage](https://data.epo.org/linked-data/documentation/data-coverage) · [OPS access](https://www.epo.org/en/searching-for-patents/data/web-services/ops) |
+| Google Patents Public Datasets and USPTO PatentsView | The Google catalog documents `publications.family_id` and a patent ID/publication-number match table. No immutable locally retained export, current completeness proof, approved zero-charge extraction or covered exposure inventory was verified. PatentsView documents grant and pre-grant bibliographic downloads and linkage tables. Those can supply identifiers and lineage inputs. The checked documentation yielded no ready B1 family crosswalk with a declared equivalent family definition. [Google table catalog](https://github.com/google/patents-public-data/blob/master/tables/index.md) · [BigQuery pricing and public access](https://docs.cloud.google.com/bigquery/public-data) · [USPTO PatentsView scope](https://www.uspto.gov/ip-policy/economic-research/patentsview) · [PatentsView bulk table index](https://github.com/PatentsView/PatentsView-Code-Examples/blob/main/data-downloads/sources.yml) |
+
+These routes identify possible family sources. Even complete bibliographic coverage would still require a project-side manifest of exposed identifiers and aliases. A patent's publication year does not certify that its lineage is fresh.
+
+## Activities and costs
+
+The ZIPs total 7,226,536 compressed bytes and the CRC pass processed 52,449,469 uncompressed bytes across 15 members. Reported wall time for both integrity/header checks was 0.365 seconds, excluding interpreter startup. Four header reads followed the CRC pass. Work also included local Git and pathname checks, one 1,441-byte exposure-only metadata read and public documentation checks. Total machine CPU and human review time were not separately instrumented. No human matter inspection took place. Service charges USD 0. No dataset network download, case-specific request, inference, GPU, protected TEST or evaluator-label access occurred.
+
+| DT-06 output or stage | Observed state |
+| --- | --- |
+| Frame integrity | PASS for two ZIPs. Family crosswalk and exclusion coverage BLOCKED_FRAME. |
+| Lock, selector and independent review | No complete lock or selector published because required inputs are absent. Planner review pending. |
+| Prefix and funnel | NOT_RUN. No scope scan, eligible group count, locked prefix, admission denominator or case ID list. |
+| Matter-level rights, marker and optional-source tables | NOT_RUN. No case evidence, marker counts, shape counts or availability results. |
+| B2–B4 | NOT_RUN. No denominator for the downstream funnel decision. |
+
+## Proposed next decision
+
+Keep the frame held. For Planner review, obtain a dated locally usable grant/publication-to-family crosswalk and a same-namespace, coverage-attested exclusion-only set or custodian anti-join covering the registered exposure boundary. Record normalization, coverage and unresolved/ambiguous handling without transferring protected data or labels. The prospective lock must still pin oral dosage terms, small-molecule evidence, active-moiety normalization and aliases, transitive grouping, deterministic ordering, source caps and all input and code hashes. Send the complete lock and executable selector for Planner review before the first case lookup.

@@ -1,0 +1,499 @@
+[
+  {
+    "id": "d01",
+    "patent_family": "d01-patent-family",
+    "law_edition_family": "d01-law-family",
+    "letter_template_family": "d01-letter-template",
+    "request": {
+      "subject": "d01-subject01",
+      "role": "applicant_result",
+      "issuer": "Sponsor laboratory",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d01-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d01"
+    },
+    "candidates": [
+      {
+        "id": "d01-doc01",
+        "route": "deeper",
+        "rank": 1
+      },
+      {
+        "id": "d01-doc02",
+        "route": "attachment",
+        "rank": 2
+      }
+    ],
+    "sources": {
+      "d01-doc01": {
+        "subject": "d01-subject02",
+        "role": "patent_disclosure",
+        "issuer": "Patent publication office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d01-ed02",
+        "topic": "request-d01",
+        "value": "Finding 10",
+        "locator": "p. 1, paragraph 1",
+        "text": "Patent publication office. Edition d01-ed02. patent_disclosure for d01-subject02. request-d01: Finding 10."
+      },
+      "d01-doc02": {
+        "subject": "d01-subject01",
+        "role": "applicant_result",
+        "issuer": "Sponsor laboratory",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d01-ed02",
+        "topic": "request-d01",
+        "value": "Finding 10",
+        "locator": "p. 2, paragraph 1",
+        "text": "Sponsor laboratory. Edition d01-ed02. applicant_result for d01-subject01. request-d01: Finding 10."
+      }
+    }
+  },
+  {
+    "id": "d02",
+    "patent_family": "d02-patent-family",
+    "law_edition_family": "d02-law-family",
+    "letter_template_family": "d02-letter-template",
+    "request": {
+      "subject": "d02-subject01",
+      "role": "claim_limitation",
+      "issuer": "Patent publication office",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d02-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d02"
+    },
+    "candidates": [
+      {
+        "id": "d02-doc01",
+        "route": "deeper",
+        "rank": 1
+      },
+      {
+        "id": "d02-doc02",
+        "route": "claim_parent",
+        "rank": 2
+      }
+    ],
+    "sources": {
+      "d02-doc01": {
+        "subject": "d02-subject02",
+        "role": "claim_limitation",
+        "issuer": "Patent publication office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d02-ed02",
+        "topic": "request-d02",
+        "value": "Finding 11",
+        "locator": "p. 1, paragraph 1",
+        "text": "Patent publication office. Edition d02-ed02. claim_limitation for d02-subject02. request-d02: Finding 11."
+      },
+      "d02-doc02": {
+        "subject": "d02-subject01",
+        "role": "claim_limitation",
+        "issuer": "Patent publication office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d02-ed02",
+        "topic": "request-d02",
+        "value": "Finding 11",
+        "locator": "p. 2, paragraph 1",
+        "text": "Patent publication office. Edition d02-ed02. claim_limitation for d02-subject01. request-d02: Finding 11."
+      }
+    }
+  },
+  {
+    "id": "d03",
+    "patent_family": "d03-patent-family",
+    "law_edition_family": "d03-law-family",
+    "letter_template_family": "d03-letter-template",
+    "request": {
+      "subject": "d03-subject01",
+      "role": "regulatory_requirement",
+      "issuer": "Fictional reviewing authority",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d03-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d03"
+    },
+    "candidates": [
+      {
+        "id": "d03-doc01",
+        "route": "deeper",
+        "rank": 1
+      },
+      {
+        "id": "d03-doc02",
+        "route": "legal_reference",
+        "rank": 2
+      }
+    ],
+    "sources": {
+      "d03-doc01": {
+        "subject": "d03-subject01",
+        "role": "regulatory_requirement",
+        "issuer": "Fictional reviewing authority",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d03-ed01",
+        "topic": "request-d03",
+        "value": "Finding 12",
+        "locator": "p. 1, paragraph 1",
+        "text": "Fictional reviewing authority. Edition d03-ed01. regulatory_requirement for d03-subject01. request-d03: Finding 12."
+      },
+      "d03-doc02": {
+        "subject": "d03-subject01",
+        "role": "regulatory_requirement",
+        "issuer": "Fictional reviewing authority",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d03-ed02",
+        "topic": "request-d03",
+        "value": "Finding 12",
+        "locator": "p. 2, paragraph 1",
+        "text": "Fictional reviewing authority. Edition d03-ed02. regulatory_requirement for d03-subject01. request-d03: Finding 12."
+      }
+    }
+  },
+  {
+    "id": "d04",
+    "patent_family": "d04-patent-family",
+    "law_edition_family": "d04-law-family",
+    "letter_template_family": "d04-letter-template",
+    "request": {
+      "subject": "d04-subject01",
+      "role": "incoming_request",
+      "issuer": "Fictional review office",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d04-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d04"
+    },
+    "candidates": [
+      {
+        "id": "d04-doc01",
+        "route": "attachment",
+        "rank": 1
+      },
+      {
+        "id": "d04-doc02",
+        "route": "deeper",
+        "rank": 2
+      }
+    ],
+    "sources": {
+      "d04-doc01": {
+        "subject": "d04-subject02",
+        "role": "incoming_request",
+        "issuer": "Fictional review office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d04-ed02",
+        "topic": "request-d04",
+        "value": "Finding 13",
+        "locator": "p. 1, paragraph 1",
+        "text": "Fictional review office. Edition d04-ed02. incoming_request for d04-subject02. request-d04: Finding 13."
+      },
+      "d04-doc02": {
+        "subject": "d04-subject01",
+        "role": "incoming_request",
+        "issuer": "Fictional review office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d04-ed02",
+        "topic": "request-d04",
+        "value": "Finding 13",
+        "locator": "p. 2, paragraph 1",
+        "text": "Fictional review office. Edition d04-ed02. incoming_request for d04-subject01. request-d04: Finding 13."
+      }
+    }
+  },
+  {
+    "id": "d05",
+    "patent_family": "d05-patent-family",
+    "law_edition_family": "d05-law-family",
+    "letter_template_family": "d05-letter-template",
+    "request": {
+      "subject": "d05-subject01",
+      "role": "applicant_result",
+      "issuer": "Sponsor laboratory",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d05-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d05"
+    },
+    "candidates": [
+      {
+        "id": "d05-doc01",
+        "route": "deeper",
+        "rank": 1
+      }
+    ],
+    "sources": {
+      "d05-doc01": {
+        "subject": "d05-subject02",
+        "role": "patent_disclosure",
+        "issuer": "Patent publication office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d05-ed02",
+        "topic": "request-d05",
+        "value": "Finding 14",
+        "locator": "p. 1, paragraph 1",
+        "text": "Patent publication office. Edition d05-ed02. patent_disclosure for d05-subject02. request-d05: Finding 14."
+      }
+    }
+  },
+  {
+    "id": "d06",
+    "patent_family": "d06-patent-family",
+    "law_edition_family": "d06-law-family",
+    "letter_template_family": "d06-letter-template",
+    "request": {
+      "subject": "d06-subject01",
+      "role": "applicant_result",
+      "issuer": "Sponsor laboratory",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d06-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d06"
+    },
+    "candidates": [
+      {
+        "id": "d06-doc01",
+        "route": "deeper",
+        "rank": 1
+      }
+    ],
+    "sources": {
+      "d06-doc01": {
+        "subject": "d06-subject01",
+        "role": "applicant_result",
+        "issuer": "Sponsor laboratory",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d06-ed02",
+        "topic": "request-d06",
+        "value": "Finding 15",
+        "locator": "p. 1, paragraph 1",
+        "text": "Sponsor laboratory. Edition d06-ed02. applicant_result for d06-subject01. request-d06: Finding 15."
+      }
+    }
+  },
+  {
+    "id": "d07",
+    "patent_family": "d07-patent-family",
+    "law_edition_family": "d07-law-family",
+    "letter_template_family": "d07-letter-template",
+    "request": {
+      "subject": "d07-subject01",
+      "role": "applicant_result",
+      "issuer": "Sponsor laboratory",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d07-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d07"
+    },
+    "candidates": [
+      {
+        "id": "d07-doc01",
+        "route": "deeper",
+        "rank": 1
+      },
+      {
+        "id": "d07-doc02",
+        "route": "attachment",
+        "rank": 2
+      }
+    ],
+    "sources": {
+      "d07-doc01": {
+        "subject": "d07-subject01",
+        "role": "applicant_result",
+        "issuer": "Sponsor laboratory",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d07-ed02",
+        "topic": "request-d07",
+        "value": "Finding 16",
+        "locator": "p. 1, paragraph 1",
+        "text": "Sponsor laboratory. Edition d07-ed02. applicant_result for d07-subject01. request-d07: Finding 16."
+      },
+      "d07-doc02": {
+        "subject": "d07-subject02",
+        "role": "applicant_result",
+        "issuer": "Sponsor laboratory",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d07-ed02",
+        "topic": "request-d07",
+        "value": "Finding 16",
+        "locator": "p. 2, paragraph 1",
+        "text": "Sponsor laboratory. Edition d07-ed02. applicant_result for d07-subject02. request-d07: Finding 16."
+      }
+    }
+  },
+  {
+    "id": "d08",
+    "patent_family": "d08-patent-family",
+    "law_edition_family": "d08-law-family",
+    "letter_template_family": "d08-letter-template",
+    "request": {
+      "subject": "d08-subject01",
+      "role": "regulatory_requirement",
+      "issuer": "Fictional reviewing authority",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d08-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d08"
+    },
+    "candidates": [
+      {
+        "id": "d08-doc01",
+        "route": "legal_reference",
+        "rank": 1
+      }
+    ],
+    "sources": {
+      "d08-doc01": {
+        "subject": "d08-subject01",
+        "role": "regulatory_requirement",
+        "issuer": "Fictional reviewing authority",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d08-ed01",
+        "topic": "request-d08",
+        "value": "Finding 17",
+        "locator": "p. 1, paragraph 1",
+        "text": "Fictional reviewing authority. Edition d08-ed01. regulatory_requirement for d08-subject01. request-d08: Finding 17."
+      }
+    }
+  },
+  {
+    "id": "d09",
+    "patent_family": "d09-patent-family",
+    "law_edition_family": "d09-law-family",
+    "letter_template_family": "d09-letter-template",
+    "request": {
+      "subject": "d09-subject01",
+      "role": "incoming_request",
+      "issuer": "Fictional review office",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d09-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d09"
+    },
+    "candidates": [
+      {
+        "id": "d09-doc01",
+        "route": "claim_parent",
+        "rank": 1
+      },
+      {
+        "id": "d09-doc02",
+        "route": "attachment",
+        "rank": 2
+      },
+      {
+        "id": "d09-doc03",
+        "route": "deeper",
+        "rank": 3
+      }
+    ],
+    "sources": {
+      "d09-doc01": {
+        "subject": "d09-subject01",
+        "role": "claim_limitation",
+        "issuer": "Patent publication office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d09-ed02",
+        "topic": "unrelated-d09",
+        "value": "Finding 18",
+        "locator": "p. 1, paragraph 1",
+        "text": "Patent publication office. Edition d09-ed02. claim_limitation for d09-subject01. unrelated-d09: Finding 18."
+      },
+      "d09-doc02": {
+        "subject": "d09-subject01",
+        "role": "claim_limitation",
+        "issuer": "Patent publication office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d09-ed02",
+        "topic": "unrelated-d09",
+        "value": "Finding 18",
+        "locator": "p. 2, paragraph 1",
+        "text": "Patent publication office. Edition d09-ed02. claim_limitation for d09-subject01. unrelated-d09: Finding 18."
+      },
+      "d09-doc03": {
+        "subject": "d09-subject01",
+        "role": "incoming_request",
+        "issuer": "Fictional review office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d09-ed02",
+        "topic": "request-d09",
+        "value": "Finding 18",
+        "locator": "p. 3, paragraph 1",
+        "text": "Fictional review office. Edition d09-ed02. incoming_request for d09-subject01. request-d09: Finding 18."
+      }
+    }
+  },
+  {
+    "id": "d10",
+    "patent_family": "d10-patent-family",
+    "law_edition_family": "d10-law-family",
+    "letter_template_family": "d10-letter-template",
+    "request": {
+      "subject": "d10-subject01",
+      "role": "regulatory_requirement",
+      "issuer": "Fictional reviewing authority",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d10-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d10"
+    },
+    "candidates": [
+      {
+        "id": "d10-doc01",
+        "route": "deeper",
+        "rank": 1
+      }
+    ],
+    "sources": {
+      "d10-doc01": {
+        "subject": "d10-subject02",
+        "role": "patent_disclosure",
+        "issuer": "Patent publication office",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d10-ed02",
+        "topic": "unrelated-d10",
+        "value": "Finding 19",
+        "locator": "p. 1, paragraph 1",
+        "text": "Patent publication office. Edition d10-ed02. patent_disclosure for d10-subject02. unrelated-d10: Finding 19."
+      }
+    }
+  },
+  {
+    "id": "d11",
+    "patent_family": "d11-patent-family",
+    "law_edition_family": "d11-law-family",
+    "letter_template_family": "d11-letter-template",
+    "request": {
+      "subject": "d11-subject01",
+      "role": "applicant_result",
+      "issuer": "Sponsor laboratory",
+      "jurisdiction": "fictional-jurisdiction",
+      "edition": "d11-ed02",
+      "as_of": "2026-11-26",
+      "topic": "request-d11"
+    },
+    "candidates": [
+      {
+        "id": "d11-doc01",
+        "route": "attachment",
+        "rank": 1
+      }
+    ],
+    "sources": {
+      "d11-doc01": {
+        "subject": "d11-subject01",
+        "role": "patent_disclosure",
+        "issuer": "Sponsor laboratory",
+        "jurisdiction": "fictional-jurisdiction",
+        "edition": "d11-ed02",
+        "topic": "request-d11",
+        "value": "Finding 55",
+        "locator": "p. 1, paragraph 1",
+        "text": "Sponsor laboratory. Edition d11-ed02. Patent disclosure for d11-subject01. Request-d11: Finding 55."
+      }
+    }
+  }
+]

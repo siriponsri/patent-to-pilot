@@ -1,0 +1,28 @@
+{
+  "batch": 3,
+  "status": "BLOCKED_FRAME",
+  "cutoff": "2026-11-27 Asia/Bangkok inclusive",
+  "protocol_sha256": "51eb4fa4dc187f14a398a4e52913d3a1c7f15bac0c684bfa8d53fb9c97eed238",
+  "frame_diagnostic": {
+    "source_id": "PB-OCT-2026",
+    "issuer": "US FDA",
+    "edition": "Purple Book Monthly Historical Data Changes Report - October 2026",
+    "sha256_observed": "f688373c4f1fd274fbfad55d2f7228d00dcea54672f2f17348c5c107ab9fadf1",
+    "bytes_observed": 487133,
+    "raw_retained": false,
+    "parser": "Python csv.reader with utf-8-sig decoding",
+    "logical_record_count": 2276,
+    "column_count": 28,
+    "header_records_1_based": [4, 20],
+    "reference_name_fields": ["Ref. Product Proper Name", "Ref. Product Proprietary Name"],
+    "reference_bla_field_present": false,
+    "reference_bla_binding": "UNESTABLISHED"
+  },
+  "prefix_frozen": false,
+  "ordered_prefix": null,
+  "eligible_group_count": null,
+  "exclusions_applied": false,
+  "detail_accesses": 0,
+  "screened_count": null,
+  "promotion_count": 0
+}

@@ -1,0 +1,22 @@
+# D38 desk check receipt
+
+**Complete. Tied on both inventories. Keep the manual checklist under the frozen rule.** Independent Planner review is pending. The evidence row yielded the same document routing and traceability at the same source access count. [Frozen protocol](PROTOCOL.md) · [Published freeze](https://github.com/siriponsri/patent-to-pilot/commit/315f9cbabd216b7e46397d5c66ec126a3a8cf0ac)
+
+| Inventory | Manual guidance checklist | One-row evidence record | Consequential difference |
+|---|---|---|---|
+| A, structural report and public context | [PASS, request applicant evidence](CHECKLIST-A.md) | [PASS, request applicant evidence](ROW-A.md) | None. Both named the same two lots and asked Northlight CMC for its signed-off direct comparison with method, result and locator. |
+| B, same inputs plus functional report | [PASS, ready for scientific review](CHECKLIST-B.md) | [PASS, ready for scientific review](ROW-B.md) | None. Both linked the same owner, edition, product/lot pair, method and observed difference to D38-FUN F1–F2. Both sent the difference for assessment. |
+
+Each pass covers all four conditions in the [protocol](PROTOCOL.md#common-decision-rules-and-scoring). This is 2/2 authored inventories per form and 4/4 paper cells. There were zero unsupported upgrades from CT-P10 to NL-R, zero unsupported disposition claims and zero consequential omissions in the four records. Each form separately took the two expected actions. The reason for the within-form change is the deliberately added report. The qualitative difference it reports remains open for scientific assessment. Lee et al. supplies product-specific research context on a separate candidate. The actual desk comparator is the FDA-guidance checklist with fields matched to the row. [Lee et al. Fig. 5A/B](https://pubmed.ncbi.nlm.nih.gov/29469653/) · [FDA guidance §§ VI.A.3–4, VI.B–C](https://www.fda.gov/media/159261/download) · [Frozen forms](FORMS.md)
+
+## Execution and costs
+
+The Research Executor in T3 Code (Codex, GPT 6.2 Sol medium) authored the materials, filled the paper forms by direct reading and assessed the four saved fills against the [assessment key](ASSESSMENT-KEY.md) in one post-fill pass. The key was outside the cell inputs. The same executor knew the fixture and completed all cells in one session, with no separate inference run or evaluator. Form order was M1/A, E1/A, E1/B, M1/B. Both forms received the same exact indexed files for each inventory. There were four listed reads for each A cell and five for each B cell, nine per form, counting the index. Both used one fill per cell and the same post-fill audit. Source digests and locators are resolved through the [manifest](SHA256SUMS.txt) and the individual receipts. Published-source digests are unknown. The manifest binds the authored summary card.
+
+The initial attempt to invoke PowerShell's Get-Content through the RTK executable failed before any cell input read. The protocol preparation continued with rg. During M1/A the multi-file rg display returned the four files out of sequence. The executor reviewed them in protocol order from the same display. Later cells used ordered single-file displays. This presentation difference and the executor's prior knowledge could affect effort or attention. No cell was replayed or selectively repaired. There was no extra source access. The prospective commit was verified on the remote before execution and all nine frozen SHA-256 entries matched.
+
+Incremental service charges were USD 0. No charged service, external consultation, data acquisition or GPU job was dispatched. Authoring, direct review, assessment and documentation used session effort. Its dollar cost and per-cell elapsed effort were unmeasured. Operator time, effort differences, error rates in practice, inter-rater agreement and usability are unknown. Full code suite, Product implementation, operator trials and B2–B4 are NOT_RUN.
+
+## Interpretation
+
+The comparison checks an exposed, intentionally simple routing example with two related snapshots. Correct behavior in both formats may reflect a capable baseline, the explicit synthetic contrast or the same executor's knowledge. The result supplies no estimate of the row's added value or of failure rates outside these snapshots. It also supplies no appraisal of the synthetic qualitative difference, technical adequacy, biosimilarity or regulatory acceptability. Independent review of the freeze and receipts is the next lane checkpoint.

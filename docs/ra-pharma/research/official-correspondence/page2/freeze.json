@@ -1,0 +1,69 @@
+{
+  "version": 2,
+  "status": "held for exact independent one-time release",
+  "scope": "same-endpoint D31 extract selection on the first previously unseen Drug Act index page 2",
+  "registration_commit": "17707ffdbc0d347b0561c6aac38bfc4ad851ca6f",
+  "registration_sha256": "baa753e81ea88eb05f94328eca2c29f162eeb9e578b4e2e56299497b49b92a15",
+  "source_directory": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-page2-20261126",
+  "index_html_sha256": "0314b9926fa81184b7a2e8ea9daa95c4e73c6eaaf5012972838d1ac99b37d582",
+  "enrollment_sha256": "dc4d5ba5cb0beca14f27b47619300e703dde299203f7b2fe0ed5ab05e7040b55",
+  "acquisitions_sha256": "d0647781c787ac57d99a3f110297a0ff571cc3ad384ff98ad8367411ac1bd1c5",
+  "corpus_sha256": "2908f0bebcdb28af08bab0e221ce4ed3e146f57ce9eb100fc1390f43a62b9578",
+  "canonical_sha256": "fe189f67006e5c1140e94030c9c5909eae6030ec791b4eff2bc825daf4246f3f",
+  "source_ids": [
+    "folio-61c190ba09a7",
+    "folio-8745e4be32ea",
+    "folio-a2e268968d07",
+    "folio-b085275e2f3b"
+  ],
+  "family_audit": {
+    "path": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-page2-planner-20261126/family-check.txt",
+    "sha256": "a95baf05c1fd434e542c4cfce309690d1905d852cb4013b7ca0220d1226d83c4"
+  },
+  "queries": {
+    "path": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-page2-planner-20261126/queries.json",
+    "sha256": "2b40db65dd6b2a83006c0c6469874ccd5c0d364b6556ca200a7da84976a9f005"
+  },
+  "key": {
+    "path": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-page2-planner-20261126/key.json",
+    "sha256": "6fac956d3d199b9afeb21dcff367d2fc42f53a1201c2222d45a0b6c5a22f17ab"
+  },
+  "source_reader_receipt": {
+    "issue_rows": 8,
+    "known": 7,
+    "unknown": 1,
+    "confirmed_families": 4,
+    "distinct_requirements": 20
+  },
+  "training_original_sha256": "af251a6d9862ae7c1e987fba6f9b40caf2539561738c8929afc3ef4ef27e2191",
+  "training_code_sha256": "9573efcb3737bd7633cd5408aec70d4693644521dd81c6f4156b6eaadda6f0b6",
+  "training_receipt_sha256": "e21127e30c688794081043b8a94f53e666954b01f1e0cb33164f4bf07f4197e7",
+  "original": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-page2-20261126/page2-original.json",
+  "seal": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-page2-20261126/page2-seal.sha256",
+  "score": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-ocs-page2-20261126/page2-outcomes.json",
+  "caps": {
+    "views": 3,
+    "spans": 2,
+    "normalized_chars_per_span": 360,
+    "common_windows": 128
+  },
+  "arms": [
+    "issue_conditioned",
+    "lexical_diversity",
+    "d31_fixed"
+  ],
+  "primary": [
+    "issue_conditioned",
+    "lexical_diversity"
+  ],
+  "implementation": {
+    "docs/ra-pharma/research/official-correspondence/page2/PREREGISTRATION.md": "baa753e81ea88eb05f94328eca2c29f162eeb9e578b4e2e56299497b49b92a15",
+    "scripts/research/ra_pharma/ocs_correspondence.py": "591fda8f4443cac7f835df2d2f749ac99785ed2feae5117f055899d93e70543f",
+    "scripts/research/ra_pharma/ocs_correspondence_score.py": "4d0d5cce1d7dfb8a0011964b462cd1b8e31cfcc9aa439cb7a2f7510d76cc6357",
+    "scripts/research/ra_pharma/ocs_extract_pair.py": "2c999fb8c615694bf885ac125e06a3447cc09a485d489eb4a7c7c1dd484ee425",
+    "scripts/research/ra_pharma/ocs_extract_pair_score.py": "9a0664e07068ea52458f4337a2b4b76453f64405238a2de17bb3657b9aec795e",
+    "scripts/research/ra_pharma/ocs_extract_pair_train.py": "0c012cd455d51c1554504625057a30404f938a1f55cd6106c7e52fc2e72b0928",
+    "tests/ra_pharma_research/test_ocs_extract_pair.py": "bdb101d13ae6d66f9fbd894f02cb06037b93a044ea3e4870bdc95335769fd7bc"
+  },
+  "v1_hold_sha256": "e5dac7a7bfaff607548e4cd0ae76be2e0d5c9bffcd147d757e9791e5214884ff"
+}

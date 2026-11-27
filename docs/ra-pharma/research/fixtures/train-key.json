@@ -1,0 +1,36 @@
+{
+  "t01": {
+    "permitted_sources": [
+      "t01-doc02"
+    ],
+    "wrong_subject_sources": [
+      "t01-doc01"
+    ],
+    "value": "Finding 10"
+  },
+  "t02": {
+    "permitted_sources": [
+      "t02-doc02"
+    ],
+    "wrong_subject_sources": [
+      "t02-doc01"
+    ],
+    "value": "Finding 11"
+  },
+  "t03": {
+    "permitted_sources": [
+      "t03-doc02"
+    ],
+    "wrong_subject_sources": [],
+    "value": "Finding 12"
+  },
+  "t04": {
+    "permitted_sources": [
+      "t04-doc02"
+    ],
+    "wrong_subject_sources": [
+      "t04-doc01"
+    ],
+    "value": "Finding 13"
+  }
+}

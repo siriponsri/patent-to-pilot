@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+import time
 from pathlib import Path
 
 import numpy as np
@@ -101,10 +102,14 @@ def test_server_owned_vector_config_binds_http_job_to_exact_input(tmp_path: Path
     service = HealthTechJobService(tmp_path / "jobs", code_commit="test", vector_search=vector_service)
     try:
         submitted = service.submit({"input": INPUT, "provider": {"id": "local-vector"}}, "vector-1")
-        for _ in range(100):
+        deadline = time.monotonic() + 3.0
+        status = service.status(submitted["job_id"])
+        while status["state"] not in {"succeeded", "failed"}:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                pytest.fail(f"Vector job did not reach a terminal state in 3 s (last state {status['state']})")
+            time.sleep(min(0.01, remaining))
             status = service.status(submitted["job_id"])
-            if status["state"] in {"succeeded", "failed"}:
-                break
         assert status["state"] == "succeeded"
         assert status["provider"]["id"] == "local-vector"
         result = service.result(submitted["job_id"])

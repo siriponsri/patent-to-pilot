@@ -1,0 +1,83 @@
+{
+  "d01": {
+    "permitted_sources": [
+      "d01-doc02"
+    ],
+    "wrong_subject_sources": [
+      "d01-doc01"
+    ],
+    "value": "Finding 10"
+  },
+  "d02": {
+    "permitted_sources": [
+      "d02-doc02"
+    ],
+    "wrong_subject_sources": [
+      "d02-doc01"
+    ],
+    "value": "Finding 11"
+  },
+  "d03": {
+    "permitted_sources": [
+      "d03-doc02"
+    ],
+    "wrong_subject_sources": [],
+    "value": "Finding 12"
+  },
+  "d04": {
+    "permitted_sources": [
+      "d04-doc02"
+    ],
+    "wrong_subject_sources": [
+      "d04-doc01"
+    ],
+    "value": "Finding 13"
+  },
+  "d05": {
+    "permitted_sources": [],
+    "wrong_subject_sources": [
+      "d05-doc01"
+    ],
+    "value": null
+  },
+  "d06": {
+    "permitted_sources": [
+      "d06-doc01"
+    ],
+    "wrong_subject_sources": [],
+    "value": "Finding 15"
+  },
+  "d07": {
+    "permitted_sources": [
+      "d07-doc01"
+    ],
+    "wrong_subject_sources": [
+      "d07-doc02"
+    ],
+    "value": "Finding 16"
+  },
+  "d08": {
+    "permitted_sources": [],
+    "wrong_subject_sources": [],
+    "value": null
+  },
+  "d09": {
+    "permitted_sources": [
+      "d09-doc03"
+    ],
+    "wrong_subject_sources": [],
+    "value": "Finding 18"
+  },
+  "d10": {
+    "permitted_sources": [],
+    "wrong_subject_sources": [
+      "d10-doc01"
+    ],
+    "value": null
+  },
+  "d11": {
+    "permitted_sources": [],
+    "wrong_subject_sources": [],
+    "value": null
+  }
+}

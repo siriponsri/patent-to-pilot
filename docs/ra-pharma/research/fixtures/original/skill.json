@@ -1,0 +1,193 @@
+{
+  "cpu_seconds": 0.0,
+  "routes_by_role": {
+    "applicant_result": "attachment",
+    "claim_limitation": "claim_parent",
+    "incoming_request": "deeper",
+    "regulatory_requirement": "legal_reference"
+  },
+  "training": [
+    {
+      "candidate_inspections": 2,
+      "case": "t01",
+      "correct": false,
+      "preference": null,
+      "reads": 1,
+      "role": "applicant_result",
+      "source_bytes": 106
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t01",
+      "correct": false,
+      "preference": "deeper",
+      "reads": 1,
+      "role": "applicant_result",
+      "source_bytes": 106
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t01",
+      "correct": false,
+      "preference": "claim_parent",
+      "reads": 1,
+      "role": "applicant_result",
+      "source_bytes": 106
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t01",
+      "correct": false,
+      "preference": "legal_reference",
+      "reads": 1,
+      "role": "applicant_result",
+      "source_bytes": 106
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t01",
+      "correct": true,
+      "preference": "attachment",
+      "reads": 1,
+      "role": "applicant_result",
+      "source_bytes": 98
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t02",
+      "correct": false,
+      "preference": null,
+      "reads": 1,
+      "role": "claim_limitation",
+      "source_bytes": 105
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t02",
+      "correct": false,
+      "preference": "deeper",
+      "reads": 1,
+      "role": "claim_limitation",
+      "source_bytes": 105
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t02",
+      "correct": true,
+      "preference": "claim_parent",
+      "reads": 1,
+      "role": "claim_limitation",
+      "source_bytes": 105
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t02",
+      "correct": false,
+      "preference": "legal_reference",
+      "reads": 1,
+      "role": "claim_limitation",
+      "source_bytes": 105
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t02",
+      "correct": false,
+      "preference": "attachment",
+      "reads": 1,
+      "role": "claim_limitation",
+      "source_bytes": 105
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t04",
+      "correct": false,
+      "preference": null,
+      "reads": 1,
+      "role": "incoming_request",
+      "source_bytes": 103
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t04",
+      "correct": true,
+      "preference": "deeper",
+      "reads": 1,
+      "role": "incoming_request",
+      "source_bytes": 103
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t04",
+      "correct": false,
+      "preference": "claim_parent",
+      "reads": 1,
+      "role": "incoming_request",
+      "source_bytes": 103
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t04",
+      "correct": false,
+      "preference": "legal_reference",
+      "reads": 1,
+      "role": "incoming_request",
+      "source_bytes": 103
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t04",
+      "correct": false,
+      "preference": "attachment",
+      "reads": 1,
+      "role": "incoming_request",
+      "source_bytes": 103
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t03",
+      "correct": false,
+      "preference": null,
+      "reads": 1,
+      "role": "regulatory_requirement",
+      "source_bytes": 115
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t03",
+      "correct": false,
+      "preference": "deeper",
+      "reads": 1,
+      "role": "regulatory_requirement",
+      "source_bytes": 115
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t03",
+      "correct": false,
+      "preference": "claim_parent",
+      "reads": 1,
+      "role": "regulatory_requirement",
+      "source_bytes": 115
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t03",
+      "correct": true,
+      "preference": "legal_reference",
+      "reads": 1,
+      "role": "regulatory_requirement",
+      "source_bytes": 115
+    },
+    {
+      "candidate_inspections": 2,
+      "case": "t03",
+      "correct": false,
+      "preference": "attachment",
+      "reads": 1,
+      "role": "regulatory_requirement",
+      "source_bytes": 115
+    }
+  ],
+  "version": 1,
+  "wall_seconds": 0.0006214999593794346
+}

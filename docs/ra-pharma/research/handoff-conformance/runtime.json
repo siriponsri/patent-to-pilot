@@ -1,0 +1,198 @@
+[
+  {
+    "id": "current",
+    "request": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    },
+    "catalog": [
+      {
+        "id": "current-report",
+        "rank": 2,
+        "scope": {
+          "applicant": "applicant-a",
+          "application": "demo-reference-A",
+          "round": "2",
+          "sequence": "0001",
+          "role": "applicant_result",
+          "issuer": "fictional-applicant-lab"
+        },
+        "edition": "development-v1",
+        "locator": "Stand-in current-report, paragraph 1"
+      }
+    ],
+    "patent_context": false
+  },
+  {
+    "id": "wrong-applicant",
+    "request": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    },
+    "catalog": [
+      {
+        "id": "other-applicant",
+        "rank": 1,
+        "scope": {
+          "applicant": "applicant-b",
+          "application": "demo-reference-A",
+          "round": "2",
+          "sequence": "0001",
+          "role": "applicant_result",
+          "issuer": "fictional-applicant-lab"
+        },
+        "edition": "development-v1",
+        "locator": "Stand-in other-applicant, paragraph 1"
+      },
+      {
+        "id": "current-report",
+        "rank": 2,
+        "scope": {
+          "applicant": "applicant-a",
+          "application": "demo-reference-A",
+          "round": "2",
+          "sequence": "0001",
+          "role": "applicant_result",
+          "issuer": "fictional-applicant-lab"
+        },
+        "edition": "development-v1",
+        "locator": "Stand-in current-report, paragraph 1"
+      }
+    ],
+    "patent_context": false
+  },
+  {
+    "id": "prior-round",
+    "request": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    },
+    "catalog": [
+      {
+        "id": "prior-report",
+        "rank": 1,
+        "scope": {
+          "applicant": "applicant-a",
+          "application": "demo-reference-A",
+          "round": "1",
+          "sequence": "0000",
+          "role": "applicant_result",
+          "issuer": "fictional-applicant-lab"
+        },
+        "edition": "development-v1",
+        "locator": "Stand-in prior-report, paragraph 1"
+      }
+    ],
+    "patent_context": false
+  },
+  {
+    "id": "wrong-sequence",
+    "request": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    },
+    "catalog": [
+      {
+        "id": "wrong-sequence",
+        "rank": 1,
+        "scope": {
+          "applicant": "applicant-a",
+          "application": "demo-reference-A",
+          "round": "2",
+          "sequence": "0000",
+          "role": "applicant_result",
+          "issuer": "fictional-applicant-lab"
+        },
+        "edition": "development-v1",
+        "locator": "Stand-in wrong-sequence, paragraph 1"
+      }
+    ],
+    "patent_context": false
+  },
+  {
+    "id": "missing-attachment",
+    "request": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    },
+    "catalog": [
+      {
+        "id": "patent-chart",
+        "rank": 1,
+        "scope": {
+          "applicant": "applicant-a",
+          "application": "demo-reference-A",
+          "round": "2",
+          "sequence": "0001",
+          "role": "claim_limitation",
+          "issuer": "European Patent Office"
+        },
+        "edition": "2011-03-23",
+        "locator": "EP2298134 A1, English claim 3"
+      }
+    ],
+    "patent_context": true
+  },
+  {
+    "id": "equivalent-witnesses",
+    "request": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    },
+    "catalog": [
+      {
+        "id": "duplicate-report",
+        "rank": 2,
+        "scope": {
+          "applicant": "applicant-a",
+          "application": "demo-reference-A",
+          "round": "2",
+          "sequence": "0001",
+          "role": "applicant_result",
+          "issuer": "fictional-applicant-lab"
+        },
+        "edition": "development-v1",
+        "locator": "Stand-in duplicate-report, paragraph 1"
+      },
+      {
+        "id": "first-report",
+        "rank": 1,
+        "scope": {
+          "applicant": "applicant-a",
+          "application": "demo-reference-A",
+          "round": "2",
+          "sequence": "0001",
+          "role": "applicant_result",
+          "issuer": "fictional-applicant-lab"
+        },
+        "edition": "development-v1",
+        "locator": "Stand-in first-report, paragraph 1"
+      }
+    ],
+    "patent_context": false
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "current": {
+    "valid": {
+      "current-report": "Stand-in current-report, paragraph 1"
+    },
+    "patent_context": null,
+    "binding": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    }
+  },
+  "wrong-applicant": {
+    "valid": {
+      "current-report": "Stand-in current-report, paragraph 1"
+    },
+    "patent_context": null,
+    "binding": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    }
+  },
+  "prior-round": {
+    "valid": {},
+    "patent_context": null,
+    "binding": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    }
+  },
+  "wrong-sequence": {
+    "valid": {},
+    "patent_context": null,
+    "binding": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    }
+  },
+  "missing-attachment": {
+    "valid": {},
+    "patent_context": {
+      "source_id": "EP2298134 A1",
+      "edition": "2011-03-23",
+      "issuer": "European Patent Office",
+      "source_sha256": "e03018f582e9f5dcbb936c38755c6f54250eef73661376d33d4fea420fd95f0b",
+      "locator": "/ep-patent-document/claims[@lang=\"en\"]/claim[@id=\"c-en-0003\"]"
+    },
+    "binding": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    }
+  },
+  "equivalent-witnesses": {
+    "valid": {
+      "first-report": "Stand-in first-report, paragraph 1",
+      "duplicate-report": "Stand-in duplicate-report, paragraph 1"
+    },
+    "patent_context": null,
+    "binding": {
+      "applicant": "applicant-a",
+      "application": "demo-reference-A",
+      "round": "2",
+      "sequence": "0001",
+      "role": "applicant_result",
+      "issuer": "fictional-applicant-lab"
+    }
+  }
+}

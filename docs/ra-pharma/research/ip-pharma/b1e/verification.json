@@ -1,0 +1,99 @@
+{
+  "lock.json": {
+    "revision": "5c583343c4c0d75f098c9ed54ea9cf242271a201",
+    "path": "docs/ra-pharma/ip-pharma/b1e/lock.json",
+    "sha256": "de12cefb63ab064b45585328c50fb71daa50da29a5bb3923ec6b6753589ea58e",
+    "bytes": 5902
+  },
+  "prefix.json": {
+    "revision": "7d5ef920c9e3058cdb563361b6125606950a1931",
+    "path": "docs/ra-pharma/ip-pharma/b1e/prefix.json",
+    "sha256": "49b2b80b51224a78f0618529d7e9109312adab57543ed8e94f496582df7ecf88",
+    "bytes": 12512
+  },
+  "B1E-AMENDMENT.md": {
+    "revision": "b0e7ba42480d5c64e3af8c54ac5e34cbffcccb87",
+    "path": "docs/ra-pharma/ip-pharma/B1E-AMENDMENT.md",
+    "sha256": "75fe128312b96321a8d5ed522a1054e88269c7c835b34a43e2a458ebcec0d96b",
+    "bytes": 10198
+  },
+  "verified_utc": "2026-11-27T04:03:30.279138+00:00",
+  "inputs": {
+    "fda": {
+      "path": "ptp-b1-frame-20261127/drugsatfda.zip",
+      "sha256": "b5f97ad97d5ac78437dcb305808f9f8e1a6caee7983904d96f85adadbd13269f",
+      "bytes": 6122502
+    },
+    "orange": {
+      "path": "ptp-ip-pharma-landscape-20261126/orange-book.zip",
+      "sha256": "d4dbc9d85df4fbd78c5e448f130a55b05054f529d2054a46df10735437792241",
+      "bytes": 1104034
+    },
+    "dictionary": {
+      "path": "ptp-b1e-inputs-20261127/moiety.json",
+      "sha256": "b1a95ba01921e8e8f8ee7a0d06be5121a27713430f2f7e565eaf9228c5338664",
+      "bytes": 2619206
+    },
+    "exposure_aliases": {
+      "path": "ptp-b1e-inputs-20261127/exposure-aliases.json",
+      "sha256": "bd41a5cf80f328c1f0fc113b19c30515009ac49574111fc7710eb2952f5dd407",
+      "bytes": 16600
+    },
+    "partial_epo_families": {
+      "path": "ptp-is1-successor-preflight-20261126/epo-sandbox-exclude-families.txt",
+      "sha256": "753753272378a5726dfbf9064363de29929c5daa2c7f1529db58d035bf598ddd",
+      "bytes": 1441
+    },
+    "gsrs": {
+      "path": "ptp-b1e-inputs-20261127/gsrs-ranged.zip",
+      "sha256": "ecdb74e683550848de72917c9e094f18e7f4982432146c79798f8bb831216810",
+      "bytes": 332195706
+    },
+    "appendix_c": {
+      "path": "ptp-b1e-inputs-20261127/appendix-c.pdf",
+      "sha256": "d0733a7c84fa5a84b9dea3c3d5508ac3ef414b3a6b932eac1957d4c4032a0d4c",
+      "bytes": 76071
+    },
+    "chembl-page-0.json": {
+      "path": "ptp-b1e-inputs-20261127/chembl-page-0.json",
+      "sha256": "0ab31ceb1c3938e3cb2b2e3aa336392d4312b4639aa49b7be5d290cffd97aee5",
+      "bytes": 2432307
+    },
+    "chembl-page-1.json": {
+      "path": "ptp-b1e-inputs-20261127/chembl-page-1.json",
+      "sha256": "79306f0fcc61aafa08cf384450d724ac785fb2353b4ceb36598d50789e14c488",
+      "bytes": 2804111
+    },
+    "chembl-page-2.json": {
+      "path": "ptp-b1e-inputs-20261127/chembl-page-2.json",
+      "sha256": "e77d9243054eff8cd08ded76e23bd6585ef2ce6751a5d46bd8c1ce68e5bd8edd",
+      "bytes": 2825715
+    },
+    "chembl-page-3.json": {
+      "path": "ptp-b1e-inputs-20261127/chembl-page-3.json",
+      "sha256": "0b0a2be115ace37e568be8dc0b2910587acf73babb654524d63f6f27bb17f759",
+      "bytes": 1701159
+    },
+    "chembl-status.json": {
+      "path": "ptp-b1e-inputs-20261127/chembl-status.json",
+      "sha256": "29dc1fb09487a8d2962253a4d0d92c4ded0aa0d831effab42445d0c3483d4740",
+      "bytes": 212
+    },
+    "UNII_Data_20260804.zip": {
+      "path": "ptp-b1e-inputs-20261127/UNII_Data_20260804.zip",
+      "sha256": "e768525350d17e0eedfa179e62563226e9da0a3d5bda006d27b7b94600a76ee9",
+      "bytes": 14477857
+    },
+    "UNIIs_20260804.zip": {
+      "path": "ptp-b1e-inputs-20261127/UNIIs_20260804.zip",
+      "sha256": "c63082f452eed6a172bc90a9a09ef54e298373edfca790c82237997b5edf874e",
+      "bytes": 20344194
+    }
+  },
+  "fixture": "",
+  "selector_sha256": "c5a68f49261dc1c444427e38532aa706a4bc1bd82c3537b875c6b4b752de93ca",
+  "replay_sha256": "49b2b80b51224a78f0618529d7e9109312adab57543ed8e94f496582df7ecf88",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "requests": "2.34.2",
+  "pymupdf": "2.0"
+}

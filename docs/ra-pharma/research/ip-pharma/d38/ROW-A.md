@@ -1,0 +1,7 @@
+# Inventory A · One-row evidence record E1
+
+| Applicant, subject, question and jurisdiction | Lot identities and structural source | Functional owner, edition, product/lot pairing, method, observation and locator | Literature subject and role | Disposition and request or report handoff | Unknowns and unsupported claims |
+|---|---|---|---|---|---|
+| Northlight CMC, NL-R versus US Rituxan, US, 27 November 2026. Internal afucosylation and Fc-mediated function review. [D38-REQ v1, R1](REQUEST.md#request-r1) | NL-R N01 and US Rituxan R01 are mapped in the signed Northlight Analytical CMC structural excerpt. STR-1 identifies the structural method. [D38-STR v1, S1](STRUCTURE.md#summary-s1) | The listed attachments contain no direct functional comparison. Functional owner, edition, pairing, method, observation and locator are unverified. [Inventory A](inventory-A.md) | Lee et al. (2018), Fig. 5A/B concerns CT-P10 and reference materials and provides background on the attribute and function. FDA CDER/CBER September 2025 guidance supports checking direct US-reference comparison and lot accounting. [Context card v1, C1–C2](CONTEXT.md) | **Request applicant evidence.** Ask Northlight CMC for the signed-off NL-R N01 versus US Rituxan R01 direct functional report with issuer, edition, method, comparative observation and exact locator. | Clinical and scientific implications and report adequacy unresolved. Unsupported claims asserted: none. |
+
+Trace D38-E1-A. Four listed reads in order, starting at [inventory A](inventory-A.md). No extra source access.

@@ -1,5 +1,7 @@
 #
 
+**Research integrated on main.** The [project memory](docs/ra-pharma/MEMORY.md) records the merged Research revision and D39 closeout. The [frozen queue](docs/ra-pharma/research/ip-pharma/d39/BATCH4-QUEUE.json) and original Research receipts are now available in this checkout.
+
 Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.
 
 Owner authorized impact-driven redirection within D39. The [Planner field evidence review](docs/ra-pharma/ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.
