@@ -1,5 +1,7 @@
 #
 
+> Historical RA Pharma record. D40 superseded this mandate on 27 November 2026. RA Pharma now supplies the Thai-context demo layer for the active [LOE-Bench program](../loe-bench/PLAN.md).
+
 Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.
 
 Owner authorized impact-driven redirection within D39. The [Planner field evidence review](ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.

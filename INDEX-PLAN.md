@@ -1,4 +1,12 @@
-#
+# Index: plan and evidence
+
+## D40 · LOE-Bench (27 November 2026)
+
+LOE-Bench is the active program on `research/loe-bench`. It forecasts first generic and biosimilar approvals from open regulatory records and can abstain when the evidence is insufficient. RA Pharma supplies the Thai-context demo layer. [Owner decision D40](docs/maintenance/OWNER-DECISIONS-20261122.md#d40--loe-bench-becomes-the-active-program-27-november-2026).
+
+Wave 2 evidence is for development only. The confirmatory test remains sealed, and there is no confirmatory result. Start with the [LOE-Bench documentation map](docs/loe-bench/README.md), [plan and dispatch board](docs/loe-bench/PLAN.md), [lane handoff](docs/loe-bench/HANDOFF.md) and [technique ledger](docs/loe-bench/TECHNIQUE-LEDGER.md).
+
+## Historical index
 
 Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.
 
@@ -16,19 +24,18 @@ The [remaining phase proposal](docs/ra-pharma/ip-pharma/REMAINING-PHASES.md) rec
 **Portfolio direction (D36, 27 November).** Explore generic pharma and biologics for drug discovery and biologics market research. US sources illustrate the evidence available. Target market and segment remain open. D35 preflight has closed. [Questions and benchmarks](docs/ra-pharma/MASTER-PLAN.md#discovery-and-market-research)
 
 **B1 review, 27 November.** BLOCKED_FRAME accepted. Both FDA ZIPs passed verification. Family mapping and exposure coverage could not be established before selection. B1-ext and scoring are NOT_RUN. [Independent review](docs/ra-pharma/ip-pharma/PLANNER-REVIEW.md)
- Index: plan and evidence
 
-The current [IP Pharma portfolio and research proposal](docs/ra-pharma/ip-pharma/REPORT.md) covers eight ideas, ten repositories, two public-data pilots and a [shared KM graph](docs/ra-pharma/ip-pharma/knowledge-graph.json). The earlier programs below retain their original evidence scope.
+The [IP Pharma portfolio and research proposal](docs/ra-pharma/ip-pharma/REPORT.md) covers eight ideas, ten repositories, two public-data pilots and a [shared KM graph](docs/ra-pharma/ip-pharma/knowledge-graph.json). The earlier programs below retain their original evidence scope.
 
-The [research-first study and startup prompt](docs/ra-pharma/RESEARCH-FIRST.md) govern the next session.
+The [research-first study and startup prompt](docs/ra-pharma/RESEARCH-FIRST.md) document the former RA Pharma research mandate.
 
 The [Thai inquiry audit](docs/ra-pharma/THAI-INQUIRY-AUDIT.md) records independent validation for both D31 cohorts. The [Planner dispatch rule](docs/ra-pharma/MASTER-PLAN.md#planner-dispatch-evidence) applies to research and product.
 
-The [active reading architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md) records the mechanism, closest prior work, patent and Thai source checks, six handoff cases and the separate two-read dossier comparison. [D30](docs/maintenance/OWNER-DECISIONS-20261122.md) parks the eight IS1 cells.
+The [reading architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md) records the mechanism, closest prior work, patent and Thai source checks, six handoff cases and the separate two-read dossier comparison. [D30](docs/maintenance/OWNER-DECISIONS-20261122.md) parks the eight IS1 cells.
 
 The [first RA Pharma Research audit](docs/ra-pharma/RESEARCH-AUDIT-20261126.md) records the accepted fixture, the outstanding IS1 and R4 measurements, and the next executor dispatch.
 
-Start with the [RA Pharma dispatch board](docs/ra-pharma/MASTER-PLAN.md), [evidence contract](docs/ra-pharma/EVIDENCE-CONTRACT.md), [project memory](docs/ra-pharma/MEMORY.md) and [current handoff](HANDOFF.md). The [research brief](docs/ra-pharma/research/BRIEF.md) and [product brief](docs/ra-pharma/product/BRIEF.md) assign separate branches. The [S0–S5 board](docs/evidence-scope/MASTER-PLAN.md), [S freeze](docs/evidence-scope/FREEZE.md) and [P0–P5 board](docs/tracking/owner-note-22112026/PHASE_BOARD.md) preserve their historical scopes.
+The [RA Pharma dispatch board](docs/ra-pharma/MASTER-PLAN.md), [evidence contract](docs/ra-pharma/EVIDENCE-CONTRACT.md), [project memory](docs/ra-pharma/MEMORY.md) and [root handoff](HANDOFF.md) preserve the earlier mandate. Its [research brief](docs/ra-pharma/research/BRIEF.md) and [product brief](docs/ra-pharma/product/BRIEF.md) document the original branch assignments. The [S0–S5 board](docs/evidence-scope/MASTER-PLAN.md), [S freeze](docs/evidence-scope/FREEZE.md) and [P0–P5 board](docs/tracking/owner-note-22112026/PHASE_BOARD.md) preserve their historical scopes.
 
 S1 delivered the [controlled data and scorer](docs/evidence-scope/receipts/S1-20261125.md). S2 delivered the [local alpha](docs/evidence-scope/receipts/S2-workbench.md) and [public-source inventory](docs/evidence-scope/receipts/S2-sources.md). S3 closed NEGATIVE on controlled Thai DEV with uninformative English transfer. See the [preregistration](docs/healthtech/audits/S3-20261125/PREREGISTRATION.md), [machine lock](docs/healthtech/audits/S3-20261125/freeze.json), [execution receipt](docs/healthtech/audits/S3-20261125/RESULTS.md), [machine result](docs/healthtech/audits/S3-20261125/results.json) and [continuity matrix](docs/healthtech/audits/S3-20261125/BRIDGE.md).
 

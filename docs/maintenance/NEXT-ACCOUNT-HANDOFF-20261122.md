@@ -1,6 +1,6 @@
 > **SUPERSEDED (22 Nov 2026):** use [NEXT-ACCOUNT-HANDOFF-20261122b.md](NEXT-ACCOUNT-HANDOFF-20261122b.md). Kept as history.
 
-> Historical dispatch. Use the [current handoff](../../HANDOFF.md) and [S0–S5 master plan](../evidence-scope/MASTER-PLAN.md) for new work. The operating procedures below retain their original scope.
+> Historical dispatch. Start new work from the [LOE-Bench plan](../loe-bench/PLAN.md) and [lane handoff](../loe-bench/HANDOFF.md). The [S0–S5 master plan](../evidence-scope/MASTER-PLAN.md) and the procedures below retain their original scope.
 
 # Next-account handoff, 22 Nov 2026 (v2, after the owner decisions)
 

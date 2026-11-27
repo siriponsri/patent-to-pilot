@@ -1,5 +1,7 @@
 # Research lane handoff
 
+> Historical RA Pharma record. D40 superseded this mandate on 27 November 2026. RA Pharma now supplies the Thai-context demo layer for the active [LOE-Bench program](../../loe-bench/PLAN.md).
+
 ## D39 Batch 4 · 27 November 2026
 
 **PARTIAL_SCREEN.** Both pinned Thai PDF digests matched. Eight visible-edition plan codes were frozen and assessed, with eight blocked at exact regulator classification after the NDI setup timeouts. The hospital indexes exposed no attributable title within the reviewed prefix and e-GP disconnected. Zero listed and zero promoted. The [receipt](ip-pharma/d39/BATCH4-RECEIPT.md) records the printed-page gap, issuer and fiscal dates, the source and access ledgers, and a buyer's manual reconciliation. Two frame accesses, five detail accesses, two retries and USD 0.

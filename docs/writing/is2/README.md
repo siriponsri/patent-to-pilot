@@ -1,5 +1,7 @@
 # Track IS2: Independent Study 2 (KMITL)
 
+> Historical IS2 materials. D40 superseded the earlier research direction on 27 November 2026. See the [LOE-Bench plan](../../loe-bench/PLAN.md) for the current study and its IS2 evidence design.
+
 Use the [English short-paper draft](IS2-SHORT-PAPER-DRAFT-EN.md) for editing and review. The [historical bilingual source](IS2-SHORT-PAPER-DRAFT.md) remains an input to the previous faculty-template exporter, which parses specific Thai section headings.
 
 The [RA Pharma research brief](../../ra-pharma/research/BRIEF.md) sets the active scientific question. Use the [original-source record](../../evidence-scope/00-organization.md#original-source-corrections) for IS1 and Paper 53. The [earlier synthesis plan](../../evidence-scope/05-synthesis.md) and dated outlines below preserve their historical scope. Write project documentation in English.

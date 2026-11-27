@@ -1,6 +1,6 @@
 # Lessons for the next agent account
 
-Read [CLAUDE.md](../../CLAUDE.md), the [current handoff](../../HANDOFF.md) and the [RA Pharma plan](../ra-pharma/MASTER-PLAN.md) at takeover. The historical experiments below document failures and operating limits worth preserving.
+Read [CLAUDE.md](../../CLAUDE.md), the [root handoff](../../HANDOFF.md), the [LOE-Bench plan](../loe-bench/PLAN.md) and the [LOE-Bench lane handoff](../loe-bench/HANDOFF.md) at takeover. The historical experiments below document failures and operating limits worth preserving.
 
 ## Working with the owner
 

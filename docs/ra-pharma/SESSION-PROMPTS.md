@@ -1,5 +1,7 @@
 # Start the two executor sessions
 
+> Historical RA Pharma record. D40 superseded this mandate on 27 November 2026. RA Pharma now supplies the Thai-context demo layer for the active [LOE-Bench program](../loe-bench/PLAN.md).
+
 Open two independent checkouts from the published origin branches. Select the named model and reasoning level in the client. Paste the corresponding prompt. Each session records its own actual base and checks for later commits when it starts.
 
 Current research startup is in the [research-first plan](RESEARCH-FIRST.md#read-only-starting-prompt). The prompts below document the earlier parallel dispatch.

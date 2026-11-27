@@ -1,6 +1,6 @@
 # Next-account handoff — 24 Nov 2026 (updated 08:00: A3r1 finished, P1 closed)
 
-> Historical dispatch. Use the [current handoff](../../HANDOFF.md) and [RA Pharma master plan](../ra-pharma/MASTER-PLAN.md) for new work. The operating procedures below retain their original scope.
+> Historical dispatch. Start new work from the [LOE-Bench plan](../loe-bench/PLAN.md) and [lane handoff](../loe-bench/HANDOFF.md). The [RA Pharma master plan](../ra-pharma/MASTER-PLAN.md) and the procedures below retain their original scope.
 
 The previous Claude account stopped at the owner's request because its weekly limit was near. This file is the entry
 point for the next account. Report to the owner in **plain Thai**. Code, docs and the paper stay English-first.
