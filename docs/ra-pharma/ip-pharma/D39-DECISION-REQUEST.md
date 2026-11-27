@@ -29,3 +29,5 @@ The envelope covers public desk research and file-based handoffs only. Escalate 
 Before screening, prefer questions where the closest published study leaves a consequential decision unresolved. For each shortlisted question identify that study, the specific gap, the strongest incumbent and what observation would overturn the opportunity. A publishable descriptive contribution may be a reproducible gap or a convincing negative. Record limits on transfer across products, payers and countries.
 
 For the owner demonstration, put the incumbent decision, exact source locator and resulting action side by side. Show what a developer, pharmacist or buyer would do differently and why. If both routes support the same action, record the tie. Journal placement, adoption and time savings remain unknown. These priorities guide ordering within the approved scope and add no owner approval gate.
+
+Owner authorized impact-driven redirection within D39. The [Planner field evidence review](D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.

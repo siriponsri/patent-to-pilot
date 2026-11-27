@@ -1,5 +1,7 @@
 #
 
+Owner authorized impact-driven redirection within D39. The [Planner field evidence review](ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.
+
 **Owner approved option A.** [D39 public opportunity discovery](ip-pharma/D39-DECISION-REQUEST.md) authorizes up to twelve batches. Batch 1 released for protocol lock; Product held.
 **D38 closed after independent review.** [Planner impact review and handback](ip-pharma/D38-IMPACT-REVIEW.md). Two ties on two synthetic inventories. Keep the checklist and park the proposed Product feature. Operator benefit remains unmeasured.
 

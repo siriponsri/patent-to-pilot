@@ -167,3 +167,5 @@ The owner approved the D36 proposed desk check, conditional on Planner reviewing
 ## D39 - Public opportunity discovery, option A (27 November 2026)
 
 The owner approved up to twelve sequential public desk-research batches, Thailand first with US comparators and USD 0 incremental service spend. Planner reviews each batch and reports at 4, 8 and close. The first release covers the prospective discovery lock only. See the [approved scope](../ra-pharma/ip-pharma/D39-DECISION-REQUEST.md).
+
+Owner authorized impact-driven redirection within D39. The [Planner field evidence review](../ra-pharma/ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.
