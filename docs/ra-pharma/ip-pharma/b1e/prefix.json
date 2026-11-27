@@ -1,0 +1,596 @@
+{
+  "original_nda_count": 5375,
+  "unknown_original": 24,
+  "original_ndas_in_period": 496,
+  "orange_product_keys": 936,
+  "fda_only_product_keys": 38,
+  "product_dispositions": {
+    "ELIGIBLE": 304,
+    "KNOWN_OVERLAP": 15,
+    "NO_LISTED_GRANT": 15,
+    "OUTSIDE_FORM_ROUTE": 382,
+    "OUTSIDE_RX_RLD": 164,
+    "UNKNOWN_MOIETY_OR_CLASS": 56
+  },
+  "eligible_groups": 171,
+  "selected_groups": 24,
+  "prefix": [
+    {
+      "nda": "212608",
+      "product": "001",
+      "date": "2020-01-09",
+      "orig": 1,
+      "ingredient": "AVAPRITINIB",
+      "dosage": "TABLET;ORAL",
+      "strength": "100MG",
+      "moieties": [
+        "513P80B4YJ"
+      ],
+      "grants": [
+        "11964980",
+        "11999744",
+        "12060354",
+        "9200002",
+        "9944651",
+        "9994575"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213138",
+      "product": "001",
+      "date": "2020-01-24",
+      "orig": 1,
+      "ingredient": "FIDAXOMICIN",
+      "dosage": "FOR SUSPENSION;ORAL",
+      "strength": "40MG/ML",
+      "moieties": [
+        "Z5N076G8YQ"
+      ],
+      "grants": [
+        "7378508",
+        "7863249",
+        "7906489",
+        "8859510",
+        "9808530"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213491",
+      "product": "001",
+      "date": "2020-02-14",
+      "orig": 1,
+      "ingredient": "CYSTEAMINE BITARTRATE",
+      "dosage": "GRANULE, DELAYED RELEASE;ORAL",
+      "strength": "EQ 75MG BASE/PACKET",
+      "moieties": [
+        "5UX2SD1KE2"
+      ],
+      "grants": [
+        "10143665",
+        "10328037",
+        "10548859",
+        "10905662",
+        "8026284",
+        "9173851",
+        "9192590",
+        "9198882",
+        "9233077",
+        "9925156",
+        "9925157",
+        "9925158"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "212728",
+      "product": "001",
+      "date": "2020-02-27",
+      "orig": 1,
+      "ingredient": "RIMEGEPANT SULFATE",
+      "dosage": "TABLET, ORALLY DISINTEGRATING;ORAL",
+      "strength": "EQ 75MG BASE",
+      "moieties": [
+        "997WVV895X"
+      ],
+      "grants": [
+        "11083724",
+        "8314117",
+        "8759372"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "212801",
+      "product": "001",
+      "date": "2020-03-06",
+      "orig": 1,
+      "ingredient": "OSILODROSTAT PHOSPHATE",
+      "dosage": "TABLET;ORAL",
+      "strength": "EQ 1MG BASE",
+      "moieties": [
+        "5YL4IQ1078"
+      ],
+      "grants": [
+        "10143680",
+        "10709691",
+        "8314097",
+        "8609862",
+        "8835646",
+        "9434754"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "209899",
+      "product": "001",
+      "date": "2020-03-25",
+      "orig": 1,
+      "ingredient": "OZANIMOD HYDROCHLORIDE",
+      "dosage": "CAPSULE;ORAL",
+      "strength": "EQ 0.23MG BASE",
+      "moieties": [
+        "Z80293URPV"
+      ],
+      "grants": [
+        "10239846",
+        "11680050",
+        "8481573",
+        "8796318",
+        "9382217"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213756",
+      "product": "001",
+      "date": "2020-04-10",
+      "orig": 1,
+      "ingredient": "SELUMETINIB SULFATE",
+      "dosage": "CAPSULE;ORAL",
+      "strength": "EQ 10MG BASE",
+      "moieties": [
+        "6UH91I579U"
+      ],
+      "grants": [
+        "11813246",
+        "12220403",
+        "12318367",
+        "12364684",
+        "7425637",
+        "8178693",
+        "9156795",
+        "9562017"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213411",
+      "product": "001",
+      "date": "2020-04-17",
+      "orig": 1,
+      "ingredient": "TUCATINIB",
+      "dosage": "TABLET;ORAL",
+      "strength": "50MG",
+      "moieties": [
+        "234248D0HH"
+      ],
+      "grants": [
+        "11207324",
+        "11504370",
+        "11666572",
+        "12048698",
+        "8648087",
+        "9457093",
+        "9693989"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213736",
+      "product": "001",
+      "date": "2020-04-17",
+      "orig": 1,
+      "ingredient": "PEMIGATINIB",
+      "dosage": "TABLET;ORAL",
+      "strength": "4.5MG",
+      "moieties": [
+        "Y6BX7BL23K"
+      ],
+      "grants": [
+        "10131667",
+        "11466004",
+        "11628162",
+        "12552792",
+        "9611267"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "212489",
+      "product": "001",
+      "date": "2020-04-24",
+      "orig": 1,
+      "ingredient": "OPICAPONE",
+      "dosage": "CAPSULE;ORAL",
+      "strength": "25MG",
+      "moieties": [
+        "Y5929UIJ5N"
+      ],
+      "grants": [
+        "10071085",
+        "10583130",
+        "12129247",
+        "8168793",
+        "8524746",
+        "8907099",
+        "9550759",
+        "9630955",
+        "9745290"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "210296",
+      "product": "001",
+      "date": "2020-04-28",
+      "orig": 1,
+      "ingredient": "MONOMETHYL FUMARATE",
+      "dosage": "CAPSULE, DELAYED RELEASE;ORAL",
+      "strength": "95MG",
+      "moieties": [
+        "45IUB1PX8R"
+      ],
+      "grants": [
+        "10098863",
+        "10105335",
+        "10105336",
+        "10105337",
+        "10918615",
+        "10918616",
+        "10918617",
+        "10945985",
+        "11590095",
+        "11903918",
+        "9326947",
+        "9326965",
+        "9511043",
+        "9517209",
+        "9566259",
+        "9636318",
+        "9636319",
+        "9814691",
+        "9814692",
+        "9820960",
+        "9820961"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "212157",
+      "product": "001",
+      "date": "2020-05-05",
+      "orig": 1,
+      "ingredient": "CELECOXIB",
+      "dosage": "SOLUTION;ORAL",
+      "strength": "25MG/ML",
+      "moieties": [
+        "JCX84Q7J1L"
+      ],
+      "grants": [
+        "10376527",
+        "10722456",
+        "10799517",
+        "9572819",
+        "9795620",
+        "9949990"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213591",
+      "product": "001",
+      "date": "2020-05-06",
+      "orig": 1,
+      "ingredient": "CAPMATINIB HYDROCHLORIDE",
+      "dosage": "TABLET;ORAL",
+      "strength": "EQ 150MG BASE",
+      "moieties": [
+        "TY34L4F9OZ"
+      ],
+      "grants": [
+        "10596178",
+        "12084449",
+        "12208101",
+        "7767675",
+        "8420645",
+        "8461330",
+        "8901123"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213973",
+      "product": "001",
+      "date": "2020-05-15",
+      "orig": 1,
+      "ingredient": "RIPRETINIB",
+      "dosage": "TABLET;ORAL",
+      "strength": "50MG",
+      "moieties": [
+        "9XW757O13D"
+      ],
+      "grants": [
+        "10966966",
+        "11185535",
+        "11266635",
+        "11344536",
+        "11395818",
+        "11426390",
+        "11433056",
+        "11529336",
+        "11534432",
+        "11576903",
+        "11576904",
+        "11612591",
+        "11779572",
+        "11793795",
+        "11801237",
+        "11813251",
+        "11844788",
+        "11850240",
+        "11850241",
+        "11896585",
+        "11903933",
+        "11911370",
+        "11918564",
+        "11969414",
+        "11969415",
+        "12023325",
+        "12023326",
+        "12023327",
+        "12023328",
+        "12059410",
+        "12059411",
+        "12064422",
+        "12213967",
+        "12213968",
+        "12226406",
+        "12295944",
+        "12318373",
+        "12318374",
+        "12708617",
+        "8188113",
+        "8461179",
+        "RE48731"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "212269",
+      "product": "001",
+      "date": "2020-05-19",
+      "orig": 1,
+      "ingredient": "DEFERIPRONE",
+      "dosage": "TABLET;ORAL",
+      "strength": "1GM",
+      "moieties": [
+        "2BTY8KH53L"
+      ],
+      "grants": [
+        "10780055",
+        "10940115",
+        "10940116",
+        "11357731",
+        "11458103",
+        "11723874"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213983",
+      "product": "001",
+      "date": "2020-06-12",
+      "orig": 1,
+      "ingredient": "DOLUTEGRAVIR SODIUM",
+      "dosage": "TABLET, FOR SUSPENSION;ORAL",
+      "strength": "EQ 5MG BASE",
+      "moieties": [
+        "DKO1W9H7M1"
+      ],
+      "grants": [
+        "8129385",
+        "9242986"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "212102",
+      "product": "001",
+      "date": "2020-06-25",
+      "orig": 1,
+      "ingredient": "FENFLURAMINE HYDROCHLORIDE",
+      "dosage": "SOLUTION;ORAL",
+      "strength": "EQ 2.2MG BASE/ML",
+      "moieties": [
+        "2DS058H2CF"
+      ],
+      "grants": [
+        "10452815",
+        "10478441",
+        "10478442",
+        "10603290",
+        "10947183",
+        "11040018",
+        "11406606",
+        "11759440",
+        "11786487",
+        "12097206",
+        "12734137",
+        "9549909",
+        "9603814",
+        "9603815",
+        "9610260"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213687",
+      "product": "001",
+      "date": "2020-06-30",
+      "orig": 1,
+      "ingredient": "TRIHEPTANOIN",
+      "dosage": "LIQUID;ORAL",
+      "strength": "100% W/W",
+      "moieties": [
+        "2P6O7CFW5K"
+      ],
+      "grants": [
+        "12551461",
+        "12766123",
+        "12766124",
+        "8697748"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "212576",
+      "product": "001",
+      "date": "2020-07-07",
+      "orig": 1,
+      "ingredient": "CEDAZURIDINE; DECITABINE",
+      "dosage": "TABLET;ORAL",
+      "strength": "100MG;35MG",
+      "moieties": [
+        "39IS23Q1EW",
+        "776B62CQ27"
+      ],
+      "grants": [
+        "11963971",
+        "12195496",
+        "12239653",
+        "12697347",
+        "8268800",
+        "8618075",
+        "9567363"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "212690",
+      "product": "001",
+      "date": "2020-07-21",
+      "orig": 1,
+      "ingredient": "CALCIUM OXYBATE; MAGNESIUM OXYBATE; POTASSIUM OXYBATE; SODIUM OXYBATE",
+      "dosage": "SOLUTION;ORAL",
+      "strength": "0.234GM/ML;0.096GM/ML;0.13GM/ML;0.04GM/ML",
+      "moieties": [
+        "30IW36W5B2"
+      ],
+      "grants": [
+        "10195168",
+        "10213400",
+        "10675258",
+        "10864181",
+        "11253494",
+        "11426373",
+        "11554102",
+        "11986446",
+        "12138233",
+        "12582622",
+        "8591922",
+        "8772306",
+        "8901173",
+        "9050302",
+        "9132107",
+        "9486426"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213674",
+      "product": "001",
+      "date": "2020-08-04",
+      "orig": 1,
+      "ingredient": "ENZALUTAMIDE",
+      "dosage": "TABLET;ORAL",
+      "strength": "40MG",
+      "moieties": [
+        "93T0T9GKNU"
+      ],
+      "grants": [
+        "11839689",
+        "12161628",
+        "12502357",
+        "7709517",
+        "8183274",
+        "9126941"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213535",
+      "product": "001",
+      "date": "2020-08-07",
+      "orig": 1,
+      "ingredient": "RISDIPLAM",
+      "dosage": "FOR SOLUTION;ORAL",
+      "strength": "0.75MG/ML",
+      "moieties": [
+        "76RS4S2ET1"
+      ],
+      "grants": [
+        "11534444",
+        "11827646",
+        "11938136",
+        "12122789",
+        "12350273",
+        "9586955",
+        "9969754"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "214120",
+      "product": "001",
+      "date": "2020-09-01",
+      "orig": 1,
+      "ingredient": "AZACITIDINE",
+      "dosage": "TABLET;ORAL",
+      "strength": "200MG",
+      "moieties": [
+        "M801H13NRU"
+      ],
+      "grants": [
+        "11571436",
+        "12053482",
+        "8846628"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    },
+    {
+      "nda": "213721",
+      "product": "001",
+      "date": "2020-09-04",
+      "orig": 1,
+      "ingredient": "PRALSETINIB",
+      "dosage": "CAPSULE;ORAL",
+      "strength": "100MG",
+      "moieties": [
+        "1WPE73O1WV"
+      ],
+      "grants": [
+        "10030005",
+        "11273160",
+        "11872192",
+        "11963958",
+        "12448366",
+        "12539303",
+        "12655128",
+        "12692251"
+      ],
+      "exposure": "EXPOSURE_UNKNOWN"
+    }
+  ]
+}
