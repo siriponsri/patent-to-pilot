@@ -1,0 +1,3378 @@
+{
+  "inputs": {
+    "manifest": {
+      "file": "E8_NBER_MANIFEST.json",
+      "sha256": "4fae846e19af6e03a39853a9fe2c9705fccfb5407a8d8455d220f7b44b0226a4"
+    },
+    "zip_manifest": {
+      "file": "OB_EDITIONS.json",
+      "sha256": "526ed04cc517f1221bb2ce7b3f03e3bd13e86a7cc6a1db5f936e26a1aaecaf1d"
+    },
+    "s0": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "sha256": "f6d827361582f3aa5ad79621f784fc1b3260e5ff91c068194323c88d5ed871ff"
+    },
+    "identity_files": {
+      "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f",
+      "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "ob_anda_2020plus.jsonl": "9f8752a5afb834feb59e635dd00be17e2f089ab36447b191de06eaccf3a51b54",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6"
+    },
+    "dump-public-2026-08-06.gsrs": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad"
+  },
+  "scope": "Public source inventory and NDA identity linkage; no outcome derivation or metrics.",
+  "coverage": [
+    {
+      "cutoff": "1987-01-01",
+      "status": "STALE",
+      "chosen_edition": null,
+      "age_days": null,
+      "availability_proof": null,
+      "source": null,
+      "freshness_floor": "1986-07-01",
+      "latest_proven_edition": "1985-12-31",
+      "latest_proven_age_days": 366,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1986-01-01",
+        "year": 1985,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1985
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1988-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1987-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1988-01-01",
+        "year": 1987,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "1987.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/1987.pdf",
+          "sha256": "166330612eb687b944ee9e2ac688b8a088e7bb41c13d566a5ece3011efeec96f",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "1987-01-31",
+          "scope": "volume and first supplement"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1987
+      },
+      "freshness_floor": "1987-07-01",
+      "latest_proven_edition": "1987-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1988-01-01",
+        "year": 1987,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "1987.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/1987.pdf",
+          "sha256": "166330612eb687b944ee9e2ac688b8a088e7bb41c13d566a5ece3011efeec96f",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "1987-01-31",
+          "scope": "volume and first supplement"
+        }
+      },
+      "documented_content_age_days": 335,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1987
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1989-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1988-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1989-01-01",
+        "year": 1988,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1988
+      },
+      "freshness_floor": "1988-07-01",
+      "latest_proven_edition": "1988-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1989-01-01",
+        "year": 1988,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1988
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1990-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1989-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1990-01-01",
+        "year": 1989,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1989
+      },
+      "freshness_floor": "1989-07-01",
+      "latest_proven_edition": "1989-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1990-01-01",
+        "year": 1989,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1989
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1991-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1990-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1991-01-01",
+        "year": 1990,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1990
+      },
+      "freshness_floor": "1990-07-01",
+      "latest_proven_edition": "1990-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1991-01-01",
+        "year": 1990,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1990
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1992-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1991-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1992-01-01",
+        "year": 1991,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1991
+      },
+      "freshness_floor": "1991-07-01",
+      "latest_proven_edition": "1991-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1992-01-01",
+        "year": 1991,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1991
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1993-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1992-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1993-01-01",
+        "year": 1992,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1992
+      },
+      "freshness_floor": "1992-07-01",
+      "latest_proven_edition": "1992-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1993-01-01",
+        "year": 1992,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1992
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1994-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1993-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1994-01-01",
+        "year": 1993,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1993
+      },
+      "freshness_floor": "1993-07-01",
+      "latest_proven_edition": "1993-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1994-01-01",
+        "year": 1993,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1993
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1995-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1994-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1995-01-01",
+        "year": 1994,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1994
+      },
+      "freshness_floor": "1994-07-01",
+      "latest_proven_edition": "1994-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1995-01-01",
+        "year": 1994,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1994
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1996-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1995-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1996-01-01",
+        "year": 1995,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1995
+      },
+      "freshness_floor": "1995-07-01",
+      "latest_proven_edition": "1995-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1996-01-01",
+        "year": 1995,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1995
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1997-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1996-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1997-01-01",
+        "year": 1996,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1996
+      },
+      "freshness_floor": "1996-07-01",
+      "latest_proven_edition": "1996-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1997-01-01",
+        "year": 1996,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1996
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1998-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1997-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1998-01-01",
+        "year": 1997,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1997
+      },
+      "freshness_floor": "1997-07-01",
+      "latest_proven_edition": "1997-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1998-01-01",
+        "year": 1997,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1997
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "1999-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1998-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "1999-01-01",
+        "year": 1998,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1998
+      },
+      "freshness_floor": "1998-07-01",
+      "latest_proven_edition": "1998-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "1999-01-01",
+        "year": 1998,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1998
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2000-01-01",
+      "status": "FRESH",
+      "chosen_edition": "1999-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2000-01-01",
+        "year": 1999,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1999
+      },
+      "freshness_floor": "1999-07-01",
+      "latest_proven_edition": "1999-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2000-01-01",
+        "year": 1999,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 1999
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2001-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2000-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2001-01-01",
+        "year": 2000,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2000
+      },
+      "freshness_floor": "2000-07-01",
+      "latest_proven_edition": "2000-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2001-01-01",
+        "year": 2000,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2000
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2002-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2001-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2002-01-01",
+        "year": 2001,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2001
+      },
+      "freshness_floor": "2001-07-01",
+      "latest_proven_edition": "2001-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2002-01-01",
+        "year": 2001,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2001
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2003-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2002-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2003-01-01",
+        "year": 2002,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2002
+      },
+      "freshness_floor": "2002-07-01",
+      "latest_proven_edition": "2002-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2003-01-01",
+        "year": 2002,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2002
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2004-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2003-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2004-01-01",
+        "year": 2003,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2003
+      },
+      "freshness_floor": "2003-07-01",
+      "latest_proven_edition": "2003-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2004-01-01",
+        "year": 2003,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2003
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2005-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2004-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2005-01-01",
+        "year": 2004,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2004
+      },
+      "freshness_floor": "2004-07-01",
+      "latest_proven_edition": "2004-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2005-01-01",
+        "year": 2004,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2004
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2006-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2005-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2006-01-01",
+        "year": 2005,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2005
+      },
+      "freshness_floor": "2005-07-01",
+      "latest_proven_edition": "2005-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2006-01-01",
+        "year": 2005,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2005
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2007-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2006-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2007-01-01",
+        "year": 2006,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2006
+      },
+      "freshness_floor": "2006-07-01",
+      "latest_proven_edition": "2006-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2007-01-01",
+        "year": 2006,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2006
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2008-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2007-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2008-01-01",
+        "year": 2007,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2007
+      },
+      "freshness_floor": "2007-07-01",
+      "latest_proven_edition": "2007-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2008-01-01",
+        "year": 2007,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2007
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2009-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2008-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2009-01-01",
+        "year": 2008,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2008
+      },
+      "freshness_floor": "2008-07-01",
+      "latest_proven_edition": "2008-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2009-01-01",
+        "year": 2008,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2008
+      },
+      "zip_only_status": "MISSING"
+    },
+    {
+      "cutoff": "2010-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2009-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2010-01-01",
+        "year": 2009,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2009.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2009.pdf",
+          "sha256": "60abfb4b3136847d16c1ebe979e2ac64e36a542c2d75b8987615d0846232e982",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2008-12-31"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2009
+      },
+      "freshness_floor": "2009-07-01",
+      "latest_proven_edition": "2009-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2010-01-01",
+        "year": 2009,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2009.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2009.pdf",
+          "sha256": "60abfb4b3136847d16c1ebe979e2ac64e36a542c2d75b8987615d0846232e982",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2008-12-31"
+        }
+      },
+      "documented_content_age_days": 366,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2009
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2011-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2010-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2011-01-01",
+        "year": 2010,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2010.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2010.pdf",
+          "sha256": "0865c6418826d94217343c9c947bc55a5704a15d6ceddf0606f9309d4905f423",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2009-12-31"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2010
+      },
+      "freshness_floor": "2010-07-01",
+      "latest_proven_edition": "2010-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2011-01-01",
+        "year": 2010,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2010.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2010.pdf",
+          "sha256": "0865c6418826d94217343c9c947bc55a5704a15d6ceddf0606f9309d4905f423",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2009-12-31"
+        }
+      },
+      "documented_content_age_days": 366,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2010
+      },
+      "zip_only_status": "STALE"
+    },
+    {
+      "cutoff": "2012-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2011-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2012-01-01",
+        "year": 2011,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2011.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2011.pdf",
+          "sha256": "ed790a0bd84fde4ec313513da2c14280359cb5fea9d9ab4d62e3a438a4a8d527",
+          "locator": "PDF title page (p. 2)"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2011
+      },
+      "freshness_floor": "2011-07-01",
+      "latest_proven_edition": "2011-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2012-01-01",
+        "year": 2011,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2011.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2011.pdf",
+          "sha256": "ed790a0bd84fde4ec313513da2c14280359cb5fea9d9ab4d62e3a438a4a8d527",
+          "locator": "PDF title page (p. 2)"
+        }
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2011
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2013-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2012-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2013-01-01",
+        "year": 2012,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2012.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2012.pdf",
+          "sha256": "20bdc237c2e3c22dee1177cff28973ce5e4a868ea36099f3b270c459a29e8a5f",
+          "locator": "PDF title page (p. 2)"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2012
+      },
+      "freshness_floor": "2012-07-01",
+      "latest_proven_edition": "2012-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2013-01-01",
+        "year": 2012,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2012.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2012.pdf",
+          "sha256": "20bdc237c2e3c22dee1177cff28973ce5e4a868ea36099f3b270c459a29e8a5f",
+          "locator": "PDF title page (p. 2)"
+        }
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2012
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2014-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2013-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2014-01-01",
+        "year": 2013,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2013.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2013.pdf",
+          "sha256": "299835e6d492065264b493e4fce5f547b25bbcc1cd942805deabfc9fbfc2e869",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2012-12-31"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2013
+      },
+      "freshness_floor": "2013-07-01",
+      "latest_proven_edition": "2013-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2014-01-01",
+        "year": 2013,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2013.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2013.pdf",
+          "sha256": "299835e6d492065264b493e4fce5f547b25bbcc1cd942805deabfc9fbfc2e869",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2012-12-31"
+        }
+      },
+      "documented_content_age_days": 366,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2013
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2015-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2014-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2015-01-01",
+        "year": 2014,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2014.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2014.pdf",
+          "sha256": "7d8ca80464ac2367eba8a9d3c1957998341a590c86eb20b77726065a6cb3e9c2",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2013-12-31"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2014
+      },
+      "freshness_floor": "2014-07-01",
+      "latest_proven_edition": "2014-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2015-01-01",
+        "year": 2014,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2014.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2014.pdf",
+          "sha256": "7d8ca80464ac2367eba8a9d3c1957998341a590c86eb20b77726065a6cb3e9c2",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2013-12-31"
+        }
+      },
+      "documented_content_age_days": 366,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2014
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2016-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2015-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2016-01-01",
+        "year": 2015,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2015.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2015.pdf",
+          "sha256": "2e18be733917461498b3e07e0aacf4abe238e35f71a08582a6d04d01f16eb964",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2014-12-31"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2015
+      },
+      "freshness_floor": "2015-07-01",
+      "latest_proven_edition": "2015-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2016-01-01",
+        "year": 2015,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2015.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2015.pdf",
+          "sha256": "2e18be733917461498b3e07e0aacf4abe238e35f71a08582a6d04d01f16eb964",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2014-12-31"
+        }
+      },
+      "documented_content_age_days": 366,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2015
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2017-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2016-12-31",
+      "age_days": 1,
+      "availability_proof": {
+        "kind": "annual_year_end_assumption",
+        "date": "2017-01-01",
+        "year": 2016,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2016.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2016.pdf",
+          "sha256": "7df59eeff6494b55b05ee107322f7c4e66ccb334f33d5fb8c77adffdad661693",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2015-12-31"
+        }
+      },
+      "source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2016
+      },
+      "freshness_floor": "2016-07-01",
+      "latest_proven_edition": "2016-12-31",
+      "latest_proven_age_days": 1,
+      "latest_proven_availability": {
+        "kind": "annual_year_end_assumption",
+        "date": "2017-01-01",
+        "year": 2016,
+        "publication_date": null,
+        "locator": "README.pdf sections 1 and 3, edition column",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+        "edition_context": {
+          "file": "2016.pdf",
+          "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2016.pdf",
+          "sha256": "7df59eeff6494b55b05ee107322f7c4e66ccb334f33d5fb8c77adffdad661693",
+          "locator": "PDF title page (p. 2)",
+          "current_through": "2015-12-31"
+        }
+      },
+      "documented_content_age_days": 367,
+      "latest_admissible_source": {
+        "file": "4_clean_tables_stata.zip",
+        "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+        "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+        "bytes": 9677658,
+        "last_modified": "2018-08-10T18:56:51Z",
+        "version": "1985–2016; Stata 118 tables generated 2018-07-17",
+        "kind": "nber_annual",
+        "edition_year": 2016
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2018-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2017-10-13",
+      "age_days": 80,
+      "availability_proof": {
+        "kind": "wayback",
+        "date": "2017-11-14",
+        "wayback_ts": "20171114202140",
+        "url": "https://web.archive.org/web/20171114202140id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "edition_sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31"
+      },
+      "source": {
+        "file": "ob_20171114202140.zip",
+        "sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "kind": "fda_zip"
+      },
+      "freshness_floor": "2017-07-01",
+      "latest_proven_edition": "2017-10-13",
+      "latest_proven_age_days": 80,
+      "latest_proven_availability": {
+        "kind": "wayback",
+        "date": "2017-11-14",
+        "wayback_ts": "20171114202140",
+        "url": "https://web.archive.org/web/20171114202140id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "edition_sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "ob_20171114202140.zip",
+        "sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "kind": "fda_zip"
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2019-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2018-08-17",
+      "age_days": 137,
+      "availability_proof": {
+        "kind": "wayback",
+        "date": "2018-09-08",
+        "wayback_ts": "20180908074144",
+        "url": "https://web.archive.org/web/20180908074144id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "edition_sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd"
+      },
+      "source": {
+        "file": "ob_20180908074144.zip",
+        "sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "kind": "fda_zip"
+      },
+      "freshness_floor": "2018-07-01",
+      "latest_proven_edition": "2018-08-17",
+      "latest_proven_age_days": 137,
+      "latest_proven_availability": {
+        "kind": "wayback",
+        "date": "2018-09-08",
+        "wayback_ts": "20180908074144",
+        "url": "https://web.archive.org/web/20180908074144id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "edition_sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "ob_20180908074144.zip",
+        "sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "kind": "fda_zip"
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2020-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2019-12-13",
+      "age_days": 19,
+      "availability_proof": {
+        "kind": "wayback",
+        "date": "2019-12-14",
+        "wayback_ts": "20191214001219",
+        "url": "https://web.archive.org/web/20191214001219id_/https://www.fda.gov/media/76860/download",
+        "edition_sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61"
+      },
+      "source": {
+        "file": "ob_20191214001219.zip",
+        "sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "kind": "fda_zip"
+      },
+      "freshness_floor": "2019-07-01",
+      "latest_proven_edition": "2019-12-13",
+      "latest_proven_age_days": 19,
+      "latest_proven_availability": {
+        "kind": "wayback",
+        "date": "2019-12-14",
+        "wayback_ts": "20191214001219",
+        "url": "https://web.archive.org/web/20191214001219id_/https://www.fda.gov/media/76860/download",
+        "edition_sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "ob_20191214001219.zip",
+        "sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "kind": "fda_zip"
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2021-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2020-11-02",
+      "age_days": 60,
+      "availability_proof": {
+        "kind": "wayback",
+        "date": "2020-11-12",
+        "wayback_ts": "20201112023717",
+        "url": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download",
+        "edition_sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833"
+      },
+      "source": {
+        "file": "ob_20201112023717.zip",
+        "sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "kind": "fda_zip"
+      },
+      "freshness_floor": "2020-07-01",
+      "latest_proven_edition": "2020-11-02",
+      "latest_proven_age_days": 60,
+      "latest_proven_availability": {
+        "kind": "wayback",
+        "date": "2020-11-12",
+        "wayback_ts": "20201112023717",
+        "url": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download",
+        "edition_sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "ob_20201112023717.zip",
+        "sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "kind": "fda_zip"
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2022-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2021-12-10",
+      "age_days": 22,
+      "availability_proof": {
+        "kind": "wayback",
+        "date": "2021-12-28",
+        "wayback_ts": "20211228215048",
+        "url": "https://web.archive.org/web/20211228215048id_/https://www.fda.gov/media/76860/download",
+        "edition_sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3"
+      },
+      "source": {
+        "file": "ob_20211228215048.zip",
+        "sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "kind": "fda_zip"
+      },
+      "freshness_floor": "2021-07-01",
+      "latest_proven_edition": "2021-12-10",
+      "latest_proven_age_days": 22,
+      "latest_proven_availability": {
+        "kind": "wayback",
+        "date": "2021-12-28",
+        "wayback_ts": "20211228215048",
+        "url": "https://web.archive.org/web/20211228215048id_/https://www.fda.gov/media/76860/download",
+        "edition_sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "ob_20211228215048.zip",
+        "sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "kind": "fda_zip"
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2023-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2022-11-10",
+      "age_days": 52,
+      "availability_proof": {
+        "kind": "wayback",
+        "date": "2022-11-28",
+        "wayback_ts": "20221128232655",
+        "url": "https://web.archive.org/web/20221128232655id_/https://www.fda.gov/media/76860/download",
+        "edition_sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1"
+      },
+      "source": {
+        "file": "ob_20221128232655.zip",
+        "sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "kind": "fda_zip"
+      },
+      "freshness_floor": "2022-07-01",
+      "latest_proven_edition": "2022-11-10",
+      "latest_proven_age_days": 52,
+      "latest_proven_availability": {
+        "kind": "wayback",
+        "date": "2022-11-28",
+        "wayback_ts": "20221128232655",
+        "url": "https://web.archive.org/web/20221128232655id_/https://www.fda.gov/media/76860/download",
+        "edition_sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "ob_20221128232655.zip",
+        "sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "kind": "fda_zip"
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2024-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2023-12-08",
+      "age_days": 24,
+      "availability_proof": {
+        "kind": "wayback",
+        "date": "2023-12-20",
+        "wayback_ts": "20231220045755",
+        "url": "https://web.archive.org/web/20231220045755id_/https://www.fda.gov/media/76860/download?attachment",
+        "edition_sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306"
+      },
+      "source": {
+        "file": "ob_20231220045755.zip",
+        "sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+        "source_url": "https://www.fda.gov/media/76860/download?attachment",
+        "kind": "fda_zip"
+      },
+      "freshness_floor": "2023-07-01",
+      "latest_proven_edition": "2023-12-08",
+      "latest_proven_age_days": 24,
+      "latest_proven_availability": {
+        "kind": "wayback",
+        "date": "2023-12-20",
+        "wayback_ts": "20231220045755",
+        "url": "https://web.archive.org/web/20231220045755id_/https://www.fda.gov/media/76860/download?attachment",
+        "edition_sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "ob_20231220045755.zip",
+        "sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+        "source_url": "https://www.fda.gov/media/76860/download?attachment",
+        "kind": "fda_zip"
+      },
+      "zip_only_status": "FRESH"
+    },
+    {
+      "cutoff": "2025-01-01",
+      "status": "FRESH",
+      "chosen_edition": "2024-12-13",
+      "age_days": 19,
+      "availability_proof": {
+        "kind": "wayback",
+        "date": "2024-12-26",
+        "wayback_ts": "20241226235539",
+        "url": "https://web.archive.org/web/20241226235539id_/https://www.fda.gov/media/76860/download?attachment",
+        "edition_sha256": "2680178bc6a63ddcaa93ddf5f810c34369ce39d493cca40834c8552f26394086"
+      },
+      "source": {
+        "file": "ob_20241226235539.zip",
+        "sha256": "2680178bc6a63ddcaa93ddf5f810c34369ce39d493cca40834c8552f26394086",
+        "source_url": "https://www.fda.gov/media/76860/download?attachment",
+        "kind": "fda_zip"
+      },
+      "freshness_floor": "2024-07-01",
+      "latest_proven_edition": "2024-12-13",
+      "latest_proven_age_days": 19,
+      "latest_proven_availability": {
+        "kind": "wayback",
+        "date": "2024-12-26",
+        "wayback_ts": "20241226235539",
+        "url": "https://web.archive.org/web/20241226235539id_/https://www.fda.gov/media/76860/download?attachment",
+        "edition_sha256": "2680178bc6a63ddcaa93ddf5f810c34369ce39d493cca40834c8552f26394086"
+      },
+      "documented_content_age_days": null,
+      "latest_admissible_source": {
+        "file": "ob_20241226235539.zip",
+        "sha256": "2680178bc6a63ddcaa93ddf5f810c34369ce39d493cca40834c8552f26394086",
+        "source_url": "https://www.fda.gov/media/76860/download?attachment",
+        "kind": "fda_zip"
+      },
+      "zip_only_status": "FRESH"
+    }
+  ],
+  "nda_linkage": {
+    "1985": {
+      "total_nda": 629,
+      "unknown_application_type": 31,
+      "non_nda": 14,
+      "application_product_partial_ingredient": 614,
+      "matched": 614,
+      "no_exact_product_anchor": 15,
+      "link_rate": 0.9761526232114467,
+      "nda_applications": 408,
+      "linked_nda_applications": 396,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 46,
+          "appl_no": "014715",
+          "product_no": "001",
+          "ingredient": "",
+          "trade_name": "N/A",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 54"
+        }
+      },
+      "nda_link_rate": 0.9705882352941176
+    },
+    "1987": {
+      "total_nda": 548,
+      "unknown_application_type": 24,
+      "non_nda": 3,
+      "application_product_partial_ingredient": 528,
+      "matched": 528,
+      "no_exact_product_anchor": 16,
+      "conflicting_product_identity": 4,
+      "link_rate": 0.9635036496350365,
+      "nda_applications": 356,
+      "linked_nda_applications": 345,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 36,
+          "appl_no": "016194",
+          "product_no": "003",
+          "ingredient": "PENTAZOCINE LACTATE",
+          "trade_name": "TALWIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 849"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 106,
+          "appl_no": "017555",
+          "product_no": "001",
+          "ingredient": "CARBIDOPA, DL-",
+          "trade_name": "SINEMET",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 973"
+        }
+      },
+      "nda_link_rate": 0.9691011235955056
+    },
+    "1988": {
+      "total_nda": 585,
+      "unknown_application_type": 31,
+      "non_nda": 3,
+      "application_product_partial_ingredient": 571,
+      "matched": 571,
+      "no_exact_product_anchor": 13,
+      "conflicting_product_identity": 1,
+      "link_rate": 0.976068376068376,
+      "nda_applications": 377,
+      "linked_nda_applications": 368,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 33,
+          "appl_no": "016194",
+          "product_no": "003",
+          "ingredient": "PENTAZOCINE LACTATE",
+          "trade_name": "TALWIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 1684"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 596,
+          "appl_no": "019415",
+          "product_no": "002",
+          "ingredient": "FLUMAZENIL",
+          "trade_name": "METRODIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_exclusivity.dta observation 1012"
+        }
+      },
+      "nda_link_rate": 0.9761273209549072
+    },
+    "1989": {
+      "total_nda": 644,
+      "unknown_application_type": 33,
+      "non_nda": 5,
+      "application_product_partial_ingredient": 629,
+      "matched": 629,
+      "no_exact_product_anchor": 15,
+      "link_rate": 0.9767080745341615,
+      "nda_applications": 401,
+      "linked_nda_applications": 392,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 33,
+          "appl_no": "016194",
+          "product_no": "003",
+          "ingredient": "PENTAZOCINE LACTATE",
+          "trade_name": "TALWIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 2583"
+        }
+      },
+      "nda_link_rate": 0.9775561097256857
+    },
+    "1990": {
+      "total_nda": 658,
+      "unknown_application_type": 31,
+      "non_nda": 5,
+      "application_product_partial_ingredient": 646,
+      "matched": 646,
+      "no_exact_product_anchor": 12,
+      "link_rate": 0.9817629179331308,
+      "nda_applications": 411,
+      "linked_nda_applications": 403,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 32,
+          "appl_no": "016194",
+          "product_no": "003",
+          "ingredient": "PENTAZOCINE LACTATE",
+          "trade_name": "TALWIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 3577"
+        }
+      },
+      "nda_link_rate": 0.9805352798053528
+    },
+    "1991": {
+      "total_nda": 708,
+      "unknown_application_type": 31,
+      "non_nda": 8,
+      "application_product_partial_ingredient": 696,
+      "matched": 696,
+      "no_exact_product_anchor": 12,
+      "link_rate": 0.9830508474576272,
+      "nda_applications": 445,
+      "linked_nda_applications": 439,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 35,
+          "appl_no": "016194",
+          "product_no": "003",
+          "ingredient": "PENTAZOCINE LACTATE",
+          "trade_name": "TALWIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 4524"
+        }
+      },
+      "nda_link_rate": 0.9865168539325843
+    },
+    "1992": {
+      "total_nda": 749,
+      "unknown_application_type": 34,
+      "non_nda": 7,
+      "application_product_partial_ingredient": 739,
+      "matched": 739,
+      "no_exact_product_anchor": 10,
+      "link_rate": 0.986648865153538,
+      "nda_applications": 458,
+      "linked_nda_applications": 454,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 35,
+          "appl_no": "016194",
+          "product_no": "003",
+          "ingredient": "PENTAZOCINE LACTATE",
+          "trade_name": "TALWIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 5516"
+        }
+      },
+      "nda_link_rate": 0.9912663755458515
+    },
+    "1993": {
+      "total_nda": 752,
+      "unknown_application_type": 36,
+      "non_nda": 12,
+      "application_product_partial_ingredient": 741,
+      "matched": 741,
+      "no_exact_product_anchor": 11,
+      "link_rate": 0.9853723404255319,
+      "nda_applications": 455,
+      "linked_nda_applications": 449,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 17,
+          "appl_no": "016194",
+          "product_no": "003",
+          "ingredient": "PENTAZOCINE LACTATE",
+          "trade_name": "TALWIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 6506"
+        }
+      },
+      "nda_link_rate": 0.9868131868131869
+    },
+    "1994": {
+      "total_nda": 758,
+      "unknown_application_type": 38,
+      "non_nda": 12,
+      "application_product_partial_ingredient": 749,
+      "matched": 749,
+      "no_exact_product_anchor": 9,
+      "link_rate": 0.9881266490765171,
+      "nda_applications": 447,
+      "linked_nda_applications": 442,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 283,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 7931"
+        }
+      },
+      "nda_link_rate": 0.9888143176733781
+    },
+    "1995": {
+      "total_nda": 800,
+      "unknown_application_type": 31,
+      "non_nda": 14,
+      "application_product_partial_ingredient": 791,
+      "matched": 791,
+      "no_exact_product_anchor": 9,
+      "link_rate": 0.98875,
+      "nda_applications": 457,
+      "linked_nda_applications": 452,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 249,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 8922"
+        }
+      },
+      "nda_link_rate": 0.9890590809628009
+    },
+    "1996": {
+      "total_nda": 857,
+      "unknown_application_type": 36,
+      "non_nda": 7,
+      "application_product_partial_ingredient": 847,
+      "matched": 847,
+      "no_exact_product_anchor": 10,
+      "link_rate": 0.9883313885647608,
+      "nda_applications": 489,
+      "linked_nda_applications": 484,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 219,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 9997"
+        }
+      },
+      "nda_link_rate": 0.9897750511247444
+    },
+    "1997": {
+      "total_nda": 995,
+      "unknown_application_type": 40,
+      "non_nda": 7,
+      "application_product_partial_ingredient": 983,
+      "matched": 983,
+      "no_exact_product_anchor": 12,
+      "link_rate": 0.9879396984924623,
+      "nda_applications": 574,
+      "linked_nda_applications": 566,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 195,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 11288"
+        }
+      },
+      "nda_link_rate": 0.9860627177700348
+    },
+    "1998": {
+      "total_nda": 1132,
+      "unknown_application_type": 48,
+      "non_nda": 11,
+      "application_product_partial_ingredient": 1119,
+      "matched": 1119,
+      "no_exact_product_anchor": 13,
+      "link_rate": 0.9885159010600707,
+      "nda_applications": 643,
+      "linked_nda_applications": 634,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 167,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 12820"
+        }
+      },
+      "nda_link_rate": 0.9860031104199067
+    },
+    "1999": {
+      "total_nda": 1218,
+      "unknown_application_type": 47,
+      "non_nda": 8,
+      "application_product_partial_ingredient": 1206,
+      "matched": 1206,
+      "no_exact_product_anchor": 12,
+      "link_rate": 0.9901477832512315,
+      "nda_applications": 683,
+      "linked_nda_applications": 674,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 150,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 14678"
+        }
+      },
+      "nda_link_rate": 0.986822840409956
+    },
+    "2000": {
+      "total_nda": 1292,
+      "unknown_application_type": 60,
+      "non_nda": 14,
+      "application_product_partial_ingredient": 1278,
+      "matched": 1278,
+      "no_exact_product_anchor": 14,
+      "link_rate": 0.9891640866873065,
+      "nda_applications": 709,
+      "linked_nda_applications": 699,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 134,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 16791"
+        }
+      },
+      "nda_link_rate": 0.9858956276445698
+    },
+    "2001": {
+      "total_nda": 1354,
+      "unknown_application_type": 68,
+      "non_nda": 13,
+      "application_product_partial_ingredient": 1337,
+      "matched": 1337,
+      "no_exact_product_anchor": 17,
+      "link_rate": 0.9874446085672083,
+      "nda_applications": 744,
+      "linked_nda_applications": 733,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 117,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 19277"
+        }
+      },
+      "nda_link_rate": 0.9852150537634409
+    },
+    "2002": {
+      "total_nda": 1419,
+      "unknown_application_type": 69,
+      "non_nda": 18,
+      "application_product_partial_ingredient": 1402,
+      "matched": 1402,
+      "no_exact_product_anchor": 17,
+      "link_rate": 0.9880197322057788,
+      "nda_applications": 767,
+      "linked_nda_applications": 756,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 104,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 22331"
+        }
+      },
+      "nda_link_rate": 0.9856584093872229
+    },
+    "2003": {
+      "total_nda": 1532,
+      "unknown_application_type": 72,
+      "non_nda": 12,
+      "application_product_partial_ingredient": 1514,
+      "matched": 1514,
+      "no_exact_product_anchor": 17,
+      "conflicting_product_identity": 1,
+      "link_rate": 0.9882506527415144,
+      "nda_applications": 808,
+      "linked_nda_applications": 796,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 109,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 25982"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 1546,
+          "appl_no": "021209",
+          "product_no": "001",
+          "ingredient": "SECRETIN",
+          "trade_name": "SECREFLO",
+          "source_locator": "4_clean_tables_stata/FDA_drug_exclusivity.dta observation 12761"
+        }
+      },
+      "nda_link_rate": 0.9851485148514851
+    },
+    "2004": {
+      "total_nda": 1653,
+      "unknown_application_type": 79,
+      "non_nda": 27,
+      "application_product_partial_ingredient": 1630,
+      "matched": 1630,
+      "no_exact_product_anchor": 21,
+      "conflicting_product_identity": 2,
+      "link_rate": 0.9860859044162129,
+      "nda_applications": 839,
+      "linked_nda_applications": 830,
+      "unmatched_examples": {
+        "no_exact_product_anchor": {
+          "products_data_row": 75,
+          "appl_no": "019386",
+          "product_no": "001",
+          "ingredient": "ESMOLOL HYDROCHLORIDE",
+          "trade_name": "BREVIBLOC",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 30090"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 1679,
+          "appl_no": "021136",
+          "product_no": "001",
+          "ingredient": "SECRETIN",
+          "trade_name": "SECREFLO",
+          "source_locator": "4_clean_tables_stata/FDA_drug_exclusivity.dta observation 14098"
+        }
+      },
+      "nda_link_rate": 0.9892729439809297
+    },
+    "2005": {
+      "total_nda": 1707,
+      "unknown_application_type": 99,
+      "non_nda": 34,
+      "ingredient": 1703,
+      "matched": 1703,
+      "no_entity_match": 2,
+      "conflicting_product_identity": 2,
+      "link_rate": 0.9976567076742824,
+      "nda_applications": 871,
+      "linked_nda_applications": 867,
+      "unmatched_examples": {
+        "no_entity_match": {
+          "products_data_row": 1025,
+          "appl_no": "020958",
+          "product_no": "001",
+          "ingredient": "CALCIUM CARBONATE, PRECIPITATED; FAMOTIDINE; MAGNESIUM HYDROXIDE",
+          "trade_name": "PEPCID COMPLETE",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 38209"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 1556,
+          "appl_no": "021636",
+          "product_no": "001",
+          "ingredient": "OMEPRAZOLE",
+          "trade_name": "ZEGERID",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 40133"
+        }
+      },
+      "nda_link_rate": 0.9954075774971297
+    },
+    "2006": {
+      "total_nda": 1725,
+      "unknown_application_type": 107,
+      "non_nda": 19,
+      "ingredient": 1722,
+      "matched": 1722,
+      "conflicting_product_identity": 2,
+      "no_entity_match": 1,
+      "link_rate": 0.9982608695652174,
+      "nda_applications": 884,
+      "linked_nda_applications": 881,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "products_data_row": 1553,
+          "appl_no": "021636",
+          "product_no": "001",
+          "ingredient": "OMEPRAZOLE",
+          "trade_name": "ZEGERID",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 45697"
+        },
+        "no_entity_match": {
+          "products_data_row": 1785,
+          "appl_no": "021551",
+          "product_no": "001",
+          "ingredient": "BISACODYL; POLYETHYLENE GLYCOL; POTASSIUM CHLORIDE; SODIUM BICARBONATE; SODIUM CHLORIDE",
+          "trade_name": "HALFLYTELY",
+          "source_locator": "4_clean_tables_stata/FDA_drug_exclusivity.dta observation 17604"
+        }
+      },
+      "nda_link_rate": 0.996606334841629
+    },
+    "2007": {
+      "total_nda": 1816,
+      "unknown_application_type": 108,
+      "non_nda": 31,
+      "ingredient": 1816,
+      "matched": 1816,
+      "link_rate": 1.0,
+      "nda_applications": 918,
+      "linked_nda_applications": 918,
+      "unmatched_examples": {},
+      "nda_link_rate": 1.0
+    },
+    "2008": {
+      "total_nda": 1858,
+      "unknown_application_type": 115,
+      "non_nda": 35,
+      "ingredient": 1858,
+      "matched": 1858,
+      "link_rate": 1.0,
+      "nda_applications": 938,
+      "linked_nda_applications": 938,
+      "unmatched_examples": {},
+      "nda_link_rate": 1.0
+    },
+    "2009": {
+      "total_nda": 1943,
+      "unknown_application_type": 111,
+      "non_nda": 43,
+      "ingredient": 1943,
+      "matched": 1943,
+      "link_rate": 1.0,
+      "nda_applications": 992,
+      "linked_nda_applications": 992,
+      "unmatched_examples": {},
+      "nda_link_rate": 1.0
+    },
+    "2010": {
+      "total_nda": 2150,
+      "ingredient": 2040,
+      "matched": 2040,
+      "no_entity_match": 109,
+      "conflicting_product_identity": 1,
+      "link_rate": 0.9488372093023256,
+      "nda_applications": 1078,
+      "linked_nda_applications": 1033,
+      "unmatched_examples": {
+        "no_entity_match": {
+          "products_data_row": 14,
+          "appl_no": "013718",
+          "product_no": "001",
+          "ingredient": "OXANDROLONE",
+          "trade_name": "OXANDRIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 66848"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 2144,
+          "appl_no": "022371",
+          "product_no": "001",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "trade_name": "ASTEPRO",
+          "source_locator": "4_clean_tables_stata/FDA_drug_exclusivity.dta observation 24180"
+        }
+      },
+      "nda_link_rate": 0.9582560296846011
+    },
+    "2011": {
+      "total_nda": 2175,
+      "ingredient": 2055,
+      "matched": 2055,
+      "no_entity_match": 119,
+      "conflicting_product_identity": 1,
+      "link_rate": 0.9448275862068966,
+      "nda_applications": 1081,
+      "linked_nda_applications": 1034,
+      "unmatched_examples": {
+        "no_entity_match": {
+          "products_data_row": 12,
+          "appl_no": "013718",
+          "product_no": "001",
+          "ingredient": "OXANDROLONE",
+          "trade_name": "OXANDRIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 74963"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 2144,
+          "appl_no": "022371",
+          "product_no": "001",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "trade_name": "ASTEPRO",
+          "source_locator": "4_clean_tables_stata/FDA_drug_exclusivity.dta observation 25582"
+        }
+      },
+      "nda_link_rate": 0.9565217391304348
+    },
+    "2012": {
+      "total_nda": 2189,
+      "ingredient": 2074,
+      "matched": 2074,
+      "no_entity_match": 114,
+      "conflicting_product_identity": 1,
+      "link_rate": 0.9474645957058018,
+      "nda_applications": 1085,
+      "linked_nda_applications": 1040,
+      "unmatched_examples": {
+        "no_entity_match": {
+          "products_data_row": 12,
+          "appl_no": "013718",
+          "product_no": "001",
+          "ingredient": "OXANDROLONE",
+          "trade_name": "OXANDRIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 83477"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 1846,
+          "appl_no": "022371",
+          "product_no": "001",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "trade_name": "ASTEPRO",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 91725"
+        }
+      },
+      "nda_link_rate": 0.9585253456221198
+    },
+    "2013": {
+      "total_nda": 2288,
+      "ingredient": 2150,
+      "matched": 2150,
+      "no_entity_match": 137,
+      "conflicting_product_identity": 1,
+      "link_rate": 0.9396853146853147,
+      "nda_applications": 1116,
+      "linked_nda_applications": 1067,
+      "unmatched_examples": {
+        "no_entity_match": {
+          "products_data_row": 11,
+          "appl_no": "013718",
+          "product_no": "001",
+          "ingredient": "OXANDROLONE",
+          "trade_name": "OXANDRIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 92380"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 1814,
+          "appl_no": "022371",
+          "product_no": "001",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "trade_name": "ASTEPRO",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 100773"
+        }
+      },
+      "nda_link_rate": 0.9560931899641577
+    },
+    "2014": {
+      "total_nda": 2337,
+      "ingredient": 2194,
+      "matched": 2194,
+      "no_entity_match": 142,
+      "conflicting_product_identity": 1,
+      "link_rate": 0.9388104407359863,
+      "nda_applications": 1151,
+      "linked_nda_applications": 1099,
+      "unmatched_examples": {
+        "no_entity_match": {
+          "products_data_row": 11,
+          "appl_no": "013718",
+          "product_no": "001",
+          "ingredient": "OXANDROLONE",
+          "trade_name": "OXANDRIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 102034"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 1737,
+          "appl_no": "022371",
+          "product_no": "001",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "trade_name": "ASTEPRO",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 108673"
+        }
+      },
+      "nda_link_rate": 0.9548218940052129
+    },
+    "2015": {
+      "total_nda": 2356,
+      "ingredient": 2218,
+      "matched": 2218,
+      "no_entity_match": 136,
+      "conflicting_product_identity": 2,
+      "link_rate": 0.9414261460101867,
+      "nda_applications": 1170,
+      "linked_nda_applications": 1118,
+      "unmatched_examples": {
+        "no_entity_match": {
+          "products_data_row": 11,
+          "appl_no": "013718",
+          "product_no": "001",
+          "ingredient": "OXANDROLONE",
+          "trade_name": "OXANDRIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 110651"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 1643,
+          "appl_no": "022371",
+          "product_no": "001",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "trade_name": "ASTEPRO",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 117062"
+        }
+      },
+      "nda_link_rate": 0.9555555555555556
+    },
+    "2016": {
+      "total_nda": 2380,
+      "ingredient": 2257,
+      "matched": 2257,
+      "no_entity_match": 121,
+      "conflicting_product_identity": 2,
+      "link_rate": 0.9483193277310924,
+      "nda_applications": 1168,
+      "linked_nda_applications": 1120,
+      "unmatched_examples": {
+        "no_entity_match": {
+          "products_data_row": 11,
+          "appl_no": "013718",
+          "product_no": "001",
+          "ingredient": "OXANDROLONE",
+          "trade_name": "OXANDRIN",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 119918"
+        },
+        "conflicting_product_identity": {
+          "products_data_row": 2184,
+          "appl_no": "206619",
+          "product_no": "001",
+          "ingredient": "DASABUVIR SODIUM ; OMBITASVIR; PARITAPREVIR; RITONAVIR",
+          "trade_name": "VIEKIRA PAK (COPACKAGED)",
+          "source_locator": "4_clean_tables_stata/FDA_drug_patents.dta observation 129812"
+        }
+      },
+      "nda_link_rate": 0.958904109589041
+    }
+  },
+  "overlap": [
+    {
+      "year": 2009,
+      "pairing": "same_edition_year",
+      "status": "MEASURED",
+      "zip_date": "2009-12-22",
+      "zip_source": {
+        "file": "ob_20100113002223.zip",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+        "wayback_ts": "20100113002223"
+      },
+      "patents": {
+        "annual": 3358,
+        "archival": 4000,
+        "exact": 3297,
+        "jaccard": 0.8118689977837971,
+        "annual_fraction_matched": 0.9818344252531268,
+        "archival_fraction_matched": 0.82425,
+        "annual_only": 61,
+        "archival_only": 703,
+        "shared_identity_different_expiry_sets": 124,
+        "annual_excluded": {
+          "unclassified": 261
+        },
+        "archival_excluded": {
+          "non_nda": 3
+        },
+        "raw_zip_identifier_jaccard": 0.5372884896594945,
+        "zip_pediatric_rows": 2044
+      },
+      "exclusivity": {
+        "annual": 690,
+        "archival": 893,
+        "exact": 687,
+        "jaccard": 0.7667410714285714,
+        "annual_fraction_matched": 0.9956521739130435,
+        "archival_fraction_matched": 0.7693169092945129,
+        "annual_only": 3,
+        "archival_only": 206,
+        "shared_identity_different_expiry_sets": 3,
+        "annual_excluded": {
+          "unclassified": 107,
+          "non_nda": 43
+        },
+        "archival_excluded": {
+          "non_nda": 70
+        }
+      }
+    },
+    {
+      "year": 2009,
+      "pairing": "near_prior_year_end",
+      "status": "NOT_RUN",
+      "reason": "no inventory ZIP"
+    },
+    {
+      "year": 2010,
+      "pairing": "same_edition_year",
+      "status": "NOT_RUN",
+      "reason": "no inventory ZIP"
+    },
+    {
+      "year": 2010,
+      "pairing": "near_prior_year_end",
+      "status": "MEASURED",
+      "zip_date": "2009-12-22",
+      "zip_source": {
+        "file": "ob_20100113002223.zip",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+        "wayback_ts": "20100113002223"
+      },
+      "patents": {
+        "annual": 3784,
+        "archival": 4000,
+        "exact": 3738,
+        "jaccard": 0.9238754325259516,
+        "annual_fraction_matched": 0.9878435517970402,
+        "archival_fraction_matched": 0.9345,
+        "annual_only": 46,
+        "archival_only": 262,
+        "shared_identity_different_expiry_sets": 40,
+        "annual_excluded": {
+          "non_nda": 3
+        },
+        "archival_excluded": {
+          "non_nda": 3
+        },
+        "raw_zip_identifier_jaccard": 0.5913736713000818,
+        "zip_pediatric_rows": 2044
+      },
+      "exclusivity": {
+        "annual": 714,
+        "archival": 893,
+        "exact": 693,
+        "jaccard": 0.7582056892778993,
+        "annual_fraction_matched": 0.9705882352941176,
+        "archival_fraction_matched": 0.7760358342665173,
+        "annual_only": 21,
+        "archival_only": 200,
+        "shared_identity_different_expiry_sets": 25,
+        "annual_excluded": {
+          "non_nda": 29
+        },
+        "archival_excluded": {
+          "non_nda": 70
+        }
+      }
+    },
+    {
+      "year": 2011,
+      "pairing": "same_edition_year",
+      "status": "MEASURED",
+      "zip_date": "2011-12-14",
+      "zip_source": {
+        "file": "ob_20111229223919.zip",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "wayback_ts": "20111229223919"
+      },
+      "patents": {
+        "annual": 3884,
+        "archival": 4186,
+        "exact": 3770,
+        "jaccard": 0.8767441860465116,
+        "annual_fraction_matched": 0.970648815653965,
+        "archival_fraction_matched": 0.9006211180124224,
+        "annual_only": 114,
+        "archival_only": 416,
+        "shared_identity_different_expiry_sets": 89,
+        "annual_excluded": {
+          "non_nda": 3
+        },
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.5672946203146242,
+        "zip_pediatric_rows": 2048
+      },
+      "exclusivity": {
+        "annual": 650,
+        "archival": 768,
+        "exact": 645,
+        "jaccard": 0.8344113842173351,
+        "annual_fraction_matched": 0.9923076923076923,
+        "archival_fraction_matched": 0.83984375,
+        "annual_only": 5,
+        "archival_only": 123,
+        "shared_identity_different_expiry_sets": 12,
+        "annual_excluded": {
+          "non_nda": 41
+        },
+        "archival_excluded": {
+          "non_nda": 76
+        }
+      }
+    },
+    {
+      "year": 2011,
+      "pairing": "near_prior_year_end",
+      "status": "MEASURED",
+      "zip_date": "2011-03-18",
+      "zip_source": {
+        "file": "ob_20110401201026.zip",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "807dd86c2de50a61ca450e2c9e9ab2e68e73baa70d43e1bfd8e61f961519878d",
+        "wayback_ts": "20110401201026"
+      },
+      "patents": {
+        "annual": 3884,
+        "archival": 3857,
+        "exact": 3790,
+        "jaccard": 0.9592508225765629,
+        "annual_fraction_matched": 0.9757981462409887,
+        "archival_fraction_matched": 0.9826289862587503,
+        "annual_only": 94,
+        "archival_only": 67,
+        "shared_identity_different_expiry_sets": 19,
+        "annual_excluded": {
+          "non_nda": 3
+        },
+        "archival_excluded": {
+          "non_nda": 1
+        },
+        "raw_zip_identifier_jaccard": 0.6137169063998332,
+        "zip_pediatric_rows": 1872
+      },
+      "exclusivity": {
+        "annual": 650,
+        "archival": 670,
+        "exact": 647,
+        "jaccard": 0.9613670133729569,
+        "annual_fraction_matched": 0.9953846153846154,
+        "archival_fraction_matched": 0.9656716417910448,
+        "annual_only": 3,
+        "archival_only": 23,
+        "shared_identity_different_expiry_sets": 3,
+        "annual_excluded": {
+          "non_nda": 41
+        },
+        "archival_excluded": {
+          "non_nda": 49
+        }
+      }
+    },
+    {
+      "year": 2012,
+      "pairing": "same_edition_year",
+      "status": "MEASURED",
+      "zip_date": "2012-09-17",
+      "zip_source": {
+        "file": "ob_20120921215526.zip",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "wayback_ts": "20120921215526"
+      },
+      "patents": {
+        "annual": 3967,
+        "archival": 4280,
+        "exact": 3926,
+        "jaccard": 0.9085859754686415,
+        "annual_fraction_matched": 0.9896647340559617,
+        "archival_fraction_matched": 0.9172897196261682,
+        "annual_only": 41,
+        "archival_only": 354,
+        "shared_identity_different_expiry_sets": 44,
+        "annual_excluded": {
+          "non_nda": 3
+        },
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.5868770444487205,
+        "zip_pediatric_rows": 2071
+      },
+      "exclusivity": {
+        "annual": 590,
+        "archival": 727,
+        "exact": 584,
+        "jaccard": 0.7967257844474761,
+        "annual_fraction_matched": 0.9898305084745763,
+        "archival_fraction_matched": 0.8033012379642366,
+        "annual_only": 6,
+        "archival_only": 143,
+        "shared_identity_different_expiry_sets": 9,
+        "annual_excluded": {
+          "non_nda": 39
+        },
+        "archival_excluded": {
+          "non_nda": 70
+        }
+      }
+    },
+    {
+      "year": 2012,
+      "pairing": "near_prior_year_end",
+      "status": "MEASURED",
+      "zip_date": "2011-12-14",
+      "zip_source": {
+        "file": "ob_20111229223919.zip",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "wayback_ts": "20111229223919"
+      },
+      "patents": {
+        "annual": 3967,
+        "archival": 4186,
+        "exact": 3934,
+        "jaccard": 0.9324484474994075,
+        "annual_fraction_matched": 0.991681371313335,
+        "archival_fraction_matched": 0.939799331103679,
+        "annual_only": 33,
+        "archival_only": 252,
+        "shared_identity_different_expiry_sets": 53,
+        "annual_excluded": {
+          "non_nda": 3
+        },
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.5986274509803922,
+        "zip_pediatric_rows": 2048
+      },
+      "exclusivity": {
+        "annual": 590,
+        "archival": 768,
+        "exact": 576,
+        "jaccard": 0.7365728900255755,
+        "annual_fraction_matched": 0.976271186440678,
+        "archival_fraction_matched": 0.75,
+        "annual_only": 14,
+        "archival_only": 192,
+        "shared_identity_different_expiry_sets": 17,
+        "annual_excluded": {
+          "non_nda": 39
+        },
+        "archival_excluded": {
+          "non_nda": 76
+        }
+      }
+    },
+    {
+      "year": 2013,
+      "pairing": "same_edition_year",
+      "status": "MEASURED",
+      "zip_date": "2013-08-30",
+      "zip_source": {
+        "file": "ob_20130906105914.zip",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "wayback_ts": "20130906105914"
+      },
+      "patents": {
+        "annual": 4156,
+        "archival": 4574,
+        "exact": 4111,
+        "jaccard": 0.890019484736956,
+        "annual_fraction_matched": 0.989172281039461,
+        "archival_fraction_matched": 0.8987756886751203,
+        "annual_only": 45,
+        "archival_only": 463,
+        "shared_identity_different_expiry_sets": 52,
+        "annual_excluded": {
+          "non_nda": 3
+        },
+        "archival_excluded": {
+          "unclassified": 1
+        },
+        "raw_zip_identifier_jaccard": 0.5910333515582286,
+        "zip_pediatric_rows": 2001
+      },
+      "exclusivity": {
+        "annual": 617,
+        "archival": 728,
+        "exact": 613,
+        "jaccard": 0.837431693989071,
+        "annual_fraction_matched": 0.993517017828201,
+        "archival_fraction_matched": 0.842032967032967,
+        "annual_only": 4,
+        "archival_only": 115,
+        "shared_identity_different_expiry_sets": 11,
+        "annual_excluded": {
+          "non_nda": 36
+        },
+        "archival_excluded": {
+          "non_nda": 53,
+          "unclassified": 1
+        }
+      }
+    },
+    {
+      "year": 2013,
+      "pairing": "near_prior_year_end",
+      "status": "MEASURED",
+      "zip_date": "2013-01-18",
+      "zip_source": {
+        "file": "ob_20130130220223.zip",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "9fa45df9a830dcf000314d9894e6c2fada38d1ce707b8d39a46800e54ed4c4ea",
+        "wayback_ts": "20130130220223"
+      },
+      "patents": {
+        "annual": 4156,
+        "archival": 4445,
+        "exact": 4155,
+        "jaccard": 0.9345479082321188,
+        "annual_fraction_matched": 0.9997593840230992,
+        "archival_fraction_matched": 0.9347581552305961,
+        "annual_only": 1,
+        "archival_only": 290,
+        "shared_identity_different_expiry_sets": 49,
+        "annual_excluded": {
+          "non_nda": 3
+        },
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.6179458239277652,
+        "zip_pediatric_rows": 2108
+      },
+      "exclusivity": {
+        "annual": 617,
+        "archival": 772,
+        "exact": 617,
+        "jaccard": 0.7992227979274611,
+        "annual_fraction_matched": 1.0,
+        "archival_fraction_matched": 0.7992227979274611,
+        "annual_only": 0,
+        "archival_only": 155,
+        "shared_identity_different_expiry_sets": 13,
+        "annual_excluded": {
+          "non_nda": 36
+        },
+        "archival_excluded": {
+          "non_nda": 84
+        }
+      }
+    },
+    {
+      "year": 2014,
+      "pairing": "same_edition_year",
+      "status": "MEASURED",
+      "zip_date": "2014-09-10",
+      "zip_source": {
+        "file": "ob_20140915104404.zip",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "wayback_ts": "20140915104404"
+      },
+      "patents": {
+        "annual": 3740,
+        "archival": 5030,
+        "exact": 3698,
+        "jaccard": 0.7291009463722398,
+        "annual_fraction_matched": 0.9887700534759358,
+        "archival_fraction_matched": 0.7351888667992048,
+        "annual_only": 42,
+        "archival_only": 1332,
+        "shared_identity_different_expiry_sets": 835,
+        "annual_excluded": {},
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.705893794981521,
+        "zip_pediatric_rows": 1994
+      },
+      "exclusivity": {
+        "annual": 599,
+        "archival": 719,
+        "exact": 597,
+        "jaccard": 0.8280166435506241,
+        "annual_fraction_matched": 0.996661101836394,
+        "archival_fraction_matched": 0.8303198887343533,
+        "annual_only": 2,
+        "archival_only": 122,
+        "shared_identity_different_expiry_sets": 9,
+        "annual_excluded": {
+          "non_nda": 26
+        },
+        "archival_excluded": {
+          "non_nda": 56
+        }
+      }
+    },
+    {
+      "year": 2014,
+      "pairing": "near_prior_year_end",
+      "status": "NOT_RUN",
+      "reason": "no inventory ZIP"
+    },
+    {
+      "year": 2015,
+      "pairing": "same_edition_year",
+      "status": "MEASURED",
+      "zip_date": "2015-09-18",
+      "zip_source": {
+        "file": "ob_20151006063349.zip",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "wayback_ts": "20151006063349"
+      },
+      "patents": {
+        "annual": 4048,
+        "archival": 5300,
+        "exact": 3997,
+        "jaccard": 0.7469631844515044,
+        "annual_fraction_matched": 0.987401185770751,
+        "archival_fraction_matched": 0.7541509433962265,
+        "annual_only": 51,
+        "archival_only": 1303,
+        "shared_identity_different_expiry_sets": 693,
+        "annual_excluded": {},
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.7005639439694379,
+        "zip_pediatric_rows": 1964
+      },
+      "exclusivity": {
+        "annual": 657,
+        "archival": 777,
+        "exact": 656,
+        "jaccard": 0.8431876606683805,
+        "annual_fraction_matched": 0.9984779299847792,
+        "archival_fraction_matched": 0.8442728442728443,
+        "annual_only": 1,
+        "archival_only": 121,
+        "shared_identity_different_expiry_sets": 4,
+        "annual_excluded": {
+          "non_nda": 33
+        },
+        "archival_excluded": {
+          "non_nda": 70
+        }
+      }
+    },
+    {
+      "year": 2015,
+      "pairing": "near_prior_year_end",
+      "status": "MEASURED",
+      "zip_date": "2015-01-16",
+      "zip_source": {
+        "file": "ob_20150206095621.zip",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "f5ca885cdffc9af0ea65a9975fa60a7b9670369365e48b73a3fcc9a71f75c498",
+        "wayback_ts": "20150206095621"
+      },
+      "patents": {
+        "annual": 4048,
+        "archival": 5266,
+        "exact": 4048,
+        "jaccard": 0.7687048993543486,
+        "annual_fraction_matched": 1.0,
+        "archival_fraction_matched": 0.7687048993543486,
+        "annual_only": 0,
+        "archival_only": 1218,
+        "shared_identity_different_expiry_sets": 624,
+        "annual_excluded": {},
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.7200369344413666,
+        "zip_pediatric_rows": 2063
+      },
+      "exclusivity": {
+        "annual": 657,
+        "archival": 799,
+        "exact": 657,
+        "jaccard": 0.8222778473091364,
+        "annual_fraction_matched": 1.0,
+        "archival_fraction_matched": 0.8222778473091364,
+        "annual_only": 0,
+        "archival_only": 142,
+        "shared_identity_different_expiry_sets": 16,
+        "annual_excluded": {
+          "non_nda": 33
+        },
+        "archival_excluded": {
+          "non_nda": 81
+        }
+      }
+    },
+    {
+      "year": 2016,
+      "pairing": "same_edition_year",
+      "status": "MEASURED",
+      "zip_date": "2016-12-16",
+      "zip_source": {
+        "file": "ob_20170111194915.zip",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+        "wayback_ts": "20170111194915"
+      },
+      "patents": {
+        "annual": 4505,
+        "archival": 5679,
+        "exact": 4422,
+        "jaccard": 0.7674418604651163,
+        "annual_fraction_matched": 0.9815760266370699,
+        "archival_fraction_matched": 0.7786582144743793,
+        "annual_only": 83,
+        "archival_only": 1257,
+        "shared_identity_different_expiry_sets": 562,
+        "annual_excluded": {},
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.6995994659546061,
+        "zip_pediatric_rows": 1796
+      },
+      "exclusivity": {
+        "annual": 709,
+        "archival": 866,
+        "exact": 708,
+        "jaccard": 0.8166089965397924,
+        "annual_fraction_matched": 0.998589562764457,
+        "archival_fraction_matched": 0.8175519630484989,
+        "annual_only": 1,
+        "archival_only": 158,
+        "shared_identity_different_expiry_sets": 5,
+        "annual_excluded": {
+          "non_nda": 19
+        },
+        "archival_excluded": {
+          "non_nda": 55
+        }
+      }
+    },
+    {
+      "year": 2016,
+      "pairing": "near_prior_year_end",
+      "status": "MEASURED",
+      "zip_date": "2016-03-18",
+      "zip_source": {
+        "file": "ob_20160407115331.zip",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "sha256": "dc1234836c9606204b74195bb9e225ee767a70c97470ae8327e557889bd2fa2c",
+        "wayback_ts": "20160407115331"
+      },
+      "patents": {
+        "annual": 4505,
+        "archival": 5184,
+        "exact": 4468,
+        "jaccard": 0.8557747557939092,
+        "annual_fraction_matched": 0.9917869034406215,
+        "archival_fraction_matched": 0.8618827160493827,
+        "annual_only": 37,
+        "archival_only": 716,
+        "shared_identity_different_expiry_sets": 516,
+        "annual_excluded": {},
+        "archival_excluded": {},
+        "raw_zip_identifier_jaccard": 0.7771460014673515,
+        "zip_pediatric_rows": 1724
+      },
+      "exclusivity": {
+        "annual": 709,
+        "archival": 747,
+        "exact": 709,
+        "jaccard": 0.9491298527443106,
+        "annual_fraction_matched": 1.0,
+        "archival_fraction_matched": 0.9491298527443106,
+        "annual_only": 0,
+        "archival_only": 38,
+        "shared_identity_different_expiry_sets": 0,
+        "annual_excluded": {
+          "non_nda": 19
+        },
+        "archival_excluded": {
+          "non_nda": 24
+        }
+      }
+    }
+  ],
+  "development_opportunities": {
+    "new_fresh_development_cutoffs": [
+      "1988-01-01",
+      "1989-01-01",
+      "1990-01-01",
+      "1991-01-01",
+      "1992-01-01",
+      "1993-01-01",
+      "1994-01-01",
+      "1995-01-01",
+      "1996-01-01",
+      "1997-01-01",
+      "1998-01-01",
+      "1999-01-01",
+      "2000-01-01",
+      "2001-01-01",
+      "2002-01-01",
+      "2003-01-01",
+      "2004-01-01",
+      "2005-01-01",
+      "2006-01-01",
+      "2007-01-01",
+      "2008-01-01",
+      "2009-01-01",
+      "2011-01-01"
+    ],
+    "windows": {
+      "12": {
+        "validation_start": "2012-01-01",
+        "validation_start_basis": "T2b",
+        "added_training_cutoffs": [
+          "1988-01-01",
+          "1989-01-01",
+          "1990-01-01",
+          "1991-01-01",
+          "1992-01-01",
+          "1993-01-01",
+          "1994-01-01",
+          "1995-01-01",
+          "1996-01-01",
+          "1997-01-01",
+          "1998-01-01",
+          "1999-01-01",
+          "2000-01-01",
+          "2001-01-01",
+          "2002-01-01",
+          "2003-01-01",
+          "2004-01-01",
+          "2005-01-01",
+          "2006-01-01",
+          "2007-01-01",
+          "2008-01-01",
+          "2009-01-01"
+        ]
+      },
+      "24": {
+        "validation_start": "2013-01-01",
+        "validation_start_basis": "T2b",
+        "added_training_cutoffs": [
+          "1988-01-01",
+          "1989-01-01",
+          "1990-01-01",
+          "1991-01-01",
+          "1992-01-01",
+          "1993-01-01",
+          "1994-01-01",
+          "1995-01-01",
+          "1996-01-01",
+          "1997-01-01",
+          "1998-01-01",
+          "1999-01-01",
+          "2000-01-01",
+          "2001-01-01",
+          "2002-01-01",
+          "2003-01-01",
+          "2004-01-01",
+          "2005-01-01",
+          "2006-01-01",
+          "2007-01-01",
+          "2008-01-01",
+          "2009-01-01"
+        ]
+      },
+      "36": {
+        "validation_start": "2013-01-01",
+        "validation_start_basis": "illustrative seal-compatible boundary",
+        "added_training_cutoffs": [
+          "1988-01-01",
+          "1989-01-01",
+          "1990-01-01",
+          "1991-01-01",
+          "1992-01-01",
+          "1993-01-01",
+          "1994-01-01",
+          "1995-01-01",
+          "1996-01-01",
+          "1997-01-01",
+          "1998-01-01",
+          "1999-01-01",
+          "2000-01-01",
+          "2001-01-01",
+          "2002-01-01",
+          "2003-01-01",
+          "2004-01-01",
+          "2005-01-01",
+          "2006-01-01",
+          "2007-01-01",
+          "2008-01-01",
+          "2009-01-01"
+        ]
+      }
+    }
+  }
+}

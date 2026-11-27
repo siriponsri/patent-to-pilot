@@ -58,6 +58,16 @@ class HistoricalMoietyLinker:
         number = row["product_no"]
         anchors = self.nda_products.get((row["appl_no"], number.zfill(3)), ()) if number.isdigit() else ()
         anchor_keys = {candidate for candidate, _ in anchors}
+        if row.get("partial_ingredient"):
+            if len(anchor_keys) > 1:
+                return None, "conflicting_product_identity"
+            candidate = next(iter(anchor_keys), None)
+            if candidate not in self.entities:
+                return None, "no_exact_product_anchor"
+            if (not composition.low_confidence and composition.parts
+                    and not composition.parts.issubset(candidate.split("|"))):
+                return None, "conflicting_product_identity"
+            return candidate, "application_product_partial_ingredient"
         if by_name is not None:
             if anchor_keys and anchor_keys != {by_name}:
                 return None, "conflicting_product_identity"

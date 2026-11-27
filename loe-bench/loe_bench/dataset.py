@@ -112,11 +112,13 @@ def build_moiety_linkage(raw_dir, registry, orange):
     return link_compositions(compositions())
 
 
-def build_entities(raw_dir: str, *, key_mode: str = "moiety", gsrs_path=None) -> Dict[str, Entity]:
+def build_entities(raw_dir: str, *, key_mode: str = "moiety", gsrs_path=None,
+                   include_anda_outcomes: bool = True) -> Dict[str, Entity]:
     """Use FIX2b active moieties or select `key_mode="fix2"` or `"legacy"` for replay.
 
     Look for the pinned GSRS export in the sibling moiety directory unless a
     path is supplied. Without that file, every name fallback is low confidence.
+    Identity audits can omit outcome derivation while retaining the FIX2b alias union.
     """
     if key_mode not in {"moiety", "fix2", "legacy"}:
         raise ValueError(f"unsupported entity key mode: {key_mode}")
@@ -178,6 +180,8 @@ def build_entities(raw_dir: str, *, key_mode: str = "moiety", gsrs_path=None) ->
                     e.record_flag("oral", when)
                 if any(term in route for term in ("INJECT", "INTRAVENOUS", "SUBCUTANEOUS", "INTRAMUSCULAR")):
                     e.record_flag("injectable", when)
+    if not include_anda_outcomes:
+        return ents
     for rec in read_jsonl(os.path.join(raw_dir, "df_anda.jsonl")):
         d = min((when for when, _ in _final_originals(rec)), default=None)
         if d is None:
