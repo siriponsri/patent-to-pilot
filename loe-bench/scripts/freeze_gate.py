@@ -6,6 +6,9 @@ an opaque "drug_cluster", "nme_from" (first cutoff-eligible NME approval date),
 and "first_final_anda" (ISO date or null). The projection uses the frozen
 FIX2c cohort mapping with outcomes through the S0 observation end. Keep it
 outside Git and executor access. No model scores or metric routines are used.
+
+The only gate output is PASS, COVERAGE_FAIL, EVENT_FAIL or TECHNICAL_FAIL.
+The main planner manages any documented retry outside this script.
 """
 import argparse
 from datetime import date
@@ -21,6 +24,12 @@ from loe_bench.common import add_months
 from loe_bench.ob_history import DEFAULT_DIR, OBHistory
 from loe_bench.seal import TEST_FIRST
 from loe_bench.t2_features import edition_coverage
+
+
+PASS = "PASS"
+COVERAGE_FAIL = "COVERAGE_FAIL"
+EVENT_FAIL = "EVENT_FAIL"
+TECHNICAL_FAIL = "TECHNICAL_FAIL"
 
 
 def checked_manifest(reference):
@@ -44,6 +53,8 @@ def verified_cutoffs(history, days, directory):
 
 
 def event_cluster_gate(histories, cutoffs, horizon, end, minimum):
+    if not isinstance(histories, list):
+        raise ValueError("Expected a list of histories")
     clusters = set()
     found = 0
     for row in histories:
@@ -62,32 +73,42 @@ def event_cluster_gate(histories, cutoffs, horizon, end, minimum):
 
 
 def run(projection, ob_dir):
+    try:
+        return _evaluate(projection, ob_dir)
+    except Exception:
+        # An exception can contain private paths or values from the projection.
+        return TECHNICAL_FAIL
+
+
+def _evaluate(projection, ob_dir):
     config = json.loads((ROOT / "data/FROZEN_CONFIG.json").read_bytes())
     if config["status"] != "FROZEN_FOR_PREREG":
-        return False
+        return TECHNICAL_FAIL
     sealed = config["sealed_test"]
     refs = config["input_sha256"]
     end = date.fromisoformat(checked_manifest(refs["s0_manifest"])["t0"])
     history = OBHistory.from_records(checked_manifest(refs["ob_manifest"]), ob_dir)
     if end.isoformat() != sealed["outcomes_observed_through"] or sealed["test_first"] != TEST_FIRST.isoformat():
-        return False
+        return TECHNICAL_FAIL
+    h = sealed["cluster_gate_horizon"]
+    minimum = sealed["min_distinct_event_drug_clusters"]
+    if set(sealed["schedule"]) != {"12", "24"} or h != 24 or minimum != 50:
+        return TECHNICAL_FAIL
     schedules = {}
     for horizon, schedule in sealed["schedule"].items():
-        h = int(horizon)
-        candidates = [date(year, 1, 1) for year in range(TEST_FIRST.year, end.year + 1)
-                      if add_months(date(year, 1, 1), h) <= end]
-        days = [day for day in candidates if edition_coverage(history, day)["status"] == "FRESH"]
-        if ([day.isoformat() for day in days] != schedule["test_cutoffs"]
-                or not verified_cutoffs(history, days, ob_dir)):
-            return False
-        schedules[h] = days
-    h = sealed["cluster_gate_horizon"]
-    if set(schedules) != {12, 24} or h != 24 or sealed["min_distinct_event_drug_clusters"] != 50:
-        return False
+        months = int(horizon)
+        days = [date(year, 1, 1) for year in range(TEST_FIRST.year, end.year + 1)
+                if add_months(date(year, 1, 1), months) <= end]
+        if not days or [day.isoformat() for day in days] != schedule["test_cutoffs"]:
+            return TECHNICAL_FAIL
+        schedules[months] = days
+    for days in schedules.values():
+        if not verified_cutoffs(history, days, ob_dir):
+            return COVERAGE_FAIL
     data = json.loads(projection.read_bytes())
     if data["s0_manifest_sha256"] != refs["s0_manifest"]["sha256"]:
-        return False
-    return event_cluster_gate(data["histories"], schedules[h], h, end, 50)
+        return TECHNICAL_FAIL
+    return PASS if event_cluster_gate(data["histories"], schedules[h], h, end, minimum) else EVENT_FAIL
 
 
 def main():
@@ -95,12 +116,9 @@ def main():
     parser.add_argument("projection", type=Path)
     parser.add_argument("--ob-dir", type=Path, default=Path(DEFAULT_DIR))
     args = parser.parse_args()
-    try:
-        passed = run(args.projection, args.ob_dir)
-    except (OSError, ValueError, TypeError, KeyError, OverflowError):
-        passed = False
-    print("PASS" if passed else "FAIL")
-    return 0 if passed else 1
+    verdict = run(args.projection, args.ob_dir)
+    print(verdict)
+    return 0 if verdict == PASS else 1
 
 
 if __name__ == "__main__":
