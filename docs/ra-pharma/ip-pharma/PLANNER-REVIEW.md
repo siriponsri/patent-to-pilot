@@ -1,0 +1,14 @@
+# Independent B1 review • 27 November 2026
+
+**Accept BLOCKED_FRAME and close this preflight.** Research published its [receipt](https://github.com/siriponsri/patent-to-pilot/blob/f893f4a2a7c5fd5de4afa44950afb91e53da0be3/docs/ra-pharma/research/ip-pharma/b1/B1-RECEIPT.md) on the designated branch under the [prospective dispatch](https://github.com/siriponsri/patent-to-pilot/blob/6ee17111910ae76206fc46ab9ce05cb560208fe0/docs/ra-pharma/ip-pharma/B1-PLANNER.md). Planner verified the live Research ref, parent-to-head path diff and completed GPT 6.2 Sol run. The three changed paths contain the receipt and lane handoff and memory.
+
+| Independent check | Observed result |
+|---|---|
+| Drugs@FDA retained ZIP | SHA-256 b5f97ad97d5ac78437dcb305808f9f8e1a6caee7983904d96f85adadbd13269f. CRC passed across 12 members and 43,587,606 uncompressed bytes. Products and Submissions headers carry the expected keys. |
+| Orange Book retained ZIP | SHA-256 d4dbc9d85df4fbd78c5e448f130a55b05054f529d2054a46df10735437792241. CRC passed across 3 members and 8,861,863 uncompressed bytes. The patent header identifies grant numbers and exact product keys. It contains no patent-family field. |
+| Prior exposure sample | The 1,441-byte exposure-only file matched SHA-256 753753272378a5726dfbf9064363de29929c5daa2c7f1529db58d035bf598ddd and contained 24 distinct nonempty IDs. The [successor inventory](https://github.com/siriponsri/patent-to-pilot/blob/f893f4a2a7c5fd5de4afa44950afb91e53da0be3/docs/ra-pharma/research/successor/README.md#exclusion-feasibility) explicitly documents unresolved historical coverage. Known seeds and this bounded sample cannot support a complete exclusion check. |
+| Prefix, rights and costs | No selector release, prefix, substitutions, case-level rights decisions or admission denominator appears in the published artifacts. Research reports zero case requests and USD 0 new charges. CPU and human time for the entire task are unknown. Planner checked headers and exposure metadata only. |
+
+The evidence supports stopping at DT-06 preflight. Eligibility, source pairs, marker scans, B1-ext and B2–B4 are NOT_RUN. The usable-family thresholds cannot be applied. The older three selected and zero admitted belong to a different intake. No model comparison, market measurement or legal conclusion follows. Full PTP code tests were NOT_RUN for the documentation-only handback.
+
+Resume this same protocol only if a dated grant/publication-to-family mapping and a same-definition exclusion inventory or custodian overlap check with documented coverage become available. Verify usage rights and hashes, resolve missing and conflicting identifiers, then publish the executable selector and complete lock before selecting any matter. A different sampling or exposure rule would require a prospective owner decision. D36 portfolio exploration can use its own product and market evidence sources. Product remains held.
