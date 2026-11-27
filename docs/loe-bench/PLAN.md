@@ -134,6 +134,8 @@ The Westfall & Krishen (2001) gatekeeping reference could not be verified, so it
 
 Each step uses a paired whole-drug cluster bootstrap with at least 2,000 draws ([Field & Welsh 2007](https://doi.org/10.1111/j.1467-9868.2007.00593.x)). A step succeeds when the lower percentile bound is strictly above 0. The family stops at the first failed or unevaluable step, and any undefined replicate means no confirmatory result.
 
+**α outcome (T4c).** The rule selected one-sided α = 0.025. Power is stated honestly in the preregistration: at 75 event clusters the design reaches 80% power only for effects of about +14 pp or more. The +10 pp usefulness threshold remains a reporting threshold, and H1 is not powered for it below about 150 clusters.
+
 **α rule (pre-declared).** The T4 rerun estimates the H1 type-I error with at least 12,000 null datasets. Use one-sided α = 0.025 if the Monte Carlo 95% upper bound is 2.5% or less, otherwise 0.020. The choice is fixed before preregistration.
 
 **Practical usefulness.** A difference of at least +10 percentage points of recall counts as useful. It is reported next to statistical success, and it is not a gate.
@@ -216,11 +218,11 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | K20+T1 | Long-window trial (pre-declared rule), then threshold and policy freeze | GPT-6.2 Sol high | E8, T4b | merged: K20 rejected. T1 failed acceptance: coverage targets met at 3/12, and every confident answer is NO ENTRY (class imbalance) |
 | 2 | CP4 | Co-planner: metric and policy redesign under about 5% prevalence (criteria v3 options) | GPT-6.2 Astra high | K20T1 | merged; criteria v3 owner-approved |
 | 2 | T1v3 | Asymmetric policy freeze (lo/hi) for the review budget and auto-clear safety, with native-score queues | GPT-6.2 Sol high | CP4 | merged. The v3 endpoint is implemented and every queue is exactly at capacity. Development: H1 +24.1 pp [+13.4, +35.4]; H2 −1.1 pp [−4.7, +3.3]; H3 +15.2 pp [+5.6, +26.0]. Auto-clear safety failed: the upper bound exceeds 3% in every arm |
-| 2 | T4c | Power and type-I for recall@20% (applies the α rule) | GPT-6.2 Sol xhigh | CP4 | dispatched |
+| 2 | T4c | Power and type-I for recall@20% (applies the α rule) | GPT-6.2 Sol xhigh | CP4 | merged: variance passes 6/6; RULE_SELECTED_ALPHA = 0.025; H1 power at 75 event clusters is 16% at +5 pp, 50% at +10 pp, 85% at +15 pp and 98% at +20 pp, with MDE80 about +14 pp. The +10 pp useful effect needs about 150 clusters. Development H1 estimate: +24 pp |
 | 2 | K22 | Legally faithful graph trial (M3 only, pre-declared rule) | GPT-6.2 Sol xhigh | REG | merged: v1 retained; v2 kept behind a flag |
 | 2 | E4b | LLM arm infrastructure on RunPod (USD 20 cap): test pod create/delete, upload estimate, network volume with model and harness | GPT-6.2 Sol high | owner envelope | dispatched |
 | 2 | FREEZE | Rebuild the frozen config on merged code (REG fix, K22 decision); T1v3 rule unchanged; reconcile the H2 swing (T1v3 −1.1 pp vs K22 +5.5 pp) | GPT-6.2 Sol high | T1v3, K22 | merged: FROZEN_FOR_PREREG. The swing comes from REG's fix of undated PIV training features; both scripts agree on identical data. H2 at 24 months is +5.49 pp [−2.00, +11.25]. Two runs are hash-identical. The C′ gate script is NOT_RUN |
-| 2 | T5 | Preregistration draft (OSF secondary-data template), then co-planner critique | GPT-6.2 Sol high, then Astra | FREEZE | dispatched |
+| 2 | T5 | Preregistration draft (OSF secondary-data template), then co-planner critique | GPT-6.2 Sol high, then Astra | FREEZE | draft v0 merged; CP5 critique running; main-planner revision next |
 | 2 | REG | Verify regulatory rules in code against primary legal and FDA sources (replaces the expert review) | GPT-6.2 Sol high | — | merged: [REGULATORY-RULES.md](REGULATORY-RULES.md). One fix: undated matched PIV rows now give UNKNOWN instead of FALSE. T1v3 and T4c started before it, so the frozen config must be rebuilt on the merged code |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
