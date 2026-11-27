@@ -2,6 +2,8 @@
 
 ## Current research-first handoff
 
+The owner requested a [detailed Plan B proposal](docs/ra-pharma/ip-pharma/PLAN-B-RESEARCH.md). B1 package-first feasibility is proposed. Execution, enrollment and scoring await a separate owner decision.
+
 The owner's [eight-idea results report](docs/ra-pharma/ip-pharma/EIGHT-IDEA-RESULTS.md) consolidates measured outcomes, historical controls, unresolved evidence and product decisions after the closed overnight loop.
 
 **Current overnight disposition.** The [final Planner audit](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md#owner-handback) accepts the ELIQUIS engineering dossier and closes both the three-case intake and same-case access recovery. No eligible fresh pair, policy execution or comparative score. Preserve the 05:00 owner report and all originals.

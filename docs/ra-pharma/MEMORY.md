@@ -1,5 +1,7 @@
 # Project memory
 
+The [Plan B design](ip-pharma/PLAN-B-RESEARCH.md) proposes testing source availability and exact edition first, then separating one-open-answerable cases from cases requiring both sources in a blind evaluation. The owner requested planning only. No cohort was enrolled.
+
 Use the [final eight-idea results](ip-pharma/EIGHT-IDEA-RESULTS.md) to distinguish eight design proposals from the separate eight unmeasured IS1 successor cells. Both fresh intake passes address the same three product keys. The reported accuracy denominator stays empty.
 
 The [same-case recovery audit](ip-pharma/OVERNIGHT-REVIEW.md#owner-handback) verified all seven files. Exact product identity was available in three cases, package-level quality metadata in one, and exact-edition pairs in zero. Keep admission counts separate from performance denominators; preserve NOT_RUN for the learned and fixed policies.
