@@ -1,0 +1,370 @@
+{
+  "source_page": {
+    "url": "https://www.nber.org/research/data/orange-book-patent-and-exclusivity-data-1985-2016",
+    "file": "nber_landing.html",
+    "sha256": "a97d142e0dcb578132deffe3b6e33731ac458300680c67963ef038df69be899c"
+  },
+  "guide": {
+    "doi_url": "https://doi.org/10.1016/j.respol.2023.104791",
+    "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10731339/",
+    "publication_date": "2023-05-24",
+    "working_paper": {
+      "url": "https://www.nber.org/system/files/working_papers/w30628/w30628.pdf",
+      "file": "w30628.pdf",
+      "sha256": "e600524abe7035caca969d02c05bc661aa8659c3d44000f932084807702c322f",
+      "version": "May 2023 revision"
+    }
+  },
+  "readme": {
+    "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+    "file": "README.pdf",
+    "sha256": "1f7926ab1309d9f00cd29a7dc45b10094c89826f5310ab1cd217b6041c788915",
+    "date": "2018-07-17"
+  },
+  "archive": {
+    "file": "4_clean_tables_stata.zip",
+    "source_url": "https://data.nber.org/fda/orange-book/historical/1986-2016/4_clean_tables_stata.zip",
+    "sha256": "9254984502c69c0ddbf93c81cf584a0469e3961a2e5120967300df1cc41ac453",
+    "bytes": 9677658,
+    "last_modified": "2018-08-10T18:56:51Z",
+    "version": "1985–2016; Stata 118 tables generated 2018-07-17"
+  },
+  "initial_release_date": null,
+  "terms": {
+    "url": "https://www.nber.org/terms-and-conditions",
+    "effective_date": "2026-08-01",
+    "data_license": null,
+    "scope": "Public-use archive with an open-access user guide. Local noncommercial research using the publisher-supplied download; no dataset redistribution."
+  },
+  "tables": {
+    "patent": {
+      "member": "4_clean_tables_stata/FDA_drug_patents.dta",
+      "sha256": "1764fac25e552b3f65cb2c52234f0f7a661cc559c79abe9eec7ba75668fd9b6c",
+      "rows": 130259
+    },
+    "exclusivity": {
+      "member": "4_clean_tables_stata/FDA_drug_exclusivity.dta",
+      "sha256": "25da8cc3def7601ba059911be68dbe52b96553301ee3d6532b31141d61930dc2",
+      "rows": 32427
+    }
+  },
+  "reference_tables": {
+    "FDA_patent_use_codes.dta": "9d88a101da31d252593807fd0f568dc7c281d5013cfa5375c22a851c8bfe2c0d",
+    "FDA_drug_exclusivity_codes.dta": "14e69645496896b83849b01f59c2b14df1ebe3d685f18a25503c1ed7f5713503"
+  },
+  "edition_date_rule": "Documented annual publication date, otherwise December 31 of the printed edition year; year-only records become admissible the following January 1.",
+  "editions": [
+    {
+      "year": 1985,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1987,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "1987.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/1987.pdf",
+        "sha256": "166330612eb687b944ee9e2ac688b8a088e7bb41c13d566a5ece3011efeec96f",
+        "locator": "PDF title page (p. 2)",
+        "current_through": "1987-01-31",
+        "scope": "volume and first supplement"
+      }
+    },
+    {
+      "year": 1988,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1989,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1990,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1991,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1992,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1993,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1994,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1995,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1996,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1997,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1998,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 1999,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2000,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2001,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2002,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2003,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2004,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2005,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2006,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2007,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2008,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf"
+    },
+    {
+      "year": 2009,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "2009.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2009.pdf",
+        "sha256": "60abfb4b3136847d16c1ebe979e2ac64e36a542c2d75b8987615d0846232e982",
+        "locator": "PDF title page (p. 2)",
+        "current_through": "2008-12-31"
+      }
+    },
+    {
+      "year": 2010,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "2010.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2010.pdf",
+        "sha256": "0865c6418826d94217343c9c947bc55a5704a15d6ceddf0606f9309d4905f423",
+        "locator": "PDF title page (p. 2)",
+        "current_through": "2009-12-31"
+      }
+    },
+    {
+      "year": 2011,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "2011.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2011.pdf",
+        "sha256": "ed790a0bd84fde4ec313513da2c14280359cb5fea9d9ab4d62e3a438a4a8d527",
+        "locator": "PDF title page (p. 2)"
+      }
+    },
+    {
+      "year": 2012,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "2012.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2012.pdf",
+        "sha256": "20bdc237c2e3c22dee1177cff28973ce5e4a868ea36099f3b270c459a29e8a5f",
+        "locator": "PDF title page (p. 2)"
+      }
+    },
+    {
+      "year": 2013,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "2013.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2013.pdf",
+        "sha256": "299835e6d492065264b493e4fce5f547b25bbcc1cd942805deabfc9fbfc2e869",
+        "locator": "PDF title page (p. 2)",
+        "current_through": "2012-12-31"
+      }
+    },
+    {
+      "year": 2014,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "2014.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2014.pdf",
+        "sha256": "7d8ca80464ac2367eba8a9d3c1957998341a590c86eb20b77726065a6cb3e9c2",
+        "locator": "PDF title page (p. 2)",
+        "current_through": "2013-12-31"
+      }
+    },
+    {
+      "year": 2015,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "2015.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2015.pdf",
+        "sha256": "2e18be733917461498b3e07e0aacf4abe238e35f71a08582a6d04d01f16eb964",
+        "locator": "PDF title page (p. 2)",
+        "current_through": "2014-12-31"
+      }
+    },
+    {
+      "year": 2016,
+      "publication_date": null,
+      "locator": "README.pdf sections 1 and 3, edition column",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/README.pdf",
+      "edition_context": {
+        "file": "2016.pdf",
+        "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2016.pdf",
+        "sha256": "7df59eeff6494b55b05ee107322f7c4e66ccb334f33d5fb8c77adffdad661693",
+        "locator": "PDF title page (p. 2)",
+        "current_through": "2015-12-31"
+      }
+    }
+  ],
+  "checked_fda_title_pages": {
+    "1987": {
+      "file": "1987.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/1987.pdf",
+      "sha256": "166330612eb687b944ee9e2ac688b8a088e7bb41c13d566a5ece3011efeec96f",
+      "locator": "PDF title page (p. 2)",
+      "current_through": "1987-01-31",
+      "scope": "volume and first supplement"
+    },
+    "2010": {
+      "file": "2010.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2010.pdf",
+      "sha256": "0865c6418826d94217343c9c947bc55a5704a15d6ceddf0606f9309d4905f423",
+      "locator": "PDF title page (p. 2)",
+      "current_through": "2009-12-31"
+    },
+    "2016": {
+      "file": "2016.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2016.pdf",
+      "sha256": "7df59eeff6494b55b05ee107322f7c4e66ccb334f33d5fb8c77adffdad661693",
+      "locator": "PDF title page (p. 2)",
+      "current_through": "2015-12-31"
+    },
+    "2009": {
+      "file": "2009.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2009.pdf",
+      "sha256": "60abfb4b3136847d16c1ebe979e2ac64e36a542c2d75b8987615d0846232e982",
+      "locator": "PDF title page (p. 2)",
+      "current_through": "2008-12-31"
+    },
+    "2011": {
+      "file": "2011.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2011.pdf",
+      "sha256": "ed790a0bd84fde4ec313513da2c14280359cb5fea9d9ab4d62e3a438a4a8d527",
+      "locator": "PDF title page (p. 2)"
+    },
+    "2012": {
+      "file": "2012.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2012.pdf",
+      "sha256": "20bdc237c2e3c22dee1177cff28973ce5e4a868ea36099f3b270c459a29e8a5f",
+      "locator": "PDF title page (p. 2)"
+    },
+    "2013": {
+      "file": "2013.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2013.pdf",
+      "sha256": "299835e6d492065264b493e4fce5f547b25bbcc1cd942805deabfc9fbfc2e869",
+      "locator": "PDF title page (p. 2)",
+      "current_through": "2012-12-31"
+    },
+    "2014": {
+      "file": "2014.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2014.pdf",
+      "sha256": "7d8ca80464ac2367eba8a9d3c1957998341a590c86eb20b77726065a6cb3e9c2",
+      "locator": "PDF title page (p. 2)",
+      "current_through": "2013-12-31"
+    },
+    "2015": {
+      "file": "2015.pdf",
+      "url": "https://data.nber.org/fda/orange-book/historical/1986-2016/1_orange_book_PDFs/full_books_1980-2016/2015.pdf",
+      "sha256": "2e18be733917461498b3e07e0aacf4abe238e35f71a08582a6d04d01f16eb964",
+      "locator": "PDF title page (p. 2)",
+      "current_through": "2014-12-31"
+    }
+  }
+}

@@ -26,6 +26,7 @@ class AsOfFeatures:
     verdict: str
     edition_status: str
     challenge: ChallengeEvidence | None = None
+    edition_source: dict | None = None
 
 
 def edition_coverage(history: OBHistory, cutoff: date) -> dict:
@@ -57,11 +58,15 @@ def _product_id(row):
 
 class _EditionIndex:
     def __init__(self, edition, registry=None, linker=None):
+        if edition.protection_only and linker is None:
+            raise ValueError("annual Orange Book features require the FIX2c identity crosswalk")
         self.by_key = defaultdict(set)
         self.patents = defaultdict(list)
         self.exclusivities = defaultdict(list)
         self.linkage_counts = Counter()
         self.unmatched_examples = {}
+        self.nda_applications = set()
+        self.linked_nda_applications = set()
         if linker is not None:
             self._link_products(edition, linker)
         else:
@@ -73,10 +78,14 @@ class _EditionIndex:
                                                 .split(";")).key if registry is not None else ingredient)
                     self.by_key[key].add(_product_id(product))
         for patent in edition.patents:
+            if edition.protection_only and patent["appl_type"] == "A":
+                continue
             submitted = patent["submission_date"]
             if submitted is None or submitted <= edition.edition_date:
                 self.patents[_product_id(patent)].append(patent)
         for exclusivity in edition.exclusivity:
+            if edition.protection_only and exclusivity["appl_type"] == "A":
+                continue
             self.exclusivities[_product_id(exclusivity)].append(exclusivity)
 
     def _link_products(self, edition, linker):
@@ -88,6 +97,7 @@ class _EditionIndex:
                 self.linkage_counts["unknown_application_type" if kind is None else "non_nda"] += 1
                 continue
             self.linkage_counts["total_nda"] += 1
+            self.nda_applications.add(row["appl_no"])
             approved = row["approval_date"]
             if approved is not None and approved > edition.edition_date:
                 key, method = None, "approval_after_edition"
@@ -104,10 +114,12 @@ class _EditionIndex:
             if key is not None:
                 self.by_key[key].add(product_id)
                 self.linkage_counts["matched"] += 1
+                self.linked_nda_applications.add(row["appl_no"])
             else:
                 self.unmatched_examples.setdefault(method, dict(
                     products_data_row=position, appl_no=product_id[0], product_no=product_id[1],
                     ingredient=row.get("ingredient"), trade_name=row.get("trade_name"),
+                    source_locator=row.get("locator"),
                 ))
 
     def records(self, key):
@@ -154,6 +166,8 @@ class AsOfBuilder:
         total = counts["total_nda"]
         return dict(counts, total_nda=total, matched=counts["matched"],
                     link_rate=counts["matched"] / total if total else None,
+                    nda_applications=len(index.nda_applications),
+                    linked_nda_applications=len(index.linked_nda_applications),
                     unmatched_examples=index.unmatched_examples)
 
     def build(self, key: str, cutoff: date, horizon: int, base_features: dict) -> AsOfFeatures:
@@ -192,4 +206,4 @@ class AsOfBuilder:
         if challenge is not None:
             x.update(challenge_present=float(state == T3.TRUE), challenge_missing=float(state == T3.UNKNOWN))
         verdict = verdict_label(build_assignment(snapshot, cutoff, horizon, challenge_evidence=state))
-        return AsOfFeatures(x, snapshot, verdict, status, challenge)
+        return AsOfFeatures(x, snapshot, verdict, status, challenge, coverage["source"])

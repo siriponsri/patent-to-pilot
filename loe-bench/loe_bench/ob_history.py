@@ -1,6 +1,6 @@
 """Historical FDA Orange Book editions and leakage-safe as-of features.
 
-Only the latest edition whose edition date <= cutoff is ever consulted. If none exists the
+Features use the latest edition available by the cutoff. If none exists the
 result status is UNKNOWN (never a silent FALSE). Orange Book files carry no paragraph-IV
 field; only patent Submission_Date (present from the 2018 editions on) is a challenge-timing
 proxy, and it is reported as None when the edition lacks the column.
@@ -79,6 +79,7 @@ def parse_patents(text: str) -> List[dict]:
         has_sub = "submission_date" in r
         out.append(dict(appl_no=norm_appl_no(r.get("appl_no")), product_no=r.get("product_no", ""),
                         patent_no=r.get("patent_no", ""),
+                        appl_type=r.get("appl_type", ""),
                         expiry=parse_ob_date(r.get("patent_expire_date_text")),
                         drug_substance=r.get("drug_substance_flag", "") == "Y",
                         drug_product=r.get("drug_product_flag", "") == "Y",
@@ -92,6 +93,7 @@ def parse_exclusivity(text: str) -> List[dict]:
     out = []
     for r in _read_table(text, EXCL_COLS_NOTYPE):
         out.append(dict(appl_no=norm_appl_no(r.get("appl_no")), product_no=r.get("product_no", ""),
+                        appl_type=r.get("appl_type", ""),
                         code=r.get("exclusivity_code", ""), expiry=parse_ob_date(r.get("exclusivity_date"))))
     return out
 
@@ -118,6 +120,7 @@ class Edition:
     exclusivity: List[dict]
     by_appl: Dict[str, List[dict]] = field(default_factory=dict)
     by_ingr: Dict[str, List[dict]] = field(default_factory=dict)
+    protection_only: bool = False
 
     def __post_init__(self):
         for p in self.products:
@@ -173,26 +176,36 @@ class OBHistory:
     """Store edition sources or legacy (edition_date, loader) pairs without publication proof."""
 
     def __init__(self, editions):
+        editions = list(editions)
+        self._legacy = all(not isinstance(item, EditionSource) for item in editions)
         sources = (item if isinstance(item, EditionSource) else EditionSource(*item) for item in editions)
-        self._ed = sorted(sources, key=lambda source: source.edition_date)
+        self._ed = sorted(sources, key=lambda source: (
+            source.edition_date, (source.identity or {}).get("kind") != "nber_annual"
+        ))
+        self._has_annual = any((s.identity or {}).get("kind") == "nber_annual" for s in self._ed)
         self._cache = {}
+        self._feature_indexes = {}
         self.data_dir = None
 
     @classmethod
-    def from_manifest(cls, manifest_path: str, data_dir: str = DEFAULT_DIR):
+    def from_manifest(cls, manifest_path: str, data_dir: str = DEFAULT_DIR, **annual):
         with open(manifest_path, encoding="utf-8") as f:
             m = json.load(f)
-        return cls.from_records(m, data_dir)
+        return cls.from_records(m, data_dir, **annual)
 
     @classmethod
-    def from_records(cls, manifest, data_dir: str = DEFAULT_DIR):
+    def from_records(cls, manifest, data_dir: str = DEFAULT_DIR, *, nber_manifest=None, nber_dir=None):
         sources = []
         for entry in manifest["editions"]:
             d = date.fromisoformat(entry["edition_date"])
             path = os.path.join(data_dir, entry["file"])
             identity = {name: entry[name] for name in ("file", "sha256", "source_url")}
+            identity["kind"] = "fda_zip"
             sources.append(EditionSource(d, lambda p=path, d=d: load_edition(p, d), identity,
                                          _availability_proofs(entry, manifest.get("e2b", {}))))
+        if nber_manifest is not None:
+            from .nber_ob import DEFAULT_NBER_DIR, nber_sources
+            sources.extend(nber_sources(nber_manifest, nber_dir or DEFAULT_NBER_DIR))
         history = cls(sources)
         history.data_dir = data_dir
         return history
@@ -201,7 +214,7 @@ class OBHistory:
         return [source.edition_date for source in self._ed]
 
     def available_source_asof(self, cutoff: date):
-        """Find the latest source with exact-edition publication evidence by the UTC cutoff date."""
+        """Find the latest source admitted by its recorded availability basis."""
         cutoff_iso = cutoff.isoformat()
         for source in reversed(self._ed):
             if source.edition_date <= cutoff:
@@ -215,35 +228,63 @@ class OBHistory:
             self._cache[source] = source.loader()
         return self._cache[source]
 
-    def edition_asof(self, cutoff: date) -> Optional[Edition]:
-        """Latest edition with edition_date <= cutoff, else None. Later editions are never loaded."""
+    def _dated_source_asof(self, cutoff):
         for source in reversed(self._ed):
             if source.edition_date <= cutoff:
-                return self.load_source(source)
+                return source
         return None
 
-    def features_asof(self, key: str, cutoff: date) -> dict:
+    def edition_asof(self, cutoff: date) -> Optional[Edition]:
+        """Select an admitted mixed-source edition, or a date-only edition for legacy audits."""
+        source = self.available_source_asof(cutoff)[0] if self._has_annual else self._dated_source_asof(cutoff)
+        return self.load_source(source) if source else None
+
+    def features_asof(self, key: str, cutoff: date, *, linker=None) -> dict:
         """key: Appl_No (digits only, e.g. '020571') or an ingredient key ('A|B', 'A;B' or raw name)."""
-        ed = self.edition_asof(cutoff)
-        res = dict(status="UNKNOWN", reason="no edition dated on or before cutoff",
-                   cutoff=cutoff.isoformat(), edition_date=None, **_NONE_FIELDS)
-        if ed is None:
+        source, proof = self.available_source_asof(cutoff)
+        if source is None and self._legacy:
+            source = self._dated_source_asof(cutoff)
+        res = dict(status="UNKNOWN", reason="no edition available by cutoff",
+                   cutoff=cutoff.isoformat(), edition_date=None, source=None,
+                   availability_proof=None, **_NONE_FIELDS)
+        if source is None:
             return res
+        ed = self.load_source(source)
+        res.update(edition_date=ed.edition_date.isoformat(), source=source.identity,
+                   availability_proof=proof)
         k = (key or "").strip()
         if k.isdigit():
             prods = ed.by_appl.get(norm_appl_no(k), [])
+            if ed.protection_only:
+                prods = [p for p in prods if (
+                    linker.application_type(p) if linker else p["appl_type"]
+                ) == "N"]
+            pk = {(p["appl_no"], p["product_no"]) for p in prods}
+        elif linker is not None:
+            from .t2_features import _EditionIndex
+            cache_key = source, linker
+            if cache_key not in self._feature_indexes:
+                self._feature_indexes[cache_key] = _EditionIndex(ed, linker=linker)
+            pk = self._feature_indexes[cache_key].by_key.get(linker.canonical(k), ())
+        elif ed.protection_only:
+            res.update(reason="annual moiety lookup requires the FIX2c identity crosswalk")
+            return res
         else:
             ik = "|".join(sorted({norm_ingredient(p) for p in re.split(r"[;|]", k) if norm_ingredient(p)}))
-            prods = ed.by_ingr.get(ik, [])
-        res.update(edition_date=ed.edition_date.isoformat())
-        if not prods:
+            pk = {(p["appl_no"], p["product_no"]) for p in ed.by_ingr.get(ik, [])}
+        if not pk:
+            if ed.protection_only:
+                res.update(reason="key absent from the annual patent and exclusivity tables")
+                return res
             res.update(status="NOT_LISTED", reason="key absent from selected edition", listed=False,
                        patents=[], exclusivities=[], n_patents=0, n_unexpired_patents=0,
                        exclusivity_codes=[])
             return res
-        pk = {(p["appl_no"], p["product_no"]) for p in prods}
         pats = [p for p in ed.patents if (p["appl_no"], p["product_no"]) in pk]
         exs = [x for x in ed.exclusivity if (x["appl_no"], x["product_no"]) in pk]
+        if ed.protection_only:
+            pats = [p for p in pats if p["appl_type"] != "A"]
+            exs = [x for x in exs if x["appl_type"] != "A"]
         pe = [p["expiry"] for p in pats if p["expiry"]]
         xe = [x["expiry"] for x in exs if x["expiry"]]
         subs = [p["submission_date"] for p in pats if p["submission_date"]]
