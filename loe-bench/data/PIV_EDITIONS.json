@@ -1,0 +1,1321 @@
+{
+  "schema_version": 1,
+  "source_page": "https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+  "editions": [
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20090709222221",
+      "retrieved_at_utc": "2026-11-27T11:31:19.804032+00:00",
+      "format": "pdf",
+      "version_date": "2009-07-07",
+      "file": "e141e8812eb0e2f86b68c57a618bad4dc77ef2ca91edad71eb81be0649ce1d4c.pdf",
+      "bytes": 265554,
+      "sha256": "e141e8812eb0e2f86b68c57a618bad4dc77ef2ca91edad71eb81be0649ce1d4c",
+      "rows": null,
+      "parse_status": "FAIL",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20090709222221id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "PHLKOJFMO3WDNW3QCHXUN2P2XQ54UZ2X",
+      "parse_error": "ValueError: incomplete table row at PDF table row object 281"
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20090827050640",
+      "retrieved_at_utc": "2026-11-27T11:31:19.802024+00:00",
+      "format": "pdf",
+      "version_date": "2009-08-18",
+      "file": "a3e21f188d7bb0573ddece7f5572cf88a13845cbfc15eca4fc1311591cc5330f.pdf",
+      "bytes": 1048557,
+      "sha256": "a3e21f188d7bb0573ddece7f5572cf88a13845cbfc15eca4fc1311591cc5330f",
+      "rows": 611,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20090827050640id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "XDZKI2XDB32A5A3JG36S7Z7FXWY6J42S",
+      "dated_rows": 363
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20091018121346",
+      "retrieved_at_utc": "2026-11-27T11:31:17.072548+00:00",
+      "format": "pdf",
+      "version_date": "2009-10-08",
+      "file": "fe2cde9967f56c263bdf1d93513498cdf446cbbf0987b8b3bf3689956b579ad7.pdf",
+      "bytes": 274361,
+      "sha256": "fe2cde9967f56c263bdf1d93513498cdf446cbbf0987b8b3bf3689956b579ad7",
+      "rows": null,
+      "parse_status": "FAIL",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20091018121346id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "FCXGCGW7GLQJ7TKDSCD7PVL43OAPW3MG",
+      "parse_error": "ValueError: incomplete table row at PDF table row object 278"
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20091104035413",
+      "retrieved_at_utc": "2026-11-27T11:31:12.914514+00:00",
+      "format": "pdf",
+      "version_date": "2009-10-20",
+      "file": "d2525b6b291d5711a055f358cd8f1ceb3297fe5a6474db78a59e7923a04e0685.pdf",
+      "bytes": 271739,
+      "sha256": "d2525b6b291d5711a055f358cd8f1ceb3297fe5a6474db78a59e7923a04e0685",
+      "rows": null,
+      "parse_status": "FAIL",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20091104035413id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "NL5KRJCN2QDMPU347LRIFERNOPSSHCVF",
+      "parse_error": "ValueError: incomplete table row at PDF table row object 286"
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20100728170904",
+      "retrieved_at_utc": "2026-11-27T11:31:19.807033+00:00",
+      "format": "pdf",
+      "version_date": "2010-07-23",
+      "file": "138565e1c1155f94ca71c6c5d1a9653c6f850139710de7bd9bfd9a82e7b8a256.pdf",
+      "bytes": 371186,
+      "sha256": "138565e1c1155f94ca71c6c5d1a9653c6f850139710de7bd9bfd9a82e7b8a256",
+      "rows": 698,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20100728170904id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "TUYP3UULWB2AJETPQ4HZX4BZZSHJMCSB",
+      "dated_rows": 449
+    },
+    {
+      "source_url": "http://www.fda.gov:80/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20101214040734",
+      "retrieved_at_utc": "2026-11-27T11:31:19.806033+00:00",
+      "format": "pdf",
+      "version_date": "2010-12-10",
+      "file": "324005e2507c9da03de5f72bcb89ce335984a0b88b18ac59ac093d81fb788969.pdf",
+      "bytes": 383922,
+      "sha256": "324005e2507c9da03de5f72bcb89ce335984a0b88b18ac59ac093d81fb788969",
+      "rows": 725,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20101214040734id_/http://www.fda.gov:80/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "5EKIRGAQQWMW6MOJEBYJEEHS5DP32BAK",
+      "dated_rows": 476
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20130918121839",
+      "retrieved_at_utc": "2026-11-27T11:31:19.815037+00:00",
+      "format": "pdf",
+      "version_date": "2011-06-10",
+      "file": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6.pdf",
+      "bytes": 408166,
+      "sha256": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6",
+      "rows": 772,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20130918121839id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "MKNUKPB6O5VLUYWUVR7HFYRVXAOBHCTQ",
+      "dated_rows": 523
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20141109210331",
+      "retrieved_at_utc": "2026-11-27T11:31:19.833039+00:00",
+      "format": "pdf",
+      "version_date": "2011-06-10",
+      "file": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6.pdf",
+      "bytes": 408166,
+      "sha256": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6",
+      "rows": 772,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20141109210331id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "MKNUKPB6O5VLUYWUVR7HFYRVXAOBHCTQ",
+      "dated_rows": 523
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "wayback_timestamp": "20150816002507",
+      "retrieved_at_utc": "2026-11-27T11:31:25.107423+00:00",
+      "format": "pdf",
+      "version_date": "2011-06-10",
+      "file": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6.pdf",
+      "bytes": 408166,
+      "sha256": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6",
+      "rows": 772,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20150816002507id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "cdx_sha1_base32": "MKNUKPB6O5VLUYWUVR7HFYRVXAOBHCTQ",
+      "dated_rows": 523
+    },
+    {
+      "source_url": "http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm154350.pdf",
+      "wayback_timestamp": "20160706083959",
+      "retrieved_at_utc": "2026-11-27T11:31:33.927554+00:00",
+      "format": "pdf",
+      "version_date": "2011-06-10",
+      "file": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6.pdf",
+      "bytes": 408166,
+      "sha256": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6",
+      "rows": 772,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20160706083959id_/http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm154350.pdf",
+      "cdx_sha1_base32": "MKNUKPB6O5VLUYWUVR7HFYRVXAOBHCTQ",
+      "dated_rows": 523
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "wayback_timestamp": "20111118173334",
+      "retrieved_at_utc": "2026-11-27T11:31:19.813034+00:00",
+      "format": "pdf",
+      "version_date": "2011-11-10",
+      "file": "7c232c58fc0151b575d3b851a9e5b32cbd761dc69ce89898e8cc7865d04c2b28.pdf",
+      "bytes": 423298,
+      "sha256": "7c232c58fc0151b575d3b851a9e5b32cbd761dc69ce89898e8cc7865d04c2b28",
+      "rows": 802,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20111118173334id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "cdx_sha1_base32": "YQDJDCSRW2QBQ4UKR4D7TBDU2MMJXQMP",
+      "dated_rows": 554
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "wayback_timestamp": "20111124180456",
+      "retrieved_at_utc": "2026-11-27T11:31:19.812032+00:00",
+      "format": "pdf",
+      "version_date": "2011-11-21",
+      "file": "9b179081608118e21bedbf97dc71e088a38879bb03531e1c3bf6d55dee3a78e5.pdf",
+      "bytes": 419506,
+      "sha256": "9b179081608118e21bedbf97dc71e088a38879bb03531e1c3bf6d55dee3a78e5",
+      "rows": 802,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20111124180456id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "cdx_sha1_base32": "YXC4TLSFC7K7B3L3V3BVBVTOQKEUIHB5",
+      "dated_rows": 554
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "wayback_timestamp": "20111208190717",
+      "retrieved_at_utc": "2026-11-27T11:31:19.810033+00:00",
+      "format": "pdf",
+      "version_date": "2011-12-06",
+      "file": "1ea632087a284deeec1705db32fe466d16e100f15c122e26eec914f6e775e2b9.pdf",
+      "bytes": 233702,
+      "sha256": "1ea632087a284deeec1705db32fe466d16e100f15c122e26eec914f6e775e2b9",
+      "rows": 806,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20111208190717id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "cdx_sha1_base32": "HA4C2PHY6OBBLFV6LSVY75J6CDGF4O64",
+      "dated_rows": 558
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "wayback_timestamp": "20111222183218",
+      "retrieved_at_utc": "2026-11-27T11:31:19.808035+00:00",
+      "format": "pdf",
+      "version_date": "2011-12-19",
+      "file": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b.pdf",
+      "bytes": 230737,
+      "sha256": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b",
+      "rows": 807,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20111222183218id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "cdx_sha1_base32": "5ETSS2AJ7QGY6QG4JZFI6XDA6DF3UNSX",
+      "dated_rows": 559
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "wayback_timestamp": "20141008192913",
+      "retrieved_at_utc": "2026-11-27T11:31:25.092429+00:00",
+      "format": "pdf",
+      "version_date": "2014-10-08",
+      "file": "6d66d2cf0bd1501a86aaeeead35f38fc09da24e0428196af07a4230e0be339c5.pdf",
+      "bytes": 2121927,
+      "sha256": "6d66d2cf0bd1501a86aaeeead35f38fc09da24e0428196af07a4230e0be339c5",
+      "rows": null,
+      "parse_status": "FAIL",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20141008192913id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "cdx_sha1_base32": "BYHS3TY7LZSWT66ND3HJBRONXUFNBCTF",
+      "parse_error": "KeyError: (10489, 116)"
+    },
+    {
+      "source_url": "http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm293268.pdf",
+      "wayback_timestamp": "20141030185824",
+      "retrieved_at_utc": "2026-11-27T11:33:15.139416+00:00",
+      "format": "pdf",
+      "version_date": "2014-10-22",
+      "file": "7cfdf384cc019921f35bbf5087c0f7ba36d49ea9dabaac1f4405103f52504e28.pdf",
+      "bytes": 2112207,
+      "sha256": "7cfdf384cc019921f35bbf5087c0f7ba36d49ea9dabaac1f4405103f52504e28",
+      "rows": null,
+      "parse_status": "FAIL",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20141030185824id_/http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm293268.pdf",
+      "cdx_sha1_base32": "K54N76Q4KQJTPQTVNO3A25JKKXN7B347",
+      "parse_error": "KeyError: (10556, 116)"
+    },
+    {
+      "source_url": "http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm293268.pdf",
+      "wayback_timestamp": "20150702081503",
+      "retrieved_at_utc": "2026-11-27T11:31:28.466965+00:00",
+      "format": "pdf",
+      "version_date": "2015-06-24",
+      "file": "387a780ea97873e20491a4dfc662d9657998f320f0db8e4f9b89b4a01c8052a1.pdf",
+      "bytes": 2211835,
+      "sha256": "387a780ea97873e20491a4dfc662d9657998f320f0db8e4f9b89b4a01c8052a1",
+      "rows": null,
+      "parse_status": "FAIL",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20150702081503id_/http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm293268.pdf",
+      "cdx_sha1_base32": "AZCKKULU4T26HJLHXOO4ULKBMHNH2CWS",
+      "parse_error": "KeyError: (11139, 116)"
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "wayback_timestamp": "20160826095909",
+      "retrieved_at_utc": "2026-11-27T11:31:33.925512+00:00",
+      "format": "pdf",
+      "version_date": "2016-08-05",
+      "file": "9f218ebcd60f71fa2084164748772263572d755a5509e5f704b11d882d09b2db.pdf",
+      "bytes": 407853,
+      "sha256": "9f218ebcd60f71fa2084164748772263572d755a5509e5f704b11d882d09b2db",
+      "rows": 1071,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20160826095909id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "cdx_sha1_base32": "E4RQTA7DONCRGHMECMNVOV7O7E6PLRGT",
+      "dated_rows": 822
+    },
+    {
+      "source_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "wayback_timestamp": "20161022165844",
+      "retrieved_at_utc": "2026-11-27T11:31:31.678278+00:00",
+      "format": "pdf",
+      "version_date": "2016-10-14",
+      "file": "c46e360f816da7160083d3db6921f16ef53b1c2f9190bad8784858038e215d65.pdf",
+      "bytes": 412445,
+      "sha256": "c46e360f816da7160083d3db6921f16ef53b1c2f9190bad8784858038e215d65",
+      "rows": 1084,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20161022165844id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "cdx_sha1_base32": "RP5JI2WLYCVFQBXOORVUJMUWAUUC2QDH",
+      "dated_rows": 834
+    },
+    {
+      "source_url": "https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "wayback_timestamp": "20170722150253",
+      "retrieved_at_utc": "2026-11-27T11:31:37.743666+00:00",
+      "format": "pdf",
+      "version_date": "2017-07-19",
+      "file": "abd033d4657f9df2d9f1ce78d53ace4960710fed6b9c9bc3d170cfe0b415face.pdf",
+      "bytes": 443529,
+      "sha256": "abd033d4657f9df2d9f1ce78d53ace4960710fed6b9c9bc3d170cfe0b415face",
+      "rows": null,
+      "parse_status": "FAIL",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20170722150253id_/https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "cdx_sha1_base32": "Z2YT4QYEYLH42XY4U4IF46GRVJKLGTS6",
+      "parse_error": "KeyError: 13877"
+    },
+    {
+      "source_url": "https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "wayback_timestamp": "20171102181858",
+      "retrieved_at_utc": "2026-11-27T11:31:36.029252+00:00",
+      "format": "pdf",
+      "version_date": "2017-10-27",
+      "file": "63aa600095967eb79404534e6117774aaf80bc25b7d1138f0db1be9b5c4d9905.pdf",
+      "bytes": 749829,
+      "sha256": "63aa600095967eb79404534e6117774aaf80bc25b7d1138f0db1be9b5c4d9905",
+      "rows": 1151,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20171102181858id_/https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "cdx_sha1_base32": "UZDQ3DTGOCYWWHQEJNGHCW4HAY2VTWKE",
+      "dated_rows": 901
+    },
+    {
+      "source_url": "https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "wayback_timestamp": "20180725214324",
+      "retrieved_at_utc": "2026-11-27T11:31:44.152216+00:00",
+      "format": "pdf",
+      "version_date": "2018-07-03",
+      "file": "164c33a7b55df2e8830e20f4451e804789cad0e271bc39bd7cb9bc1303558779.pdf",
+      "bytes": 727382,
+      "sha256": "164c33a7b55df2e8830e20f4451e804789cad0e271bc39bd7cb9bc1303558779",
+      "rows": 1195,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20180725214324id_/https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "cdx_sha1_base32": "LBCOWF5YISYLRGDICIAFCYYRMT2ZFSKP",
+      "dated_rows": 945
+    },
+    {
+      "source_url": "https://www.fda.gov/media/133240/download",
+      "wayback_timestamp": "20191215154334",
+      "retrieved_at_utc": "2026-11-27T11:33:17.671938+00:00",
+      "format": "pdf",
+      "version_date": "2019-12-03",
+      "file": "64449b0e72cd1a6b0726b5e5d238d81165578d4b49c9f947724c1918579fe15c.pdf",
+      "bytes": 1408661,
+      "sha256": "64449b0e72cd1a6b0726b5e5d238d81165578d4b49c9f947724c1918579fe15c",
+      "rows": 1261,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20191215154334id_/https://www.fda.gov/media/133240/download",
+      "cdx_sha1_base32": "ACHFYDT5X4HGGG22AP6VA5VMFSLISZQY",
+      "dated_rows": 1013
+    },
+    {
+      "source_url": "https://www.fda.gov/media/133240/download",
+      "wayback_timestamp": "20201101102731",
+      "retrieved_at_utc": "2026-11-27T11:32:02.252742+00:00",
+      "format": "pdf",
+      "version_date": "2020-10-20",
+      "file": "5020e5035e64d2fdc0172684110a73b105ef77ff84b1ef0a7a34dc596dc6c45b.pdf",
+      "bytes": 1526311,
+      "sha256": "5020e5035e64d2fdc0172684110a73b105ef77ff84b1ef0a7a34dc596dc6c45b",
+      "rows": 1304,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20201101102731id_/https://www.fda.gov/media/133240/download",
+      "cdx_sha1_base32": "6JJQP2F2E2Z2OPLGD7WNTBNFW4JIUC43",
+      "dated_rows": 1057
+    },
+    {
+      "source_url": "https://www.fda.gov/media/133240/download",
+      "wayback_timestamp": "20201224090041",
+      "retrieved_at_utc": "2026-11-27T11:31:52.912361+00:00",
+      "format": "pdf",
+      "version_date": "2020-12-01",
+      "file": "c6fcfa15e825774528b2d5d29c8a6822236463fd54f8fcf37cbf74d0f961e90a.pdf",
+      "bytes": 2530353,
+      "sha256": "c6fcfa15e825774528b2d5d29c8a6822236463fd54f8fcf37cbf74d0f961e90a",
+      "rows": 1308,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20201224090041id_/https://www.fda.gov/media/133240/download",
+      "cdx_sha1_base32": "EJ6RQQ4YBEUJYFHSU5S37H3WYL6IQJJK",
+      "dated_rows": 1059
+    },
+    {
+      "source_url": "https://www.fda.gov/media/133240/download",
+      "wayback_timestamp": "20211008193821",
+      "retrieved_at_utc": "2026-11-27T11:32:13.016751+00:00",
+      "format": "pdf",
+      "version_date": "2021-10-05",
+      "file": "48d07a1c2570f5ecc54c24569a800f24e5b49833741e7f96b08daba0a7e02993.pdf",
+      "bytes": 2640257,
+      "sha256": "48d07a1c2570f5ecc54c24569a800f24e5b49833741e7f96b08daba0a7e02993",
+      "rows": 1348,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20211008193821id_/https://www.fda.gov/media/133240/download",
+      "cdx_sha1_base32": "QPLR5EJ45424OMUPUU5Z3Y6D5AUIWEDH",
+      "dated_rows": 1099
+    },
+    {
+      "source_url": "https://www.fda.gov/media/133240/download",
+      "wayback_timestamp": "20211202205543",
+      "retrieved_at_utc": "2026-11-27T11:32:10.397902+00:00",
+      "format": "pdf",
+      "version_date": "2021-11-30",
+      "file": "b6d9b8993bfa814fda974a03ce1c26130e2863bf1266fcf8852666ab8b5da1f8.pdf",
+      "bytes": 2656085,
+      "sha256": "b6d9b8993bfa814fda974a03ce1c26130e2863bf1266fcf8852666ab8b5da1f8",
+      "rows": 1353,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20211202205543id_/https://www.fda.gov/media/133240/download",
+      "cdx_sha1_base32": "ZMAY6SQHTW36BKKLKO3CF7PYXKFNQEIX",
+      "dated_rows": 1104
+    },
+    {
+      "source_url": "http://www.fda.gov/media/133240/download",
+      "wayback_timestamp": "20220728132818",
+      "retrieved_at_utc": "2026-11-27T11:32:16.956783+00:00",
+      "format": "pdf",
+      "version_date": "2022-07-26",
+      "file": "dde7cbc0c382662855258b716e5f3678f2fa7b78c5a21cf4b72993d090dfbb3c.pdf",
+      "bytes": 2711429,
+      "sha256": "dde7cbc0c382662855258b716e5f3678f2fa7b78c5a21cf4b72993d090dfbb3c",
+      "rows": 1397,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20220728132818id_/http://www.fda.gov/media/133240/download",
+      "cdx_sha1_base32": "E2FFET2QVBRHYIGBJM2GGRBCFHGJYJ3A",
+      "dated_rows": 1147
+    },
+    {
+      "source_url": "https://www.fda.gov/media/133240/download",
+      "wayback_timestamp": "20241108181318",
+      "retrieved_at_utc": "2026-11-27T11:32:20.206571+00:00",
+      "format": "pdf",
+      "version_date": "2023-04-25",
+      "file": "7635d915344797fa44676b642dc713a355cd497f5b09908f716d7216bb39441a.pdf",
+      "bytes": 2766215,
+      "sha256": "7635d915344797fa44676b642dc713a355cd497f5b09908f716d7216bb39441a",
+      "rows": 1439,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20241108181318id_/https://www.fda.gov/media/133240/download",
+      "cdx_sha1_base32": "XWYGGM6TI7NEO6E5HUXQPREFZU44KSI4",
+      "dated_rows": 1189
+    },
+    {
+      "source_url": "https://www.fda.gov/media/166048/download?attachment",
+      "wayback_timestamp": "20240809213231",
+      "retrieved_at_utc": "2026-11-27T11:26:46.363745+00:00",
+      "format": "pdf",
+      "version_date": "2024-07-08",
+      "file": "cfb603168bb0bf0ba0f3a78fc958acabd0249b4abddae512ae1bd0814275c001.pdf",
+      "bytes": 1853593,
+      "sha256": "cfb603168bb0bf0ba0f3a78fc958acabd0249b4abddae512ae1bd0814275c001",
+      "rows": 1505,
+      "parse_status": "PASS",
+      "version_date_basis": "FDA PDF title",
+      "wayback_url": "https://web.archive.org/web/20240809213231id_/https://www.fda.gov/media/166048/download?attachment",
+      "cdx_sha1_base32": "FD3K65KCU5AUKXIMM2MVAIBGK6DNLBQH",
+      "dated_rows": 1255
+    },
+    {
+      "source_url": "https://www.fda.gov/media/166048/download",
+      "wayback_timestamp": "20241009002247",
+      "retrieved_at_utc": "2026-11-27T11:32:20.213571+00:00",
+      "format": "pdf",
+      "version_date": "2024-09-02",
+      "file": "c702beae7c5049612fe3d85972bac24eb32bb12f1e5ec133843456b7aa4b5281.pdf",
+      "bytes": 1861259,
+      "sha256": "c702beae7c5049612fe3d85972bac24eb32bb12f1e5ec133843456b7aa4b5281",
+      "rows": 1514,
+      "parse_status": "PASS",
+      "version_date_basis": "FDA PDF title",
+      "wayback_url": "https://web.archive.org/web/20241009002247id_/https://www.fda.gov/media/166048/download",
+      "cdx_sha1_base32": "SBP5UNMRXSQMT7IW7BPQYKL2D722Y6HK",
+      "dated_rows": 1264
+    },
+    {
+      "source_url": "https://www.fda.gov/media/166048/download",
+      "wayback_timestamp": "20241108194555",
+      "retrieved_at_utc": "2026-11-27T11:29:51.072794+00:00",
+      "format": "pdf",
+      "version_date": "2024-11-08",
+      "file": "ca92d89f9d96afdb39915a557ddfd19f5cb46f37cd91e63199666946d7df841f.pdf",
+      "bytes": 2818061,
+      "sha256": "ca92d89f9d96afdb39915a557ddfd19f5cb46f37cd91e63199666946d7df841f",
+      "rows": 1520,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20241108194555id_/https://www.fda.gov/media/166048/download",
+      "cdx_sha1_base32": "U7MUMGPE2MIZV3NN43DBBKC3V4N534PX",
+      "dated_rows": 1270
+    },
+    {
+      "source_url": "https://www.fda.gov/media/166048/download?attachment",
+      "wayback_timestamp": "20241109183328",
+      "retrieved_at_utc": "2026-11-27T11:32:16.975782+00:00",
+      "format": "pdf",
+      "version_date": "2024-11-08",
+      "file": "ca92d89f9d96afdb39915a557ddfd19f5cb46f37cd91e63199666946d7df841f.pdf",
+      "bytes": 2818061,
+      "sha256": "ca92d89f9d96afdb39915a557ddfd19f5cb46f37cd91e63199666946d7df841f",
+      "rows": 1520,
+      "parse_status": "PASS",
+      "version_date_basis": "latest embedded FDA PDF creation or modification date",
+      "wayback_url": "https://web.archive.org/web/20241109183328id_/https://www.fda.gov/media/166048/download?attachment",
+      "cdx_sha1_base32": "U7MUMGPE2MIZV3NN43DBBKC3V4N534PX",
+      "dated_rows": 1270
+    },
+    {
+      "source_url": "https://www.fda.gov/media/166048/download?attachment",
+      "wayback_timestamp": "20241216075709",
+      "retrieved_at_utc": "2026-11-27T11:32:16.964782+00:00",
+      "format": "pdf",
+      "version_date": "2024-11-25",
+      "file": "2680d32aab769785056b61e994e7f182062ad75c1825ddff7beecfa4026d985d.pdf",
+      "bytes": 1871877,
+      "sha256": "2680d32aab769785056b61e994e7f182062ad75c1825ddff7beecfa4026d985d",
+      "rows": 1523,
+      "parse_status": "PASS",
+      "version_date_basis": "FDA PDF title",
+      "wayback_url": "https://web.archive.org/web/20241216075709id_/https://www.fda.gov/media/166048/download?attachment",
+      "cdx_sha1_base32": "CN53NLAS6QGHNWGBNPVW2OJRGXKH4SUU",
+      "dated_rows": 1273
+    },
+    {
+      "source_url": "https://www.fda.gov/media/166048/download?attachment",
+      "wayback_timestamp": null,
+      "retrieved_at_utc": "2026-11-27T11:30:47.659474+00:00",
+      "format": "pdf",
+      "version_date": "2026-10-27",
+      "file": "b988ad30904e40e4f3bf354775b06fccc4dc1266640228c20dad949a74f88b51.pdf",
+      "bytes": 8200088,
+      "sha256": "b988ad30904e40e4f3bf354775b06fccc4dc1266640228c20dad949a74f88b51",
+      "rows": 1650,
+      "parse_status": "PASS",
+      "version_date_basis": "FDA listing link text",
+      "dated_rows": 1402
+    },
+    {
+      "source_url": "https://www.fda.gov/media/194880/download?attachment",
+      "wayback_timestamp": null,
+      "retrieved_at_utc": "2026-11-27T11:30:47.631479+00:00",
+      "format": "xlsx",
+      "version_date": "2026-10-27",
+      "file": "9c1fb183457667d83aee4c084cf86710ca6b623d3f569d12f5044e980d11ec0b.xlsx",
+      "bytes": 167216,
+      "sha256": "9c1fb183457667d83aee4c084cf86710ca6b623d3f569d12f5044e980d11ec0b",
+      "rows": 1650,
+      "parse_status": "PASS",
+      "version_date_basis": "FDA listing link text",
+      "dated_rows": 1402
+    }
+  ],
+  "acquisition_attempts": [
+    {
+      "url": "https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "784c01c0405e2dcd48b0442702088612a26c530497c1685cc4c7fd8a741778b2.html",
+      "bytes": 51499,
+      "sha256": "784c01c0405e2dcd48b0442702088612a26c530497c1685cc4c7fd8a741778b2"
+    },
+    {
+      "url": "https://www.fda.gov/media/194880/download?attachment",
+      "status": "PASS",
+      "file": "9c1fb183457667d83aee4c084cf86710ca6b623d3f569d12f5044e980d11ec0b.xlsx",
+      "bytes": 167216,
+      "sha256": "9c1fb183457667d83aee4c084cf86710ca6b623d3f569d12f5044e980d11ec0b"
+    },
+    {
+      "url": "https://www.fda.gov/media/166048/download?attachment",
+      "status": "PASS",
+      "file": "b988ad30904e40e4f3bf354775b06fccc4dc1266640228c20dad949a74f88b51.pdf",
+      "bytes": 8200088,
+      "sha256": "b988ad30904e40e4f3bf354775b06fccc4dc1266640228c20dad949a74f88b51"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.fda.gov%2Fdrugs%2Fabbreviated-new-drug-application-anda%2Fpatent-certifications-and-suitability-petitions&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 139,
+      "file": "19afe0a9db0d45018460aec5e402df20ea5ca3bf145ad507bde8ecc5cc5413ef.json",
+      "bytes": 26049,
+      "sha256": "19afe0a9db0d45018460aec5e402df20ea5ca3bf145ad507bde8ecc5cc5413ef"
+    },
+    {
+      "url": "https://web.archive.org/web/20191214062050id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "0a9c7fc31e1d53a361810098efb078a1eb59c9a57814ce0714df89450f6e1b9c.html",
+      "bytes": 52219,
+      "sha256": "0a9c7fc31e1d53a361810098efb078a1eb59c9a57814ce0714df89450f6e1b9c"
+    },
+    {
+      "url": "https://web.archive.org/web/20201220155427id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "7c647adb8ba000fcc0628707d5357f341e7b82960f8e595ab917a8ffae7243ef.html",
+      "bytes": 53618,
+      "sha256": "7c647adb8ba000fcc0628707d5357f341e7b82960f8e595ab917a8ffae7243ef"
+    },
+    {
+      "url": "https://web.archive.org/web/20211229012347id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "8d28ff49aa5290ab260a15d0508ad441deccbc5945e5cf87a748ebb0f3531678.html",
+      "bytes": 51668,
+      "sha256": "8d28ff49aa5290ab260a15d0508ad441deccbc5945e5cf87a748ebb0f3531678"
+    },
+    {
+      "url": "https://web.archive.org/web/20221214061156id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20231130151743id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "162b221cb0ef1dc7f943d85e4f7c587b033bce2fafa75daf835653cbbd68a7e4.html",
+      "bytes": 52573,
+      "sha256": "162b221cb0ef1dc7f943d85e4f7c587b033bce2fafa75daf835653cbbd68a7e4"
+    },
+    {
+      "url": "https://web.archive.org/web/20241223103053id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "29f5b32badf0445b6253b6a5ef78b065e5e84eeffa631ca8e9d246581ad48c19.html",
+      "bytes": 52584,
+      "sha256": "29f5b32badf0445b6253b6a5ef78b065e5e84eeffa631ca8e9d246581ad48c19"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.fda.gov%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2Fucm047676.htm&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 308,
+      "file": "f378706b3438433427bb837908711d1e15ed921c078988ce23d95148964d214a.json",
+      "bytes": 73030,
+      "sha256": "f378706b3438433427bb837908711d1e15ed921c078988ce23d95148964d214a"
+    },
+    {
+      "url": "https://web.archive.org/web/20091230105948id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "bdd9c6f2163b5db6c60eec829438f0829d9e0feed131e80eb5d7dbf4afa7de02.html",
+      "bytes": 31974,
+      "sha256": "bdd9c6f2163b5db6c60eec829438f0829d9e0feed131e80eb5d7dbf4afa7de02"
+    },
+    {
+      "url": "https://web.archive.org/web/20101223153532id_/http://www.fda.gov:80/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "43e7578dff8531e23fbc324a64da0c6001c1abcf9cf47868244f378fed992423.html",
+      "bytes": 34109,
+      "sha256": "43e7578dff8531e23fbc324a64da0c6001c1abcf9cf47868244f378fed992423"
+    },
+    {
+      "url": "https://web.archive.org/web/20111231043953id_/http://www.fda.gov:80/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "9528ebc4600e6d3acb091f3f2fe83f6bb673f1da4585769df431e8cc8525dbc2.html",
+      "bytes": 35520,
+      "sha256": "9528ebc4600e6d3acb091f3f2fe83f6bb673f1da4585769df431e8cc8525dbc2"
+    },
+    {
+      "url": "https://web.archive.org/web/20121025025627id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "b75a74e44051c9b01cae1b60b4d3b3666e97c03ecb008087c008ba998331cb97.html",
+      "bytes": 37013,
+      "sha256": "b75a74e44051c9b01cae1b60b4d3b3666e97c03ecb008087c008ba998331cb97"
+    },
+    {
+      "url": "https://web.archive.org/web/20130918122846id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "8074ec07003cba058d884e289fe45b97a067c88ebab637a35e4b0e1da68db003.html",
+      "bytes": 38018,
+      "sha256": "8074ec07003cba058d884e289fe45b97a067c88ebab637a35e4b0e1da68db003"
+    },
+    {
+      "url": "https://web.archive.org/web/20150101140433id_/http://www.fda.gov:80/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "d900f3261edd8add3bd70f2c4997c6c0c0c28f6ba2fb64440bbc33f6b2e8f6ab.html",
+      "bytes": 36382,
+      "sha256": "d900f3261edd8add3bd70f2c4997c6c0c0c28f6ba2fb64440bbc33f6b2e8f6ab"
+    },
+    {
+      "url": "https://web.archive.org/web/20151230124600id_/http://www.fda.gov:80/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm?",
+      "status": "PASS",
+      "file": "6c51ce4619c6d36584557198d29a325a3985ecb2ec2d8d1773ec012c5b900e18.html",
+      "bytes": 40660,
+      "sha256": "6c51ce4619c6d36584557198d29a325a3985ecb2ec2d8d1773ec012c5b900e18"
+    },
+    {
+      "url": "https://web.archive.org/web/20161216175802id_/http://www.fda.gov:80/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "483e61d0101d7d6fb2a03098f0938c6c994baed60703dc60d9391604f7d90dfc.html",
+      "bytes": 41810,
+      "sha256": "483e61d0101d7d6fb2a03098f0938c6c994baed60703dc60d9391604f7d90dfc"
+    },
+    {
+      "url": "https://web.archive.org/web/20171227145207id_/https://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "bb2146a71efa2f07cdcb90080a14d411d1e50aa7ddbc52c5e6d73b319a1deabd.html",
+      "bytes": 46302,
+      "sha256": "bb2146a71efa2f07cdcb90080a14d411d1e50aa7ddbc52c5e6d73b319a1deabd"
+    },
+    {
+      "url": "https://web.archive.org/web/20181221132918id_/https://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "26165ccfb109a9405935425c4726121459220cd3835d8e2d95577d94bcf619d0.html",
+      "bytes": 45989,
+      "sha256": "26165ccfb109a9405935425c4726121459220cd3835d8e2d95577d94bcf619d0"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.fda.gov%2Fcder%2Fogd%2Fppiv.htm&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 0,
+      "file": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.fda.gov%2Fcder%2Fogd%2Fppiv.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 0,
+      "file": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.fda.gov%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM154350.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.fda.gov%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM293268.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.fda.gov%3A80%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM154350.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.fda.gov%3A80%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM261594.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.fda.gov%3A80%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM293268.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.fda.gov%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM293268.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.fda.gov%2Fmedia%2F133240%2Fdownload&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.fda.gov%2Fmedia%2F166048%2Fdownload&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 4,
+      "file": "0b27f7f0aaab296d4cd67a2db39db3daf59ac500860fea8cd598f7b2413bdc0c.json",
+      "bytes": 552,
+      "sha256": "0b27f7f0aaab296d4cd67a2db39db3daf59ac500860fea8cd598f7b2413bdc0c"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.fda.gov%2Fmedia%2F166048%2Fdownload%3Fattachment&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 7,
+      "file": "374850c392f38c7809cf1155f2c6b357574d7a008f781aace4b5774a29edd71d.json",
+      "bytes": 998,
+      "sha256": "374850c392f38c7809cf1155f2c6b357574d7a008f781aace4b5774a29edd71d"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.fda.gov%2Fmedia%2F194880%2Fdownload&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 0,
+      "file": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.fda.gov%2Fmedia%2F194880%2Fdownload%3Fattachment&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 0,
+      "file": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "url": "https://web.archive.org/web/20241216075709id_/https://www.fda.gov/media/166048/download?attachment",
+      "status": "PASS",
+      "file": "2680d32aab769785056b61e994e7f182062ad75c1825ddff7beecfa4026d985d.pdf",
+      "bytes": 1871877,
+      "sha256": "2680d32aab769785056b61e994e7f182062ad75c1825ddff7beecfa4026d985d"
+    },
+    {
+      "url": "https://web.archive.org/web/20241109183328id_/https://www.fda.gov/media/166048/download?attachment",
+      "status": "PASS",
+      "file": "ca92d89f9d96afdb39915a557ddfd19f5cb46f37cd91e63199666946d7df841f.pdf",
+      "bytes": 2818061,
+      "sha256": "ca92d89f9d96afdb39915a557ddfd19f5cb46f37cd91e63199666946d7df841f"
+    },
+    {
+      "url": "https://web.archive.org/web/20241009002247id_/https://www.fda.gov/media/166048/download",
+      "status": "PASS",
+      "file": "c702beae7c5049612fe3d85972bac24eb32bb12f1e5ec133843456b7aa4b5281.pdf",
+      "bytes": 1861259,
+      "sha256": "c702beae7c5049612fe3d85972bac24eb32bb12f1e5ec133843456b7aa4b5281"
+    },
+    {
+      "url": "https://web.archive.org/web/20240809213231id_/https://www.fda.gov/media/166048/download?attachment",
+      "status": "PASS",
+      "file": "cfb603168bb0bf0ba0f3a78fc958acabd0249b4abddae512ae1bd0814275c001.pdf",
+      "bytes": 1853593,
+      "sha256": "cfb603168bb0bf0ba0f3a78fc958acabd0249b4abddae512ae1bd0814275c001"
+    },
+    {
+      "url": "https://web.archive.org/web/20191213015737id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "99e98c4de4cd422d8879a8c9540eee542f88f5e6c501a80884704240b453a35e.html",
+      "bytes": 52219,
+      "sha256": "99e98c4de4cd422d8879a8c9540eee542f88f5e6c501a80884704240b453a35e"
+    },
+    {
+      "url": "https://web.archive.org/web/20201203002123id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20211202011435id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "e307fe3c3771f238b45bd670816e6d615194a32cb98c669847e237683fa50d4f.html",
+      "bytes": 52244,
+      "sha256": "e307fe3c3771f238b45bd670816e6d615194a32cb98c669847e237683fa50d4f"
+    },
+    {
+      "url": "https://web.archive.org/web/20221214061156id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20221203214735id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "PASS",
+      "file": "c19de1760316416aae083202a3c0e31afad5984569f8277cb9b5945e4d9d4cc1.html",
+      "bytes": 51691,
+      "sha256": "c19de1760316416aae083202a3c0e31afad5984569f8277cb9b5945e4d9d4cc1"
+    },
+    {
+      "url": "https://web.archive.org/web/20231128054000id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20241220233946id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20091215163700id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "12e6a05815bd240cbb6dbd7afa4f53bc22f1b681aceb4f23010ea22b24162819.html",
+      "bytes": 32005,
+      "sha256": "12e6a05815bd240cbb6dbd7afa4f53bc22f1b681aceb4f23010ea22b24162819"
+    },
+    {
+      "url": "https://web.archive.org/web/20101125070806id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "a1c2184a515dba8649b466d8d1432ebb6b123a0789f45decd59a0a69cf55e00c.html",
+      "bytes": 35981,
+      "sha256": "a1c2184a515dba8649b466d8d1432ebb6b123a0789f45decd59a0a69cf55e00c"
+    },
+    {
+      "url": "https://web.archive.org/web/20111222154414id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "b326bc54a3862ef763991da5926828cba1f0c8b7862d212f41ccb06b8e75e5a2.html",
+      "bytes": 29911,
+      "sha256": "b326bc54a3862ef763991da5926828cba1f0c8b7862d212f41ccb06b8e75e5a2"
+    },
+    {
+      "url": "https://web.archive.org/web/20121021185714id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "27bd9ef585a906b45726f27c90fc252a9b9904f909791de1507134c2a29ffbfe.html",
+      "bytes": 36979,
+      "sha256": "27bd9ef585a906b45726f27c90fc252a9b9904f909791de1507134c2a29ffbfe"
+    },
+    {
+      "url": "https://web.archive.org/web/20130901105027id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "78835e45f719316fb482c9bd6071c59f1139be42b184461c04278e81572f0324.html",
+      "bytes": 37926,
+      "sha256": "78835e45f719316fb482c9bd6071c59f1139be42b184461c04278e81572f0324"
+    },
+    {
+      "url": "https://web.archive.org/web/20141215050940id_/http://www.fda.gov:80/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "8a23d349887bfcc325fe72282d378d9741f4790071e60768354f6b767dbc13a6.html",
+      "bytes": 36208,
+      "sha256": "8a23d349887bfcc325fe72282d378d9741f4790071e60768354f6b767dbc13a6"
+    },
+    {
+      "url": "https://web.archive.org/web/20151128085539id_/http://www.fda.gov:80/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "758ba9615e9f3684c56d81121f9a674723e9e4d5b10e9ff4278d8beb798867e1.html",
+      "bytes": 39658,
+      "sha256": "758ba9615e9f3684c56d81121f9a674723e9e4d5b10e9ff4278d8beb798867e1"
+    },
+    {
+      "url": "https://web.archive.org/web/20161110204526id_/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "e5cfa8abb1ee8f49479e179c4365e4db0cf1ec8701ec05b2179b5b86294b3c09.html",
+      "bytes": 42162,
+      "sha256": "e5cfa8abb1ee8f49479e179c4365e4db0cf1ec8701ec05b2179b5b86294b3c09"
+    },
+    {
+      "url": "https://web.archive.org/web/20171211151755id_/https://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "a3fb7d87a5d79ee3975f974b5423fcc77147f3fcbd81f0413dbdc53bb92f0d87.html",
+      "bytes": 47899,
+      "sha256": "a3fb7d87a5d79ee3975f974b5423fcc77147f3fcbd81f0413dbdc53bb92f0d87"
+    },
+    {
+      "url": "https://web.archive.org/web/20181015122354id_/https://www.fda.gov/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/ucm047676.htm",
+      "status": "PASS",
+      "file": "8133a81eebfbe4ba15ce6904c9c8e04bfa0f9c707a9e01587de58b4674b7c42e.html",
+      "bytes": 45752,
+      "sha256": "8133a81eebfbe4ba15ce6904c9c8e04bfa0f9c707a9e01587de58b4674b7c42e"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fcder%2Fogd%2Fppiv.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 0,
+      "file": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM154350.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 35,
+      "file": "ad87fde7b54a44fe08fef59f936b33ef5f7327fab36000f7cca3fe59dd422cbd.json",
+      "bytes": 8505,
+      "sha256": "ad87fde7b54a44fe08fef59f936b33ef5f7327fab36000f7cca3fe59dd422cbd"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM261594.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 20,
+      "file": "b67d7434675d8eed3b12a546672e94a18c313ab9d046a3520603a61f48959707.json",
+      "bytes": 4912,
+      "sha256": "b67d7434675d8eed3b12a546672e94a18c313ab9d046a3520603a61f48959707"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM293268.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F133240%2Fdownload&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F166048%2Fdownload&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 4,
+      "file": "0b27f7f0aaab296d4cd67a2db39db3daf59ac500860fea8cd598f7b2413bdc0c.json",
+      "bytes": 552,
+      "sha256": "0b27f7f0aaab296d4cd67a2db39db3daf59ac500860fea8cd598f7b2413bdc0c"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F166048%2Fdownload%3Fattachment&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F194880%2Fdownload&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F194880%2Fdownload%3Fattachment&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/web/20091104035413id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/web/20091018121346id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/web/20090827050640id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/web/20090709222221id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "e141e8812eb0e2f86b68c57a618bad4dc77ef2ca91edad71eb81be0649ce1d4c.pdf",
+      "bytes": 265554,
+      "sha256": "e141e8812eb0e2f86b68c57a618bad4dc77ef2ca91edad71eb81be0649ce1d4c"
+    },
+    {
+      "url": "https://web.archive.org/web/20101214040734id_/http://www.fda.gov:80/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "324005e2507c9da03de5f72bcb89ce335984a0b88b18ac59ac093d81fb788969.pdf",
+      "bytes": 383922,
+      "sha256": "324005e2507c9da03de5f72bcb89ce335984a0b88b18ac59ac093d81fb788969"
+    },
+    {
+      "url": "https://web.archive.org/web/20100728170904id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "138565e1c1155f94ca71c6c5d1a9653c6f850139710de7bd9bfd9a82e7b8a256.pdf",
+      "bytes": 371186,
+      "sha256": "138565e1c1155f94ca71c6c5d1a9653c6f850139710de7bd9bfd9a82e7b8a256"
+    },
+    {
+      "url": "https://web.archive.org/web/20111222183218id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "status": "PASS",
+      "file": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b.pdf",
+      "bytes": 230737,
+      "sha256": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b"
+    },
+    {
+      "url": "https://web.archive.org/web/20111208190717id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "status": "PASS",
+      "file": "1ea632087a284deeec1705db32fe466d16e100f15c122e26eec914f6e775e2b9.pdf",
+      "bytes": 233702,
+      "sha256": "1ea632087a284deeec1705db32fe466d16e100f15c122e26eec914f6e775e2b9"
+    },
+    {
+      "url": "https://web.archive.org/web/20111124180456id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "status": "PASS",
+      "file": "9b179081608118e21bedbf97dc71e088a38879bb03531e1c3bf6d55dee3a78e5.pdf",
+      "bytes": 419506,
+      "sha256": "9b179081608118e21bedbf97dc71e088a38879bb03531e1c3bf6d55dee3a78e5"
+    },
+    {
+      "url": "https://web.archive.org/web/20111118173334id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "status": "PASS",
+      "file": "7c232c58fc0151b575d3b851a9e5b32cbd761dc69ce89898e8cc7865d04c2b28.pdf",
+      "bytes": 423298,
+      "sha256": "7c232c58fc0151b575d3b851a9e5b32cbd761dc69ce89898e8cc7865d04c2b28"
+    },
+    {
+      "url": "https://web.archive.org/web/20130918121839id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6.pdf",
+      "bytes": 408166,
+      "sha256": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6"
+    },
+    {
+      "url": "https://web.archive.org/web/20141109210331id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6.pdf",
+      "bytes": 408166,
+      "sha256": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6"
+    },
+    {
+      "url": "https://web.archive.org/web/20150816002507id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6.pdf",
+      "bytes": 408166,
+      "sha256": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6"
+    },
+    {
+      "url": "https://web.archive.org/web/20160706083959id_/http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm154350.pdf",
+      "status": "PASS",
+      "file": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6.pdf",
+      "bytes": 408166,
+      "sha256": "61ad1d051002b83c3caacb8c2c834a9644c175274cb18fa05627f567b829e7d6"
+    },
+    {
+      "url": "https://web.archive.org/web/20241108194555id_/https://www.fda.gov/media/166048/download",
+      "status": "PASS",
+      "file": "ca92d89f9d96afdb39915a557ddfd19f5cb46f37cd91e63199666946d7df841f.pdf",
+      "bytes": 2818061,
+      "sha256": "ca92d89f9d96afdb39915a557ddfd19f5cb46f37cd91e63199666946d7df841f"
+    },
+    {
+      "url": "https://web.archive.org/web/20201203002123id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20221214061156id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20231128054000id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20241220233946id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fdownloads%2FDrugs%2FDevelopmentApprovalProcess%2FHowDrugsareDevelopedandApproved%2FApprovalApplications%2FAbbreviatedNewDrugApplicationANDAGenerics%2FUCM293268.pdf&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 23,
+      "file": "8d8294f41d8f7225332e6a554672362ea1722c4642004bc44d51426afc04da45.json",
+      "bytes": 5652,
+      "sha256": "8d8294f41d8f7225332e6a554672362ea1722c4642004bc44d51426afc04da45"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F133240%2Fdownload&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 15,
+      "file": "2dd3d99cd61c8e8996aacae011026c4d3092a136df5fad43094be815e0714b51.json",
+      "bytes": 1904,
+      "sha256": "2dd3d99cd61c8e8996aacae011026c4d3092a136df5fad43094be815e0714b51"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F166048%2Fdownload%3Fattachment&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 7,
+      "file": "374850c392f38c7809cf1155f2c6b357574d7a008f781aace4b5774a29edd71d.json",
+      "bytes": 998,
+      "sha256": "374850c392f38c7809cf1155f2c6b357574d7a008f781aace4b5774a29edd71d"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F194880%2Fdownload&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 0,
+      "file": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov%2Fmedia%2F194880%2Fdownload%3Fattachment&from=200907&to=20250101&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Cmimetype&filter=statuscode%3A200",
+      "status": "PASS",
+      "captures": 0,
+      "file": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "url": "https://web.archive.org/web/20091104035413id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "d2525b6b291d5711a055f358cd8f1ceb3297fe5a6474db78a59e7923a04e0685.pdf",
+      "bytes": 271739,
+      "sha256": "d2525b6b291d5711a055f358cd8f1ceb3297fe5a6474db78a59e7923a04e0685"
+    },
+    {
+      "url": "https://web.archive.org/web/20091018121346id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "fe2cde9967f56c263bdf1d93513498cdf446cbbf0987b8b3bf3689956b579ad7.pdf",
+      "bytes": 274361,
+      "sha256": "fe2cde9967f56c263bdf1d93513498cdf446cbbf0987b8b3bf3689956b579ad7"
+    },
+    {
+      "url": "https://web.archive.org/web/20090827050640id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+      "status": "PASS",
+      "file": "a3e21f188d7bb0573ddece7f5572cf88a13845cbfc15eca4fc1311591cc5330f.pdf",
+      "bytes": 1048557,
+      "sha256": "a3e21f188d7bb0573ddece7f5572cf88a13845cbfc15eca4fc1311591cc5330f"
+    },
+    {
+      "url": "https://web.archive.org/web/20141030185824id_/http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm293268.pdf",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>"
+    },
+    {
+      "url": "https://web.archive.org/web/20141008192913id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "status": "PASS",
+      "file": "6d66d2cf0bd1501a86aaeeead35f38fc09da24e0428196af07a4230e0be339c5.pdf",
+      "bytes": 2121927,
+      "sha256": "6d66d2cf0bd1501a86aaeeead35f38fc09da24e0428196af07a4230e0be339c5"
+    },
+    {
+      "url": "https://web.archive.org/web/20150702081503id_/http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm293268.pdf",
+      "status": "PASS",
+      "file": "387a780ea97873e20491a4dfc662d9657998f320f0db8e4f9b89b4a01c8052a1.pdf",
+      "bytes": 2211835,
+      "sha256": "387a780ea97873e20491a4dfc662d9657998f320f0db8e4f9b89b4a01c8052a1"
+    },
+    {
+      "url": "https://web.archive.org/web/20161022165844id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "status": "PASS",
+      "file": "c46e360f816da7160083d3db6921f16ef53b1c2f9190bad8784858038e215d65.pdf",
+      "bytes": 412445,
+      "sha256": "c46e360f816da7160083d3db6921f16ef53b1c2f9190bad8784858038e215d65"
+    },
+    {
+      "url": "https://web.archive.org/web/20160826095909id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "status": "PASS",
+      "file": "9f218ebcd60f71fa2084164748772263572d755a5509e5f704b11d882d09b2db.pdf",
+      "bytes": 407853,
+      "sha256": "9f218ebcd60f71fa2084164748772263572d755a5509e5f704b11d882d09b2db"
+    },
+    {
+      "url": "https://web.archive.org/web/20171102181858id_/https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "status": "PASS",
+      "file": "63aa600095967eb79404534e6117774aaf80bc25b7d1138f0db1be9b5c4d9905.pdf",
+      "bytes": 749829,
+      "sha256": "63aa600095967eb79404534e6117774aaf80bc25b7d1138f0db1be9b5c4d9905"
+    },
+    {
+      "url": "https://web.archive.org/web/20170722150253id_/https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "status": "PASS",
+      "file": "abd033d4657f9df2d9f1ce78d53ace4960710fed6b9c9bc3d170cfe0b415face.pdf",
+      "bytes": 443529,
+      "sha256": "abd033d4657f9df2d9f1ce78d53ace4960710fed6b9c9bc3d170cfe0b415face"
+    },
+    {
+      "url": "https://web.archive.org/web/20180725214324id_/https://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM293268.pdf",
+      "status": "PASS",
+      "file": "164c33a7b55df2e8830e20f4451e804789cad0e271bc39bd7cb9bc1303558779.pdf",
+      "bytes": 727382,
+      "sha256": "164c33a7b55df2e8830e20f4451e804789cad0e271bc39bd7cb9bc1303558779"
+    },
+    {
+      "url": "https://web.archive.org/web/20191215154334id_/https://www.fda.gov/media/133240/download",
+      "status": "FAIL",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://web.archive.org/web/20201224090041id_/https://www.fda.gov/media/133240/download",
+      "status": "PASS",
+      "file": "c6fcfa15e825774528b2d5d29c8a6822236463fd54f8fcf37cbf74d0f961e90a.pdf",
+      "bytes": 2530353,
+      "sha256": "c6fcfa15e825774528b2d5d29c8a6822236463fd54f8fcf37cbf74d0f961e90a"
+    },
+    {
+      "url": "https://web.archive.org/web/20201101102731id_/https://www.fda.gov/media/133240/download",
+      "status": "PASS",
+      "file": "5020e5035e64d2fdc0172684110a73b105ef77ff84b1ef0a7a34dc596dc6c45b.pdf",
+      "bytes": 1526311,
+      "sha256": "5020e5035e64d2fdc0172684110a73b105ef77ff84b1ef0a7a34dc596dc6c45b"
+    },
+    {
+      "url": "https://web.archive.org/web/20211202205543id_/https://www.fda.gov/media/133240/download",
+      "status": "PASS",
+      "file": "b6d9b8993bfa814fda974a03ce1c26130e2863bf1266fcf8852666ab8b5da1f8.pdf",
+      "bytes": 2656085,
+      "sha256": "b6d9b8993bfa814fda974a03ce1c26130e2863bf1266fcf8852666ab8b5da1f8"
+    },
+    {
+      "url": "https://web.archive.org/web/20211008193821id_/https://www.fda.gov/media/133240/download",
+      "status": "PASS",
+      "file": "48d07a1c2570f5ecc54c24569a800f24e5b49833741e7f96b08daba0a7e02993.pdf",
+      "bytes": 2640257,
+      "sha256": "48d07a1c2570f5ecc54c24569a800f24e5b49833741e7f96b08daba0a7e02993"
+    },
+    {
+      "url": "https://web.archive.org/web/20220728132818id_/http://www.fda.gov/media/133240/download",
+      "status": "PASS",
+      "file": "dde7cbc0c382662855258b716e5f3678f2fa7b78c5a21cf4b72993d090dfbb3c.pdf",
+      "bytes": 2711429,
+      "sha256": "dde7cbc0c382662855258b716e5f3678f2fa7b78c5a21cf4b72993d090dfbb3c"
+    },
+    {
+      "url": "https://web.archive.org/web/20241108181318id_/https://www.fda.gov/media/133240/download",
+      "status": "PASS",
+      "file": "7635d915344797fa44676b642dc713a355cd497f5b09908f716d7216bb39441a.pdf",
+      "bytes": 2766215,
+      "sha256": "7635d915344797fa44676b642dc713a355cd497f5b09908f716d7216bb39441a"
+    },
+    {
+      "url": "https://web.archive.org/web/20201203002123id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20221214061156id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20231128054000id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20241220233946id_/https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+      "status": "FAIL",
+      "error": "unexpected payload format"
+    },
+    {
+      "url": "https://web.archive.org/web/20141030185824id_/http://www.fda.gov:80/downloads/drugs/developmentapprovalprocess/howdrugsaredevelopedandapproved/approvalapplications/abbreviatednewdrugapplicationandagenerics/ucm293268.pdf",
+      "status": "PASS",
+      "file": "7cfdf384cc019921f35bbf5087c0f7ba36d49ea9dabaac1f4405103f52504e28.pdf",
+      "bytes": 2112207,
+      "sha256": "7cfdf384cc019921f35bbf5087c0f7ba36d49ea9dabaac1f4405103f52504e28"
+    },
+    {
+      "url": "https://web.archive.org/web/20191215154334id_/https://www.fda.gov/media/133240/download",
+      "status": "PASS",
+      "file": "64449b0e72cd1a6b0726b5e5d238d81165578d4b49c9f947724c1918579fe15c.pdf",
+      "bytes": 1408661,
+      "sha256": "64449b0e72cd1a6b0726b5e5d238d81165578d4b49c9f947724c1918579fe15c"
+    }
+  ]
+}
