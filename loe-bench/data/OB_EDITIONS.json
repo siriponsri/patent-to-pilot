@@ -1,0 +1,611 @@
+{
+ "editions": [
+  {
+   "file": "ob_20090710171813.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20090710171813",
+   "wayback_url": "https://web.archive.org/web/20090710171813id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:24:30.210153Z",
+   "bytes": 476740,
+   "sha256": "6ddbe5098de93c127bca1dbddf58f59eb020c877100db7e378ec69c36ad2542f",
+   "origin": "wayback_download",
+   "edition_date": "2009-06-09",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 24135,
+    "patent": 8109,
+    "exclusivity": 1845
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20100113002223.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20100113002223",
+   "wayback_url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:24:35.018222Z",
+   "bytes": 495019,
+   "sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+   "origin": "wayback_download",
+   "edition_date": "2009-12-22",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 24645,
+    "patent": 8545,
+    "exclusivity": 2065
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20110401201026.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20110401201026",
+   "wayback_url": "https://web.archive.org/web/20110401201026id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:24:39.578471Z",
+   "bytes": 513758,
+   "sha256": "807dd86c2de50a61ca450e2c9e9ab2e68e73baa70d43e1bfd8e61f961519878d",
+   "origin": "wayback_download",
+   "edition_date": "2011-03-18",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 25919,
+    "patent": 8477,
+    "exclusivity": 1631
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20120126210607.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20120126210607",
+   "wayback_url": "https://web.archive.org/web/20120126210607id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:24:46.332334Z",
+   "bytes": 537140,
+   "sha256": "3e6877b6b2cf21193c2ab61bd0f0f85dc5fb7ecc565defe2f24744194dd4a17b",
+   "origin": "wayback_download",
+   "edition_date": "2012-01-17",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 26857,
+    "patent": 9472,
+    "exclusivity": 1941
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20130130220223.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20130130220223",
+   "wayback_url": "https://web.archive.org/web/20130130220223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:24:50.608345Z",
+   "bytes": 561630,
+   "sha256": "9fa45df9a830dcf000314d9894e6c2fada38d1ce707b8d39a46800e54ed4c4ea",
+   "origin": "wayback_download",
+   "edition_date": "2013-01-18",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 28133,
+    "patent": 10359,
+    "exclusivity": 1878
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20140915104404.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20140915104404",
+   "wayback_url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:24:54.755821Z",
+   "bytes": 600151,
+   "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+   "origin": "wayback_download",
+   "edition_date": "2014-09-10",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 29806,
+    "patent": 11380,
+    "exclusivity": 1511
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20150206095621.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20150206095621",
+   "wayback_url": "https://web.archive.org/web/20150206095621id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:24:58.954526Z",
+   "bytes": 613685,
+   "sha256": "f5ca885cdffc9af0ea65a9975fa60a7b9670369365e48b73a3fcc9a71f75c498",
+   "origin": "wayback_download",
+   "edition_date": "2015-01-16",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 30153,
+    "patent": 12007,
+    "exclusivity": 1712
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20160407115331.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20160407115331",
+   "wayback_url": "https://web.archive.org/web/20160407115331id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:03.898842Z",
+   "bytes": 639004,
+   "sha256": "dc1234836c9606204b74195bb9e225ee767a70c97470ae8327e557889bd2fa2c",
+   "origin": "wayback_download",
+   "edition_date": "2016-03-18",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 31663,
+    "patent": 11825,
+    "exclusivity": 1495
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20170111194915.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20170111194915",
+   "wayback_url": "https://web.archive.org/web/20170111194915id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:08.210839Z",
+   "bytes": 651263,
+   "sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+   "origin": "wayback_download",
+   "edition_date": "2016-12-16",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 32786,
+    "patent": 13038,
+    "exclusivity": 1769
+   },
+   "has_submission_date": false
+  },
+  {
+   "file": "ob_20180125053257.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20180125053257",
+   "wayback_url": "https://web.archive.org/web/20180125053257id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:13.532169Z",
+   "bytes": 718351,
+   "sha256": "47b46e4a9854170055d2471eceeea2c3c01a2ba9f15529b557c78de9b510baef",
+   "origin": "wayback_download",
+   "edition_date": "2018-01-12",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 34680,
+    "patent": 14605,
+    "exclusivity": 1967
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_20190207233819.zip",
+   "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "wayback_ts": "20190207233819",
+   "wayback_url": "https://web.archive.org/web/20190207233819id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:18.725001Z",
+   "bytes": 829113,
+   "sha256": "1b5de2f495e32e5c45d9d08865f421fa85fa8f6cd0f00a68809ab7d664892180",
+   "origin": "wayback_download",
+   "edition_date": "2019-01-18",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 36458,
+    "patent": 14919,
+    "exclusivity": 1950
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_20201112023717.zip",
+   "source_url": "https://www.fda.gov/media/76860/download",
+   "wayback_ts": "20201112023717",
+   "wayback_url": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:24.436971Z",
+   "bytes": 906556,
+   "sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+   "origin": "wayback_download",
+   "edition_date": "2020-11-02",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 39051,
+    "patent": 15246,
+    "exclusivity": 1956
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_20210312103027.zip",
+   "source_url": "https://www.fda.gov/media/76860/download",
+   "wayback_ts": "20210312103027",
+   "wayback_url": "https://web.archive.org/web/20210312103027id_/https://www.fda.gov/media/76860/download",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:29.015617Z",
+   "bytes": 902096,
+   "sha256": "5aa47cf7b7d76889df59fec815738a04a1fce6f876f742a377f02f312acf5f13",
+   "origin": "wayback_download",
+   "edition_date": "2021-02-12",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 39597,
+    "patent": 14579,
+    "exclusivity": 1684
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_20220309013510.zip",
+   "source_url": "https://www.fda.gov/media/76860/download",
+   "wayback_ts": "20220309013510",
+   "wayback_url": "https://web.archive.org/web/20220309013510id_/https://www.fda.gov/media/76860/download",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:38.714554Z",
+   "bytes": 885286,
+   "sha256": "bb7c543d1eb45c21ab675ad27b78818dea29dcb7eb52595f0fadf231e5eb6a4d",
+   "origin": "wayback_download",
+   "edition_date": "2022-02-11",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 41079,
+    "patent": 16075,
+    "exclusivity": 1834
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_20230126055817.zip",
+   "source_url": "https://www.fda.gov/media/76860/download",
+   "wayback_ts": "20230126055817",
+   "wayback_url": "https://web.archive.org/web/20230126055817id_/https://www.fda.gov/media/76860/download",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:43.126869Z",
+   "bytes": 987880,
+   "sha256": "3bdfa0b2c4d77a71e3f4adf6c5af4a6a91cf89e23cf758676832c463f635819d",
+   "origin": "wayback_download",
+   "edition_date": "2023-01-13",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 42569,
+    "patent": 17965,
+    "exclusivity": 2167
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_20240218071235.zip",
+   "source_url": "https://www.fda.gov/media/76860/download?attachment",
+   "wayback_ts": "20240218071235",
+   "wayback_url": "https://web.archive.org/web/20240218071235id_/https://www.fda.gov/media/76860/download?attachment",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:48.238856Z",
+   "bytes": 1018931,
+   "sha256": "1c564ffb4f4465fa63cf36e0db67f358b4ee4f1453976ebc0ef15aad5ab9748c",
+   "origin": "wayback_download",
+   "edition_date": "2024-02-09",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 44572,
+    "patent": 18048,
+    "exclusivity": 1934
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_20250119175942.zip",
+   "source_url": "https://www.fda.gov/media/76860/download",
+   "wayback_ts": "20250119175942",
+   "wayback_url": "https://web.archive.org/web/20250119175942id_/https://www.fda.gov/media/76860/download",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:52.981095Z",
+   "bytes": 1028407,
+   "sha256": "03ed91905a0d575e9ed4d9687ea587f6928627130f20b2f4d16c25760fe02012",
+   "origin": "wayback_download",
+   "edition_date": "2025-01-10",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 46050,
+    "patent": 20052,
+    "exclusivity": 2416
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_20260726025555.zip",
+   "source_url": "https://www.fda.gov/media/76860/download",
+   "wayback_ts": "20260726025555",
+   "wayback_url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+   "http_status": 200,
+   "retrieved_utc": "2026-11-27T10:25:57.182624Z",
+   "bytes": 1091413,
+   "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+   "origin": "wayback_download",
+   "edition_date": "2026-07-10",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 48502,
+    "patent": 22131,
+    "exclusivity": 2341
+   },
+   "has_submission_date": true
+  },
+  {
+   "file": "ob_local_20261113.zip",
+   "source_url": "https://www.fda.gov/media/76860/download?attachment",
+   "wayback_ts": null,
+   "wayback_url": null,
+   "http_status": 200,
+   "retrieved_utc": null,
+   "bytes": 1104034,
+   "sha256": "d4dbc9d85df4fbd78c5e448f130a55b05054f529d2054a46df10735437792241",
+   "origin": "reused: earlier FDA direct download (D37/B1E), _private_artifacts/ptp-ip-pharma-landscape-20261126/orange-book.zip, pins in docs/ra-pharma/ip-pharma/B1E-AMENDMENT.md",
+   "edition_date": "2026-11-13",
+   "edition_date_basis": "max ZIP member modification date",
+   "rows": {
+    "products": 48990,
+    "patent": 22599,
+    "exclusivity": 2462
+   },
+   "has_submission_date": true
+  }
+ ],
+ "schema": "loe-bench OB_EDITIONS v1",
+ "edition_date_note": "edition_date = max modification date of the ZIP members (generation date of the FDA data); Wayback capture time is always later. ob_history.py selects editions on edition_date only.",
+ "search_log": [
+  {
+   "query": "https://web.archive.org/cdx/search/cdx?url=fda.gov/media/76860/download&output=txt&fl=timestamp,statuscode&collapse=timestamp:4",
+   "http": 200,
+   "years_with_captures_collapsed_by_year": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ]
+  },
+  {
+   "query": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov/media/76860/download?attachment&output=txt&fl=timestamp,statuscode&collapse=timestamp:4",
+   "http": 200,
+   "years_with_captures_collapsed_by_year": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ]
+  },
+  {
+   "query": "https://web.archive.org/cdx/search/cdx?url=www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip&output=txt&fl=timestamp,statuscode&collapse=timestamp:4",
+   "http": 200,
+   "years_with_captures_collapsed_by_year": [
+    "2009",
+    "2010",
+    "2011",
+    "2012",
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ]
+  },
+  {
+   "query": "https://web.archive.org/cdx/search/cdx?url=www.accessdata.fda.gov/cder/ob/docs/obdata.zip&output=txt&fl=timestamp,statuscode&collapse=timestamp:4",
+   "http": 200,
+   "years_with_captures_collapsed_by_year": []
+  },
+  {
+   "note": "Full CDX listings (200/301/302/401/403/404 and warc/revisit rows) for the first three URLs were inspected on 2026-11-27; non-200 captures seen: 2023-03-17 403, 2023-07-15 301, 2023-07-15 404 (media/76860/download*), 2024-06-18 301/302, 2024-03-11 download?attachment 655-byte body, 2025-01-20/2025-03-22/2025-10-11/2026-02-19 401. None of these were used. accessdata.fda.gov/cder/ob/docs/obdata.zip: CDX returned no captures."
+  }
+ ],
+ "retrieval_attempts": [
+  {
+   "wayback_url": "https://web.archive.org/web/20090710171813id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 476740,
+   "retrieved_utc": "2026-11-27T10:24:30.210153Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 495019,
+   "retrieved_utc": "2026-11-27T10:24:35.018222Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20110401201026id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 513758,
+   "retrieved_utc": "2026-11-27T10:24:39.578471Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20120126210607id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 537140,
+   "retrieved_utc": "2026-11-27T10:24:46.332334Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20130130220223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 561630,
+   "retrieved_utc": "2026-11-27T10:24:50.608345Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 600151,
+   "retrieved_utc": "2026-11-27T10:24:54.755821Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20150206095621id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 613685,
+   "retrieved_utc": "2026-11-27T10:24:58.954526Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20160407115331id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 639004,
+   "retrieved_utc": "2026-11-27T10:25:03.898842Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20170111194915id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 651263,
+   "retrieved_utc": "2026-11-27T10:25:08.210839Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20180125053257id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 718351,
+   "retrieved_utc": "2026-11-27T10:25:13.532169Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20190207233819id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+   "http": 200,
+   "bytes": 829113,
+   "retrieved_utc": "2026-11-27T10:25:18.725001Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download",
+   "http": 200,
+   "bytes": 906556,
+   "retrieved_utc": "2026-11-27T10:25:24.436971Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20210312103027id_/https://www.fda.gov/media/76860/download",
+   "http": 200,
+   "bytes": 902096,
+   "retrieved_utc": "2026-11-27T10:25:29.015617Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20220309013510id_/https://www.fda.gov/media/76860/download",
+   "http": 200,
+   "bytes": 885286,
+   "retrieved_utc": "2026-11-27T10:25:38.714554Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20230126055817id_/https://www.fda.gov/media/76860/download",
+   "http": 200,
+   "bytes": 987880,
+   "retrieved_utc": "2026-11-27T10:25:43.126869Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20240218071235id_/https://www.fda.gov/media/76860/download?attachment",
+   "http": 200,
+   "bytes": 1018931,
+   "retrieved_utc": "2026-11-27T10:25:48.238856Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20250119175942id_/https://www.fda.gov/media/76860/download",
+   "http": 200,
+   "bytes": 1028407,
+   "retrieved_utc": "2026-11-27T10:25:52.981095Z",
+   "error": null
+  },
+  {
+   "wayback_url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+   "http": 200,
+   "bytes": 1091413,
+   "retrieved_utc": "2026-11-27T10:25:57.182624Z",
+   "error": null
+  }
+ ],
+ "limitations": [
+  "Orange Book files contain no paragraph-IV/challenge field; patent Submission_Date exists only from the 2018 editions on.",
+  "2009 edition files are headerless and lack Appl_Type; ob_history keys on Appl_No+Product_No.",
+  "Downloaded 18 Wayback editions (one capture per Wayback year 2009-2026, mostly the earliest of the year) plus 1 reused FDA download. By edition date the years covered are 2009 (x2), 2011-2016 (2016 x2), 2018-2026; no edition dated 2010 or 2017 was fetched (Wayback captures exist but were not fetched). Largest gap between consecutive editions: 2020-11-02 to 2021-02-12 is short; 2019-01-18 to 2020-11-02 is ~21 months (Wayback has 2019 media/76860 captures not fetched).",
+  "No edition before 2009-06 obtained; Wayback UCM163762 captures start 2009-07."
+ ],
+ "coverage_by_edition_year": {
+  "2009": [
+   "2009-06-09",
+   "2009-12-22"
+  ],
+  "2011": [
+   "2011-03-18"
+  ],
+  "2012": [
+   "2012-01-17"
+  ],
+  "2013": [
+   "2013-01-18"
+  ],
+  "2014": [
+   "2014-09-10"
+  ],
+  "2015": [
+   "2015-01-16"
+  ],
+  "2016": [
+   "2016-03-18",
+   "2016-12-16"
+  ],
+  "2018": [
+   "2018-01-12"
+  ],
+  "2019": [
+   "2019-01-18"
+  ],
+  "2020": [
+   "2020-11-02"
+  ],
+  "2021": [
+   "2021-02-12"
+  ],
+  "2022": [
+   "2022-02-11"
+  ],
+  "2023": [
+   "2023-01-13"
+  ],
+  "2024": [
+   "2024-02-09"
+  ],
+  "2025": [
+   "2025-01-10"
+  ],
+  "2026": [
+   "2026-07-10",
+   "2026-11-13"
+  ]
+ }
+}
