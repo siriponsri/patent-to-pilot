@@ -25,3 +25,8 @@
 - **27 Nov, E2b and T2 merged.**
   - E2b: 31 editions; 15 of 16 cutoffs now have a fresh edition.
   - T2: the test seal works. Validation-only results were uninformative because the stale editions put every row into CONTESTED. T2b reruns with availability-proven editions and a shared age base.
+- **27 Nov, T2b merged (development evidence only, test sealed).**
+  - Results at 24 months: M1 (as-of patent and exclusivity features plus the age base) beats B1, ΔAURC80 −0.0073 (CI −0.0153 to −0.00004). M3 does not beat M1, +0.0040 (CI −0.0001 to +0.0099). At 12 months every CI includes 0.
+  - Diagnosis: 83% of rows are CONTESTED because the challenge leaf is always UNKNOWN, since Orange Book has no Paragraph IV field. The graph therefore adds no information.
+  - Limitations: training uses only the 2010 cutoff (562 rows). The selected L2 = 100 sits at the edge of the grid.
+  - Decision: E6 sources an as-of FDA Paragraph IV certification list. T5 must revisit the primary contrast before preregistration. "As-of regulatory evidence beats the age clock" (M1 or M3 against B1) is now the strongest candidate, and M3 against M1 would become secondary. Development data may inform this choice, but test data may not.

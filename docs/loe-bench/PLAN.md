@@ -121,7 +121,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | FIX2 | Systematic active-moiety key (UNII-based) plus a fresh post-fix audit | GPT-6.2 Sol high | T7 | dispatched |
 | 2 | E2b | Backfill Orange Book editions per CP2 list | GPT-6.2 Sol high | CP2 | merged: 15/16 cutoffs fresh; 2011-01-01 has no edition |
 | 2 | T2 | M1/M2/M3 arms, as-of features, test seal, development validation only | GPT-6.2 Sol high | FIX1, CP2 | merged: seal works; stale editions gave 0 OPEN rows |
-| 2 | T2b | Rerun with availability-proven editions and a shared age base | GPT-6.2 Sol high | E2b | dispatched |
+| 2 | T2b | Rerun with availability-proven editions and a shared age base | GPT-6.2 Sol high | E2b | merged (development only). At 24 months, M1−B1 = −0.0073 (CI below 0) and M3−M1 = +0.0040 (CI includes 0). 83% of rows are CONTESTED. |
+| 2 | E6 | As-of FDA Paragraph IV certification list for the challenge leaf | GPT-6.2 Sol high | T2b | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft, then co-reviewer | Sonnet, then GPT | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
