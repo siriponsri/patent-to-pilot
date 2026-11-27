@@ -164,7 +164,7 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | FIX2 | UNII active-moiety key | GPT-6.2 Sol high | T7 | not merged: fresh audit 0 false merges, 11/60 false splits |
 | 2 | FIX2b | Close FIX2 false splits (name-to-UNII lookup, union-find), fresh audit with seed 20261130 | GPT-6.2 Sol high | FIX2 | fresh audit: 57 correct, 1 false split, 2 unresolved of 60; merge via FIX2c |
 | 2 | E6 | As-of FDA Paragraph IV certification list for the challenge leaf | GPT-6.2 Sol high | T2b | merged: 11/16 cutoffs fresh; gaps 2013–2016 and 2024; development name matches about 70% |
-| 2 | E6-alt | Alternative challenge sources (litigation dockets and others) | GPT-6.2 Astra high | E6 | dispatched |
+| 2 | E6-alt | Alternative challenge sources (litigation dockets and others) | GPT-6.2 Astra high | E6 | merged: EDGAR filings GREEN; Rai et al. CC0 court table (filings 2011–2020) AMBER, usable to fill the 2013–2016 gap |
 | 2 | FIX2c | Merge the moiety key with T2b, link OB aliases, rerun development | GPT-6.2 Sol high | FIX2b | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
