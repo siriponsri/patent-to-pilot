@@ -12,6 +12,12 @@ Owner of this file: main planner (Claude Opus). Branch: `research/loe-bench`, wi
 - **E5:** no Thai sample could be retrieved. The demo will use four columns of curated links, and owner access items are deferred to the end-of-research pack.
 - **CP1:** code defects found by static review must be fixed (FIX1) before any modeling. The new single primary endpoint is paired ΔAURC(M3 − M1) at 24 months on C′.
 
-## Next action
+## Wave 2 status
+
+- FIX1 is merged after main-planner review. The suite passes 51 tests, 17 of them regression tests. The repo pytest shows only the 8 accepted SACR failures. Real-data row counts did not change for the 1995–2014 training grid.
+- CP2 (GPT-6.2 Astra high) and T7 (GPT-6 Luna high) are dispatched. T2 waits for the CP2 split decision. The first historical Orange Book edition is from 2009-06, which limits the C′ training window.
+- GPU: owner rule. Send a proposal with GPU type, rate, hours per stage, budget cap and stop rules, and get approval before any pod is created. No envelope is approved yet.
+
+## Next action (Wave 1 close)
 
 Owner confirms the GPT executor model mapping in PLAN.md. Then dispatch FIX1. After FIX1, run T7 and T2, then T1, then T4. When dr-train is back online, rerun the E4 smoke.
