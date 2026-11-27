@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## D39 Batch 3 · 27 November 2026
+
+**BLOCKED_FRAME.** The [receipt](ip-pharma/d39/BATCH3-RECEIPT.md), [frame record](ip-pharma/d39/BATCH3-PREFIX.json) and [access ledger](ip-pharma/d39/BATCH3-ACCESSES.jsonl) document the Purple Book monthly listing and October CSV diagnostic. The two headers expose reference names without a reference BLA. The frozen rules did not establish a reference BLA binding or choice among full monthly editions. No prefix was frozen. Candidate details, Thai checks and matched comparisons are NOT_RUN. Two logical accesses, one client recovery, USD 0 incremental service charges.
+
+Planner owns disposition of the frame failure. Check the official listing and October headers at logical CSV records 4 and 20. Any revised edition choice or exact reference join requires a prospectively reviewed lock. This receipt releases no further batch.
+
 ## D39 Batch 2 · 27 November 2026
 
 Executed the exact Planner release on the published research lock. The retained Orange Book hash matched and the eight-key prefix was frozen before detail work. The [Batch 2 receipt](ip-pharma/d39/BATCH2-RECEIPT.md) records one US-only alfuzosin evidence request, four rejections, three blocked decisions and zero promotions. Thai FDA NDI timed out twice. Thai applicability is unknown for all eight. The manual label and literature review supports the same action as the evidence record in the author-only alfuzosin walkthrough. A matched comparison and operator validation remain NOT_RUN.

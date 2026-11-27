@@ -1,5 +1,9 @@
 # Research memory
 
+## D39 Batch 3 blocked frame · 27 November 2026
+
+The [receipt](ip-pharma/d39/BATCH3-RECEIPT.md) records the official monthly listing and October CSV schema. Reference proper and proprietary names do not directly supply the reference BLA required for the grouping key. Pin the edition and an authoritative linkage rule before any future release that depends on this grouping. Keep an undefined prefix outside screening and comparison denominators. The text browser rejected the CSV media type, and a same-link byte fetch recovered the schema. Treat this as a recorded client-format retry deviation. Thai registration, public review availability and platform comparisons remain unmeasured. Planner disposition is next.
+
 ## D39 Batch 2 generic screen · 27 November 2026
 
 The [receipt](ip-pharma/d39/BATCH2-RECEIPT.md) confirms the locked Orange Book prefix and eight screened keys. Exact application matching alone can return an authorized generic or a differently labeled strength, as the acetaminophen combination demonstrated. At future released screens, check proprietary identity, strength and edition before terminating the displayed-prefix review. Preserve a censored source slot separately from an empty query result. The Thai interface and the linked primary full texts were blocked. The only listed question was a US-bounded request for alfuzosin comparative exposure evidence, which the manual workflow also reaches. Zero promoted, Thai applicability unknown, USD 0. Planner review is the next checkpoint.
