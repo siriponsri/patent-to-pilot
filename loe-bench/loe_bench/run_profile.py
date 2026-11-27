@@ -7,6 +7,7 @@ from collections import Counter
 from datetime import date
 
 from .dataset import build_entities, build_samples, snapshot_features, time_split
+from .seal import require_cutoffs
 
 
 def main():
@@ -15,6 +16,8 @@ def main():
     ap.add_argument("--out", default="data/profile.json")
     ap.add_argument("--data-end", default=None, help="YYYY-MM-DD; default = max ANDA approval date seen")
     a = ap.parse_args()
+    cutoffs = [date(y, 1, 1) for y in range(2005, 2024)]
+    require_cutoffs(cutoffs)
     ents = build_entities(a.raw)
     with_nda = [e for e in ents.values() if e.nda_first]
     nme = [e for e in with_nda if e.nme]
@@ -31,7 +34,6 @@ def main():
     }
     horizons = {}
     for h in (24, 36):
-        cutoffs = [date(y, 1, 1) for y in range(2005, 2024)]
         rows = build_samples(ents, cutoffs, h, data_end, only_nme=True)
         train, test, dropped = time_split(rows, date(2014, 1, 1), date(2017, 1, 1))
         horizons[str(h)] = {

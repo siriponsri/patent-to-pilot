@@ -7,6 +7,7 @@ from datetime import date
 from .baselines import AgeHazardTable, BaseRate, Logistic
 from .dataset import build_entities, build_samples, time_split
 from .metrics import aurc, auroc, brier, cluster_bootstrap_ci, ece
+from .seal import require_cutoffs, require_rows
 
 
 def main():
@@ -16,11 +17,13 @@ def main():
     ap.add_argument("--train-last", default="2014-01-01")
     ap.add_argument("--test-first", default="2017-01-01")
     a = ap.parse_args()
+    cutoffs = [date(y, 1, 1) for y in range(1995, 2024)]
+    require_cutoffs(cutoffs)
     ents = build_entities(a.raw)
     data_end = max(e.anda_first for e in ents.values() if e.anda_first)
-    cutoffs = [date(y, 1, 1) for y in range(1995, 2024)]
     rows = build_samples(ents, cutoffs, a.horizon, data_end, only_nme=True)
     train, test, dropped = time_split(rows, date.fromisoformat(a.train_last), date.fromisoformat(a.test_first))
+    require_rows(test)
     y = [r["y"] for r in test]
     g = [r["key"] for r in test]
     print(f"train={len(train)} test={len(test)} embargo_dropped={dropped} test_prev={sum(y)/len(y):.3f}")

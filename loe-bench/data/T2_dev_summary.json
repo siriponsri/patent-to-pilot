@@ -1,0 +1,472 @@
+{
+  "edition_coverage": {
+    "2010-01-01": {
+      "age_days": 10,
+      "freshness_floor": "2009-07-01",
+      "latest_edition": "2009-12-22",
+      "status": "FRESH"
+    },
+    "2012-01-01": {
+      "age_days": 289,
+      "freshness_floor": "2011-07-01",
+      "latest_edition": "2011-03-18",
+      "status": "STALE"
+    },
+    "2013-01-01": {
+      "age_days": 350,
+      "freshness_floor": "2012-07-01",
+      "latest_edition": "2012-01-17",
+      "status": "STALE"
+    },
+    "2014-01-01": {
+      "age_days": 348,
+      "freshness_floor": "2013-07-01",
+      "latest_edition": "2013-01-18",
+      "status": "STALE"
+    },
+    "2015-01-01": {
+      "age_days": 113,
+      "freshness_floor": "2014-07-01",
+      "latest_edition": "2014-09-10",
+      "status": "FRESH"
+    }
+  },
+  "horizons": {
+    "12": {
+      "arms": {
+        "B1": {
+          "answered": 2231,
+          "aurc80": 0.017482333067463184,
+          "aurc80_status": "evaluated",
+          "brier": 0.03753610003248014,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.046411393599087934,
+              "rows": 136
+            },
+            "CONTESTED": {
+              "brier": 0.03695994732362159,
+              "rows": 2095
+            },
+            "OPEN": {
+              "brier": null,
+              "rows": 0
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.005143141848054171,
+          "ece_bin_counts": [
+            2001,
+            230,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M1": {
+          "answered": 2231,
+          "aurc80": 0.03416848142471725,
+          "aurc80_status": "evaluated",
+          "brier": 0.038287133975111465,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.04809534323796601,
+              "rows": 136
+            },
+            "CONTESTED": {
+              "brier": 0.037650419674515656,
+              "rows": 2095
+            },
+            "OPEN": {
+              "brier": null,
+              "rows": 0
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.0015313385539143978,
+          "ece_bin_counts": [
+            2230,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M2": {
+          "answered": 2231,
+          "aurc80": 0.05091565197078489,
+          "aurc80_status": "evaluated",
+          "brier": 0.038393580801755284,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.04902629943318844,
+              "rows": 136
+            },
+            "CONTESTED": {
+              "brier": 0.037703342265299485,
+              "rows": 2095
+            },
+            "OPEN": {
+              "brier": null,
+              "rows": 0
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.0009590241426405961,
+          "ece_bin_counts": [
+            2231,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M3": {
+          "answered": 2231,
+          "aurc80": 0.03424830266314782,
+          "aurc80_status": "evaluated",
+          "brier": 0.03828797060134113,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.04812178179050976,
+              "rows": 136
+            },
+            "CONTESTED": {
+              "brier": 0.037649594314120634,
+              "rows": 2095
+            },
+            "OPEN": {
+              "brier": null,
+              "rows": 0
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.0015306412623611538,
+          "ece_bin_counts": [
+            2230,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "open_actions": {
+        "m3_predict_no_entry": 0,
+        "package_ensemble_predict_no_entry_on_same_open_rows": 0,
+        "rows": 0
+      },
+      "paired_aurc80": {
+        "M3_minus_B1": {
+          "ci95": [
+            0.00668729555075389,
+            0.027261509353029668
+          ],
+          "delta": 0.01676596959568464,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 1000
+        },
+        "M3_minus_M1": {
+          "ci95": [
+            -0.00016881768863490423,
+            0.00033586389226215874
+          ],
+          "delta": 7.982123843057465e-05,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 1000
+        }
+      },
+      "row_coverage_by_cutoff": {
+        "2010-01-01": {
+          "FRESH": 553,
+          "NOT_LISTED": 9
+        },
+        "2012-01-01": {
+          "STALE": 549
+        },
+        "2013-01-01": {
+          "STALE": 556
+        },
+        "2014-01-01": {
+          "STALE": 562
+        },
+        "2015-01-01": {
+          "FRESH": 550,
+          "NOT_LISTED": 14
+        }
+      },
+      "sealed_test_start": "2017-01-01",
+      "status": "DEVELOPMENT_ONLY",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 562,
+      "validation_cutoffs": [
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "validation_drug_clusters": 628,
+      "validation_event_clusters": 89,
+      "validation_rows": 2231
+    },
+    "24": {
+      "arms": {
+        "B1": {
+          "answered": 1118,
+          "aurc80": 0.02882799076125053,
+          "aurc80_status": "evaluated",
+          "brier": 0.07027344898280341,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": null,
+              "rows": 0
+            },
+            "CONTESTED": {
+              "brier": 0.07027344898280341,
+              "rows": 1118
+            },
+            "OPEN": {
+              "brier": null,
+              "rows": 0
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.004037984572445037,
+          "ece_bin_counts": [
+            786,
+            264,
+            68,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M1": {
+          "answered": 1108,
+          "aurc80": 0.06062270063036439,
+          "aurc80_status": "evaluated",
+          "brier": 0.0719415905030584,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": null,
+              "rows": 0
+            },
+            "CONTESTED": {
+              "brier": 0.0719415905030584,
+              "rows": 1118
+            },
+            "OPEN": {
+              "brier": null,
+              "rows": 0
+            }
+          },
+          "coverage": 0.9910554561717353,
+          "ece": 0.008304703803154912,
+          "ece_bin_counts": [
+            808,
+            291,
+            11,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M2": {
+          "answered": 1118,
+          "aurc80": 0.10677176911111261,
+          "aurc80_status": "evaluated",
+          "brier": 0.07445007395779274,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": null,
+              "rows": 0
+            },
+            "CONTESTED": {
+              "brier": 0.07445007395779274,
+              "rows": 1118
+            },
+            "OPEN": {
+              "brier": null,
+              "rows": 0
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.0007133990703006996,
+          "ece_bin_counts": [
+            1118,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M3": {
+          "answered": 1116,
+          "aurc80": 0.06940635649553696,
+          "aurc80_status": "evaluated",
+          "brier": 0.07251665010396052,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": null,
+              "rows": 0
+            },
+            "CONTESTED": {
+              "brier": 0.07251665010396052,
+              "rows": 1118
+            },
+            "OPEN": {
+              "brier": null,
+              "rows": 0
+            }
+          },
+          "coverage": 0.998211091234347,
+          "ece": 0.007018387538888126,
+          "ece_bin_counts": [
+            803,
+            309,
+            5,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "open_actions": {
+        "m3_predict_no_entry": 0,
+        "package_ensemble_predict_no_entry_on_same_open_rows": 0,
+        "rows": 0
+      },
+      "paired_aurc80": {
+        "M3_minus_B1": {
+          "ci95": [
+            0.014248224150287148,
+            0.06925207275816246
+          ],
+          "delta": 0.04057836573428643,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 1000
+        },
+        "M3_minus_M1": {
+          "ci95": [
+            0.0020558551536677544,
+            0.017178392800579007
+          ],
+          "delta": 0.008783655865172574,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 1000
+        }
+      },
+      "row_coverage_by_cutoff": {
+        "2010-01-01": {
+          "FRESH": 553,
+          "NOT_LISTED": 9
+        },
+        "2013-01-01": {
+          "STALE": 556
+        },
+        "2014-01-01": {
+          "STALE": 562
+        }
+      },
+      "sealed_test_start": "2017-01-01",
+      "status": "DEVELOPMENT_ONLY",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 562,
+      "validation_cutoffs": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
+      "validation_drug_clusters": 579,
+      "validation_event_clusters": 66,
+      "validation_rows": 1118
+    },
+    "36": {
+      "reason": "No non-empty train/validation split satisfies strict embargo.",
+      "sealed_test_start": "2017-01-01",
+      "status": "NOT_RUN",
+      "train_cutoffs": [],
+      "validation_cutoffs": []
+    }
+  },
+  "input_sha256": {
+    "drugs_fda": {
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61"
+    },
+    "ob_manifest": {
+      "file": "OB_EDITIONS.json",
+      "sha256": "b29ec517e72ced9897947eb7cb6c0fa34c8be1fea791d1870580fac63abc2463"
+    },
+    "s0_manifest": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "sha256": "f6d827361582f3aa5ad79621f784fc1b3260e5ff91c068194323c88d5ed871ff"
+    },
+    "used_edition_zips_by_date": {
+      "2009-12-22": {
+        "file": "ob_20100113002223.zip",
+        "sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "2014-09-10": {
+        "file": "ob_20140915104404.zip",
+        "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      }
+    }
+  },
+  "protocol": {
+    "bootstrap_draws": 1000,
+    "bootstrap_seed": 20261127,
+    "coverage_target": 0.8,
+    "drug_key_calibration_folds": 5,
+    "hi": 0.75,
+    "lo": 0.25,
+    "useful_delta_at_most": -0.01
+  },
+  "scope": "T2 development only. No protected cutoffs built or scored."
+}
