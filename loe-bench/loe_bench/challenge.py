@@ -99,7 +99,7 @@ def court_rows(path, stop_before):
 
 
 class ChallengeHistory:
-    """Combine dated witnesses with the closed-world rule for a verified fresh FDA list."""
+    """Combine dated witnesses with non-observation in a verified fresh FDA list."""
 
     def __init__(self, piv, identity, court, rai_source, corroboration):
         self.piv = piv
@@ -113,8 +113,9 @@ class ChallengeHistory:
     def _piv(self, cutoff):
         edition = self.piv.edition_asof(cutoff)
         witnesses = defaultdict(list)
+        undated_keys = set()
         if edition is None:
-            return witnesses, {"status": "NO_FRESH_EDITION"}
+            return witnesses, {"status": "NO_FRESH_EDITION"}, undated_keys
         source = {
             "version": edition.version_date.isoformat(), "captured": edition.wayback_timestamp,
             "sha256": edition.sha256, "file": edition.file, "url": edition.source_url,
@@ -123,8 +124,9 @@ class ChallengeHistory:
         try:
             rows = self.piv.entries(edition)
         except (OSError, ValueError, KeyError, IndexError, BadZipFile, ParseError, zlib.error) as exc:
-            return witnesses, {"status": "UNVERIFIED", "edition": source, "error": type(exc).__name__}
-        counts = Counter({"rows": len(rows), "matched_rows": 0, "dated_witness_rows": 0})
+            coverage = {"status": "UNVERIFIED", "edition": source, "error": type(exc).__name__}
+            return witnesses, coverage, undated_keys
+        counts = Counter(rows=len(rows), matched_rows=0, dated_witness_rows=0, undated_matched_rows=0)
         examples = []
         for row in rows:
             key = self.identity.piv_key(row, cutoff)
@@ -134,7 +136,10 @@ class ChallengeHistory:
                                      "locator": row.locator})
                 continue
             counts["matched_rows"] += 1
-            if row.first_submission and row.first_submission <= cutoff:
+            if row.first_submission is None:
+                counts["undated_matched_rows"] += 1
+                undated_keys.add(key)
+            elif row.first_submission <= cutoff:
                 counts["dated_witness_rows"] += 1
                 witnesses[key].append(Witness(
                     "FDA_PIV", edition.file, row.first_submission, source["version"],
@@ -142,7 +147,7 @@ class ChallengeHistory:
                 ))
         return witnesses, {"status": "FRESH", "edition": source, **counts,
                            "match_rate": counts["matched_rows"] / len(rows) if rows else None,
-                           "unmatched_examples": examples}
+                           "unmatched_examples": examples}, undated_keys
 
     @lru_cache(maxsize=16)
     def _rai(self, cutoff):
@@ -188,13 +193,13 @@ class ChallengeHistory:
                            "unmatched_examples": examples}
 
     def lookup(self, key, cutoff):
-        piv, coverage = self._piv(cutoff)
+        piv, coverage, undated_keys = self._piv(cutoff)
         rai, _ = self._rai(cutoff)
         witnesses = (*piv.get(key, ()), *rai.get(key, ()))
         state = T3.UNKNOWN
         if witnesses:
             state = T3.TRUE
-        elif coverage["status"] == "FRESH":
+        elif coverage["status"] == "FRESH" and key not in undated_keys:
             state = T3.FALSE
         return ChallengeEvidence(state, witnesses)
 
