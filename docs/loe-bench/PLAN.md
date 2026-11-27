@@ -61,8 +61,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | Role | Model | Scope |
 |---|---|---|
 | Main planner and reviewer | Claude Opus 5.5 | Briefs, review of every executor branch (receipt, key diffs, full test rerun, spot reproduction of numbers), integration, lane HANDOFF and MEMORY, owner reports in Thai. Only this role manages `docs/owner/` (D40). |
-| Co-planner | GPT-6.2 Astra high (proposed) | Methodology decisions only, such as the preregistration and the C′ gate. Read-only. Wave 1 CP1 used GPT-6.2 Sol medium. |
-| Executor | GPT models via Codex from Wave 2 (owner change, 27 Nov). Proposed mapping: GPT-6.2 Sol xhigh for FIX1, T4 and T3; Sol high for T2, T1, the T5 draft and the E4 rerun; GPT-6 Luna high for T7, T9, T12 and Thai demo curation | One task card per session in its own worktree. Wave 1 used Claude Sonnet 5.5. |
+| Co-planner | GPT-6.2 Astra high (owner-approved 27 Nov) | Methodology decisions only, such as the preregistration and the C′ gate. Read-only. Wave 1 CP1 used GPT-6.2 Sol medium. |
+| Executor | GPT models via Codex from Wave 2 (owner change, 27 Nov). Owner-approved mapping: GPT-6.2 Sol xhigh for FIX1, T4 and T3; Sol high for T2, T1, the T5 draft and the E4 rerun; GPT-6 Luna high for T7, T9, T12 and Thai demo curation | One task card per session in its own worktree. Wave 1 used Claude Sonnet 5.5. |
 
 **Executor protocol.**
 
@@ -84,7 +84,7 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 1 | E4 | T10 dr-train LLM arm, inventory, harness and synthetic smoke (V100 only) | Sonnet medium | none | merged PARTIAL: harness + mock tests; GPU smoke BLOCKED (dr-train offline) |
 | 1 | E5 | Thai open-data feasibility for the Thai-context demo | Sonnet low | none | merged: no Thai sample retrieved; curated-link demo recommended |
 | 1 | CP1 | Co-planner critique of design, hypotheses and novelty | GPT-6.2 Sol medium | none | adopted (see CP1 section) |
-| 2 | FIX1 | Fix CP1 code defects with leakage, censoring and tie tests | GPT executor | CP1 | next |
+| 2 | FIX1 | Fix CP1 code defects with leakage, censoring and tie tests | GPT-6.2 Sol xhigh | CP1 | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft, then co-reviewer | Sonnet, then GPT | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |

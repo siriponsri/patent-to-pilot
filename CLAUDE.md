@@ -2,7 +2,7 @@
 
 ## Start here
 
-Read [HANDOFF](HANDOFF.md), [INDEX-PLAN](INDEX-PLAN.md), the [LOE-Bench plan](docs/loe-bench/PLAN.md), the [LOE-Bench lane handoff](docs/loe-bench/HANDOFF.md) and [AGENTS](AGENTS.md). Verify repository, branch, remote, last three commits and other active writers. Under D40 the Orchestrator (Claude Opus 5.5) plans and integrates, GPT-6.2 Sol medium co-plans and reviews, and Claude Sonnet 5.5 executors each take one task card on a `loe/<task-id>` branch cut from `research/loe-bench`, in their own checkout.
+Read [HANDOFF](HANDOFF.md), [INDEX-PLAN](INDEX-PLAN.md), the [LOE-Bench plan](docs/loe-bench/PLAN.md), the [LOE-Bench lane handoff](docs/loe-bench/HANDOFF.md) and [AGENTS](AGENTS.md). Verify repository, branch, remote, last three commits and other active writers. Under D40 (roles approved by the owner on 27 Nov 2026), Claude Opus 5.5 is the main planner and the only reviewer. GPT-6.2 Astra (high) is co-planner for methodology decisions only. GPT models execute through Codex, with each executor taking one task card on a `loe/<task-id>` branch cut from `research/loe-bench` in its own checkout. Executor model by card type: GPT-6.2 Sol xhigh for code and statistics that decide results (FIX1, T4, T3), GPT-6.2 Sol high for other code and drafts (T2, T1, T5, GPU runs), and GPT-6 Luna high for mechanical cards (T7, T9, T12, Thai demo curation). GPU work moves from dr-train (offline) to RunPod, or to Vast.ai once its MCP is installed, within a recorded owner envelope.
 
 ## Current mandate (D40, 27 November 2026)
 
