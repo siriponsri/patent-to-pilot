@@ -1,5 +1,5 @@
 #
-**B1E v1.0 • AWAITING_OWNER_APPROVAL.** Review the [prospective decision request](docs/ra-pharma/ip-pharma/B1E-AMENDMENT.md). Original B1 closed at BLOCKED_FRAME. D36 has a separate portfolio brief. No selection or Research dispatch for B1E.
+**B1E v1.0 • APPROVED under D37.** The owner approved the [prospective decision request](docs/ra-pharma/ip-pharma/B1E-AMENDMENT.md). Original B1 closed at BLOCKED_FRAME. D36 has a separate portfolio brief. No selection or Research dispatch for B1E.
 
 **Portfolio direction (D36, 27 November).** Explore generic pharma and biologics for drug discovery and biologics market research. US sources illustrate the evidence available. Target market and segment remain open. D35 preflight has closed. [Questions and benchmarks](docs/ra-pharma/MASTER-PLAN.md#discovery-and-market-research)
 

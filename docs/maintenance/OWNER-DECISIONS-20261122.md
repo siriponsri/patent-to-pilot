@@ -153,3 +153,9 @@ The owner designated GPT 6.2 Sol medium for Research and Opus 5.5 medium for Pro
 ## D36 · Generic pharmaceuticals, biologic discovery and biologics markets (27 November 2026)
 
 The owner prioritizes exploration of generic pharmaceuticals and follow-on biologics for drug discovery, alongside biologics market research. The Planner interprets follow-on biologics as biosimilars when the jurisdiction identifies a reference relationship. Novel target or indication hypotheses have a separate evidence question. This direction applies to portfolio discovery. D35 still governs the current oral small-molecule intake, exclusions and budget. [Research questions and public comparators](../ra-pharma/MASTER-PLAN.md#discovery-and-market-research)
+
+## D37 · Authorize B1E v1.0 descriptive source feasibility (27 November 2026)
+
+The project owner explicitly approved the Planner's immediately preceding B1E v1.0 decision request. The [approved text](https://github.com/siriponsri/patent-to-pilot/blob/b0e7ba42480d5c64e3af8c54ac5e34cbffcccb87/docs/ra-pharma/ip-pharma/B1E-AMENDMENT.md) has Git-content SHA-256 75fe128312b96321a8d5ed522a1054e88269c7c835b34a43e2a458ebcec0d96b. That exact text is the frozen protocol. The execution lock is a separate artifact.
+
+Authorize at most 24 active-moiety-set and NDA groups in deterministic order, bounded known exclusions, UNKNOWN historical overlap, all failures retained, local CPU and USD 0 in new service charges. Include the three optional existence checks. Planner must verify selector, inputs and exclusions before selection and reproduce the prefix before Research checks any source. All selected groups are exposed development material. Original B1 stays BLOCKED_FRAME; B2–B4 remain NOT_RUN. D36 opportunity discovery has its own scope.
