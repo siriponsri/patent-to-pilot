@@ -30,3 +30,12 @@
   - Diagnosis: 83% of rows are CONTESTED because the challenge leaf is always UNKNOWN, since Orange Book has no Paragraph IV field. The graph therefore adds no information.
   - Limitations: training uses only the 2010 cutoff (562 rows). The selected L2 = 100 sits at the edge of the grid.
   - Decision: E6 sources an as-of FDA Paragraph IV certification list. T5 must revisit the primary contrast before preregistration. "As-of regulatory evidence beats the age clock" (M1 or M3 against B1) is now the strongest candidate, and M3 against M1 would become secondary. Development data may inform this choice, but test data may not.
+- **27 Nov, FIX2c merged; E6 and E6-alt merged.**
+  - Key: the active-moiety key is now the default.
+  - Linking: historical OB NDA rows link at 95.9–99.6% per edition. Aliases are resolved with the 2026 GSRS release. This maps identity only and reveals no outcomes, but the manuscript must disclose it.
+  - Development at 24 months: every CI includes 0. M3−B1 is −0.0072 (CI −0.0162 to +0.0010).
+  - Challenge evidence:
+    - The FDA PIV list has 11/16 fresh cutoffs (gaps 2013–2016 and 2024).
+    - The Rai et al. CC0 court table (filings 2011–2020) and EDGAR sponsor filings can fill the gaps.
+    - The FDA First Generic list is RED, because it reveals the outcome.
+  - Next: E7 builds the combined challenge leaf, and T4 runs the power simulation in parallel.
