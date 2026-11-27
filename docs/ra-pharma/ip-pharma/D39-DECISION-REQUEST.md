@@ -1,10 +1,10 @@
 # Owner decision request D39 · Public opportunity discovery
 
-**Proposed, awaiting owner decision. No dispatch.** D38 ended with equivalent actions in both synthetic inventories. Keep the checklist. D39 would fund effort within existing access and zero incremental service spend to identify which generic or biosimilar opportunity merits a pharmacist's or development team's next hour. This is a discovery portfolio, separate from FTO evaluation.
+**Approved option A, 27 November 2026. Batch 1 released for the prospective discovery lock.** D38 ended with equivalent actions in both synthetic inventories. Keep the checklist. D39 would fund effort within existing access and zero incremental service spend to identify which generic or biosimilar opportunity merits a pharmacist's or development team's next hour. This is a discovery portfolio, separate from FTO evaluation.
 
 ## Decision and delegation
 
-Approve one twelve-batch envelope (A), approve only batches 1–4 with a mandatory handback (B), or amend the market, coverage or budget before release (C). Default scope is Thailand first, with US evidence explicitly attributed to its market. Planner owns source review, queue changes and closeout on main. GPT 6.2 Sol medium owns Research on research/ra-pharma. Product remains held; Opus 5.5 medium would own a separately approved implementation. A batch is a published work package, with no implied wall-clock duration. Dispatch sequentially after approval. Give the owner Thai summaries at batches 4, 8 and 12; under A the first two are informational.
+The owner selected the full twelve-batch envelope (A). Default scope is Thailand first, with US evidence explicitly attributed to its market. Planner owns source review, queue changes and closeout on main. GPT 6.2 Sol medium owns Research on research/ra-pharma. Product remains held; Opus 5.5 medium would own a separately approved implementation. A batch is a published work package, with no implied wall-clock duration. Dispatch sequentially after approval. Give the owner Thai summaries at batches 4, 8 and 12; under A the first two are informational.
 
 | Batches | Research work | What the owner receives |
 |---|---|---|

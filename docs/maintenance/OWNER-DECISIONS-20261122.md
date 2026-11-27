@@ -163,3 +163,7 @@ Authorize at most 24 active-moiety-set and NDA groups in deterministic order, bo
 ## D38 · Two synthetic rituximab evidence-readiness inventories (27 November 2026)
 
 The owner approved the D36 proposed desk check, conditional on Planner reviewing Research and Product impact first. Planner completed the [impact review and bounded release](../ra-pharma/ip-pharma/D38-IMPACT-REVIEW.md) before dispatch. Compare the manual guidance checklist and a one-row evidence record using identical inputs. Product implementation, operator recruitment, private data and broader B2–B4 research remain outside this decision.
+
+## D39 - Public opportunity discovery, option A (27 November 2026)
+
+The owner approved up to twelve sequential public desk-research batches, Thailand first with US comparators and USD 0 incremental service spend. Planner reviews each batch and reports at 4, 8 and close. The first release covers the prospective discovery lock only. See the [approved scope](../ra-pharma/ip-pharma/D39-DECISION-REQUEST.md).
