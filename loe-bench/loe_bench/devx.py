@@ -158,7 +158,7 @@ def model_inputs(rows, age, arm, flags):
     return inputs
 
 
-def raw_predictions(train, validation, horizon, flags, observed_through):
+def raw_predictions(train, validation, horizon, flags, observed_through, *, extra_features=()):
     """Fit the current matched model using only eligible TRAIN labels."""
     age = AgeHazardTable().fit(train).predict(validation)
     hazard = "K09" in flags
@@ -173,6 +173,7 @@ def raw_predictions(train, validation, horizon, flags, observed_through):
     features = (*MODEL_FEATURES, t2.AGE_SIGNAL, *CHALLENGE_FEATURES)
     if "K07" in flags:
         features += BREADTH
+    features += tuple(extra_features)
     if hazard:
         features += ("second_interval",)
 
@@ -268,14 +269,15 @@ def nested_selector(predictions, train, rows, horizon, flags, observed_through):
     return diagnostics
 
 
-def predict(train, validation, horizon, flags):
+def predict(train, validation, horizon, flags, *, extra_features=()):
     t2.require_development_cutoffs(row["t"] for row in (*train, *validation))
     start = min(row["t"] for row in validation)
     if (not train or any(add_months(row["t"], horizon) >= start for row in train)
             or any(add_months(row["t"], horizon) >= TEST_FIRST for row in validation)):
         raise ValueError("DEVX requires non-empty, strictly embargoed partitions")
     observed_through = start - timedelta(days=1)
-    raw, age = raw_predictions(train, validation, horizon, flags, observed_through)
+    raw, age = raw_predictions(train, validation, horizon, flags, observed_through,
+                               extra_features=extra_features)
     calibrated = t2._cross_calibrate(
         validation, raw["M1"], raw["M3"], calibrator=beta_calibration if "K10" in flags else None)
     predictions = {arm: [emitted(p, row, horizon, arm)
