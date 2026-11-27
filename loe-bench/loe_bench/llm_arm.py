@@ -4,7 +4,6 @@ The prompt is built from (entity, t0, horizon_months) plus an allowlisted set of
 Outcome or label fields, and the outputs of other models (p_model, verdict, action), are never admitted.
 """
 import json
-import re
 
 ACTIONS = ("PREDICT_ENTRY", "PREDICT_NO_ENTRY", "ABSTAIN_REFER_TO_EVALUATOR")
 ALLOWED_FEATURES = ("rule_baseline",)
@@ -12,19 +11,29 @@ FORBIDDEN_FIELDS = frozenset({
     "label", "y", "outcome", "entry", "entered", "event", "event_date", "entry_date", "first_entry_date",
     "censored", "time_to_event", "p_model", "verdict", "action", "next_evidence"})
 
-SYSTEM = ("You are a careful regulatory analyst forecasting US generic or biosimilar market entry. "
+SYSTEM = ("You are a careful regulatory analyst forecasting first final FDA generic drug approvals. "
           "Answer with one JSON object only, no prose, no code fence.")
 
-TEMPLATE = """Question: will the first generic or biosimilar competitor of the reference product below enter the US market within {h} months after the forecast date {t0}?
+TEMPLATE = """Question: will the first final FDA ANDA approval for the reference product below occur within {h} months after the forecast date {t0}?
 
 Reference product (active ingredient): {entity}
 Forecast date t0: {t0}
 Horizon: {h} months
 {features}
+Count only final FDA approval of an Abbreviated New Drug Application (ANDA). Exclude tentative approvals.
 Use only knowledge you hold with confidence about records dated on or before t0. If the evidence is insufficient, abstain.
 
-Reply with exactly this JSON schema:
-{{"p_entry": <number between 0 and 1>, "action": "PREDICT_ENTRY" | "PREDICT_NO_ENTRY" | "ABSTAIN_REFER_TO_EVALUATOR", "missing_evidence": [<short strings>]}}"""
+Return a JSON object with exactly these fields:
+- "p_entry": probability of the stated approval event, a number between 0 and 1.
+- "action": one of "PREDICT_ENTRY", "PREDICT_NO_ENTRY", or "ABSTAIN_REFER_TO_EVALUATOR".
+- "missing_evidence": a JSON array of short strings, or [] if empty."""
+
+
+def _unique_fields(pairs):
+    fields = dict(pairs)
+    if len(fields) != len(pairs):
+        raise ValueError("duplicate JSON key")
+    return fields
 
 
 def build_prompt(row):
@@ -44,22 +53,16 @@ def parse_response(text):
     fb = {"p_entry": None, "action": "ABSTAIN_REFER_TO_EVALUATOR", "missing_evidence": [], "valid": False}
     if not isinstance(text, str):
         return dict(fb, error="not_text")
-    t = text.strip()
-    t = re.sub(r"^```(?:json)?\s*|\s*```$", "", t)
-    obj = None
     try:
-        obj = json.loads(t)
-    except ValueError:
-        m = re.search(r"\{.*?\}", t, re.S)
-        if m:
-            try:
-                obj = json.loads(m.group(0))
-            except ValueError:
-                obj = None
+        obj = json.loads(text, object_pairs_hook=_unique_fields)
+    except (ValueError, RecursionError):
+        return dict(fb, error="invalid_json")
     if not isinstance(obj, dict):
         return dict(fb, error="invalid_json")
-    p, a, me = obj.get("p_entry"), obj.get("action"), obj.get("missing_evidence", [])
-    if isinstance(p, bool) or not isinstance(p, (int, float)) or not 0.0 <= float(p) <= 1.0:
+    if obj.keys() != {"p_entry", "action", "missing_evidence"}:
+        return dict(fb, error="bad_fields")
+    p, a, me = obj["p_entry"], obj["action"], obj["missing_evidence"]
+    if isinstance(p, bool) or not isinstance(p, (int, float)) or not 0.0 <= p <= 1.0:
         return dict(fb, error="bad_p_entry")
     if a not in ACTIONS:
         return dict(fb, error="bad_action")

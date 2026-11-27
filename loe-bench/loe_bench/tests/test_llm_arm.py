@@ -19,11 +19,22 @@ class T(unittest.TestCase):
         with self.assertRaises(ValueError):
             build_prompt(dict(ROW, entry_date="2027-01-01"))
 
+    def test_prompt_forecasts_final_anda_at_requested_horizon(self):
+        for horizon in (12, 24):
+            system, user = build_prompt(dict(ROW, horizon_months=horizon))
+            self.assertIn("first final FDA ANDA approval", user)
+            self.assertIn(f"within {horizon} months after the forecast date 2026-11-27", user)
+            self.assertIn("Exclude tentative approvals", user)
+            self.assertNotIn("market", system + user)
+            self.assertNotIn("biosimilar", system + user)
+
     def test_parse(self):
         self.assertTrue(parse_response(GOOD)["valid"])
-        self.assertTrue(parse_response("```json\n" + GOOD + "\n```")["valid"])
-        self.assertTrue(parse_response("Sure: " + GOOD)["valid"])
-        for bad in ("nonsense", "", None, '{"p_entry": 1.5, "action": "PREDICT_ENTRY", "missing_evidence": []}',
+        self.assertTrue(parse_response("\n " + GOOD + "\n")["valid"])
+        for bad in ("nonsense", "", None, "```json\n" + GOOD + "\n```", "Sure: " + GOOD,
+                    GOOD.replace('0.2', 'NaN'), GOOD.replace('0.2', '0.2, "p_entry": 0.3'),
+                    GOOD.replace('0.2', '0.2, "extra": 0'), GOOD.split(', "missing_evidence"')[0] + '}',
+                    '{"p_entry": 1.5, "action": "PREDICT_ENTRY", "missing_evidence": []}',
                     '{"p_entry": 0.5, "action": "MAYBE", "missing_evidence": []}',
                     '{"p_entry": true, "action": "PREDICT_ENTRY", "missing_evidence": []}'):
             r = parse_response(bad)

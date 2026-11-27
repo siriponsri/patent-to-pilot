@@ -1,0 +1,57 @@
+{
+  "status": "MEASURED_THROUGHPUT_EXTRAPOLATION",
+  "benchmark_n": 20,
+  "mean_s_per_row": 1.7948765047185589,
+  "max_observed_s_per_row": 2.6241996290627867,
+  "forecast_rows_per_hour": 2005.7090226185167,
+  "model_load_s": 8.925669712945819,
+  "assumed_other_startup_shutdown_s_per_pod": 120,
+  "usd_per_pod_hour_including_disk_allowance": 0.6927397260273972,
+  "retained_volume_usd_per_month": 2.1,
+  "retained_volume_equivalent_usd_per_day": 0.06904109589041096,
+  "formula": "For N forecast rows in one pod: hours = (120 + model_load_s + N × latency_s_per_row) / 3600. USD = hours × pod_rate + storage prorated by retention. N counts each entity, t0, horizon triple once.",
+  "development": {
+    "interpretation": "3,300 total forecast rows across 12 and 24 months as base case. Also show 3,300 per horizon.",
+    "base_case": {
+      "forecast_rows": 3300,
+      "variable_inference_hours": 1.6453034626586789,
+      "total_pod_hours": 1.6811161486900528,
+      "pod_cost_usd": 1.1645759402637803
+    },
+    "per_horizon_case": {
+      "forecast_rows": 6600,
+      "variable_inference_hours": 3.2906069253173578,
+      "total_pod_hours": 3.3264196113487317,
+      "pod_cost_usd": 2.3043430102178815
+    },
+    "sensitivity_3300_using_observed_max_as_row_time": {
+      "forecast_rows": 3300,
+      "variable_inference_hours": 2.4055163266408877,
+      "total_pod_hours": 2.4413290126722615,
+      "pod_cost_usd": 1.6912055913813187
+    }
+  },
+  "test_period": {
+    "status": "NOT_RUN",
+    "forecast_row_count": null,
+    "scope": "Use release-authorized label-free count after preregistration. Per-1,000 example is arithmetic only.",
+    "per_1000_forecast_rows": {
+      "forecast_rows": 1000,
+      "variable_inference_hours": 0.4985768068662664,
+      "total_pod_hours": 0.5343894928976402,
+      "pod_cost_usd": 0.37019283090183097
+    },
+    "sensitivity_per_1000_using_observed_max_as_row_time": {
+      "forecast_rows": 1000,
+      "variable_inference_hours": 0.7289443414063297,
+      "total_pod_hours": 0.7647570274377035,
+      "pod_cost_usd": 0.5297775736647213
+    },
+    "incremental_pod_usd_per_forecast_row": 0.0003453839605921519
+  },
+  "limitations": [
+    "Small 20-row development example and one L4 run; no uncertainty bound on later throughput.",
+    "Assumes the same input shape, model, decoding and GPU supply; allow for cold start, retries and volume retention.",
+    "No later run was started."
+  ]
+}

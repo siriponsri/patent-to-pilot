@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "summary": {
+    "model_dir": "/workspace/e4b/model",
+    "n_rows": 20,
+    "n_planned": 20,
+    "valid_json_rate": 1,
+    "stopped_below_min_valid_rate": false,
+    "model_load_s": 8.925669712945819,
+    "abstain_rate": 0.05,
+    "latency_s_mean": 1.7948765047185589,
+    "latency_s_max": 2.6241996290627867,
+    "peak_vram_gib": 14.284354209899902,
+    "peak_reserved_vram_gib": 14.4140625,
+    "mem_frac": 0.9,
+    "decoding": "greedy, do_sample=False, max_new=160, seed=20261127",
+    "torch": "2.8.0+cu128",
+    "gpu": "NVIDIA L4",
+    "transformers": "4.55.2"
+  },
+  "by_horizon": {
+    "12": {
+      "n": 10,
+      "mean_s": 1.7949000000000002
+    },
+    "24": {
+      "n": 10,
+      "mean_s": 1.7947
+    }
+  },
+  "inputs": {
+    "csv": "loe-bench/data/trackA_S0_example.csv",
+    "csv_sha256": "7dba3bd14f15eb87d92e966561e1dc4b6e300f5065d97b74419b6cb824d9646b",
+    "sampling": "Python random.Random(1).sample, ten rows from each horizon in original CSV order, visit 12 then 24; only three fields exported",
+    "fields": [
+      "entity",
+      "t0",
+      "horizon_months"
+    ],
+    "input_sha256": "07dca586b2dc34404923dc9a6d6e1d63d783da4441284e0cabe7ecf98dda0c2f"
+  },
+  "guards": {
+    "min_running_valid_rate": 0.9,
+    "stop_on_OOM": true,
+    "job_timeout_s": 600
+  },
+  "pod_id": "o428rw4rvtzm3w",
+  "volume_id": "8n6rnzljwg",
+  "peak_vram_metric": "PyTorch allocator peaks, including weights; not whole-device nvidia-smi readings",
+  "gpu_total_mib": 23034,
+  "raw_artifact_base": "../_private_artifacts/loe-bench/E4b",
+  "raw_artifact_sha256": {
+    "e4b-smoke-summary.json": "5a5e517f390751652f982a0bbeab2c55794f7dbc925f87ac790655230a271155",
+    "e4b-smoke-results.jsonl": "c176e6a13067c4f9d9e457ca318a15681a5f08081f6fc60ed2e84b8bd371b76c",
+    "e4b-smoke.log": "aa7c9fda527d3a40a2460e1cc5a83f768240c9a22e3b32201474c360bb95a8b9"
+  }
+}
