@@ -57,3 +57,6 @@
   - Auto-clear safety failed in every arm: the upper 95% bound of missed events exceeds 3%.
   - Decision: drop auto-clear from the recommended workflow and report it as a secondary safety analysis. FREEZE acceptance becomes queue capacity plus defined endpoints.
   - REG's PIV fix and the K22 outcome must be in the final frozen config.
+- **27 Nov, K22 merged (v1 retained).**
+  - Warning: development H2 (M3−M1 at 24 months) moved from −1.1 pp (T1v3, before the REG fix) to +5.5 pp (K22 code, after it). Small pipeline changes shift H2 by several points, so H2 is fragile.
+  - FREEZE must reconcile the two runs on the merged code and report the exact sources of the difference.
