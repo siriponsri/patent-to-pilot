@@ -14,3 +14,7 @@
   - Lessons: the package claim that Purple Book is "blocked" was wrong, because the accessdata CSVs download directly. The openFDA `orangebook` endpoint exists.
   - Next: owner confirms the GPT executor models, then FIX1.
 - **27 Nov, role change (owner).** Claude is the main planner and the only reviewer. ChatGPT is co-planner and, from Wave 2, executor. In the OpenAI tiers, Astra is the flagship, Sol is the mid tier and Luna is the cheapest. An earlier Orchestrator guess that Astra was a light tier was wrong.
+- **27 Nov, T7 attempt 1 failed (GPT-6 Luna high).**
+  - What happened: the executor stopped after one record lookup. It wrote no output and made no commit. Its shell hash helper (`rtk` with Get-FileHash) also failed.
+  - Decision: retry T7 on GPT-6.2 Sol high with a stepwise card. The card uses local openFDA UNII and substance fields as locators, and Python hashlib for hashes.
+  - Lesson: Luna is not reliable for open-ended adjudication cards. Reserve it for fully scripted, mechanical cards.
