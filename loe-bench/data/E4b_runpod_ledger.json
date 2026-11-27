@@ -1,0 +1,185 @@
+{
+  "observed_at_utc": "2026-11-27T15:14:24.606Z",
+  "task_cap_usd": 4,
+  "arm_cap_usd": 20,
+  "billing_mode": "PREPAID",
+  "account_balance_before_usd": 27.5325679489,
+  "account_balance_after_usd": 27.4078199378,
+  "observed_account_balance_delta_usd": 0.12474801109999945,
+  "cost_basis": "Conservative elapsed time between creation request and deletion confirmation, or observation for the retained volume. Storage hourly equivalents use 730 hours per month. Per-resource billing was queried after cleanup and returned no posted records yet. Account delta is account-wide.",
+  "estimated_task_total_at_observation_usd": 0.15160329760273972,
+  "estimated_task_total_with_one_month_future_volume_reserve_usd": 2.25160329760274,
+  "resources": [
+    {
+      "id": "a96jnvf4ki8i3j",
+      "type": "GPU pod",
+      "purpose": "transfer",
+      "gpu": "NVIDIA L4",
+      "data_center": "US-MO-2",
+      "cloud": "SECURE",
+      "price_read_before_create": {
+        "usd_per_gpu_hour": 0.69,
+        "source": "RunPod get-gpu-type, pod availability in US, SECURE"
+      },
+      "confirmed_pod_rate_usd_per_hour": 0.69,
+      "container_disk_gb": 20,
+      "container_disk_allowance_usd_per_hour": 0.0027397260273972603,
+      "start_utc": "2026-11-27T14:57:58.077Z",
+      "create_request_utc": "2026-11-27T14:57:53.011Z",
+      "stop_utc": "2026-11-27T15:03:56.465Z",
+      "deletion_readback_status": 404,
+      "conservative_billable_seconds": 363.454,
+      "estimated_gpu_usd": 0.06966201666666666,
+      "estimated_container_disk_usd": 0.0002766012176560122,
+      "estimated_total_usd": 0.06993861788432267,
+      "billing_api": {
+        "record_count": 0,
+        "posted_usd": null
+      }
+    },
+    {
+      "id": "l3cnfrkzpo",
+      "type": "standard network volume",
+      "gpu": null,
+      "data_center": "US-TX-3",
+      "size_gb": 30,
+      "start_utc": "2026-11-27T15:04:13.029Z",
+      "create_confirmed_utc": "2026-11-27T15:04:21.836Z",
+      "stop_utc": "2026-11-27T15:05:38.039Z",
+      "status": "DELETED_404",
+      "quoted_usd_per_gb_month": 0.07,
+      "projected_usd_per_month": 2.1,
+      "equivalent_usd_per_hour": 0.0028767123287671234,
+      "rate_source": "https://docs.runpod.io/pods/storage/types (published rate read before creation; REST v2 catalog and volume schemas do not expose a storage rate)",
+      "estimated_total_usd": 0.00006793036529680367,
+      "billing_api": {
+        "record_count": 0,
+        "posted_usd": null
+      }
+    },
+    {
+      "id": "8n6rnzljwg",
+      "type": "standard network volume",
+      "gpu": null,
+      "data_center": "US-MO-2",
+      "size_gb": 30,
+      "start_utc": "2026-11-27T15:05:44.102Z",
+      "create_confirmed_utc": "2026-11-27T15:05:49.122Z",
+      "stop_utc": null,
+      "status": "RETAINED_VERIFIED",
+      "quoted_usd_per_gb_month": 0.07,
+      "projected_usd_per_month": 2.1,
+      "equivalent_usd_per_hour": 0.0028767123287671234,
+      "rate_source": "https://docs.runpod.io/pods/storage/types (published rate read before creation; REST v2 catalog and volume schemas do not expose a storage rate)",
+      "estimated_total_usd": 0.00041592785388127853,
+      "billing_api": {
+        "record_count": 0,
+        "posted_usd": null
+      }
+    },
+    {
+      "id": "vd5an5r0zd2mj6",
+      "type": "GPU pod",
+      "purpose": "stage",
+      "gpu": "NVIDIA L4",
+      "data_center": "US-MO-2",
+      "cloud": "SECURE",
+      "price_read_before_create": {
+        "usd_per_gpu_hour": 0.69,
+        "source": "RunPod get-gpu-type, pod availability in US, SECURE"
+      },
+      "confirmed_pod_rate_usd_per_hour": 0.69,
+      "container_disk_gb": 20,
+      "container_disk_allowance_usd_per_hour": 0.0027397260273972603,
+      "start_utc": "2026-11-27T15:06:01.982Z",
+      "create_request_utc": "2026-11-27T15:05:57.280Z",
+      "stop_utc": "2026-11-27T15:10:13.788Z",
+      "deletion_readback_status": 404,
+      "conservative_billable_seconds": 256.508,
+      "estimated_gpu_usd": 0.04916403333333333,
+      "estimated_container_disk_usd": 0.00019521156773211564,
+      "estimated_total_usd": 0.04935924490106544,
+      "billing_api": {
+        "record_count": 0,
+        "posted_usd": null
+      }
+    },
+    {
+      "id": "o428rw4rvtzm3w",
+      "type": "GPU pod",
+      "purpose": "smoke",
+      "gpu": "NVIDIA L4",
+      "data_center": "US-MO-2",
+      "cloud": "SECURE",
+      "price_read_before_create": {
+        "usd_per_gpu_hour": 0.69,
+        "source": "RunPod get-gpu-type, pod availability in US, SECURE"
+      },
+      "confirmed_pod_rate_usd_per_hour": 0.69,
+      "container_disk_gb": 20,
+      "container_disk_allowance_usd_per_hour": 0.0027397260273972603,
+      "start_utc": "2026-11-27T15:10:30.879Z",
+      "create_request_utc": "2026-11-27T15:10:28.393Z",
+      "stop_utc": "2026-11-27T15:13:13.762Z",
+      "deletion_readback_status": 404,
+      "conservative_billable_seconds": 165.369,
+      "estimated_gpu_usd": 0.031695725,
+      "estimated_container_disk_usd": 0.000125851598173516,
+      "estimated_total_usd": 0.031821576598173515,
+      "billing_api": {
+        "record_count": 0,
+        "posted_usd": null
+      }
+    }
+  ],
+  "failed_creates": [
+    {
+      "requested_utc": "2026-11-27T15:04:48.796Z",
+      "response_utc": "2026-11-27T15:04:53.052Z",
+      "type": "GPU pod",
+      "id": null,
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "data_center": "US-TX-3",
+      "quoted_usd_per_hour": 0.89,
+      "status": 400,
+      "detail": "There are no longer any instances available with the requested specifications. Please refresh and try again."
+    }
+  ],
+  "final_pod_inventory": {
+    "ownPods": [],
+    "pagination": {
+      "returned": 0,
+      "hasNextPage": false,
+      "nextCursor": null
+    }
+  },
+  "retained_volume": {
+    "dataCenter": "US-MO-2",
+    "id": "8n6rnzljwg",
+    "name": "ptp-loe-e4b-model-71bb4c8e-mo2",
+    "size": 30,
+    "tags": [],
+    "type": "STANDARD"
+  },
+  "transfer_trial": {
+    "pod_id": "a96jnvf4ki8i3j",
+    "ssh_exec": "PASS (direct SSH and nvidia-smi)",
+    "upload": {
+      "protocol": "one SCP stream from owner PC",
+      "bytes": 100000000,
+      "seconds": 231.0191645,
+      "MB_per_s": 0.43286452107309914,
+      "sha256": "04ea5685325c08f8583fce962f259e87c0d384b18967ee3ee43672db53d198b2",
+      "verified_remote": true
+    },
+    "download": {
+      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/a09a35458c702b33eeacc393d103063234e8bc28/model-00001-of-00004.safetensors",
+      "http_status": 206,
+      "range": "bytes=0-99999999",
+      "bytes": 100000000,
+      "seconds": 1.640649,
+      "bytes_per_s": 60951489
+    },
+    "note": "The upload and download overlapped."
+  }
+}

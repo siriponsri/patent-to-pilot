@@ -1,0 +1,87 @@
+{
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "license": "apache-2.0",
+  "license_url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/blob/a09a35458c702b33eeacc393d103063234e8bc28/LICENSE",
+  "publisher_manifest_url": "https://huggingface.co/api/models/Qwen/Qwen2.5-7B-Instruct/tree/a09a35458c702b33eeacc393d103063234e8bc28",
+  "artifact_bytes": 15242805751,
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 11343,
+      "oid": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab"
+    },
+    {
+      "path": "README.md",
+      "size": 6240,
+      "oid": "4e9536cebaeb5cac673952ad5d0eeae469900f81"
+    },
+    {
+      "path": "config.json",
+      "size": 663,
+      "oid": "0178295f88afc3c7f279ed284f961f8c1be00654"
+    },
+    {
+      "path": "generation_config.json",
+      "size": 243,
+      "oid": "0eb3c536657dcd12626e09eca4b6198c0cbcde1e"
+    },
+    {
+      "path": "merges.txt",
+      "size": 1671839,
+      "oid": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0"
+    },
+    {
+      "path": "model-00001-of-00004.safetensors",
+      "size": 3945441440,
+      "oid": "5e68dcea92e3696ddd4e1d44d9b420a31fe5622c",
+      "lfs": {
+        "oid": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+      }
+    },
+    {
+      "path": "model-00002-of-00004.safetensors",
+      "size": 3864726352,
+      "oid": "e07e23d4595678a717aaad11eef9bc22056c284a",
+      "lfs": {
+        "oid": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+      }
+    },
+    {
+      "path": "model-00003-of-00004.safetensors",
+      "size": 3864726424,
+      "oid": "114c07bb791bac8d2b32109b7729ef2f9a489dfe",
+      "lfs": {
+        "oid": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+      }
+    },
+    {
+      "path": "model-00004-of-00004.safetensors",
+      "size": 3556377672,
+      "oid": "f4841c787f178938010ce784a3ec99e5568524b5",
+      "lfs": {
+        "oid": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+      }
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "size": 27752,
+      "oid": "14d037fdda5a1311dcc0275003a7a370d84114e6"
+    },
+    {
+      "path": "tokenizer.json",
+      "size": 7031645,
+      "oid": "443909a61d429dff23010e5bddd28ff530edda00"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size": 7305,
+      "oid": "07bfe0640cb5a0037f9322287fbfc682806cf672"
+    },
+    {
+      "path": "vocab.json",
+      "size": 2776833,
+      "oid": "4783fe10ac3adce15ac8f358ef5462739852c569"
+    }
+  ]
+}
