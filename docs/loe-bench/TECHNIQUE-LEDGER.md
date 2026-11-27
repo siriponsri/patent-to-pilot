@@ -20,7 +20,7 @@ IDEA · QUEUED · TRIED-DEV (result on validation) · ADOPTED · REJECTED (reaso
 | K01 | As-of Orange Book patent and exclusivity features | FIX1, E2, E2b | M1, M3 | Controlled by the freshness and availability rule | ADOPTED | T2b, FIX2c |
 | K02 | Shared age-hazard base (B1 logit) in M1 and M3 | T2b | M1, M3 | None | ADOPTED | T2b: M1 beat B1 only once the shared base was added |
 | K03 | Active-moiety key (GSRS UNII + alias union) | FIX2, FIX2b | all | Identity only (2026 GSRS release, disclosed) | ADOPTED | Fresh audit: 57/60 correct |
-| K04 | As-of challenge leaf (FDA PIV list + Rai court filings + EDGAR) | E6, E6-alt | M1, M3 (as features); M3 (as the leaf) | Dated witnesses only | IN PROGRESS | E7 |
+| K04 | As-of challenge leaf (FDA PIV list + Rai court filings + EDGAR) | E6, E6-alt | M1, M3 (as features); M3 (as the leaf) | Dated witnesses only | TRIED-DEV (partial) | E7: FDA closed-world coverage at 3 cutoffs only; Rai name links about 7% (7 pairs). Development CIs include 0. E7b relinks Rai through patent numbers |
 | K05 | L2 grid {1, 10, 100}; selected value at the grid edge | T2b | M1, M3 | None | TRIED-DEV | Extend the grid (T1) |
 | K06 | Confidence discount when a decision-relevant leaf is UNKNOWN (M3), with the matching missing-input discount for M1; configurations 0 or 0.05 | CP3 scan (rank 1) | M3 policy; M1 counterpart | None | QUEUED (after E7) | — |
 | K07 | Count distinct strengths and form/route pairs at the cutoff | CP3 (rank 2) | M1, M3 | Low (as-of products only) | QUEUED | — |

@@ -166,7 +166,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | E6 | As-of FDA Paragraph IV certification list for the challenge leaf | GPT-6.2 Sol high | T2b | merged: 11/16 cutoffs fresh; gaps 2013–2016 and 2024; development name matches about 70% |
 | 2 | E6-alt | Alternative challenge sources (litigation dockets and others) | GPT-6.2 Astra high | E6 | merged: EDGAR filings GREEN; Rai et al. CC0 court table (filings 2011–2020) AMBER, usable to fill the 2013–2016 gap |
 | 2 | FIX2c | Merge the moiety key with T2b, link OB aliases, rerun development | GPT-6.2 Sol high | FIX2b | merged: NDA links 95.9–99.6% per edition. Development at 24 months: M3−B1 −0.0072 (CI −0.0162 to +0.0010); M3−M1 −0.0001 |
-| 2 | E7 | Combined as-of challenge leaf (FDA PIV list + Rai court filings + EDGAR) on moiety keys | GPT-6.2 Sol high | FIX2c, E6, E6-alt | dispatched |
+| 2 | E7 | Combined as-of challenge leaf (FDA PIV list + Rai court filings + EDGAR) on moiety keys | GPT-6.2 Sol high | FIX2c, E6, E6-alt | merged: closed-world at 3 cutoffs; Rai name-linked pairs 7; EDGAR NOT_RUN; development CIs include 0 |
+| 2 | E7b | Relink Rai cases to drugs through Orange Book patent numbers (as-of editions) | GPT-6.2 Sol high | E7 | dispatched |
 | 2 | T4 | Power simulation for criteria v2 (H1 at Δ = −0.010) from the development structure | GPT-6.2 Sol xhigh | FIX2c | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
