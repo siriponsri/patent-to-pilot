@@ -1,13 +1,15 @@
 import os
 import unittest
 from datetime import date
+from unittest.mock import patch
 
-from loe_bench.ob_history import (OBHistory, load_edition, parse_exclusivity, parse_ob_date,
+from loe_bench.ob_history import (Edition, OBHistory, load_edition, parse_exclusivity, parse_ob_date,
                                   parse_patents, parse_products)
 
 FIX = os.path.join(os.path.dirname(__file__), "fixtures")
 P12 = os.path.join(FIX, "ob_ed_2012.zip")
 P20 = os.path.join(FIX, "ob_ed_2020.zip")
+MANIFEST = os.path.join(os.path.dirname(__file__), "..", "..", "data", "OB_EDITIONS.json")
 
 
 def _hist():
@@ -105,12 +107,28 @@ class TestAsOf(unittest.TestCase):
         self.assertIs(f["listed"], False)
         self.assertEqual(f["n_patents"], 0)
 
+    def test_manifest_annual_cutoffs_select_latest_nonfuture_edition(self):
+        # Exercise the real manifest and selector without requiring the private ZIPs.
+        with patch("loe_bench.ob_history.load_edition",
+                   side_effect=lambda path, edition_date: Edition(edition_date, [], [], [])) as load:
+            history = OBHistory.from_manifest(MANIFEST)
+            for year in range(2010, 2026):
+                cutoff = date(year, 1, 1)
+                with self.subTest(cutoff=cutoff):
+                    load.reset_mock()
+                    selected = history.edition_asof(cutoff)
+                    self.assertIsNotNone(selected)
+                    self.assertLessEqual(selected.edition_date, cutoff)
+                    self.assertEqual(selected.edition_date,
+                                     max(d for d in history.edition_dates() if d <= cutoff))
+                    for call in load.call_args_list:
+                        self.assertLessEqual(call.args[1], cutoff)
+
     def test_real_manifest_if_data_present(self):
-        mp = os.path.join(os.path.dirname(__file__), "..", "..", "data", "OB_EDITIONS.json")
         from loe_bench.ob_history import DEFAULT_DIR
-        if not (os.path.exists(mp) and os.path.isdir(DEFAULT_DIR)):
+        if not (os.path.exists(MANIFEST) and os.path.isdir(DEFAULT_DIR)):
             self.skipTest("private OB editions not available")
-        h = OBHistory.from_manifest(mp)
+        h = OBHistory.from_manifest(MANIFEST)
         self.assertGreaterEqual(len({d.year for d in h.edition_dates()}), 2)
         self.assertEqual(h.features_asof("202155", date(2009, 1, 1))["status"], "UNKNOWN")  # before first edition
         e = h.features_asof("202155", date(2021, 6, 1))  # ELIQUIS 2.5MG tablet
