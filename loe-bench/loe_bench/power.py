@@ -10,6 +10,8 @@ COVERAGE = 0.8
 CONTRASTS = ("H1", "H2", "H3")
 LEVELS = 12
 EFFECT = 0.010
+ARM_PAIRS = ((2, 0), (2, 1), (1, 0))
+PAIR_NAMES = ("M3_minus_B1", "M3_minus_M1", "M1_minus_B1")
 
 
 @dataclass(frozen=True)
@@ -26,6 +28,7 @@ class Profile:
     cluster_correlation: np.ndarray
     abstention: np.ndarray
     call_entry: np.ndarray
+    event_score_scale: np.ndarray | None = None
 
 
 @dataclass(frozen=True)
@@ -38,6 +41,7 @@ class Scenario:
     correlation: float | None = None
     young: bool = False
     coverage_stress: bool = False
+    arrivals: tuple[int, ...] = ()
 
 
 def histories(profile, scenario, rng, multiplier=1):
@@ -63,6 +67,10 @@ def histories(profile, scenario, rng, multiplier=1):
         # Age is evaluated during the event interval, allowing a conservative
         # lower bound at the interval's end without introducing new events.
         start[:n_events] = np.minimum(start[:n_events], latest + 2 - lag)
+    if scenario.arrivals:
+        # Only aggregate NDA entry cohorts travel from the candidate frame.
+        cohort = np.repeat(np.arange(scenario.years), np.asarray(scenario.arrivals) * multiplier)
+        start[:n_main] = rng.permutation(cohort)
     end[:n_events] = np.minimum(start[:n_events] + lag, latest + 2)
     year = np.arange(scenario.years + 1)
     cluster, cutoff = np.nonzero((start[:, None] <= year) & (year < end[:, None]))
@@ -83,18 +91,39 @@ def synthetic(profile, scenario, rng, multiplier=1):
     result = []
     for index, mask in enumerate((cutoff < scenario.years, np.ones(len(cutoff), dtype=bool))):
         ids, labels = cluster[mask], outcomes[mask, index]
-        corr = profile.arm_correlations[index]
-        if scenario.correlation is not None:
-            corr = np.full((3, 3), scenario.correlation)
-            np.fill_diagonal(corr, 1)
-        factor = np.linalg.cholesky(corr)
-        dependence = profile.cluster_correlation[index]
-        noise = (sqrt(dependence) * cluster_noise[ids] +
-                 sqrt(1 - dependence) * row_noise[mask]) @ factor.T
-        baseline = profile.age_means[index, band[mask], None] + noise
-        error = (common_call[mask] < profile.call_entry[index, labels.astype(int)]) != labels
-        result.append((ids, error, baseline, labels))
+        result.append(score_panel(profile, index, ids, band[mask], labels,
+                                  cluster_noise, row_noise[mask], common_call[mask], scenario.correlation))
     return result
+
+
+def score_panel(profile, horizon_index, ids, bands, labels, cluster_noise, row_noise, common_call,
+                correlation=None):
+    corr = profile.arm_correlations[horizon_index]
+    if correlation is not None:
+        # Vary the correlation of B1 with the two regulatory arms jointly.
+        # Rescale the latter's mutual correlation only as needed for PSD.
+        corr = corr.copy()
+        corr[0, 1:] = corr[1:, 0] = correlation
+        corr[1, 2] = corr[2, 1] = max(float(corr[1, 2]), 2 * correlation ** 2 - 0.98)
+    factor = np.linalg.cholesky(corr)
+    dependence = profile.cluster_correlation[horizon_index]
+    noise = (sqrt(dependence) * cluster_noise[ids] + sqrt(1 - dependence) * row_noise) @ factor.T
+    error = (common_call < profile.call_entry[horizon_index, labels.astype(int)]) != labels
+    if profile.event_score_scale is not None:
+        noise *= np.where(error, profile.event_score_scale[horizon_index], 1)[:, None]
+    baseline = profile.age_means[horizon_index, bands, None] + noise
+    return ids, error, baseline, labels
+
+
+def validation_score_panel(profile, horizon_index, panel, rng, copies=1):
+    """Keep every validation cutoff, drug, and outcome row fixed across simulations."""
+    ids, bands, labels = panel
+    clusters = int(ids.max()) + 1
+    ids = (ids + np.arange(copies)[:, None] * clusters).ravel()
+    count = len(ids)
+    return score_panel(profile, horizon_index, ids, np.tile(bands, copies), np.tile(labels, copies),
+                       rng.standard_normal((clusters * copies, 3)),
+                       rng.standard_normal((count, 3)), rng.random(count))
 
 
 def confidence(score, skill, errors):
@@ -217,9 +246,13 @@ def arm_table(ids, error, score, settings, configuration, horizon, clusters):
     k = len(edges) + 1
     table = [np.bincount(ids, minlength=clusters)]
     cutpoints = [-np.inf, *[x if x is not None else -np.inf for x in settings["cutpoints"]]]
-    for i, (skill, cutpoint) in enumerate(zip(skills_for(settings, configuration, horizon), cutpoints)):
+    skills = (settings["skills"][configuration] if "skills" in settings
+              else skills_for(settings, configuration, horizon))
+    for i, (skill, cutpoint) in enumerate(zip(skills, cutpoints, strict=True)):
         adjusted = confidence(score[:, i], skill, error)
-        selected = adjusted >= cutpoint
+        referral_score = (confidence(score[:, i], settings.get("referral_skill", 0.), error)
+                          if settings.get("fixed_referral") else adjusted)
+        selected = referral_score >= cutpoint
         index = ids[selected] * k + bins(adjusted[selected], edges)
         for weights in (None, error[selected]):
             counts = np.bincount(index, weights=weights, minlength=clusters * k)
@@ -233,6 +266,98 @@ def areas_from_totals(totals, harmonic):
     return area(counts[..., 0, :], counts[..., 1, :], total[..., None], harmonic)
 
 
+def paired_differences(areas):
+    return np.column_stack([areas[..., left] - areas[..., right] for left, right in ARM_PAIRS])
+
+
+def variance_report(empirical, simulated, tolerance=0.25):
+    """Compare independent replicate SDs for each paired contrast."""
+    result = {}
+    for name, baseline, trial in zip(PAIR_NAMES, empirical.T, simulated.T, strict=True):
+        valid = [values[np.isfinite(values)] for values in (baseline, trial)]
+        observed, generated = [float(np.std(values, ddof=1)) if len(values) > 1 else np.nan
+                               for values in valid]
+        ratio = generated / observed if observed > 0 else np.nan
+        result[name] = {"empirical_sd": observed, "simulated_sd": generated, "ratio": ratio,
+                        "empirical_valid": len(valid[0]), "simulated_valid": len(valid[1]),
+                        "pass": bool(abs(ratio - 1) <= tolerance)}
+    return result
+
+
+def empirical_areas(groups, labels, arms, sampled_counts):
+    """Exact tie groups and whole-drug counts for an empirical prediction table."""
+    labels = np.asarray(labels, dtype=bool)
+    ids = np.asarray(groups)
+    clusters = sampled_counts.shape[1]
+    rows = np.bincount(ids, minlength=clusters)
+    totals = sampled_counts @ rows
+    harmonic = harmonic_numbers(int(totals.max()))
+    areas = []
+    for scores, answered, error in arms:
+        levels, reverse = np.unique(-scores[answered], return_inverse=True)
+        if not len(levels):
+            areas.append(np.full(len(totals), np.nan))
+            continue
+        index = ids[answered] * len(levels) + reverse
+        table = [np.bincount(index, weights=value, minlength=clusters * len(levels))
+                 for value in (None, error[answered])]
+        counts, errors = [sampled_counts @ x.reshape(clusters, -1).astype(np.float32)
+                          for x in table]
+        areas.append(area(counts, errors, totals, harmonic))
+    return np.column_stack(areas)
+
+
+def fit_rank_settings(error, scores, abstention):
+    """Use one set of bins and freeze the referral rule before rank effects."""
+    cutpoints = [float(np.quantile(scores[:, i], p)) if p > 0 else None
+                 for i, p in enumerate(abstention, start=1)]
+    edges = np.linspace(-3.6, 3.6, 19)
+    return {"edges": edges.tolist(), "cutpoints": cutpoints, "fixed_referral": True, "skills": {}}
+
+
+def rank_risk(error, score, shifted, edges, cutpoint, harmonic):
+    selected = score >= cutpoint if cutpoint is not None else slice(None)
+    rank = bins(confidence(score[selected], shifted, error[selected]), edges)
+    counts = np.bincount(rank, minlength=len(edges) + 1)
+    errors = np.bincount(rank, weights=error[selected], minlength=len(edges) + 1)
+    return float(area(counts, errors, len(score), harmonic))
+
+
+def fit_rank_skills(error, scores, settings, targets):
+    """Fit error-rank tilts independently for the three arms."""
+    edges = np.asarray(settings["edges"])
+    harmonic = harmonic_numbers(len(error))
+    return [fit_rank_skill(error, score, target, edges, harmonic, cutpoint)
+            for score, cutpoint, target in zip(scores.T, (None, *settings["cutpoints"]), targets, strict=True)]
+
+
+def fit_rank_skill(error, score, target, edges, harmonic, cutpoint=None):
+    lower, upper = -10., 10.
+    if not rank_risk(error, score, upper, edges, cutpoint, harmonic) <= target <= rank_risk(
+            error, score, lower, edges, cutpoint, harmonic):
+        raise ValueError("Rank generator cannot attain requested arm risk")
+    for _ in range(16):
+        middle = (lower + upper) / 2
+        if rank_risk(error, score, middle, edges, cutpoint, harmonic) > target:
+            lower = middle
+        else:
+            upper = middle
+    return (lower + upper) / 2
+
+
+def validation_draws(profile, horizon_index, panel, settings, seed, repetitions):
+    rng = np.random.default_rng(seed)
+    ids = panel[0]
+    clusters = int(ids.max()) + 1
+    harmonic = harmonic_numbers(len(ids))
+    result = np.empty((repetitions, 3))
+    for i in range(repetitions):
+        _, error, scores, _ = validation_score_panel(profile, horizon_index, panel, rng)
+        table = arm_table(ids, error, scores, settings, "development", horizon_index, clusters)
+        result[i] = areas_from_totals(table.sum(axis=0), harmonic)
+    return paired_differences(result)
+
+
 def weights(rng, draws, clusters):
     """Multinomial counts from exactly N draws of whole drugs with replacement."""
     choices = rng.integers(clusters, size=(draws, clusters), dtype=np.int32)
@@ -240,17 +365,143 @@ def weights(rng, draws, clusters):
     return np.bincount(choices.ravel(), minlength=draws * clusters).reshape(draws, clusters).astype(np.float32)
 
 
-def upper_percentiles(deltas):
+def upper_percentiles(deltas, alpha=ALPHA):
     upper, invalid = [], []
     for values in deltas.T:
         finite = values[np.isfinite(values)]
         invalid.append(len(values) - len(finite))
         if len(finite):
-            k = int((1 - ALPHA) * len(finite))
+            k = int((1 - alpha) * len(finite))
             upper.append(float(np.partition(finite, k)[k]))
         else:
             upper.append(np.nan)
     return upper, invalid
+
+
+def test_rank_settings(profile, scenario, rng, multiplier, effects):
+    settings = []
+    for h, (_, error, scores, _) in enumerate(synthetic(profile, scenario, rng, multiplier)):
+        stacked = scores.ravel()
+        incorrect = np.repeat(error, 3)
+        setting = fit_rank_settings(error, scores, profile.abstention[h])
+        edges = np.asarray(setting["edges"])
+        harmonic = harmonic_numbers(len(incorrect))
+        base = profile.skill[h]
+        risk = rank_risk(incorrect, stacked, base, edges, None, harmonic)
+        floor = max(effects.values()) + .003
+        if risk < floor:
+            base = fit_rank_skill(incorrect, stacked, floor, edges, harmonic)
+            risk = rank_risk(incorrect, stacked, base, edges, None, harmonic)
+        adjusted = confidence(stacked, base, incorrect)
+        setting["cutpoints"] = [float(np.quantile(adjusted, p)) if p else None
+                                for p in profile.abstention[h]]
+        setting["referral_skill"] = base
+        setting["comparator_risk"] = risk
+        setting["skills"] = {
+            name: [base, base, fit_rank_skill(incorrect, stacked, risk - effect, edges, harmonic)]
+            if effect else [base] * 3 for name, effect in effects.items()
+        }
+        settings.append(setting)
+    return settings
+
+
+def population_check(profile, scenario, settings, rng, multiplier, config):
+    rows, positives, coverage, deltas, clusters, event_clusters, arm_correlation = [], [], [], [], [], [], []
+    for h, (ids, errors, scores, labels) in enumerate(synthetic(profile, scenario, rng, multiplier)):
+        n_clusters = scenario.clusters + scenario.extra_clusters * h
+        table = arm_table(ids, errors, scores, settings[h], config, h, n_clusters * multiplier)
+        totals = table.sum(axis=0, dtype=np.float64)
+        areas = areas_from_totals(totals, harmonic_numbers(len(ids)))
+        deltas.append(paired_differences(areas)[0].tolist())
+        coverage.append((totals[1:].reshape(3, 2, -1)[:, 0].sum(axis=1) / len(ids)).tolist())
+        rows.append(len(ids) / multiplier)
+        positives.append(float(labels.mean()))
+        clusters.append(len(np.unique(ids)) // multiplier)
+        event_clusters.append(len(np.unique(ids[labels])) / multiplier)
+        adjusted = confidence(scores, np.asarray(settings[h]["skills"][config]), errors[:, None])
+        arm_correlation.append(np.corrcoef(adjusted.T).tolist())
+    return {"delta_by_horizon": deltas, "coverage": coverage, "prevalence": positives, "rows_per_dataset": rows,
+            "drug_clusters": clusters, "event_clusters_per_dataset": event_clusters,
+            "confidence_correlation": arm_correlation}
+
+
+def bootstrap_experiment(profile, scenario, settings, seed, repetitions, draws, config,
+                         exact_subset=0, h1_only=False):
+    """Run paired whole-drug percentile tests with shared draws for both alphas."""
+    rng = np.random.default_rng(seed)
+    bounds = np.full((repetitions, 2, 3), np.nan)
+    full = np.full((exact_subset, 2, 3), np.nan)
+    uncovered = np.zeros((repetitions, 3), dtype=bool)
+    invalid = np.zeros(3, dtype=np.int64)
+    harmonics = [harmonic_numbers((scenario.clusters + h * scenario.extra_clusters) * (scenario.years + h))
+                 for h in range(2)]
+    for i in range(repetitions):
+        data_rng, boot_rng = (np.random.default_rng(key) for key in rng.integers(2**63, size=2))
+        panels = synthetic(profile, scenario, data_rng)
+        for h, (ids, error, scores, _) in enumerate(panels[:1] if h1_only else panels):
+            clusters = scenario.clusters + h * scenario.extra_clusters
+            selected_arms = [2, 0, 1] if not h and not h1_only else [2, 0]
+            columns = [0, 1] if len(selected_arms) == 3 else [2 if h else 0]
+            table = arm_table(ids, error, scores, settings[h], config, h, clusters)
+            arm_counts = table[:, 1:].reshape(clusters, 3, 2, -1)[:, selected_arms]
+            table = np.column_stack([table[:, 0], arm_counts.reshape(clusters, -1)])
+            harmonic = harmonics[h]
+
+            def calculate(totals):
+                total = totals[..., 0]
+                counts = totals[..., 1:].reshape((*total.shape, len(selected_arms), 2, -1))
+                areas = area(counts[..., 0, :], counts[..., 1, :], total[..., None], harmonic)
+                return areas[..., :1] - areas[..., 1:]
+
+            failed = ~np.isfinite(calculate(table.sum(axis=0)))
+            uncovered[i, columns] = failed
+            horizon_rng = np.random.default_rng(boot_rng.integers(2**63))
+            if failed.all():
+                continue
+            count = max(draws, 2000) if i < exact_subset else draws
+            sampled = weights(horizon_rng, count, clusters) @ table
+            delta = calculate(sampled)
+            delta[:, failed] = np.nan
+            for results, n in [(bounds, draws)] + ([(full, 2000)] if i < exact_subset else []):
+                nominal, missing = upper_percentiles(delta[:n])
+                results[i, 0, columns] = nominal
+                results[i, 1, columns] = nominal
+                if h == 0:
+                    results[i, 1, 0] = upper_percentiles(delta[:n, :1], .02)[0][0]
+                if n == draws and results is bounds:
+                    invalid[columns] += np.where(failed, 0, missing)
+    return bounds, full, uncovered, invalid
+
+
+def experiment_rates(bounds, full, uncovered, invalid, draws, effect=None, h1_only=False):
+    n = len(bounds)
+    names = ("nominal", "h1_alpha_020")
+    result = {"repetitions": n, "draws": draws}
+    for i, name in enumerate(names):
+        values = bounds[:, i]
+        rates = operating_rates(values)
+        result[name] = {"rates": {"H1": rates["H1"]} if h1_only else rates}
+        if effect:
+            result[name]["H1_mde80_magnitude_location_shift"] = estimate_mde(values[:, 0], effect)
+    evaluated = range(1) if h1_only else range(len(CONTRASTS))
+    result["unevaluable"] = {CONTRASTS[i]: proportion((~np.isfinite(bounds[:, 0, i])).sum(), n)
+                             for i in evaluated}
+    result["observed_coverage_failure"] = {CONTRASTS[i]: proportion(uncovered[:, i].sum(), n)
+                                          for i in evaluated}
+    result["invalid_draws_after_observed_gate"] = invalid[:len(evaluated)].tolist()
+    if len(full):
+        result["full_draw_check"] = {
+            "repetitions": len(full), "draws": 2000,
+            **{name: {
+                "reduced_rates": operating_rates(bounds[:len(full), i]),
+                "full_rates": operating_rates(full[:, i]),
+                "full_unevaluable": {CONTRASTS[j]: proportion((~np.isfinite(full[:, i, j])).sum(), len(full))
+                                     for j in evaluated},
+                "fixed_sequence_disagreements": np.count_nonzero(
+                    fixed_sequence(bounds[:len(full), i])[1] != fixed_sequence(full[:, i])[1], axis=0).tolist(),
+            } for i, name in enumerate(names)},
+        }
+    return result
 
 
 def verify_population(profile, scenario, settings, rng, multiplier, configuration):

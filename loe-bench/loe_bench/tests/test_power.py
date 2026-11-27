@@ -1,4 +1,4 @@
-"""Synthetic and hand-calculated checks for T4; never load protected rows."""
+"""Synthetic and hand-calculated checks for T4b."""
 import importlib.util
 import json
 import sys
@@ -87,6 +87,48 @@ class PowerTests(unittest.TestCase):
         self.assertEqual(rates["H3"]["overall"]["n"], 1)
         self.assertIsNone(power.operating_rates(np.zeros((2, 3)))["H2"]["conditional"]["rate"])
 
+    def test_variance_check_detects_a_single_underdispersed_contrast(self):
+        baseline = np.arange(10, dtype=float)[:, None] * np.ones((1, 3))
+        observed = power.variance_report(baseline, baseline * [1.25, .74, .75])
+        self.assertEqual([item["pass"] for item in observed.values()], [True, False, True])
+        self.assertAlmostEqual(observed["M3_minus_M1"]["ratio"], .74)
+
+    def test_validation_draws_preserve_panel_structure_and_seed(self):
+        profile = small_profile()
+        panel = (np.array([0, 0, 1, 2, 2, 3]), np.array([1, 1, 0, 2, 2, 0]),
+                 np.array([False, True, False, False, True, False]))
+        ids, error, score, labels = power.validation_score_panel(profile, 0, panel,
+                                                                 np.random.default_rng(21))
+        np.testing.assert_array_equal(ids, panel[0])
+        np.testing.assert_array_equal(labels, panel[2])
+        np.testing.assert_array_equal(error, labels)
+        settings = power.fit_rank_settings(error, score, [0., 0.])
+        settings["skills"]["development"] = [.5, .75, 1.]
+        args = (profile, 0, panel, settings, 991, 30)
+        a = power.validation_draws(*args)
+        np.testing.assert_array_equal(a, power.validation_draws(*args))
+        self.assertGreater(np.std(a[:, 0]), 0)
+        np.testing.assert_allclose(a[:, 0] - a[:, 1], a[:, 2])
+
+    def test_feature_roster_starts_and_full_followup(self):
+        scenario = power.Scenario("fixed", 10, 2, 4, 0, arrivals=(6, 1, 1, 2))
+        ids, cutoffs, _, labels = power.histories(small_profile(), scenario, np.random.default_rng(1))
+        np.testing.assert_array_equal(np.bincount(cutoffs), [6, 7, 8, 10, 12])
+        self.assertEqual(len(set(ids[cutoffs < 4])), 10)
+        self.assertFalse(labels.any())
+
+    def test_exact_null_bootstrap_matches_its_paired_subset_at_2000_draws(self):
+        profile = small_profile()
+        scenario = power.Scenario("fixture", 30, 2, 4, 6, arrivals=(19, 4, 4, 3))
+        settings = power.test_rank_settings(profile, scenario, np.random.default_rng(51), 12,
+                                            {"null": 0., "useful": .010})
+        result = power.bootstrap_experiment(profile, scenario, settings, 910, 6, 2000, "null",
+                                            exact_subset=3, h1_only=True)
+        bounds, subset, _, _ = result
+        np.testing.assert_array_equal(bounds[:3], subset)
+        self.assertTrue(np.all(bounds[:, 1, 0] >= bounds[:, 0, 0]))
+        self.assertTrue(np.isnan(bounds[:, :, 1:]).all())
+
 
 class InputBoundaryTests(unittest.TestCase):
     @classmethod
@@ -104,21 +146,69 @@ class InputBoundaryTests(unittest.TestCase):
 
         submissions = [item("20170101"), item("20160102"), item("20160101"),
                        item("20030101", "TA"), item("20121114")]
-        encoded = json.dumps({"application_number": "ANDAfixture", "submissions": submissions,
-                              "products": [{"product_number": "001"}]}).encode()
+        encoded = json.dumps({"application_number": "ANDA000001", "submissions": submissions,
+                              "products": [{"product_number": "001"}, {
+                                  "product_number": "002", "approval_date": "20180202",
+                                  "brand_name": "PROTECTED_PRODUCT"}],
+                              "application_docs": ["PROTECTED_DOCUMENT"]}).encode()
         decoder = json.loads
 
         def checked(payload):
             for original in submissions:
-                self.assertNotIn(original["submission_status_date"].encode(), payload)
+                if original["submission_status_date"] != "20121114":
+                    self.assertNotIn(original["submission_status_date"].encode(), payload)
+            self.assertNotIn(b"PROTECTED", payload)
             return decoder(payload)
 
         with patch.object(json, "loads", checked):
             projected = self.script.project_development_anda(encoded)
         self.assertEqual(projected["submissions"], [{"submission_type": "ORIG", "submission_status": "AP",
                                                     "submission_status_date": "20121114"}])
-        self.assertIsNone(self.script.project_development_anda(
-            json.dumps({"submissions": submissions[:2]}).encode()))
+        self.assertEqual(projected["products"], [{"product_number": "001"}])
+        future_submissions = [dict(submissions[0], nested=item("20121114")), submissions[1]]
+        future = json.dumps({"application_number": "ANDA000002", "submissions": future_submissions}).encode()
+        with patch.object(json, "loads", side_effect=AssertionError("future outcome reached decoder")):
+            self.assertIsNone(self.script.project_development_anda(future))
+
+    def test_grouped_orange_book_filter_excludes_protected_products_before_decoding(self):
+        source = {"approval_date": "20150304", "products": [
+            {"application_type": "A", "application_number": "001234", "product_number": "001"},
+            {"application_type": "A", "application_number": "001234", "product_number": "002",
+             "approval_date": "20171002", "brand_name": "PROTECTED"},
+            {"application_type": "N", "application_number": "000123", "product_number": "001"},
+        ]}
+        encoded = json.dumps(source).encode()
+        decoder = json.loads
+
+        def checked(payload):
+            self.assertNotIn(b"PROTECTED", payload)
+            self.assertNotIn(b"20171002", payload)
+            return decoder(payload)
+
+        with patch.object(json, "loads", checked):
+            generic = self.script.project_orange(encoded, nda=False)
+            branded = self.script.project_orange(encoded, nda=True)
+        self.assertEqual([p["approval_date"] for p in generic["products"]], ["20150304"])
+        self.assertEqual([p["application_type"] for p in branded["products"]], ["N"])
+
+    def test_empirical_bootstrap_agrees_with_e7b_draw_indices_and_coverage(self):
+        y = [1, 1, 0, 1, 0, 0, 1]
+        keys = ["a", "a", "b", "c", "d", "e", "e"]
+        rows = [dict(y=label, key=key) for label, key in zip(y, keys, strict=True)]
+        scores = [[.1, .1, .3, .4, .04, .9, .9], [.2, .1, .15, .09, .5, .7, .7],
+                  [.1, .2, .4, .4, .07, .1, .7]]
+        arms = [[t2.Prediction(p, graph.PREDICT_ENTRY if p >= .5 else graph.PREDICT_NO_ENTRY)
+                 for p in arm] for arm in scores]
+        arms[2][2] = t2.Prediction(.4, graph.ABSTAIN)
+        with patch.object(t2, "BOOTSTRAP_DRAWS", 100):
+            draws = self.script.empirical_bootstrap(rows, arms)
+        for i, (left, right) in enumerate(power.ARM_PAIRS):
+            lo, hi, invalid = t2.paired_cluster_bootstrap_ci(
+                t2._aurc80, arms[left], arms[right], y, keys, n_boot=100, seed=t2.BOOTSTRAP_SEED)
+            finite = np.sort(draws[np.isfinite(draws[:, i]), i])
+            self.assertEqual(len(finite), 100 - invalid)
+            np.testing.assert_allclose(finite[[int(.025 * len(finite)), int(.975 * len(finite))]],
+                                       [lo, hi], atol=1e-12)
 
     def test_feature_counts_use_availability_and_never_use_event_attributes(self):
         class Feature:
