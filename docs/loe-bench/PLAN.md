@@ -73,6 +73,8 @@ This follows the argument that reusing a test set without adaptive selection pro
 
 If the gate fails, C′ is reported as feasibility evidence and confirmation rests with Track A.
 
+**Owner approval (27 November 2026).** The owner approved this design and the full, open disclosure of the earlier exposure in the preregistration and the manuscript.
+
 ## Planner evidence (D32)
 
 | Claim or task | Primary paper | Benchmark or competitor | Status |
