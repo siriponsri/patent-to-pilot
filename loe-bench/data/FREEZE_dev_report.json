@@ -1,0 +1,1743 @@
+{
+  "acceptance": {
+    "defined_endpoints": true,
+    "queue_capacity": true
+  },
+  "code_commit_sha": "f683017c4fb73aadd91bb97f3381f5dd9308c9ca",
+  "family": {
+    "H1": {
+      "ci95": [
+        0.0014365497705106105,
+        0.19652267594842351
+      ],
+      "contrast": "M3-B1",
+      "estimate": 0.09798534798534808,
+      "horizon": 24,
+      "undefined_draws": 0
+    },
+    "H2": {
+      "ci95": [
+        -0.02000505050505047,
+        0.11249999999999993
+      ],
+      "contrast": "M3-M1",
+      "estimate": 0.05494505494505497,
+      "horizon": 24,
+      "undefined_draws": 0
+    },
+    "H3": {
+      "ci95": [
+        0.03265552958808368,
+        0.23170812893315496
+      ],
+      "contrast": "M3-B1",
+      "estimate": 0.13000000000000006,
+      "horizon": 12,
+      "undefined_draws": 0
+    }
+  },
+  "horizons": {
+    "12": {
+      "arms": {
+        "B1": {
+          "cutoffs": [
+            {
+              "allocated_slots": 106,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 12.0
+            },
+            {
+              "allocated_slots": 107,
+              "boundary_tie_rows": 27,
+              "expected_queued_events": 8.0
+            },
+            {
+              "allocated_slots": 108,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 9.0
+            },
+            {
+              "allocated_slots": 109,
+              "boundary_tie_rows": 30,
+              "expected_queued_events": 14.3
+            }
+          ],
+          "distinct_event_drug_capture": 0.4811111111111111,
+          "expected_captured_event_drugs": 43.3,
+          "expected_queued_events": 43.3,
+          "precision": 0.10069767441860464,
+          "recall": 0.4811111111111111
+        },
+        "M1": {
+          "cutoffs": [
+            {
+              "allocated_slots": 106,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 16.0
+            },
+            {
+              "allocated_slots": 107,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 10.0
+            },
+            {
+              "allocated_slots": 108,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 13.0
+            },
+            {
+              "allocated_slots": 109,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 16.0
+            }
+          ],
+          "distinct_event_drug_capture": 0.6111111111111112,
+          "expected_captured_event_drugs": 55.0,
+          "expected_queued_events": 55.0,
+          "precision": 0.12790697674418605,
+          "recall": 0.6111111111111112
+        },
+        "M3": {
+          "cutoffs": [
+            {
+              "allocated_slots": 106,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 16.0
+            },
+            {
+              "allocated_slots": 107,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 10.0
+            },
+            {
+              "allocated_slots": 108,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 13.0
+            },
+            {
+              "allocated_slots": 109,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 16.0
+            }
+          ],
+          "distinct_event_drug_capture": 0.6111111111111112,
+          "expected_captured_event_drugs": 55.0,
+          "expected_queued_events": 55.0,
+          "precision": 0.12790697674418605,
+          "recall": 0.6111111111111112
+        }
+      },
+      "contrasts": {
+        "M1-B1": {
+          "aurc80": {
+            "ci95": [
+              -0.08823015081249624,
+              -0.04709853450774791
+            ],
+            "estimate": -0.06609707365668133,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.06011053123367064,
+              0.1848091716924892
+            ],
+            "estimate": 0.10860580539523042,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.0026517794113408025,
+              -0.0013868490834467004
+            ],
+            "estimate": -0.001969069625054304,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.17646033239424772,
+              -0.09455034001844168
+            ],
+            "estimate": -0.1325775104118464,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.03728660147991539,
+              0.23489966614966593
+            ],
+            "estimate": 0.13000000000000006,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.07520418511138673,
+              -0.040818112976127835
+            ],
+            "estimate": -0.05665273228806021,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.002014403467348728,
+              0.014284201325242192
+            ],
+            "estimate": 0.008140492008435803,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.0076224742344205895,
+              0.04903063223091165
+            ],
+            "estimate": 0.027209302325581414,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.03728660147991539,
+              0.23489966614966593
+            ],
+            "estimate": 0.13000000000000006,
+            "undefined_draws": 0
+          }
+        },
+        "M3-B1": {
+          "aurc80": {
+            "ci95": [
+              -0.08937978110035125,
+              -0.048205496614160376
+            ],
+            "estimate": -0.06703694905564851,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.05391866715141448,
+              0.1711605795933871
+            ],
+            "estimate": 0.09670692634545021,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.0027672458759411657,
+              -0.0014185210556437945
+            ],
+            "estimate": -0.0020360693657330148,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.1463465777751805,
+              -0.06043759085502843
+            ],
+            "estimate": -0.1018047200370199,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.03265552958808368,
+              0.23170812893315496
+            ],
+            "estimate": 0.13000000000000006,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.07610072186731336,
+              -0.04160557238022165
+            ],
+            "estimate": -0.05739923452425548,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.004673308354495568,
+              0.01841017240094363
+            ],
+            "estimate": 0.011248621713439122,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.006716425879961874,
+              0.04856914139274176
+            ],
+            "estimate": 0.027209302325581414,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.03265552958808368,
+              0.23170812893315496
+            ],
+            "estimate": 0.13000000000000006,
+            "undefined_draws": 0
+          }
+        },
+        "M3-M1": {
+          "aurc80": {
+            "ci95": [
+              -0.0022963423276272897,
+              0.00038861364673147556
+            ],
+            "estimate": -0.0009398753989671906,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              -0.040723591365901896,
+              0.0184310260663822
+            ],
+            "estimate": -0.011898879049780209,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.00018946063071277798,
+              5.0401530395218354e-05
+            ],
+            "estimate": -6.699974067871095e-05,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.017527473251910983,
+              0.04449363397617038
+            ],
+            "estimate": 0.030772790374826497,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              -0.04349020544672716,
+              0.03192347288949891
+            ],
+            "estimate": 0.0,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.001863416224516964,
+              0.0003213554898254982
+            ],
+            "estimate": -0.0007465022361952678,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              -0.0006593108927792376,
+              0.007364180305528388
+            ],
+            "estimate": 0.003108129705003319,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.009302325581395349,
+              0.00696055684454755
+            ],
+            "estimate": 0.0,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.04349020544672716,
+              0.03192347288949891
+            ],
+            "estimate": 0.0,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "cutoffs": [
+        {
+          "capacity": 106,
+          "cutoff": "2012-01-01",
+          "rows": 533
+        },
+        {
+          "capacity": 107,
+          "cutoff": "2013-01-01",
+          "rows": 539
+        },
+        {
+          "capacity": 108,
+          "cutoff": "2014-01-01",
+          "rows": 544
+        },
+        {
+          "capacity": 109,
+          "cutoff": "2015-01-01",
+          "rows": 545
+        }
+      ],
+      "drug_clusters": 609,
+      "event_drugs": 90,
+      "event_rows": 90,
+      "levels": {
+        "B1": {
+          "aurc80": {
+            "ci95": [
+              0.05951573518070969,
+              0.09859525290123959
+            ],
+            "estimate": 0.07771681200798043,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.06663354669666953,
+              0.1325557627394862
+            ],
+            "estimate": 0.09189364186078915,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.03293805693625603,
+              0.04833242892562478
+            ],
+            "estimate": 0.04025435010065264,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.624080190973348,
+              0.6841406712255687
+            ],
+            "estimate": 0.6517815826006479,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.37999367088607594,
+              0.582299935389067
+            ],
+            "estimate": 0.4811111111111111,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.05489907905591067,
+              0.08814820059447735
+            ],
+            "estimate": 0.07045932105541927,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.0003427291426909687,
+              0.014008369724338771
+            ],
+            "estimate": 0.005841528351926336,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.0740045325423638,
+              0.12841378177309198
+            ],
+            "estimate": 0.10069767441860464,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.37999367088607594,
+              0.5822999353890669
+            ],
+            "estimate": 0.4811111111111111,
+            "undefined_draws": 0
+          }
+        },
+        "M1": {
+          "aurc80": {
+            "ci95": [
+              0.006253824789070471,
+              0.017964252787624202
+            ],
+            "estimate": 0.011619738351299112,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.14135956568811542,
+              0.2940983597589039
+            ],
+            "estimate": 0.20049944725601956,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.03131053179905642,
+              0.045938556891673414
+            ],
+            "estimate": 0.038285280475598336,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.498173095132883,
+              0.5417247887461284
+            ],
+            "estimate": 0.5192040721888015,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.5060240963855421,
+              0.7126436781609196
+            ],
+            "estimate": 0.6111111111111112,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.0087042685892133,
+              0.019542998280638716
+            ],
+            "estimate": 0.01380658876735906,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.005918586227161848,
+              0.0221560628575935
+            ],
+            "estimate": 0.013982020360362139,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.09817244911022915,
+              0.1585081585081585
+            ],
+            "estimate": 0.12790697674418605,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.5060240963855421,
+              0.7126436781609196
+            ],
+            "estimate": 0.6111111111111112,
+            "undefined_draws": 0
+          }
+        },
+        "M3": {
+          "aurc80": {
+            "ci95": [
+              0.005740983979584106,
+              0.01659415084297134
+            ],
+            "estimate": 0.010679862952331922,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.13492143699450318,
+              0.28106458614083674
+            ],
+            "estimate": 0.18860056820623936,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.03126723813376405,
+              0.045846213678998896
+            ],
+            "estimate": 0.038218280734919625,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.5258709508881922,
+              0.5744057282003711
+            ],
+            "estimate": 0.549976862563628,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.5,
+              0.7073170731707317
+            ],
+            "estimate": 0.6111111111111112,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.008329751153858386,
+              0.018535556562040784
+            ],
+            "estimate": 0.013060086531163792,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.008973108983575399,
+              0.025079414604576498
+            ],
+            "estimate": 0.017090150065365458,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.0979020979020979,
+              0.15741339869281043
+            ],
+            "estimate": 0.12790697674418605,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.5,
+              0.7073170731707317
+            ],
+            "estimate": 0.6111111111111112,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "policy": {
+        "B1": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "blocked_conflict_referrals": 0,
+            "clear_event_ci95": [
+              0.05481988877556727,
+              0.3165037945367434
+            ],
+            "clear_event_rate": 0.14925373134328357,
+            "clear_rate": 0.031004164738546967,
+            "clear_rows": 67,
+            "cleared_event_fraction": 0.1111111111111111,
+            "events": 90,
+            "flag_events": 12,
+            "flag_precision": 0.021937842778793418,
+            "flag_recall": 0.13333333333333333,
+            "flag_rows": 547,
+            "missed_events": 10,
+            "refer_events": 68,
+            "refer_rate": 0.7158722813512263,
+            "refer_rows": 1547,
+            "rows": 2161
+          },
+          "ece_bin_counts": [
+            2161,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "legacy_policy_90": {
+            "answered": 1772,
+            "aurc80": 0.0777168120079806,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 1687,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 384,
+                "rows": 2071
+              },
+              "1": {
+                "answered": 85,
+                "error_rate": 1.0,
+                "errors": 85,
+                "referrals": 5,
+                "rows": 90
+              }
+            },
+            "coverage": 0.8199907450254512,
+            "e_aurc": null,
+            "errors": 85,
+            "referrals": 389,
+            "rows": 2161,
+            "selective_risk": 0.04796839729119639,
+            "within_tolerance": false
+          }
+        },
+        "M1": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "blocked_conflict_referrals": 0,
+            "clear_event_ci95": [
+              2.7608971521067886e-05,
+              0.0818872445148718
+            ],
+            "clear_event_rate": 0.010238907849829351,
+            "clear_rate": 0.13558537714021288,
+            "clear_rows": 293,
+            "cleared_event_fraction": 0.03333333333333333,
+            "events": 90,
+            "flag_events": 55,
+            "flag_precision": 0.12910798122065728,
+            "flag_recall": 0.6111111111111112,
+            "flag_rows": 426,
+            "missed_events": 3,
+            "refer_events": 32,
+            "refer_rate": 0.6672836649699213,
+            "refer_rows": 1442,
+            "rows": 2161
+          },
+          "ece_bin_counts": [
+            2111,
+            50,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "legacy_policy_90": {
+            "answered": 1896,
+            "aurc80": 0.011619738351300453,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 1852,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 219,
+                "rows": 2071
+              },
+              "1": {
+                "answered": 44,
+                "error_rate": 1.0,
+                "errors": 44,
+                "referrals": 46,
+                "rows": 90
+              }
+            },
+            "coverage": 0.8773715872281351,
+            "e_aurc": null,
+            "errors": 44,
+            "referrals": 265,
+            "rows": 2161,
+            "selective_risk": 0.023206751054852322,
+            "within_tolerance": true
+          }
+        },
+        "M3": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "blocked_conflict_referrals": 162,
+            "clear_event_ci95": [
+              2.0376394598672266e-05,
+              0.060435674163368855
+            ],
+            "clear_event_rate": 0.007556675062972292,
+            "clear_rate": 0.18371124479407683,
+            "clear_rows": 397,
+            "cleared_event_fraction": 0.03333333333333333,
+            "events": 90,
+            "flag_events": 59,
+            "flag_precision": 0.08792846497764531,
+            "flag_recall": 0.6555555555555556,
+            "flag_rows": 671,
+            "missed_events": 3,
+            "refer_events": 28,
+            "refer_rate": 0.5057843590930124,
+            "refer_rows": 1093,
+            "rows": 2161
+          },
+          "ece_bin_counts": [
+            2095,
+            66,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "legacy_policy_90": {
+            "answered": 1841,
+            "aurc80": 0.010679862952330638,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 1794,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 277,
+                "rows": 2071
+              },
+              "1": {
+                "answered": 47,
+                "error_rate": 1.0,
+                "errors": 47,
+                "referrals": 43,
+                "rows": 90
+              }
+            },
+            "coverage": 0.8519204072188802,
+            "e_aurc": null,
+            "errors": 47,
+            "referrals": 320,
+            "rows": 2161,
+            "selective_risk": 0.025529603476371537,
+            "within_tolerance": false
+          }
+        }
+      },
+      "queue_slots": 430,
+      "rows": 2161,
+      "undefined_draws": 0
+    },
+    "24": {
+      "arms": {
+        "B1": {
+          "cutoffs": [
+            {
+              "allocated_slots": 107,
+              "boundary_tie_rows": 24,
+              "expected_queued_events": 20.249999999999996
+            },
+            {
+              "allocated_slots": 108,
+              "boundary_tie_rows": 12,
+              "expected_queued_events": 15.833333333333332
+            }
+          ],
+          "distinct_event_drug_capture": 0.4639303482587065,
+          "expected_captured_event_drugs": 31.083333333333336,
+          "expected_queued_events": 36.08333333333333,
+          "precision": 0.16782945736434107,
+          "recall": 0.39652014652014644
+        },
+        "M1": {
+          "cutoffs": [
+            {
+              "allocated_slots": 107,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 20.0
+            },
+            {
+              "allocated_slots": 108,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 20.0
+            }
+          ],
+          "distinct_event_drug_capture": 0.47761194029850745,
+          "expected_captured_event_drugs": 32.0,
+          "expected_queued_events": 40.0,
+          "precision": 0.18604651162790697,
+          "recall": 0.43956043956043955
+        },
+        "M3": {
+          "cutoffs": [
+            {
+              "allocated_slots": 107,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 22.0
+            },
+            {
+              "allocated_slots": 108,
+              "boundary_tie_rows": 0,
+              "expected_queued_events": 23.0
+            }
+          ],
+          "distinct_event_drug_capture": 0.5223880597014925,
+          "expected_captured_event_drugs": 35.0,
+          "expected_queued_events": 45.0,
+          "precision": 0.20930232558139536,
+          "recall": 0.4945054945054945
+        }
+      },
+      "contrasts": {
+        "M1-B1": {
+          "aurc80": {
+            "ci95": [
+              -0.01396665785940207,
+              0.0007588186342405674
+            ],
+            "estimate": -0.00636100251030056,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.0030819842835907263,
+              0.11827222946083034
+            ],
+            "estimate": 0.04291253774456266,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.003150378931311146,
+              0.008749491487371912
+            ],
+            "estimate": 0.0028567063688218486,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.20009011090573017,
+              0.24724809981125417
+            ],
+            "estimate": 0.22437673130193914,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              -0.09166987179487181,
+              0.1387304866850321
+            ],
+            "estimate": 0.01368159203980096,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.01250439614829229,
+              4.2134359247965875e-05
+            ],
+            "estimate": -0.006004001936964196,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.03409597277841335,
+              0.07818013540646898
+            ],
+            "estimate": 0.05765615848716545,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.015598859130367014,
+              0.06056610864014495
+            ],
+            "estimate": 0.0182170542635659,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.0390384329060513,
+              0.14322997665102918
+            ],
+            "estimate": 0.04304029304029311,
+            "undefined_draws": 0
+          }
+        },
+        "M3-B1": {
+          "aurc80": {
+            "ci95": [
+              -0.015222573576022953,
+              0.0011571630263379764
+            ],
+            "estimate": -0.006615106544737345,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.008267244574822979,
+              0.121925078768637
+            ],
+            "estimate": 0.04900791043191846,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.003915870623936566,
+              0.00909389578528027
+            ],
+            "estimate": 0.0027528193564622244,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.2455834733871763,
+              0.3015657412351866
+            ],
+            "estimate": 0.2719298245614036,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              -0.05983569875974945,
+              0.1768201971943748
+            ],
+            "estimate": 0.058457711442786,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.013778063372484217,
+              -6.256065041850411e-05
+            ],
+            "estimate": -0.006480363614673797,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.03995818627236215,
+              0.08191227377764752
+            ],
+            "estimate": 0.06204330171047571,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.000531856261022912,
+              0.08260920353804603
+            ],
+            "estimate": 0.04147286821705429,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.0014365497705106105,
+              0.19652267594842351
+            ],
+            "estimate": 0.09798534798534808,
+            "undefined_draws": 0
+          }
+        },
+        "M3-M1": {
+          "aurc80": {
+            "ci95": [
+              -0.002581810163608027,
+              0.0023986017906403776
+            ],
+            "estimate": -0.0002541040344367848,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              -0.016799590956030692,
+              0.024626794886265443
+            ],
+            "estimate": 0.006095372687355799,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.0011142711932301582,
+              0.0008331990678400295
+            ],
+            "estimate": -0.00010388701235962416,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.02577973474586146,
+              0.0730718103213508
+            ],
+            "estimate": 0.04755309325946444,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              -0.03848684210526313,
+              0.10344827586206895
+            ],
+            "estimate": 0.04477611940298504,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.002457747198035269,
+              0.001695569268279024
+            ],
+            "estimate": -0.0004763616777096018,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              -0.0012370912729424213,
+              0.012756051800074027
+            ],
+            "estimate": 0.004387143223310255,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.009259259259259245,
+              0.04629629629629631
+            ],
+            "estimate": 0.023255813953488386,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.02000505050505047,
+              0.11249999999999993
+            ],
+            "estimate": 0.05494505494505497,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "cutoffs": [
+        {
+          "capacity": 107,
+          "cutoff": "2013-01-01",
+          "rows": 539
+        },
+        {
+          "capacity": 108,
+          "cutoff": "2014-01-01",
+          "rows": 544
+        }
+      ],
+      "drug_clusters": 561,
+      "event_drugs": 67,
+      "event_rows": 91,
+      "levels": {
+        "B1": {
+          "aurc80": {
+            "ci95": [
+              0.01673174675334712,
+              0.043140930115296926
+            ],
+            "estimate": 0.029330123599282776,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.12098205510797007,
+              0.24608009728075889
+            ],
+            "estimate": 0.17288309997487353,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.058834991196295754,
+              0.09309845431084406
+            ],
+            "estimate": 0.07507196735176713,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.526412734270415,
+              0.5487591721008876
+            ],
+            "estimate": 0.5378578024007387,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.3489438281625782,
+              0.5864389252750007
+            ],
+            "estimate": 0.4639303482587065,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.022396839277479774,
+              0.046964197317227556
+            ],
+            "estimate": 0.03432293437045393,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.005866988565964039,
+              0.03484411213632017
+            ],
+            "estimate": 0.017968521566995625,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.11380217394236086,
+              0.22322971723044385
+            ],
+            "estimate": 0.16782945736434107,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.30095078329989194,
+              0.49224785018902656
+            ],
+            "estimate": 0.39652014652014644,
+            "undefined_draws": 0
+          }
+        },
+        "M1": {
+          "aurc80": {
+            "ci95": [
+              0.012054559885445732,
+              0.03608422290743234
+            ],
+            "estimate": 0.022969121088982216,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.14621256361634372,
+              0.3213073992117174
+            ],
+            "estimate": 0.2157956377194362,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.0662175492341564,
+              0.09100608876281584
+            ],
+            "estimate": 0.07792867372058898,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.736793327154773,
+              0.7878511753044464
+            ],
+            "estimate": 0.7622345337026778,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.36065573770491804,
+              0.6153846153846154
+            ],
+            "estimate": 0.47761194029850745,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.017811412172350136,
+              0.040185059476390866
+            ],
+            "estimate": 0.028318932433489735,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.05915686914865219,
+              0.09592035957456313
+            ],
+            "estimate": 0.07562468005416108,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.12558139534883722,
+              0.25119106037977373
+            ],
+            "estimate": 0.18604651162790697,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.3333333333333333,
+              0.5581470854726668
+            ],
+            "estimate": 0.43956043956043955,
+            "undefined_draws": 0
+          }
+        },
+        "M3": {
+          "aurc80": {
+            "ci95": [
+              0.011415573256860857,
+              0.0363048815780576
+            ],
+            "estimate": 0.02271501705454543,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.15076540266635302,
+              0.3294269115104908
+            ],
+            "estimate": 0.221891010406792,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.06669598482737552,
+              0.0904815565524398
+            ],
+            "estimate": 0.07782478670822936,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.7814531032243283,
+              0.8405142831799347
+            ],
+            "estimate": 0.8097876269621422,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.3972602739726027,
+              0.640625
+            ],
+            "estimate": 0.5223880597014925,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.017038585753307457,
+              0.039807364471748444
+            ],
+            "estimate": 0.027842570755780133,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.06432051429474182,
+              0.1005264851862667
+            ],
+            "estimate": 0.08001182327747133,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.14351851851851852,
+              0.27443887347983775
+            ],
+            "estimate": 0.20930232558139536,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.37345149830089586,
+              0.6027655724993537
+            ],
+            "estimate": 0.4945054945054945,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "policy": {
+        "B1": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "UNEVALUABLE",
+            "blocked_conflict_referrals": 0,
+            "clear_event_ci95": null,
+            "clear_event_rate": null,
+            "clear_rate": 0.0,
+            "clear_rows": 0,
+            "cleared_event_fraction": 0.0,
+            "events": 91,
+            "flag_events": 23,
+            "flag_precision": 0.1796875,
+            "flag_recall": 0.25274725274725274,
+            "flag_rows": 128,
+            "missed_events": 0,
+            "refer_events": 68,
+            "refer_rate": 0.8818097876269622,
+            "refer_rows": 955,
+            "rows": 1083
+          },
+          "ece_bin_counts": [
+            884,
+            199,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "legacy_policy_90": {
+            "answered": 1019,
+            "aurc80": 0.02933012359928259,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 945,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 47,
+                "rows": 992
+              },
+              "1": {
+                "answered": 74,
+                "error_rate": 1.0,
+                "errors": 74,
+                "referrals": 17,
+                "rows": 91
+              }
+            },
+            "coverage": 0.9409048938134811,
+            "e_aurc": null,
+            "errors": 74,
+            "referrals": 64,
+            "rows": 1083,
+            "selective_risk": 0.07262021589793916,
+            "within_tolerance": false
+          }
+        },
+        "M1": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "blocked_conflict_referrals": 0,
+            "clear_event_ci95": [
+              0.0,
+              0.14755517816455746
+            ],
+            "clear_event_rate": 0.0,
+            "clear_rate": 0.023084025854108958,
+            "clear_rows": 25,
+            "cleared_event_fraction": 0.0,
+            "events": 91,
+            "flag_events": 85,
+            "flag_precision": 0.11140235910878113,
+            "flag_recall": 0.9340659340659341,
+            "flag_rows": 763,
+            "missed_events": 0,
+            "refer_events": 6,
+            "refer_rate": 0.2723915050784857,
+            "refer_rows": 295,
+            "rows": 1083
+          },
+          "ece_bin_counts": [
+            206,
+            599,
+            230,
+            40,
+            6,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "legacy_policy_90": {
+            "answered": 701,
+            "aurc80": null,
+            "aurc80_reachable": false,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 673,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 319,
+                "rows": 992
+              },
+              "1": {
+                "answered": 28,
+                "error_rate": 1.0,
+                "errors": 28,
+                "referrals": 63,
+                "rows": 91
+              }
+            },
+            "coverage": 0.6472760849492152,
+            "e_aurc": null,
+            "errors": 28,
+            "referrals": 382,
+            "rows": 1083,
+            "selective_risk": 0.039942938659058486,
+            "within_tolerance": false
+          }
+        },
+        "M3": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "blocked_conflict_referrals": 52,
+            "clear_event_ci95": [
+              6.0520403767681816e-06,
+              0.2829720505363843
+            ],
+            "clear_event_rate": 0.02631578947368421,
+            "clear_rate": 0.03508771929824561,
+            "clear_rows": 38,
+            "cleared_event_fraction": 0.01098901098901099,
+            "events": 91,
+            "flag_events": 84,
+            "flag_precision": 0.09801633605600933,
+            "flag_recall": 0.9230769230769231,
+            "flag_rows": 857,
+            "missed_events": 1,
+            "refer_events": 6,
+            "refer_rate": 0.17359187442289936,
+            "refer_rows": 188,
+            "rows": 1083
+          },
+          "ece_bin_counts": [
+            197,
+            570,
+            248,
+            53,
+            12,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "legacy_policy_90": {
+            "answered": 668,
+            "aurc80": null,
+            "aurc80_reachable": false,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 647,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 345,
+                "rows": 992
+              },
+              "1": {
+                "answered": 21,
+                "error_rate": 1.0,
+                "errors": 21,
+                "referrals": 70,
+                "rows": 91
+              }
+            },
+            "coverage": 0.6168051708217913,
+            "e_aurc": null,
+            "errors": 21,
+            "referrals": 415,
+            "rows": 1083,
+            "selective_risk": 0.03143712574850299,
+            "within_tolerance": false
+          }
+        }
+      },
+      "queue_slots": 215,
+      "rows": 1083,
+      "undefined_draws": 0
+    }
+  },
+  "input_sha256": {
+    "court_manifest": {
+      "file": "E7_sources.json",
+      "line_endings": "LF",
+      "sha256": "c2e7ad988d860fb684cffffb4607ba1d1aca575f8209e4fc18d8ee47d3709c6f"
+    },
+    "gsrs": {
+      "file": "dump-public-2026-08-06.gsrs",
+      "sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad"
+    },
+    "nber_manifest": {
+      "admission": "EXCLUDED_REJECTED_K20",
+      "file": "E8_NBER_MANIFEST.json",
+      "line_endings": "LF",
+      "sha256": "aeee3dd633732a2185a291fdd5146792b7058c21c7ee4ef4cdcf36a4cbe426af"
+    },
+    "ob_manifest": {
+      "file": "OB_EDITIONS.json",
+      "line_endings": "LF",
+      "sha256": "6b59c08899ab4b5b7c514544e5c9aebcf93fd6775a61502f25f9086a41e77103"
+    },
+    "orange_book_coverage": {
+      "2010-01-01": {
+        "age_days": 77,
+        "availability_proof": {
+          "date": "2009-11-04",
+          "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20091104091455"
+        },
+        "chosen_edition": "2009-10-16",
+        "freshness_floor": "2009-07-01",
+        "latest_proven_age_days": 77,
+        "latest_proven_availability": {
+          "date": "2009-11-04",
+          "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20091104091455"
+        },
+        "latest_proven_edition": "2009-10-16",
+        "source": {
+          "file": "ob_20091104091455.zip",
+          "kind": "fda_zip",
+          "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2011-01-01": {
+        "age_days": null,
+        "availability_proof": null,
+        "chosen_edition": null,
+        "freshness_floor": "2010-07-01",
+        "latest_proven_age_days": 375,
+        "latest_proven_availability": {
+          "date": "2010-01-13",
+          "edition_sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20100113002223"
+        },
+        "latest_proven_edition": "2009-12-22",
+        "source": null,
+        "status": "STALE"
+      },
+      "2012-01-01": {
+        "age_days": 18,
+        "availability_proof": {
+          "date": "2011-12-29",
+          "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20111229223919"
+        },
+        "chosen_edition": "2011-12-14",
+        "freshness_floor": "2011-07-01",
+        "latest_proven_age_days": 18,
+        "latest_proven_availability": {
+          "date": "2011-12-29",
+          "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20111229223919"
+        },
+        "latest_proven_edition": "2011-12-14",
+        "source": {
+          "file": "ob_20111229223919.zip",
+          "kind": "fda_zip",
+          "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2013-01-01": {
+        "age_days": 106,
+        "availability_proof": {
+          "date": "2012-09-21",
+          "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20120921215526"
+        },
+        "chosen_edition": "2012-09-17",
+        "freshness_floor": "2012-07-01",
+        "latest_proven_age_days": 106,
+        "latest_proven_availability": {
+          "date": "2012-09-21",
+          "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20120921215526"
+        },
+        "latest_proven_edition": "2012-09-17",
+        "source": {
+          "file": "ob_20120921215526.zip",
+          "kind": "fda_zip",
+          "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2014-01-01": {
+        "age_days": 124,
+        "availability_proof": {
+          "date": "2013-09-06",
+          "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20130906105914"
+        },
+        "chosen_edition": "2013-08-30",
+        "freshness_floor": "2013-07-01",
+        "latest_proven_age_days": 124,
+        "latest_proven_availability": {
+          "date": "2013-09-06",
+          "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20130906105914"
+        },
+        "latest_proven_edition": "2013-08-30",
+        "source": {
+          "file": "ob_20130906105914.zip",
+          "kind": "fda_zip",
+          "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2015-01-01": {
+        "age_days": 113,
+        "availability_proof": {
+          "date": "2014-09-15",
+          "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20140915104404"
+        },
+        "chosen_edition": "2014-09-10",
+        "freshness_floor": "2014-07-01",
+        "latest_proven_age_days": 113,
+        "latest_proven_availability": {
+          "date": "2014-09-15",
+          "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20140915104404"
+        },
+        "latest_proven_edition": "2014-09-10",
+        "source": {
+          "file": "ob_20140915104404.zip",
+          "kind": "fda_zip",
+          "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      }
+    },
+    "piv_manifest": {
+      "file": "PIV_EDITIONS.json",
+      "line_endings": "LF",
+      "sha256": "f99562f2dd3344279ff788a20fae836cacc6c0acc87b540d0e94984175bc8352"
+    },
+    "rai": {
+      "doi": "10.7910/DVN/YCMKVU",
+      "file": "e7_rai_4789869.tsv",
+      "license": "CC0-1.0",
+      "metadata": {
+        "file": "e7_rai_metadata.json",
+        "sha256": "4c3f680cbb251bd42a1c7be4a62bc0000783d705f8978d4e46753ef95ae12b36",
+        "url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/YCMKVU"
+      },
+      "sha256": "abb54817c8e6fbc90077007a42bb1cd7870a64940ce3aa7a7d36d83dafaa06e5",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4789869",
+      "version": "1.0 (2021-06-10), LM_short_patent_cases.tab, file 4789869"
+    },
+    "s0_files": {
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+      "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f"
+    },
+    "s0_manifest": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "line_endings": "LF",
+      "sha256": "7d40be5e2004d887480ce5f337afffd611909f26017622e90ad304a0386d2d1d"
+    }
+  },
+  "runtime": {
+    "numpy": "2.5.4",
+    "python": "3.12.10"
+  },
+  "status": "DEVELOPMENT_ONLY"
+}
