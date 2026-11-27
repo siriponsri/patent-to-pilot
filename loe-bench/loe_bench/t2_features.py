@@ -172,8 +172,11 @@ class AsOfBuilder:
                     linked_nda_applications=len(index.linked_nda_applications),
                     unmatched_examples=index.unmatched_examples)
 
+    def select_edition(self, cutoff):
+        return _edition_selection(self.history, cutoff)
+
     def build(self, key: str, cutoff: date, horizon: int, base_features: dict) -> AsOfFeatures:
-        source, coverage = _edition_selection(self.history, cutoff)
+        source, coverage = self.select_edition(cutoff)
         status = coverage["status"]
         values = dict.fromkeys(OB_FEATURES)
         snapshot = {}
