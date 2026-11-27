@@ -215,6 +215,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | CP4 | Co-planner: metric and policy redesign under about 5% prevalence (criteria v3 options) | GPT-6.2 Astra high | K20T1 | merged; criteria v3 owner-approved |
 | 2 | T1v3 | Asymmetric policy freeze (lo/hi) for the review budget and auto-clear safety, with native-score queues | GPT-6.2 Sol high | CP4 | dispatched |
 | 2 | T4c | Power and type-I for recall@20% (applies the α rule) | GPT-6.2 Sol xhigh | CP4 | dispatched |
+| 2 | K22 | Legally faithful graph trial (M3 only, pre-declared rule) | GPT-6.2 Sol xhigh | REG | dispatched |
+| 2 | FREEZE | Rebuild the frozen config on merged code (REG fix, K22 decision); T1v3 rule unchanged | GPT-6.2 Sol high | T1v3, K22 | waiting |
 | 2 | REG | Verify regulatory rules in code against primary legal and FDA sources (replaces the expert review) | GPT-6.2 Sol high | — | merged: [REGULATORY-RULES.md](REGULATORY-RULES.md). One fix: undated matched PIV rows now give UNKNOWN instead of FALSE. T1v3 and T4c started before it, so the frozen config must be rebuilt on the merged code |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
