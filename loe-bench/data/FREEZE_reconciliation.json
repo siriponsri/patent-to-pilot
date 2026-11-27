@@ -1,0 +1,102 @@
+{
+  "changed_rows": {
+    "training": {
+      "challenge_missing": 11,
+      "challenge_present": 0,
+      "rows": 547,
+      "verdict": 7
+    },
+    "validation": {
+      "challenge_missing": 0,
+      "challenge_present": 0,
+      "rows": 1083,
+      "verdict": 0
+    }
+  },
+  "horizon": 24,
+  "native_and_calibration_matched": true,
+  "paired_queue_draws_matched_per_stage": 2000,
+  "stages": [
+    {
+      "H2": {
+        "ci95": [
+          -0.04672897196261683,
+          0.033333333333333326
+        ],
+        "estimate": -0.010989010989011061,
+        "undefined_draws": 0
+      },
+      "event_rows": 91,
+      "hits": {
+        "M1": 59.0,
+        "M3": 58.0
+      },
+      "recall": {
+        "M1": 0.6483516483516484,
+        "M3": 0.6373626373626373
+      },
+      "stage": "pre_REG_TRAIN_and_validation"
+    },
+    {
+      "H2": {
+        "ci95": [
+          -0.02000505050505047,
+          0.11249999999999993
+        ],
+        "estimate": 0.05494505494505497,
+        "undefined_draws": 0
+      },
+      "event_rows": 91,
+      "hits": {
+        "M1": 40.0,
+        "M3": 45.0
+      },
+      "recall": {
+        "M1": 0.43956043956043955,
+        "M3": 0.4945054945054945
+      },
+      "stage": "REG_TRAIN_only"
+    },
+    {
+      "H2": {
+        "ci95": [
+          -0.04672897196261683,
+          0.033333333333333326
+        ],
+        "estimate": -0.010989010989011061,
+        "undefined_draws": 0
+      },
+      "event_rows": 91,
+      "hits": {
+        "M1": 59.0,
+        "M3": 58.0
+      },
+      "recall": {
+        "M1": 0.6483516483516484,
+        "M3": 0.6373626373626373
+      },
+      "stage": "REG_validation_only"
+    },
+    {
+      "H2": {
+        "ci95": [
+          -0.02000505050505047,
+          0.11249999999999993
+        ],
+        "estimate": 0.05494505494505497,
+        "undefined_draws": 0
+      },
+      "event_rows": 91,
+      "hits": {
+        "M1": 40.0,
+        "M3": 45.0
+      },
+      "recall": {
+        "M1": 0.43956043956043955,
+        "M3": 0.4945054945054945
+      },
+      "stage": "REG_TRAIN_and_validation"
+    }
+  ],
+  "status": "DEVELOPMENT_ONLY"
+}
