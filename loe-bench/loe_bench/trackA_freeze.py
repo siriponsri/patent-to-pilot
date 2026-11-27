@@ -17,6 +17,7 @@ from typing import Callable, Mapping, Sequence
 
 from .baselines import AgeHazardTable, BaseRate, Logistic, exclusivity_rule_score
 from .dataset import build_entities, build_samples, features_at, snapshot_features
+from .moiety import GSRS_FILE, ORANGE_FILES
 
 REQUIRED_INPUTS = {"df_nda.jsonl", "df_anda.jsonl", "ob_nda.jsonl"}
 ROW_FIELDS = ("entity", "t0", "horizon_months")
@@ -76,9 +77,17 @@ def _verify_manifest(raw: Path, manifest: Path, t0: date, out: Path) -> date:
             raise ValueError(f"S0 input SHA-256 mismatch: {name}")
         seen.add(name.casefold())
         present.add(name)
-    missing = REQUIRED_INPUTS - present
+    available_orange = {name for name in ORANGE_FILES if (raw / name).is_file()}
+    missing = (REQUIRED_INPUTS | available_orange) - present
     if missing:
         raise ValueError(f"S0 manifest is missing required input: {', '.join(sorted(missing))}")
+    registry = raw.resolve().parent / "moiety" / GSRS_FILE
+    if registry.is_file():
+        registry_date = date.fromisoformat(GSRS_FILE.removeprefix("dump-public-").removesuffix(".gsrs"))
+        if registry_date > snapshot_date:
+            raise ValueError("GSRS export is newer than the snapshot")
+        if out.resolve() == registry.resolve():
+            raise ValueError("prediction output must differ from the GSRS export")
     return min(snapshot_date, fetched_date, t0)
 
 
