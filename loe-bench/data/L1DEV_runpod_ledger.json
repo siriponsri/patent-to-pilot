@@ -1,0 +1,51 @@
+{
+  "status": "CLOSED_POD_DELETED_VOLUME_RETAINED",
+  "prior_ledger": "E4b_runpod_ledger.json",
+  "prior_estimated_arm_spend_usd": 0.15160329760273972,
+  "task_cap_usd": 4,
+  "task_cap_gpu_hours": 4,
+  "arm_cap_usd": 20,
+  "billing_mode": "PREPAID",
+  "account_balance_before_usd": 27.3838951461,
+  "retained_volume": {
+    "id": "8n6rnzljwg",
+    "data_center": "US-MO-2",
+    "size_gb": 30,
+    "estimated_usd_per_month": 2.1,
+    "retention_readback": "verified present after deletion"
+  },
+  "pod": {
+    "id": "8874020m8k6z61",
+    "name": "ptp-loe-l1dev-42af82df",
+    "gpu": "NVIDIA L4",
+    "data_center": "US-MO-2",
+    "cloud": "SECURE",
+    "container_disk_gb": 20,
+    "quoted_gpu_usd_per_hour": 0.69,
+    "quote_source": "RunPod get-gpu-type (SECURE POD availability, US-MO-2, CUDA >= 12.8)",
+    "confirmed_usd_per_hour": 0.69,
+    "create_request_utc": "2026-11-27T15:25:59.054Z",
+    "start_utc": "2026-11-27T15:26:02.147Z",
+    "stop_utc": "2026-11-27T15:59:02.698Z",
+    "deletion_verified": true,
+    "delete_request_utc": "2026-11-27T15:58:39.841Z",
+    "delete_status": 204,
+    "deletion_readback_status": 404,
+    "conservative_billable_seconds": 1983.644,
+    "estimated_gpu_usd": 0.3801984333333333,
+    "container_disk_allowance_usd_per_hour": 0.0027397260273972603,
+    "estimated_container_disk_usd": 0.0015096225266362253
+  },
+  "account_balance_after_usd": 27.0329183091,
+  "account_balance_after_read_utc": "2026-11-27T15:59:21.124Z",
+  "account_balance_delta_usd": 0.3509768369999975,
+  "estimated_pod_total_usd": 0.38170805585996953,
+  "estimated_task_window_total_usd": 0.3832931595129376,
+  "billing": {
+    "posted_records": 0,
+    "posted_usd": null,
+    "cost_basis": "Elapsed estimate through the deletion read-back. Balance delta is account-wide. Storage rate assumptions follow E4b."
+  },
+  "estimated_retained_volume_since_prior_ledger_usd": 0.0021400278538812787,
+  "estimated_cumulative_arm_spend_usd": 0.5354513813165904
+}
