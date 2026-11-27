@@ -44,3 +44,7 @@
   - Concern: power looks optimistic. The development bootstrap CI half-width for M3−B1 at 24 months is about 0.01 across 66 validation event clusters, and the generator was never checked against it. T4b must reproduce the empirical development SE first.
   - Incident 1, disclosed: the first preflight decoded mixed-period public ANDA records, including test-period approvals, to build an application index. Only application numbers and types were used. No outcome output or test metric was produced. The final runner filters before decoding, and the seal was unchanged.
   - Incident 2: the executor stopped a local Python worker (PID 27976) before confirming it owned the process. Lesson for executor cards: never stop a process you did not start and verify.
+- **27 Nov, E8 merged: NBER Orange Book 1985–2016.**
+  - Each annual edition is usable only from Jan 1 of the following year. Its content is about 12 months old at the cutoff, against 6 months or less for the Wayback ZIPs used in validation and test.
+  - Licence: NBER site terms (effective 1 Aug 2026) allow limited personal, non-commercial access and restrict redistribution. Raw files stay in `_private_artifacts`. A data descriptor may publish only code and download instructions. Commercial product use needs separate clearance, to go in the owner document pack.
+  - Next: decide on development data whether the longer but staler training window helps. The staleness mismatch is a shift to test.
