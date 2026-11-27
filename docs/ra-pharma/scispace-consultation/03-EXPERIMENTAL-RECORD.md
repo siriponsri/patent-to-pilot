@@ -1,5 +1,18 @@
 # Results that constrain a successor study
 
+## Earlier research and product evidence
+
+| Study or milestone | Recorded result | What a successor should preserve |
+|---|---|---|
+| G02, HealthTech G1–G6 | Research-gap freeze, named-device pivot, public baselines and offline pilot receipts. SciFact served as external evidence verification context. | Separate an auditable dossier from measured decision utility. [Pilot analysis](https://github.com/siriponsri/patent-to-pilot/commit/65386b72) |
+| PAR4PC / PI4PC and Solution Scout | The PI4PC replication did not reproduce the dense advantage. Solution Scout yielded partial development feasibility; an oracle-only headroom check was followed by a public HUPD demo, a frozen grounding check and a latency study. | Keep oracle headroom separate from a deployable gain. The public demo is exposed. [Grounding and latency record](https://github.com/siriponsri/patent-to-pilot/commit/1d3316a9) |
+| MedTech Time Machine and graph extraction | Qwen3-8B rerank fusion beat its X comparator on the P/main development setting. Graph extractor v3 later failed its frozen pilot threshold with 8/20 versus 10 required. | Reuse local runtime experience while retesting effects on new independent tasks. [MTM development result](https://github.com/siriponsri/patent-to-pilot/commit/57bbaeb1) |
+| Paper 1 on DAPFAM | The single settled primary comparison F-FA minus B0 was −0.0135 (reported interval −0.028 to +0.001). H1 was inconclusive, the gate kept H2/H3 untested, and in-domain harm failed noninferiority. | This historical test is exposed. Use only the published aggregate; future method selection needs separate data. [Settled decision](https://github.com/siriponsri/patent-to-pilot/commit/9502478e) |
+| BridgeRet, AM-7, B53 and source audit | BridgeRet fine-tuning fell below zero-shot and was parked. AM-7 failed its owner gate. The B53.0 pipeline check matched 11/12 DAPFAM cells. The B53 instruction contrasts did not reach significance. Shared family pool and unavailable training split left overlap unresolved. | A reproducibility check does not establish independence. [Inherited research register](https://github.com/siriponsri/patent-to-pilot/blob/830457e6/INDEX-PLAN.md) |
+| P2-T04 structural acquisition | In 2,000 frozen DEV applications, ALL recall@200 was 0.44372 for the unresolved-relation arm and 0.44998 for complete-content fusion; seed-only also scored 0.44998. Decision NO_GAIN. | Compare a new structural method against complete content and seed-only controls. [Matched screen](https://github.com/siriponsri/patent-to-pilot/blob/830457e6/docs/tracking/owner-note-22112026/receipts/P2-T04_results.md) |
+
+## Thai RA and pharmaceutical opportunities
+
 | Task and material | Observed outcome | Implication for the next study |
 |---|---|---|
 | Reader routing, 11 authored cases | Learned routing scored 6 versus 2 for fixed specialists. All four net gains came from training-template echoes. On seven other authored cases each scored 2. Transfer and eight successor cells were NOT_RUN. | Separate training-like gains from new-case effects. |
