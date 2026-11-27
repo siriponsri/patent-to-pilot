@@ -77,6 +77,7 @@ class CourtRow:
     brands: str
     ingredients: str
     locator: str
+    patent: str = ""
 
 
 def court_rows(path, stop_before):
@@ -93,7 +94,8 @@ def court_rows(path, stop_before):
                 continue
             if filed < stop_before and row["court"] and row["civilaction"]:
                 yield CourtRow(row["court"], row["civilaction"], filed, row["orangebookproducts"],
-                               row["orangebookingredients"], f"TSV line {rows.line_num}")
+                               row["orangebookingredients"], f"TSV line {rows.line_num}",
+                               row.get("patent") or "")
 
 
 class ChallengeHistory:
