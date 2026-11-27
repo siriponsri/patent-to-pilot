@@ -67,6 +67,15 @@ class ChallengeTests(TestCase):
         self.assertEqual(result.state, T3.FALSE)
         self.assertEqual(result.witnesses, ())
 
+    def test_matching_fda_rows_without_submission_dates_are_unknown(self):
+        for day, when in ((25, "pre-MMA"), (26, "")):
+            with self.subTest(when=when):
+                version = f"2010-12-{day}"
+                self.edition(version, f"201012{day + 1}000000", name="Example", when=when)
+                result = self.history().lookup(KEY, CUTOFF)
+                self.assertEqual(result.state, T3.UNKNOWN)
+                self.assertEqual(result.witnesses, ())
+
     def test_stale_unproven_or_corrupt_list_cannot_establish_false(self):
         self.edition("2010-06-30", "20100701000000", name="Second")
         self.edition("2010-12-29", None, name="Second")
