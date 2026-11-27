@@ -159,3 +159,7 @@ The owner prioritizes exploration of generic pharmaceuticals and follow-on biolo
 The project owner explicitly approved the Planner's immediately preceding B1E v1.0 decision request. The [approved text](https://github.com/siriponsri/patent-to-pilot/blob/b0e7ba42480d5c64e3af8c54ac5e34cbffcccb87/docs/ra-pharma/ip-pharma/B1E-AMENDMENT.md) has Git-content SHA-256 75fe128312b96321a8d5ed522a1054e88269c7c835b34a43e2a458ebcec0d96b. That exact text is the frozen protocol. The execution lock is a separate artifact.
 
 Authorize at most 24 active-moiety-set and NDA groups in deterministic order, bounded known exclusions, UNKNOWN historical overlap, all failures retained, local CPU and USD 0 in new service charges. Include the three optional existence checks. Planner must verify selector, inputs and exclusions before selection and reproduce the prefix before Research checks any source. All selected groups are exposed development material. Original B1 stays BLOCKED_FRAME; B2–B4 remain NOT_RUN. D36 opportunity discovery has its own scope.
+
+## D38 · Two synthetic rituximab evidence-readiness inventories (27 November 2026)
+
+The owner approved the D36 proposed desk check, conditional on Planner reviewing Research and Product impact first. Planner completed the [impact review and bounded release](../ra-pharma/ip-pharma/D38-IMPACT-REVIEW.md) before dispatch. Compare the manual guidance checklist and a one-row evidence record using identical inputs. Product implementation, operator recruitment, private data and broader B2–B4 research remain outside this decision.
