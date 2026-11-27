@@ -1,0 +1,164 @@
+{
+  "status": "FROZEN_VISIBLE_EDITION",
+  "lock_commit": "ddd3c5c7a03d016c3cde9e2639c88c844b3c58b7",
+  "release_commit": "ded856e723fdcc9deaa92e3c558b927e082da2de",
+  "plan_sha256": "637aa1c855631a7e6f5182ee4ac27a40fa72a2526916758f133f568ec9e64a8d",
+  "nhso_sha256": "0a67bb71539180c88200c7194de7ff1020bc51282228566ae909ec8c298fb9b2",
+  "section": {
+    "physical_pages": [
+      141,
+      195
+    ],
+    "printed_total": 56,
+    "missing_printed_page": 20,
+    "missing_row_range": [
+      438,
+      460
+    ]
+  },
+  "procedure": "PyMuPDF 2.0 rasterized the scanned purchasing-plan section; Windows en-US OCR proposed text matches and the pinned page images governed code, descriptor, unit and position. NFKC/casefold/whitespace normalized the printed name tokens. For the combination compare the exact ordered component names after removing per-component strengths and form and reading the printed separators as component boundaries. No synonyms. Priority is at the molecule-name level; NHSO strength/indication context is carried independently. Readable items only; no inferred items from the omitted page; discovered prefix is of this exact published materialization.",
+  "observed_order": "All eight are in the exact-name stratum, so physical order alone selects within it. The first known lower-ranked priority item is liposomal amphotericin B at physical p161, printed P22, row 489, code 1072390. Adalimumab p145 row 94 code 1020420 and leuprorelin p160 row 474 code 2190510 have AMP unit and are ineligible. Non-liposomal amphotericin B is not an exact NHSO name match. No earlier same-code duplicate among the admitted prefix. The nominal missing page prevents extrapolation to the complete original schedule.",
+  "d36_excluded_rituximab": [
+    [
+      168,
+      29,
+      667,
+      "1091170"
+    ],
+    [
+      169,
+      30,
+      668,
+      "1091180"
+    ],
+    [
+      169,
+      30,
+      669,
+      "2090110"
+    ],
+    [
+      169,
+      30,
+      670,
+      "2090120"
+    ],
+    [
+      190,
+      51,
+      1170,
+      "2091250"
+    ],
+    [
+      190,
+      51,
+      1171,
+      "2091260"
+    ],
+    [
+      190,
+      51,
+      1172,
+      "2090420"
+    ]
+  ],
+  "other_exclusions": "Apply the D36 rivaroxaban/Xarelto and ELIQUIS/apixaban exclusions as well; no identified presentation-qualified row from those questions enters this prefix.",
+  "prefix": [
+    {
+      "rank": 1,
+      "physical_page": 148,
+      "printed_page": 8,
+      "row": 165,
+      "code": "2220450",
+      "descriptor": "BEVACIZUMAB 100 MG/4 ML INJ. (OCPA)",
+      "name": "Bevacizumab",
+      "unit": "VIAL",
+      "nhso_row": "7.2",
+      "nhso_fy2568_people": 348
+    },
+    {
+      "rank": 2,
+      "physical_page": 148,
+      "printed_page": 8,
+      "row": 171,
+      "code": "1250420",
+      "descriptor": "BOTULINUM TOXIN Type A 500 UNIT INJECTION (LYOPHILISED)",
+      "name": "Botulinum toxin type A",
+      "unit": "VIAL",
+      "nhso_row": "1",
+      "nhso_fy2568_people": 6525
+    },
+    {
+      "rank": 3,
+      "physical_page": 149,
+      "printed_page": 9,
+      "row": 199,
+      "code": "2071900",
+      "descriptor": "CEFTAZIDIME 2 GM + AVIBACTAM 0.5 GM INJ.",
+      "name": "Ceftazidime + Avibactam",
+      "unit": "VIAL",
+      "nhso_row": "28",
+      "nhso_fy2568_people": 883
+    },
+    {
+      "rank": 4,
+      "physical_page": 154,
+      "printed_page": 14,
+      "row": 308,
+      "code": "1090780",
+      "descriptor": "DOCETAXEL 20 MG INJECTION",
+      "name": "Docetaxel",
+      "unit": "VIAL",
+      "nhso_row": "4",
+      "nhso_fy2568_people": 4480
+    },
+    {
+      "rank": 5,
+      "physical_page": 154,
+      "printed_page": 14,
+      "row": 309,
+      "code": "1090770",
+      "descriptor": "DOCETAXEL 80 MG INJECTION",
+      "name": "Docetaxel",
+      "unit": "VIAL",
+      "nhso_row": "4",
+      "nhso_fy2568_people": 4480
+    },
+    {
+      "rank": 6,
+      "physical_page": 156,
+      "printed_page": 16,
+      "row": 351,
+      "code": "1110220",
+      "descriptor": "FACTOR VIII CONCENTRATE DRIED 250 IU INJECTION#",
+      "name": "Factor VIII concentrate",
+      "unit": "VIAL",
+      "nhso_row": "29",
+      "nhso_fy2568_people": 59
+    },
+    {
+      "rank": 7,
+      "physical_page": 159,
+      "printed_page": 19,
+      "row": 435,
+      "code": "1020440",
+      "descriptor": "INFLIXIMAB 100 MG FOR INJECTION***",
+      "name": "Infliximab",
+      "unit": "VIAL",
+      "nhso_row": "31",
+      "nhso_fy2568_people": 459
+    },
+    {
+      "rank": 8,
+      "physical_page": 160,
+      "printed_page": 21,
+      "row": 473,
+      "code": "1190830",
+      "descriptor": "LEUPRORELIN ACETATE 11.25 MG FOR INJECTION",
+      "name": "Leuprorelin acetate",
+      "unit": "VIAL",
+      "nhso_row": "2",
+      "nhso_fy2568_people": 2558
+    }
+  ]
+}

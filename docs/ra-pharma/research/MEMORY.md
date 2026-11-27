@@ -1,5 +1,9 @@
 # Research memory
 
+## D39 Batch 4 procurement screen · 27 November 2026
+
+The [receipt](ip-pharma/d39/BATCH4-RECEIPT.md) records two matching D36 digests and eight assessed plan codes. A scanned schedule can omit a printed page despite matching the exact published digest. Retain both physical and printed locators and limit the prefix to the readable pinned edition. Record issuer, item, unit and period before reconciling a plan with an award or actual payment. A molecule-name match to NHSO is a context signal in people, including grouped strengths or indications. It supplies no hospital denominator. Keep a failed NDI or e-GP lookup separate from a no-match result. Eight blocked, zero promoted, USD 0, empty queue and early stop pending Planner review.
+
 ## D39 Batch 3 blocked frame · 27 November 2026
 
 The [receipt](ip-pharma/d39/BATCH3-RECEIPT.md) records the official monthly listing and October CSV schema. Reference proper and proprietary names do not directly supply the reference BLA required for the grouping key. Pin the edition and an authoritative linkage rule before any future release that depends on this grouping. Keep an undefined prefix outside screening and comparison denominators. The text browser rejected the CSV media type, and a same-link byte fetch recovered the schema. Treat this as a recorded client-format retry deviation. Thai registration, public review availability and platform comparisons remain unmeasured. Planner disposition is next.

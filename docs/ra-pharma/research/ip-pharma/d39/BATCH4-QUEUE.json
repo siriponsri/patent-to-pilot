@@ -1,0 +1,41 @@
+{
+  "status": "FROZEN_EMPTY_EARLY_STOP_FOR_PLANNER_REVIEW",
+  "lock_commit": "ddd3c5c7a03d016c3cde9e2639c88c844b3c58b7",
+  "prefix_sha256": "4fead53c1d0aba3000e13b5bb804be79c1cfeb359bb929489fac5a33387fb893",
+  "ranking_order": [
+    "consequence",
+    "market_binding",
+    "closest_work_gap",
+    "packet_readiness"
+  ],
+  "tracks": [
+    {
+      "batch": 2,
+      "screened": 8,
+      "listed": 1,
+      "rejected": 4,
+      "blocked": 3,
+      "promoted": 0,
+      "exclusion": "US-only alfuzosin request with unknown Thai applicability and manual tie."
+    },
+    {
+      "batch": 3,
+      "screened": null,
+      "listed": 0,
+      "promoted": 0,
+      "frame": "BLOCKED_FRAME",
+      "exclusion": "Undefined reference-BLA grouping and no candidate prefix."
+    },
+    {
+      "batch": 4,
+      "screened": 8,
+      "listed": 0,
+      "blocked": 8,
+      "promoted": 0,
+      "exclusion": "No exact regulator confirmation. Award reconciliation lacks an admitted exact witness. Eight visible-edition items assessed."
+    }
+  ],
+  "ranked_leads": [],
+  "alternates": [],
+  "batch5": "NOT_RUN"
+}

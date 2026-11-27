@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## D39 Batch 4 · 27 November 2026
+
+**PARTIAL_SCREEN.** Both pinned Thai PDF digests matched. Eight visible-edition plan codes were frozen and assessed, with eight blocked at exact regulator classification after the NDI setup timeouts. The hospital indexes exposed no attributable title within the reviewed prefix and e-GP disconnected. Zero listed and zero promoted. The [receipt](ip-pharma/d39/BATCH4-RECEIPT.md) records the printed-page gap, issuer and fiscal dates, the source and access ledgers, and a buyer's manual reconciliation. Two frame accesses, five detail accesses, two retries and USD 0.
+
+Planner should verify physical pp159–160 (printed P19 and P21), infliximab row 435/code 1020440, and NHSO Table 2-14 row 31 and the notes on printed p134. The strongest question asks for a matching award and fulfillment record before treating the planned 200 vials as secured. Exact Thai registration is missing, and the manual buyer would request the same records. The [frozen cross-track queue](ip-pharma/d39/BATCH4-QUEUE.json) is empty. Batch 5 remains NOT_RUN under the early-stop rule. Planner owns the checkpoint and disposition.
+
 ## D39 Batch 3 · 27 November 2026
 
 **BLOCKED_FRAME.** The [receipt](ip-pharma/d39/BATCH3-RECEIPT.md), [frame record](ip-pharma/d39/BATCH3-PREFIX.json) and [access ledger](ip-pharma/d39/BATCH3-ACCESSES.jsonl) document the Purple Book monthly listing and October CSV diagnostic. The two headers expose reference names without a reference BLA. The frozen rules did not establish a reference BLA binding or choice among full monthly editions. No prefix was frozen. Candidate details, Thai checks and matched comparisons are NOT_RUN. Two logical accesses, one client recovery, USD 0 incremental service charges.
