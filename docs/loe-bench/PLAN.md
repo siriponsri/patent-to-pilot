@@ -219,7 +219,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | T4c | Power and type-I for recall@20% (applies the α rule) | GPT-6.2 Sol xhigh | CP4 | dispatched |
 | 2 | K22 | Legally faithful graph trial (M3 only, pre-declared rule) | GPT-6.2 Sol xhigh | REG | merged: v1 retained; v2 kept behind a flag |
 | 2 | E4b | LLM arm infrastructure on RunPod (USD 20 cap): test pod create/delete, upload estimate, network volume with model and harness | GPT-6.2 Sol high | owner envelope | dispatched |
-| 2 | FREEZE | Rebuild the frozen config on merged code (REG fix, K22 decision); T1v3 rule unchanged; reconcile the H2 swing (T1v3 −1.1 pp vs K22 +5.5 pp) | GPT-6.2 Sol high | T1v3, K22 | dispatched |
+| 2 | FREEZE | Rebuild the frozen config on merged code (REG fix, K22 decision); T1v3 rule unchanged; reconcile the H2 swing (T1v3 −1.1 pp vs K22 +5.5 pp) | GPT-6.2 Sol high | T1v3, K22 | merged: FROZEN_FOR_PREREG. The swing comes from REG's fix of undated PIV training features; both scripts agree on identical data. H2 at 24 months is +5.49 pp [−2.00, +11.25]. Two runs are hash-identical. The C′ gate script is NOT_RUN |
+| 2 | T5 | Preregistration draft (OSF secondary-data template), then co-planner critique | GPT-6.2 Sol high, then Astra | FREEZE | dispatched |
 | 2 | REG | Verify regulatory rules in code against primary legal and FDA sources (replaces the expert review) | GPT-6.2 Sol high | — | merged: [REGULATORY-RULES.md](REGULATORY-RULES.md). One fix: undated matched PIV rows now give UNKNOWN instead of FALSE. T1v3 and T4c started before it, so the frozen config must be rebuilt on the merged code |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |

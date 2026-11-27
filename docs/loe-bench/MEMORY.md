@@ -60,3 +60,7 @@
 - **27 Nov, K22 merged (v1 retained).**
   - Warning: development H2 (M3−M1 at 24 months) moved from −1.1 pp (T1v3, before the REG fix) to +5.5 pp (K22 code, after it). Small pipeline changes shift H2 by several points, so H2 is fragile.
   - FREEZE must reconcile the two runs on the merged code and report the exact sources of the difference.
+- **27 Nov, FREEZE merged: FROZEN_FOR_PREREG.**
+  - The H2 swing (−1.1 to +5.5 pp) is explained by REG's fix of undated PIV rows in the training features. It is not a script bug, since both scripts agree on identical data.
+  - Frozen development values: H2 at 24 months +5.49 pp [−2.00, +11.25].
+  - Lesson: H2 is sensitive to how challenge evidence is coded, so the preregistration must state this.
