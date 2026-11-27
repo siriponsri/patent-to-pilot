@@ -171,7 +171,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | E7b | Relink Rai cases to drugs through Orange Book patent numbers (as-of editions) | GPT-6.2 Sol high | E7 | merged: development M1−B1 at 24 months −0.0096 (CI below 0); M3−M1 about 0 |
 | 2 | E8 | Ingest the NBER Orange Book Dataset 1985–2016 (K20) to extend the training window | GPT-6.2 Sol high | — | merged: 31 editions; 22 extra training years possible; editions about 12 months stale; licence restricts redistribution and commercial use |
 | 2 | E9 | As-of FDA product-specific guidance dates (K19) | GPT-6.2 Sol high | — | dispatched |
-| 2 | DEVX | Fixed-order development trials of K07, K09, K10, K08 and K06 under one budget | GPT-6.2 Sol high | E7b | dispatched |
+| 2 | DEVX | Fixed-order development trials of K07, K09, K10, K08 and K06 under one budget | GPT-6.2 Sol high | E7b | merged: K07 adopted; K06, K08, K09 and K10 rejected |
+| 2 | DOCS | Project-wide documentation review | GPT-6.2 Sol high | — | dispatched |
 | 2 | T4 | Power simulation for criteria v2 (H1 at Δ = −0.010) from the development structure | GPT-6.2 Sol xhigh | FIX2c | merged but NOT ACCEPTED: power about 100% even with 30 clusters, MDE 0.0039, which looks optimistic beside the development CI half-width of about 0.01; type-I 2.75% (MC CI 1.54–4.86%) |
 | 2 | T4b | Calibrate generator variance against the empirical development bootstrap; firm up type-I | GPT-6.2 Sol xhigh | T4 | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |

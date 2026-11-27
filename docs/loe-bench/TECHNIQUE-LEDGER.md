@@ -22,11 +22,11 @@ IDEA · QUEUED · TRIED-DEV (result on validation) · ADOPTED · REJECTED (reaso
 | K03 | Active-moiety key (GSRS UNII + alias union) | FIX2, FIX2b | all | Identity only (2026 GSRS release, disclosed) | ADOPTED | Fresh audit: 57/60 correct |
 | K04 | As-of challenge leaf (FDA PIV list + Rai court filings + EDGAR) | E6, E6-alt | M1, M3 (as features); M3 (as the leaf) | Dated witnesses only | ADOPTED | E7 had partial coverage. With E7b patent-number relinking (1,065 cases, 259 drugs by 2016), development at 24 months gave M1−B1 −0.0096 (CI −0.0188 to −0.0018) and M3−B1 −0.0087 (CI −0.0194 to +0.0017). At 12 months both CIs fall below 0, and M3−M1 is about 0 |
 | K05 | L2 grid {1, 10, 100}; selected value at the grid edge | T2b | M1, M3 | None | TRIED-DEV | Extend the grid (T1) |
-| K06 | Confidence discount when a decision-relevant leaf is UNKNOWN (M3), with the matching missing-input discount for M1; configurations 0 or 0.05 | CP3 scan (rank 1) | M3 policy; M1 counterpart | None | QUEUED (after E7) | — |
-| K07 | Count distinct strengths and form/route pairs at the cutoff | CP3 (rank 2) | M1, M3 | Low (as-of products only) | QUEUED | — |
-| K08 | Error selector for the emitted action (confidence plus disagreement with the age clock) | CP3 (rank 3); Calibrated Selective Classification, arXiv 2208.12084 | M1, M3 | Out-of-fold fitting only | QUEUED | — |
-| K09 | Discrete-time hazard in two annual intervals | CP3 (rank 4) | M1, M3 | None | QUEUED | — |
-| K10 | Beta calibration instead of the sigmoid | CP3 (rank 5) | M1, M3 | None | QUEUED | — |
+| K06 | Confidence discount when a decision-relevant leaf is UNKNOWN (M3), with the matching missing-input discount for M1; configurations 0 or 0.05 | CP3 scan (rank 1) | M3 policy; M1 counterpart | None | REJECTED | DEVX: failed the pre-declared adoption rule (see receipts/DEVX.md) |
+| K07 | Count distinct strengths and form/route pairs at the cutoff | CP3 (rank 2) | M1, M3 | Low (as-of products only) | ADOPTED | DEVX: M3−B1 at 24 months improved by −0.0032 (CI −0.0083 to −0.0003) against E7b. The robustness fold held at 24 months but reversed slightly at 12. M3 Brier and ECE at 24 months worsened |
+| K08 | Error selector for the emitted action (confidence plus disagreement with the age clock) | CP3 (rank 3); Calibrated Selective Classification, arXiv 2208.12084 | M1, M3 | Out-of-fold fitting only | REJECTED | DEVX: failed the pre-declared adoption rule (see receipts/DEVX.md) |
+| K09 | Discrete-time hazard in two annual intervals | CP3 (rank 4) | M1, M3 | None | REJECTED | DEVX: failed the pre-declared adoption rule (see receipts/DEVX.md) |
+| K10 | Beta calibration instead of the sigmoid | CP3 (rank 5) | M1, M3 | None | REJECTED | DEVX: failed the pre-declared adoption rule (see receipts/DEVX.md) |
 | K11 | CMS Medicare/Medicaid spending as a demand proxy | CP3; NBER w6190 | M1, M3 | High (release-date witness required) | IDEA, needs owner decision on a new source | Coverage before 2015 is poor |
 | K12 | Competing risks | CP3; DeepHit | M1, M3 | Needs a label taxonomy | IDEA, needs owner decision | — |
 | K13 | Isotonic and inductive Venn–Abers calibration | CP3; arXiv 1511.00213 | M1, M3 | None | IDEA | — |
