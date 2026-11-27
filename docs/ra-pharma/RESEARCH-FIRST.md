@@ -1,5 +1,7 @@
 # Research-first architecture study
 
+> Historical RA Pharma record. D40 superseded this mandate on 27 November 2026. RA Pharma now supplies the Thai-context demo layer for the active [LOE-Bench program](../loe-bench/PLAN.md).
+
 ## Mandate and status
 
 The owner chose research before further product development. The next research executor uses GPT 6.2 Sol at medium reasoning effort on `research/ra-pharma`. This is the coding agent setting. The study must separately identify each inference model, interface, date, prompt and tool configuration. Planner/Reviewer owns MCP literature and benchmark discovery, source and rights review, experiment release and requests for owner criticism. The study below is proposed. No new cohort, external upload, experiment, paid call, job or executor session started in this planning step.

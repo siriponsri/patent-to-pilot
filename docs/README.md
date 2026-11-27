@@ -1,20 +1,20 @@
 # Documentation map
 
-Use the [root README](../README.md) to run the local reader and the [Planner handoff](../HANDOFF.md) to resume work. The [evidence index](../INDEX-PLAN.md) keeps measured outcomes and original source locations accessible across program changes.
+Start with the [LOE-Bench documentation map](loe-bench/README.md) for the active D40 program. Use the [root README](../README.md) to run the local reader and the [evidence index](../INDEX-PLAN.md) to find results and original sources from earlier programs.
 
 ## Start here
 
 | Need | Location |
 |---|---|
-| Active program and branch ownership | [RA Pharma master plan](ra-pharma/MASTER-PLAN.md) · [Common evidence contract](ra-pharma/EVIDENCE-CONTRACT.md) |
-| Research executor | [Research brief](ra-pharma/research/BRIEF.md) · [Research handoff](ra-pharma/research/HANDOFF.md) |
-| Product executor | [Product brief](ra-pharma/product/BRIEF.md) · [Product handoff](ra-pharma/product/HANDOFF.md) |
+| Active program and branch ownership | [LOE-Bench plan and dispatch board](loe-bench/PLAN.md) · [Lane handoff](loe-bench/HANDOFF.md) |
+| Thai-context demo and RA Pharma history | [Thai open data for the demo](loe-bench/THAI-OPEN-DATA.md) · [Historical RA Pharma master plan](ra-pharma/MASTER-PLAN.md) · [Evidence contract](ra-pharma/EVIDENCE-CONTRACT.md) |
+| Historical RA Pharma executor lanes | [Research handoff](ra-pharma/research/HANDOFF.md) · [Product handoff](ra-pharma/product/HANDOFF.md) |
 | Earlier program | [S0–S5 board](evidence-scope/MASTER-PLAN.md) · [Historical research freeze](evidence-scope/FREEZE.md) · [S4 integrated validation](evidence-scope/receipts/S4-integrated-verification.md) |
 | Project overview, quick start, testing | [README.md](../README.md) |
-| Current state, blockers, running jobs, next steps | [HANDOFF.md](../HANDOFF.md) |
+| Repository handoff and earlier checkpoints | [HANDOFF.md](../HANDOFF.md) |
 | Plans, goals and evidence locations | [INDEX-PLAN.md](../INDEX-PLAN.md) |
 | Rules for every contributor and agent | [AGENTS.md](../AGENTS.md), [CLAUDE.md](../CLAUDE.md) |
-| Starting on a new account | [current handoff](../HANDOFF.md), [maintenance/AGENT-LESSONS.md](maintenance/AGENT-LESSONS.md) |
+| Starting on a new account | [LOE-Bench lane handoff](loe-bench/HANDOFF.md) · [Agent lessons](maintenance/AGENT-LESSONS.md) |
 
 ## Plans and tracking
 
@@ -28,8 +28,7 @@ Use the [root README](../README.md) to run the local reader and the [Planner han
 | Owner decisions | [maintenance/OWNER-DECISIONS-20261122.md](maintenance/OWNER-DECISIONS-20261122.md) | Dated approvals and scope changes |
 | Spending proposals and records | [maintenance/API-BUDGET-PROPOSAL-20261122.md](maintenance/API-BUDGET-PROPOSAL-20261122.md), [healthtech/research/g03-dev/g03-dev-a3-spend.json](healthtech/research/g03-dev/g03-dev-a3-spend.json) | No paid call without a recorded owner envelope |
 
-The owner's program packages (`docs/owner/`) are owner-local, untracked and read-only. They are not part of the published
-repository; tracked documents summarise or reference them but never copy them.
+Owner-local packages in `docs/owner/` stay outside the published repository. D40 assigns management of that directory to the main planner.
 
 ## Architecture and product
 
@@ -43,7 +42,7 @@ repository; tracked documents summarise or reference them but never copy them.
 
 ## Research evidence
 
-The following receipts retain their original cohorts, comparators and release scope. The new three-specialist research comparison starts from its own prospective record.
+For the active study, use the [LOE-Bench plan](loe-bench/PLAN.md) and its [task receipts](loe-bench/receipts/). The earlier receipts below retain their original cohorts, comparators and release scope.
 
 | Topic | Location |
 |---|---|
@@ -68,10 +67,12 @@ The following receipts retain their original cohorts, comparators and release sc
 
 ## Writing
 
+The project excludes arXiv:2605.24297 as a source.
+
 | Track | Location | Rule |
 |---|---|---|
 | Track overview | [writing/README.md](writing/README.md) | Never mix text, numbers or claims between tracks without noting the source |
-| The research paper | [writing/journal/](writing/journal/README.md) | Paper 86 is banned (enforced by `tests/test_org_adaptive_terminology.py`); arXiv:2605.24297 is not used |
+| The research paper | [writing/journal/](writing/journal/README.md) | Paper 86 is banned (enforced by `tests/test_org_adaptive_terminology.py`) |
 | Independent Study 2 | [writing/is2/](writing/is2/README.md) | Paper 86 allowed here only; B53 results in [writing/is2/results/](writing/is2/results/) |
 
 ## History
@@ -81,4 +82,4 @@ The following receipts retain their original cohorts, comparators and release sc
 | Handoff history before 21 Nov 2026 | [../archives/HANDOFF-HISTORY-TO-20261121.md](../archives/HANDOFF-HISTORY-TO-20261121.md) |
 | HealthTech-era history and recovery links | [healthtech/HISTORY.md](healthtech/HISTORY.md) |
 
-Historical G-numbers, HT identifiers and Paper 1–3 plans keep their original meanings. New work follows the [RA Pharma dispatch board](ra-pharma/MASTER-PLAN.md).
+Historical G-numbers, HT identifiers and Paper 1–3 plans keep their original meanings.
