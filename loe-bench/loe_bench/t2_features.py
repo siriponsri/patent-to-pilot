@@ -7,6 +7,7 @@ from datetime import date
 from .common import add_months, years_between
 from .dataset import FEATURE_NAMES
 from .evidence_graph import build_assignment, verdict_label
+from .moiety import registry_for
 from .ob_history import OBHistory
 
 OB_FEATURES = (
@@ -43,14 +44,16 @@ def _product_id(row):
 
 
 class _EditionIndex:
-    def __init__(self, edition):
+    def __init__(self, edition, registry=None):
         self.by_key = defaultdict(set)
         self.patents = defaultdict(list)
         self.exclusivities = defaultdict(list)
         for product in edition.products:
             approved = product["approval_date"]
             if product["appl_type"] in ("N", "") and (approved is None or approved <= edition.edition_date):
-                self.by_key[product["ingredient_key"]].add(_product_id(product))
+                key = (registry.composition(product["ingredient"].split(";")).key
+                       if registry is not None else product["ingredient_key"])
+                self.by_key[key].add(_product_id(product))
         for patent in edition.patents:
             submitted = patent["submission_date"]
             if submitted is None or submitted <= edition.edition_date:
@@ -79,9 +82,15 @@ def _remaining(records, cutoff):
 
 
 class AsOfBuilder:
-    def __init__(self, history: OBHistory):
+    def __init__(self, history: OBHistory, *, key_mode=None, gsrs_path=None):
         self.history = history
         self._indexes = {}
+        if key_mode is None:
+            key_mode = "moiety" if history.data_dir is not None or gsrs_path else "legacy"
+        if key_mode not in {"moiety", "legacy"}:
+            raise ValueError(f"unsupported entity key mode: {key_mode}")
+        self.registry = (registry_for(history.data_dir or ".", gsrs_path)
+                         if key_mode == "moiety" else None)
 
     def build(self, key: str, cutoff: date, horizon: int, base_features: dict) -> AsOfFeatures:
         coverage = edition_coverage(self.history, cutoff)
@@ -91,7 +100,7 @@ class AsOfBuilder:
         if status == "FRESH":
             edition_date = coverage["latest_edition"]
             if edition_date not in self._indexes:
-                self._indexes[edition_date] = _EditionIndex(self.history.edition_asof(cutoff))
+                self._indexes[edition_date] = _EditionIndex(self.history.edition_asof(cutoff), self.registry)
             patents, exclusivities = self._indexes[edition_date].records(key)
             if patents is None:
                 status = "NOT_LISTED"

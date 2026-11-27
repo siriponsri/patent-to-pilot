@@ -146,6 +146,7 @@ class OBHistory:
     def __init__(self, editions):
         self._ed = sorted(editions, key=lambda e: e[0])
         self._cache = {}
+        self.data_dir = None
 
     @classmethod
     def from_manifest(cls, manifest_path: str, data_dir: str = DEFAULT_DIR):
@@ -155,7 +156,9 @@ class OBHistory:
         for e in m["editions"]:
             d = date.fromisoformat(e["edition_date"])
             eds.append((d, (lambda p=os.path.join(data_dir, e["file"]), d=d: load_edition(p, d))))
-        return cls(eds)
+        history = cls(eds)
+        history.data_dir = data_dir
+        return history
 
     def edition_dates(self) -> List[date]:
         return [d for d, _ in self._ed]
