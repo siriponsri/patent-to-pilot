@@ -60,9 +60,9 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 
 | Role | Model | Scope |
 |---|---|---|
-| Orchestrator (Planner) | Claude Opus 5.5 | Briefs, integration, the `research/loe-bench` branch, the lane HANDOFF and MEMORY, owner reports in Thai. Only the Orchestrator manages files in `docs/owner/` (owner approval, D40). |
-| Co-planner and co-reviewer | GPT-6.2 Sol, medium (Codex) | Critiques plans and preregistration, checks novelty and leakage, and reviews every executor branch before merge. It does not commit. |
-| Executor | Claude Sonnet 5.5, low or medium effort | Completes one task card per session in its own worktree. |
+| Main planner and reviewer | Claude Opus 5.5 | Briefs, review of every executor branch (receipt, key diffs, full test rerun, spot reproduction of numbers), integration, lane HANDOFF and MEMORY, owner reports in Thai. Only this role manages `docs/owner/` (D40). |
+| Co-planner | GPT-6.2 Astra high (proposed) | Methodology decisions only, such as the preregistration and the C′ gate. Read-only. Wave 1 CP1 used GPT-6.2 Sol medium. |
+| Executor | GPT models via Codex from Wave 2 (owner change, 27 Nov). Proposed mapping: GPT-6.2 Sol xhigh for FIX1, T4 and T3; Sol high for T2, T1, the T5 draft and the E4 rerun; GPT-6 Luna high for T7, T9, T12 and Thai demo curation | One task card per session in its own worktree. Wave 1 used Claude Sonnet 5.5. |
 
 **Executor protocol.**
 
@@ -70,7 +70,7 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 - Create the branch `loe/<task-id>`.
 - Write only the paths listed in the card, plus `docs/loe-bench/receipts/<task-id>.md`.
 - Commit with explicit paths, push the task branch, and report briefly.
-- Leave the lane HANDOFF and MEMORY to the Orchestrator, who updates them at integration.
+- Leave the lane HANDOFF and MEMORY to the main planner, who updates them at integration.
 - Keep raw data outside Git at `../_private_artifacts/loe-bench/`. Record its hashes in Git.
 - Use Python's standard library only. Do not use sklearn, pandas or scipy. numpy is optional.
 
@@ -78,12 +78,13 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 
 | Wave | ID | Card | Executor | Depends on | Status |
 |---|---|---|---|---|---|
-| 1 | E1 | T0 + fresh openFDA fetch, MANIFEST comparison, profile, G3a S0 input freeze | Sonnet low | none | dispatched |
-| 1 | E2 | T6 historical Orange Book editions (G1), as-of parser and leakage test | Sonnet medium | none | dispatched |
-| 1 | E3 | T8 Purple Book open-access feasibility and monthly download | Sonnet low | none | dispatched |
-| 1 | E4 | T10 dr-train LLM arm, inventory, harness and synthetic smoke (V100 only) | Sonnet medium | none | dispatched |
-| 1 | E5 | Thai open-data feasibility for the Thai-context demo | Sonnet low | none | dispatched |
-| 1 | CP1 | Co-planner critique of design, hypotheses and novelty | GPT-6.2 Sol medium | none | dispatched |
+| 1 | E1 | T0 + fresh openFDA fetch, MANIFEST comparison, profile, G3a S0 input freeze | Sonnet low | none | merged: t0 2026-11-27, tag `loe-S0-input-20261127` |
+| 1 | E2 | T6 historical Orange Book editions (G1), as-of parser and leakage test | Sonnet medium | none | merged: 19 editions 2009–2026; gaps 2010, 2017, 2019-01 to 2020-11 |
+| 1 | E3 | T8 Purple Book open-access feasibility and monthly download | Sonnet low | none | merged: OPEN_ACCESS_OK, 96 351(k) BLAs, 21 reference products |
+| 1 | E4 | T10 dr-train LLM arm, inventory, harness and synthetic smoke (V100 only) | Sonnet medium | none | merged PARTIAL: harness + mock tests; GPU smoke BLOCKED (dr-train offline) |
+| 1 | E5 | Thai open-data feasibility for the Thai-context demo | Sonnet low | none | merged: no Thai sample retrieved; curated-link demo recommended |
+| 1 | CP1 | Co-planner critique of design, hypotheses and novelty | GPT-6.2 Sol medium | none | adopted (see CP1 section) |
+| 2 | FIX1 | Fix CP1 code defects with leakage, censoring and tie tests | GPT executor | CP1 | next |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft, then co-reviewer | Sonnet, then GPT | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
