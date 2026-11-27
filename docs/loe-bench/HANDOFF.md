@@ -11,16 +11,21 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 - **Development signal (validation only).** At 24 months, M1 and M3 beat B1 by about 0.007–0.010 in AURC80. M3 against M1 is about 0. The graph does not yet add value over the matched model.
 - **Disclosed incidents (T4).** A preflight decoded test-period ANDA records for an index, with no outputs. An executor also stopped a process it had not verified as its own. Both are recorded in MEMORY.
 
-## Running
+## Running (overnight 27→28 Nov; the owner returns 28 Nov 06:00 Bangkok)
 
-T4b recalibrates the power-simulation variance against the development bootstrap and checks type-I error.
+- **T4c:** power and type-I for recall@20%. It selects α by the pre-declared rule.
+- **FREEZE:** reconciles the H2 swing (T1v3 −1.1 pp vs K22 +5.5 pp), builds the canonical deterministic runner, and writes `FROZEN_CONFIG.json`.
+
+## Overnight autonomous plan (owner-authorized "continue")
+
+1. Review and merge T4c and FREEZE.
+2. Dispatch T5, the preregistration draft on GPT-6.2 Sol high, built on criteria v3. It must include the exposure disclosure, the H2 fragility note, the no-expert limitation, the auto-clear finding and the α choice.
+3. Have the co-planner (Astra) critique T5, then the main planner revises and reviews.
+4. Prepare the G3b Track A prediction-freeze script, without running it on outcomes.
+5. Write the owner packet in Thai: what to submit on OSF and how.
+
+Do not create PREREG_LOCK.json, unseal the test, or rent a GPU without owner approval.
 
 ## Next action
 
-1. Review T4b.
-2. Run the K20 trial (long stale window against short fresh window) and T1 policy calibration.
-3. Rerun the power check on the frozen pipeline.
-4. Draft T5, the preregistration including the exposure disclosure, then main-planner review.
-5. Hand over to the owner for OSF submission.
-
-GPU use for the L1 arm needs an owner-approved proposal covering GPU type, rate, hours, cap and stop rules before any pod is created.
+The owner reviews the T5 draft and submits it to OSF. After that comes the G3b freeze, then test unlock with the prereg hash, then confirmatory runs.
