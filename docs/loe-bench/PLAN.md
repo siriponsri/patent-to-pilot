@@ -116,6 +116,39 @@ The owner authorized the main planner to propose better criteria grounded in ver
 
 The Westfall & Krishen (2001) gatekeeping reference could not be verified, so it is not cited.
 
+## Confirmatory criteria v3 (owner-approved 27 November 2026; supersedes v2 endpoints)
+
+**Why v2 was replaced.** In development (K20T1), AURC80 with max(p, 1−p) confidence rewarded confident NO-ENTRY calls. At the 24-month and 90% target, M3 answered 991 of 1,083 rows, all of them "no entry", and missed every answered event. Its selective error was still only 5.05%. The metric therefore measured how well a model orders low-risk cases, not whether it helps a scarce evaluator find upcoming entries. Selective-classification literature notes that accepted-set error alone hides silent failures ([Traub et al., NeurIPS 2024](https://proceedings.neurips.cc/paper_files/paper/2024/file/047c84ec50bd8ea29349b996fc64af4b-Paper-Conference.pdf)). Under class imbalance, precision-recall views are more informative than accuracy-type views ([Saito & Rehmsmeier, PLOS ONE 2015](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118432)). Both were opened by the CP4 co-planner on 27 Nov 2026. The endpoint was chosen on workflow and validity grounds. The development numbers in [CP4](CP4-METRIC-REDESIGN.md) are illustrative only, and the test stays sealed.
+
+**Primary endpoint: entry recall at a 20% review budget.** At each annual cutoff, every arm ranks the eligible rows by its **native** entry-risk score. The top floor(N_t/5) rows go to the evaluator queue. Recall is the number of queued event rows divided by all event rows, pooled over cutoffs, with expected capture at boundary ties.
+
+- Native scores avoid the calibration-induced rank reversal that CP4 found for B1 at 12 months.
+- Queue precision and distinct event-drug capture are reported alongside recall.
+- The 20% budget represents an evaluator who can review one in five drug-years. It is a design assumption, owner-approved.
+
+**Fixed-sequence family** (FDA [*Multiple Endpoints in Clinical Trials*](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/multiple-endpoints-clinical-trials), 2022, section "The Fixed-Sequence Method"):
+
+1. **H1:** recall@20%(M3) − recall@20%(B1) > 0 at 24 months.
+2. **H2:** recall@20%(M3) − recall@20%(M1) > 0 at 24 months.
+3. **H3:** recall@20%(M3) − recall@20%(B1) > 0 at 12 months.
+
+Each step uses a paired whole-drug cluster bootstrap with at least 2,000 draws ([Field & Welsh 2007](https://doi.org/10.1111/j.1467-9868.2007.00593.x)). A step succeeds when the lower percentile bound is strictly above 0. The family stops at the first failed or unevaluable step, and any undefined replicate means no confirmatory result.
+
+**α rule (pre-declared).** The T4 rerun estimates the H1 type-I error with at least 12,000 null datasets. Use one-sided α = 0.025 if the Monte Carlo 95% upper bound is 2.5% or less, otherwise 0.020. The choice is fixed before preregistration.
+
+**Practical usefulness.** A difference of at least +10 percentage points of recall counts as useful. It is reported next to statistical success, and it is not a gate.
+
+**Secondary (non-confirmatory).** Average precision; expected decision loss with illustrative costs (missed clear 10, false flag 1, referral 0.5); AURC80 and E-AURC for continuity with v2; calibration (Brier, ECE); auto-clear safety, meaning missed events among auto-cleared rows; referral workload; and a descriptive analysis of the strict post-2023 cohort and of Track B.
+
+**Policy.** Asymmetric thresholds: auto-clear when p ≤ lo and flag entry when p ≥ hi, with lo and hi chosen on an inner development slice to meet the review budget and an auto-clear safety target. The symmetric lo = 1 − hi rule is retired.
+
+**No external domain expert (owner statement, 27 Nov 2026).** The planned expert review of exclusivity and patent assumptions (G6) cannot take place. Mitigation:
+
+- An executor verifies every regulatory rule the code uses against primary legal and FDA sources: NCE 5-year exclusivity, 30-month stay, 180-day exclusivity, pediatric exclusivity, and the 12-year reference-product exclusivity for biologics.
+- The co-planner cross-checks that verification.
+- The manuscript states the absence of expert adjudication as a limitation.
+- The output remains a triage aid, not a legal opinion.
+
 ## Planner evidence (D32)
 
 | Claim or task | Primary paper | Benchmark or competitor | Status |
@@ -179,7 +212,10 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | T4b | Calibrate generator variance against the empirical development bootstrap; firm up type-I | GPT-6.2 Sol xhigh | T4 | merged: variance passes 6/6 (simulated SD 0.91–1.04× empirical); H1 power ≥ 80% from 30 event clusters at Δ = −0.010; MDE about 0.0039 at 75 clusters; type-I 2.81% (2.53–3.12) at α = 0.025 and 2.24% (1.99–2.52) at α = 0.020 |
 | 2 | — | (Superseded by the separate T7, T2, T4 and T1 rows. Executors are GPT models from Wave 2.) | — | — | superseded |
 | 2 | K20+T1 | Long-window trial (pre-declared rule), then threshold and policy freeze | GPT-6.2 Sol high | E8, T4b | merged: K20 rejected. T1 failed acceptance: coverage targets met at 3/12, and every confident answer is NO ENTRY (class imbalance) |
-| 2 | CP4 | Co-planner: metric and policy redesign under about 5% prevalence (criteria v3 options) | GPT-6.2 Astra high | K20T1 | dispatched |
+| 2 | CP4 | Co-planner: metric and policy redesign under about 5% prevalence (criteria v3 options) | GPT-6.2 Astra high | K20T1 | merged; criteria v3 owner-approved |
+| 2 | T1v3 | Asymmetric policy freeze (lo/hi) for the review budget and auto-clear safety, with native-score queues | GPT-6.2 Sol high | CP4 | dispatched |
+| 2 | T4c | Power and type-I for recall@20% (applies the α rule) | GPT-6.2 Sol xhigh | CP4 | dispatched |
+| 2 | REG | Verify regulatory rules in code against primary legal and FDA sources (replaces the expert review) | GPT-6.2 Sol high | — | dispatched |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
 | 3 | — | G3b prediction freeze, T3 ablation (GPT-6.2 Sol xhigh), T9 re-score and T12 table builder (GPT-6 Luna high, scripted), L1 arm run (GPU proposal to the owner first) | GPT | G2 | waiting |

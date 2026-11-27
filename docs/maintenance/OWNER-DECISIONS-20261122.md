@@ -186,3 +186,10 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
 - 27 Nov 2026: The owner approved the C′ primary-test design in [PLAN.md](../loe-bench/PLAN.md#cp2-co-planner-review-and-main-planner-decision-27-november-2026): C′ at 24 months on the test cutoffs from 2017 onward, with a sealed test and a candid disclosure of the earlier aggregate baseline exposure. The strict post-2023 cohort is a descriptive sensitivity subset, and Track A is the fully clean confirmation.
 - 27 Nov 2026: The owner approved [confirmatory criteria v2](../loe-bench/PLAN.md#confirmatory-criteria-v2-main-planner-proposal-owner-approved-27-november-2026), a fixed-sequence test of H1 (M3 − B1 at 24 months), then H2 (M3 − M1 at 24 months), then H3 (M3 − B1 at 12 months), each one-sided at α = 0.025. M1 − B1, E-AURC and calibration are secondary. The owner also asked the GPT-6.2 Astra co-planner to search for alternative patent-challenge evidence sources (E6-alt).
 - 27 Nov 2026, role update: this supersedes the initial D40 role split above. Claude Opus is the main planner and the only reviewer, GPT-6.2 Astra high is co-planner, and GPT models are executors (owner-approved model mapping in [PLAN.md](../loe-bench/PLAN.md#roles)).
+- 27 Nov 2026: The owner approved [confirmatory criteria v3](../loe-bench/PLAN.md#confirmatory-criteria-v3-owner-approved-27-november-2026-supersedes-v2-endpoints).
+  - Primary endpoint: entry recall at a 20% review budget, ranked by native scores, using the fixed sequence H1 → H2 → H3.
+  - Useful effect: +10 percentage points.
+  - α: chosen by the pre-declared T4 rule, 0.025 or 0.020.
+  - Secondary endpoints: AP, decision loss and the v2 metrics.
+
+  The owner asked that reasons and references be recorded, and stated that no external domain expert is available. Regulatory assumptions will instead be verified against primary sources (REG) and disclosed as a limitation.
