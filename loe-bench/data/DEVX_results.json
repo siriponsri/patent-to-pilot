@@ -1,0 +1,5760 @@
+{
+  "baseline_commit": "c4281994",
+  "baseline_replay_verified": true,
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 20261127,
+    "unit": "drug"
+  },
+  "configuration_counts_per_arm": {
+    "M1": {
+      "comparison_entries_per_horizon": 10,
+      "comparison_entries_total_both_horizons": 20,
+      "distinct_primary_per_horizon_including_baseline": 6,
+      "distinct_primary_total_both_horizons_including_baseline": 12,
+      "new_candidates_per_horizon": 5,
+      "robustness_refits_per_horizon": 2
+    },
+    "M3": {
+      "comparison_entries_per_horizon": 10,
+      "comparison_entries_total_both_horizons": 20,
+      "distinct_primary_per_horizon_including_baseline": 6,
+      "distinct_primary_total_both_horizons_including_baseline": 12,
+      "new_candidates_per_horizon": 5,
+      "robustness_refits_per_horizon": 2
+    }
+  },
+  "final_pipeline_flags": {
+    "K06": false,
+    "K07": true,
+    "K08": false,
+    "K09": false,
+    "K10": false
+  },
+  "input_sha256": {
+    "court_manifest": {
+      "file": "E7_sources.json",
+      "sha256": "e7ab32b01e05180b164081b422ded6ae226b40a20f147733285aa42aa7c925e2"
+    },
+    "e7b_summary": {
+      "file": "E7b_dev_summary.json",
+      "sha256": "ee62fede25e7c9424834b319bd79929a980cea3b3eea41ba728646b01d0d0206"
+    },
+    "gsrs": {
+      "file": "dump-public-2026-08-06.gsrs",
+      "sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad"
+    },
+    "ob_manifest": {
+      "file": "OB_EDITIONS.json",
+      "sha256": "526ed04cc517f1221bb2ce7b3f03e3bd13e86a7cc6a1db5f936e26a1aaecaf1d"
+    },
+    "orange_book_coverage": {
+      "2010-01-01": {
+        "age_days": 77,
+        "availability_proof": {
+          "date": "2009-11-04",
+          "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20091104091455"
+        },
+        "chosen_edition": "2009-10-16",
+        "freshness_floor": "2009-07-01",
+        "latest_proven_age_days": 77,
+        "latest_proven_availability": {
+          "date": "2009-11-04",
+          "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20091104091455"
+        },
+        "latest_proven_edition": "2009-10-16",
+        "source": {
+          "file": "ob_20091104091455.zip",
+          "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2011-01-01": {
+        "age_days": null,
+        "availability_proof": null,
+        "chosen_edition": null,
+        "freshness_floor": "2010-07-01",
+        "latest_proven_age_days": 375,
+        "latest_proven_availability": {
+          "date": "2010-01-13",
+          "edition_sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20100113002223"
+        },
+        "latest_proven_edition": "2009-12-22",
+        "source": null,
+        "status": "STALE"
+      },
+      "2012-01-01": {
+        "age_days": 18,
+        "availability_proof": {
+          "date": "2011-12-29",
+          "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20111229223919"
+        },
+        "chosen_edition": "2011-12-14",
+        "freshness_floor": "2011-07-01",
+        "latest_proven_age_days": 18,
+        "latest_proven_availability": {
+          "date": "2011-12-29",
+          "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20111229223919"
+        },
+        "latest_proven_edition": "2011-12-14",
+        "source": {
+          "file": "ob_20111229223919.zip",
+          "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2013-01-01": {
+        "age_days": 106,
+        "availability_proof": {
+          "date": "2012-09-21",
+          "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20120921215526"
+        },
+        "chosen_edition": "2012-09-17",
+        "freshness_floor": "2012-07-01",
+        "latest_proven_age_days": 106,
+        "latest_proven_availability": {
+          "date": "2012-09-21",
+          "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20120921215526"
+        },
+        "latest_proven_edition": "2012-09-17",
+        "source": {
+          "file": "ob_20120921215526.zip",
+          "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2014-01-01": {
+        "age_days": 124,
+        "availability_proof": {
+          "date": "2013-09-06",
+          "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20130906105914"
+        },
+        "chosen_edition": "2013-08-30",
+        "freshness_floor": "2013-07-01",
+        "latest_proven_age_days": 124,
+        "latest_proven_availability": {
+          "date": "2013-09-06",
+          "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20130906105914"
+        },
+        "latest_proven_edition": "2013-08-30",
+        "source": {
+          "file": "ob_20130906105914.zip",
+          "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2015-01-01": {
+        "age_days": 113,
+        "availability_proof": {
+          "date": "2014-09-15",
+          "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20140915104404"
+        },
+        "chosen_edition": "2014-09-10",
+        "freshness_floor": "2014-07-01",
+        "latest_proven_age_days": 113,
+        "latest_proven_availability": {
+          "date": "2014-09-15",
+          "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20140915104404"
+        },
+        "latest_proven_edition": "2014-09-10",
+        "source": {
+          "file": "ob_20140915104404.zip",
+          "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      }
+    },
+    "piv_manifest": {
+      "file": "PIV_EDITIONS.json",
+      "sha256": "28b39cd1eedd9094425c549cf79ec398226e5029c0a9b90fa1001e31a2933499"
+    },
+    "s0_files": {
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+      "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f"
+    },
+    "s0_manifest": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "sha256": "f6d827361582f3aa5ad79621f784fc1b3260e5ff91c068194323c88d5ed871ff"
+    }
+  },
+  "observation_end": "2016-01-01",
+  "primary_cohorts": {
+    "12": {
+      "hazard_train_intervals": {
+        "year_1": 547,
+        "year_2": 21
+      },
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 547,
+      "validation_breadth_missing_rows": {
+        "form_route_missing": 36,
+        "strength_missing": 94
+      },
+      "validation_cutoffs": [
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "validation_drug_clusters": 609,
+      "validation_event_clusters": 90,
+      "validation_rows": 2161,
+      "validation_verdicts": {
+        "BLOCKED": 587,
+        "CONTESTED": 1487,
+        "OPEN": 87
+      },
+      "verdicts_by_cutoff": {
+        "2010-01-01": {
+          "BLOCKED": 238,
+          "CONTESTED": 288,
+          "OPEN": 21
+        },
+        "2012-01-01": {
+          "BLOCKED": 206,
+          "CONTESTED": 302,
+          "OPEN": 25
+        },
+        "2013-01-01": {
+          "BLOCKED": 117,
+          "CONTESTED": 404,
+          "OPEN": 18
+        },
+        "2014-01-01": {
+          "BLOCKED": 130,
+          "CONTESTED": 396,
+          "OPEN": 18
+        },
+        "2015-01-01": {
+          "BLOCKED": 134,
+          "CONTESTED": 385,
+          "OPEN": 26
+        }
+      }
+    },
+    "24": {
+      "hazard_train_intervals": {
+        "year_1": 547,
+        "year_2": 522
+      },
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 547,
+      "validation_breadth_missing_rows": {
+        "form_route_missing": 26,
+        "strength_missing": 55
+      },
+      "validation_cutoffs": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
+      "validation_drug_clusters": 561,
+      "validation_event_clusters": 67,
+      "validation_rows": 1083,
+      "validation_verdicts": {
+        "BLOCKED": 181,
+        "CONTESTED": 847,
+        "OPEN": 55
+      },
+      "verdicts_by_cutoff": {
+        "2010-01-01": {
+          "BLOCKED": 209,
+          "CONTESTED": 303,
+          "OPEN": 35
+        },
+        "2013-01-01": {
+          "BLOCKED": 88,
+          "CONTESTED": 428,
+          "OPEN": 23
+        },
+        "2014-01-01": {
+          "BLOCKED": 93,
+          "CONTESTED": 419,
+          "OPEN": 32
+        }
+      }
+    }
+  },
+  "protocol_sha256": "07a0bc82f4996ff17d779803621e25ab737e4b3dc269d88c1df6541fccd0489f",
+  "runtime": {
+    "numpy": "2.5.4",
+    "python": "3.12.10"
+  },
+  "sealed_test_start": "2017-01-01",
+  "status": "DEVELOPMENT_ONLY",
+  "trials": [
+    {
+      "adopted": true,
+      "checks": {
+        "M1_minus_B1_at_24": {
+          "ceiling": 0.001,
+          "delta": -0.0019332709729157523,
+          "pass": true
+        },
+        "M3_minus_B1_at_12": {
+          "ceiling": 0.001,
+          "delta": -0.0008954028041638397,
+          "pass": true
+        },
+        "M3_minus_B1_at_24": {
+          "ceiling": -0.001,
+          "delta": -0.003204961113980595,
+          "pass": true
+        }
+      },
+      "configurations": {
+        "M1": [
+          {
+            "flags": [],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ],
+        "M3": [
+          {
+            "flags": [],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ]
+      },
+      "horizons": {
+        "12": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2133,
+                "aurc80": 0.011846569590160764,
+                "aurc80_status": "evaluated",
+                "brier": 0.03674256729376864,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.02297195428303071,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03890182482203149,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09274870399234696,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987043035631652,
+                "ece": 0.007144546883893972,
+                "ece_bin_counts": [
+                  1921,
+                  176,
+                  54,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2134,
+                "aurc80": 0.010917340841901619,
+                "aurc80_status": "evaluated",
+                "brier": 0.03698493066914738,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022649326102559934,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038990989123025024,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.0994216083665126,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987505784359093,
+                "ece": 0.007901178673973492,
+                "ece_bin_counts": [
+                  1943,
+                  159,
+                  50,
+                  7,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.012684213763467575,
+                  -0.0010415795390128092
+                ],
+                "delta": -0.006728109119559714,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.013472666103055505,
+                  -0.0023465775820717353
+                ],
+                "delta": -0.007657337867818859,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0019021030706279744,
+                  0.00015685092304220175
+                ],
+                "delta": -0.0009292287482591446,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                -0.0015102491890003136,
+                -3.2273532093401655e-05
+              ],
+              "delta": -0.0007165280665590978,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                -0.0015102491890003136,
+                -3.2273532093401655e-05
+              ],
+              "delta": -0.0007165280665590978,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                -0.0016909846345539974,
+                -0.00021582740820927718
+              ],
+              "delta": -0.0008954028041638397,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                -0.0016909846345539974,
+                -0.00021582740820927718
+              ],
+              "delta": -0.0008954028041638397,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.0005904263902133337,
+                0.00019480797396439
+              ],
+              "delta": -0.00017887473760474192,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2137,
+                "aurc80": 0.012563097656719861,
+                "aurc80_status": "evaluated",
+                "brier": 0.0367564733097604,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022987539633020172,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038895961559871864,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09308917492275778,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.988894030541416,
+                "ece": 0.00642790618421682,
+                "ece_bin_counts": [
+                  1932,
+                  167,
+                  53,
+                  9,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2135,
+                "aurc80": 0.011812743646065459,
+                "aurc80_status": "evaluated",
+                "brier": 0.03710660843738443,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022843973922958533,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03903807215950733,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.10032591769222624,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987968533086534,
+                "ece": 0.008549390013096878,
+                "ece_bin_counts": [
+                  1943,
+                  153,
+                  54,
+                  10,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.011853146356240088,
+                  -0.00042101967221252687
+                ],
+                "delta": -0.006011581053000616,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.012407484651621085,
+                  -0.0013658354661084723
+                ],
+                "delta": -0.006761935063655019,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0018977458954239981,
+                  0.000549338597896706
+                ],
+                "delta": -0.0007503540106544027,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        },
+        "24": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1008,
+                "aurc80": 0.017760602014084616,
+                "aurc80_status": "evaluated",
+                "brier": 0.06703124466347721,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04273699155364673,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.0634889139086313,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20153331670409175,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9307479224376731,
+                "ece": 0.02592947223679974,
+                "ece_bin_counts": [
+                  815,
+                  160,
+                  53,
+                  28,
+                  9,
+                  10,
+                  4,
+                  3,
+                  1,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1013,
+                "aurc80": 0.017437648818231084,
+                "aurc80_status": "evaluated",
+                "brier": 0.06650379348082419,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.038573953495173466,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06350471735740906,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20460413009783152,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9353647276084949,
+                "ece": 0.023819925717145203,
+                "ece_bin_counts": [
+                  798,
+                  179,
+                  53,
+                  26,
+                  9,
+                  8,
+                  7,
+                  2,
+                  1,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.02085556602313139,
+                  -0.0035002269171116734
+                ],
+                "delta": -0.011569521585197973,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.02158274864068352,
+                  -0.0035349995063775376
+                ],
+                "delta": -0.011892474781051505,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0013297706864079401,
+                  0.000790748459393982
+                ],
+                "delta": -0.00032295319585353213,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                -0.0038478214241744746,
+                -0.0002423346328076642
+              ],
+              "delta": -0.0019332709729157523,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                -0.0038478214241744746,
+                -0.0002423346328076642
+              ],
+              "delta": -0.0019332709729157523,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                -0.008333050097951083,
+                -0.0002923816865155644
+              ],
+              "delta": -0.003204961113980595,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                -0.008333050097951083,
+                -0.0002923816865155644
+              ],
+              "delta": -0.003204961113980595,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.005626263382448985,
+                0.0007744558912886213
+              ],
+              "delta": -0.0012716901410648428,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 999,
+                "aurc80": 0.019693872987000368,
+                "aurc80_status": "evaluated",
+                "brier": 0.06527370989375816,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03652559001992617,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06287354675146208,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.19684367132445585,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9224376731301939,
+                "ece": 0.020925943506084836,
+                "ece_bin_counts": [
+                  804,
+                  167,
+                  47,
+                  34,
+                  16,
+                  8,
+                  4,
+                  3,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1009,
+                "aurc80": 0.02064260993221168,
+                "aurc80_status": "evaluated",
+                "brier": 0.06543624779632679,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03411765421601862,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06322240931045509,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20259600480667408,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9316712834718375,
+                "ece": 0.015271928388193745,
+                "ece_bin_counts": [
+                  792,
+                  186,
+                  39,
+                  36,
+                  17,
+                  6,
+                  3,
+                  4,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.018772017053552394,
+                  -0.0017544738601878267
+                ],
+                "delta": -0.00963625061228222,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.01938049675195836,
+                  0.0017021519763969692
+                ],
+                "delta": -0.00868751366707091,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0018259826966390523,
+                  0.005932258517479149
+                ],
+                "delta": 0.0009487369452113106,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        }
+      },
+      "id": "K07",
+      "robustness": {
+        "M3_minus_B1_direction": {
+          "12": {
+            "delta": 6.015549065467498e-05,
+            "direction_holds": false
+          },
+          "24": {
+            "delta": -0.00243253634263706,
+            "direction_holds": true
+          }
+        },
+        "cohorts": {
+          "12": {
+            "hazard_train_intervals": {
+              "year_1": 1081,
+              "year_2": 545
+            },
+            "train_cutoffs": [
+              "2010-01-01",
+              "2011-01-01"
+            ],
+            "train_rows": 1081,
+            "validation_breadth_missing_rows": {
+              "form_route_missing": 26,
+              "strength_missing": 55
+            },
+            "validation_cutoffs": [
+              "2013-01-01",
+              "2014-01-01"
+            ],
+            "validation_drug_clusters": 561,
+            "validation_event_clusters": 41,
+            "validation_rows": 1083,
+            "validation_verdicts": {
+              "BLOCKED": 247,
+              "CONTESTED": 800,
+              "OPEN": 36
+            },
+            "verdicts_by_cutoff": {
+              "2010-01-01": {
+                "BLOCKED": 238,
+                "CONTESTED": 288,
+                "OPEN": 21
+              },
+              "2011-01-01": {
+                "BLOCKED": 0,
+                "CONTESTED": 534,
+                "OPEN": 0
+              },
+              "2013-01-01": {
+                "BLOCKED": 117,
+                "CONTESTED": 404,
+                "OPEN": 18
+              },
+              "2014-01-01": {
+                "BLOCKED": 130,
+                "CONTESTED": 396,
+                "OPEN": 18
+              }
+            }
+          },
+          "24": {
+            "hazard_train_intervals": {
+              "year_1": 1081,
+              "year_2": 1035
+            },
+            "train_cutoffs": [
+              "2010-01-01",
+              "2011-01-01"
+            ],
+            "train_rows": 1081,
+            "validation_breadth_missing_rows": {
+              "form_route_missing": 11,
+              "strength_missing": 26
+            },
+            "validation_cutoffs": [
+              "2014-01-01"
+            ],
+            "validation_drug_clusters": 544,
+            "validation_event_clusters": 50,
+            "validation_rows": 544,
+            "validation_verdicts": {
+              "BLOCKED": 93,
+              "CONTESTED": 419,
+              "OPEN": 32
+            },
+            "verdicts_by_cutoff": {
+              "2010-01-01": {
+                "BLOCKED": 209,
+                "CONTESTED": 303,
+                "OPEN": 35
+              },
+              "2011-01-01": {
+                "BLOCKED": 0,
+                "CONTESTED": 534,
+                "OPEN": 0
+              },
+              "2014-01-01": {
+                "BLOCKED": 93,
+                "CONTESTED": 419,
+                "OPEN": 32
+              }
+            }
+          }
+        },
+        "horizons": {
+          "12": {
+            "candidate": {
+              "arms": {
+                "B1": {
+                  "answered": 1083,
+                  "aurc80": 0.007966657427682936,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.03535899485326918,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.016148199933577304,
+                      "rows": 247
+                    },
+                    "CONTESTED": {
+                      "brier": 0.037338952761221615,
+                      "rows": 800
+                    },
+                    "OPEN": {
+                      "brier": 0.12316732870887884,
+                      "rows": 36
+                    }
+                  },
+                  "coverage": 1.0,
+                  "ece": 0.0008293947692491015,
+                  "ece_bin_counts": [
+                    993,
+                    90,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M1": {
+                  "answered": 1072,
+                  "aurc80": 0.007531105899499392,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.03450315297524397,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.01820828495491195,
+                      "rows": 247
+                    },
+                    "CONTESTED": {
+                      "brier": 0.03616627706124232,
+                      "rows": 800
+                    },
+                    "OPEN": {
+                      "brier": 0.10934573998144759,
+                      "rows": 36
+                    }
+                  },
+                  "coverage": 0.989843028624192,
+                  "ece": 0.008263317716501427,
+                  "ece_bin_counts": [
+                    995,
+                    69,
+                    16,
+                    3,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M2": {
+                  "answered": 1083,
+                  "aurc80": 0.030336638762688786,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.036342904645356486,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.016129592351728696,
+                      "rows": 247
+                    },
+                    "CONTESTED": {
+                      "brier": 0.038430029644802605,
+                      "rows": 800
+                    },
+                    "OPEN": {
+                      "brier": 0.12864813067227784,
+                      "rows": 36
+                    }
+                  },
+                  "coverage": 1.0,
+                  "ece": 0.004659255266516859,
+                  "ece_bin_counts": [
+                    1047,
+                    27,
+                    9,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M3": {
+                  "answered": 1071,
+                  "aurc80": 0.00720753119818076,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.0342382626326983,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.016881548122027964,
+                      "rows": 247
+                    },
+                    "CONTESTED": {
+                      "brier": 0.03613050252789271,
+                      "rows": 800
+                    },
+                    "OPEN": {
+                      "brier": 0.11127483396547738,
+                      "rows": 36
+                    }
+                  },
+                  "coverage": 0.9889196675900277,
+                  "ece": 0.005645778296934419,
+                  "ece_bin_counts": [
+                    1002,
+                    58,
+                    19,
+                    4,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              "paired_aurc80": {
+                "M1_minus_B1": {
+                  "ci95": [
+                    -0.002993512740825103,
+                    0.0024779841965349592
+                  ],
+                  "delta": -0.00043555152818354394,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                },
+                "M3_minus_B1": {
+                  "ci95": [
+                    -0.0032857805868315546,
+                    0.0020716475663826502
+                  ],
+                  "delta": -0.0007591262295021765,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                },
+                "M3_minus_M1": {
+                  "ci95": [
+                    -0.0009956320736229426,
+                    0.00030574134277838554
+                  ],
+                  "delta": -0.0003235747013186326,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                }
+              },
+              "selector_folds": []
+            },
+            "candidate_minus_current": {
+              "M1": {
+                "ci95": [
+                  -0.00021305087608215235,
+                  0.00031600435975668185
+                ],
+                "delta": 3.5252040197559197e-05,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.00021305087608215235,
+                  0.00031600435975668185
+                ],
+                "delta": 3.5252040197559197e-05,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3": {
+                "ci95": [
+                  -0.0001830707533079668,
+                  0.00033030651023736694
+                ],
+                "delta": 6.015549065467498e-05,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.0001830707533079668,
+                  0.00033030651023736694
+                ],
+                "delta": 6.015549065467498e-05,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.00014362406586699433,
+                  0.00017643600882115244
+                ],
+                "delta": 2.4903450457115783e-05,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "current": {
+              "arms": {
+                "B1": {
+                  "answered": 1083,
+                  "aurc80": 0.007966657427682936,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.03535899485326918,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.016148199933577304,
+                      "rows": 247
+                    },
+                    "CONTESTED": {
+                      "brier": 0.037338952761221615,
+                      "rows": 800
+                    },
+                    "OPEN": {
+                      "brier": 0.12316732870887884,
+                      "rows": 36
+                    }
+                  },
+                  "coverage": 1.0,
+                  "ece": 0.0008293947692491015,
+                  "ece_bin_counts": [
+                    993,
+                    90,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M1": {
+                  "answered": 1076,
+                  "aurc80": 0.007495853859301833,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.034330053810321386,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.017484718499508188,
+                      "rows": 247
+                    },
+                    "CONTESTED": {
+                      "brier": 0.03611980427558262,
+                      "rows": 800
+                    },
+                    "OPEN": {
+                      "brier": 0.11013553852037351,
+                      "rows": 36
+                    }
+                  },
+                  "coverage": 0.9935364727608494,
+                  "ece": 0.00881849417427277,
+                  "ece_bin_counts": [
+                    992,
+                    70,
+                    19,
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M2": {
+                  "answered": 1083,
+                  "aurc80": 0.030336638762688786,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.036342904645356486,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.016129592351728696,
+                      "rows": 247
+                    },
+                    "CONTESTED": {
+                      "brier": 0.038430029644802605,
+                      "rows": 800
+                    },
+                    "OPEN": {
+                      "brier": 0.12864813067227784,
+                      "rows": 36
+                    }
+                  },
+                  "coverage": 1.0,
+                  "ece": 0.004659255266516859,
+                  "ece_bin_counts": [
+                    1047,
+                    27,
+                    9,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M3": {
+                  "answered": 1071,
+                  "aurc80": 0.007147375707526085,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.0341860427453184,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.01641445148484983,
+                      "rows": 247
+                    },
+                    "CONTESTED": {
+                      "brier": 0.03612067708223344,
+                      "rows": 800
+                    },
+                    "OPEN": {
+                      "brier": 0.11312703085097683,
+                      "rows": 36
+                    }
+                  },
+                  "coverage": 0.9889196675900277,
+                  "ece": 0.005928202801386395,
+                  "ece_bin_counts": [
+                    999,
+                    62,
+                    18,
+                    4,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              "paired_aurc80": {
+                "M1_minus_B1": {
+                  "ci95": [
+                    -0.002954522675268801,
+                    0.002243702809623992
+                  ],
+                  "delta": -0.00047080356838110314,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                },
+                "M3_minus_B1": {
+                  "ci95": [
+                    -0.0033209775438352088,
+                    0.0019126191577910094
+                  ],
+                  "delta": -0.0008192817201568515,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                },
+                "M3_minus_M1": {
+                  "ci95": [
+                    -0.0009834900746862104,
+                    0.00025475289439447386
+                  ],
+                  "delta": -0.0003484781517757484,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                }
+              },
+              "selector_folds": []
+            }
+          },
+          "24": {
+            "candidate": {
+              "arms": {
+                "B1": {
+                  "answered": 544,
+                  "aurc80": 0.03076007089805242,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.07909850052243875,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.05406088560826497,
+                      "rows": 93
+                    },
+                    "CONTESTED": {
+                      "brier": 0.07517262489882032,
+                      "rows": 419
+                    },
+                    "OPEN": {
+                      "brier": 0.20326850281350997,
+                      "rows": 32
+                    }
+                  },
+                  "coverage": 1.0,
+                  "ece": 0.01944600900317656,
+                  "ece_bin_counts": [
+                    402,
+                    110,
+                    32,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M1": {
+                  "answered": 496,
+                  "aurc80": 0.024296042309211983,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.06732978278076902,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.050472138708129735,
+                      "rows": 93
+                    },
+                    "CONTESTED": {
+                      "brier": 0.06332836884467857,
+                      "rows": 419
+                    },
+                    "OPEN": {
+                      "brier": 0.1687158245925613,
+                      "rows": 32
+                    }
+                  },
+                  "coverage": 0.9117647058823529,
+                  "ece": 0.020844079571772138,
+                  "ece_bin_counts": [
+                    402,
+                    82,
+                    20,
+                    15,
+                    13,
+                    7,
+                    3,
+                    2,
+                    0,
+                    0
+                  ]
+                },
+                "M2": {
+                  "answered": 524,
+                  "aurc80": 0.10026975504250761,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.08286169346242635,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.06164730976402448,
+                      "rows": 93
+                    },
+                    "CONTESTED": {
+                      "brier": 0.07872715743844826,
+                      "rows": 419
+                    },
+                    "OPEN": {
+                      "brier": 0.19865257714986995,
+                      "rows": 32
+                    }
+                  },
+                  "coverage": 0.9632352941176471,
+                  "ece": 0.009234855054037483,
+                  "ece_bin_counts": [
+                    512,
+                    0,
+                    23,
+                    9,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M3": {
+                  "answered": 502,
+                  "aurc80": 0.02453629074710845,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.06743098372977213,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.050395690026900884,
+                      "rows": 93
+                    },
+                    "CONTESTED": {
+                      "brier": 0.06324159093747676,
+                      "rows": 419
+                    },
+                    "OPEN": {
+                      "brier": 0.17179466792785922,
+                      "rows": 32
+                    }
+                  },
+                  "coverage": 0.9227941176470589,
+                  "ece": 0.015337808343528502,
+                  "ece_bin_counts": [
+                    391,
+                    95,
+                    17,
+                    19,
+                    11,
+                    5,
+                    5,
+                    1,
+                    0,
+                    0
+                  ]
+                }
+              },
+              "paired_aurc80": {
+                "M1_minus_B1": {
+                  "ci95": [
+                    -0.013015719054774045,
+                    9.67654201865821e-05
+                  ],
+                  "delta": -0.006464028588840438,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                },
+                "M3_minus_B1": {
+                  "ci95": [
+                    -0.01356370899349915,
+                    0.0012661311793368026
+                  ],
+                  "delta": -0.006223780150943971,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                },
+                "M3_minus_M1": {
+                  "ci95": [
+                    -0.002712444115972233,
+                    0.005109132516501108
+                  ],
+                  "delta": 0.00024024843789646755,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                }
+              },
+              "selector_folds": []
+            },
+            "candidate_minus_current": {
+              "M1": {
+                "ci95": [
+                  -0.0038939322938629298,
+                  -1.4277455359215652e-05
+                ],
+                "delta": -0.0017104636885306446,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.0038939322938629298,
+                  -1.4277455359215652e-05
+                ],
+                "delta": -0.0017104636885306446,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3": {
+                "ci95": [
+                  -0.006081865793243095,
+                  -0.0004882892095592166
+                ],
+                "delta": -0.00243253634263706,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.006081865793243095,
+                  -0.0004882892095592166
+                ],
+                "delta": -0.00243253634263706,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.003934913054652968,
+                  0.0008224487484199787
+                ],
+                "delta": -0.0007220726541064156,
+                "invalid_draws": 0,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "current": {
+              "arms": {
+                "B1": {
+                  "answered": 544,
+                  "aurc80": 0.03076007089805242,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.07909850052243875,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.05406088560826497,
+                      "rows": 93
+                    },
+                    "CONTESTED": {
+                      "brier": 0.07517262489882032,
+                      "rows": 419
+                    },
+                    "OPEN": {
+                      "brier": 0.20326850281350997,
+                      "rows": 32
+                    }
+                  },
+                  "coverage": 1.0,
+                  "ece": 0.01944600900317656,
+                  "ece_bin_counts": [
+                    402,
+                    110,
+                    32,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M1": {
+                  "answered": 490,
+                  "aurc80": 0.026006505997742627,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.06662059868090078,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.04708426053562102,
+                      "rows": 93
+                    },
+                    "CONTESTED": {
+                      "brier": 0.06322674876757013,
+                      "rows": 419
+                    },
+                    "OPEN": {
+                      "brier": 0.1678363037182934,
+                      "rows": 32
+                    }
+                  },
+                  "coverage": 0.9007352941176471,
+                  "ece": 0.0158027728249697,
+                  "ece_bin_counts": [
+                    400,
+                    85,
+                    16,
+                    20,
+                    10,
+                    8,
+                    4,
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                "M2": {
+                  "answered": 524,
+                  "aurc80": 0.10026975504250761,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.08286169346242635,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.06164730976402448,
+                      "rows": 93
+                    },
+                    "CONTESTED": {
+                      "brier": 0.07872715743844826,
+                      "rows": 419
+                    },
+                    "OPEN": {
+                      "brier": 0.19865257714986995,
+                      "rows": 32
+                    }
+                  },
+                  "coverage": 0.9632352941176471,
+                  "ece": 0.009234855054037483,
+                  "ece_bin_counts": [
+                    512,
+                    0,
+                    23,
+                    9,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "M3": {
+                  "answered": 501,
+                  "aurc80": 0.02696882708974551,
+                  "aurc80_status": "evaluated",
+                  "brier": 0.06719325275394872,
+                  "by_verdict": {
+                    "BLOCKED": {
+                      "brier": 0.04811725864400861,
+                      "rows": 93
+                    },
+                    "CONTESTED": {
+                      "brier": 0.06339712634924359,
+                      "rows": 419
+                    },
+                    "OPEN": {
+                      "brier": 0.1723383907475699,
+                      "rows": 32
+                    }
+                  },
+                  "coverage": 0.9209558823529411,
+                  "ece": 0.020330712001921755,
+                  "ece_bin_counts": [
+                    388,
+                    97,
+                    15,
+                    22,
+                    12,
+                    4,
+                    5,
+                    1,
+                    0,
+                    0
+                  ]
+                }
+              },
+              "paired_aurc80": {
+                "M1_minus_B1": {
+                  "ci95": [
+                    -0.01102935338874772,
+                    0.0018797495767658382
+                  ],
+                  "delta": -0.004753564900309794,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                },
+                "M3_minus_B1": {
+                  "ci95": [
+                    -0.01120081588405369,
+                    0.004820671289524625
+                  ],
+                  "delta": -0.0037912438083069107,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                },
+                "M3_minus_M1": {
+                  "ci95": [
+                    -0.0024981217875451253,
+                    0.006665935530917579
+                  ],
+                  "delta": 0.0009623210920028831,
+                  "invalid_draws": 0,
+                  "meets_practical_threshold": false,
+                  "status": "evaluated",
+                  "valid_draws": 2000
+                }
+              },
+              "selector_folds": []
+            }
+          }
+        },
+        "status": "DEVELOPMENT_ONLY"
+      }
+    },
+    {
+      "adopted": false,
+      "checks": {
+        "M1_minus_B1_at_24": {
+          "ceiling": 0.001,
+          "delta": 0.002207927489549455,
+          "pass": false
+        },
+        "M3_minus_B1_at_12": {
+          "ceiling": 0.001,
+          "delta": -0.0009655956155482856,
+          "pass": true
+        },
+        "M3_minus_B1_at_24": {
+          "ceiling": -0.001,
+          "delta": 0.003623119645708474,
+          "pass": false
+        }
+      },
+      "configurations": {
+        "M1": [
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07",
+              "K09"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ],
+        "M3": [
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07",
+              "K09"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ]
+      },
+      "horizons": {
+        "12": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2133,
+                "aurc80": 0.01061452877470343,
+                "aurc80_status": "evaluated",
+                "brier": 0.0368083485082757,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.02318494516198483,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03898839871789351,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09146585543437964,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987043035631652,
+                "ece": 0.008425822931327454,
+                "ece_bin_counts": [
+                  1923,
+                  181,
+                  45,
+                  10,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2136,
+                "aurc80": 0.009951745226353333,
+                "aurc80_status": "evaluated",
+                "brier": 0.03685896607187426,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022754426042050014,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038990460831178735,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.095592670559473,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.988431281813975,
+                "ece": 0.00994263587439187,
+                "ece_bin_counts": [
+                  1937,
+                  168,
+                  44,
+                  11,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.013520020732763136,
+                  -0.002870009268433093
+                ],
+                "delta": -0.007960149935017048,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.014190756571859255,
+                  -0.0034240538570496776
+                ],
+                "delta": -0.008622933483367144,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0016421102059133007,
+                  0.0005087339596351352
+                ],
+                "delta": -0.0006627835483500964,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                -0.002483599874818096,
+                -0.00012985885783501488
+              ],
+              "delta": -0.0012320408154573338,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                -0.002483599874818096,
+                -0.00012985885783501488
+              ],
+              "delta": -0.0012320408154573338,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                -0.002033865909728233,
+                -4.329076973214052e-05
+              ],
+              "delta": -0.0009655956155482856,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                -0.002033865909728233,
+                -4.329076973214052e-05
+              ],
+              "delta": -0.0009655956155482856,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.00014179338673634898,
+                0.0007419265658042198
+              ],
+              "delta": 0.0002664451999090482,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2133,
+                "aurc80": 0.011846569590160764,
+                "aurc80_status": "evaluated",
+                "brier": 0.03674256729376864,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.02297195428303071,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03890182482203149,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09274870399234696,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987043035631652,
+                "ece": 0.007144546883893972,
+                "ece_bin_counts": [
+                  1921,
+                  176,
+                  54,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2134,
+                "aurc80": 0.010917340841901619,
+                "aurc80_status": "evaluated",
+                "brier": 0.03698493066914738,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022649326102559934,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038990989123025024,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.0994216083665126,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987505784359093,
+                "ece": 0.007901178673973492,
+                "ece_bin_counts": [
+                  1943,
+                  159,
+                  50,
+                  7,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.012684213763467575,
+                  -0.0010415795390128092
+                ],
+                "delta": -0.006728109119559714,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.013472666103055505,
+                  -0.0023465775820717353
+                ],
+                "delta": -0.007657337867818859,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0019021030706279744,
+                  0.00015685092304220175
+                ],
+                "delta": -0.0009292287482591446,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        },
+        "24": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1011,
+                "aurc80": 0.01996852950363407,
+                "aurc80_status": "evaluated",
+                "brier": 0.06790179802109804,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04278210583856631,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.0654139768223941,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.18888086784547034,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9335180055401662,
+                "ece": 0.029571695005639442,
+                "ece_bin_counts": [
+                  828,
+                  154,
+                  52,
+                  23,
+                  9,
+                  8,
+                  6,
+                  2,
+                  1,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1021,
+                "aurc80": 0.021060768463939557,
+                "aurc80_status": "evaluated",
+                "brier": 0.06705444150954849,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03996083653338703,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06516618732067982,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.1852961469396757,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9427516158818098,
+                "ece": 0.024095102064589428,
+                "ece_bin_counts": [
+                  819,
+                  162,
+                  52,
+                  24,
+                  12,
+                  6,
+                  4,
+                  3,
+                  1,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.019153425302789025,
+                  -0.0005976989927661512
+                ],
+                "delta": -0.009361594095648518,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.018468993749748232,
+                  0.0003689671116708544
+                ],
+                "delta": -0.008269355135343031,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.001861923138845957,
+                  0.004237086852002404
+                ],
+                "delta": 0.0010922389603054868,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                -6.560568441734208e-05,
+                0.005054816672635465
+              ],
+              "delta": 0.002207927489549455,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                -6.560568441734208e-05,
+                0.005054816672635465
+              ],
+              "delta": 0.002207927489549455,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                0.0002212397649065563,
+                0.00771838463744322
+              ],
+              "delta": 0.003623119645708474,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                0.0002212397649065563,
+                0.00771838463744322
+              ],
+              "delta": 0.003623119645708474,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.0013588173993583363,
+                0.004518675461663662
+              ],
+              "delta": 0.0014151921561590189,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1008,
+                "aurc80": 0.017760602014084616,
+                "aurc80_status": "evaluated",
+                "brier": 0.06703124466347721,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04273699155364673,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.0634889139086313,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20153331670409175,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9307479224376731,
+                "ece": 0.02592947223679974,
+                "ece_bin_counts": [
+                  815,
+                  160,
+                  53,
+                  28,
+                  9,
+                  10,
+                  4,
+                  3,
+                  1,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1013,
+                "aurc80": 0.017437648818231084,
+                "aurc80_status": "evaluated",
+                "brier": 0.06650379348082419,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.038573953495173466,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06350471735740906,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20460413009783152,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9353647276084949,
+                "ece": 0.023819925717145203,
+                "ece_bin_counts": [
+                  798,
+                  179,
+                  53,
+                  26,
+                  9,
+                  8,
+                  7,
+                  2,
+                  1,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.02085556602313139,
+                  -0.0035002269171116734
+                ],
+                "delta": -0.011569521585197973,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.02158274864068352,
+                  -0.0035349995063775376
+                ],
+                "delta": -0.011892474781051505,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0013297706864079401,
+                  0.000790748459393982
+                ],
+                "delta": -0.00032295319585353213,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        }
+      },
+      "id": "K09",
+      "robustness": {
+        "reason": "Candidate rejected on primary development.",
+        "status": "NOT_RUN"
+      }
+    },
+    {
+      "adopted": false,
+      "checks": {
+        "M1_minus_B1_at_24": {
+          "ceiling": 0.001,
+          "delta": 0.000869802265950563,
+          "pass": true
+        },
+        "M3_minus_B1_at_12": {
+          "ceiling": 0.001,
+          "delta": 0.00017532965169127224,
+          "pass": true
+        },
+        "M3_minus_B1_at_24": {
+          "ceiling": -0.001,
+          "delta": 0.0004222829050202388,
+          "pass": false
+        }
+      },
+      "configurations": {
+        "M1": [
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07",
+              "K10"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ],
+        "M3": [
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07",
+              "K10"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ]
+      },
+      "horizons": {
+        "12": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2119,
+                "aurc80": 0.012044680378269999,
+                "aurc80_status": "evaluated",
+                "brier": 0.036651038342939285,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022719287188763357,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03881522963073456,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09366006687799314,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.9805645534474781,
+                "ece": 0.004968271849684045,
+                "ece_bin_counts": [
+                  1947,
+                  143,
+                  46,
+                  16,
+                  5,
+                  4,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2126,
+                "aurc80": 0.011092670493592891,
+                "aurc80_status": "evaluated",
+                "brier": 0.03710010182229686,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022366331295823962,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038950974011805535,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.10487569208942552,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.983803794539565,
+                "ece": 0.00832921690498763,
+                "ece_bin_counts": [
+                  1966,
+                  130,
+                  42,
+                  15,
+                  4,
+                  2,
+                  2,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.012604318334828698,
+                  -0.0008319250744848808
+                ],
+                "delta": -0.006529998331450479,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.013381692650120628,
+                  -0.0020659110587840004
+                ],
+                "delta": -0.007482008216127586,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0019888376994489816,
+                  0.00013285564866808743
+                ],
+                "delta": -0.0009520098846771078,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                4.687387974391943e-06,
+                0.00042408742488820456
+              ],
+              "delta": 0.00019811078810923546,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                4.687387974391943e-06,
+                0.00042408742488820456
+              ],
+              "delta": 0.00019811078810923546,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                3.6701630612423486e-07,
+                0.00042223408635412574
+              ],
+              "delta": 0.00017532965169127224,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                3.6701630612423486e-07,
+                0.00042223408635412574
+              ],
+              "delta": 0.00017532965169127224,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.00020365486529778064,
+                0.0002094929416210211
+              ],
+              "delta": -2.2781136417963227e-05,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2133,
+                "aurc80": 0.011846569590160764,
+                "aurc80_status": "evaluated",
+                "brier": 0.03674256729376864,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.02297195428303071,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03890182482203149,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09274870399234696,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987043035631652,
+                "ece": 0.007144546883893972,
+                "ece_bin_counts": [
+                  1921,
+                  176,
+                  54,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2134,
+                "aurc80": 0.010917340841901619,
+                "aurc80_status": "evaluated",
+                "brier": 0.03698493066914738,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022649326102559934,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038990989123025024,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.0994216083665126,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987505784359093,
+                "ece": 0.007901178673973492,
+                "ece_bin_counts": [
+                  1943,
+                  159,
+                  50,
+                  7,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.012684213763467575,
+                  -0.0010415795390128092
+                ],
+                "delta": -0.006728109119559714,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.013472666103055505,
+                  -0.0023465775820717353
+                ],
+                "delta": -0.007657337867818859,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0019021030706279744,
+                  0.00015685092304220175
+                ],
+                "delta": -0.0009292287482591446,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        },
+        "24": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1014,
+                "aurc80": 0.01863040428003518,
+                "aurc80_status": "evaluated",
+                "brier": 0.06770747006358625,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04410243286692497,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06393680353536087,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20345776609999675,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9362880886426593,
+                "ece": 0.028835373526917906,
+                "ece_bin_counts": [
+                  817,
+                  162,
+                  53,
+                  24,
+                  13,
+                  6,
+                  4,
+                  0,
+                  3,
+                  1
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1017,
+                "aurc80": 0.017859931723251322,
+                "aurc80_status": "evaluated",
+                "brier": 0.0672141351361148,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03954021011131109,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06395975663380853,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20840393551689454,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9390581717451524,
+                "ece": 0.02682900841094001,
+                "ece_bin_counts": [
+                  808,
+                  176,
+                  47,
+                  26,
+                  8,
+                  8,
+                  5,
+                  3,
+                  2,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.020235165343117558,
+                  -0.0021793164825045334
+                ],
+                "delta": -0.01069971931924741,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.021319139011578017,
+                  -0.0029782671153646655
+                ],
+                "delta": -0.011470191876031266,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.002391836416423092,
+                  0.0006446738060919902
+                ],
+                "delta": -0.0007704725567838563,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                8.306890189109344e-05,
+                0.0022673732391696663
+              ],
+              "delta": 0.000869802265950563,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                8.306890189109344e-05,
+                0.0022673732391696663
+              ],
+              "delta": 0.000869802265950563,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                1.4770629007641867e-06,
+                0.0011597865503075906
+              ],
+              "delta": 0.0004222829050202388,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                1.4770629007641867e-06,
+                0.0011597865503075906
+              ],
+              "delta": 0.0004222829050202388,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.0017465555735088813,
+                0.00028694074438782163
+              ],
+              "delta": -0.0004475193609303242,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1008,
+                "aurc80": 0.017760602014084616,
+                "aurc80_status": "evaluated",
+                "brier": 0.06703124466347721,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04273699155364673,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.0634889139086313,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20153331670409175,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9307479224376731,
+                "ece": 0.02592947223679974,
+                "ece_bin_counts": [
+                  815,
+                  160,
+                  53,
+                  28,
+                  9,
+                  10,
+                  4,
+                  3,
+                  1,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1013,
+                "aurc80": 0.017437648818231084,
+                "aurc80_status": "evaluated",
+                "brier": 0.06650379348082419,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.038573953495173466,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06350471735740906,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20460413009783152,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9353647276084949,
+                "ece": 0.023819925717145203,
+                "ece_bin_counts": [
+                  798,
+                  179,
+                  53,
+                  26,
+                  9,
+                  8,
+                  7,
+                  2,
+                  1,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.02085556602313139,
+                  -0.0035002269171116734
+                ],
+                "delta": -0.011569521585197973,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.02158274864068352,
+                  -0.0035349995063775376
+                ],
+                "delta": -0.011892474781051505,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0013297706864079401,
+                  0.000790748459393982
+                ],
+                "delta": -0.00032295319585353213,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        }
+      },
+      "id": "K10",
+      "robustness": {
+        "reason": "Candidate rejected on primary development.",
+        "status": "NOT_RUN"
+      }
+    },
+    {
+      "adopted": false,
+      "checks": {
+        "M1_minus_B1_at_24": {
+          "ceiling": 0.001,
+          "delta": 0.0020560864078755584,
+          "pass": false
+        },
+        "M3_minus_B1_at_12": {
+          "ceiling": 0.001,
+          "delta": 0.004434578619905235,
+          "pass": false
+        },
+        "M3_minus_B1_at_24": {
+          "ceiling": -0.001,
+          "delta": 0.0031460497392914386,
+          "pass": false
+        }
+      },
+      "configurations": {
+        "M1": [
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07",
+              "K08"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ],
+        "M3": [
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07",
+              "K08"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ]
+      },
+      "horizons": {
+        "12": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2133,
+                "aurc80": 0.014749059763817155,
+                "aurc80_status": "evaluated",
+                "brier": 0.03674256729376864,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.02297195428303071,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03890182482203149,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09274870399234696,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987043035631652,
+                "ece": 0.007144546883893972,
+                "ece_bin_counts": [
+                  1921,
+                  176,
+                  54,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2134,
+                "aurc80": 0.015351919461806854,
+                "aurc80_status": "evaluated",
+                "brier": 0.03698493066914738,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022649326102559934,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038990989123025024,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.0994216083665126,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987505784359093,
+                "ece": 0.007901178673973492,
+                "ece_bin_counts": [
+                  1943,
+                  159,
+                  50,
+                  7,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.010654023478404204,
+                  0.002776549320882067
+                ],
+                "delta": -0.003825618945903322,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.00956133795630982,
+                  0.0035796071316564725
+                ],
+                "delta": -0.003222759247913624,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.003039171777785732,
+                  0.004719278147125548
+                ],
+                "delta": 0.000602859697989698,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": [
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 66,
+                "fit_rows": 1780,
+                "fold": 0
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 70,
+                "fit_rows": 1789,
+                "fold": 0
+              },
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 62,
+                "fit_rows": 1708,
+                "fold": 1
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 64,
+                "fit_rows": 1713,
+                "fold": 1
+              },
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 65,
+                "fit_rows": 1661,
+                "fold": 2
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 69,
+                "fit_rows": 1667,
+                "fold": 2
+              },
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 73,
+                "fit_rows": 1706,
+                "fold": 3
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 74,
+                "fit_rows": 1710,
+                "fold": 3
+              },
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 62,
+                "fit_rows": 1680,
+                "fold": 4
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 66,
+                "fit_rows": 1673,
+                "fold": 4
+              }
+            ]
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                0.00036944547940836667,
+                0.0059404165957157255
+              ],
+              "delta": 0.002902490173656392,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                0.00036944547940836667,
+                0.0059404165957157255
+              ],
+              "delta": 0.002902490173656392,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                0.0016093661347572029,
+                0.007992743481939778
+              ],
+              "delta": 0.004434578619905235,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                0.0016093661347572029,
+                0.007992743481939778
+              ],
+              "delta": 0.004434578619905235,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.00173768974593113,
+                0.005569345921565161
+              ],
+              "delta": 0.0015320884462488426,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2133,
+                "aurc80": 0.011846569590160764,
+                "aurc80_status": "evaluated",
+                "brier": 0.03674256729376864,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.02297195428303071,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03890182482203149,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09274870399234696,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987043035631652,
+                "ece": 0.007144546883893972,
+                "ece_bin_counts": [
+                  1921,
+                  176,
+                  54,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2134,
+                "aurc80": 0.010917340841901619,
+                "aurc80_status": "evaluated",
+                "brier": 0.03698493066914738,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022649326102559934,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038990989123025024,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.0994216083665126,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987505784359093,
+                "ece": 0.007901178673973492,
+                "ece_bin_counts": [
+                  1943,
+                  159,
+                  50,
+                  7,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.012684213763467575,
+                  -0.0010415795390128092
+                ],
+                "delta": -0.006728109119559714,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.013472666103055505,
+                  -0.0023465775820717353
+                ],
+                "delta": -0.007657337867818859,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0019021030706279744,
+                  0.00015685092304220175
+                ],
+                "delta": -0.0009292287482591446,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        },
+        "24": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1008,
+                "aurc80": 0.019816688421960174,
+                "aurc80_status": "evaluated",
+                "brier": 0.06703124466347721,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04273699155364673,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.0634889139086313,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20153331670409175,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9307479224376731,
+                "ece": 0.02592947223679974,
+                "ece_bin_counts": [
+                  815,
+                  160,
+                  53,
+                  28,
+                  9,
+                  10,
+                  4,
+                  3,
+                  1,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1013,
+                "aurc80": 0.020583698557522522,
+                "aurc80_status": "evaluated",
+                "brier": 0.06650379348082419,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.038573953495173466,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06350471735740906,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20460413009783152,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9353647276084949,
+                "ece": 0.023819925717145203,
+                "ece_bin_counts": [
+                  798,
+                  179,
+                  53,
+                  26,
+                  9,
+                  8,
+                  7,
+                  2,
+                  1,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.01881724550949254,
+                  -0.0011893853782367868
+                ],
+                "delta": -0.009513435177322414,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.018061022451898442,
+                  0.00024098435325800582
+                ],
+                "delta": -0.008746425041760066,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.005931454674860379,
+                  0.007437115260551654
+                ],
+                "delta": 0.0007670101355623481,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": [
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 58,
+                "fit_rows": 854,
+                "fold": 0
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 59,
+                "fit_rows": 861,
+                "fold": 0
+              },
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 51,
+                "fit_rows": 814,
+                "fold": 1
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 52,
+                "fit_rows": 821,
+                "fold": 1
+              },
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 59,
+                "fit_rows": 803,
+                "fold": 2
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 54,
+                "fit_rows": 799,
+                "fold": 2
+              },
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 56,
+                "fit_rows": 804,
+                "fold": 3
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 55,
+                "fit_rows": 811,
+                "fold": 3
+              },
+              {
+                "arm": "M1",
+                "fallback": false,
+                "fit_errors": 48,
+                "fit_rows": 788,
+                "fold": 4
+              },
+              {
+                "arm": "M3",
+                "fallback": false,
+                "fit_errors": 51,
+                "fit_rows": 799,
+                "fold": 4
+              }
+            ]
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                -0.0023884747826056364,
+                0.006707626810824294
+              ],
+              "delta": 0.0020560864078755584,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                -0.0023884747826056364,
+                0.006707626810824294
+              ],
+              "delta": 0.0020560864078755584,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                -0.002527978075193532,
+                0.009110261866673477
+              ],
+              "delta": 0.0031460497392914386,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                -0.002527978075193532,
+                0.009110261866673477
+              ],
+              "delta": 0.0031460497392914386,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.006256292697421027,
+                0.008030305431483618
+              ],
+              "delta": 0.0010899633314158802,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1008,
+                "aurc80": 0.017760602014084616,
+                "aurc80_status": "evaluated",
+                "brier": 0.06703124466347721,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04273699155364673,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.0634889139086313,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20153331670409175,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9307479224376731,
+                "ece": 0.02592947223679974,
+                "ece_bin_counts": [
+                  815,
+                  160,
+                  53,
+                  28,
+                  9,
+                  10,
+                  4,
+                  3,
+                  1,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1013,
+                "aurc80": 0.017437648818231084,
+                "aurc80_status": "evaluated",
+                "brier": 0.06650379348082419,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.038573953495173466,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06350471735740906,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20460413009783152,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9353647276084949,
+                "ece": 0.023819925717145203,
+                "ece_bin_counts": [
+                  798,
+                  179,
+                  53,
+                  26,
+                  9,
+                  8,
+                  7,
+                  2,
+                  1,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.02085556602313139,
+                  -0.0035002269171116734
+                ],
+                "delta": -0.011569521585197973,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.02158274864068352,
+                  -0.0035349995063775376
+                ],
+                "delta": -0.011892474781051505,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0013297706864079401,
+                  0.000790748459393982
+                ],
+                "delta": -0.00032295319585353213,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        }
+      },
+      "id": "K08",
+      "robustness": {
+        "reason": "Candidate rejected on primary development.",
+        "status": "NOT_RUN"
+      }
+    },
+    {
+      "adopted": false,
+      "checks": {
+        "M1_minus_B1_at_24": {
+          "ceiling": 0.001,
+          "delta": -7.51115034853915e-05,
+          "pass": true
+        },
+        "M3_minus_B1_at_12": {
+          "ceiling": 0.001,
+          "delta": 0.001260811348094826,
+          "pass": false
+        },
+        "M3_minus_B1_at_24": {
+          "ceiling": -0.001,
+          "delta": 0.0033019897151751465,
+          "pass": false
+        }
+      },
+      "configurations": {
+        "M1": [
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07",
+              "K06"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ],
+        "M3": [
+          {
+            "flags": [
+              "K07"
+            ],
+            "l2": 100.0,
+            "role": "current"
+          },
+          {
+            "flags": [
+              "K07",
+              "K06"
+            ],
+            "l2": 100.0,
+            "role": "candidate"
+          }
+        ]
+      },
+      "horizons": {
+        "12": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2133,
+                "aurc80": 0.013360530758581677,
+                "aurc80_status": "evaluated",
+                "brier": 0.03674256729376864,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.02297195428303071,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03890182482203149,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09274870399234696,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987043035631652,
+                "ece": 0.007144546883893972,
+                "ece_bin_counts": [
+                  1921,
+                  176,
+                  54,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2134,
+                "aurc80": 0.012178152189996445,
+                "aurc80_status": "evaluated",
+                "brier": 0.03698493066914738,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022649326102559934,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038990989123025024,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.0994216083665126,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987505784359093,
+                "ece": 0.007901178673973492,
+                "ece_bin_counts": [
+                  1943,
+                  159,
+                  50,
+                  7,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.011214096009595878,
+                  0.00043171043110329724
+                ],
+                "delta": -0.0052141479511388,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.01247797837952529,
+                  -0.0005447692517398239
+                ],
+                "delta": -0.0063965265197240325,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.004878532060024891,
+                  0.0028381871910620575
+                ],
+                "delta": -0.0011823785685852323,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                -0.0020252689276507255,
+                0.0064523795485429206
+              ],
+              "delta": 0.0015139611684209138,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                -0.0020252689276507255,
+                0.0064523795485429206
+              ],
+              "delta": 0.0015139611684209138,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                -0.0016488236006156056,
+                0.004668245583487586
+              ],
+              "delta": 0.001260811348094826,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                -0.0016488236006156056,
+                0.004668245583487586
+              ],
+              "delta": 0.001260811348094826,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.003594062431862716,
+                0.0033780403960261916
+              ],
+              "delta": -0.0002531498203260877,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 2161,
+                "aurc80": 0.018574678709720478,
+                "aurc80_status": "evaluated",
+                "brier": 0.039073177847496275,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024704154361221167,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.04155927483023829,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09353054075676197,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0054705390852075935,
+                "ece_bin_counts": [
+                  1939,
+                  222,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 2133,
+                "aurc80": 0.011846569590160764,
+                "aurc80_status": "evaluated",
+                "brier": 0.03674256729376864,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.02297195428303071,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.03890182482203149,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09274870399234696,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987043035631652,
+                "ece": 0.007144546883893972,
+                "ece_bin_counts": [
+                  1921,
+                  176,
+                  54,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 2161,
+                "aurc80": 0.0347040810345167,
+                "aurc80_status": "evaluated",
+                "brier": 0.039981711882774607,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.024916782741133382,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.042471277974284544,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.09907514438930477,
+                    "rows": 87
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.0038445603349819613,
+                "ece_bin_counts": [
+                  2111,
+                  50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 2134,
+                "aurc80": 0.010917340841901619,
+                "aurc80_status": "evaluated",
+                "brier": 0.03698493066914738,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.022649326102559934,
+                    "rows": 587
+                  },
+                  "CONTESTED": {
+                    "brier": 0.038990989123025024,
+                    "rows": 1487
+                  },
+                  "OPEN": {
+                    "brier": 0.0994216083665126,
+                    "rows": 87
+                  }
+                },
+                "coverage": 0.987505784359093,
+                "ece": 0.007901178673973492,
+                "ece_bin_counts": [
+                  1943,
+                  159,
+                  50,
+                  7,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.012684213763467575,
+                  -0.0010415795390128092
+                ],
+                "delta": -0.006728109119559714,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.013472666103055505,
+                  -0.0023465775820717353
+                ],
+                "delta": -0.007657337867818859,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0019021030706279744,
+                  0.00015685092304220175
+                ],
+                "delta": -0.0009292287482591446,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        },
+        "24": {
+          "candidate": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1008,
+                "aurc80": 0.017685490510599224,
+                "aurc80_status": "evaluated",
+                "brier": 0.06703124466347721,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04273699155364673,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.0634889139086313,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20153331670409175,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9307479224376731,
+                "ece": 0.02592947223679974,
+                "ece_bin_counts": [
+                  815,
+                  160,
+                  53,
+                  28,
+                  9,
+                  10,
+                  4,
+                  3,
+                  1,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1013,
+                "aurc80": 0.02073963853340623,
+                "aurc80_status": "evaluated",
+                "brier": 0.06650379348082419,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.038573953495173466,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06350471735740906,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20460413009783152,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9353647276084949,
+                "ece": 0.023819925717145203,
+                "ece_bin_counts": [
+                  798,
+                  179,
+                  53,
+                  26,
+                  9,
+                  8,
+                  7,
+                  2,
+                  1,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.020999928971779522,
+                  -0.0035514836556565545
+                ],
+                "delta": -0.011644633088683364,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.019759930860573434,
+                  0.0032164126075939527
+                ],
+                "delta": -0.008590485065876358,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0016213116881019177,
+                  0.010858979597692164
+                ],
+                "delta": 0.003054148022807006,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          },
+          "candidate_minus_current": {
+            "M1": {
+              "ci95": [
+                -0.00020979178137614865,
+                -1.0072160209078501e-05
+              ],
+              "delta": -7.51115034853915e-05,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M1_minus_B1": {
+              "ci95": [
+                -0.00020979178137614865,
+                -1.0072160209078501e-05
+              ],
+              "delta": -7.51115034853915e-05,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3": {
+              "ci95": [
+                -0.000735588467037359,
+                0.010225068804141611
+              ],
+              "delta": 0.0033019897151751465,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_B1": {
+              "ci95": [
+                -0.000735588467037359,
+                0.010225068804141611
+              ],
+              "delta": 0.0033019897151751465,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            },
+            "M3_minus_M1": {
+              "ci95": [
+                -0.0006591129742530878,
+                0.010297213208030526
+              ],
+              "delta": 0.003377101218660538,
+              "invalid_draws": 0,
+              "status": "evaluated",
+              "valid_draws": 2000
+            }
+          },
+          "current": {
+            "arms": {
+              "B1": {
+                "answered": 1083,
+                "aurc80": 0.02933012359928259,
+                "aurc80_status": "evaluated",
+                "brier": 0.07304651880688705,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03525588461629264,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07131559005362496,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.22406836321617027,
+                    "rows": 55
+                  }
+                },
+                "coverage": 1.0,
+                "ece": 0.007294184562045728,
+                "ece_bin_counts": [
+                  760,
+                  259,
+                  64,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M1": {
+                "answered": 1008,
+                "aurc80": 0.017760602014084616,
+                "aurc80_status": "evaluated",
+                "brier": 0.06703124466347721,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.04273699155364673,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.0634889139086313,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20153331670409175,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9307479224376731,
+                "ece": 0.02592947223679974,
+                "ece_bin_counts": [
+                  815,
+                  160,
+                  53,
+                  28,
+                  9,
+                  10,
+                  4,
+                  3,
+                  1,
+                  0
+                ]
+              },
+              "M2": {
+                "answered": 1052,
+                "aurc80": 0.06711109229615332,
+                "aurc80_status": "evaluated",
+                "brier": 0.07551112955211142,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.03753025651848612,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.07492513849082345,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20952699224296745,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.971375807940905,
+                "ece": 0.009583282721817304,
+                "ece_bin_counts": [
+                  1028,
+                  0,
+                  32,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "M3": {
+                "answered": 1013,
+                "aurc80": 0.017437648818231084,
+                "aurc80_status": "evaluated",
+                "brier": 0.06650379348082419,
+                "by_verdict": {
+                  "BLOCKED": {
+                    "brier": 0.038573953495173466,
+                    "rows": 181
+                  },
+                  "CONTESTED": {
+                    "brier": 0.06350471735740906,
+                    "rows": 847
+                  },
+                  "OPEN": {
+                    "brier": 0.20460413009783152,
+                    "rows": 55
+                  }
+                },
+                "coverage": 0.9353647276084949,
+                "ece": 0.023819925717145203,
+                "ece_bin_counts": [
+                  798,
+                  179,
+                  53,
+                  26,
+                  9,
+                  8,
+                  7,
+                  2,
+                  1,
+                  0
+                ]
+              }
+            },
+            "paired_aurc80": {
+              "M1_minus_B1": {
+                "ci95": [
+                  -0.02085556602313139,
+                  -0.0035002269171116734
+                ],
+                "delta": -0.011569521585197973,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_B1": {
+                "ci95": [
+                  -0.02158274864068352,
+                  -0.0035349995063775376
+                ],
+                "delta": -0.011892474781051505,
+                "invalid_draws": 0,
+                "meets_practical_threshold": true,
+                "status": "evaluated",
+                "valid_draws": 2000
+              },
+              "M3_minus_M1": {
+                "ci95": [
+                  -0.0013297706864079401,
+                  0.000790748459393982
+                ],
+                "delta": -0.00032295319585353213,
+                "invalid_draws": 0,
+                "meets_practical_threshold": false,
+                "status": "evaluated",
+                "valid_draws": 2000
+              }
+            },
+            "selector_folds": []
+          }
+        }
+      },
+      "id": "K06",
+      "robustness": {
+        "reason": "Candidate rejected on primary development.",
+        "status": "NOT_RUN"
+      }
+    }
+  ]
+}

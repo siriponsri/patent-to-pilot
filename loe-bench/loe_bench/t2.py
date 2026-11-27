@@ -65,7 +65,7 @@ def _logit(probability):
     return math.log(p / (1 - p))
 
 
-def _cross_calibrate(rows, m1, m3):
+def _cross_calibrate(rows, m1, m3, *, calibrator=None):
     """Fit on other validation groups. M2 uses saturated, smoothed verdict logits."""
     folds = [_fold(row["key"]) for row in rows]
     outputs = {arm: [None] * len(rows) for arm in ("M1", "M2", "M3")}
@@ -85,10 +85,16 @@ def _cross_calibrate(rows, m1, m3):
         table = {v: (events[v] + 1) / (count[v] + 2) if count[v] else pooled for v in VERDICTS}
         for i in held:
             outputs["M2"][i] = table[rows[i]["asof"].verdict]
-        for arm, inputs in inputs_by_arm.items():
-            fitted = Logistic(feats=("logit",)).fit(
-                _with_labels([inputs[i] for i in calibration], [rows[i] for i in calibration]))
-            for i, probability in zip(held, fitted.predict([inputs[i] for i in held]), strict=True):
+        for arm, raw in (("M1", m1), ("M3", m3)):
+            if calibrator is None:
+                inputs = inputs_by_arm[arm]
+                fitted = Logistic(feats=("logit",)).fit(
+                    _with_labels([inputs[i] for i in calibration], [rows[i] for i in calibration]))
+                probabilities = fitted.predict([inputs[i] for i in held])
+            else:
+                probabilities = calibrator([(raw[i], rows[i]["y"]) for i in calibration],
+                                           [raw[i] for i in held])
+            for i, probability in zip(held, probabilities, strict=True):
                 outputs[arm][i] = probability
     return outputs
 

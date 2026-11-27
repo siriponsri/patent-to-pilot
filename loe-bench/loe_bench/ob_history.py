@@ -69,7 +69,9 @@ def parse_products(text: str) -> List[dict]:
                         appl_type=r.get("appl_type", ""), ingredient=r.get("ingredient", ""),
                         ingredient_key=ingredient_key_ob(r.get("ingredient", "")),
                         trade_name=r.get("trade_name", ""), rld=r.get("rld", ""), type=r.get("type", ""),
-                        approval_date=parse_ob_date(r.get("approval_date"))))
+                        approval_date=parse_ob_date(r.get("approval_date")),
+                        approval_date_text=r.get("approval_date", ""), form_route=r.get("df;route", ""),
+                        strength=r.get("strength", "")))
     return out
 
 
