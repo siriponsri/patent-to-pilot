@@ -6,6 +6,8 @@ from datetime import date
 from .common import add_months, years_between
 from .dataset import FEATURE_NAMES
 from .evidence_graph import build_assignment, verdict_label
+from .challenge import ChallengeEvidence
+from .kleene import T3
 from .moiety import registry_for
 from .ob_history import OBHistory
 
@@ -14,6 +16,7 @@ OB_FEATURES = (
     "years_to_last_patent_expiry", "years_since_earliest_patent_submission",
 )
 MODEL_FEATURES = (*FEATURE_NAMES, *OB_FEATURES, *(f"{name}_missing" for name in OB_FEATURES))
+CHALLENGE_FEATURES = ("challenge_present", "challenge_missing")
 
 
 @dataclass(frozen=True)
@@ -22,6 +25,7 @@ class AsOfFeatures:
     snapshot: dict
     verdict: str
     edition_status: str
+    challenge: ChallengeEvidence | None = None
 
 
 def edition_coverage(history: OBHistory, cutoff: date) -> dict:
@@ -127,8 +131,9 @@ def _remaining(records, cutoff):
 
 
 class AsOfBuilder:
-    def __init__(self, history: OBHistory, *, key_mode=None, gsrs_path=None, linker=None):
+    def __init__(self, history: OBHistory, *, key_mode=None, gsrs_path=None, linker=None, challenge=None):
         self.history = history
+        self.challenge = challenge
         self._indexes = {}
         if key_mode is None:
             key_mode = "moiety" if linker or history.data_dir is not None or gsrs_path else "legacy"
@@ -156,11 +161,11 @@ class AsOfBuilder:
         status = coverage["status"]
         values = dict.fromkeys(OB_FEATURES)
         snapshot = {}
+        if self.linker is not None:
+            key = self.linker.canonical(key)
         if source is not None:
             if source not in self._indexes:
                 self._indexes[source] = _EditionIndex(self.history.load_source(source), self.registry, self.linker)
-            if self.linker is not None:
-                key = self.linker.canonical(key)
             patents, exclusivities = self._indexes[source].records(key)
             if patents is None:
                 status = "NOT_LISTED"
@@ -182,5 +187,9 @@ class AsOfBuilder:
         for name, value in values.items():
             x[name] = 0.0 if value is None else float(value)
             x[f"{name}_missing"] = float(value is None)
-        verdict = verdict_label(build_assignment(snapshot, cutoff, horizon))
-        return AsOfFeatures(x, snapshot, verdict, status)
+        challenge = self.challenge.lookup(key, cutoff) if self.challenge is not None else None
+        state = challenge.state if challenge is not None else None
+        if challenge is not None:
+            x.update(challenge_present=float(state == T3.TRUE), challenge_missing=float(state == T3.UNKNOWN))
+        verdict = verdict_label(build_assignment(snapshot, cutoff, horizon, challenge_evidence=state))
+        return AsOfFeatures(x, snapshot, verdict, status, challenge)

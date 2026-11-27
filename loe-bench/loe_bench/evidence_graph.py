@@ -3,10 +3,10 @@
 Root = AND( L_excl , OR( L_pat , L_challenge ) )
   L_excl      statutory exclusivities all expire by t+h        (TRUE/FALSE from data; hard blocker)
   L_pat       all listed patents expire by t+h                 (TRUE/FALSE from data)
-  L_challenge a lawful route exists despite unexpired patents  (UNKNOWN by default: needs litigation /
-              settlement / licence evidence which public regulatory files do NOT contain)
-Verdict TRUE  -> OPEN (clock alone suggests entry possible)
-        FALSE -> BLOCKED (hard exclusivity)
+  L_challenge a dated patent challenge is observed (UNKNOWN by default).
+              This leaf is a forecast signal. A filing alone confers no right to enter.
+Verdict TRUE  -> OPEN (graph supports entry under the forecast rule)
+        FALSE -> BLOCKED (a required graph condition fails)
         UNKNOWN -> CONTESTED (needs human evaluator or more evidence)
 Legal assumptions are placeholders for a regulatory-law expert to verify. NOT legal advice.
 """
@@ -47,7 +47,8 @@ def verdict_label(a: Dict[str, T3]) -> str:
 def decide(snap: dict, t: date, horizon_months: int, p_model: float,
            lo: float = 0.25, hi: float = 0.75,
            reveal_probabilities: Optional[Dict[str, float]] = None, *,
-           prior_truth_probability: float = 0.5, blocked_conflict_action: str = ABSTAIN) -> dict:
+           prior_truth_probability: float = 0.5, blocked_conflict_action: str = ABSTAIN,
+           challenge_evidence: Optional[T3] = None) -> dict:
     """Use the configured conflict action for BLOCKED with p_model >= hi.
 
     The default refers conflicts to the evaluator. Other BLOCKED rows predict
@@ -57,7 +58,7 @@ def decide(snap: dict, t: date, horizon_months: int, p_model: float,
         raise ValueError("require 0 <= lo < hi <= 1 and p_model in [0, 1]")
     if blocked_conflict_action not in (ABSTAIN, PREDICT_ENTRY, PREDICT_NO_ENTRY):
         raise ValueError("invalid BLOCKED conflict action")
-    a = build_assignment(snap, t, horizon_months)
+    a = build_assignment(snap, t, horizon_months, challenge_evidence=challenge_evidence)
     v = verdict_label(a)
     conflict = v == "BLOCKED" and p_model >= hi
     if v == "BLOCKED":

@@ -10,7 +10,7 @@ from .baselines import AgeHazardTable, Logistic
 from .common import add_months
 from .metrics import brier, ece, paired_cluster_bootstrap_ci, risk_coverage
 from .seal import TEST_FIRST, TestSealError
-from .t2_features import MODEL_FEATURES
+from .t2_features import CHALLENGE_FEATURES, MODEL_FEATURES
 
 HORIZONS = (12, 24, 36)
 DEVELOPMENT_CUTOFFS = tuple(date(year, 1, 1) for year in range(2010, TEST_FIRST.year))
@@ -145,7 +145,7 @@ def _metrics(predictions, labels, verdicts):
             "coverage": answered / len(labels), "answered": answered, "by_verdict": by_verdict}
 
 
-def evaluate(train, validation, horizon):
+def evaluate(train, validation, horizon, *, with_challenge=False):
     """Score validation only. Seal both sets before stripping cutoff metadata."""
     require_development_cutoffs(row["t"] for row in validation)
     require_development_cutoffs(row["t"] for row in train)
@@ -162,6 +162,8 @@ def evaluate(train, validation, horizon):
     age_train = age_table.predict(original_train)
     age_validation = age_table.predict(original_validation)
     base_features = (*MODEL_FEATURES, AGE_SIGNAL)
+    if with_challenge:
+        base_features += CHALLENGE_FEATURES
     model_features = {"M1": base_features, "M3": (*base_features, *VERDICT_FEATURES)}
     train_inputs = {arm: _with_labels(_inputs(train, age_train, arm == "M3"), train)
                     for arm in model_features}
@@ -186,7 +188,10 @@ def evaluate(train, validation, horizon):
     verdicts = [row["asof"].verdict for row in validation]
     predictions = {arm: [Prediction(p, _flat_action(p)) for p in calibrated[arm]] for arm in ("M1", "M2")}
     predictions["M3"] = [
-        Prediction(p, graph.decide(row["asof"].snapshot, row["t"], horizon, p, lo=LO, hi=HI)["action"])
+        Prediction(p, graph.decide(
+            row["asof"].snapshot, row["t"], horizon, p, lo=LO, hi=HI,
+            challenge_evidence=row["asof"].challenge.state if row["asof"].challenge else None,
+        )["action"])
         for row, p in zip(validation, calibrated["M3"], strict=True)
     ]
     predictions["B1"] = [
