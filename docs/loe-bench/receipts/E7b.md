@@ -86,6 +86,7 @@ The replay exited 0. The output audit verified matching E7 baseline counts, iden
 - The six-month requirement leaves gaps at filing. Recent listings between the selected edition and filing can also be missed. The modern FIX2c identity crosswalk can resolve aliases retrospectively. A case witness stays positive at later cutoffs and carries no resolution, expiry, exclusivity or entry outcome.
 - The FDA PIV negative remains an operational absence under the fresh-edition rule. Unmatched FDA rows and unobserved, unclassified or delayed filings can leave relevant information outside the join.
 - The initial replay was stopped before it wrote artifacts after the normalization tests extended support to historical US kind A and zero-padded grant identifiers. The final replay used the expanded normalization. The Berkeley article landing page returned HTTP 403 in the web reader and the DOI resolver was unavailable there. The journal's published PDF supplied the methods section. The replay used the local E7 inputs.
+- The first push of `2bf7240` returned GitHub's `[remote rejected] (failed)` response without a specific cause. A follow-up `git ls-remote origin refs/heads/loe/E7b` returned no ref. Publication is retried from the same checkout with an explicit refspec.
 
 ## Next action
 
