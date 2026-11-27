@@ -162,8 +162,10 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | T2 | M1/M2/M3 arms, as-of features, test seal, development validation only | GPT-6.2 Sol high | FIX1, CP2 | merged: seal works; stale editions gave 0 OPEN rows |
 | 2 | T2b | Rerun with availability-proven editions and a shared age base | GPT-6.2 Sol high | E2b | merged (development only). At 24 months, M1−B1 = −0.0073 (CI below 0) and M3−M1 = +0.0040 (CI includes 0). 83% of rows are CONTESTED. |
 | 2 | FIX2 | UNII active-moiety key | GPT-6.2 Sol high | T7 | not merged: fresh audit 0 false merges, 11/60 false splits |
-| 2 | FIX2b | Close FIX2 false splits (name-to-UNII lookup, union-find), fresh audit with seed 20261130 | GPT-6.2 Sol high | FIX2 | dispatched |
-| 2 | E6 | As-of FDA Paragraph IV certification list for the challenge leaf | GPT-6.2 Sol high | T2b | dispatched |
+| 2 | FIX2b | Close FIX2 false splits (name-to-UNII lookup, union-find), fresh audit with seed 20261130 | GPT-6.2 Sol high | FIX2 | fresh audit: 57 correct, 1 false split, 2 unresolved of 60; merge via FIX2c |
+| 2 | E6 | As-of FDA Paragraph IV certification list for the challenge leaf | GPT-6.2 Sol high | T2b | merged: 11/16 cutoffs fresh; gaps 2013–2016 and 2024; development name matches about 70% |
+| 2 | E6-alt | Alternative challenge sources (litigation dockets and others) | GPT-6.2 Astra high | E6 | dispatched |
+| 2 | FIX2c | Merge the moiety key with T2b, link OB aliases, rerun development | GPT-6.2 Sol high | FIX2b | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
