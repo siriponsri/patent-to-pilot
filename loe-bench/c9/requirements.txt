@@ -1,0 +1,12 @@
+# Install the matching PyTorch wheel first from the relevant official index.
+torch==2.8.0+cpu ; sys_platform == "win32"
+torch==2.8.0+cu128 ; sys_platform == "linux"
+transformers==4.55.2
+peft==0.17.1
+trl==0.21.0
+datasets==4.0.0
+accelerate==1.10.0
+numpy==2.2.6
+huggingface-hub==0.36.2
+tokenizers==0.21.4
+safetensors==0.8.0
