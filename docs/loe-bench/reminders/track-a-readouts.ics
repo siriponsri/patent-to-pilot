@@ -1,0 +1,158 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Patent-to-Pilot//Track A Readouts//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Asia/Bangkok
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0700
+TZOFFSETTO:+0700
+TZNAME:ICT
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:tracka-12-prepare@patent-to-pilot.github
+DTSTAMP:20261128T182000Z
+DTSTART;TZID=Asia/Bangkok:20271120T090000
+DTEND;TZID=Asia/Bangkok:20271120T093000
+SUMMARY:Track A 12-month readout (prepare)
+DESCRIPTION:Confirm the release and Worker settings. The scorer stays PENDI
+ NG until maturity UTC.\nReplace VERSION_ID and OSF_UPDATE_4_FREEZE_SHA256
+  with the published values.\npython -m loe_bench.score_release --release 1
+ 0.5281/zenodo.VERSION_ID --horizon 12 --out track-a-results --freeze-sha25
+ 6 OSF_UPDATE_4_FREEZE_SHA256\nGuide: https://github.com/siriponsri/patent-
+ to-pilot/blob/main/docs/loe-bench/HOW-TO-SCORE-TRACK-A.md\nOSF registratio
+ n: https://doi.org/10.17605/OSF.IO/P2SMD\nZenodo version DOI: https://doi.
+ org/10.5281/zenodo.VERSION_ID (placeholder)
+BEGIN:VALARM
+TRIGGER:PT0S
+ACTION:DISPLAY
+DESCRIPTION:Track A readout reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tracka-12-maturity@patent-to-pilot.github
+DTSTAMP:20261128T182000Z
+DTSTART;TZID=Asia/Bangkok:20271127T090000
+DTEND;TZID=Asia/Bangkok:20271127T093000
+SUMMARY:Track A 12-month readout (maturity)
+DESCRIPTION:The window matures today UTC. Retry if the FDA release is not y
+ et complete.\nReplace VERSION_ID and OSF_UPDATE_4_FREEZE_SHA256 with the p
+ ublished values.\npython -m loe_bench.score_release --release 10.5281/zeno
+ do.VERSION_ID --horizon 12 --out track-a-results --freeze-sha256 OSF_UPDAT
+ E_4_FREEZE_SHA256\nGuide: https://github.com/siriponsri/patent-to-pilot/bl
+ ob/main/docs/loe-bench/HOW-TO-SCORE-TRACK-A.md\nOSF registration: https://
+ doi.org/10.17605/OSF.IO/P2SMD\nZenodo version DOI: https://doi.org/10.5281
+ /zenodo.VERSION_ID (placeholder)
+BEGIN:VALARM
+TRIGGER:PT0S
+ACTION:DISPLAY
+DESCRIPTION:Track A readout reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tracka-12-follow-up@patent-to-pilot.github
+DTSTAMP:20261128T182000Z
+DTSTART;TZID=Asia/Bangkok:20271227T090000
+DTEND;TZID=Asia/Bangkok:20271227T093000
+SUMMARY:Track A 12-month readout (follow-up)
+DESCRIPTION:Check the result issue and preserve the files. If still missing
+ \, score and record the readout as late.\nReplace VERSION_ID and OSF_UPDAT
+ E_4_FREEZE_SHA256 with the published values.\npython -m loe_bench.score_re
+ lease --release 10.5281/zenodo.VERSION_ID --horizon 12 --out track-a-resul
+ ts --freeze-sha256 OSF_UPDATE_4_FREEZE_SHA256\nGuide: https://github.com/s
+ iriponsri/patent-to-pilot/blob/main/docs/loe-bench/HOW-TO-SCORE-TRACK-A.md
+ \nOSF registration: https://doi.org/10.17605/OSF.IO/P2SMD\nZenodo version
+  DOI: https://doi.org/10.5281/zenodo.VERSION_ID (placeholder)
+BEGIN:VALARM
+TRIGGER:PT0S
+ACTION:DISPLAY
+DESCRIPTION:Track A readout reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tracka-24-prepare@patent-to-pilot.github
+DTSTAMP:20261128T182000Z
+DTSTART;TZID=Asia/Bangkok:20281120T090000
+DTEND;TZID=Asia/Bangkok:20281120T093000
+SUMMARY:Track A 24-month readout (prepare)
+DESCRIPTION:Confirm the release and Worker settings. The scorer stays PENDI
+ NG until maturity UTC.\nReplace VERSION_ID and OSF_UPDATE_4_FREEZE_SHA256
+  with the published values.\npython -m loe_bench.score_release --release 1
+ 0.5281/zenodo.VERSION_ID --horizon 24 --out track-a-results --freeze-sha25
+ 6 OSF_UPDATE_4_FREEZE_SHA256\nGuide: https://github.com/siriponsri/patent-
+ to-pilot/blob/main/docs/loe-bench/HOW-TO-SCORE-TRACK-A.md\nOSF registratio
+ n: https://doi.org/10.17605/OSF.IO/P2SMD\nZenodo version DOI: https://doi.
+ org/10.5281/zenodo.VERSION_ID (placeholder)
+BEGIN:VALARM
+TRIGGER:PT0S
+ACTION:DISPLAY
+DESCRIPTION:Track A readout reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tracka-24-maturity@patent-to-pilot.github
+DTSTAMP:20261128T182000Z
+DTSTART;TZID=Asia/Bangkok:20281127T090000
+DTEND;TZID=Asia/Bangkok:20281127T093000
+SUMMARY:Track A 24-month readout (maturity)
+DESCRIPTION:The window matures today UTC. Retry if the FDA release is not y
+ et complete.\nReplace VERSION_ID and OSF_UPDATE_4_FREEZE_SHA256 with the p
+ ublished values.\npython -m loe_bench.score_release --release 10.5281/zeno
+ do.VERSION_ID --horizon 24 --out track-a-results --freeze-sha256 OSF_UPDAT
+ E_4_FREEZE_SHA256\nGuide: https://github.com/siriponsri/patent-to-pilot/bl
+ ob/main/docs/loe-bench/HOW-TO-SCORE-TRACK-A.md\nOSF registration: https://
+ doi.org/10.17605/OSF.IO/P2SMD\nZenodo version DOI: https://doi.org/10.5281
+ /zenodo.VERSION_ID (placeholder)
+BEGIN:VALARM
+TRIGGER:PT0S
+ACTION:DISPLAY
+DESCRIPTION:Track A readout reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tracka-24-follow-up@patent-to-pilot.github
+DTSTAMP:20261128T182000Z
+DTSTART;TZID=Asia/Bangkok:20281227T090000
+DTEND;TZID=Asia/Bangkok:20281227T093000
+SUMMARY:Track A 24-month readout (follow-up)
+DESCRIPTION:Check the result issue and preserve the files. If still missing
+ \, score and record the readout as late.\nReplace VERSION_ID and OSF_UPDAT
+ E_4_FREEZE_SHA256 with the published values.\npython -m loe_bench.score_re
+ lease --release 10.5281/zenodo.VERSION_ID --horizon 24 --out track-a-resul
+ ts --freeze-sha256 OSF_UPDATE_4_FREEZE_SHA256\nGuide: https://github.com/s
+ iriponsri/patent-to-pilot/blob/main/docs/loe-bench/HOW-TO-SCORE-TRACK-A.md
+ \nOSF registration: https://doi.org/10.17605/OSF.IO/P2SMD\nZenodo version
+  DOI: https://doi.org/10.5281/zenodo.VERSION_ID (placeholder)
+BEGIN:VALARM
+TRIGGER:PT0S
+ACTION:DISPLAY
+DESCRIPTION:Track A readout reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tracka-annual-check@patent-to-pilot.github
+DTSTAMP:20261128T182000Z
+DTSTART;TZID=Asia/Bangkok:20271101T090000
+DTEND;TZID=Asia/Bangkok:20271101T093000
+SUMMARY:Track A: check automation still works
+DESCRIPTION:Review recent Worker checks\, renew the GitHub secrets as neede
+ d and verify the exact release pins.\nReplace VERSION_ID and OSF_UPDATE_4_
+ FREEZE_SHA256 with the published values.\npython -m loe_bench.score_releas
+ e --release 10.5281/zenodo.VERSION_ID --horizon 12 --out track-a-results -
+ -freeze-sha256 OSF_UPDATE_4_FREEZE_SHA256\npython -m loe_bench.score_relea
+ se --release 10.5281/zenodo.VERSION_ID --horizon 24 --out track-a-results
+  --freeze-sha256 OSF_UPDATE_4_FREEZE_SHA256\nGuide: https://github.com/sir
+ iponsri/patent-to-pilot/blob/main/docs/loe-bench/HOW-TO-SCORE-TRACK-A.md\n
+ OSF registration: https://doi.org/10.17605/OSF.IO/P2SMD\nZenodo version DO
+ I: https://doi.org/10.5281/zenodo.VERSION_ID (placeholder)
+RRULE:FREQ=YEARLY
+BEGIN:VALARM
+TRIGGER:PT0S
+ACTION:DISPLAY
+DESCRIPTION:Track A readout reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

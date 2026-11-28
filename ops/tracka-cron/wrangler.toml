@@ -1,0 +1,19 @@
+name = "tracka-readouts"
+main = "src/worker.mjs"
+compatibility_date = "2026-11-28"
+workers_dev = false
+preview_urls = false
+upload_source_maps = false
+
+[triggers]
+crons = ["13 1 * * *", "23 1 1 * *"]
+
+[vars]
+GITHUB_REPOSITORY = "OWNER/REPOSITORY"
+GITHUB_REF = "main"
+TRACKA_RELEASE_DOI = "10.5281/zenodo.VERSION_ID"
+TRACKA_FREEZE_SHA256 = "OSF_UPDATE_4_FREEZE_SHA256"
+GITHUB_TOKEN_EXPIRES_ON = "YYYY-MM-DD"
+
+[observability]
+enabled = true
