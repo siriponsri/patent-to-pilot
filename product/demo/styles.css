@@ -174,11 +174,11 @@ select:hover { border-color: var(--muted); }
 .d-meta b { color: var(--ink); font-weight: 600; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
 
-.outcome { border: 1px solid var(--line); border-radius: var(--r-panel); margin: 0 0 18px; }
-.outcome-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 9px 16px; background: var(--surface-2); border-bottom: 1px solid var(--line); border-radius: var(--r-panel) var(--r-panel) 0 0; }
+.outcome { border-top: 2px solid var(--navy); border-bottom: 1px solid var(--line); margin: 0 0 20px; }
+.outcome-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 0 8px; border-bottom: 1px solid var(--line); }
 .outcome-head h2 { font-size: 15px; color: var(--navy); font-weight: 700; }
 .outcome dl { display: grid; grid-template-columns: 168px 1fr; }
-.outcome dt, .outcome dd { padding: 9px 16px; border-bottom: 1px solid var(--line); font-size: 15px; }
+.outcome dt, .outcome dd { padding: 9px 16px 9px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
 .outcome dt { color: var(--muted); font-weight: 600; font-size: 14px; }
 .outcome dl > :nth-last-child(-n+2) { border-bottom: 0; }
 .outcome .result { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
@@ -275,7 +275,7 @@ tr.done .task-text { color: var(--muted); text-decoration: line-through; text-de
 /* ---------- full-width views ---------- */
 .view { padding: 20px 28px 32px; }
 .view h1 { font-size: 36px; line-height: 1.15; font-weight: 700; color: var(--navy); margin: 6px 0 6px; }
-.view .lead { font-size: 16px; color: var(--ink-2); max-width: 75ch; margin-bottom: 18px; }
+.view .lead { font-size: 16px; color: var(--ink-2); max-width: 66ch; margin-bottom: 18px; }
 .reg { width: 100%; border-collapse: collapse; font-size: 14.5px; }
 .reg th { text-align: left; font-size: 13px; font-weight: 700; color: var(--muted); padding: 8px 10px; border-bottom: 2px solid var(--line); white-space: nowrap; position: sticky; top: 0; background: var(--surface); }
 .reg td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
