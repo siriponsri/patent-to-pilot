@@ -80,3 +80,8 @@
   - The smallest pre-OSF addition is the crowding endpoint K25, run on frozen scores.
   - Durable architecture: a bitemporal evidence store, W3C PROV provenance, an OpenAPI decision contract with an MCP adapter, and an evaluation contract with prospective freezes. Models, LLMs and UI are disposable.
   - The owner decision is pending, and OSF waits on it.
+- **28 Nov, FTO decision-support co-design.**
+  - The owner wants the product to help FTO evaluators decide. Co-planner verdict (GPT-6.2 Astra high, SciSpace plus web): stop at L2, an evaluator workbench with a dated evidence pack, a verification checklist and escalation. L3 claim-to-product mapping needs the product formulation and qualified review. L4 FTO opinion belongs to counsel; the Thai Lawyers Act and Patent Act s.35 bis are cited.
+  - The blocking-patent label must be document-backed. Date coincidence yields unknown. Label supply is narrow: Rai has no ANDA field (E7b).
+  - Thai family status: EPO DOCDB and INPADOC have almost no TH coverage. Use WIPO/ASEAN PATENTSCOPE and the ASEAN IP Register manually, and DIP manually or through an exchange request.
+  - Proposed phases: decide K23–K25 → pre-OSF additions → confirmatory run → US label-yield pilot (30 products, at least 10 documented positives to continue) → Thai dossier pilot (10 traces) → demo → IS2 paper; customer discovery by the owner in parallel. The main planner's merged Goal-Phase plan is awaiting owner approval.
