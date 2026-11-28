@@ -74,3 +74,7 @@ rtk proxy py -3.12 loe-bench/scripts/juris_count.py --raw "$private/juris" --us-
 - **PASS** Local replay and integrity checks for parsed input hashes, receipt links, Canadian cohort arithmetic and Japan workbook, NHI master and witness records.
 - **Accepted baseline failures** `py -3.12 -m pytest`, 2,760 passed, 50 skipped, one expected failure, and the eight standing SACR r2/r3 supervisor budget-arithmetic failures.
 - **Scope** Base `49b72700`. Work retained on `loe/JURIS-COUNT` for the Planner. The receipt records this card's handoff and memory for planner integration. Protected TEST partitions were outside the public source replay.
+
+## Planner provenance note (28 November 2026, 22:23 Bangkok)
+
+After [EXTREV-R1](../reviews/EXTERNAL-REVIEW-R1.md) R6: the admission rule (`c206bc96`) and the 2023–2025 window (`2f702d43`) were committed before the counts. The detailed [counting manifest](../../../loe-bench/data/JURIS-COUNT/counting-manifest.md) first appears with the counts in `7faad8d4`. Its statement that the window was set before inspecting counts is therefore supported for the window only, not for the detailed counting and adjudication choices. No separately timestamped detailed specification exists. These counts are descriptive and decided nothing beyond the M3 status recorded in the [decision](../JURISDICTION-DECISION-RULE.md).

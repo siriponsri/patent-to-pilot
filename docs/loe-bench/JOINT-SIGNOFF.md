@@ -100,3 +100,5 @@ These are the only three rows marked as blocking after excluding the deferred pu
 | Claude Opus 5.5 (main planner) | `0a5ff7f5` | SIGN-OFF GRANTED: all result rows, objections 1 and 2 resolved, CPRIME-DESC accepted with limitation |
 
 **Research line: complete** for method evidence, reproducibility and archive, and records at `0a5ff7f5`. Not part of this sign-off: the IS2 and journal writing (paused by the owner), the prospective readouts maturing on 27 November 2027 and 2028, the optional power expansion (POWER-PLAN, POWER-SIM, jurisdiction choice) and the live deployment of the readout automation, which is an owner action (Worker, tokens, calendar).
+
+**Status clarification (planner, 28 Nov 2026, 22:23 Bangkok, after [EXTREV-R1](reviews/EXTERNAL-REVIEW-R1.md) R1).** This signature is a completed milestone for the historical results, archive and records at `0a5ff7f5`, and it stands. Final closure of the research track also requires the external review the owner ordered at 21:46, recorded in the [checklist](RESEARCH-COMPLETION.md) as the remaining blocking row.
