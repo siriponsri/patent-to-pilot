@@ -1,0 +1,158 @@
+{
+  "card": "C9",
+  "ledger": "K23",
+  "version": 1,
+  "specified_on": "2026-11-28",
+  "role": "prospective Track A only, exploratory, outside H1-H3",
+  "s0": {
+    "cutoff": "2026-11-27",
+    "input_manifest": "loe-bench/data/S0_INPUT_MANIFEST.json",
+    "manifest_lf_sha256": "7d40be5e2004d887480ce5f337afffd611909f26017622e90ad304a0386d2d1d",
+    "tag": "loe-S0-input-20261127"
+  },
+  "cohort": {
+    "unit": "one frozen active-moiety set per cutoff, FIX2c Track A identity rules",
+    "eligibility": "dated final original NDA with dated TYPE 1 eligibility and no first final original ANDA as of the cutoff",
+    "horizon_months": 24,
+    "outcome": "first dated final FDA original ANDA approval in (cutoff, cutoff + 24 calendar months]",
+    "train_first_cutoff": "1995-01-01",
+    "train_last_cutoff": "2014-01-01",
+    "train_cutoff_frequency": "annual January 1",
+    "protected_retrospective_cutoffs_start": "2017-01-01",
+    "latest_training_window_end": "2016-01-01",
+    "training_label_rule": "require independently verified S0 coverage and resolved linkage through the full window for either class; no-event is 0 only with such coverage; unresolved is omitted jointly",
+    "roster_order": "ascending SHA-256 of compact UTF-8 JSON [20261127, drug_key, cutoff_iso] with unescaped Unicode, then cutoff, then drug key",
+    "train_row_slots": 256,
+    "train_min_distinct_rows": 8,
+    "train_min_label_classes": 2,
+    "roster_fill": "take first 256 eligible resolved ordered rows; if fewer, cycle from the start to fill 256 slots; check both classes among the selected rows before running",
+    "track_a_roster": "all eligible frozen S0 24-month drug keys in both arms, including predictable missing evidence",
+    "track_a_maturity": "2028-11-27"
+  },
+  "prompt": {
+    "contract": "L1e (C2/K24), same renderer, dated source allowlist, field order, missingness and text bytes in both C9 arms",
+    "pin": "Reviewed C2 config and renderer revision plus SHA-256 in the submitted preregistration; no fallback contract",
+    "evidence": "C2's label-free as-of M3 evidence projection with cutoff-eligible record dates and demonstrated source availability; preserve provenance in the manifest",
+    "excluded_from_model_inputs": ["training labels", "reward", "evaluator metadata", "post-cutoff evidence", "other-arm scores"],
+    "parser": "loe_bench.llm_arm.parse_response",
+    "parser_source_lf_sha256": "a0f3681e0ceba5d6128900f7fc2cf4243d5522821b7118b49bcddd0216d4dca6",
+    "schema": ["p_entry", "action", "missing_evidence"],
+    "chat_template": "checkpoint's pinned tokenizer; add_generation_prompt=true",
+    "max_prompt_tokens": 2048,
+    "oversize": "fail pair; no arm-specific truncation or row removal"
+  },
+  "checkpoint": {
+    "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "license": "Apache-2.0",
+    "parameter_count": 1543714304,
+    "base_weights": "frozen non-quantized bf16, same model and tokenizer bytes in both arms",
+    "trust_remote_code": false,
+    "runtime": {
+      "torch": "2.8.0+cu128",
+      "transformers": "4.55.2",
+      "peft": "0.17.1"
+    }
+  },
+  "training": {
+    "calendar": "January 2027 before the Track A freeze",
+    "seed": 20261127,
+    "paired_seeds": 1,
+    "prompts_per_batch": 8,
+    "prompt_batches": 32,
+    "optimizer_updates_per_batch": 2,
+    "optimizer_updates_per_arm": 64,
+    "adapter": {
+      "type": "LoRA",
+      "rank": 8,
+      "alpha": 16,
+      "dropout": 0.0,
+      "bias": "none",
+      "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+      "initialization": "default PEFT LoRA A Kaiming uniform, B zero; clone identical initial adapter bytes",
+      "dtype": "float32"
+    },
+    "optimizer": {
+      "type": "AdamW",
+      "learning_rate": 0.00005,
+      "betas": [0.9, 0.999],
+      "epsilon": 1e-8,
+      "weight_decay": 0.0,
+      "max_grad_norm": 1.0,
+      "schedule": "constant, zero warmup"
+    },
+    "grpo": {
+      "group_size": 4,
+      "rollout_seed": 20261127,
+      "do_sample": true,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "max_new_tokens": 160,
+      "reward": "-(p_entry - y)^2 for schema-valid completions, including abstention",
+      "malformed_reward": -1.25,
+      "advantage": "center within prompt group and divide by population reward standard deviation + 0.0001",
+      "ratio": "per generated token, against rollout policy log probabilities fixed for both updates",
+      "clip_epsilon": 0.2,
+      "reference_kl_beta": 0.04,
+      "reference": "same frozen base, initial zero-effect adapter",
+      "loss": "negative mean of per-completion mean clipped surrogate less tokenwise DeepSeekMath KL; mask prompt and padding"
+    },
+    "sft": {
+      "target": "canonical JSON with p_entry=float(y), PREDICT_ENTRY if y=1 or PREDICT_NO_ENTRY if y=0, missing_evidence=[]; then assistant EOS",
+      "loss": "mean of per-target mean teacher-forced token negative log-likelihood; mask prompt and padding",
+      "data_access": "same rendered prompts, mature labels and batch order as GRPO; no extra targets, examples or calibration"
+    },
+    "selection": "use each arm's finite adapter immediately after update 64, with no intermediate selection, extra seeds or early stopping"
+  },
+  "prediction": {
+    "seed": 20261127,
+    "do_sample": false,
+    "num_beams": 1,
+    "max_new_tokens": 160,
+    "dtype": "bfloat16 base with frozen float32 adapter",
+    "padding_side": "left",
+    "pad_token": "tokenizer EOS",
+    "stop": "tokenizer assistant EOS or token cap; parse the complete decoded continuation",
+    "external_timestamp_deadline_utc": "2027-01-31T23:59:00Z",
+    "freeze": "hash and tag S0, C2 contract, runtime, row and prompt manifests, both adapters and both full label-free prediction files; record Git tag and hashes on OSF by the independently scheduled core freeze, before deadline and before any post-S0 outcome fetch"
+  },
+  "evaluation": {
+    "arm_order": ["GRPO", "SFT"],
+    "metrics": ["24-month Brier score", "24-month recall at 20% review budget"],
+    "difference": "GRPO minus SFT; lower Brier and higher recall favor GRPO",
+    "brier": "mean squared probability error using raw p_entry including schema-valid abstentions",
+    "queue": "descending valid p_entry including abstentions; floor(N/5) on the full S0 roster; uniform expected allocation of boundary ties",
+    "malformed_probability": 0.5,
+    "malformed_rank_score": -1.0,
+    "malformed": "retain row as evaluator referral, use fallback Brier probability and rank below every valid score; report count and rate by arm",
+    "missing_completion": "require captured decoded text for each frozen row in both arms; a recorded empty completion is malformed, a missing completion fails the pair",
+    "unresolved_outcome": "hold scoring until identical mature binary labels cover the full paired roster; never count unknown as zero",
+    "bootstrap": {
+      "unit": "whole drug, 2000 common paired draws with replacement; rebuild queues in every draw",
+      "draws": 2000,
+      "seed": 20261127,
+      "interval": "two-sided empirical 95% percentile interval from finite draws using the metrics.py order statistics; report undefined draw counts and omit an interval with no finite draws"
+    },
+    "interpretation": "exploratory paired effects conditional on one fitted seed and the frozen cohort; no hypothesis gate or efficacy conclusion"
+  },
+  "budget": {
+    "all_in_usd": 8.0,
+    "gpu_count": 1,
+    "gpu_sku": "same 24 GiB NVIDIA A10 for both arms, sequential",
+    "max_gpu_hours_per_arm": 2.5,
+    "max_gpu_usd_per_arm": 3.5,
+    "max_gpu_rate_usd_per_hour": 1.4,
+    "max_non_gpu_usd_combined": 1.0,
+    "max_ephemeral_storage_gib": 20,
+    "max_all_in_usd_per_arm": 4.0,
+    "storage": "ephemeral only; include storage, transfer, fees, taxes and cleanup, split shared charges evenly",
+    "admission": "live itemized January quote and recorded owner approval before pod creation; include setup, hosted smoke, training, freezing predictions, billing increments, artifact pull and deletion; stop before either cap would be exceeded",
+    "reallocation": false
+  },
+  "pair_failure": {
+    "status": "NOT_RUN",
+    "conditions": ["unequal data access or unpinned C2 prompt", "empty, underfilled or single-class training roster", "unverifiable source coverage or input hashes at freeze", "missing or incomplete SFT or GRPO arm", "nonfinite run or incomplete update 64", "unequal hardware or budget allocation", "unapproved quote or budget overrun", "missing, altered or unpaired forecast artifacts", "missed external timestamp or prior post-S0 outcome fetch", "no verified mature outcome coverage for final scoring"],
+    "core_track_a": "freeze core arms on schedule independently of C9"
+  }
+}
