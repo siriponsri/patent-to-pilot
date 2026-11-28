@@ -19,12 +19,12 @@ This sheet tells a browser agent (GPT-6.2 Sol high with the Chrome extension) ex
 | Step | Value |
 |---|---|
 | Create project | Title: `Market Window Dossier: LOE-Bench preregistration`. Leave it private until registration |
-| Contributors | 1. Siripon Srihangpiboon, the owner's account (admin). 2. Asst. Prof. Dr. Tuchsanai Ploysuwan, added by name and email as admin or read-write. **The owner must supply the advisor's email.** Admin contributors receive an approval email, and OSF approves the registration automatically after 48 hours if nobody acts |
+| Contributors | The owner's account only (owner decision, 28 Nov). Do not add other contributors. The advisor, Asst. Prof. Dr. Tuchsanai Ploysuwan, is named as co-author in the registration text (Metadata → Authors) and appears in the attached PDF. The OSF citation line will therefore list only the owner |
 | Affiliation | King Mongkut's Institute of Technology Ladkrabang (KMITL), School of Information Technology |
 | Licence | CC BY 4.0 for the registration text. Source and code rights follow the repository's Apache 2.0 licence and each data source's terms |
 | Subjects | Medicine and Health Sciences → Pharmacy and Pharmaceutical Sciences; Physical Sciences and Mathematics → Computer Sciences; Physical Sciences and Mathematics → Statistics and Probability |
 | Tags | generic drugs; biosimilars; freedom to operate; forecasting; preregistration; Orange Book; benchmark; selective prediction |
-| Access | **Public immediately** (recommended: the timestamped public claim is the strongest credibility signal). Alternative: embargo with an end date recorded in the summary |
+| Access | **Public immediately** (owner decision, 28 Nov). Do not set an embargo |
 
 ## 3. Registration form
 

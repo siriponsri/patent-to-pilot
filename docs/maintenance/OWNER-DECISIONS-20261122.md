@@ -206,3 +206,4 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
   - The owner will submit OSF through a GPT-6.2 Sol high browser agent, using a copy sheet that the main planner audits.
   - The owner authorized deleting documents and data no longer used by this work. This is done from a reviewed inventory with `git rm`.
   - [Plan](../loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026)
+- 28 Nov 2026, OSF settings: the registration is public immediately, with no embargo. The owner's account is the only OSF contributor. The advisor is named as co-author in the registration text and in the IS2 paper.
