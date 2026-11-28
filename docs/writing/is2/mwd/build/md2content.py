@@ -10,6 +10,17 @@ from pathlib import Path
 TEXT_W, COL_TW = 9360, 4320
 LINK = re.compile(r"!?\[([^\]]*)\]\(([^)]*)\)")
 EMPH = re.compile(r"(\*\*[^*]+\*\*|(?<![\\*])\*[^*]+\*)")
+CLOSURE_TITLE = "LOE-Bench research completion and linked evidence"
+
+
+def reference_label(label):
+    if label == "Source":
+        return "[Online guide]"
+    if label.lower().startswith("doi:"):
+        return label.replace(" ", "\u00a0")
+    if label == CLOSURE_TITLE:
+        return label
+    return ("[Online]. Available: " + label).replace(" ", "\u00a0")
 
 
 def _links(text, ref=False):
@@ -18,25 +29,21 @@ def _links(text, ref=False):
         if not url.startswith("http"):
             return "\x00"  # internal receipt link: dropped in print
         if ref:
-            if label == "Source":
-                return "[Online guide]"
-            return label if label.lower().startswith("doi:") else "[Online]. Available: " + url
+            return reference_label(label)
         return label
     t = LINK.sub(sub, text)
     t = re.sub(r"\s*(·\s*)?\x00(\s*·\s*\x00)*", "", t)
     return t.strip()
 
 
-def _breaks(t):
-    """Reference layout: zero-width break after the last "/" of a URL; keep "(C′ scoring)" together."""
-    t = re.sub(r"(https?://\S*/)(?=[^/\s]+)", lambda m: m.group(1) + "​", t)
-    return t.replace("(C′ scoring)", "(C′ scoring)")
-
-
 def inline(text, ref=False):
     t = _links(text, ref)
     if ref:
-        t = _breaks(t)
+        # Keep the publication date or page locator with its DOI on the final line.
+        t = re.sub(r"(\S+ \S+ )(doi:\u00a010\.\S+)$",
+                   lambda match: match[0].replace(" ", "\u00a0"), t)
+    else:
+        t = t.replace("linkage in either direction", "linkage\u00a0in\u00a0either\u00a0direction")
     out = []
     for part in EMPH.split(t):
         if not part:
@@ -128,7 +135,7 @@ def load(md_path, lang):
             full = len(rows[0]) > 5
             widths = _widths(rows, TEXT_W if full else COL_TW)
             if cap.startswith(("Table 1.", "ตารางที่ 1")) and len(rows[0]) == 3:
-                widths = [840, 1910, 1570]
+                widths = [700, 2050, 1570]
             body.append(("tbl", cap, [[inline(c) for c in r] for r in rows], widths, full, None, aligns))
             i = j - 1
         elif s.startswith("- "):

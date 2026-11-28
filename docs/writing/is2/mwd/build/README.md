@@ -1,10 +1,21 @@
 # IS2 paper build
 
-Builds the KMITL AI4BA short paper (.docx and .pdf) from the Markdown drafts with the `kmitl-is-paper` skill. Needs Windows with Microsoft Word.
+The KMITL AI4BA short paper builds from the Markdown drafts with the `kmitl-is-paper` skill. Run from this directory on Windows with Microsoft Word. Build in a scratch directory before copying the verified files to the delivery folder.
 
-```sh
-python ~/.claude/skills/kmitl-is-paper/scripts/make_paper.py --content content_th.py --figdir ../figures --out IS2-MWD-TH.docx
-python ~/.claude/skills/kmitl-is-paper/scripts/make_paper.py --content content_en.py --figdir ../figures --out IS2-MWD-EN.docx
+```powershell
+$kit = Join-Path $env:USERPROFILE '.claude/skills/kmitl-is-paper/scripts'
+$stage = Join-Path $env:TEMP ('is2-build-' + [guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $stage | Out-Null
+foreach ($edition in 'TH', 'EN') {
+    $docx = Join-Path $stage "IS2-MWD-$edition.docx"
+    $pdf = [IO.Path]::ChangeExtension($docx, '.pdf')
+    python "$kit/make_paper.py" --content "content_$($edition.ToLowerInvariant()).py" --figdir ../figures --out $docx
+    if ($LASTEXITCODE) { throw "Build failed for $edition" }
+    python link_revision_refs.py "../IS2-DRAFT-$edition.md" $docx
+    if ($LASTEXITCODE) { throw "Hyperlink and footnote pass failed for $edition" }
+    powershell -NoProfile -ExecutionPolicy Bypass -File "$kit/render.ps1" $docx $pdf
+    if ($LASTEXITCODE) { throw "PDF export failed for $edition" }
+}
 ```
 
-`md2content.py` converts `../IS2-DRAFT-{TH,EN}.md` into the paperkit content contract. Internal receipt links are dropped from print, and web links in references become "[Online]. Available: URL". Tables with more than five columns and Figure 1 are full-width floats. The script prints the page count and column ends; the target is 8–10 pages.
+`md2content.py` converts the drafts into the paperkit content contract. External citations use compact labels or DOIs. The postprocessor inserts hyperlinks, keeps reference entries together and wraps the first Thai affiliation before the institute name. Inspect the final Word exports for the 8–10 page limit and for short line endings throughout, including footnotes and references.

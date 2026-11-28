@@ -12,13 +12,13 @@ School of Information Technology, King Mongkut's Institute of Technology Ladkrab
 
 ## บทคัดย่อ
 
-งานนี้ประเมินการจัดลำดับรายการยาโดยให้ทบทวนได้หนึ่งในห้าของรายการที่เข้าเกณฑ์ในแต่ละปีและปัดเศษลง ผู้วิจัยใช้หลักฐานที่มี ณ วันตัดข้อมูลและทดสอบย้อนหลังกับชุด C′ ซึ่งปิดผลรายรายการไว้จนได้รับอนุญาตให้ให้คะแนน เหตุการณ์คือการอนุมัติขั้นสุดท้ายครั้งแรกในสหรัฐฯ ของคำขอยาสามัญแบบย่อฉบับยื่นครั้งแรก (ANDA, ORIG/AP) ที่เชื่อมกับตัวยาได้และอยู่ในช่วงติดตาม ที่ระยะ 24 เดือน ตารางหลักฐานที่เพิ่มสถานะกราฟ (M3) ครอบคลุมร้อยละ 66.85 ของรายการที่เกิดเหตุการณ์ เทียบกับร้อยละ 46.48 จากวิธีตามอายุยา (B1) และร้อยละ 65.49 จากตารางหลักฐาน (M1) ผลต่างแบบจับคู่ระหว่าง M3 กับ B1 เท่ากับ +20.37 จุดร้อยละ (ช่วงความเชื่อมั่น 95% [+14.37, +26.16]) ผลนี้สนับสนุนการใช้คิวเพื่อจัดลำดับงานทบทวน ส่วนประโยชน์ที่ได้จากการเพิ่มสถานะกราฟยังไม่ชัดเจน และกฎยกเว้นอัตโนมัติไม่ผ่านเกณฑ์ความปลอดภัย รายการนอกคิวจึงยังต้องทบทวนตามปกติ
+งานนี้ประเมินการจัดลำดับรายการยาโดยให้ทบทวนได้หนึ่งในห้าของรายการที่เข้าเกณฑ์ในแต่ละปีและปัดเศษลง ผู้วิจัยใช้หลักฐานที่มี ณ วันตัดข้อมูลและทดสอบย้อนหลังกับชุด C′ ผลรวมจากการศึกษาก่อนหน้าครอบคลุมช่วงเวลาและประวัติยาบางส่วนที่ซ้ำกับชุดย้อนหลัง ผู้วิจัยเปิดผล C′ รายรายการเมื่อได้รับอนุญาตให้ประเมินแล้ว เหตุการณ์คือการอนุมัติขั้นสุดท้ายครั้งแรกในสหรัฐฯ ของคำขอยาสามัญแบบย่อฉบับยื่นครั้งแรก (ANDA, ORIG/AP) ที่เชื่อมกับตัวยาได้และมีวันอนุมัติอยู่ภายใน 12 หรือ 24 เดือนหลังวันตัดข้อมูล ที่ระยะ 24 เดือน ตารางหลักฐานที่เพิ่มสถานะกราฟ (M3) ครอบคลุมร้อยละ 66.85 ของรายการที่เกิดเหตุการณ์ เทียบกับร้อยละ 46.48 จากวิธีตามอายุยา (B1) และร้อยละ 65.49 จากตารางหลักฐาน (M1) ผลต่างแบบจับคู่ระหว่าง M3 กับ B1 เท่ากับ +20.37 จุดร้อยละ (ช่วงความเชื่อมั่น 95% [+14.37, +26.16]) ผลนี้สนับสนุนการใช้คิวเพื่อจัดลำดับงานทบทวน ส่วนประโยชน์ที่ได้จากการเพิ่มสถานะกราฟยังไม่ชัดเจน และกฎยกเว้นอัตโนมัติไม่ผ่านเกณฑ์ความปลอดภัย รายการนอกคิวจึงยังต้องทบทวนตามปกติ
 
 **คำสำคัญ** ยาสามัญ, ช่วงเวลาเข้าสู่ตลาด, กราฟหลักฐาน, การจัดลำดับการทบทวน, เสรีภาพในการดำเนินการ
 
 ## Abstract
 
-We ranked drug cases using evidence available at each annual cutoff and allocated one review slot per five eligible cases, rounded down. Historical C′ row-level outcomes were sealed until authorized scoring. The endpoint was the first linked, dated, final original US abbreviated new drug application approval (ANDA, ORIG/AP) within 12 or 24 months of each cutoff. At 24 months, the dated-evidence table with graph states (M3) captured 66.85% of event rows, compared with 46.48% for drug age (B1) and 65.49% for the dated-evidence table (M1). The paired M3−B1 gain was +20.37 percentage points (95% CI [+14.37, +26.16]). The results support review prioritization. The incremental gain from adding graph states remained unconfirmed, and automatic clearance failed the safety check. Cases outside the queue still require routine review.
+We ranked drug cases using evidence available at each annual cutoff and allocated one review slot per five eligible cases, rounded down. Earlier baseline aggregates covered overlapping periods and drug histories. C′ outcomes for individual rows remained sealed until authorized scoring. The endpoint was the first linked, dated, final original US abbreviated new drug application approval (ANDA, ORIG/AP) within 12 or 24 months of each cutoff. At 24 months, the dated-evidence table with graph states (M3) captured 66.85% of event rows, compared with 46.48% for drug age (B1) and 65.49% for the dated-evidence table (M1). The paired M3−B1 gain was +20.37 percentage points (95% CI [+14.37, +26.16]). The results support review prioritization. The incremental gain from adding graph states remained unconfirmed, and automatic clearance failed the safety check. Cases outside the queue still require routine review.
 
 **Keywords** generic drugs, market window, evidence graph, review prioritization, freedom to operate
 
@@ -72,9 +72,9 @@ WIPO แยกการสำรวจภาพรวมสิทธิบัต
 
 หนึ่งรายการหมายถึงหนึ่งชุดส่วนออกฤทธิ์ ณ วันตัดข้อมูลประจำปี รายการที่เข้าเกณฑ์ต้องมีรหัสเชื่อมตัวยา มีคำขออนุมัติยาใหม่ (NDA) ฉบับยื่นครั้งแรกที่อนุมัติขั้นสุดท้ายพร้อมวันที่ มี NDA ฉบับยื่นครั้งแรกที่อนุมัติขั้นสุดท้ายและจัดเป็น TYPE 1 ภายในวันตัดข้อมูล และติดตามได้ครบระยะ ณ วันตัดข้อมูลต้องยังไม่เคยมีการอนุมัติ ANDA ขั้นสุดท้ายที่เชื่อมกับตัวยาได้ เหตุการณ์คือการอนุมัติขั้นสุดท้ายครั้งแรกของ ANDA ฉบับยื่นครั้งแรกในสหรัฐฯ (ORIG/AP) ที่เชื่อมกับตัวยาได้และมีวันที่หลังวันตัดข้อมูลจนถึงวันสิ้นสุดการติดตาม โดยนับวันสุดท้ายด้วย
 
-ผู้วิจัยเชื่อมการอนุมัติกับตัวยาผ่าน Drugs@FDA และฐานรหัสสาร Global Substance Registration System ฉบับปี 2026 ซึ่งจัดทำภายหลัง สำหรับ C′ ใช้ Orange Book ฉบับล่าสุดของ FDA ที่ลงวันที่ไม่เกินหกเดือนปฏิทินก่อนวันตัดข้อมูล มีค่าแฮชตรงกัน และยืนยันว่าเผยแพร่ทันวันนั้น สถานะการโต้แย้งอาศัยรายการ Paragraph IV ฉบับล่าสุดที่ยืนยันวันเผยแพร่ได้และระเบียนคดีที่เข้าเกณฑ์ หากพบคำขอที่ไม่มีวันที่ ให้คงสถานะไม่ทราบแม้อยู่ในฉบับที่ทันเวลา เว้นแต่มีหลักฐานอื่นยืนยันได้ทันวันตัดข้อมูล หากตรวจรายการที่เข้าเกณฑ์แล้วไม่พบ จึงบันทึกว่าไม่พบตามเกณฑ์ รายการที่ขาด การเชื่อมตัวตนย้อนหลัง และช่องว่างของระเบียนโต้แย้งอาจเปลี่ยนผลการคัดเข้า ตัวแปรพยากรณ์ และการเชื่อมเหตุการณ์ [30]
+ผู้วิจัยเชื่อมการอนุมัติกับตัวยาผ่าน Drugs@FDA และฐานรหัสสาร Global Substance Registration System ฉบับปี 2026 ซึ่งจัดทำภายหลัง สำหรับ C′ ใช้ Orange Book ฉบับล่าสุดของ FDA ที่ลงวันที่ไม่เกินหกเดือนปฏิทินก่อนวันตัดข้อมูล มีค่าแฮชตรงกัน และยืนยันว่าเผยแพร่ทันวันนั้น สถานะการโต้แย้งอาศัยรายการ Paragraph IV ฉบับล่าสุดที่ยืนยันวันเผยแพร่ได้และระเบียนคดีที่เข้าเกณฑ์ หากพบคำขอที่ไม่มีวันที่ ให้คงสถานะไม่ทราบแม้อยู่ในฉบับที่ทันเวลา เว้นแต่มีหลักฐานอื่นยืนยันได้ทันวันตัดข้อมูล หากตรวจรายการที่เข้าเกณฑ์แล้วไม่พบ จึงบันทึกว่าไม่พบตามเกณฑ์ การเชื่อมรหัสตัวยาย้อนหลัง รายการ FDA ในอดีตที่ไม่ครบ และช่องว่างในบันทึกการโต้แย้งสิทธิบัตร อาจทำให้คัดรายการเข้าเกินหรือตกหล่น และทำให้ข้อมูลตัวพยากรณ์หรือการเชื่อมโยงเหตุการณ์คลาดเคลื่อนได้ทั้งสองทิศทาง [30]
 
-ทั้งสองระยะใช้ข้อมูลปี 2010 สำหรับฝึก ชุดพัฒนาใช้ปี 2012–2015 ที่ระยะ 12 เดือนและปี 2013–2014 ที่ระยะ 24 เดือน ส่วน C′ ใช้ปี 2017–2025 และ 2017–2024 ตามลำดับ ผลรายรายการของ C′ ปิดไว้จนได้รับอนุญาตให้ให้คะแนน ก่อนลงทะเบียน ผู้วิจัยเห็นผลรวม B0–B2 ระยะ 36 เดือนที่ทับซ้อน 4,162 แถว ผลตรวจระบบเบื้องต้นจากหลายช่วงเวลา และจำนวนรายการที่นับจาก NDA เท่านั้น ผลชุดพัฒนาใช้กำหนดตัวชี้วัดและเลือกแบบจำลอง ตามบันทึก ผู้วิจัยไม่ได้ตรวจผลรายรายการหรือใช้ C′ เลือกวิธี การตรวจย้อนกลับอย่างอิสระยังไม่ครอบคลุมขั้นตอนต้นทาง [30]
+ทั้งสองระยะใช้ข้อมูลปี 2010 สำหรับฝึก ชุดพัฒนาใช้ปี 2012–2015 ที่ระยะ 12 เดือนและปี 2013–2014 ที่ระยะ 24 เดือน ส่วน C′ ใช้ปี 2017–2025 และ 2017–2024 ตามลำดับ ผลรายรายการของ C′ ปิดไว้จนได้รับอนุญาตให้ประเมิน ก่อนลงทะเบียน ผู้วิจัยเห็นผลรวมระยะ 36 เดือนจาก 4,162 แถว ซึ่งครอบคลุมช่วงเวลาและประวัติยาบางส่วนที่ซ้ำกับ C′ ผลรวมนี้มาจากวิธี B0–B2 ผู้วิจัยยังเห็นผลตรวจระบบเบื้องต้นจากหลายช่วงเวลา และจำนวนรายการที่นับจาก NDA เท่านั้น ผลชุดพัฒนาใช้กำหนดตัวชี้วัดและเลือกแบบจำลอง ตามบันทึก ผู้วิจัยไม่ได้ตรวจผลรายรายการหรือใช้ C′ เลือกวิธี การตรวจย้อนกลับอย่างอิสระยังไม่ครอบคลุมขั้นตอนต้นทาง [30]
 
 ### 3.3 คิวและลำดับการทดสอบที่ลงทะเบียน
 
@@ -82,11 +82,11 @@ WIPO แยกการสำรวจภาพรวมสิทธิบัต
 
 ในแต่ละวันตัดข้อมูลและระยะพยากรณ์ ผู้วิจัยกำหนดจำนวนรายการที่ทบทวนไว้ที่หนึ่งในห้าของรายการที่เข้าเกณฑ์โดยปัดลง และจัดลำดับด้วยคะแนนเดิมก่อนปรับเทียบหรือพักการตัดสิน โดยแบ่งน้ำหนักเมื่อคะแนนเสมอตรงขอบลำดับ การครอบคลุม (recall) คือจำนวนรายการที่เกิดเหตุการณ์และคาดว่าจะเข้าคิว หารด้วยจำนวนรายการที่เกิดเหตุการณ์ทั้งหมดรวมทุกวันตัดข้อมูล
 
-ลำดับทดสอบคือ M3 เทียบกับ B1 ที่ 24 เดือน (H1) เทียบกับ M1 ที่ 24 เดือน (H2) และเทียบกับ B1 ที่ 12 เดือน (H3) โดยใช้ α ด้านเดียวเท่ากับ 0.025 การอนุมัติครั้งเดียวอาจนับเป็นสองแถวที่เกิดเหตุการณ์ในช่วง 24 เดือนที่ซ้อนกัน ผู้วิจัยสุ่มซ้ำแบบจับคู่ทั้งตัวยา 2,000 รอบและจัดคิวใหม่ทุกรอบเพื่อคงความสัมพันธ์ของข้อมูล โดยใช้แบบจำลองที่ฝึกแล้วและช่วงปีเดิม หยุดทดสอบเมื่อขอบล่างไม่สูงกว่าศูนย์หรือคำนวณช่วงไม่ได้ รายงานช่วงความเชื่อมั่น 95% แบบเปอร์เซ็นไทล์สองด้าน ช่วงของผลรองและผลสำรวจไม่รับประกันการควบคุมความผิดพลาดรวมหลายการทดสอบ [30]
+ลำดับทดสอบคือ M3 เทียบกับ B1 ที่ 24 เดือน (H1) เทียบกับ M1 ที่ 24 เดือน (H2) และเทียบกับ B1 ที่ 12 เดือน (H3) โดยใช้ α ด้านเดียวเท่ากับ 0.025 การอนุมัติครั้งเดียวอาจนับเป็นสองแถวที่เกิดเหตุการณ์ในช่วง 24 เดือนที่ซ้อนกัน ผู้วิจัยสุ่มซ้ำแบบจับคู่ทั้งตัวยา 2,000 รอบและจัดคิวใหม่ทุกรอบเพื่อคงความสัมพันธ์ของข้อมูล โดยใช้แบบจำลองที่ฝึกแล้วและช่วงปีเดิม หยุดทดสอบเมื่อขอบล่างไม่สูงกว่าศูนย์หรือคำนวณช่วงไม่ได้ ผลต่างการครอบคลุมใช้ช่วงความเชื่อมั่น 95% แบบเปอร์เซ็นไทล์จากการสุ่มซ้ำ ส่วนกฎยกเว้นการทบทวนใช้ขอบบนแบบ Chernoff ที่คำนึงถึงการจัดกลุ่มตามตัวยา เพื่อประเมินว่าสัดส่วนรายการที่เกิดเหตุการณ์ในกลุ่มที่ได้รับยกเว้นสูงเกินเกณฑ์ 3% หรือไม่ ช่วงของผลรองและผลสำรวจไม่รับประกันการควบคุมความผิดพลาดรวมหลายการทดสอบ [30]
 
 ### 3.4 การลงทะเบียนและการทดสอบซ้ำไปข้างหน้า
 
-การลงทะเบียนครั้งแรกบน Open Science Framework (OSF) ขาดเอกสารแนบที่ตั้งใจส่ง 10 รายการ การปรับปรุงครั้งที่ 1 ที่ได้รับอนุมัติจึงใช้ระเบียน OSF ต้นฉบับอ้างอิงการเปิดให้คะแนนแทนไฟล์ PDF ที่ไม่มี การให้คะแนนย้อนหลังใช้การปรับปรุงครั้งที่ 1 และ 2 หลังผ่านการตรวจรับฉบับข้อมูลและเกณฑ์ตัวยาที่เกิดเหตุการณ์อย่างน้อย 50 ตัวที่ระยะ 24 เดือน ผู้ตรวจรับเปิดเผยเฉพาะคำตัดสินเมื่อ 28 พฤศจิกายน 2026 เวลา 05:12 UTC [30]
+การลงทะเบียนครั้งแรกบน Open Science Framework (OSF) ขาดเอกสารแนบที่ตั้งใจส่ง 10 รายการ การปรับปรุงครั้งที่ 1 ที่ได้รับอนุมัติจึงใช้ระเบียน OSF ต้นฉบับอ้างอิงการเปิดให้คะแนนแทนไฟล์ PDF ที่ไม่มี การประเมินย้อนหลังใช้ฉบับปรับปรุงครั้งที่ 1 และ 2 [30] การตรวจตามเกณฑ์แบบปกปิดผลเริ่มเมื่อ 28 พฤศจิกายน 2026 เวลา 05:12 UTC และผ่านทั้งสองเกณฑ์ก่อนประเมินผลย้อนหลัง โดยตรวจความครอบคลุมของฉบับข้อมูลและการพบเหตุการณ์ในตัวยาที่ต่างกันอย่างน้อย 50 ตัวที่ระยะ 24 เดือน
 
 การปรับปรุงครั้งที่ 3 เปลี่ยนช่วงฝึก C9 หลังให้คะแนนย้อนหลัง ครั้งที่ 4 บันทึกการตรึงชุดไปข้างหน้าและระบุว่ายังไม่ได้วิเคราะห์ C′ เพิ่มเติม ณ วันยื่น ผลเพิ่มเติมจากไฟล์ส่งออกในภายหลังรายงานเชิงพรรณนา [30], [31]
 
@@ -116,7 +116,7 @@ WIPO แยกการสำรวจภาพรวมสิทธิบัต
 
 หลังเห็นผลชุดพัฒนา ผู้วิจัยย้ายเกณฑ์ความปลอดภัยของกฎยกเว้นอัตโนมัติจากเกณฑ์ยอมรับมาเป็นผลรองก่อนลงทะเบียน ใน C′ ขอบบนของอัตราพลาดสูงกว่า 3% ทั้งห้ากรณีที่คำนวณได้ M3 พลาด 16 จาก 1,678 รายการที่ยกเว้นที่ระยะ 12 เดือน และ 28 จาก 1,413 รายการที่ระยะ 24 เดือน (ขอบบนร้อยละ 4.39 และ 6.39) ส่วน B1 ไม่ยกเว้นรายการใดที่ 24 เดือน จึงประเมินอัตราไม่ได้ รายการนอกคิวยังต้องทบทวนตามปกติ [FREEZE](../../../loe-bench/receipts/FREEZE.md#development-results) [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses)
 
-ผลเชิงพรรณนาจากไฟล์ส่งออก [31] รายงานการคัดเข้าและการสอบเทียบความน่าจะเป็นแบบ 10 กลุ่ม โดยช่วง Wilson รายแถวไม่คำนึงถึงตัวยาซ้ำ และปกปิดจำนวนน้อยรวมถึงค่าที่ใช้คำนวณย้อนกลับ ข้อมูลไม่พอสำหรับสรุปตัวแปร C′ 15 จาก 28 ตัวและแยกรายการที่ตัดออกเพราะ ANDA เกิดก่อน NDA ครั้งแรก ผลรายงาน ROC AUC รวมจากคะแนนดิบและความแม่นที่จุดตัด ที่จุดตัดของคะแนนสอบเทียบ ทั้งหกชุดไม่พบผลบวกจริง ส่วน M3 ที่ 24 เดือนมีผลบวกลวงหนึ่งรายการ (ความแม่นร้อยละ 92.05 เทียบกับร้อยละ 92.07 เมื่อทายลบทุกครั้ง) ดัชนี C จำกัดตามระยะคำนวณไม่ได้เพราะไม่มีวันเกิดเหตุการณ์ [CPRIME-DESC](../../../loe-bench/receipts/CPRIME-DESC.md) [CPRIME-SUPP](../../../loe-bench/receipts/CPRIME-SUPP.md)
+[ผลเชิงพรรณนาจากไฟล์ส่งออก](https://github.com/siriponsri/patent-to-pilot/blob/5448904e/docs/loe-bench/receipts/CPRIME-DESC.md) [31] ใช้ชุดย้อนหลัง ผลเพิ่มเติมรายงานการคัดเข้าและการสอบเทียบ 10 กลุ่ม ช่วง Wilson สำหรับอัตราเกิดเหตุการณ์ในแต่ละกลุ่มถือว่าแต่ละแถวเป็นอิสระ ผู้วิจัยปกปิดทั้งจำนวนน้อยและช่องที่ใช้คำนวณย้อนกลับได้ เมื่อใช้เกณฑ์ความน่าจะเป็นหลังปรับเทียบตั้งแต่ 0.5 ขึ้นไป ไม่มีวิธีใดทำนายรายการที่เกิดเหตุการณ์ได้ถูกต้องทั้งที่ 12 และ 24 เดือน ข้อมูลไม่พอสำหรับสรุปตัวแปร C′ 15 จาก 28 ตัวและแยกรายการที่ตัดออกเพราะ ANDA เกิดก่อน NDA ครั้งแรก [รายงานผลจำแนกเพิ่มเติม](https://github.com/siriponsri/patent-to-pilot/blob/5448904e/docs/loe-bench/receipts/CPRIME-SUPP.md) ให้ค่า ROC AUC รวมจากคะแนนดิบและความแม่นที่จุดตัด ส่วน M3 ที่ 24 เดือนมีผลบวกลวงหนึ่งรายการ (ความแม่นร้อยละ 92.05 เทียบกับร้อยละ 92.07 เมื่อทายลบทุกครั้ง) ดัชนี C จำกัดตามระยะคำนวณไม่ได้เพราะไม่มีวันเกิดเหตุการณ์ [CPRIME-DESC](../../../loe-bench/receipts/CPRIME-DESC.md) [CPRIME-SUPP](../../../loe-bench/receipts/CPRIME-SUPP.md)
 
 ### 4.2 การครอบคลุมของแบบจำลองภาษา 7B
 
@@ -130,11 +130,11 @@ WIPO แยกการสำรวจภาพรวมสิทธิบัต
 
 C4b จับคู่ข้อมูลย้อนหลังได้เจ็ดจุดตั้งต้นในชุดพัฒนา และเชื่อมกับคิวได้สี่จุด ตัวคูณตามสถานการณ์จำลอง 0.465 เพิ่มความคลาดเคลื่อนสัมบูรณ์เฉลี่ย (MAE) ของยอดเบิกจ่ายทั้งสองแบบ ส่วนวิธีต่อแนวโน้มลดความคลาดเคลื่อนทั้งสองแบบ (ตารางที่ 1) ชุดย่อยที่เชื่อมคิวมี 160 คู่จากยา 68 ตัวสำหรับยอดต่อใบสั่งยา และ 150 คู่จากยา 64 ตัวสำหรับยอดรายปี
 
-การวิเคราะห์ C4 ในชุดย้อนหลังที่กันไว้ไม่ได้ดำเนินการ (NOT_RUN) เพราะแผนที่ตรึงไว้ไม่รับจุดตั้งต้นปี 2017 และขาดข้อมูลผลปี 2018 ส่วน C4b แบบใช้เฉพาะฉบับที่ยืนยันได้ ณ เวลานั้นไม่มีจุดตั้งต้นที่ผ่านเกณฑ์ จึงไม่ได้ดำเนินการเช่นกัน ข้อมูลที่มีไม่พอจะประมาณยอดรวมระดับประเทศรายตัวยา [C4b](../../../loe-bench/receipts/C4b.md) [SCORE, C4](../../../loe-bench/receipts/SCORE.md#c4--medicaid-demand-and-reimbursement)
+ผู้วิจัยไม่ได้วิเคราะห์ C4 ในชุดย้อนหลังที่กันไว้ เพราะแผนที่ตรึงไว้ไม่รับจุดตั้งต้นปี 2017 และขาดข้อมูลผลปี 2018 ส่วน C4b แบบใช้เฉพาะฉบับที่ยืนยันได้ ณ เวลานั้นไม่มีจุดตั้งต้นที่ผ่านเกณฑ์ จึงไม่ได้วิเคราะห์เช่นกัน ข้อมูลที่มีไม่พอจะประมาณยอดรวมระดับประเทศรายตัวยา [C4b](../../../loe-bench/receipts/C4b.md) [SCORE, C4](../../../loe-bench/receipts/SCORE.md#c4--medicaid-demand-and-reimbursement)
 
 *ตารางที่ 1 ผลต่าง MAE แบบจับคู่เทียบกับการยกค่าล่าสุด (ช่วงความเชื่อมั่น 95%) ในชุดพัฒนาที่จับคู่ย้อนหลังและเชื่อมกับคิว*
 
-| วิธีพยากรณ์ | ดอลลาร์สหรัฐต่อใบสั่งยา ในไตรมาส 4 | ล้าน USD ต่อปี |
+| วิธี | ดอลลาร์สหรัฐต่อใบสั่งยา ไตรมาสที่ 4 | ล้าน USD ต่อปี |
 | --- | ---: | ---: |
 | คิว B1 | +372.05 [193.27, 587.26] | +4.98 [2.24, 8.29] |
 | คิว M3 | +381.24 [203.61, 606.77] | +21.43 [4.07, 53.21] |
@@ -148,23 +148,23 @@ C4b จับคู่ข้อมูลย้อนหลังได้เจ�
 
 ## 5 สรุปผล
 
-ผลย้อนหลังผ่านเฉพาะ H1 คิว M3 จัดลำดับรายการทบทวนได้ดีกว่าวิธีตามอายุยา ส่วนผลของการเพิ่มกราฟยังไม่ชัดเจนและรายการนอกคิวยังต้องทบทวนตามปกติ ผู้วิจัยไม่ได้ทำ C10 (NOT_RUN) เพราะไม่ได้ยื่นขอพิจารณาจริยธรรมและไม่มีแผนศึกษากับผู้เข้าร่วมที่ผ่านการอนุมัติ จึงยังไม่มีผลวัดเวลาทบทวนหรือประโยชน์ต่อการตัดสินใจ รายงานปิดงาน [31] ระบุว่าโครงการส่วนวิจัยปิดเมื่อ 29 พฤศจิกายน 2026 หลังการทบทวนภายนอกสิบรอบ รอบสุดท้ายไม่พบประเด็นค้างที่ฉบับ 2cee4a62 และผู้วางแผนหลักเห็นชอบให้ปิดงาน
+ผลย้อนหลังผ่านเฉพาะ H1 คิว M3 จัดลำดับรายการทบทวนได้ดีกว่าวิธีตามอายุยา ส่วนผลของการเพิ่มกราฟยังไม่ชัดเจนและรายการนอกคิวยังต้องทบทวนตามปกติ ผู้วิจัยไม่ได้ศึกษา C10 เพราะไม่ได้ยื่นขอพิจารณาจริยธรรมและไม่มีแผนศึกษากับผู้เข้าร่วมที่ผ่านการอนุมัติ จึงยังไม่มีผลวัดเวลาทบทวนหรือประโยชน์ต่อการตัดสินใจ ผู้ร่วมวางแผนโครงการทำหน้าที่ผู้ทบทวนภายนอกและตรวจบันทึกการวิจัยสิบรอบและรายงานว่าไม่มีประเด็นค้างในฉบับ 2cee4a62 ผู้วางแผนหลักเห็นชอบและปิดงานวิจัยเมื่อ 29 พฤศจิกายน 2026 [31]
 
-แบบขยายงานภายใต้สมมติฐานกลางทุกแบบที่ทดสอบมีกำลังทดสอบ H2 ต่ำกว่า 80% เมื่อกำหนดผลต่าง +1.36 จุดร้อยละ ผลจำลองที่ +5 จุดร้อยละขึ้นกับอุบัติการณ์สังเคราะห์ ความสัมพันธ์ของคะแนน การเก็บรักษาข้อมูล และโอกาสเก็บผลได้ครบ ยังไม่ได้ทำชุดการจำลองอิสระเพื่อขอยื่นแผนและยังไม่ได้ทำซ้ำจากข้อมูลดิบตาม T4c จึงยังไม่ผ่านเกณฑ์ยื่นแผน การขยายงานต้องลงทะเบียนแยกและให้เจ้าของโครงการตัดสินใจ ข้อสรุปด้านขอบเขตคือศึกษาสหรัฐฯ เท่านั้น เพราะแคนาดาและญี่ปุ่นยังยืนยันฉบับข้อมูลที่ครบและเผยแพร่ทันวันตัดข้อมูลไม่ได้ การเพิ่มแคนาดาในกรอบเวลาเดิมเพิ่มกำลังทดสอบได้จำกัดที่ผลต่าง +5 จุดร้อยละ เพราะกำลังเดิมใกล้เพดาน ยังไม่ได้จำลองการอ่านผลเร็วขึ้น จึงยังสรุปประโยชน์เชิงปฏิบัติไม่ได้ งานไทยและอาเซียนจึงอยู่ในขอบเขตการส่งต่อหลักฐานเชิงพรรณนา [POWER-SIM](../../../loe-bench/receipts/POWER-SIM.md) [JURIS-COUNT](../../../loe-bench/receipts/JURIS-COUNT.md) [Decision rule](../../../loe-bench/JURISDICTION-DECISION-RULE.md)
+แบบขยายงานภายใต้สมมติฐานกลางทุกแบบที่ทดสอบมีกำลังทดสอบ H2 ต่ำกว่า 80% เมื่อกำหนดผลต่าง +1.36 จุดร้อยละ ผลจำลองที่ +5 จุดร้อยละขึ้นกับอุบัติการณ์สังเคราะห์ ความสัมพันธ์ของคะแนน การเก็บรักษาข้อมูล และโอกาสเก็บผลได้ครบ ยังไม่ได้ทำชุดการจำลองอิสระเพื่อขอยื่นแผนและยังไม่ได้ทำซ้ำจากข้อมูลดิบตาม T4c จึงยังไม่ผ่านเกณฑ์ยื่นแผน การขยายงานต้องลงทะเบียนแยกและให้เจ้าของโครงการตัดสินใจ แผนขยายงานจำกัดที่สหรัฐฯ เพราะหลักฐานของแคนาดาและญี่ปุ่นยังยืนยันไม่ได้ว่าข้อมูลใดเผยแพร่แล้ว ณ วันตัดข้อมูลแต่ละครั้ง ตามเกณฑ์คัดเลือกประเทศ M3 การเพิ่มแคนาดาในกรอบเวลาเดิมเพิ่มกำลังทดสอบได้จำกัดที่ผลต่าง +5 จุดร้อยละ เพราะกำลังเดิมใกล้เพดาน ยังไม่ได้จำลองการอ่านผลเร็วขึ้น จึงยังสรุปประโยชน์เชิงปฏิบัติไม่ได้ งานไทยและอาเซียนจึงอยู่ในขอบเขตการส่งต่อหลักฐานเชิงพรรณนา [POWER-SIM](../../../loe-bench/receipts/POWER-SIM.md) [JURIS-COUNT](../../../loe-bench/receipts/JURIS-COUNT.md) [Decision rule](../../../loe-bench/JURISDICTION-DECISION-RULE.md)
 
-Track A ตรึงชุดส่วนออกฤทธิ์ 651 ชุดและกำหนด 130 ช่องทบทวนต่อระยะเมื่อ 28 พฤศจิกายน 2026 เวลา 11:18:44 UTC (แท็ก loe-track-a-freeze-20261127) การปรับปรุง OSF ครั้งที่ 4 ยื่นเวลา 11:30:06 UTC และตรวจแล้วว่าได้รับอนุมัติ มีแปดวิธีที่ 12 เดือนและสิบวิธีที่ 24 เดือน โดยเพิ่มคู่ C9 ที่ระยะหลัง GRPO เลือกงดตัดสินใจ 651 จาก 651 รายการ ส่วน SFT ไม่งดเลย ทั้งคู่เก็บค่าความน่าจะเป็นไว้และยังรอผลเปรียบเทียบ ทั้งสองระยะยังรอข้อมูล (PENDING) ระยะ 12 เดือนครบติดตามวันที่ 27 พฤศจิกายน 2027 ส่วนระยะ 24 เดือนครบวันที่ 27 พฤศจิกายน 2028
+Track A ตรึงชุดส่วนออกฤทธิ์ 651 ชุดและกำหนด 130 ช่องทบทวนต่อระยะเมื่อ 28 พฤศจิกายน 2026 เวลา 11:18:44 UTC (แท็ก loe-track-a-freeze-20261127) การปรับปรุง OSF ครั้งที่ 4 ยื่นเวลา 11:30:06 UTC และตรวจแล้วว่าได้รับอนุมัติ มีแปดวิธีที่ 12 เดือนและสิบวิธีที่ 24 เดือน โดยเพิ่มคู่ C9 ที่ระยะหลัง GRPO เลือกงดตัดสินใจ 651 จาก 651 รายการ ส่วน SFT ไม่งดเลย ทั้งคู่เก็บค่าความน่าจะเป็นไว้และยังรอผลเปรียบเทียบ ทั้งสองระยะยังรอข้อมูล ระยะ 12 เดือนครบติดตามวันที่ 27 พฤศจิกายน 2027 ส่วนระยะ 24 เดือนครบวันที่ 27 พฤศจิกายน 2028
 
-ผลเผยแพร่ที่ 12 เดือนเป็นเชิงพรรณนา การเผยแพร่ครั้งแรกที่รับรองได้ที่ 24 เดือนทดสอบ H1 แล้วจึงทดสอบ H2 จะทดสอบ H3 ที่ 12 เดือนอย่างเป็นทางการได้ต่อเมื่อทั้งสองข้อผ่าน โดยใช้ผล 12 เดือนฉบับแรกที่เก็บไว้และตรวจค่าแฮชแล้ว คู่มือ [32] กำหนดให้เก็บข้อมูลก่อนเปิดผลเพื่อให้คะแนน ตั้งแต่วันครบติดตามถึงเจ็ดวันหลังจากนั้น และรับรองด้วย Sigstore ฉบับแก้ไขใช้ได้เมื่อยืนยันจากหลักฐานที่เชื่อถือได้ทุกรายการว่ายังไม่มีผลเผยแพร่ฉบับแรก หากยืนยันความต่อเนื่องไม่ได้หรือพบหลักฐานขัดกัน ให้รายงานผลคำนวณใหม่เชิงพรรณนาและเก็บผลเดิมที่เผยแพร่ไว้ คู่มือระบุตัวชี้วัดรองที่คำนวณได้จากชุดตรึง การเก็บข้อมูลจริง การรับรอง การให้คะแนน การเผยแพร่ และการติดตั้ง Worker ยังไม่ได้ดำเนินการ [Readout guide](../../../loe-bench/HOW-TO-SCORE-TRACK-A.md)
+ผลเผยแพร่ที่ 12 เดือนเป็นเชิงพรรณนา การเผยแพร่ครั้งแรกที่รับรองได้ที่ 24 เดือนทดสอบ H1 ก่อน H2 และจะทดสอบ H3 ต่อเมื่อทั้งสองข้อผ่าน แต่ละระยะใช้ข้อมูล FDA ชุดแรกที่เก็บตั้งแต่วันครบติดตามถึงเจ็ดวันถัดมาตามเวลา UTC และผ่านการรับรอง การทดสอบ H3 ต้องใช้ผล 12 เดือนฉบับแรกที่ตรวจสอบแล้ว หากขาดผลฉบับนั้นหรือข้อมูลต้นทาง หรือหลักฐานขัดกัน ให้รายงานค่าที่คำนวณใหม่เชิงพรรณนาและคงผลตัดสินที่เผยแพร่ไว้ คู่มือ [32] กำหนดให้เก็บข้อมูลก่อนเปิดผลเพื่อประเมินและรับรองด้วย Sigstore ข้อมูล FDA ฉบับแก้ไขใช้รายงานเชิงพรรณนาเท่านั้น คู่มือระบุตัวชี้วัดรองที่คำนวณได้ โครงการยังไม่ได้เก็บข้อมูลจริง รับรอง ประเมินผล เผยแพร่ผล หรือติดตั้ง Worker สำหรับงานจริง [Readout guide](../../../loe-bench/HOW-TO-SCORE-TRACK-A.md)
 
-การเข้าถึงข้อมูลและโค้ด คลังโครงการ [31] อธิบายการตรวจสอบสามระดับ ระดับแรกตรวจผลรวมที่เผยแพร่ได้ ระดับที่สองผู้ตรวจอิสระคำนวณผลอนุมานย้อนหลังซ้ำได้จากไฟล์คะแนนและเหตุการณ์สองชุดที่ยืนยันที่มาแล้ว ผลตรวจมีขอบเขตตามข้อมูลในไฟล์ ระดับที่สามยังไม่ได้ดำเนินการ (NOT_RUN) คือการทำซ้ำอย่างอิสระตั้งแต่การสร้างข้อมูลจากแหล่งเดิม การเชื่อมข้อมูล การคัดรายการ และการฝึกแบบจำลอง บุคคลทั่วไปยังเรียกคืนชุดข้อมูล C′ เดิมไม่ได้และผลรายรายการยังจำกัดการเข้าถึง โปรแกรม SCORE ต้องพบ OSF ฉบับปรับปรุงครั้งที่ 2 เป็นฉบับล่าสุด แต่ปัจจุบันเป็นครั้งที่ 4 การทำซ้ำเมื่อได้รับอนุญาตต้องใช้หลักฐานฉบับที่ 2 ที่ยืนยันแล้วและสร้างข้อมูลต้นทางอย่างอิสระ
+การเข้าถึงข้อมูลและโค้ด [บัตรข้อมูลชุดทดสอบ](https://github.com/siriponsri/patent-to-pilot/blob/5448904e/docs/loe-bench/BENCHMARK-CARD.md) [31] อธิบายการตรวจสอบสามระดับ ระดับแรกตรวจผลรวมที่เผยแพร่ได้ ระดับที่สองผู้ตรวจอิสระคำนวณผลอนุมานย้อนหลังซ้ำได้จากไฟล์คะแนนและเหตุการณ์สองชุดที่ยืนยันที่มาแล้ว ผลตรวจมีขอบเขตตามข้อมูลในไฟล์ โครงการยังไม่ได้ตรวจสอบระดับที่สาม คือการทำซ้ำอย่างอิสระตั้งแต่การสร้างข้อมูลจากแหล่งเดิม การเชื่อมข้อมูล การคัดรายการ และการฝึกแบบจำลอง บุคคลทั่วไปยังเรียกคืนชุดข้อมูล C′ เดิมไม่ได้และผลรายรายการยังจำกัดการเข้าถึง โปรแกรมประเมินผล ต้องพบ OSF ฉบับปรับปรุงครั้งที่ 2 เป็นฉบับล่าสุด แต่ปัจจุบันเป็นครั้งที่ 4 การทำซ้ำเมื่อได้รับอนุญาตต้องใช้หลักฐานฉบับที่ 2 ที่ยืนยันแล้วและสร้างข้อมูลต้นทางอย่างอิสระ
 
-ผู้ตรวจอิสระดาวน์โหลดคลัง Track A รุ่น 1.0.0 [33] โดยไม่ต้องลงชื่อเข้าใช้และตรวจว่าไฟล์ตรงกับชุดตรึง โปรแกรมให้คะแนนในคลังทำงานบน Windows CPU ที่ตั้งใหม่ คืนสถานะ PENDING ทั้งสองระยะ และผ่านการทดสอบกับคำตอบที่ทราบและไฟล์ที่จงใจแก้ไข ผลนี้ยืนยันว่าชุดเผยแพร่ทำงานได้ก่อนครบติดตาม [REPRO-C1](../../../loe-bench/receipts/REPRO-C1.md) [RESTORE-DOI](../../../loe-bench/receipts/RESTORE-DOI.md)
+ผู้ตรวจอิสระดาวน์โหลดคลัง Track A รุ่น 1.0.0 [33] โดยไม่ต้องลงชื่อเข้าใช้และตรวจว่าไฟล์ตรงกับชุดตรึง โปรแกรมให้คะแนนในคลังทำงานบน Windows CPU ที่ตั้งใหม่ รายงานว่าทั้งสองระยะยังรอผล และผ่านการทดสอบกับคำตอบที่ทราบและไฟล์ที่จงใจแก้ไข ผลนี้ยืนยันว่าชุดเผยแพร่ทำงานได้ก่อนครบติดตาม [REPRO-C1](../../../loe-bench/receipts/REPRO-C1.md) [RESTORE-DOI](../../../loe-bench/receipts/RESTORE-DOI.md)
 
 กิตติกรรมประกาศ ผู้เขียนใช้ผู้ช่วยปัญญาประดิษฐ์ (Anthropic Claude, OpenAI GPT และ SciSpace) ในการวางแผน เขียนโค้ด ร่างบทความ สร้างรูป และค้นวรรณกรรม ผู้เขียนตรวจเนื้อหาทั้งหมดและรับผิดชอบเนื้อหาทั้งหมด
 
 ## เอกสารอ้างอิง
 
-[1] S. Srihangpiboon and T. Ploysuwan, “Diagnosing near-zero instruction effects in cross-domain patent reranking,” in *Proc. iSAI-NLP*, 2026, paper 53. [Online]. Available: https://isai-nlp2026.aiat.or.th/program
+[1] S. Srihangpiboon and T. Ploysuwan, “Diagnosing near-zero instruction effects in cross-domain patent reranking,” in *Proc. iSAI-NLP*, 2026, paper 53. [Conference program](https://isai-nlp2026.aiat.or.th/program).
 
 [2] R. F. Beall, J. J. Darrow, and A. S. Kesselheim, “A method for approximating future entry of generic drugs,” *Value Health*, vol. 21, no. 12, pp. 1382–1389, Dec. 2018. [doi: 10.1016/j.jval.2018.04.1827](https://doi.org/10.1016/j.jval.2018.04.1827).
 
@@ -172,13 +172,13 @@ Track A ตรึงชุดส่วนออกฤทธิ์ 651 ชุด�
 
 [4] K. W. Kerr and L. J. Glos, “Effective market exclusivity of new molecular entities for rare and non-rare diseases,” *Pharmaceut. Med.*, vol. 34, no. 1, pp. 19–29, 2020. [doi: 10.1007/s40290-019-00317-9](https://doi.org/10.1007/s40290-019-00317-9).
 
-[5] M. Hu et al., “Predictive analysis of first abbreviated new drug application submission for new chemical entities based on machine learning methodology,” *Clin. Pharmacol. Ther.*, vol. 106, no. 1, pp. 174–181, 2019. [doi: 10.1002/cpt.1479](https://doi.org/10.1002/cpt.1479).
+[5] M. Hu et al., “Predictive analysis of first abbreviated new drug application submission for new chemical entities based on machine learning methodology,” *Clin. Pharmacol. Ther.*, vol. 106, no. 1, pp. 174–181, 2019. [doi: 10.1002/cpt.1479](https://doi.org/10.1002/cpt.1479).
 
 [6] R. Hopefl et al., “Predictive analysis for first submission of generic drug application for orphan drug products using random survival forest,” *Clin. Transl. Sci.*, vol. 18, no. 10, e70365, 2025. [doi: 10.1111/cts.70365](https://doi.org/10.1111/cts.70365).
 
-[7] H. S. Chahal, R. Patel, and M. Shimer, “Marketing of first generic drugs approved by U.S. FDA from January 2010 to June 2017,” U.S. Food and Drug Administration, Nov. 2021. [Report](https://www.fda.gov/media/154101/download).
+[7] H. S. Chahal, R. Patel, and M. Shimer, “Marketing of first generic drugs approved by U.S. FDA from January 2010 to June 2017,” U.S. Food and Drug Administration, Nov. 2021. [FDA report](https://www.fda.gov/media/154101/download).
 
-[8] C. S. Hemphill and B. N. Sampat, “Evergreening, patent challenges, and effective market life in pharmaceuticals,” *J. Health Econ.*, vol. 31, no. 2, pp. 327–339, 2012. [Article](https://www.sciencedirect.com/science/article/abs/pii/S0167629612000057).
+[8] C. S. Hemphill and B. N. Sampat, “Evergreening, patent challenges, and effective market life in pharmaceuticals,” *J. Health Econ.*, vol. 31, no. 2, pp. 327–339, 2012. [Journal article](https://www.sciencedirect.com/science/article/abs/pii/S0167629612000057).
 
 [9] S. Kannappan, J. J. Darrow, A. S. Kesselheim, and R. F. Beall, “The timing of 30-month stay expirations and generic entry: A cohort study of first generics, 2013–2020,” *Clin. Transl. Sci.*, vol. 14, no. 5, pp. 1917–1923, 2021. [doi: 10.1111/cts.13046](https://doi.org/10.1111/cts.13046).
 
@@ -186,7 +186,7 @@ Track A ตรึงชุดส่วนออกฤทธิ์ 651 ชุด�
 
 [11] A. K. Rai, S. Vishnubhakat, J. Lemus, and E. Hovenkamp, “Replication data for: Post-grant adjudication of drug patents: Agency and/or court?,” Harvard Dataverse, ver. 1.0, 2021. [doi: 10.7910/DVN/YCMKVU](https://doi.org/10.7910/DVN/YCMKVU).
 
-[12] R. Conrad and R. Lutter, “Generic competition and drug prices: New evidence linking greater generic competition and lower generic drug prices,” US FDA, 2019. [Report](https://www.fda.gov/media/133509/download).
+[12] R. Conrad and R. Lutter, “Generic competition and drug prices: New evidence linking greater generic competition and lower generic drug prices,” US FDA, 2019. [FDA report](https://www.fda.gov/media/133509/download).
 
 [13] F. M. Scott Morton, “Entry decisions in the generic pharmaceutical industry,” *RAND J. Econ.*, vol. 30, no. 3, pp. 421–440, 1999. [doi: 10.2307/2556056](https://doi.org/10.2307/2556056).
 
@@ -196,35 +196,35 @@ Track A ตรึงชุดส่วนออกฤทธิ์ 651 ชุด�
 
 [16] K. Nikolopoulos, S. Buxton, M. Khammash, and P. Stern, “Forecasting branded and generic pharmaceuticals,” *Int. J. Forecast.*, vol. 32, no. 2, pp. 344–357, 2016. [doi: 10.1016/j.ijforecast.2015.08.001](https://doi.org/10.1016/j.ijforecast.2015.08.001).
 
-[17] A. Trippe, *Guidelines for Preparing Patent Landscape Reports*, prepared for the World Intellectual Property Organization, WIPO Publ. 946, 2015. [Guide](https://www.wipo.int/edocs/pubdocs/en/wipo_pub_946.pdf).
+[17] A. Trippe, *Guidelines for Preparing Patent Landscape Reports*, prepared for the World Intellectual Property Organization, WIPO Publ. 946, 2015. [WIPO guide](https://www.wipo.int/edocs/pubdocs/en/wipo_pub_946.pdf).
 
-[18] World Intellectual Property Organization, *Identifying Inventions in the Public Domain: A Guide for Inventors and Entrepreneurs*, WIPO Publ. 1062, 2020. [Guide](https://www.wipo.int/publications/en/details.jsp?id=4501).
+[18] World Intellectual Property Organization, *Identifying Inventions in the Public Domain: A Guide for Inventors and Entrepreneurs*, WIPO Publ. 1062, 2020. [WIPO guide](https://www.wipo.int/publications/en/details.jsp?id=4501).
 
-[19] Y. Hu *et al.*, “PatentAgentBench: Benchmarking LLM agents with professional patent task suites,” arXiv:2610.35031, 2026. [Online]. Available: https://arxiv.org/abs/2610.35031
+[19] Y. Hu *et al.*, “PatentAgentBench: Benchmarking LLM agents with professional patent task suites,” arXiv:2610.35031, 2026. [arXiv preprint](https://arxiv.org/abs/2610.35031).
 
-[20] P. Leela and N. Kessomboon, “Challenges of examination processes of pharmaceutical patent application in Thailand,” *Isan J. Pharm. Sci.*, vol. 11, suppl., pp. 179–189, 2016. [Article](https://he01.tci-thaijo.org/index.php/IJPS/article/view/48601).
+[20] P. Leela and N. Kessomboon, “Challenges of examination processes of pharmaceutical patent application in Thailand,” *Isan J. Pharm. Sci.*, vol. 11, suppl., pp. 179–189, 2016. [Journal article](https://he01.tci-thaijo.org/index.php/IJPS/article/view/48601).
 
-[21] D. Vachanavuttivong, P. Naboriboon, and A. Homhuan, “Expediting the patent examination system in Thailand: Recent developments,” Tilleke & Gibbins, Bangkok, Thailand, Mar. 3, 2014. [Online]. Available: https://www.tilleke.com/insights/expediting-patent-examination-system-thailand-recent-developments/
+[21] D. Vachanavuttivong, P. Naboriboon, and A. Homhuan, “Expediting the patent examination system in Thailand: Recent developments,” Tilleke & Gibbins, Bangkok, Thailand, Mar. 3, 2014. [Tilleke & Gibbins article](https://www.tilleke.com/insights/expediting-patent-examination-system-thailand-recent-developments/).
 
-[22] D. Paleka, S. Goel, J. Geiping, and F. Tramèr, “Pitfalls in evaluating language model forecasters,” in *Proc. ICLR*, 2026. [Conference paper](https://proceedings.iclr.cc/paper_files/paper/2026/hash/b9d69c72e4587ddf3fa6352890aefc4f-Abstract-Conference.html).
+[22] D. Paleka, S. Goel, J. Geiping, and F. Tramèr, “Pitfalls in evaluating language model forecasters,” in *Proc. ICLR*, 2026. [ICLR conference paper](https://proceedings.iclr.cc/paper_files/paper/2026/hash/b9d69c72e4587ddf3fa6352890aefc4f-Abstract-Conference.html).
 
 [23] S. He, L. Lv, A. Manela, and J. Wu, “Chronologically consistent large language models,” *J. Financ. Econ.*, vol. 185, Art. no. 104374, 2026. [doi: 10.1016/j.jfineco.2026.104374](https://doi.org/10.1016/j.jfineco.2026.104374).
 
-[24] E. Karger et al., “ForecastBench: A dynamic benchmark of AI forecasting capabilities,” in *Proc. ICLR*, 2025. [Conference paper](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ea74e45a229dac70b5b63b28d8934db6-Abstract-Conference.html).
+[24] E. Karger et al., “ForecastBench: A dynamic benchmark of AI forecasting capabilities,” in *Proc. ICLR*, 2025. [ICLR conference paper](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ea74e45a229dac70b5b63b28d8934db6-Abstract-Conference.html).
 
 [25] O. R. van den Akker *et al.*, “Preregistration of secondary data analysis: A template and tutorial,” *Meta-Psychology*, vol. 5, 2021. [doi: 10.15626/MP.2020.2625](https://doi.org/10.15626/MP.2020.2625).
 
-[26] J. Traub et al., “Overcoming common flaws in the evaluation of selective classification systems,” in *Adv. Neural Inf. Process. Syst.*, vol. 37, pp. 2323–2347, 2024. [Paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/047c84ec50bd8ea29349b996fc64af4b-Paper-Conference.pdf).
+[26] J. Traub et al., “Overcoming common flaws in the evaluation of selective classification systems,” in *Adv. Neural Inf. Process. Syst.*, vol. 37, pp. 2323–2347, 2024. [NeurIPS conference paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/047c84ec50bd8ea29349b996fc64af4b-Paper-Conference.pdf).
 
 [27] C. A. Field and A. H. Welsh, “Bootstrapping clustered data,” *J. R. Stat. Soc. B*, vol. 69, no. 3, pp. 369–390, 2007. [doi: 10.1111/j.1467-9868.2007.00593.x](https://doi.org/10.1111/j.1467-9868.2007.00593.x).
 
-[28] U.S. Food and Drug Administration, *Multiple Endpoints in Clinical Trials: Guidance for Industry*, Oct. 2022. [Guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/multiple-endpoints-clinical-trials).
+[28] U.S. Food and Drug Administration, *Multiple Endpoints in Clinical Trials: Guidance for Industry*, Oct. 2022. [FDA guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/multiple-endpoints-clinical-trials).
 
 [29] B. Turtel, D. Franklin, K. Skotheim, L. Hewitt, and P. Schoenegger, “Outcome-based reinforcement learning to predict the future,” *Trans. Mach. Learn. Res.*, Nov. 2025. [Journal article](https://openreview.net/pdf/6854ebdc1a775820ad158c9a284cbe20d6241201.pdf).
 
 [30] S. Srihangpiboon, “Market Window Dossier / LOE-Bench: evidence-graph review queues for forecasting US first generic approvals from dated open regulatory records,” OSF preregistration, 28 Nov. 2026. [doi: 10.17605/OSF.IO/P2SMD](https://doi.org/10.17605/OSF.IO/P2SMD).
 
-[31] S. Srihangpiboon, “patent-to-pilot: Market Window Dossier and LOE-Bench,” GitHub repository, commit 3e06537b (C′ scoring), 2026. [Online]. Available: https://github.com/siriponsri/patent-to-pilot
+[31] S. Srihangpiboon, “[LOE-Bench research completion and linked evidence](https://github.com/siriponsri/patent-to-pilot/blob/5448904e/docs/loe-bench/RESEARCH-COMPLETION.md),” Patent-to-Pilot, rev. 5448904e, Nov. 29, 2026. Historical C′ scoring revision 3e06537b. [Online].
 
 [32] S. Srihangpiboon, “How to score LOE-Bench Track A,” Patent-to-Pilot, rev. 2cee4a62, Nov. 2026. [Source](https://github.com/siriponsri/patent-to-pilot/blob/2cee4a62/docs/loe-bench/HOW-TO-SCORE-TRACK-A.md)
 
