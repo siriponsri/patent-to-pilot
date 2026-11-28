@@ -41,3 +41,22 @@ Deliverables were copied to `C:/Users/User/Desktop/IS2-MWD/` for the owner. They
 | `IS2-MWD-TH.pdf` | `3cb4e0f4ddbfbdbf991e178db9687171f0df9fd751b4387552751e862d7cc98e` |
 
 **Next:** the IS2 slides (Claude). The C9 and Track A text updates follow the freeze.
+
+## Audit of IS2STORY (28 November 2026, night)
+
+**DONE.** IS2STORY (merged) retells the paper on the owner's choices: the question-form title, opening A from IS1, reader-friendly names with the registered IDs in parentheses, the result order following the reader's questions (H1, then H2 with H3 descriptive, then the 7B model, C3/C4 and one dossier), and a "meaning for a drug team" line after each result. It uses the new Figure 1 (`fig1_decision_*`, Claude design).
+
+- **Mechanical checks.** The only new numbers are the IS1 bridge values (435, 692, 100), the Track A count 651 and its maturity year, the §4.4 heading number, and US patent 6017927 in the solifenacin dossier example (source: EVP).
+- **Wording.** None of the forbidden phrases appears. "In progress" refers only to the freeze, which is accurate.
+- **Abstracts.** The abstracts are identical across editions (EN 130 words, TH 152 tokens).
+- **Layout.** Word renders both editions at 9 pages, within the 8–10 limit. The planner checked the contact sheets.
+
+| File | SHA-256 |
+| --- | --- |
+| `IS2-MWD-EN.docx` | `b688299e87ed49226753bcec0d26d07c92234db224b34e349de2ce7f28ce9ec0` |
+| `IS2-MWD-EN.pdf` | `abe52239b5fd15ef00de53c750f5c5541be748925f85ad582efec7e747f00f89` |
+| `IS2-MWD-TH.docx` | `432e109365c332802669157619da21635a244a7eb02755b02e7aa0eaa98d7bf4` |
+| `IS2-MWD-TH.pdf` | `40cb1771bf30ab448788b01e636c700b002b455bf6b7a9aa65668d6883a9254f` |
+
+**Next:** update the §5 freeze sentence and the C9 status after TRACKA-FREEZE, then the slides follow this story.
+
