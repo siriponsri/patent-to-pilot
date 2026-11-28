@@ -69,3 +69,12 @@ Resolved by the reviewer: N1, R4-A, R4-C, R4-D (repository part). Partial: R3 an
 **Round 5 outcome (29 Nov, 00:46, TRACKA-READOUT6 merged).** R5-A: fresh and resumed drafts share one promotion gate that rediscovers the 12-month result and reconciles it with the staged H3 reference; a conflict or mismatch keeps the draft unpublished, and the uncontested retry publishes the original bytes. R5-B: one maintainer issue body with digests is accepted by both the Worker and the reader; an incomplete marker is logged and dispatch continues. Production publication NOT_RUN until 2027. [Receipt](../receipts/TRACKA-READOUT6.md)
 
 Next: EXTREV-R6.
+
+## Round 6 ([review](EXTERNAL-REVIEW-R6.md), answered 29 Nov 2026, 00:55 Bangkok)
+
+Resolved by the reviewer for first publication: R3, R4-B, R5-A, R5-B. No blocking finding remains.
+
+| ID | Severity | Response |
+|---|---|---|
+| R6-A | MAJOR | **In progress (TRACKA-READOUT7).** Post-publication rule: the first 24-month aggregate keeps its bytes, decisions and date. Every replay or recovery report states "formal as verified at publication on <date>" and, separately, a current re-run of the 12-month witness check (VERIFIED_CONSISTENT, or CURRENT_DISPUTE or UNRESOLVED_CONTINUITY with locators). A later dispute is reported for custodian reconciliation and never rewrites the published family. |
+| R6-B | MINOR | **In progress (same card).** Failed recovery reports the actual discovery reason and locators; the missing-capture message is reserved for a missing capture. |
