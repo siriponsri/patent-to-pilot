@@ -133,8 +133,8 @@ class DevelopmentProjectionTest(unittest.TestCase):
     def test_mixed_application_is_projected_before_decoding_outcomes(self):
         admitted = {"submission_type": "ORIG", "submission_status": "AP",
                     "submission_status_date": "20160101", "application_docs": [
-                        {"application_docs_date": "20160101", "application_docs_url": "admitted"},
-                        {"application_docs_date": "20170101", "application_docs_url": "future-doc"}]}
+                        {"applications_doc_date": "20160101", "application_docs_url": "admitted"},
+                        {"applications_doc_date": "20170101", "application_docs_url": "future-doc"}]}
         later = {"submission_type": "ORIG", "submission_status": "AP",
                  "submission_status_date": "20170101", "application_docs": "future-action"}
         application_row = {"application_number": application(1), "sponsor_name": "Snapshot",
@@ -153,7 +153,7 @@ class DevelopmentProjectionTest(unittest.TestCase):
             approval = project_development_anda(payload)
             self.assertEqual(len(approval["products"]), 1)
             self.assertEqual(approval_metadata(payload, END), {
-                "snapshot_sponsor": "Snapshot", "same_day_documents": ["admitted"],
+                "snapshot_sponsor": "Snapshot", "admitted_document_links": ["admitted"],
             })
             application_row["submissions"] = [later]
             future_only = json.dumps(application_row).encode()

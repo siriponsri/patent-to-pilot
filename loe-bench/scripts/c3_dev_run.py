@@ -49,7 +49,7 @@ def project_identity(line):
 
 
 def approval_metadata(line, approved):
-    """Project sponsor proxy and same-day documents from an already admitted record."""
+    """Project sponsor proxy and development-dated links on the admitted action."""
     fields = dict(composite_items(line))
     when = b'"' + approved.strftime("%Y%m%d").encode("ascii") + b'"'
     documents = set()
@@ -60,10 +60,12 @@ def approval_metadata(line, approved):
             continue
         for _, raw_doc in _items(sub, b"application_docs"):
             doc = dict(composite_items(raw_doc))
-            if doc.get(b"application_docs_date") == when and doc.get(b"application_docs_url", b"null") != b"null":
-                documents.add(json.loads(doc[b"application_docs_url"]))
+            published = doc.get(b"applications_doc_date")
+            url = doc.get(b"application_docs_url", b"null")
+            if approved_by(published) and published >= when and url != b"null":
+                documents.add(json.loads(url))
     return {"snapshot_sponsor": json.loads(fields.get(b"sponsor_name", b"null")),
-            "same_day_documents": sorted(documents)}
+            "admitted_document_links": sorted(documents)}
 
 
 def _inputs(raw):
@@ -186,8 +188,8 @@ def _audit(roster, labels, metadata):
             "unknown_drugs": len({key for key, day in roster if labels[key, day].event is None}),
             "recorded_window_applications": len(applications), "unresolved_applications": len(unresolved),
             "unresolved_with_snapshot_sponsor": sum(bool(metadata[app]["snapshot_sponsor"]) for app in unresolved),
-            "unresolved_with_same_day_document_link": sum(
-                bool(metadata[app]["same_day_documents"]) for app in unresolved)}
+            "unresolved_with_admitted_document_link": sum(
+                bool(metadata[app]["admitted_document_links"]) for app in unresolved)}
 
 
 def _fixtures(roster, labels, metadata):
@@ -230,9 +232,7 @@ def run(args):
     labels = c3.build_labels(roster, approvals, applicants, observed_through=c3.DEVELOPMENT_END)
     panel_labels = {row: labels[row].event for row in panel}
     irrecoverable = args.history is None or any(
-        label is None and all(
-            not applicants.history.get(app) for app in labels[row].applications)
-        for row, label in panel_labels.items())
+        labels[row].event is None and not labels[row].confirmed_applicants for row in panel)
     ranking = {"status": "BLOCKED_FROZEN_QUEUE_UNAVAILABLE", "event_rows": None, "recall": None,
                "delta": None, "ci95": None, "capture_bounds": None}
     if args.frozen_scores is not None:
