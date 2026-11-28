@@ -39,9 +39,20 @@ python -m c9.roster --checkpoint /private/checkpoint --projection /private/train
 
 The manifest pins ordered keys, serialized messages, token IDs, model and input hashes. Both arms repeat this preparation and verify the same manifest before training. The 2,048-token limit applies after the checkpoint's chat template.
 
+Use the [C9PROJ receipt](../../docs/loe-bench/receipts/C9PROJ.md) for the frozen development artifacts, their provenance and the training-only launch with a roster hash check.
+
 ## Approved RunPod execution
 
-Admission requires the C′ gate pass, the approved development projection, the full Track A roster, and a live itemized quote approved before creation. Request one on-demand 24 GiB NVIDIA A10 with an ephemeral container disk of at most 20 GiB, preferably at a US data center. Use the pinned CUDA 12.8 and Torch 2.8 runtime, Linux with Python 3.12 and direct OpenSSH/SCP access. Verify the pod's SSH host key using the approved identity record. Record the pod creation or billing start at the earliest billed instant and round time reservations conservatively. Schedule teardown before either arm's cap or the core Track A freeze.
+Admission requires the C′ gate pass, the approved development projection and a live itemized quote approved before creation. The C9 runtime accepts one approved 24 GB NVIDIA A10 or NVIDIA L4. Both arms and Track A prediction must match the detected GPU and runtime in the shared training manifest. The C9RUN2 deviation limits its placement to one L4 on Secure Cloud in US-MO-2. Use the pinned CUDA 12.8 and Torch 2.8 runtime, Linux with Python 3.12 and direct OpenSSH/SCP access. Verify the pod's SSH host key using the approved identity record. Record the pod creation or billing start at the earliest billed instant and round time reservations conservatively. Schedule teardown before either arm's cap or the core Track A freeze. [C9RUN2 receipt](../../docs/loe-bench/receipts/C9RUN2.md)
+
+For the training-only card, run the two commands below in order on the admitted pod after verifying fit and throughput. Use the same output directory so GRPO verifies the training roster, runtime and initial adapter saved for SFT. Pull the full trained directory with both arm logs and verify the file hashes before terminating the pod. The freeze card supplies the Track A roster and runs predictions later.
+
+```text
+python -m c9.train --arm sft --checkpoint /private/checkpoint --projection /private/training.json --projection-sha256 TRAIN_SHA --output /private/trained
+python -m c9.train --arm grpo --checkpoint /private/checkpoint --projection /private/training.json --projection-sha256 TRAIN_SHA --output /private/trained
+```
+
+The combined launcher below additionally requires the full Track A roster.
 
 Store the following approval fields in a private JSON file. `live_quote_ref` points to the itemized quote, including storage, transfer, taxes, fees and provider billing increments. `owner_approval_ref` and `cprime_pass_ref` point to recorded decisions. Use timezone-qualified timestamps. Enter equal `arm_seconds` for each arm's training and predictions. Split time already billed and the `setup_seconds`, `pull_seconds` and `teardown_seconds` reservations evenly when checking arm caps.
 

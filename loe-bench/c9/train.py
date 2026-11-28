@@ -12,7 +12,7 @@ from transformers import AutoModelForCausalLM, GenerationConfig, set_seed
 from loe_bench.c9 import grpo_reward, sft_target
 
 from .checkpoint import model_manifest
-from .inputs import canonical, file_digest, schedule, specification, write_json
+from .inputs import APPROVED_GPUS, canonical, file_digest, schedule, specification, write_json
 from .roster import prepare
 
 ARMS = ("sft", "grpo")
@@ -33,8 +33,8 @@ def runtime(dry, spec):
     if torch.cuda.device_count() != 1 or not torch.cuda.is_bf16_supported():
         raise RuntimeError("C9 needs exactly one visible bfloat16 GPU")
     gpu = torch.cuda.get_device_properties(0)
-    if gpu.name != "NVIDIA A10" or not 21 <= gpu.total_memory / 2**30 <= 24:
-        raise RuntimeError(f"C9 needs the pinned 24 GiB NVIDIA A10, found {gpu.name}")
+    if gpu.name not in APPROVED_GPUS or not 21 <= gpu.total_memory / 2**30 <= 24:
+        raise RuntimeError(f"C9 needs one 24 GiB NVIDIA A10 or NVIDIA L4, found {gpu.name}")
     return "cuda", versions | {"gpu": gpu.name, "vram_bytes": gpu.total_memory}
 
 
@@ -232,6 +232,7 @@ def train(checkpoint, projection, projection_sha, output, *, dry=False, arms=ARM
         model.save_pretrained(target, safe_serialization=True, save_embedding_layers=False)
         write_json(target / "run.json", {
             "status": "COMPLETE", "arm": arm, "dry_run": dry, **summary,
+            "runtime": versions,
             "training_roster_sha256": file_digest(manifest), "initial_sha256": file_digest(initial),
             "files": adapter_files(target), "seconds": monotonic() - started,
             "peak_cuda_bytes": torch.cuda.max_memory_allocated() if device == "cuda" else None,

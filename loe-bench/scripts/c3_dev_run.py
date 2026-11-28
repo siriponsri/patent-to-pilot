@@ -73,8 +73,8 @@ def approval_metadata(line, approved):
             "admitted_document_links": sorted(documents)}
 
 
-def _inputs(raw):
-    """Verify raw bytes and build the same development-scoped moiety linkage as FREEZE."""
+def _inputs(raw, *, trace=None):
+    """Verify and project development inputs, optionally tracing unresolved linkage."""
     source = read_json("S0_INPUT_MANIFEST.json")
     hashes = {row["raw_file"]: row["sha256"] for row in source["files"]}
     names = ("df_nda.jsonl", "df_anda.jsonl", *OB_HISTORICAL)
@@ -124,11 +124,16 @@ def _inputs(raw):
         with patch.object(dataset, "build_moiety_linkage", return_value=linkage):
             entities = dataset.build_entities(raw, gsrs_path=gsrs, include_anda_outcomes=False)
 
-    approvals, unlinked = [], 0
+    approvals, unlinked, unresolved = [], 0, {}
     for record, day in records:
         app = record["application_number"]
-        groups = [(group, approved) for group, approved, _ in
-                  dataset._original_compositions(record, day, registry, orange, linkage) if approved]
+        compositions = list(dataset._original_compositions(record, day, registry, orange, linkage))
+        groups = [(group, approved) for group, approved, _ in compositions if approved]
+        if trace is not None and (not groups or any(when is None for _, when, _ in compositions)):
+            unresolved[app] = {
+                "dated_groups": sorted(group for group, _ in groups),
+                "undated_groups": sorted(group for group, when, _ in compositions if when is None),
+            }
         unlinked += not groups
         for group, approved in groups:
             if group not in entities:
@@ -141,6 +146,9 @@ def _inputs(raw):
             approvals.append(c3.Approval(group, app, approved, proof))
             entity = entities[group]
             entity.anda_first = min(entity.anda_first or approved, approved)
+    if trace is not None:
+        trace.update(reader=reader, registry=registry, orange=orange, linkage=linkage,
+                     unresolved=unresolved)
     return entities, approvals, metadata, unlinked, {name: hashes[name] for name in names}, source["fetched_at_utc"]
 
 

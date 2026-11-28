@@ -7,6 +7,7 @@ import tempfile
 import unittest
 from datetime import datetime
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from c9.dry_run import fixture, synthetic_rows
@@ -100,6 +101,12 @@ class TestRunPod(unittest.TestCase):
         self.assertEqual(allowances(approved, specification(), start + 95), [100, 8800, 100, 100])
         with self.assertRaisesRegex(ValueError, "reservation exceeds"):
             allowances(approved, specification(), start + 101)
+        with self.assertRaisesRegex(ValueError, "outside the admitted window"):
+            allowances(approved, specification(), start - 1)
+        self.assertEqual(allowances(approved | {"gpu": "NVIDIA L4"}, specification(), start + 95),
+                         [100, 8800, 100, 100])
+        with self.assertRaisesRegex(ValueError, "approved placement"):
+            allowances(approved | {"gpu": "NVIDIA L40"}, specification(), start + 95)
 
     def test_allowlisted_bundle_and_retrieval_inventory(self):
         from argparse import Namespace
@@ -125,6 +132,62 @@ class TestRunPod(unittest.TestCase):
 @unittest.skipUnless(all(importlib.util.find_spec(name) for name in ("torch", "peft", "transformers")),
                      "C9 training dependencies are optional")
 class TestC9Optimization(unittest.TestCase):
+    def test_runtime_accepts_only_the_two_approved_gpu_names(self):
+        from c9.train import runtime
+
+        spec = specification()
+        pinned = spec["checkpoint"]["runtime"]
+        with (patch("c9.train.version", side_effect=lambda name: pinned.get(name, "fixture")),
+              patch("c9.train.torch.cuda.device_count", return_value=1),
+              patch("c9.train.torch.cuda.is_bf16_supported", return_value=True),
+              patch("c9.train.torch.cuda.get_device_properties") as properties):
+            for name in ("NVIDIA A10", "NVIDIA L4"):
+                with self.subTest(gpu=name):
+                    properties.return_value = SimpleNamespace(name=name, total_memory=24 * 2**30)
+                    device, versions = runtime(False, spec)
+                    self.assertEqual((device, versions["gpu"]), ("cuda", name))
+            properties.return_value.name = "NVIDIA L40"
+            with self.assertRaisesRegex(RuntimeError, "NVIDIA L40"):
+                runtime(False, spec)
+
+    def test_second_arm_rejects_different_gpu_before_fit(self):
+        from c9.train import train
+
+        with (tempfile.TemporaryDirectory() as tmp,
+              patch("c9.train.model_manifest", return_value={}),
+              patch("c9.train.prepare", return_value=([], None, [], {})),
+              patch("c9.train.runtime", side_effect=[("cuda", {"gpu": "NVIDIA L4"}),
+                                                     ("cuda", {"gpu": "NVIDIA A10"})])):
+            path = Path(tmp) / "train"
+            train(None, None, None, path, arms=())
+            with self.assertRaisesRegex(ValueError, "paired training inputs changed"):
+                train(None, None, None, path, arms=("grpo",))
+            self.assertFalse((path / "grpo").exists())
+
+    def test_prediction_rejects_gpu_different_from_training(self):
+        from c9.inputs import SPEC_SHA256, file_digest, write_json
+        from c9.predict import predict
+
+        with (tempfile.TemporaryDirectory() as tmp,
+              patch("c9.predict.runtime", return_value=("cuda", {"gpu": "NVIDIA A10"})),
+              patch("c9.predict.model_manifest", return_value={}),
+              patch("c9.predict.adapter_files", return_value={}),
+              patch("c9.predict.prepare_track") as prepare_track):
+            root = Path(tmp)
+            (root / "sft").mkdir()
+            initial = root / "initial.safetensors"
+            initial.write_bytes(b"fixture")
+            roster = root / "training-roster.json"
+            runtime = {"gpu": "NVIDIA L4"}
+            write_json(roster, {"runtime": runtime, "checkpoint": {}, "spec_lf_sha256": SPEC_SHA256})
+            write_json(root / "sft/run.json", {
+                "status": "COMPLETE", "arm": "sft", "dry_run": False, "updates": 64,
+                "files": {}, "runtime": runtime, "initial_sha256": file_digest(initial),
+                "training_roster_sha256": file_digest(roster),
+            })
+            with self.assertRaisesRegex(ValueError, "paired training manifest mismatch"):
+                predict(None, None, None, root, "sft", root / "predictions")
+            prepare_track.assert_not_called()
     def test_population_advantage_and_clipping(self):
         import torch
         from c9.train import grpo_loss, standardized_advantages
