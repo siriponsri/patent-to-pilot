@@ -12,7 +12,7 @@ from pathlib import Path
 from time import monotonic
 from uuid import uuid4
 
-from .inputs import (ROOT, file_digest, load_projection, select_training, specification,
+from .inputs import (APPROVED_GPUS, ROOT, file_digest, load_projection, select_training, specification,
                      strict_json, track_rows, write_json)
 
 RUNTIME_FILES = ("__init__.py", "c9.py", "common.py", "l1e_prompt.py", "llm_arm.py",
@@ -31,8 +31,8 @@ def timestamp(value):
 
 def allowances(approval, spec, now):
     budget = spec["budget"]
-    if approval["gpu"] != "NVIDIA A10" or approval["gpu_count"] != 1:
-        raise ValueError("the approved placement must be one NVIDIA A10")
+    if approval["gpu"] not in APPROVED_GPUS or approval["gpu_count"] != 1:
+        raise ValueError("the approved placement must be one NVIDIA A10 or NVIDIA L4")
     if not all(isinstance(approval[key], str) and approval[key].strip() for key in (
         "owner_approval_ref", "cprime_pass_ref", "live_quote_ref", "pod_id", "data_center",
     )):
@@ -112,6 +112,7 @@ def verify_transfer(results):
 
 
 def verify_pair(results, args, hashes, spec):
+    training = strict_json((results / "trained/training-roster.json").read_bytes())
     reports = []
     for arm in ARMS:
         predict_dir = results / f"{arm}-predictions"
@@ -122,6 +123,7 @@ def verify_pair(results, args, hashes, spec):
                 or report["predictions_sha256"] != hashes[f"{arm}-predictions/predictions.jsonl"]
                 or report["adapter_run_sha256"] != hashes[f"trained/{arm}/run.json"]
                 or run["status"] != "COMPLETE" or run["dry_run"] or run["arm"] != arm
+                or report["runtime"] != training["runtime"] or run["runtime"] != training["runtime"]
                 or run["training_roster_sha256"] != hashes["trained/training-roster.json"]
                 or run["initial_sha256"] != hashes["trained/initial.safetensors"]
                 or run["updates"] != spec["training"]["optimizer_updates_per_arm"]
@@ -178,7 +180,9 @@ def launch(args):
     try:
         remote(
             f"""test "$RUNPOD_POD_ID" = {shlex.quote(approval["pod_id"])}
-test "$(nvidia-smi --query-gpu=name --format=csv,noheader)" = 'NVIDIA A10'
+gpu=$(nvidia-smi --query-gpu=name --format=csv,noheader)
+test "$gpu" = {shlex.quote(approval["gpu"])}
+printf '%s\\n' "$gpu"
 """, start + setup, "placement")
         with tempfile.TemporaryDirectory(prefix="c9-") as temporary:
             bundle = Path(temporary) / work
@@ -217,6 +221,7 @@ export CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONT
         write_json(args.output / "launch.json", {
             "status": status, "pod_id": approval["pod_id"], "data_center": approval["data_center"],
             "approval_sha256": file_digest(args.approval), "approval_ref": approval["owner_approval_ref"],
+            "approved_gpu": approval["gpu"],
             "gpu_usd_per_hour": approval["gpu_usd_per_hour"], "phases": events,
             "pod_billed_seconds_to_launch_exit_estimate": elapsed,
             "gpu_usd_to_launch_exit_estimate": elapsed * approval["gpu_usd_per_hour"] / 3600,

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SPEC_SHA256 = "e865e719e7fcbd8fa636164270c4c3959d007cb9357cbedb59d7802b8951f28f"
 SPEC_PATH = ROOT / "data/C9_SPEC.json"
 SHA256 = re.compile(r"[0-9a-f]{64}")
+APPROVED_GPUS = frozenset({"NVIDIA A10", "NVIDIA L4"})
 TRAIN_FIELDS = {"drug_key", "forecast", "original_nda", "type1", "covered_through",
                 "resolved_linkage", "first_final_anda", "provenance"}
 TRACK_FIELDS = {"drug_key", "forecast", "provenance"}
