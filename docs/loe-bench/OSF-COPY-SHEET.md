@@ -1,13 +1,13 @@
 # OSF copy sheet for the browser agent
 
-**Audit status: DRAFT, NOT AUDITED.** Do not submit until this line reads `AUDITED: YES` with the main planner's commit SHA.
+**AUDITED: YES** at commit `52908944f8d659a955e3fdc4316a4b6080691ce6` (main planner, 28 November 2026). The authors confirmed the disclosure statements on 28 November 2026.
 
 This sheet tells a browser agent (GPT-6.2 Sol high with the Chrome extension) exactly what to enter on OSF to register the Market Window Dossier / LOE-Bench preregistration. The owner signs in to their own OSF account; the agent never sees or types a password. Background: [submission procedure](OSF-SUBMISSION.md), [preregistration](PREREGISTRATION.md), [plan](PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026).
 
 ## 1. Rules for the agent
 
 1. **Use only the owner's signed-in session.** If OSF asks for a login, stop and ask the owner. Never enter credentials.
-2. **Copy text verbatim** from the audited files at the commit named in section 6. Do not paraphrase, shorten, translate or "improve" any text.
+2. **Copy text verbatim** from `TEXT-SOURCE-PREREGISTRATION.md` in the upload folder (section 5), which is byte-identical to the audited commit. Do not paraphrase, shorten, translate or "improve" any text.
 3. **Verify every attachment's SHA-256** against section 5 before uploading. Stop on any mismatch.
 4. **Upload only the files listed in section 5.** Never upload raw data, files from `_private_artifacts`, `.env` files, protected test outputs or anything not listed.
 5. **Stop before the final Register click.** Show the owner a summary: title, authors, licence, access choice, the count of filled fields and the attachment list. Click Register only after the owner types `submit` in the agent chat.
@@ -64,25 +64,24 @@ The agent confirms that these exact strings appear in the pasted form before sho
 
 ## 5. Attachments
 
-Upload each file from the audited commit in section 6. The SHA-256 values are filled in at audit.
+All files are already downloaded and hash-verified in the owner's folder **`C:/Users/User/Desktop/OSF-UPLOAD-LOE-Bench/`**. Upload these ten files from that folder. Do not upload `TEXT-SOURCE-PREREGISTRATION.md`, which is only the text source for pasting.
 
-| File (repository path) | SHA-256 |
-|---|---|
-| `docs/loe-bench/PREREGISTRATION.pdf` (rendered from PREREGISTRATION.md at the audited commit) | *at audit* |
-| `loe-bench/data/FROZEN_CONFIG.json` | *at audit* |
-| `loe-bench/data/S0_INPUT_MANIFEST.json` | *at audit* |
-| `loe-bench/data/L1_FROZEN_CONFIG.json` | *at audit* |
-| `loe-bench/data/L1E_FROZEN_CONFIG.json` (card C2) | *at audit* |
-| `loe-bench/data/C3_SPEC.json` | *at audit* |
-| `loe-bench/data/C4_SPEC.json` | *at audit* |
-| `loe-bench/data/C9_SPEC.json` | *at audit* |
-| `docs/loe-bench/REGULATORY-RULES.md` | *at audit* |
-| `docs/loe-bench/OSF-HASH-MANIFEST.txt` (every file above with its hash and commit) | *at audit* |
+| File in upload folder | Repository path at the audited commit | SHA-256 |
+|---|---|---|
+| `PREREGISTRATION.pdf` | `docs/loe-bench/PREREGISTRATION.pdf` | `21fe6ceb0811e62f3235ea91a2b8cf1cb7a02886e8266ac870d5bc09a76be73a` |
+| `FROZEN_CONFIG.json` | `loe-bench/data/FROZEN_CONFIG.json` | `d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39` |
+| `S0_INPUT_MANIFEST.json` | `loe-bench/data/S0_INPUT_MANIFEST.json` | `7d40be5e2004d887480ce5f337afffd611909f26017622e90ad304a0386d2d1d` |
+| `L1_FROZEN_CONFIG.json` | `loe-bench/data/L1_FROZEN_CONFIG.json` | `e5e5ade357ee5faf83efa0ce24ad25feddacdfcbf49ddd817a6b10e494a9ef16` |
+| `L1E_FROZEN_CONFIG.json` | `loe-bench/data/L1E_FROZEN_CONFIG.json` | `dd1dd4ac0d592a48de081c5fc29f68e0ccc78fd7a8daad771d280c7f15901e40` |
+| `C3_SPEC.json` | `loe-bench/data/C3_SPEC.json` | `8179101bb7a0adf9e8659bcb0978c73bd32ee869506a50027537741a45e3b0fd` |
+| `C4_SPEC.json` | `loe-bench/data/C4_SPEC.json` | `c0644bb4c1ed9d6050e256191c85bb34dd120a73b6da78850a1faf80e2c400f0` |
+| `C9_SPEC.json` | `loe-bench/data/C9_SPEC.json` | `e865e719e7fcbd8fa636164270c4c3959d007cb9357cbedb59d7802b8951f28f` |
+| `REGULATORY-RULES.md` | `docs/loe-bench/REGULATORY-RULES.md` | `9e2f6d3173848636b0ba81f6509735a087f2b9f1632dbdfb58aae12f0c519331` |
+| `OSF-HASH-MANIFEST.txt` | `docs/loe-bench/OSF-HASH-MANIFEST.txt` | `8806e99c3c008c586cea5e1a5efde159a7bf96a985eb2ce221531d1e45849c4a` |
 
-Hashes refer to the Git blob bytes (LF line endings), so download each file from its commit-specific GitHub URL rather than copying from a Windows working copy, where CRLF line endings would change the hash.
+If the agent can compute hashes, it checks them before uploading. If it cannot, it relies on the main planner's verification: the folder was downloaded from `https://raw.githubusercontent.com/siriponsri/patent-to-pilot/52908944f8d659a955e3fdc4316a4b6080691ce6/<path>`, and every hash matched on 28 November 2026. If any file is missing or renamed, stop and ask the owner.
 
 ## 6. Audited commit and hand-back
 
-- Audited commit: *at audit*
-- Commit-specific links use the form `https://github.com/siriponsri/patent-to-pilot/blob/<commit>/<path>`.
-- After registration, the owner gives the registered PDF to the main planner. The main planner records its SHA-256 in `loe-bench/data/PREREG_LOCK.json`, which is the only key that unseals the test.
+- Audited commit: `52908944f8d659a955e3fdc4316a4b6080691ce6`. The registered text is `docs/loe-bench/PREREGISTRATION.md` at that commit (LF SHA-256 `dc485bb748bca2645253c95aa88a030921e8cdca9bdb2fa8f3754163e957d4fc`). Commit-specific links have the form `https://github.com/siriponsri/patent-to-pilot/blob/52908944f8d659a955e3fdc4316a4b6080691ce6/<path>`.
+- After registration, the owner gives the main planner the PDF that OSF generates for the registration. The main planner records its SHA-256 in `loe-bench/data/PREREG_LOCK.json`. That file is the only key that unseals the test.

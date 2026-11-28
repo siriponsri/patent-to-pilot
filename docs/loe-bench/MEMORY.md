@@ -101,3 +101,8 @@
   - On annual prescriptions, carry-forward MAE 25,002 beat drift MAE 31,114.
   - Gross reimbursement per prescription rose for queued ingredients (carry-forward bias −454 USD). Applying the FDA factor of 0.465 made the forecast worse for both the M3 queue (+381 USD MAE) and the B1 queue (+372 USD). Lesson: first entry does not collapse gross Medicaid reimbursement within four quarters; crowding (C3) is the better P2 signal. No further tuning, to avoid forking paths.
   - Remaining before OSF: C2 (L1e), then preregistration v2 drafting, main-planner audit and the copy-sheet hashes.
+- **28 Nov, preregistration v2 audited.**
+  - PREREG2 was merged, then audited by the main planner. Fixes: a descriptive title, an AI-assistance disclosure, neutral roles (first author and analysis lead), absolute commit links (the repository is public) and a typo. The authors confirmed the disclosure statements.
+  - Registered text: `PREREGISTRATION.md` at `bef62d64` (LF SHA-256 dc485bb7…). PDF rendered by `docs/loe-bench/render_prereg.py` (21fe6ceb…). Audited package commit: `52908944`.
+  - Verified upload folder: `C:/Users/User/Desktop/OSF-UPLOAD-LOE-Bench/`.
+  - Next: the owner's GPT-6.2 Sol high browser agent submits the registration following the copy sheet. The owner hands back the OSF registration PDF, and the main planner writes PREREG_LOCK, runs the C′ gate and scores.
