@@ -1,0 +1,776 @@
+{
+  "admission": {
+    "P1-RSF-OPEN": "ADMITTED",
+    "P2-COX-OPEN": "ADMITTED"
+  },
+  "code_commit_sha": "892be4ef1627c9aaf389883a30ade9182edd0ff5",
+  "core_roster_sha256": "31d35d30854006586bf0e9642e6b4abb5f11def7b3da2138599323292173597c",
+  "core_scoring_runtime": {
+    "numpy": "2.5.4",
+    "python": "3.12.10"
+  },
+  "cprime_supplement": "NOT_RUN",
+  "development": {
+    "12": {
+      "arms": {
+        "B1": {
+          "accuracy": 0.9583526145303101,
+          "always_negative_accuracy": 0.9583526145303101,
+          "brier": 0.040254350100652043,
+          "c_index": {
+            "comparable_pairs": 47560,
+            "estimate": 0.6835470984020185
+          },
+          "fn": 90,
+          "fp": 0,
+          "recall20": 0.4811111111111111,
+          "roc_auc": 0.6835667149525189,
+          "slots": 430,
+          "tn": 2071,
+          "tp": 0
+        },
+        "B3": {
+          "accuracy": 0.4641369736233225,
+          "always_negative_accuracy": 0.9583526145303101,
+          "c_index": {
+            "comparable_pairs": 47560,
+            "estimate": 0.37671362489486965
+          },
+          "fn": 65,
+          "fp": 1093,
+          "hard_rule_brier": 0.5358630263766775,
+          "recall20": 0.10699100575920287,
+          "roc_auc": 0.3750067063683674,
+          "slots": 430,
+          "tn": 978,
+          "tp": 25
+        },
+        "M1": {
+          "accuracy": 0.9583526145303101,
+          "always_negative_accuracy": 0.9583526145303101,
+          "brier": 0.038285280475598295,
+          "c_index": {
+            "comparable_pairs": 47560,
+            "estimate": 0.7834314550042052
+          },
+          "fn": 90,
+          "fp": 0,
+          "recall20": 0.6111111111111112,
+          "roc_auc": 0.7879875529803101,
+          "slots": 430,
+          "tn": 2071,
+          "tp": 0
+        },
+        "M3": {
+          "accuracy": 0.9583526145303101,
+          "always_negative_accuracy": 0.9583526145303101,
+          "brier": 0.03821828073491962,
+          "c_index": {
+            "comparable_pairs": 47560,
+            "estimate": 0.7886669470142977
+          },
+          "fn": 90,
+          "fp": 0,
+          "recall20": 0.6111111111111112,
+          "roc_auc": 0.7931970599281077,
+          "slots": 430,
+          "tn": 2071,
+          "tp": 0
+        },
+        "P1-RSF-OPEN": {
+          "accuracy": 0.9583526145303101,
+          "always_negative_accuracy": 0.9583526145303101,
+          "brier": 0.03925321431728698,
+          "c_index": {
+            "comparable_pairs": 47560,
+            "estimate": 0.7029226240538268
+          },
+          "fn": 90,
+          "fp": 0,
+          "recall20": 0.4444444444444444,
+          "roc_auc": 0.7069719405547508,
+          "slots": 430,
+          "tn": 2071,
+          "tp": 0
+        },
+        "P2-COX-OPEN": {
+          "accuracy": 0.9583526145303101,
+          "always_negative_accuracy": 0.9583526145303101,
+          "brier": 0.038051729726881624,
+          "c_index": {
+            "comparable_pairs": 47560,
+            "estimate": 0.6850925147182506
+          },
+          "fn": 90,
+          "fp": 0,
+          "recall20": 0.5333333333333333,
+          "roc_auc": 0.7045656955845271,
+          "slots": 430,
+          "tn": 2071,
+          "tp": 0
+        }
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "generator": "PCG64",
+        "seed": 20261127
+      },
+      "contrasts": {
+        "P1-RSF-OPEN-M3": {
+          "ci95": [
+            -0.28089887640449435,
+            -0.05494505494505497
+          ],
+          "estimate": -0.16666666666666674,
+          "undefined_draws": 0
+        },
+        "P2-COX-OPEN-M3": {
+          "ci95": [
+            -0.17500000000000004,
+            0.023809523809523836
+          ],
+          "estimate": -0.07777777777777783,
+          "undefined_draws": 0
+        }
+      },
+      "cutoffs": [
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "drugs": 609,
+      "event_drugs": 90,
+      "events": 90,
+      "freeze_comparator_parity": "PASS",
+      "models": {
+        "P1-RSF-OPEN": {
+          "model": {
+            "convergence": "NOT_APPLICABLE_NO_ITERATIVE_OPTIMIZER",
+            "fitted_trees": 500,
+            "input_features": [
+              "age_years",
+              "oral",
+              "injectable",
+              "nce_remaining_years",
+              "years_to_last_patent_expiry",
+              "nce_remaining_years_missing",
+              "years_to_last_patent_expiry_missing"
+            ],
+            "native_score_float64_le_sha256": "99add16cb1a241362d05ccbf5b7e53580637a0c1d7f8bc6568d03b064acd58f2",
+            "repeat_fit": "PASS_EXACT",
+            "settings": {
+              "bootstrap": true,
+              "max_depth": null,
+              "max_features": "sqrt",
+              "min_samples_leaf": 5,
+              "min_samples_split": 10,
+              "n_estimators": 500,
+              "n_jobs": 1,
+              "random_state": 20261127
+            },
+            "survival_grid_times": 26,
+            "tree_node_counts": [
+              1,
+              57
+            ]
+          },
+          "status": "PASS"
+        },
+        "P2-COX-OPEN": {
+          "model": {
+            "baseline_survival_at_horizon": 0.9666921119604488,
+            "coefficients": [
+              0.05600492106770458,
+              -0.8460936608494969,
+              1.642092176850574,
+              0.4940316142744102,
+              -0.026968282929115822
+            ],
+            "convergence": "PASS",
+            "features": [
+              "age_years",
+              "orphan",
+              "challenge_present",
+              "challenge_missing",
+              "first_nda_year"
+            ],
+            "input_features": [
+              "age_years",
+              "orphan",
+              "oral",
+              "injectable",
+              "challenge_present",
+              "challenge_missing",
+              "first_nda_year"
+            ],
+            "native_score_float64_le_sha256": "fbc2038c10e8ba1b6a10780028da43d4c49b721ca028abccdaedef0a6e3e6468",
+            "repeat_fit": "PASS_EXACT",
+            "settings": {
+              "alpha": 1.0,
+              "n_iter": 100,
+              "ties": "breslow",
+              "tol": 1e-09
+            },
+            "survival_grid_times": 26,
+            "train_scaling": {
+              "age_years": {
+                "mean": 19.89667241014707,
+                "scale": 16.62119085200044
+              },
+              "first_nda_year": {
+                "mean": 1989.5173674588666,
+                "scale": 16.579242159502897
+              }
+            },
+            "zero_variance_dropped": [
+              "oral",
+              "injectable"
+            ]
+          },
+          "status": "PASS"
+        }
+      },
+      "prevalence": 0.041647385469689956,
+      "research_input_sha256": "97ab3b6f825bd3d2712c241641b40918d618bde6733518010ce772859026c498",
+      "rows": 2161,
+      "status": "development validation (descriptive)",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_events": 25,
+      "train_rows": 547
+    },
+    "24": {
+      "arms": {
+        "B1": {
+          "accuracy": 0.9159741458910434,
+          "always_negative_accuracy": 0.9159741458910434,
+          "brier": 0.07507196735176733,
+          "c_index": {
+            "comparable_pairs": 47158,
+            "estimate": 0.7128058865940031
+          },
+          "fn": 91,
+          "fp": 0,
+          "recall20": 0.39652014652014644,
+          "roc_auc": 0.7198909961006735,
+          "slots": 215,
+          "tn": 992,
+          "tp": 0
+        },
+        "B3": {
+          "accuracy": 0.4136657433056325,
+          "always_negative_accuracy": 0.9159741458910434,
+          "c_index": {
+            "comparable_pairs": 47158,
+            "estimate": 0.37637304381017006
+          },
+          "fn": 62,
+          "fp": 573,
+          "hard_rule_brier": 0.5863342566943675,
+          "recall20": 0.11377714639412044,
+          "roc_auc": 0.3705301754696916,
+          "slots": 215,
+          "tn": 419,
+          "tp": 29
+        },
+        "M1": {
+          "accuracy": 0.9141274238227147,
+          "always_negative_accuracy": 0.9159741458910434,
+          "brier": 0.07792867372058898,
+          "c_index": {
+            "comparable_pairs": 47158,
+            "estimate": 0.7494592645998558
+          },
+          "fn": 91,
+          "fp": 2,
+          "recall20": 0.43956043956043955,
+          "roc_auc": 0.7574995568947182,
+          "slots": 215,
+          "tn": 990,
+          "tp": 0
+        },
+        "M3": {
+          "accuracy": 0.9150507848568791,
+          "always_negative_accuracy": 0.9159741458910434,
+          "brier": 0.07782478670822929,
+          "c_index": {
+            "comparable_pairs": 47158,
+            "estimate": 0.7588532168454981
+          },
+          "fn": 90,
+          "fp": 2,
+          "recall20": 0.4945054945054945,
+          "roc_auc": 0.7659296348812478,
+          "slots": 215,
+          "tn": 990,
+          "tp": 1
+        },
+        "P1-RSF-OPEN": {
+          "accuracy": 0.9159741458910434,
+          "always_negative_accuracy": 0.9159741458910434,
+          "brier": 0.0710716347254132,
+          "c_index": {
+            "comparable_pairs": 47158,
+            "estimate": 0.7615356885364095
+          },
+          "fn": 91,
+          "fp": 0,
+          "recall20": 0.4835164835164835,
+          "roc_auc": 0.7707816377171216,
+          "slots": 215,
+          "tn": 992,
+          "tp": 0
+        },
+        "P2-COX-OPEN": {
+          "accuracy": 0.9159741458910434,
+          "always_negative_accuracy": 0.9159741458910434,
+          "brier": 0.0978612962945635,
+          "c_index": {
+            "comparable_pairs": 47158,
+            "estimate": 0.5555155010814709
+          },
+          "fn": 91,
+          "fp": 0,
+          "recall20": 0.3626373626373626,
+          "roc_auc": 0.559952144629564,
+          "slots": 215,
+          "tn": 992,
+          "tp": 0
+        }
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "generator": "PCG64",
+        "seed": 20261127
+      },
+      "contrasts": {
+        "P1-RSF-OPEN-M3": {
+          "ci95": [
+            -0.12333047945205479,
+            0.11002777777777761
+          ],
+          "estimate": -0.010989010989011005,
+          "undefined_draws": 0
+        },
+        "P2-COX-OPEN-M3": {
+          "ci95": [
+            -0.29891355692017,
+            0.03334269662921342
+          ],
+          "estimate": -0.1318681318681319,
+          "undefined_draws": 0
+        }
+      },
+      "cutoffs": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
+      "drugs": 561,
+      "event_drugs": 67,
+      "events": 91,
+      "freeze_comparator_parity": "PASS",
+      "models": {
+        "P1-RSF-OPEN": {
+          "model": {
+            "convergence": "NOT_APPLICABLE_NO_ITERATIVE_OPTIMIZER",
+            "fitted_trees": 500,
+            "input_features": [
+              "age_years",
+              "oral",
+              "injectable",
+              "nce_remaining_years",
+              "years_to_last_patent_expiry",
+              "nce_remaining_years_missing",
+              "years_to_last_patent_expiry_missing"
+            ],
+            "native_score_float64_le_sha256": "0916aad8f3f61bdcf87776cb5feabbc7620ab7627652fce9cdfcfe4891a8282a",
+            "repeat_fit": "PASS_EXACT",
+            "settings": {
+              "bootstrap": true,
+              "max_depth": null,
+              "max_features": "sqrt",
+              "min_samples_leaf": 5,
+              "min_samples_split": 10,
+              "n_estimators": 500,
+              "n_jobs": 1,
+              "random_state": 20261127
+            },
+            "survival_grid_times": 47,
+            "tree_node_counts": [
+              1,
+              69
+            ]
+          },
+          "status": "PASS"
+        },
+        "P2-COX-OPEN": {
+          "model": {
+            "baseline_survival_at_horizon": 0.9429624121520422,
+            "coefficients": [
+              0.015401883373435407,
+              -0.38640691887494993,
+              1.6846362715442684,
+              1.5429257986414264,
+              -0.04820989341489694
+            ],
+            "convergence": "PASS",
+            "features": [
+              "age_years",
+              "orphan",
+              "challenge_present",
+              "challenge_missing",
+              "first_nda_year"
+            ],
+            "input_features": [
+              "age_years",
+              "orphan",
+              "oral",
+              "injectable",
+              "challenge_present",
+              "challenge_missing",
+              "first_nda_year"
+            ],
+            "native_score_float64_le_sha256": "2ed721669ec1756158c048e3cf46a87dc4e662690335378a5575f47d0a98ff35",
+            "repeat_fit": "PASS_EXACT",
+            "settings": {
+              "alpha": 1.0,
+              "n_iter": 100,
+              "ties": "breslow",
+              "tol": 1e-09
+            },
+            "survival_grid_times": 47,
+            "train_scaling": {
+              "age_years": {
+                "mean": 19.89667241014707,
+                "scale": 16.62119085200044
+              },
+              "first_nda_year": {
+                "mean": 1989.5173674588666,
+                "scale": 16.579242159502897
+              }
+            },
+            "zero_variance_dropped": [
+              "oral",
+              "injectable"
+            ]
+          },
+          "status": "PASS"
+        }
+      },
+      "prevalence": 0.0840258541089566,
+      "research_input_sha256": "0c5e6e9c17a76fd892ca09ecebc67c505eede0077a5f9f785aef544d2207ebd9",
+      "rows": 1083,
+      "status": "development validation (descriptive)",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_events": 46,
+      "train_rows": 547
+    }
+  },
+  "files_sha256": {
+    "priorarms_predictions_12m.jsonl": "8b8610f5f317cfcf8b2dab7b2c0a5cb92da14e80269845fe826a5d45aee7ca65",
+    "priorarms_predictions_24m.jsonl": "d5be5a65209dbe71cebcdda0fb74373b5d17d20dfc4c188af126f2d318bc356a"
+  },
+  "research_lock_lf_sha256": "f34cd0791d5e1e0832bdf7614dbb74794a3c9497ee37fe0ab1238b4c97002d83",
+  "research_runtime": {
+    "numpy": "2.2.6",
+    "python": "3.12.10",
+    "scikit-learn": "1.7.2",
+    "scikit-survival": "0.25.0"
+  },
+  "sha256sums_after": "f2d4e2b5a627f4ec5ff0f2df4a993ff21ecda2f6108e4fc18296f67748b13e8e",
+  "sha256sums_before": "d4021b0a7c5562ce22124a551bc559fa863db842e1c863be68b91cd1ebb129b1",
+  "status": "PREPARED_FOR_FREEZE_REVIEW",
+  "t0": "2026-11-27",
+  "track_a": {
+    "12": {
+      "models": {
+        "P1-RSF-OPEN": {
+          "model": {
+            "convergence": "NOT_APPLICABLE_NO_ITERATIVE_OPTIMIZER",
+            "fitted_trees": 500,
+            "input_features": [
+              "age_years",
+              "oral",
+              "injectable",
+              "nce_remaining_years",
+              "years_to_last_patent_expiry",
+              "nce_remaining_years_missing",
+              "years_to_last_patent_expiry_missing"
+            ],
+            "native_score_float64_le_sha256": "c9f7d19baf21ca8c2af5069fe1c6571841277f3f6bbfdbf417c3332444efb901",
+            "repeat_fit": "PASS_EXACT",
+            "settings": {
+              "bootstrap": true,
+              "max_depth": null,
+              "max_features": "sqrt",
+              "min_samples_leaf": 5,
+              "min_samples_split": 10,
+              "n_estimators": 500,
+              "n_jobs": 1,
+              "random_state": 20261127
+            },
+            "survival_grid_times": 256,
+            "tree_node_counts": [
+              15,
+              507
+            ]
+          },
+          "native": {
+            "max": 0.4756269608747824,
+            "median": 0.0030085966739684666,
+            "min": 0.0,
+            "p25": 0.0016458117038788966,
+            "p75": 0.062411334672202834
+          },
+          "queue": {
+            "above_boundary": 129,
+            "boundary_inclusion_probability": 1.0,
+            "boundary_native_score": 0.07924949784890756,
+            "boundary_rows": 1,
+            "capacity": 130,
+            "slots_at_boundary": 1
+          },
+          "status": "PASS"
+        },
+        "P2-COX-OPEN": {
+          "model": {
+            "baseline_survival_at_horizon": 0.9840064030132353,
+            "coefficients": [
+              -0.1806202284085821,
+              -0.04488946398492901,
+              2.407340537059113,
+              0.4198840797588108,
+              -0.24356564691089616
+            ],
+            "convergence": "PASS",
+            "features": [
+              "age_years",
+              "orphan",
+              "challenge_present",
+              "challenge_missing",
+              "first_nda_year"
+            ],
+            "input_features": [
+              "age_years",
+              "orphan",
+              "oral",
+              "injectable",
+              "challenge_present",
+              "challenge_missing",
+              "first_nda_year"
+            ],
+            "native_score_float64_le_sha256": "9d0fcaf3c9d21b06203800e55c987c00df957534ba5918bcc3b2ef3ab08700bb",
+            "repeat_fit": "PASS_EXACT",
+            "settings": {
+              "alpha": 1.0,
+              "n_iter": 100,
+              "ties": "breslow",
+              "tol": 1e-09
+            },
+            "survival_grid_times": 256,
+            "train_scaling": {
+              "age_years": {
+                "mean": 21.608012161293278,
+                "scale": 19.384756873201102
+              },
+              "first_nda_year": {
+                "mean": 1995.9561846587571,
+                "scale": 19.769530360035734
+              }
+            },
+            "zero_variance_dropped": [
+              "oral",
+              "injectable"
+            ]
+          },
+          "native": {
+            "max": 0.16066560477331537,
+            "median": 0.020955786492502182,
+            "min": 0.01946218244451392,
+            "p25": 0.02013975468018636,
+            "p75": 0.022912070045599142
+          },
+          "queue": {
+            "above_boundary": 129,
+            "boundary_inclusion_probability": 1.0,
+            "boundary_native_score": 0.02340580396156522,
+            "boundary_rows": 1,
+            "capacity": 130,
+            "slots_at_boundary": 1
+          },
+          "status": "PASS"
+        }
+      },
+      "research_input_sha256": "b8ef3106f567df17cc8b2852876ca89cd31123ffe3e09476b8a227b7830990f1",
+      "roster_join": "PASS_EXACT_ORDER",
+      "roster_rows": 651,
+      "train_cutoffs": [
+        "2010-01-01",
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01",
+        "2016-01-01",
+        "2017-01-01",
+        "2018-01-01",
+        "2019-01-01",
+        "2020-01-01",
+        "2021-01-01",
+        "2022-01-01",
+        "2023-01-01",
+        "2024-01-01",
+        "2025-01-01"
+      ],
+      "train_drugs": 954,
+      "train_events": 332,
+      "train_rows": 8513
+    },
+    "24": {
+      "models": {
+        "P1-RSF-OPEN": {
+          "model": {
+            "convergence": "NOT_APPLICABLE_NO_ITERATIVE_OPTIMIZER",
+            "fitted_trees": 500,
+            "input_features": [
+              "age_years",
+              "oral",
+              "injectable",
+              "nce_remaining_years",
+              "years_to_last_patent_expiry",
+              "nce_remaining_years_missing",
+              "years_to_last_patent_expiry_missing"
+            ],
+            "native_score_float64_le_sha256": "34b40fbd44fe55a93e64d7766bc069c591c124779f775a59d3f3399312a5bb66",
+            "repeat_fit": "PASS_EXACT",
+            "settings": {
+              "bootstrap": true,
+              "max_depth": null,
+              "max_features": "sqrt",
+              "min_samples_leaf": 5,
+              "min_samples_split": 10,
+              "n_estimators": 500,
+              "n_jobs": 1,
+              "random_state": 20261127
+            },
+            "survival_grid_times": 505,
+            "tree_node_counts": [
+              47,
+              691
+            ]
+          },
+          "native": {
+            "max": 0.7295969928179025,
+            "median": 0.02173880692137531,
+            "min": 0.0,
+            "p25": 0.004180726113294564,
+            "p75": 0.14016158355383374
+          },
+          "queue": {
+            "above_boundary": 129,
+            "boundary_inclusion_probability": 1.0,
+            "boundary_native_score": 0.16541829550462628,
+            "boundary_rows": 1,
+            "capacity": 130,
+            "slots_at_boundary": 1
+          },
+          "status": "PASS"
+        },
+        "P2-COX-OPEN": {
+          "model": {
+            "baseline_survival_at_horizon": 0.9661339389337855,
+            "coefficients": [
+              -0.1556088583057338,
+              0.040278972524616215,
+              2.376968201441885,
+              0.3016564426516299,
+              -0.15813785209994852
+            ],
+            "convergence": "PASS",
+            "features": [
+              "age_years",
+              "orphan",
+              "challenge_present",
+              "challenge_missing",
+              "first_nda_year"
+            ],
+            "input_features": [
+              "age_years",
+              "orphan",
+              "oral",
+              "injectable",
+              "challenge_present",
+              "challenge_missing",
+              "first_nda_year"
+            ],
+            "native_score_float64_le_sha256": "c71e36106c27702663db08e3d93fda7509713296f25b9cd6c8d5ec9e0265957a",
+            "repeat_fit": "PASS_EXACT",
+            "settings": {
+              "alpha": 1.0,
+              "n_iter": 100,
+              "ties": "breslow",
+              "tol": 1e-09
+            },
+            "survival_grid_times": 505,
+            "train_scaling": {
+              "age_years": {
+                "mean": 21.571063279369785,
+                "scale": 19.2156300913105
+              },
+              "first_nda_year": {
+                "mean": 1995.4539465349044,
+                "scale": 19.54649428776226
+              }
+            },
+            "zero_variance_dropped": [
+              "oral",
+              "injectable"
+            ]
+          },
+          "native": {
+            "max": 0.30200335279823787,
+            "median": 0.042386996658196785,
+            "min": 0.04207893399179885,
+            "p25": 0.042249570552451154,
+            "p75": 0.04396617598795083
+          },
+          "queue": {
+            "above_boundary": 129,
+            "boundary_inclusion_probability": 1.0,
+            "boundary_native_score": 0.044009484545998845,
+            "boundary_rows": 1,
+            "capacity": 130,
+            "slots_at_boundary": 1
+          },
+          "status": "PASS"
+        }
+      },
+      "research_input_sha256": "26c7b5502a619d12f12541041a22e88a14dc4e41558c651a211fe13ba73a41b5",
+      "roster_join": "PASS_EXACT_ORDER",
+      "roster_rows": 651,
+      "train_cutoffs": [
+        "2010-01-01",
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01",
+        "2016-01-01",
+        "2017-01-01",
+        "2018-01-01",
+        "2019-01-01",
+        "2020-01-01",
+        "2021-01-01",
+        "2022-01-01",
+        "2023-01-01",
+        "2024-01-01"
+      ],
+      "train_drugs": 922,
+      "train_events": 618,
+      "train_rows": 7893
+    }
+  },
+  "tracka_core_manifest_sha256": "6497ab59ba41b0429a6169d5118c6afd14680233076a6a6693c03599d0176628"
+}
