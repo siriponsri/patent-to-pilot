@@ -162,7 +162,44 @@ def write_replay(path, result):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def finish_run(stage, out, result):
+def format_estimate_pp(estimate):
+    return "unavailable" if estimate is None else f"{100 * estimate:+.2f} pp"
+
+
+def write_run_report(path, result, published):
+    write_report(path, result)
+    if published is None:
+        return
+
+    if result["horizon_months"] == 12:
+        role = "first published 12-month panel"
+        h3 = published["panels"]["12"]["contrasts"]["M3-B1"]["recall"]
+    else:
+        role = "first published 24-month family"
+        h3 = published["hypotheses"]["H3"]
+    release_url = result["first_publication"]["release_url"]
+    bounds = h3["ci95"]
+    interval = "unavailable" if bounds is None else f"[{100 * bounds[0]:+.2f}, {100 * bounds[1]:+.2f}] pp"
+    retained = f"Retained H3 estimate from the [{role}]({release_url})"
+    context = [f"{retained} is {format_estimate_pp(h3['estimate'])} (95% interval {interval})."]
+    report = path.read_text(encoding="utf-8")
+    if result["status"] == "SCORED":
+        for name, differences in result["replay_comparison"]["hypothesis_differences"].items():
+            if estimates := differences.get("estimate"):
+                current = format_estimate_pp(estimates["replay"])
+                first = format_estimate_pp(estimates["published"])
+                context.append(f"{name} differs in the current recomputation ({current}) "
+                               f"from the first publication ({first}).")
+        context.append("**Decision table, current recomputation (not used for inference)**")
+        # The pinned renderer supplies this table header for every scored run.
+        header = report.index("\n| Step | Contrast |") + 1
+        report = report[:header] + "\n\n".join(context) + "\n\n" + report[header:]
+    else:
+        report += "\nNo replay calculation was completed.\n\n" + context[0] + "\n"
+    path.write_text(report + "\n" + "\n".join(replay_publication_lines(result)) + "\n", encoding="utf-8")
+
+
+def finish_run(stage, out, result, *, published=None):
     """Render integrated reports before hashing and promoting the run."""
     if result["family_status"] == "REPLAY":
         write_replay(stage / "REPLAY.md", result)
@@ -179,11 +216,7 @@ def finish_run(stage, out, result):
                       else "revision" if current else "first_scored",
                       first_scored_run=current.name if current else target.name if status == "SCORED" else None)
         dump(stage / RESULTS, result)
-        report = stage / "REPORT.md"
-        write_report(report, result)
-        if result.get("first_publication"):
-            with report.open("a", encoding="utf-8") as stream:
-                stream.write("\n" + "\n".join(replay_publication_lines(result)) + "\n")
+        write_run_report(stage / "REPORT.md", result, published)
         dump(stage / RECEIPT, {"files_sha256": {path.name: digest(path) for path in stage.iterdir()
                                                if path.is_file() and path.name != RECEIPT}})
         try:
@@ -287,14 +320,14 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
         if recover and published is not None:
             result.update(status="RECOVERED", replay_comparison={"status": "NOT_RUN_RECOVERY_ONLY",
                                                                  "detail": "Recovery retrieves the pinned bytes."})
-            return finish_run(stage, out, result)
+            return finish_run(stage, out, result, published=published)
         if replay is None or recover:
             missing = recovery_missing(capture, current) if recover else [
                 "No verified first capture or explicit local snapshot is available."]
             result.update(status="BLOCKED_SOURCE", family_status=custody.HOLD,
                           missing=missing)
             dump(stage / SOURCES, {"sources": [], "missing": result["missing"]})
-            return finish_run(stage, out, result)
+            return finish_run(stage, out, result, published=published)
 
         locked = load(release.folder / SCORER)
         require((python_version(), np.__version__) == (locked["python"], locked["numpy"]),
@@ -309,7 +342,7 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
             if published is not None:
                 result["replay_comparison"] = {"status": "NOT_RUN_BLOCKED_SOURCE",
                                               "detail": "See the source coverage checks in REPORT.md."}
-            return finish_run(stage, out, result)
+            return finish_run(stage, out, result, published=published)
 
         source_sha = digest(stage / SOURCES)
         panels, draws = {}, {}
@@ -357,7 +390,7 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
             step.update(sequence_decision=step["decision"], sequence_reached=step["reached"],
                         decision="DESCRIPTIVE_ONLY" if result["family_status"] == custody.HOLD else result["family_status"],
                         reached=False)
-        return finish_run(stage, out, result)
+        return finish_run(stage, out, result, published=published)
 
 
 def main(argv=None):
