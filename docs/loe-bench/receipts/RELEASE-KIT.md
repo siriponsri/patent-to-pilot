@@ -79,3 +79,7 @@ Neither negative case wrote a scoring directory. The real release emitted only p
 - **GitHub Action — release integration pending.** The workflow file is present on origin's default branch at `036a445e51165b68e039308898e16e4610dc4fe8`. That revision still expects the rehearsal manifest. Integrate the reviewed scorer, then set `TRACKA_RELEASE_DOI`, `TRACKA_FREEZE_SHA256` and `TRACKA_SCORER_REF`. Local scoring works with the archived release. [Continuity plan](../ENDGAME-PLAN.md#ending-track-a-without-the-owner) · [Workflow guide](../HOW-TO-SCORE-TRACK-A.md#github-actions-and-continuity).
 
 The planner owns the lane handoff and memory. For integration, record the final build and restore evidence here, retain the freeze unchanged, and carry forward DOI verification, the custodian decision and workflow integration. Real readouts remain **NOT_RUN**. No protected C′ TEST data, paid services or post-snapshot outcome downloads were used.
+
+## Planner note (28 November 2026)
+
+The open-custodian item above is superseded. The owner is the Track A custodian on a best-effort basis, backed by layered readout automation ([TRACKA-AUTO](TRACKA-AUTO.md)) and the public self-service guide. The public deposit and an independent anonymous restore from the version DOI remain open and block archival sign-off ([JOINT-SIGNOFF](../JOINT-SIGNOFF.md)).
