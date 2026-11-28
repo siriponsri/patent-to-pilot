@@ -38,7 +38,7 @@ Market Window Dossier runs **before** a bioequivalence study or comparative tria
 - What must an FTO evaluator verify before we commit?
 
 <p align="center">
-  <img src="docs/assets/market-window-flow.svg" alt="Market Window Dossier flow. Inputs feed four stages: a launch-window forecast, a patent evidence pack, Thai and ASEAN status, and the dossier itself. Each stage reads from an as-of evidence store. Forecasts are evaluated on a sealed retrospective test and on prospective Track A forecasts." width="100%">
+  <img src="docs/assets/market-window-flow.svg" alt="Market Window Dossier flow. Inputs feed four stages: a launch-window forecast, a patent evidence pack, Thai and ASEAN status, and the dossier itself. Each stage reads from an as-of evidence store. Forecasts have been tested on development data; the sealed retrospective test and the prospective Track A freeze are pending." width="100%">
 </p>
 
 | Dossier section | Reader | Content |
