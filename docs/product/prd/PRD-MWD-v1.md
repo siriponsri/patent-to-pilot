@@ -135,7 +135,9 @@ The owner asked for an MCP connector that AI agents can use, naming computer-use
 | M4 | P1 | **Agent-ready web UI for computer-use agents** | Semantic HTML, stable accessible names and roles for every control, URL deep links for each queue, dossier, tab and language, no information available only in canvas or images. A scripted computer-use walkthrough (open queue, search a drug, open a dossier, export the PDF) passes |
 | M5 | P2 | **OpenAPI description** of the same read-only endpoints | For agents that use function calling without MCP |
 
-Client compatibility is a test target, not a claim: each named client is recorded PASS, FAIL or NOT_RUN in the receipt with its version. Remote clients' terms and data handling belong to each user's own account. The planner needs the owner to identify "OpenBot" before it becomes a test target.
+Client compatibility is a test target, not a claim: each named client is recorded PASS, FAIL or NOT_RUN in the receipt with its version. Remote clients' terms and data handling belong to each user's own account. **OpenBot** ([repository](https://github.com/nightly-labs/openbot), [site](https://openbot.run/); 0.81.1, 28 Nov 2026) is a local-first desktop workspace by Synthetify Labs that runs other vendors' agent CLIs (Codex, Claude Code, Grok CLI, Gemini and others). Its changelog documents adding MCP servers as a local command or a remote address, and it uses `SKILL.md` skills in the Codex folder layout. It is a test client for both M2 transports. Its licence is PolyForm Noncommercial 1.0.0, so use inside a company needs a commercial OpenBot licence (the owner's decision), and its agents run with full access, so test it only against the read-only MWD connector.
+
+| M6 | P2 | **MWD agent skill** (`SKILL.md`, Codex folder layout) | Tells an agent which MWD tools to call, to keep claim IDs and the disclaimer, to say "unknown: verify" when evidence is missing, and never to give FTO or legal conclusions. Tested in Claude Code, Codex CLI and OpenBot |
 
 ## 5. Plan and cards for the Product Owner
 
@@ -158,7 +160,7 @@ Backend cards for Codex (D43), dispatched by the planner once the owner approves
 | B2 | BE-GROUND | GPT-6.2 Sol xhigh | Dossier-claim grounding and the deterministic citation and value validator for A1–A3, with a fixed evaluation sample | 5 Dec |
 | B3 | BE-CLAIMS | GPT-6.2 Sol high | Open claim-text source and adapter for A4 (rights recorded) | 8 Dec |
 | B4 | BE-ORG | GPT-6.2 Sol high | Localhost binding and single-account allowlist for the owner demo; a documented Cloudflare Tunnel + Access (email one-time PIN) recipe ready for when a domain exists; per-user limits and revocation; a deployment recipe for an external server such as dr-train (no remote step without owner approval) | 9 Dec |
-| B5 | BE-MCP | GPT-6.2 Sol high | Section 4c M1, M2, M5 (M3 after B2): shared tool layer, stdio server, Cloudflare Workers remote server with a deploy recipe the owner runs from their own account, OpenAPI, client test matrix | 8 Dec |
+| B5 | BE-MCP | GPT-6.2 Sol high | Section 4c M1, M2, M5, M6 (M3 after B2): shared tool layer, stdio server, Cloudflare Workers remote server with a deploy recipe the owner runs from their own account, OpenAPI, client test matrix | 8 Dec |
 
 The Product Owner covers M4 in PO-QA (accessible names, deep links, a computer-use walkthrough).
 
