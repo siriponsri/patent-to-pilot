@@ -6,13 +6,13 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 The owner runs the orchestrator on two Claude accounts. Per-account chat memory is not shared, so this section and [MEMORY.md](MEMORY.md) are the main memory. Update both, then commit and push, after every step (owner rule, 28 Nov 2026, night).
 
-Last update: 28 Nov 2026, about 22:35 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
+Last update: 28 Nov 2026, about 22:50 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
 
 | Line | State | Next action |
 |---|---|---|
 | IS2 short paper | IS2LAYOUT merged (a2cc45c1): figures and Table 1 next to first mention, 9 pages TH/EN, 0 orphans. Gap on pages 1–2 is the KMITL template (abstract pages with pinned footnotes). IS2REF merged (87a9ef4d). Reviewed files delivered to `IS_2_new/01_short-paper/final` (hashes match the IS2LAYOUT receipt); the earlier copies are in `archive/2026-11-28_pre-layout` | Owner reads it; slides wait for that |
 | Slides | Folder structure only | Wait for the owner's reading |
-| Journals (STA conditional, JAMIA) | JAMIA1 draft v1 merged (GPT-6.2 Sol high; 224-word abstract, 2,821-word text, 3 tables, 2 figure specs). PSA and MDM dropped (AI-drafting policies). STA waits for its AI policy | Co-planner critique running (`docs/writing/journal/jamia/CRITIQUE-JAMIA-v1.md`), then drafter v2, then Claude audit and figures. Author facts confirmed 28 Nov (decision register); the advisor confirms final approval before submission |
+| Journals (STA conditional, JAMIA) | JAMIA v1 merged; co-planner critique committed (`docs/writing/journal/jamia/CRITIQUE-JAMIA-v1.md`). PSA and MDM dropped. Author facts confirmed. From v2, manuscript text lives outside Git in `IS_2_new/04_journals/JAMIA/manuscript/` (repo is public) | JAMIA v2 drafting (Sol high), then Claude audit and figures; STA waits for its AI and preprint policy |
 | Product | Merged: PO-CURRENT (1ff2db22), PO-LANDING (1ae7f500; numbers checked against SCORE/SCORELLM; NOTICE Apache-2.0), BE-GATEWAY B1 (4922cc83; 36 tests rerun; localhost-only Compose; frozen contract `product/gateway/CONTRACT.md`). [PRD](../product/prd/PRD-MWD-v1.md) 4b and 4c current; MCP contract adopted from the co-planner memo (7cb1c92e). Deployment: Cloudflare Pages, AI on localhost | Running: PO-PDF (Sonnet), BE-MCP B5 (Sol high). Carry-over fix for the next PO card: landing hero says "generic and biosimilar"; biologics are out of v1.0 scope, so drop "biosimilar"; native Thai review of new landing copy; 320 px and focus order in PO-QA. Next: PO-AI after PO-PDF merges (both touch the app), then B2 BE-GROUND, B3 BE-CLAIMS, B4 BE-ORG, PO-WOW, PO-QA, PO-SHIP |
 | Track A | Frozen; OSF update 4 verified | Zenodo release when the owner logs in |
 | Integration | `main` equals `research/loe-bench` at 23af56eb | Fast-forward main after each merge |
