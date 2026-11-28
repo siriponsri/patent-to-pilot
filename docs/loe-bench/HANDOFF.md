@@ -72,3 +72,16 @@ Running cards:
 - SCORER (Sol xhigh): one-command release scorer, fixtures, release builder, GitHub Action and how-to.
 
 Planner fixes: the Thai abstract in the EN edition was pre-audit and is now synced (1445b000). The comprehensive report PDF (40 pages) was delivered and approved by the owner.
+
+## Track A frozen (28 Nov 2026, 11:18:44 UTC)
+
+- **Freeze.** TRACKA-FREEZE was merged with all 10 arms (B1, M1, M3, B3, P1-RSF-OPEN, P2-COX-OPEN, L1, L1e, C9-SFT, C9-GRPO). The tag is `loe-track-a-freeze-20261127` (commit 6712f32c) and the manifest SHA-256 is 8a78b318…c38d.
+- **GPU run.** The L4 came from EU-RO-1 on the third retry. Estimated spend was USD 0.3465 and the pod was deleted; RunPod spend is now about USD 4.08 of 23.
+- **C9-GRPO** abstained on all 651 rows, which the sheet now discloses.
+- **OSF update 4.** The sheet was audited (b9a2c88a) and copied with the prediction ZIP to `Desktop/OSF-UPLOAD-LOE-Bench/update-4/`. The owner files it before 31 Jan 2027, then the planner verifies the timestamp.
+- **Unblocked by the freeze.**
+  - Commit the current-queue product data.
+  - Build the real release ZIP and deposit it on Zenodo (owner login).
+  - Update the IS2 and report status sentences.
+  - Release v1.0.
+
