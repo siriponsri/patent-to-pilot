@@ -40,7 +40,7 @@ body {
   font-variant-numeric: tabular-nums;
   height: 100vh;
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
 }
 :lang(th) { line-height: 1.65; }
 h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; }
@@ -92,6 +92,19 @@ a:hover { text-decoration-thickness: 2px; }
 .notice .icon { color: var(--amber); width: 17px; height: 17px; margin-top: 2px; }
 .notice b { font-weight: 700; margin-right: 4px; }
 
+/* ---------- mode bar: mode, reference date and edition on every view ---------- */
+.modebar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 8px 24px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.mode-switch { display: flex; border: 2px solid var(--navy); border-radius: var(--r-control); overflow: hidden; flex: none; }
+.mode-switch button { border: 0; background: var(--surface); color: var(--navy); font-weight: 700; font-size: 14px; padding: 5px 14px; cursor: pointer; line-height: 1.4; }
+.mode-switch button + button { border-left: 2px solid var(--navy); }
+.mode-switch button:hover { background: var(--select); }
+.mode-switch button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+.mode-switch button:focus-visible { outline-offset: -4px; outline-color: var(--link); }
+.mode-switch button[aria-pressed="true"]:focus-visible { outline-color: #fff; }
+.mode-facts { display: flex; flex-wrap: wrap; gap: 2px 18px; font-size: 14px; color: var(--muted); }
+.mode-facts b { color: var(--ink); font-weight: 600; }
+body[data-mode="history"] .cur-only, body[data-mode="current"] .hist-only { display: none; }
+
 /* ---------- workspace ---------- */
 .app {
   display: grid; grid-template-columns: 272px minmax(0, 1fr) 296px; gap: 16px; padding: 16px 20px;
@@ -137,6 +150,23 @@ select:hover { border-color: var(--muted); }
 .qtable tr.q-loading td, .qtable tr.q-empty td { padding: 14px; color: var(--muted); font-size: 14px; }
 .qtable td.q-out { padding: 6px 10px 6px 0; white-space: nowrap; }
 .queue-help { font-size: 12.5px; color: var(--muted); padding: 8px 14px; border-top: 1px solid var(--line); }
+
+input[type="search"], input[type="date"] {
+  width: 100%; height: 34px; padding: 0 9px; border: 1px solid var(--line-strong); border-radius: var(--r-control);
+  background: var(--surface); font-size: 14.5px; font-weight: 400; color: var(--ink);
+}
+input[type="search"]:hover, input[type="date"]:hover { border-color: var(--muted); }
+.launch-msg { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.launch-msg:empty { display: none; }
+.launch-msg.is-ok { border-left: 3px solid var(--green); padding-left: 8px; }
+.launch-msg.is-warn { border-left: 3px solid var(--amber); padding-left: 8px; background: var(--amber-bg); }
+.queue-method, #queue-method { color: var(--ink-2); }
+.ties { border-top: 1px solid var(--line); padding: 6px 14px 8px; font-size: 13px; color: var(--ink-2); }
+.ties summary { cursor: pointer; font-weight: 600; color: var(--link); }
+.ties p { margin-top: 6px; line-height: 1.5; }
+.outside { border: 1px solid var(--amber-line); border-left: 4px solid var(--amber); background: var(--amber-bg); padding: 10px 14px; margin: 0 0 16px; font-size: 15px; }
+.outside b { color: var(--amber); display: block; margin-bottom: 2px; }
+.method-note { max-width: 80ch; margin: -8px 0 10px; }
 
 /* ---------- tags ---------- */
 .tag { display: inline-block; font-size: 12.5px; font-weight: 700; line-height: 1.4; padding: 3px 8px; border-radius: var(--r-control); white-space: nowrap; }
@@ -348,6 +378,8 @@ kbd { font-family: inherit; font-size: 13px; font-weight: 700; border: 1px solid
   @page { size: A4; margin: 16mm 14mm; }
   body { display: block; background: #fff; font-size: 11pt; }
   .topbar, .skip-link, .queue-panel, .sources-panel, .footer, .d-actions, .tabs, .crumb, .cb-note, #announcer { display: none !important; }
+  .mode-switch { display: none !important; }
+  .modebar { padding: 0 0 8px; border: 0; }
   .notice { border: 1px solid var(--amber-line); border-radius: 4px; margin-bottom: 10px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .app { display: block; height: auto; padding: 0; }
   .panel { border: 0; display: block; }

@@ -1,0 +1,5891 @@
+{
+  "schema": "mwd.index.v1",
+  "as_of": "2026-11-27",
+  "fixture": false,
+  "status": "TRACK_A_FROZEN",
+  "jurisdiction": "US",
+  "label": "Track A t0 forecast, outcome pending",
+  "version": {
+    "freeze": "verified",
+    "core_manifest_sha256": "6497ab59ba41b0429a6169d5118c6afd14680233076a6a6693c03599d0176628",
+    "tag": "loe-track-a-freeze-20261127",
+    "manifest_sha256": "8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d"
+  },
+  "disclaimer": {
+    "th": "เอกสารนี้ใช้จัดลำดับงานตรวจจากข้อมูลที่ระบุ ณ วันที่แสดง แบบจำลองประเมินโอกาสการอนุมัติยาสามัญครั้งแรกในสหรัฐฯ สถานะสิทธิในไทยและการประเมินเสรีภาพในการดำเนินการด้านสิทธิบัตร (FTO) ต้องให้ผู้เชี่ยวชาญตรวจข้อถือสิทธิ ผลิตภัณฑ์ ประเทศ และสถานะกฎหมายปัจจุบัน เอกสารนี้ไม่ใช่ความเห็นทางกฎหมายหรือความเห็น FTO",
+    "en": "This dossier prioritizes review using the evidence available as of the displayed date. The model estimates the chance of first US generic approval. Qualified experts must verify Thai rights and assess freedom to operate (FTO) against the claims, product, jurisdiction and current legal status. This dossier is neither a legal opinion nor an FTO opinion."
+  },
+  "queues": [
+    {
+      "path": "queue-2026-11-27-12m.json",
+      "as_of": "2026-11-27",
+      "horizon_months": 12
+    },
+    {
+      "path": "queue-2026-11-27-24m.json",
+      "as_of": "2026-11-27",
+      "horizon_months": 24
+    }
+  ],
+  "dossiers": [
+    {
+      "key": "AIR POLYMER TYPE A",
+      "display_name": "AIR POLYMER TYPE A",
+      "path": "dossier-AIR-POLYMER-TYPE-A-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "AMINOGLUTETHIMIDE",
+      "display_name": "AMINOGLUTETHIMIDE",
+      "path": "dossier-AMINOGLUTETHIMIDE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "CHLORMEZANONE",
+      "display_name": "CHLORMEZANONE",
+      "path": "dossier-CHLORMEZANONE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "DACLATASVIR DIHYDROCHLORIDE",
+      "display_name": "DACLATASVIR DIHYDROCHLORIDE",
+      "path": "dossier-DACLATASVIR-DIHYDROCHLORIDE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "DOXACURIUM CHLORIDE",
+      "display_name": "DOXACURIUM CHLORIDE",
+      "path": "dossier-DOXACURIUM-CHLORIDE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "E:SODIUM BICARBONATE|TARTARIC ACID",
+      "display_name": "SODIUM BICARBONATE + TARTARIC ACID",
+      "path": "dossier-E-SODIUM-BICARBONATE-TARTARIC-ACID-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "ETHOTOIN",
+      "display_name": "ETHOTOIN",
+      "path": "dossier-ETHOTOIN-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "GIREDESTRAN",
+      "display_name": "GIREDESTRAN",
+      "path": "dossier-GIREDESTRAN-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "HALOFANTRINE HYDROCHLORIDE",
+      "display_name": "HALOFANTRINE HYDROCHLORIDE",
+      "path": "dossier-HALOFANTRINE-HYDROCHLORIDE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "IOPANOIC ACID",
+      "display_name": "IOPANOIC ACID",
+      "path": "dossier-IOPANOIC-ACID-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "LESINURAD",
+      "display_name": "LESINURAD",
+      "path": "dossier-LESINURAD-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "MAVACAMTEN",
+      "display_name": "MAVACAMTEN",
+      "path": "dossier-MAVACAMTEN-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "MEPENZOLATE BROMIDE",
+      "display_name": "MEPENZOLATE BROMIDE",
+      "path": "dossier-MEPENZOLATE-BROMIDE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "METHYPRYLON",
+      "display_name": "METHYPRYLON",
+      "path": "dossier-METHYPRYLON-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "OXAMNIQUINE",
+      "display_name": "OXAMNIQUINE",
+      "path": "dossier-OXAMNIQUINE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "PERAMIVIR",
+      "display_name": "PERAMIVIR",
+      "path": "dossier-PERAMIVIR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "PINACIDIL",
+      "display_name": "PINACIDIL",
+      "path": "dossier-PINACIDIL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "POLYTHIAZIDE",
+      "display_name": "POLYTHIAZIDE",
+      "path": "dossier-POLYTHIAZIDE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "SIBUTRAMINE HYDROCHLORIDE",
+      "display_name": "SIBUTRAMINE HYDROCHLORIDE",
+      "path": "dossier-SIBUTRAMINE-HYDROCHLORIDE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "SULFUR HEXAFLUORIDE LIPID TYPE A MICROSPHERES",
+      "display_name": "SULFUR HEXAFLUORIDE LIPID TYPE A MICROSPHERES",
+      "path": "dossier-SULFUR-HEXAFLUORIDE-LIPID-TYPE-A-MICROSPHERES-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "TECHNETIUM TC 99M DISOFENIN KIT",
+      "display_name": "TECHNETIUM TC 99M DISOFENIN KIT",
+      "path": "dossier-TECHNETIUM-TC-99M-DISOFENIN-KIT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "TECHNETIUM TC 99M ETIDRONATE KIT",
+      "display_name": "TECHNETIUM TC 99M ETIDRONATE KIT",
+      "path": "dossier-TECHNETIUM-TC-99M-ETIDRONATE-KIT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "TECHNETIUM TC 99M EXAMETAZIME KIT",
+      "display_name": "TECHNETIUM TC 99M EXAMETAZIME KIT",
+      "path": "dossier-TECHNETIUM-TC-99M-EXAMETAZIME-KIT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "TECHNETIUM TC 99M GLUCEPTATE KIT",
+      "display_name": "TECHNETIUM TC 99M GLUCEPTATE KIT",
+      "path": "dossier-TECHNETIUM-TC-99M-GLUCEPTATE-KIT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "TECHNETIUM TC 99M LIDOFENIN KIT",
+      "display_name": "TECHNETIUM TC 99M LIDOFENIN KIT",
+      "path": "dossier-TECHNETIUM-TC-99M-LIDOFENIN-KIT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "TECHNETIUM TC 99M TEBOROXIME KIT",
+      "display_name": "TECHNETIUM TC 99M TEBOROXIME KIT",
+      "path": "dossier-TECHNETIUM-TC-99M-TEBOROXIME-KIT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "TECHNETIUM TC 99M TETROFOSMIN KIT",
+      "display_name": "TECHNETIUM TC 99M TETROFOSMIN KIT",
+      "path": "dossier-TECHNETIUM-TC-99M-TETROFOSMIN-KIT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "TROLAMINE POLYPEPTIDE OLEATE CONDENSATE",
+      "display_name": "TROLAMINE POLYPEPTIDE OLEATE CONDENSATE",
+      "path": "dossier-TROLAMINE-POLYPEPTIDE-OLEATE-CONDENSATE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:00Y6A5AJU6",
+      "display_name": "SOFPIRONIUM",
+      "path": "dossier-U-00Y6A5AJU6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:01T23W89FR",
+      "display_name": "THIAMYLAL",
+      "path": "dossier-U-01T23W89FR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:028LZY775B|U:JS86977WNV",
+      "display_name": "VILANTEROL + Fluticasone Furoate",
+      "path": "dossier-U-028LZY775B-U-JS86977WNV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:033072U4MZ",
+      "display_name": "GOLODIRSEN",
+      "path": "dossier-U-033072U4MZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:03KSI6WLXH",
+      "display_name": "NALDEMEDINE",
+      "path": "dossier-U-03KSI6WLXH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:03V657ZD3V",
+      "display_name": "METHACHOLINE",
+      "path": "dossier-U-03V657ZD3V-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0475EA27Q3",
+      "display_name": "BENZQUINAMIDE",
+      "path": "dossier-U-0475EA27Q3-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0578K3ELIO",
+      "display_name": "ACECLIDINE",
+      "path": "dossier-U-0578K3ELIO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:07896928ZC",
+      "display_name": "ERAVACYCLINE",
+      "path": "dossier-U-07896928ZC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:07HQ1TJ4JE",
+      "display_name": "Pritelivir",
+      "path": "dossier-U-07HQ1TJ4JE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:081L192FO9",
+      "display_name": "Suvorexant",
+      "path": "dossier-U-081L192FO9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:08O3FQ4UNP",
+      "display_name": "REPOTRECTINIB",
+      "path": "dossier-U-08O3FQ4UNP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:08W5N2C97Q",
+      "display_name": "ALPELISIB",
+      "path": "dossier-U-08W5N2C97Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:090IP5RV8F",
+      "display_name": "OMADACYCLINE",
+      "path": "dossier-U-090IP5RV8F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0AWH8BFG9A",
+      "display_name": "POLIDOCANOL",
+      "path": "dossier-U-0AWH8BFG9A-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0CA0VSF91Y",
+      "display_name": "DEURUXOLITINIB",
+      "path": "dossier-U-0CA0VSF91Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0F350BVT6S",
+      "display_name": "ECHOTHIOPHATE",
+      "path": "dossier-U-0F350BVT6S-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0F65R8P09N",
+      "display_name": "GOSERELIN",
+      "path": "dossier-U-0F65R8P09N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0FRP6G56LD",
+      "display_name": "Biperiden",
+      "path": "dossier-U-0FRP6G56LD-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0G9LGB5O2W",
+      "display_name": "Mavorixafor",
+      "path": "dossier-U-0G9LGB5O2W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0GRZ0F5XJ6",
+      "display_name": "EPLONTERSEN",
+      "path": "dossier-U-0GRZ0F5XJ6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0IEO0F56LV",
+      "display_name": "INOTERSEN",
+      "path": "dossier-U-0IEO0F56LV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0J8RN2W0HK",
+      "display_name": "TRIFAROTENE",
+      "path": "dossier-U-0J8RN2W0HK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0K5743G68X",
+      "display_name": "LEMBOREXANT",
+      "path": "dossier-U-0K5743G68X-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0NJ98Y462X",
+      "display_name": "CONIVAPTAN",
+      "path": "dossier-U-0NJ98Y462X-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0QTW8Z7MCR",
+      "display_name": "ROFECOXIB",
+      "path": "dossier-U-0QTW8Z7MCR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0RLU3VTK5M",
+      "display_name": "SONIDEGIB",
+      "path": "dossier-U-0RLU3VTK5M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0T4IMT8S5Z",
+      "display_name": "OLUTASIDENIB",
+      "path": "dossier-U-0T4IMT8S5Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0W860991D6|U:VC2W18DGKR",
+      "display_name": "Doxecitine + Doxribtimine",
+      "path": "dossier-U-0W860991D6-U-VC2W18DGKR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:0X9PA28K43",
+      "display_name": "VERTEPORFIN",
+      "path": "dossier-U-0X9PA28K43-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:12G01I6BBU",
+      "display_name": "EZOGABINE",
+      "path": "dossier-U-12G01I6BBU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1326R5J1IA",
+      "display_name": "Floretyrosine F-18",
+      "path": "dossier-U-1326R5J1IA-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:13S1S8SF37|U:7A314HQM0I",
+      "display_name": "ZINC CATION + PENTETIC ACID",
+      "path": "dossier-U-13S1S8SF37-U-7A314HQM0I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:13U9R5J3WL",
+      "display_name": "NEDOSIRAN",
+      "path": "dossier-U-13U9R5J3WL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:16CHD79MIX",
+      "display_name": "IOTHALAMIC ACID",
+      "path": "dossier-U-16CHD79MIX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:172030934T",
+      "display_name": "TIVOZANIB",
+      "path": "dossier-U-172030934T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:17E17JBP8L",
+      "display_name": "IOMEPROL",
+      "path": "dossier-U-17E17JBP8L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1801D76STL",
+      "display_name": "DIRITHROMYCIN",
+      "path": "dossier-U-1801D76STL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:18D0SL7309",
+      "display_name": "CHLORAMBUCIL",
+      "path": "dossier-U-18D0SL7309-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:19GBJ60SN5",
+      "display_name": "Cannabidiol",
+      "path": "dossier-U-19GBJ60SN5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:19O2GP3B7Q",
+      "display_name": "CLEVIDIPINE",
+      "path": "dossier-U-19O2GP3B7Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:19OWO1T3ZE",
+      "display_name": "ENFUVIRTIDE",
+      "path": "dossier-U-19OWO1T3ZE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1FQ2RY5YHH",
+      "display_name": "PATIROMER",
+      "path": "dossier-U-1FQ2RY5YHH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1H09Y5WO1F",
+      "display_name": "Letermovir",
+      "path": "dossier-U-1H09Y5WO1F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1IJV77EI07",
+      "display_name": "TEPOTINIB",
+      "path": "dossier-U-1IJV77EI07-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1L7BVT4Z4Z",
+      "display_name": "Acoltremon",
+      "path": "dossier-U-1L7BVT4Z4Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1N3O74HM92",
+      "display_name": "PIPECURONIUM",
+      "path": "dossier-U-1N3O74HM92-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1UA8E65KDZ",
+      "display_name": "Alitretinoin",
+      "path": "dossier-U-1UA8E65KDZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1WPE73O1WV",
+      "display_name": "Pralsetinib",
+      "path": "dossier-U-1WPE73O1WV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1X0094V6JV",
+      "display_name": "NAFARELIN",
+      "path": "dossier-U-1X0094V6JV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1Y740ILL1Z",
+      "display_name": "Ivacaftor",
+      "path": "dossier-U-1Y740ILL1Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:1Y740ILL1Z|U:EGP8L81APK",
+      "display_name": "Ivacaftor + LUMACAFTOR",
+      "path": "dossier-U-1Y740ILL1Z-U-EGP8L81APK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:207SMY3FQT",
+      "display_name": "VEMURAFENIB",
+      "path": "dossier-U-207SMY3FQT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2128O9F90Y|U:745X144DZY",
+      "display_name": "SAMARIUM CATION SM-153 + SAMARIUM SM-153 LEXIDRONAM",
+      "path": "dossier-U-2128O9F90Y-U-745X144DZY-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2158753C7E",
+      "display_name": "RELACORILANT",
+      "path": "dossier-U-2158753C7E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:21904A5386",
+      "display_name": "LEFAMULIN",
+      "path": "dossier-U-21904A5386-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:234248D0HH",
+      "display_name": "TUCATINIB",
+      "path": "dossier-U-234248D0HH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:239IF5W61J",
+      "display_name": "BENTIROMIDE",
+      "path": "dossier-U-239IF5W61J-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:23OW28RS7P|U:R9M4FJE48E",
+      "display_name": "QUINUPRISTIN + DALFOPRISTIN",
+      "path": "dossier-U-23OW28RS7P-U-R9M4FJE48E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:242Z0PM79Y",
+      "display_name": "PROPIOMAZINE",
+      "path": "dossier-U-242Z0PM79Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:25CG88L0BB",
+      "display_name": "BRENSOCATIB",
+      "path": "dossier-U-25CG88L0BB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:25W8454H16",
+      "display_name": "SULFAMETHIZOLE",
+      "path": "dossier-U-25W8454H16-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:25X868M3DS",
+      "display_name": "Vismodegib",
+      "path": "dossier-U-25X868M3DS-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:262P8GS9L9",
+      "display_name": "TAFENOQUINE",
+      "path": "dossier-U-262P8GS9L9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:27DXO59SAN",
+      "display_name": "TOCAINIDE",
+      "path": "dossier-U-27DXO59SAN-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2880D3468G",
+      "display_name": "Levamisole",
+      "path": "dossier-U-2880D3468G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:28K6I5M16G",
+      "display_name": "Palovarotene",
+      "path": "dossier-U-28K6I5M16G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:28O0WP6Z1P",
+      "display_name": "VUTRISIRAN SODIUM",
+      "path": "dossier-U-28O0WP6Z1P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:28O5C1J38A",
+      "display_name": "AMFENAC",
+      "path": "dossier-U-28O5C1J38A-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2919279Q3W",
+      "display_name": "VALDECOXIB",
+      "path": "dossier-U-2919279Q3W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:29OQ9EU4R1",
+      "display_name": "Tiratricol",
+      "path": "dossier-U-29OQ9EU4R1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2A7VPM5RWH",
+      "display_name": "Sevabertinib",
+      "path": "dossier-U-2A7VPM5RWH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2B2VM6UC8G",
+      "display_name": "Sotorasib",
+      "path": "dossier-U-2B2VM6UC8G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2C09NV773M",
+      "display_name": "PEMIROLAST",
+      "path": "dossier-U-2C09NV773M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2C598205QX",
+      "display_name": "FLUORODOPA F-18",
+      "path": "dossier-U-2C598205QX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2CN60TN6ZS",
+      "display_name": "Lurbinectedin",
+      "path": "dossier-U-2CN60TN6ZS-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2GT1D0TMX1",
+      "display_name": "MORICIZINE",
+      "path": "dossier-U-2GT1D0TMX1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2GZ0LIK7T4",
+      "display_name": "ISTRADEFYLLINE",
+      "path": "dossier-U-2GZ0LIK7T4-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2H1PA8H1EN",
+      "display_name": "PEGAPTANIB",
+      "path": "dossier-U-2H1PA8H1EN-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2I4BC502BT",
+      "display_name": "SALMETEROL",
+      "path": "dossier-U-2I4BC502BT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2I8BD50I8B",
+      "display_name": "CHLOROXINE",
+      "path": "dossier-U-2I8BD50I8B-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2J3H5C81A5",
+      "display_name": "Elafibranor",
+      "path": "dossier-U-2J3H5C81A5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2M83C4R6ZB|U:7A314HQM0I",
+      "display_name": "CALCIUM CATION + PENTETIC ACID",
+      "path": "dossier-U-2M83C4R6ZB-U-7A314HQM0I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2N4O9L084N",
+      "display_name": "NABILONE",
+      "path": "dossier-U-2N4O9L084N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2NU6F9601K",
+      "display_name": "TOFERSEN",
+      "path": "dossier-U-2NU6F9601K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2NX48Z0A9G",
+      "display_name": "ICODEXTRIN",
+      "path": "dossier-U-2NX48Z0A9G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2OC4HKD3SF",
+      "display_name": "TELBIVUDINE",
+      "path": "dossier-U-2OC4HKD3SF-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2OYE00PC25",
+      "display_name": "RITLECITINIB",
+      "path": "dossier-U-2OYE00PC25-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2P6O7CFW5K",
+      "display_name": "Triheptanoin",
+      "path": "dossier-U-2P6O7CFW5K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2PN063X6B1",
+      "display_name": "Voclosporin",
+      "path": "dossier-U-2PN063X6B1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2PU6O23V1G",
+      "display_name": "Sutilains",
+      "path": "dossier-U-2PU6O23V1G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2W150K0UUC",
+      "display_name": "ODEVIXIBAT",
+      "path": "dossier-U-2W150K0UUC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2WTV10SIKH",
+      "display_name": "Mitapivat",
+      "path": "dossier-U-2WTV10SIKH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2XJX250C20",
+      "display_name": "DACOMITINIB ANHYDROUS",
+      "path": "dossier-U-2XJX250C20-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:2XOI31YC4N",
+      "display_name": "PRETOMANID",
+      "path": "dossier-U-2XOI31YC4N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:306ERL82IR",
+      "display_name": "FEXINIDAZOLE",
+      "path": "dossier-U-306ERL82IR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:30905R8O7B",
+      "display_name": "METHOXYFLURANE",
+      "path": "dossier-U-30905R8O7B-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:30R67U9KYS",
+      "display_name": "Sonrotoclax",
+      "path": "dossier-U-30R67U9KYS-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:31TZ62FO8F",
+      "display_name": "SELINEXOR",
+      "path": "dossier-U-31TZ62FO8F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:320YC168LF",
+      "display_name": "HALAZEPAM",
+      "path": "dossier-U-320YC168LF-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:325OGW249P",
+      "display_name": "ENOXACIN",
+      "path": "dossier-U-325OGW249P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:34237V843T",
+      "display_name": "ISOCARBOXAZID",
+      "path": "dossier-U-34237V843T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:353613BU4U",
+      "display_name": "LEVALLORPHAN",
+      "path": "dossier-U-353613BU4U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:35LT29625A",
+      "display_name": "ESTRAMUSTINE",
+      "path": "dossier-U-35LT29625A-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:35S93Y190K",
+      "display_name": "PROCARBAZINE",
+      "path": "dossier-U-35S93Y190K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:36EI79TX7I",
+      "display_name": "METHANTHELINE",
+      "path": "dossier-U-36EI79TX7I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:37JK4STR6Z",
+      "display_name": "Flibanserin",
+      "path": "dossier-U-37JK4STR6Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:38073MQB2A",
+      "display_name": "UMBRALISIB",
+      "path": "dossier-U-38073MQB2A-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:381V4FCV2Z",
+      "display_name": "TELOTRISTAT",
+      "path": "dossier-U-381V4FCV2Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:386012Z45S",
+      "display_name": "Linerixibat",
+      "path": "dossier-U-386012Z45S-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:38R1Q0L1ZE",
+      "display_name": "FLUCICLOVINE F-18",
+      "path": "dossier-U-38R1Q0L1ZE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3934EF02T7",
+      "display_name": "PIFLUFOLASTAT F-18",
+      "path": "dossier-U-3934EF02T7-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:39HBQ4A67L",
+      "display_name": "MOBOCERTINIB",
+      "path": "dossier-U-39HBQ4A67L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3AZF20DM1T",
+      "display_name": "INDECAINIDE",
+      "path": "dossier-U-3AZF20DM1T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3C06JJ0Z2O",
+      "display_name": "OSIMERTINIB",
+      "path": "dossier-U-3C06JJ0Z2O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3E3D8T1GIX",
+      "display_name": "Ensifentrine",
+      "path": "dossier-U-3E3D8T1GIX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3H04W2810V",
+      "display_name": "AURANOFIN",
+      "path": "dossier-U-3H04W2810V-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3H404ZGG9W|U:7F465U79Q1|U:A3N5ZCN45C",
+      "display_name": "QUATERNIUM-18 CATIONS + BENTOQUATAM + Bentonite",
+      "path": "dossier-U-3H404ZGG9W-U-7F465U79Q1-U-A3N5ZCN45C-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3H8GSZ4SQL",
+      "display_name": "Avatrombopag",
+      "path": "dossier-U-3H8GSZ4SQL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3J962UJT8H",
+      "display_name": "CEFMETAZOLE",
+      "path": "dossier-U-3J962UJT8H-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3L179F09D6",
+      "display_name": "SULFAMETER",
+      "path": "dossier-U-3L179F09D6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3O2K1S3WQV",
+      "display_name": "Vortioxetine",
+      "path": "dossier-U-3O2K1S3WQV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3QKI37EEHE",
+      "display_name": "REMDESIVIR",
+      "path": "dossier-U-3QKI37EEHE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3T1SS4E7AG",
+      "display_name": "ENASIDENIB",
+      "path": "dossier-U-3T1SS4E7AG-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3X8387Q25N",
+      "display_name": "BREPOCITINIB",
+      "path": "dossier-U-3X8387Q25N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3XQD2MEW34",
+      "display_name": "VIDARABINE ANHYDROUS",
+      "path": "dossier-U-3XQD2MEW34-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:3ZO554A4Q8",
+      "display_name": "VOXELOTOR",
+      "path": "dossier-U-3ZO554A4Q8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:44T7335BKE",
+      "display_name": "NALOXEGOL",
+      "path": "dossier-U-44T7335BKE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:455E0S048W",
+      "display_name": "QUINETHAZONE",
+      "path": "dossier-U-455E0S048W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:458VC51857",
+      "display_name": "TEGASEROD",
+      "path": "dossier-U-458VC51857-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:46627O600J",
+      "display_name": "Levodopa",
+      "path": "dossier-U-46627O600J-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4784C8E03O",
+      "display_name": "TRICLABENDAZOLE",
+      "path": "dossier-U-4784C8E03O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:494JNQ8L28|U:6EW75241VU",
+      "display_name": "TECHNETIUM TC-99M SUCCIMER + TECHNETIUM TC-99M",
+      "path": "dossier-U-494JNQ8L28-U-6EW75241VU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:49DXG3M5ZW",
+      "display_name": "Fruquintinib",
+      "path": "dossier-U-49DXG3M5ZW-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4B6J53W8N3",
+      "display_name": "TEMSAVIR",
+      "path": "dossier-U-4B6J53W8N3-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4B93MGE4AL",
+      "display_name": "FUTIBATINIB",
+      "path": "dossier-U-4B93MGE4AL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4F05V145YR",
+      "display_name": "TYROPANIC ACID",
+      "path": "dossier-U-4F05V145YR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4MG6O8991R",
+      "display_name": "RETAPAMULIN",
+      "path": "dossier-U-4MG6O8991R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4MOD1F4ENC",
+      "display_name": "Ziftomenib",
+      "path": "dossier-U-4MOD1F4ENC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4O5J85GJJB",
+      "display_name": "Netilmicin",
+      "path": "dossier-U-4O5J85GJJB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4R1VB9P8V3",
+      "display_name": "STANOZOLOL",
+      "path": "dossier-U-4R1VB9P8V3-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4RZ82L2GY5",
+      "display_name": "Acetohydroxamic acid",
+      "path": "dossier-U-4RZ82L2GY5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4V9848RS5G",
+      "display_name": "Tirbanibulin",
+      "path": "dossier-U-4V9848RS5G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4VX7YNB537",
+      "display_name": "TACRINE",
+      "path": "dossier-U-4VX7YNB537-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4X7K2681Y7",
+      "display_name": "FOSDENOPTERIN",
+      "path": "dossier-U-4X7K2681Y7-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:4YIR8202AX",
+      "display_name": "TALBUTAL",
+      "path": "dossier-U-4YIR8202AX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:50D9XSG0VR",
+      "display_name": "MECHLORETHAMINE",
+      "path": "dossier-U-50D9XSG0VR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:50FKX8CB2Y",
+      "display_name": "PATISIRAN",
+      "path": "dossier-U-50FKX8CB2Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:513P80B4YJ",
+      "display_name": "AVAPRITINIB",
+      "path": "dossier-U-513P80B4YJ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:52QK2NZ2T0|U:FX3WJ41CMX",
+      "display_name": "Colfosceril Miristate + PERFLEXANE",
+      "path": "dossier-U-52QK2NZ2T0-U-FX3WJ41CMX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:53AH36668S",
+      "display_name": "Crizotinib",
+      "path": "dossier-U-53AH36668S-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:53AXN4NNHX",
+      "display_name": "Semaglutide",
+      "path": "dossier-U-53AXN4NNHX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:53EY29W7EC",
+      "display_name": "MILTEFOSINE",
+      "path": "dossier-U-53EY29W7EC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:53O87HA2QU|U:D0D4252V97",
+      "display_name": "DEFACTINIB + Avutometinib",
+      "path": "dossier-U-53O87HA2QU-U-D0D4252V97-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:543567RFQQ",
+      "display_name": "CYCRIMINE",
+      "path": "dossier-U-543567RFQQ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:550Z839889",
+      "display_name": "Rubidium cation Rb-82",
+      "path": "dossier-U-550Z839889-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5634T58D89",
+      "display_name": "FERROUS CATION FE-59",
+      "path": "dossier-U-5634T58D89-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:568FY5I1YI",
+      "display_name": "DEFIBROTIDE FREE ACID",
+      "path": "dossier-U-568FY5I1YI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:58IFB293JI",
+      "display_name": "VORINOSTAT",
+      "path": "dossier-U-58IFB293JI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:59MF6P2ATF",
+      "display_name": "Oveporexton",
+      "path": "dossier-U-59MF6P2ATF-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5B2546MB5Z",
+      "display_name": "ELAGOLIX",
+      "path": "dossier-U-5B2546MB5Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5BSH2G9BH8",
+      "display_name": "LUCINACTANT",
+      "path": "dossier-U-5BSH2G9BH8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5D9HAA5Q5S",
+      "display_name": "SULCONAZOLE",
+      "path": "dossier-U-5D9HAA5Q5S-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5G7AKV2MKP",
+      "display_name": "PONESIMOD",
+      "path": "dossier-U-5G7AKV2MKP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5I5Y2789ZF",
+      "display_name": "Viloxazine",
+      "path": "dossier-U-5I5Y2789ZF-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5P60F84FBH",
+      "display_name": "Givinostat",
+      "path": "dossier-U-5P60F84FBH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5T97333YZK",
+      "display_name": "CEFTOBIPROLE",
+      "path": "dossier-U-5T97333YZK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5UX2SD1KE2",
+      "display_name": "CYSTEAMINE",
+      "path": "dossier-U-5UX2SD1KE2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5W494URQ81",
+      "display_name": "STREPTOZOCIN",
+      "path": "dossier-U-5W494URQ81-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5XE4NWM740",
+      "display_name": "MESORIDAZINE",
+      "path": "dossier-U-5XE4NWM740-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5Y5F15120W",
+      "display_name": "PROTIRELIN",
+      "path": "dossier-U-5Y5F15120W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5YL4IQ1078",
+      "display_name": "Osilodrostat",
+      "path": "dossier-U-5YL4IQ1078-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:5Z9SP3X666",
+      "display_name": "NUSINERSEN",
+      "path": "dossier-U-5Z9SP3X666-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:60EUX8MN5X|U:7WY7YBI87E",
+      "display_name": "TAURURSODIOL + Phenylbutyric acid",
+      "path": "dossier-U-60EUX8MN5X-U-7WY7YBI87E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:60ME133FJB",
+      "display_name": "ETELCALCETIDE",
+      "path": "dossier-U-60ME133FJB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:60UAB198HK",
+      "display_name": "Abemaciclib",
+      "path": "dossier-U-60UAB198HK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:60UTO373KE",
+      "display_name": "Isavuconazole",
+      "path": "dossier-U-60UTO373KE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:610V23S0JI",
+      "display_name": "DUVELISIB",
+      "path": "dossier-U-610V23S0JI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:62NWQ924LH",
+      "display_name": "Landiolol",
+      "path": "dossier-U-62NWQ924LH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6315412YVF",
+      "display_name": "DELAFLOXACIN",
+      "path": "dossier-U-6315412YVF-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:65M2UDR9AG",
+      "display_name": "ETRETINATE",
+      "path": "dossier-U-65M2UDR9AG-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:65UEH262IS",
+      "display_name": "SAFFLOWER OIL",
+      "path": "dossier-U-65UEH262IS-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:66D92MGC8M",
+      "display_name": "GILTERITINIB",
+      "path": "dossier-U-66D92MGC8M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6783M2LV5X",
+      "display_name": "PEXIDARTINIB",
+      "path": "dossier-U-6783M2LV5X-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:67P6XH37HD",
+      "display_name": "LUMASIRAN SODIUM",
+      "path": "dossier-U-67P6XH37HD-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6A9O50735X|U:F38R0JR742",
+      "display_name": "Artenimol + LUMEFANTRINE",
+      "path": "dossier-U-6A9O50735X-U-F38R0JR742-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6B4ZBS263Y",
+      "display_name": "SOTAGLIFLOZIN",
+      "path": "dossier-U-6B4ZBS263Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6EW75241VU",
+      "display_name": "TECHNETIUM TC-99M",
+      "path": "dossier-U-6EW75241VU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6G8X656T45",
+      "display_name": "TRIMETHAPHAN",
+      "path": "dossier-U-6G8X656T45-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6HJV9H13XS",
+      "display_name": "FERUMOXSIL",
+      "path": "dossier-U-6HJV9H13XS-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6J9BLA949Q",
+      "display_name": "TESTOLACTONE",
+      "path": "dossier-U-6J9BLA949Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6L1XP550I6",
+      "display_name": "FEDRATINIB",
+      "path": "dossier-U-6L1XP550I6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6L3XT8CB3I",
+      "display_name": "ZALCITABINE",
+      "path": "dossier-U-6L3XT8CB3I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6LL5JFU42F",
+      "display_name": "LUSUTROMBOPAG",
+      "path": "dossier-U-6LL5JFU42F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6O01GMS00P",
+      "display_name": "MOMELOTINIB",
+      "path": "dossier-U-6O01GMS00P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6PNS59HP4Y",
+      "display_name": "TILUDRONIC ACID",
+      "path": "dossier-U-6PNS59HP4Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6Q99RDT97R",
+      "display_name": "PIPOBROMAN",
+      "path": "dossier-U-6Q99RDT97R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6RC3ZT4HB0",
+      "display_name": "PROPIOLACTONE",
+      "path": "dossier-U-6RC3ZT4HB0-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6UH91I579U",
+      "display_name": "Selumetinib",
+      "path": "dossier-U-6UH91I579U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6UO390AMFB",
+      "display_name": "ABAMETAPIR",
+      "path": "dossier-U-6UO390AMFB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6W15Z5R0RU",
+      "display_name": "FLORBETAPIR F-18",
+      "path": "dossier-U-6W15Z5R0RU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6WH8495MMH",
+      "display_name": "Etrasimod",
+      "path": "dossier-U-6WH8495MMH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6WVL9C355G",
+      "display_name": "PHENSUXIMIDE",
+      "path": "dossier-U-6WVL9C355G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6X4F561V3W",
+      "display_name": "UNOPROSTONE",
+      "path": "dossier-U-6X4F561V3W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:6Y24O4F92S",
+      "display_name": "BREMELANOTIDE",
+      "path": "dossier-U-6Y24O4F92S-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:70BSQ12069",
+      "display_name": "Lumateperone",
+      "path": "dossier-U-70BSQ12069-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:71050168A2",
+      "display_name": "Ixazomib",
+      "path": "dossier-U-71050168A2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:712BAC33MZ",
+      "display_name": "IOPROMIDE",
+      "path": "dossier-U-712BAC33MZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:71Q1A3O279",
+      "display_name": "ANILERIDINE",
+      "path": "dossier-U-71Q1A3O279-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:726Q6M95ZA",
+      "display_name": "XENON XE-129, HYPERPOLARIZED",
+      "path": "dossier-U-726Q6M95ZA-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:72W71I16EG",
+      "display_name": "SERTACONAZOLE",
+      "path": "dossier-U-72W71I16EG-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:73SM5SF3OR",
+      "display_name": "ABROCITINIB",
+      "path": "dossier-U-73SM5SF3OR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:74RWP7W0J9",
+      "display_name": "BETRIXABAN",
+      "path": "dossier-U-74RWP7W0J9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:755BO701MA",
+      "display_name": "BEPRIDIL",
+      "path": "dossier-U-755BO701MA-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:760I9WM792",
+      "display_name": "Lasmiditan",
+      "path": "dossier-U-760I9WM792-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:765C9332T4",
+      "display_name": "GUANADREL",
+      "path": "dossier-U-765C9332T4-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:768N7QO4KH",
+      "display_name": "TRYPAN BLUE FREE ACID",
+      "path": "dossier-U-768N7QO4KH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:76RS4S2ET1",
+      "display_name": "Risdiplam",
+      "path": "dossier-U-76RS4S2ET1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:78846I289Y",
+      "display_name": "BEDAQUILINE",
+      "path": "dossier-U-78846I289Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:789Q85GA8P",
+      "display_name": "Vorasidenib",
+      "path": "dossier-U-789Q85GA8P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:78E4J5IB5J",
+      "display_name": "MITOTANE",
+      "path": "dossier-U-78E4J5IB5J-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:78W62V43DY",
+      "display_name": "Penbutolol",
+      "path": "dossier-U-78W62V43DY-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7BO8G1BYQU",
+      "display_name": "MASOPROCOL",
+      "path": "dossier-U-7BO8G1BYQU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7C00L34NB9",
+      "display_name": "SELADELPAR",
+      "path": "dossier-U-7C00L34NB9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7CRV8RR151",
+      "display_name": "ATOGEPANT",
+      "path": "dossier-U-7CRV8RR151-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7HE50A367X",
+      "display_name": "TRIDIHEXETHYL",
+      "path": "dossier-U-7HE50A367X-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7HY6IMH87S",
+      "display_name": "Lirafugratinib",
+      "path": "dossier-U-7HY6IMH87S-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7I64C51O16",
+      "display_name": "ZICONOTIDE",
+      "path": "dossier-U-7I64C51O16-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7IK8Z952OK",
+      "display_name": "PLECANATIDE",
+      "path": "dossier-U-7IK8Z952OK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7K28NB895L",
+      "display_name": "Belzutifan",
+      "path": "dossier-U-7K28NB895L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7LA4O6Q0D3",
+      "display_name": "QUIZARTINIB",
+      "path": "dossier-U-7LA4O6Q0D3-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7M19191IKG",
+      "display_name": "TEDUGLUTIDE",
+      "path": "dossier-U-7M19191IKG-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7QVV6I50DT",
+      "display_name": "ALATROFLOXACIN",
+      "path": "dossier-U-7QVV6I50DT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7R9A5P7H32|U:O3J8G9O825",
+      "display_name": "Nirmatrelvir + Ritonavir",
+      "path": "dossier-U-7R9A5P7H32-U-O3J8G9O825-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7SE5582Q2P",
+      "display_name": "VOSORITIDE",
+      "path": "dossier-U-7SE5582Q2P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7SEV7J4R1U",
+      "display_name": "Talc",
+      "path": "dossier-U-7SEV7J4R1U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7SV1ZOG031",
+      "display_name": "Milsaperidone",
+      "path": "dossier-U-7SV1ZOG031-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7UQ7X4Y489",
+      "display_name": "TINZAPARIN",
+      "path": "dossier-U-7UQ7X4Y489-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7V4A8U16MB",
+      "display_name": "Remimazolam",
+      "path": "dossier-U-7V4A8U16MB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7VYX4ELWQM",
+      "display_name": "Perfluorohexyloctane",
+      "path": "dossier-U-7VYX4ELWQM-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7Z5X49W53P",
+      "display_name": "Terlipressin",
+      "path": "dossier-U-7Z5X49W53P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7ZW40D021M",
+      "display_name": "Orforglipron",
+      "path": "dossier-U-7ZW40D021M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:7ZW49N180B",
+      "display_name": "ZURANOLONE",
+      "path": "dossier-U-7ZW49N180B-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8110R61I4U",
+      "display_name": "Amisulpride",
+      "path": "dossier-U-8110R61I4U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:81QS09V3YW",
+      "display_name": "CEFDITOREN",
+      "path": "dossier-U-81QS09V3YW-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8237F3U7EH",
+      "display_name": "RUCAPARIB",
+      "path": "dossier-U-8237F3U7EH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:82KUB0583F",
+      "display_name": "LOMITAPIDE",
+      "path": "dossier-U-82KUB0583F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:82S8X8XX8H",
+      "display_name": "Ruxolitinib",
+      "path": "dossier-U-82S8X8XX8H-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:834YJF89WO",
+      "display_name": "Belumosudil",
+      "path": "dossier-U-834YJF89WO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:83VNE45KXX",
+      "display_name": "Fezolinetant",
+      "path": "dossier-U-83VNE45KXX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:84F6U3J2R6",
+      "display_name": "GADODIAMIDE",
+      "path": "dossier-U-84F6U3J2R6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:84HW7D0V04",
+      "display_name": "Tapinarof",
+      "path": "dossier-U-84HW7D0V04-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:84MI6OYN4Z",
+      "display_name": "OMACETAXINE",
+      "path": "dossier-U-84MI6OYN4Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8620H6K4QH",
+      "display_name": "ACETOPHENAZINE",
+      "path": "dossier-U-8620H6K4QH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8680B21W73",
+      "display_name": "MACIMORELIN",
+      "path": "dossier-U-8680B21W73-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:86K0J5AK6M",
+      "display_name": "Mirdametinib",
+      "path": "dossier-U-86K0J5AK6M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:87GWG91S09",
+      "display_name": "ELAMIPRETIDE",
+      "path": "dossier-U-87GWG91S09-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:87T4T8BO2E",
+      "display_name": "Rotigotine",
+      "path": "dossier-U-87T4T8BO2E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:88755TAZ87",
+      "display_name": "AMINOLEVULINIC ACID",
+      "path": "dossier-U-88755TAZ87-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:890E37NHMV",
+      "display_name": "ERDAFITINIB",
+      "path": "dossier-U-890E37NHMV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:89243S03TE",
+      "display_name": "SERMORELIN",
+      "path": "dossier-U-89243S03TE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8E05T07Z6W",
+      "display_name": "Iptacopan",
+      "path": "dossier-U-8E05T07Z6W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8EOO6HQF8Y",
+      "display_name": "ADAGRASIB",
+      "path": "dossier-U-8EOO6HQF8Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8ETK1WAF6R",
+      "display_name": "THIETHYLPERAZINE",
+      "path": "dossier-U-8ETK1WAF6R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8GM2J22278",
+      "display_name": "Bacampicillin",
+      "path": "dossier-U-8GM2J22278-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8IHI69PQTC",
+      "display_name": "TECHNETIUM TC-99M TILMANOCEPT",
+      "path": "dossier-U-8IHI69PQTC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8L7891MRB6",
+      "display_name": "Encorafenib",
+      "path": "dossier-U-8L7891MRB6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8M1YF8951V",
+      "display_name": "CEFORANIDE",
+      "path": "dossier-U-8M1YF8951V-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8OR09251MQ",
+      "display_name": "INDACATEROL",
+      "path": "dossier-U-8OR09251MQ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8RW88Y506K|U:SHA6U5FJZL|U:SXG3YFW4BW",
+      "display_name": "TEZACAFTOR + DEUTIVACAFTOR + Vanzacaftor Calcium",
+      "path": "dossier-U-8RW88Y506K-U-SHA6U5FJZL-U-SXG3YFW4BW-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8V66F27X44",
+      "display_name": "IBERDOMIDE",
+      "path": "dossier-U-8V66F27X44-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8W6Q67R6NX",
+      "display_name": "ADRABETADEX",
+      "path": "dossier-U-8W6Q67R6NX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8X50N88ZDP",
+      "display_name": "PARAMETHASONE ACETATE",
+      "path": "dossier-U-8X50N88ZDP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:8XP29XMB43",
+      "display_name": "Vamorolone",
+      "path": "dossier-U-8XP29XMB43-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9016E3VB47",
+      "display_name": "DESERPIDINE",
+      "path": "dossier-U-9016E3VB47-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9078K3MO9U",
+      "display_name": "Copper Histidinate",
+      "path": "dossier-U-9078K3MO9U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9081Y98W2V",
+      "display_name": "TRIPTORELIN",
+      "path": "dossier-U-9081Y98W2V-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:913P6LK81M",
+      "display_name": "DORAVIRINE",
+      "path": "dossier-U-913P6LK81M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:91W6Z2N718",
+      "display_name": "CEFOTIAM",
+      "path": "dossier-U-91W6Z2N718-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9242RO5URM",
+      "display_name": "Sparsentan",
+      "path": "dossier-U-9242RO5URM-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:94O110CX2E",
+      "display_name": "SARECYCLINE",
+      "path": "dossier-U-94O110CX2E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:94Z39NID6C",
+      "display_name": "AZATADINE",
+      "path": "dossier-U-94Z39NID6C-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:957E6438QA",
+      "display_name": "TENIPOSIDE",
+      "path": "dossier-U-957E6438QA-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:95M8R751W8",
+      "display_name": "ORLISTAT",
+      "path": "dossier-U-95M8R751W8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:96265TNH2R",
+      "display_name": "Gedatolisib",
+      "path": "dossier-U-96265TNH2R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9647FM7Y3Z",
+      "display_name": "PANOBINOSTAT",
+      "path": "dossier-U-9647FM7Y3Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:97HLQ82NGL",
+      "display_name": "TEDIZOLID",
+      "path": "dossier-U-97HLQ82NGL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:98H1T17066",
+      "display_name": "PASIREOTIDE",
+      "path": "dossier-U-98H1T17066-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:98WI44OHIQ",
+      "display_name": "GANAXOLONE",
+      "path": "dossier-U-98WI44OHIQ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:997WVV895X",
+      "display_name": "Rimegepant",
+      "path": "dossier-U-997WVV895X-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:99T03J52W0",
+      "display_name": "GALLIUM CATION GA-67",
+      "path": "dossier-U-99T03J52W0-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9CXQ3PF69U",
+      "display_name": "IMLUNESTRANT",
+      "path": "dossier-U-9CXQ3PF69U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9F388J00UK",
+      "display_name": "TROVAFLOXACIN",
+      "path": "dossier-U-9F388J00UK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9GJ8S4GU0M",
+      "display_name": "MIPOMERSEN",
+      "path": "dossier-U-9GJ8S4GU0M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9H414A99MD",
+      "display_name": "RADIUM RA-223 CATION",
+      "path": "dossier-U-9H414A99MD-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9HLM53094I",
+      "display_name": "ANIDULAFUNGIN",
+      "path": "dossier-U-9HLM53094I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9J1H7Y9OJV",
+      "display_name": "EMEDASTINE",
+      "path": "dossier-U-9J1H7Y9OJV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9KY0QXD6LI",
+      "display_name": "BITOLTEROL",
+      "path": "dossier-U-9KY0QXD6LI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9L0Q8KK220",
+      "display_name": "Delgocitinib",
+      "path": "dossier-U-9L0Q8KK220-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9L17Y0H71P",
+      "display_name": "GALLIUM OXODOTREOTIDE GA-68",
+      "path": "dossier-U-9L17Y0H71P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9L2KA76MG5",
+      "display_name": "MONOBENZONE",
+      "path": "dossier-U-9L2KA76MG5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9MG78X43ZT",
+      "display_name": "INDINAVIR ANHYDROUS",
+      "path": "dossier-U-9MG78X43ZT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9O7312W37G",
+      "display_name": "GONADORELIN",
+      "path": "dossier-U-9O7312W37G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9ORI6L73CJ|U:T4Y8ORK057",
+      "display_name": "XANOMELINE + TROSPIUM",
+      "path": "dossier-U-9ORI6L73CJ-U-T4Y8ORK057-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9QHX048FRV",
+      "display_name": "TALAZOPARIB",
+      "path": "dossier-U-9QHX048FRV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9S7OD60EWP",
+      "display_name": "CHLORPROTHIXENE",
+      "path": "dossier-U-9S7OD60EWP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9U35A31JAI",
+      "display_name": "Dordaviprone",
+      "path": "dossier-U-9U35A31JAI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9WS5RD66HZ",
+      "display_name": "SIMEPREVIR",
+      "path": "dossier-U-9WS5RD66HZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:9XW757O13D",
+      "display_name": "RIPRETINIB",
+      "path": "dossier-U-9XW757O13D-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:A0426J905J",
+      "display_name": "SECRETIN HUMAN",
+      "path": "dossier-U-A0426J905J-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:A4055ME1VK",
+      "display_name": "INFIGRATINIB",
+      "path": "dossier-U-A4055ME1VK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:A4YJ7J11TG",
+      "display_name": "IOXILAN",
+      "path": "dossier-U-A4YJ7J11TG-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:A7D84513GV",
+      "display_name": "OXYPHENBUTAZONE ANHYDROUS",
+      "path": "dossier-U-A7D84513GV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:A92JFM5XNU",
+      "display_name": "IBREXAFUNGERP",
+      "path": "dossier-U-A92JFM5XNU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:A9A0O6FB4H",
+      "display_name": "LENACAPAVIR",
+      "path": "dossier-U-A9A0O6FB4H-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AD0O8X2QJR",
+      "display_name": "Ubrogepant",
+      "path": "dossier-U-AD0O8X2QJR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AD4J2O47FQ",
+      "display_name": "DASIGLUCAGON",
+      "path": "dossier-U-AD4J2O47FQ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ADC79EK5Q8",
+      "display_name": "ETHYLESTRENOL",
+      "path": "dossier-U-ADC79EK5Q8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AG9MHG098Z",
+      "display_name": "Zanubrutinib",
+      "path": "dossier-U-AG9MHG098Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AIU7053OWL",
+      "display_name": "HALOPROGIN",
+      "path": "dossier-U-AIU7053OWL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AIW6036FAS",
+      "display_name": "ETEPLIRSEN",
+      "path": "dossier-U-AIW6036FAS-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AM91H2KS67",
+      "display_name": "CERIVASTATIN",
+      "path": "dossier-U-AM91H2KS67-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AVK0I6HY2U",
+      "display_name": "ABALOPARATIDE",
+      "path": "dossier-U-AVK0I6HY2U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AXQ9493NT2",
+      "display_name": "ZILGANERSEN",
+      "path": "dossier-U-AXQ9493NT2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:AZV954TZ9N|U:V7OK6J19HQ",
+      "display_name": "Gadolinium cation (3+) + GADOPENTETATE",
+      "path": "dossier-U-AZV954TZ9N-U-V7OK6J19HQ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:B07L15YAEV",
+      "display_name": "ARBUTAMINE",
+      "path": "dossier-U-B07L15YAEV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:B1I77MH6K1",
+      "display_name": "Aficamten",
+      "path": "dossier-U-B1I77MH6K1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:B23P7SM943",
+      "display_name": "BERDAZIMER FREE ACID",
+      "path": "dossier-U-B23P7SM943-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:B6T47Y2UAP",
+      "display_name": "Daraxonrasib",
+      "path": "dossier-U-B6T47Y2UAP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:BFE2NBZ7NX",
+      "display_name": "BESIFLOXACIN",
+      "path": "dossier-U-BFE2NBZ7NX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:BHV525JOBH",
+      "display_name": "DORIPENEM",
+      "path": "dossier-U-BHV525JOBH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:BI6GY4U9CW",
+      "display_name": "DANAPAROID",
+      "path": "dossier-U-BI6GY4U9CW-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:BLP1XA3FZA",
+      "display_name": "VENGLUSTAT",
+      "path": "dossier-U-BLP1XA3FZA-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:BM8TET768Q",
+      "display_name": "2,2,14,14-Tetramethyl-8-oxopentadecanedioic acid",
+      "path": "dossier-U-BM8TET768Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:BRL1C2459K",
+      "display_name": "AMLEXANOX",
+      "path": "dossier-U-BRL1C2459K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:BX09B0RQR0",
+      "display_name": "BIRCH TRITERPENES",
+      "path": "dossier-U-BX09B0RQR0-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:C4XNY919FW",
+      "display_name": "MIGALASTAT",
+      "path": "dossier-U-C4XNY919FW-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:C56709M5NH",
+      "display_name": "MAZINDOL",
+      "path": "dossier-U-C56709M5NH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:C6QE1Q1TKR",
+      "display_name": "PROCYCLIDINE",
+      "path": "dossier-U-C6QE1Q1TKR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:CEGM9YBNGD",
+      "display_name": "Selpercatinib",
+      "path": "dossier-U-CEGM9YBNGD-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:CJQ26KO7HP",
+      "display_name": "Sepiapterin",
+      "path": "dossier-U-CJQ26KO7HP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:CK0N3WH0SR",
+      "display_name": "PERFLUTREN",
+      "path": "dossier-U-CK0N3WH0SR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:CO61ER3EPI",
+      "display_name": "TREOSULFAN",
+      "path": "dossier-U-CO61ER3EPI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:D26OSN9Q4R",
+      "display_name": "FINAFLOXACIN",
+      "path": "dossier-U-D26OSN9Q4R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:D2A6T4UH9C",
+      "display_name": "CENTANAFADINE",
+      "path": "dossier-U-D2A6T4UH9C-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:D2UFC189XF",
+      "display_name": "MEDRYSONE",
+      "path": "dossier-U-D2UFC189XF-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:D3FM8FA78T",
+      "display_name": "PRAMLINTIDE",
+      "path": "dossier-U-D3FM8FA78T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:D959AE5USF",
+      "display_name": "Clofazimine",
+      "path": "dossier-U-D959AE5USF-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:DA9G065962",
+      "display_name": "MOTIXAFORTIDE",
+      "path": "dossier-U-DA9G065962-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:DE2O63YV8R",
+      "display_name": "Finerenone",
+      "path": "dossier-U-DE2O63YV8R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:DKO1W9H7M1",
+      "display_name": "Dolutegravir",
+      "path": "dossier-U-DKO1W9H7M1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:DOL5F9JD3E",
+      "display_name": "DELAVIRDINE",
+      "path": "dossier-U-DOL5F9JD3E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:DRH7R67UVL",
+      "display_name": "Zongertinib",
+      "path": "dossier-U-DRH7R67UVL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:DU69T8ZZPA",
+      "display_name": "Rifamycin",
+      "path": "dossier-U-DU69T8ZZPA-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:DVF0PR037D",
+      "display_name": "Gepotidacin",
+      "path": "dossier-U-DVF0PR037D-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:DX1U2629QE",
+      "display_name": "SUCCIMER",
+      "path": "dossier-U-DX1U2629QE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:E6S1NJ4Y5Q",
+      "display_name": "CELLULOSE SODIUM PHOSPHATE",
+      "path": "dossier-U-E6S1NJ4Y5Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:E8VRR6FE0Y",
+      "display_name": "FLORQUINITAU F-18",
+      "path": "dossier-U-E8VRR6FE0Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:E915HL7K2O",
+      "display_name": "Levacetylleucine",
+      "path": "dossier-U-E915HL7K2O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:EE083865G2",
+      "display_name": "LENVATINIB",
+      "path": "dossier-U-EE083865G2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:EF0NX91490",
+      "display_name": "PENTAGASTRIN",
+      "path": "dossier-U-EF0NX91490-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ER29L26N1X",
+      "display_name": "COBIMETINIB",
+      "path": "dossier-U-ER29L26N1X-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:EUT3557RT5",
+      "display_name": "ARIMOCLOMOL",
+      "path": "dossier-U-EUT3557RT5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:EY00JF42FV",
+      "display_name": "BEXAGLIFLOZIN",
+      "path": "dossier-U-EY00JF42FV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:F2IBD1GMD3",
+      "display_name": "Paltusotine",
+      "path": "dossier-U-F2IBD1GMD3-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:F3F6208UMT",
+      "display_name": "PEGULICIANINE ACETATE",
+      "path": "dossier-U-F3F6208UMT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:F4H96P17NZ",
+      "display_name": "BELINOSTAT",
+      "path": "dossier-U-F4H96P17NZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:F59P8B75R4",
+      "display_name": "PENTOSAN POLYSULFATE",
+      "path": "dossier-U-F59P8B75R4-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:F60NE4XB53",
+      "display_name": "IMETELSTAT",
+      "path": "dossier-U-F60NE4XB53-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:F7BD3Z4X8L",
+      "display_name": "PAFOLACIANINE",
+      "path": "dossier-U-F7BD3Z4X8L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:F7K5MP217W",
+      "display_name": "GALLIUM CATION",
+      "path": "dossier-U-F7K5MP217W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:F925RR824R",
+      "display_name": "TECOVIRIMAT",
+      "path": "dossier-U-F925RR824R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:FA675Q0E3E",
+      "display_name": "IOCETAMIC ACID",
+      "path": "dossier-U-FA675Q0E3E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:FFL0D546HO",
+      "display_name": "Carprofen",
+      "path": "dossier-U-FFL0D546HO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:FM6A2627A8",
+      "display_name": "Elacestrant",
+      "path": "dossier-U-FM6A2627A8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:FWL2263R77",
+      "display_name": "Zoliflodacin",
+      "path": "dossier-U-FWL2263R77-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G013B5478J",
+      "display_name": "REZAFUNGIN",
+      "path": "dossier-U-G013B5478J-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G1JO7801AE",
+      "display_name": "Cholic acid",
+      "path": "dossier-U-G1JO7801AE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G22N65IL3O",
+      "display_name": "PACRITINIB",
+      "path": "dossier-U-G22N65IL3O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G2AE2VE07O",
+      "display_name": "REVEFENACIN",
+      "path": "dossier-U-G2AE2VE07O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G2N64C3385",
+      "display_name": "PALOPEGTERIPARATIDE",
+      "path": "dossier-U-G2N64C3385-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G4586WF35M",
+      "display_name": "IODOHIPPURIC ACID I-123",
+      "path": "dossier-U-G4586WF35M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G69Z98951Q",
+      "display_name": "OMAVELOXOLONE",
+      "path": "dossier-U-G69Z98951Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G6N3J05W84",
+      "display_name": "FERUMOXIDES NON-STOICHIOMETRIC MAGNETITE",
+      "path": "dossier-U-G6N3J05W84-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:G6UF363ECX",
+      "display_name": "LUTETIUM LU-177 VIPIVOTIDE TETRAXETAN",
+      "path": "dossier-U-G6UF363ECX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:GG1LBM463S",
+      "display_name": "RAPACURONIUM",
+      "path": "dossier-U-GG1LBM463S-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:H25WJA31XE",
+      "display_name": "TECHNETIUM TC-99M BICISATE",
+      "path": "dossier-U-H25WJA31XE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:H50H3S3W74",
+      "display_name": "HISTRELIN",
+      "path": "dossier-U-H50H3S3W74-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:H68BP06S81",
+      "display_name": "LEVOCABASTINE",
+      "path": "dossier-U-H68BP06S81-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:H95KBR1GDB",
+      "display_name": "XENON XE-127",
+      "path": "dossier-U-H95KBR1GDB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:HEH4938D7K",
+      "display_name": "LOTILANER",
+      "path": "dossier-U-HEH4938D7K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:HMC2H89N35",
+      "display_name": "Niraparib",
+      "path": "dossier-U-HMC2H89N35-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:HO3OGH5D7I",
+      "display_name": "NELFINAVIR",
+      "path": "dossier-U-HO3OGH5D7I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:HV1XI8HST2",
+      "display_name": "Pimicotinib",
+      "path": "dossier-U-HV1XI8HST2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:HYW8DB273J",
+      "display_name": "BRIGATINIB",
+      "path": "dossier-U-HYW8DB273J-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:I0IO929019",
+      "display_name": "CALCITONIN HUMAN",
+      "path": "dossier-U-I0IO929019-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:I42748ELQW",
+      "display_name": "Acalabrutinib",
+      "path": "dossier-U-I42748ELQW-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:I5DGT51IB8",
+      "display_name": "Nerandomilast",
+      "path": "dossier-U-I5DGT51IB8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:I60W9520VV",
+      "display_name": "VADADUSTAT",
+      "path": "dossier-U-I60W9520VV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:I66ZZ0ZN0E",
+      "display_name": "TROGLITAZONE",
+      "path": "dossier-U-I66ZZ0ZN0E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:I7MVZ8HDNU",
+      "display_name": "REMIBRUTINIB",
+      "path": "dossier-U-I7MVZ8HDNU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:IAN371PP48",
+      "display_name": "ETHINAMATE",
+      "path": "dossier-U-IAN371PP48-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ID0YZQ2TCP",
+      "display_name": "TRABECTEDIN",
+      "path": "dossier-U-ID0YZQ2TCP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ILP8XJ8R5K",
+      "display_name": "DEMECARIUM",
+      "path": "dossier-U-ILP8XJ8R5K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:IOW153004F",
+      "display_name": "LONAFARNIB",
+      "path": "dossier-U-IOW153004F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:IV7T84QA4T",
+      "display_name": "TECHNETIUM TC-99M APCITIDE",
+      "path": "dossier-U-IV7T84QA4T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:IW71N46B4Y",
+      "display_name": "CEFTIBUTEN",
+      "path": "dossier-U-IW71N46B4Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:J32P26A6BC",
+      "display_name": "Neladalkib",
+      "path": "dossier-U-J32P26A6BC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JF8V0828ZI",
+      "display_name": "QUAZEPAM",
+      "path": "dossier-U-JF8V0828ZI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JHC049LO86",
+      "display_name": "ALOGLIPTIN",
+      "path": "dossier-U-JHC049LO86-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JI8Z5M7NA3",
+      "display_name": "THIOPENTAL",
+      "path": "dossier-U-JI8Z5M7NA3-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JJH94R3PWB",
+      "display_name": "NERATINIB",
+      "path": "dossier-U-JJH94R3PWB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JM8C1SFX0U",
+      "display_name": "Danicopan",
+      "path": "dossier-U-JM8C1SFX0U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JNA39I7ZVB",
+      "display_name": "Pirtobrutinib",
+      "path": "dossier-U-JNA39I7ZVB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JR0N7XD5GZ",
+      "display_name": "QUINESTROL",
+      "path": "dossier-U-JR0N7XD5GZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JUP57A8EPZ",
+      "display_name": "CAMIZESTRANT",
+      "path": "dossier-U-JUP57A8EPZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JVR38ZM64B",
+      "display_name": "DAPRODUSTAT",
+      "path": "dossier-U-JVR38ZM64B-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JW5Y7B8Z18",
+      "display_name": "Gepirone",
+      "path": "dossier-U-JW5Y7B8Z18-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:JX56W9N61Q",
+      "display_name": "PEGINESATIDE",
+      "path": "dossier-U-JX56W9N61Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:K0U68Q2TXA",
+      "display_name": "Corticotropin",
+      "path": "dossier-U-K0U68Q2TXA-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:K17VY42F6C",
+      "display_name": "ACLIDINIUM",
+      "path": "dossier-U-K17VY42F6C-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:K27005NP0A",
+      "display_name": "IXABEPILONE",
+      "path": "dossier-U-K27005NP0A-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:K418KG2GET",
+      "display_name": "CERITINIB",
+      "path": "dossier-U-K418KG2GET-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:K673DMO5H9",
+      "display_name": "GLASDEGIB",
+      "path": "dossier-U-K673DMO5H9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:K7Q1JQR04M",
+      "display_name": "Dinoprostone",
+      "path": "dossier-U-K7Q1JQR04M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:K86ENL12I5",
+      "display_name": "Avacincaptad Pegol Sodium",
+      "path": "dossier-U-K86ENL12I5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:KBZ4844CXN",
+      "display_name": "CEFMENOXIME",
+      "path": "dossier-U-KBZ4844CXN-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:KI8H7H19WL",
+      "display_name": "TELITHROMYCIN",
+      "path": "dossier-U-KI8H7H19WL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:KL6248WNW4",
+      "display_name": "PIPERACETAZINE",
+      "path": "dossier-U-KL6248WNW4-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:KZW0R0686Q",
+      "display_name": "ETHIODIZED OIL",
+      "path": "dossier-U-KZW0R0686Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L0FPV48Q5R",
+      "display_name": "TRILOSTANE",
+      "path": "dossier-U-L0FPV48Q5R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L16PUN799N",
+      "display_name": "AMBENONIUM",
+      "path": "dossier-U-L16PUN799N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L1F3R18W77",
+      "display_name": "Asciminib",
+      "path": "dossier-U-L1F3R18W77-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L1M1U2HC31",
+      "display_name": "GREPAFLOXACIN",
+      "path": "dossier-U-L1M1U2HC31-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L1Q2K5JYO8",
+      "display_name": "Sunvozertinib",
+      "path": "dossier-U-L1Q2K5JYO8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L22772Z9CP",
+      "display_name": "LENIOLISIB",
+      "path": "dossier-U-L22772Z9CP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L2B0WJF7ZY",
+      "display_name": "Lactitol",
+      "path": "dossier-U-L2B0WJF7ZY-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L3JE09KZ2F",
+      "display_name": "SAQUINAVIR",
+      "path": "dossier-U-L3JE09KZ2F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L49M066S0O",
+      "display_name": "FLUTEMETAMOL F-18",
+      "path": "dossier-U-L49M066S0O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L4C1UY2NYH",
+      "display_name": "Inavolisib",
+      "path": "dossier-U-L4C1UY2NYH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L5ORF0AN1I",
+      "display_name": "ENTRECTINIB",
+      "path": "dossier-U-L5ORF0AN1I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L5Z9S25HO2",
+      "display_name": "Zilurgisertib",
+      "path": "dossier-U-L5Z9S25HO2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L6BR2WJD8V",
+      "display_name": "LOMEFLOXACIN",
+      "path": "dossier-U-L6BR2WJD8V-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:L6O3XI777I",
+      "display_name": "ZANAMIVIR",
+      "path": "dossier-U-L6O3XI777I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LA585UM8DE",
+      "display_name": "Asundexian",
+      "path": "dossier-U-LA585UM8DE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LGP81V5245",
+      "display_name": "Idoxuridine",
+      "path": "dossier-U-LGP81V5245-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LIJ4CT1Z3Y",
+      "display_name": "ALECTINIB",
+      "path": "dossier-U-LIJ4CT1Z3Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LKG8494WBH",
+      "display_name": "Benzyl alcohol",
+      "path": "dossier-U-LKG8494WBH-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LL3147PI1T",
+      "display_name": "HEXOCYCLIUM",
+      "path": "dossier-U-LL3147PI1T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LMQ24G57E9",
+      "display_name": "DARIDOREXANT",
+      "path": "dossier-U-LMQ24G57E9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LOG73M21H5",
+      "display_name": "Suzetrigine",
+      "path": "dossier-U-LOG73M21H5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LV23B78IJC",
+      "display_name": "IOFETAMINE I-123",
+      "path": "dossier-U-LV23B78IJC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LV66ADM269",
+      "display_name": "Vericiguat",
+      "path": "dossier-U-LV66ADM269-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LYO9XZ250J",
+      "display_name": "PLAZOMICIN",
+      "path": "dossier-U-LYO9XZ250J-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:LZ0M43NNF2",
+      "display_name": "Revumenib",
+      "path": "dossier-U-LZ0M43NNF2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:M03GIQ7Z6P",
+      "display_name": "SINCALIDE",
+      "path": "dossier-U-M03GIQ7Z6P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:M15H03K69B",
+      "display_name": "PORFIMER",
+      "path": "dossier-U-M15H03K69B-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:M1ZRX790SI",
+      "display_name": "BRILLIANT BLUE G",
+      "path": "dossier-U-M1ZRX790SI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:M3WGS532VY",
+      "display_name": "Cipepofol",
+      "path": "dossier-U-M3WGS532VY-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:M5TSE03W5U",
+      "display_name": "Vibegron",
+      "path": "dossier-U-M5TSE03W5U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:M84I3K7C2O",
+      "display_name": "NIFURTIMOX",
+      "path": "dossier-U-M84I3K7C2O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:MCN858TCP0",
+      "display_name": "OLICERIDINE",
+      "path": "dossier-U-MCN858TCP0-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:MFT24BX55I",
+      "display_name": "Crinecerfont",
+      "path": "dossier-U-MFT24BX55I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:MKF129JIZX",
+      "display_name": "ROSE BENGAL I-131",
+      "path": "dossier-U-MKF129JIZX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:MRL3739G66",
+      "display_name": "OXODOTREOTIDE",
+      "path": "dossier-U-MRL3739G66-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:MUW8FP7HNZ",
+      "display_name": "Icotrokinra",
+      "path": "dossier-U-MUW8FP7HNZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:MX5KQV5XHC",
+      "display_name": "Zidesamtinib",
+      "path": "dossier-U-MX5KQV5XHC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:MZI81HV01P",
+      "display_name": "APROCITENTAN",
+      "path": "dossier-U-MZI81HV01P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:N02W67RKJS",
+      "display_name": "MANGAFODIPIR",
+      "path": "dossier-U-N02W67RKJS-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:N0A21N6RAU",
+      "display_name": "Deucravacitinib",
+      "path": "dossier-U-N0A21N6RAU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:N0F8P22L1P",
+      "display_name": "Norfloxacin",
+      "path": "dossier-U-N0F8P22L1P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:N1Q45E87DT",
+      "display_name": "Thiabendazole",
+      "path": "dossier-U-N1Q45E87DT-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:N3RIB7X24K",
+      "display_name": "Ioversol",
+      "path": "dossier-U-N3RIB7X24K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:N7T15V1FUY",
+      "display_name": "SETMELANOTIDE",
+      "path": "dossier-U-N7T15V1FUY-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:N9YNS0M02X",
+      "display_name": "Acetylcholine",
+      "path": "dossier-U-N9YNS0M02X-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NDU3J18APO",
+      "display_name": "Edoxaban",
+      "path": "dossier-U-NDU3J18APO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NF3P9Z8J5Y",
+      "display_name": "Baxdrostat",
+      "path": "dossier-U-NF3P9Z8J5Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NGU5H31YO9",
+      "display_name": "Moxidectin",
+      "path": "dossier-U-NGU5H31YO9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NIJ123W41V",
+      "display_name": "Plicamycin",
+      "path": "dossier-U-NIJ123W41V-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NLE429IZUC",
+      "display_name": "ROLAPITANT",
+      "path": "dossier-U-NLE429IZUC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NQO8R319LY",
+      "display_name": "DIPHENIDOL",
+      "path": "dossier-U-NQO8R319LY-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NWN58M4F5T",
+      "display_name": "Rilzabrutinib",
+      "path": "dossier-U-NWN58M4F5T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NY0COC51FI",
+      "display_name": "Tradipitant",
+      "path": "dossier-U-NY0COC51FI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:NZW2BOW35N",
+      "display_name": "ELINZANETANT",
+      "path": "dossier-U-NZW2BOW35N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:O5ZD2TU2B7",
+      "display_name": "Sebetralstat",
+      "path": "dossier-U-O5ZD2TU2B7-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:O7M2E4264D",
+      "display_name": "RIMEXOLONE",
+      "path": "dossier-U-O7M2E4264D-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:O880NM097T",
+      "display_name": "AVACOPAN",
+      "path": "dossier-U-O880NM097T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:O9M39HTM5W",
+      "display_name": "Promazine",
+      "path": "dossier-U-O9M39HTM5W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:OAY8ORS3CQ",
+      "display_name": "Ethionamide",
+      "path": "dossier-U-OAY8ORS3CQ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ODU3ZAZ94J",
+      "display_name": "Zavegepant",
+      "path": "dossier-U-ODU3ZAZ94J-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:OG645J8RVW",
+      "display_name": "PIRBUTEROL",
+      "path": "dossier-U-OG645J8RVW-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:OH2O403D1G",
+      "display_name": "MEZLOCILLIN",
+      "path": "dossier-U-OH2O403D1G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:OSP71S83EU",
+      "display_name": "LORLATINIB",
+      "path": "dossier-U-OSP71S83EU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:OYN3CCI6QE",
+      "display_name": "Tirzepatide",
+      "path": "dossier-U-OYN3CCI6QE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:OZG7J613HK",
+      "display_name": "Gadoquatrane",
+      "path": "dossier-U-OZG7J613HK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P14877CDX2",
+      "display_name": "POLYESTRADIOL PHOSPHATE",
+      "path": "dossier-U-P14877CDX2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P3CTH044XJ",
+      "display_name": "PROBUCOL",
+      "path": "dossier-U-P3CTH044XJ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P6708E7555",
+      "display_name": "SELENOMETHIONINE SE-75",
+      "path": "dossier-U-P6708E7555-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P71U09G5BW",
+      "display_name": "CYCLOTHIAZIDE",
+      "path": "dossier-U-P71U09G5BW-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P76B05O5V6",
+      "display_name": "Relugolix",
+      "path": "dossier-U-P76B05O5V6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P7MU9UTP52",
+      "display_name": "PRALIDOXIME",
+      "path": "dossier-U-P7MU9UTP52-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P7WI8UL647",
+      "display_name": "NESIRITIDE",
+      "path": "dossier-U-P7WI8UL647-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P85X70RZWS",
+      "display_name": "CENOBAMATE",
+      "path": "dossier-U-P85X70RZWS-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:P936YA152N",
+      "display_name": "CEFPIRAMIDE",
+      "path": "dossier-U-P936YA152N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:PAI7J52V09",
+      "display_name": "PHENACEMIDE",
+      "path": "dossier-U-PAI7J52V09-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:PF9462I9HX",
+      "display_name": "LAROTRECTINIB",
+      "path": "dossier-U-PF9462I9HX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:PT4P8MJP8L",
+      "display_name": "TAVAPADON",
+      "path": "dossier-U-PT4P8MJP8L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:PTB4X93HE1",
+      "display_name": "Maribavir",
+      "path": "dossier-U-PTB4X93HE1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:PUG62FRZ2E",
+      "display_name": "ORITAVANCIN",
+      "path": "dossier-U-PUG62FRZ2E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:PX665RAA3H",
+      "display_name": "Ensitrelvir",
+      "path": "dossier-U-PX665RAA3H-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:PX9FTM69BF",
+      "display_name": "VIMSELTINIB",
+      "path": "dossier-U-PX9FTM69BF-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:PY79D6C8RX",
+      "display_name": "CROFELEMER",
+      "path": "dossier-U-PY79D6C8RX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Q1D0Q7R4D9",
+      "display_name": "PERFLUBRON",
+      "path": "dossier-U-Q1D0Q7R4D9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Q2PCN8MAM6",
+      "display_name": "IVOSIDENIB",
+      "path": "dossier-U-Q2PCN8MAM6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Q2TWQ1I31U",
+      "display_name": "TEBIPENEM",
+      "path": "dossier-U-Q2TWQ1I31U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Q40W93WPE1",
+      "display_name": "TAZEMETOSTAT",
+      "path": "dossier-U-Q40W93WPE1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Q461L7AK4R",
+      "display_name": "IOBENGUANE I-131",
+      "path": "dossier-U-Q461L7AK4R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Q8BIH59O7H",
+      "display_name": "ALTRETAMINE",
+      "path": "dossier-U-Q8BIH59O7H-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Q90AGA787L",
+      "display_name": "SPARFLOXACIN",
+      "path": "dossier-U-Q90AGA787L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:QGP4HA4G1B",
+      "display_name": "DABRAFENIB",
+      "path": "dossier-U-QGP4HA4G1B-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:QW68W3J66U",
+      "display_name": "AFAMELANOTIDE",
+      "path": "dossier-U-QW68W3J66U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:QX5LK7YCHV",
+      "display_name": "FOMIVIRSEN",
+      "path": "dossier-U-QX5LK7YCHV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:QZ62892OFJ",
+      "display_name": "NIROGACESTAT",
+      "path": "dossier-U-QZ62892OFJ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:QZH7WR4VKJ",
+      "display_name": "LEVOMETHADYL",
+      "path": "dossier-U-QZH7WR4VKJ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:R02XOT8V8I",
+      "display_name": "STIRIPENTOL",
+      "path": "dossier-U-R02XOT8V8I-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:R3459K699K",
+      "display_name": "SECNIDAZOLE",
+      "path": "dossier-U-R3459K699K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:R7EZ772VG2",
+      "display_name": "Enlicitide",
+      "path": "dossier-U-R7EZ772VG2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:RE0V0T1ES0",
+      "display_name": "Resmetirom",
+      "path": "dossier-U-RE0V0T1ES0-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:RE91AN4S8G",
+      "display_name": "LULICONAZOLE",
+      "path": "dossier-U-RE91AN4S8G-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:RHH3W8F1CO",
+      "display_name": "METRIZAMIDE",
+      "path": "dossier-U-RHH3W8F1CO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:RO16TQF95Y",
+      "display_name": "TRIFLUPROMAZINE",
+      "path": "dossier-U-RO16TQF95Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ROV204583W",
+      "display_name": "Givosiran",
+      "path": "dossier-U-ROV204583W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:RP4A60D26L",
+      "display_name": "Pentazocine",
+      "path": "dossier-U-RP4A60D26L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:S07O44R1ZM",
+      "display_name": "CAPSAICIN",
+      "path": "dossier-U-S07O44R1ZM-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:S39XZ5QV8Y",
+      "display_name": "BREXANOLONE",
+      "path": "dossier-U-S39XZ5QV8Y-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:S3RS2SA30L",
+      "display_name": "OLEZARSEN",
+      "path": "dossier-U-S3RS2SA30L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:S59502J185",
+      "display_name": "Ciclesonide",
+      "path": "dossier-U-S59502J185-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:S66Z65E10T",
+      "display_name": "CEMDISIRAN",
+      "path": "dossier-U-S66Z65E10T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:S747T1ERAJ",
+      "display_name": "ANISINDIONE",
+      "path": "dossier-U-S747T1ERAJ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:S79O08V79F",
+      "display_name": "DALTEPARIN",
+      "path": "dossier-U-S79O08V79F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:S82A18Y42P",
+      "display_name": "Etripamil",
+      "path": "dossier-U-S82A18Y42P-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:SMA5ZS5B22",
+      "display_name": "ENSARTINIB",
+      "path": "dossier-U-SMA5ZS5B22-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:SPU695OD73",
+      "display_name": "LODOXAMIDE",
+      "path": "dossier-U-SPU695OD73-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:SV9W47ZLE1",
+      "display_name": "FITUSIRAN",
+      "path": "dossier-U-SV9W47ZLE1-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:SX0XJI3A11",
+      "display_name": "DEGARELIX",
+      "path": "dossier-U-SX0XJI3A11-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:SXA7YP6EKX",
+      "display_name": "VILTOLARSEN",
+      "path": "dossier-U-SXA7YP6EKX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:SZ34OMG6E8",
+      "display_name": "CEFIDEROCOL",
+      "path": "dossier-U-SZ34OMG6E8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:T0WXW8F54E",
+      "display_name": "CALCIFEDIOL ANHYDROUS",
+      "path": "dossier-U-T0WXW8F54E-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:T11645226K",
+      "display_name": "YTTERBIUM YB-169",
+      "path": "dossier-U-T11645226K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:T12B44A1OE",
+      "display_name": "ACORAMIDIS",
+      "path": "dossier-U-T12B44A1OE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:T1JP1KYU9O",
+      "display_name": "FLORTAUCIPIR F-18",
+      "path": "dossier-U-T1JP1KYU9O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:T32277KB09",
+      "display_name": "FLUOROESTRADIOL F-18",
+      "path": "dossier-U-T32277KB09-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:T3U32GLJ0F",
+      "display_name": "DIFAMILAST",
+      "path": "dossier-U-T3U32GLJ0F-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:T432289GYZ",
+      "display_name": "SINECATECHINS",
+      "path": "dossier-U-T432289GYZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:T795873AJP",
+      "display_name": "SULFACYTINE",
+      "path": "dossier-U-T795873AJP-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:TK8ERE8P56",
+      "display_name": "Ribociclib",
+      "path": "dossier-U-TK8ERE8P56-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:TLA7312TOI",
+      "display_name": "FLORBETABEN F-18",
+      "path": "dossier-U-TLA7312TOI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:TLE294X33A",
+      "display_name": "FERRIC FERROCYANIDE",
+      "path": "dossier-U-TLE294X33A-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:TO3JYR3BOU",
+      "display_name": "PEGCETACOPLAN",
+      "path": "dossier-U-TO3JYR3BOU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:TY34L4F9OZ",
+      "display_name": "CAPMATINIB",
+      "path": "dossier-U-TY34L4F9OZ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:TY3V24C029",
+      "display_name": "FLURPIRIDAZ F-18",
+      "path": "dossier-U-TY3V24C029-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:U4RY8MRX7C",
+      "display_name": "ETHANOLAMINE OLEATE",
+      "path": "dossier-U-U4RY8MRX7C-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:U6072DO9XG",
+      "display_name": "Trilaciclib",
+      "path": "dossier-U-U6072DO9XG-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ULS5I8J03O",
+      "display_name": "Olsalazine",
+      "path": "dossier-U-ULS5I8J03O-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:UOW2C71PG5",
+      "display_name": "INCLISIRAN",
+      "path": "dossier-U-UOW2C71PG5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:UPN4ITI8T4",
+      "display_name": "TRIMETREXATE",
+      "path": "dossier-U-UPN4ITI8T4-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:UVL329170W",
+      "display_name": "CISAPRIDE",
+      "path": "dossier-U-UVL329170W-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:UYB6UOF69L",
+      "display_name": "Maralixibat",
+      "path": "dossier-U-UYB6UOF69L-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:V0LH498RFO",
+      "display_name": "OZENOXACIN",
+      "path": "dossier-U-V0LH498RFO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:V0M92G2U26",
+      "display_name": "METOCURINE",
+      "path": "dossier-U-V0M92G2U26-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:V6D7VK2215",
+      "display_name": "ATRASENTAN",
+      "path": "dossier-U-V6D7VK2215-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:VD2YSN1AFD",
+      "display_name": "OLODATEROL",
+      "path": "dossier-U-VD2YSN1AFD-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:VFU0OU98LO",
+      "display_name": "MONOCTANOIN",
+      "path": "dossier-U-VFU0OU98LO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:VHH774W97N",
+      "display_name": "OTESECONAZOLE",
+      "path": "dossier-U-VHH774W97N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:VLA4NZX2P4",
+      "display_name": "PERCHLORATE ION",
+      "path": "dossier-U-VLA4NZX2P4-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:W4141180YD",
+      "display_name": "TALETRECTINIB",
+      "path": "dossier-U-W4141180YD-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:W486SJ5824",
+      "display_name": "ABARELIX",
+      "path": "dossier-U-W486SJ5824-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:W6I5QDT7QI",
+      "display_name": "NETARSUDIL",
+      "path": "dossier-U-W6I5QDT7QI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:W6KX9E6D8X",
+      "display_name": "UREA C-13",
+      "path": "dossier-U-W6KX9E6D8X-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:W72I5ZT78Z",
+      "display_name": "LORACARBEF ANHYDROUS",
+      "path": "dossier-U-W72I5ZT78Z-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:W7KQ46GJ8U",
+      "display_name": "URACIL MUSTARD",
+      "path": "dossier-U-W7KQ46GJ8U-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:W8S3YM7AUU",
+      "display_name": "BETHANIDINE",
+      "path": "dossier-U-W8S3YM7AUU-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:W9YXS298BM",
+      "display_name": "TUBOCURARINE",
+      "path": "dossier-U-W9YXS298BM-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WBZ6M63TEE",
+      "display_name": "UREA C-14",
+      "path": "dossier-U-WBZ6M63TEE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WC1U3R1YMI",
+      "display_name": "Vepdegestrant",
+      "path": "dossier-U-WC1U3R1YMI-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WFR23M21IE",
+      "display_name": "CAPIVASERTIB",
+      "path": "dossier-U-WFR23M21IE-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WHI7HQ7H85",
+      "display_name": "URIDINE",
+      "path": "dossier-U-WHI7HQ7H85-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WI6V529FZ9",
+      "display_name": "COPANLISIB",
+      "path": "dossier-U-WI6V529FZ9-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WIX31ZPX66",
+      "display_name": "THIOGUANINE ANHYDROUS",
+      "path": "dossier-U-WIX31ZPX66-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WOH1JD9AR8",
+      "display_name": "Olaparib",
+      "path": "dossier-U-WOH1JD9AR8-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WUT449BEG5",
+      "display_name": "Lazertinib Mesylate",
+      "path": "dossier-U-WUT449BEG5-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:WYD79216A6",
+      "display_name": "TENAPANOR",
+      "path": "dossier-U-WYD79216A6-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:X05U0N2RCO",
+      "display_name": "DAROLUTAMIDE",
+      "path": "dossier-U-X05U0N2RCO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:X0UIV26ABX",
+      "display_name": ".ALPHA.-DIHYDROARTEMISININ",
+      "path": "dossier-U-X0UIV26ABX-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:X8UHF7SX0R",
+      "display_name": "CASIMERSEN",
+      "path": "dossier-U-X8UHF7SX0R-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:XD423NK2WO",
+      "display_name": "Flotufolastat F-18 Gallium",
+      "path": "dossier-U-XD423NK2WO-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:XG9ARL6P25",
+      "display_name": "Plozasiran",
+      "path": "dossier-U-XG9ARL6P25-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:XK134822Z0",
+      "display_name": "TELAVANCIN",
+      "path": "dossier-U-XK134822Z0-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:XM71MYX0IQ",
+      "display_name": "Rusfertide",
+      "path": "dossier-U-XM71MYX0IQ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:XN7MM8XG2M",
+      "display_name": "Clascoterone",
+      "path": "dossier-U-XN7MM8XG2M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:XPA88EAP6V",
+      "display_name": "Spinosad",
+      "path": "dossier-U-XPA88EAP6V-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:XZA0KB1BDQ",
+      "display_name": "Berotralstat",
+      "path": "dossier-U-XZA0KB1BDQ-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:XZA9HY6Z98",
+      "display_name": "METHYSERGIDE",
+      "path": "dossier-U-XZA9HY6Z98-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Y3BH8M899D",
+      "display_name": "Navepegritide",
+      "path": "dossier-U-Y3BH8M899D-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Y3N00BK5WK",
+      "display_name": "HYDROCORTAMATE",
+      "path": "dossier-U-Y3N00BK5WK-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Y5929UIJ5N",
+      "display_name": "OPICAPONE",
+      "path": "dossier-U-Y5929UIJ5N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Y6BX7BL23K",
+      "display_name": "PEMIGATINIB",
+      "path": "dossier-U-Y6BX7BL23K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Y6UY8OV51T",
+      "display_name": "TRIOXSALEN",
+      "path": "dossier-U-Y6UY8OV51T-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:YC09CA0VBB",
+      "display_name": "HYDRODOLASETRON",
+      "path": "dossier-U-YC09CA0VBB-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:YC42NRJ1ZD",
+      "display_name": "BENZNIDAZOLE",
+      "path": "dossier-U-YC42NRJ1ZD-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:YG391PK0CC",
+      "display_name": "ZILUCOPLAN",
+      "path": "dossier-U-YG391PK0CC-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:YO460OQ37K",
+      "display_name": "VANDETANIB",
+      "path": "dossier-U-YO460OQ37K-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Z2ME8F52QL",
+      "display_name": "Trofinetide",
+      "path": "dossier-U-Z2ME8F52QL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Z80293URPV",
+      "display_name": "Ozanimod",
+      "path": "dossier-U-Z80293URPV-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Z87O6SM01N",
+      "display_name": "BEPIROVIRSEN",
+      "path": "dossier-U-Z87O6SM01N-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:Z95F9F9LU4",
+      "display_name": "OMIDENEPAG",
+      "path": "dossier-U-Z95F9F9LU4-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ZCE93644N2",
+      "display_name": "VORAPAXAR",
+      "path": "dossier-U-ZCE93644N2-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ZD4D8M32TL",
+      "display_name": "DONIDALORSEN",
+      "path": "dossier-U-ZD4D8M32TL-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ZN90E4027M",
+      "display_name": "Tovorafenib",
+      "path": "dossier-U-ZN90E4027M-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ZQN1G5V6SR",
+      "display_name": "EFLORNITHINE",
+      "path": "dossier-U-ZQN1G5V6SR-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ZS9KD92H6V",
+      "display_name": "METYRAPONE",
+      "path": "dossier-U-ZS9KD92H6V-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ZTI6C33Q2Q",
+      "display_name": "GUANETHIDINE",
+      "path": "dossier-U-ZTI6C33Q2Q-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    },
+    {
+      "key": "U:ZZT404XD09",
+      "display_name": "TIPRANAVIR",
+      "path": "dossier-U-ZZT404XD09-2026-11-27.json",
+      "horizons": [
+        12,
+        24
+      ]
+    }
+  ]
+}

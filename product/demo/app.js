@@ -7,6 +7,9 @@
  * Interface labels are English. Body content (statements, checklist items, notes) follows the
  * TH/EN toggle, Thai by default, and the <html lang> attribute follows it.
  *
+ * Two data sets: "current" (data/current/, the frozen Track A t0 forecast of 27 Nov 2026, 651 drugs, 12 and 24
+ * months) and "history" (data/, the development time machine). Mode is in the hash (mode=current|history).
+ *
  * URL hash keeps state, e.g. #view=queue&lang=en&h=24&c=2014&m=U%3AU188XYD42P&tab=patents&reveal=1&src=patent-1
  */
 (function () {
@@ -39,6 +42,27 @@
         handoff: "รายการที่ส่งต่อให้ผู้ประเมิน FTO และผู้ตรวจที่เกี่ยวข้อง ช่องที่ทำเครื่องหมายบันทึกไว้ในเบราว์เซอร์นี้เท่านั้น",
         references: "แหล่งข้อมูลทุกรายการ พร้อมฉบับ ตำแหน่งข้อมูล และค่า SHA-256 สำหรับตรวจซ้ำ"
       },
+      noticeCur: function (d) { return "ค่าพยากรณ์ ณ วันที่ " + d + " เป็นค่าพยากรณ์ Track A ที่ล็อกไว้แล้ว ยังไม่ทราบผลลัพธ์ ผู้เชี่ยวชาญกฎหมายที่มีคุณสมบัติเป็นผู้ประเมินเสรีภาพในการดำเนินการ (FTO)"; },
+      endpoint: "เหตุการณ์ที่พยากรณ์คือการอนุมัติขั้นสุดท้ายของยาสามัญรายแรกในสหรัฐฯ ไม่ใช่การวางจำหน่าย ความต้องการใช้ยา หรือการอนุญาตในประเทศไทย",
+      method: "ผลการทดสอบที่ลงทะเบียนไว้ (ช่วงพยากรณ์ 24 เดือน ตรวจ 1 ใน 5 ของยา): M3 พบการอนุมัติยาสามัญรายแรกจริง 66.85% โดยมีค่าความแม่นยำเชิงบวก (precision) 26.62% ผลของคิวนี้ยังไม่ทราบจนกว่าจะรันตัวให้คะแนนในเดือนพฤศจิกายน 2027 และ 2028",
+      search: {
+        none: function (q) { return "ไม่พบยาที่ตรงกับ “" + q + "” ชื่อยาในข้อมูลเป็นภาษาอังกฤษ (ชื่อสารออกฤทธิ์หรือชื่อที่แสดง)"; },
+        help: "ค้นหาแบบตรงบางส่วน ไม่แยกตัวพิมพ์ใหญ่เล็ก ใช้ชื่อสารออกฤทธิ์หรือชื่อที่แสดงเป็นภาษาอังกฤษ กด Enter เพื่อเปิดรายการแรก",
+        count: function (n, all) { return "ตรงกัน " + n + " จาก " + all; }
+      },
+      launch: {
+        h12: function (d, e) { return "วันเปิดตัว " + d + " อยู่ในช่วงพยากรณ์ 12 เดือน (ถึง " + e + ") จึงแสดงค่าพยากรณ์ 12 เดือน ค่านี้คือโอกาสที่ยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายในสหรัฐฯ ไม่ใช่วันเปิดตัว"; },
+        h24: function (d, e) { return "วันเปิดตัว " + d + " อยู่ในช่วงพยากรณ์ 24 เดือน (ถึง " + e + ") จึงแสดงค่าพยากรณ์ 24 เดือน ค่านี้คือโอกาสที่ยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายในสหรัฐฯ ไม่ใช่วันเปิดตัว"; },
+        out: function (d, e) { return "วันเปิดตัว " + d + " อยู่นอกช่วงพยากรณ์ ค่าพยากรณ์สิ้นสุด " + e + " จึงไม่แสดงตัวเลข"; },
+        before: function (d) { return "วันที่นี้ไม่เกินวันอ้างอิง (" + d + ") โปรดเลือกวันที่หลังจากนั้น"; }
+      },
+      outsideBody: function (d, e) { return "วันเปิดตัวที่วางแผนไว้ " + d + " ช้ากว่าวันสุดท้ายของช่วงพยากรณ์ (" + e + ") จึงไม่แสดงค่าพยากรณ์ ลำดับ หรือตำแหน่งในคิว"; },
+      ties: function (b, size, n) {
+        return "คะแนน M3 ที่เท่ากันใช้ลำดับเดียวกัน และรายการที่คะแนนเท่ากับเส้นตัดที่ช่องที่ " + size + " จะแบ่งช่องที่เหลือเท่า ๆ กัน (แสดงเป็นโอกาสเข้าคิวระหว่าง 0 ถึง 100%) " +
+          "ในฉบับนี้มี " + b.above_boundary + " รายการที่คะแนนสูงกว่าเส้นตัด (" + pct(b.boundary_native_score, 2) + ") และ " + b.boundary_rows + " รายการอยู่ที่เส้นตัด โอกาสเข้าคิว " + pct(b.boundary_inclusion_probability, 0) +
+          (b.boundary_rows > b.slots_at_boundary ? "" : " จึงไม่มียารายการใดเข้าคิวแบบเศษส่วน") + " จากทั้งหมด " + n + " รายการ";
+      },
+      inclusion: function (p) { return "โอกาสเข้าคิว " + pct(p, 0); },
       status: { known: "ทราบ", verify: "ต้องตรวจ", assumption: "สมมติฐาน", na: "ไม่เกี่ยวข้อง" },
       estimate: "ค่าประมาณ",
       owner: { "FTO evaluator": "ผู้ประเมิน FTO", "Patent reviewer": "ผู้ตรวจสิทธิบัตร", "R&D": "ฝ่ายวิจัยและพัฒนา", "BD": "ฝ่ายพัฒนาธุรกิจ",
@@ -79,6 +103,27 @@
         handoff: "Items handed to the FTO evaluator and other reviewers. Ticks are saved in this browser only.",
         references: "Every source with its edition, locator and SHA-256 hash, so the dossier can be reproduced."
       },
+      noticeCur: function (d) { return "Forecasts as of " + d + " are the frozen Track A forecasts. Outcomes are pending. Qualified counsel decides freedom to operate (FTO)."; },
+      endpoint: "The forecast event is the first final US generic approval. It is not launch, demand or Thai permission.",
+      method: "Registered test (24-month horizon, 1-in-5 review capacity): M3 found 66.85% of first generic approvals, with precision 26.62%. Outcomes for this queue stay pending until the scorer runs in November 2027 and November 2028.",
+      search: {
+        none: function (q) { return "No drug matches “" + q + "”. Names are indexed in English (active moiety or display name)."; },
+        help: "Partial match, not case-sensitive, on the active moiety or display name in English. Press Enter to open the first result.",
+        count: function (n, all) { return n + " of " + all + " match"; }
+      },
+      launch: {
+        h12: function (d, e) { return "A launch on " + d + " falls in the 12-month window (to " + e + "). Showing the 12-month forecast. It is the chance of the first final US generic approval, not a launch date."; },
+        h24: function (d, e) { return "A launch on " + d + " falls in the 24-month window (to " + e + "). Showing the 24-month forecast. It is the chance of the first final US generic approval, not a launch date."; },
+        out: function (d, e) { return "A launch on " + d + " is outside the forecast horizon. Forecasts end on " + e + ", so no number is shown."; },
+        before: function (d) { return "This date is on or before the reference date (" + d + "). Choose a later date."; }
+      },
+      outsideBody: function (d, e) { return "The planned launch date " + d + " is later than the last forecast date (" + e + "). No forecast, rank or queue position is shown."; },
+      ties: function (b, size, n) {
+        return "Tied M3 scores share one rank. A drug tied at the boundary (slot " + size + ") shares the remaining slots equally, shown as an inclusion probability between 0 and 100%. " +
+          "In this edition " + b.above_boundary + " drugs score above the boundary (" + pct(b.boundary_native_score, 2) + ") and " + b.boundary_rows + " sits at it with inclusion probability " + pct(b.boundary_inclusion_probability, 0) +
+          (b.boundary_rows > b.slots_at_boundary ? "" : ", so no drug is included fractionally") + " (" + n + " drugs in all).";
+      },
+      inclusion: function (p) { return "Inclusion probability " + pct(p, 0); },
       status: { known: "known", verify: "verify", assumption: "assumption", na: "not applicable" },
       estimate: "estimate",
       owner: {},
@@ -112,9 +157,10 @@
   var state = {
     lang: "th", view: "queue", horizon: 12, cutoff: null, key: null, tab: "decision", revealed: false,
     show: "dossiers", src: null, index: null, fetcher: null, via: "", queue: null, dossier: null,
-    error: null, sourceFilter: "", dossierFilter: ""
+    error: null, sourceFilter: "", dossierFilter: "",
+    mode: "current", q: "", launch: "", outside: false, raw: null
   };
-  var cache = {};
+  var cache = {}, sets = {};
 
   /* ---------- helpers ---------- */
   function $(id) { return document.getElementById(id); }
@@ -175,24 +221,66 @@
       document.head.appendChild(s);
     });
   }
-  function fromBundle() {
-    var D = window.MWD_DATA;
-    if (!D || !D.index) throw new Error("data.bundle.js has no index");
-    return {
-      via: "data.bundle.js (" + D.base + ")", index: D.index,
-      fetcher: function (p) { return D.files[p] ? Promise.resolve(D.files[p]) : Promise.reject(new Error("Not bundled: " + p)); }
-    };
-  }
-  function loadData() {
-    function bundle() { return window.MWD_DATA ? Promise.resolve(fromBundle()) : loadScript("data.bundle.js").then(fromBundle); }
+  /* One loader per set: "history" reads data/ and data.bundle.js, "current" reads data/current/ and
+     data.current.bundle.js (large, so it is only loaded in Current queue mode when opened from a file). */
+  function loadSet(name) {
+    var cur = name === "current", dir = cur ? "data/current/" : "data/";
+    var file = cur ? "data.current.bundle.js" : "data.bundle.js", g = cur ? "MWD_CURRENT" : "MWD_DATA";
+    function fromBundle() {
+      var D = window[g];
+      if (!D || !D.index) throw new Error(file + " has no index");
+      return {
+        via: file + " (" + D.base + ")", index: D.index,
+        fetcher: function (p) { return D.files[p] ? Promise.resolve(D.files[p]) : Promise.reject(new Error("Not bundled: " + p)); }
+      };
+    }
+    function bundle() { return window[g] ? Promise.resolve(fromBundle()) : loadScript(file).then(fromBundle); }
     if (location.protocol === "file:") return bundle();
-    return getJSON("data/index.json").then(function (idx) {
-      return { via: "data/index.json", index: idx, fetcher: function (p) { return getJSON("data/" + p); } };
+    return getJSON(dir + "index.json").then(function (idx) {
+      return { via: dir + "index.json", index: idx, fetcher: function (p) { return getJSON(dir + p); } };
     }).catch(bundle);
   }
+  /* The current index lists one dossier per drug for both horizons and no cutoff. Expand it to the history shape. */
+  function normCurrentIndex(idx) {
+    var asOf = idx.as_of, out = Object.assign({}, idx);
+    out.queues = idx.queues.map(function (q) { return Object.assign({ cutoff: asOf }, q); });
+    out.dossiers = [];
+    idx.dossiers.forEach(function (d) {
+      (d.horizons || [12, 24]).forEach(function (h) {
+        out.dossiers.push({ key: d.key, display_name: d.display_name, cutoff: asOf, as_of: asOf, horizon_months: h, path: d.path });
+      });
+    });
+    return out;
+  }
+  function ensureSet(name) {
+    if (sets[name]) return Promise.resolve(sets[name]);
+    return loadSet(name).then(function (res) {
+      if (name === "current") res.index = normCurrentIndex(res.index);
+      sets[name] = res;
+      return res;
+    });
+  }
+  function activate(name) {
+    var s = sets[name];
+    state.mode = name; state.index = s.index; state.fetcher = s.fetcher; state.via = s.via;
+    document.body.setAttribute("data-mode", name);
+  }
+  function curAsOf() { return sets.current ? sets.current.index.as_of : "2026-11-27"; }
   function load(path) {
-    if (!cache[path]) cache[path] = state.fetcher(path);
-    return cache[path];
+    var k = state.mode + ":" + path;
+    if (!cache[k]) cache[k] = state.fetcher(path);
+    return cache[k];
+  }
+  /* Current mode: one dossier file holds both horizons. Pick the active horizon's forecast and statements. When the
+     planned launch date is outside the horizon, drop every statement that carries a forecast number. */
+  function deriveDossier(raw) {
+    if (state.mode !== "current") return raw;
+    var h = state.horizon, out = state.outside;
+    var claims = (raw.claims || []).filter(function (c) {
+      var m = /^(queue|entry)-(12|24)$/.exec(c.id);
+      return !m || (!out && Number(m[2]) === h);
+    });
+    return Object.assign({}, raw, { forecast: out ? null : (h === 12 ? raw.forecast_12m : raw.forecast), claims: claims, outside: out, _idx: null });
   }
   function normQueue(q) {
     var rows = (q.ranked_rows || q.rows || []).slice().sort(function (a, b) {
@@ -203,7 +291,7 @@
     var events = rows.filter(function (r) { return r.event; }).length;
     var caught = rows.filter(function (r) { return r.event && r.in_queue; }).length;
     return { as_of: q.as_of, horizon: q.horizon_months, window_end: q.window_end, size: size, rows: rows,
-      events: events, caught: caught, b1: b1Capture(rows, size) };
+      events: events, caught: caught, b1: state.mode === "current" ? 0 : b1Capture(rows, size), boundary: q.boundary || null };
   }
   /* B1 queue at the same capacity: rank by B1; molecules tied at the capacity line share the
      remaining slots, so the capture is an expected value (as in the registered analysis). */
@@ -233,6 +321,45 @@
     h = h || state.horizon; c = c || state.cutoff;
     return (state.index.dossiers || []).find(function (d) { return d.key === key && d.horizon_months === h && String(d.cutoff) === c; });
   }
+  function norm(s) { return String(s == null ? "" : s).normalize("NFKC").toLowerCase().trim(); }
+  function matchRow(r) {
+    var q = norm(state.q);
+    if (!q) return true;
+    var hay = norm(r.display_name + " " + r.key);
+    return q.split(/\s+/).every(function (w) { return hay.indexOf(w) >= 0; });
+  }
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function addMonths(iso, n) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso), y = Number(m[1]), mo = Number(m[2]) - 1 + n, d = Number(m[3]);
+    y += Math.floor(mo / 12); mo = ((mo % 12) + 12) % 12;
+    var last = new Date(Date.UTC(y, mo + 1, 0)).getUTCDate();
+    return y + "-" + pad2(mo + 1) + "-" + pad2(Math.min(d, last));
+  }
+  /* A planned launch date maps to the forecast window that covers it: (t0, t0+12m] is the 12-month window,
+     (t0+12m, t0+24m] the 24-month window, later is outside the horizon. No new forecast is computed. */
+  function launchInfo() {
+    if (state.mode !== "current" || !state.launch) return null;
+    var t0 = curAsOf(), d = state.launch;
+    if (d <= t0) return { kind: "before" };
+    if (d <= addMonths(t0, 12)) return { kind: "h12", h: 12, end: addMonths(t0, 12) };
+    if (d <= addMonths(t0, 24)) return { kind: "h24", h: 24, end: addMonths(t0, 24) };
+    return { kind: "out", end: addMonths(t0, 24) };
+  }
+  function applyLaunch() {
+    var w = launchInfo();
+    state.outside = !!(w && w.kind === "out");
+    if (w && w.h) state.horizon = w.h;
+    renderLaunchMsg();
+  }
+  function renderLaunchMsg() {
+    var el = $("launch-msg"), w = launchInfo(), t = tx().launch, L = state.lang, txt = "";
+    if (w) {
+      if (w.kind === "before") txt = t.before(fmtDate(curAsOf(), L));
+      else txt = t[w.kind](fmtDate(state.launch, L), fmtDate(w.end, L));
+    }
+    el.lang = L; el.textContent = txt;
+    el.className = "launch-msg cur-only" + (w ? (w.kind === "out" || w.kind === "before" ? " is-warn" : " is-ok") : "");
+  }
   function asOfOf(c) {
     var q = state.index.queues.find(function (x) { return String(x.cutoff) === String(c); });
     return q ? q.as_of : c + "-01-01";
@@ -250,7 +377,9 @@
   }
   var writingHash = false;
   function writeHash() {
-    var p = ["view=" + state.view, "lang=" + state.lang, "h=" + state.horizon, "c=" + state.cutoff];
+    var p = ["mode=" + state.mode, "view=" + state.view, "lang=" + state.lang, "h=" + state.horizon, "c=" + state.cutoff];
+    if (state.mode === "current" && state.q) p.push("q=" + encodeURIComponent(state.q));
+    if (state.mode === "current" && state.launch) p.push("ld=" + state.launch);
     if (state.key) p.push("m=" + encodeURIComponent(state.key));
     if (state.tab !== "decision") p.push("tab=" + state.tab);
     if (state.revealed) p.push("reveal=1");
@@ -266,7 +395,11 @@
   /* ---------- language ---------- */
   function applyLang() {
     document.documentElement.lang = state.lang;
-    document.querySelectorAll("[data-t]").forEach(function (el) { el.textContent = tx()[el.getAttribute("data-t")]; });
+    document.querySelectorAll("[data-t]").forEach(function (el) {
+      var k = el.getAttribute("data-t"), v = tx()[k];
+      if (state.mode === "current" && tx()[k + "Cur"]) v = tx()[k + "Cur"](fmtDate(curAsOf(), state.lang));
+      el.textContent = v;
+    });
     document.querySelectorAll(".lang button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === state.lang));
     });
@@ -281,6 +414,35 @@
       return '<option value="' + c + '"' + (c === state.cutoff ? " selected" : "") + ">" + fmtDate(asOfOf(c)) + "</option>";
     }).join("");
     $("f-show").value = state.show;
+    if ($("f-search").value !== state.q) $("f-search").value = state.q;
+    if ($("f-launch").value !== state.launch) $("f-launch").value = state.launch;
+  }
+  function obEdition() {
+    var d = state.dossier;
+    if (!d) return null;
+    return (d.sources || []).find(function (s) { return s.issuer === "U.S. FDA" && /^ob-/.test(s.id) && s.version; }) || null;
+  }
+  function renderModebar() {
+    document.querySelectorAll(".mode-switch button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === state.mode));
+    });
+    var bits, foot;
+    if (state.mode === "current") {
+      var v = state.index.version || {}, ob = obEdition();
+      bits = ["<b>" + esc(state.index.label || "Track A t0 forecast, outcome pending") + "</b>",
+        "Reference date <b>" + fmtDate(curAsOf()) + "</b>",
+        ob ? "Orange Book edition <b>" + fmtDate(ob.version) + "</b>" + (ob.public_date ? " (public " + fmtDate(ob.public_date) + ")" : "") : "",
+        "Horizon <b>" + (state.outside ? "outside the forecast horizon" : state.horizon + " months") + "</b>",
+        v.freeze === "verified" ? "Freeze tag <b>" + esc(v.tag) + "</b>" : "Freeze not verified"];
+      foot = "Current queue: Track A t0 forecast of " + fmtDate(curAsOf()) + ", outcomes pending.";
+    } else {
+      bits = ["<b>Development data</b>, historical time machine",
+        "Cutoff <b>" + (state.cutoff ? fmtDate(asOfOf(state.cutoff)) : "—") + "</b>",
+        "Horizon <b>" + state.horizon + " months</b>"];
+      foot = "Development data: US cutoffs before 2017.";
+    }
+    $("mode-facts").innerHTML = bits.filter(Boolean).map(function (x) { return "<span>" + x + "</span>"; }).join("");
+    $("foot-data").textContent = foot;
   }
   function outcomeTag(r) {
     var o = tx().outcomeTag;
@@ -289,17 +451,28 @@
     return '<span class="tag tag-na">' + esc(o.none) + "</span>";
   }
   function renderQueue() {
-    var q = state.queue, body = $("queue-body");
+    var q = state.queue, body = $("queue-body"), cur = state.mode === "current", hide = cur && state.outside;
     $("q-out-h").hidden = !state.revealed;
     if (!q) { body.innerHTML = ""; $("queue-meta").textContent = ""; return; }
-    $("queue-meta").textContent = q.size + " of " + q.rows.length + " reviewed";
-    var rows = state.show === "all" ? q.rows : q.rows.filter(function (r) { return dossierEntry(r.key); });
+    var rows = state.show === "all" || cur ? q.rows : q.rows.filter(function (r) { return dossierEntry(r.key); });
+    if (cur) {
+      if (state.q.trim()) rows = rows.filter(matchRow);
+      if (hide) rows = rows.slice().sort(function (a, b) { return niceName(a.display_name).localeCompare(niceName(b.display_name)); });
+      $("queue-meta").textContent = state.q.trim() ? tx().search.count(rows.length, q.rows.length) : hide ? q.rows.length + " drugs" : q.size + " of " + q.rows.length + " in queue";
+      $("queue-help").textContent = hide ? "Listed alphabetically. No ranking or number is shown outside the forecast horizon." : "Ranked by M3. Use the arrow keys to move through the queue.";
+      $("search-help").textContent = tx().search.help; $("search-help").lang = state.lang;
+      var tb = $("ties-body");
+      tb.textContent = q.boundary ? tx().ties(q.boundary, q.size, q.rows.length) : ""; tb.lang = state.lang;
+    } else {
+      $("queue-meta").textContent = q.size + " of " + q.rows.length + " reviewed";
+      $("queue-help").textContent = "Ranked by M3. Use the arrow keys to move through the queue.";
+    }
     var cols = state.revealed ? 4 : 3;
     if (!rows.length) {
-      body.innerHTML = '<tr class="q-empty"><td colspan="' + cols + '">' + esc(tx().emptyQueue) + "</td></tr>";
+      body.innerHTML = '<tr class="q-empty"><td colspan="' + cols + '">' + esc(cur && state.q.trim() ? tx().search.none(state.q.trim()) : tx().emptyQueue) + "</td></tr>";
       return;
     }
-    var html = [], dividerDone = false;
+    var html = [], dividerDone = hide;
     rows.forEach(function (r) {
       if (!dividerDone && !r.in_queue) {
         html.push('<tr class="cap" lang="en"><td colspan="' + cols + '">Review capacity: ' + q.size + " of " + q.rows.length + " (1 in 5)</td></tr>");
@@ -308,15 +481,15 @@
       var has = !!dossierEntry(r.key), cur = r.key === state.key;
       var label = niceName(r.display_name);
       html.push('<tr class="q-row' + (cur ? " is-current" : "") + (has ? "" : " q-nodoc") + '" data-key="' + esc(r.key) + '">' +
-        '<td class="q-rank num">' + r.m3_rank + "</td>" +
+        '<td class="q-rank num">' + (hide ? "—" : r.m3_rank) + "</td>" +
         '<td class="q-name"><button type="button" class="q-btn" data-key="' + esc(r.key) + '"' + (cur ? ' aria-current="true"' : "") +
         ' tabindex="' + (cur ? 0 : -1) + '">' + esc(label) +
-        '<span class="sr-only" lang="en">, rank ' + r.m3_rank + ", M3 " + pct(r.m3_p) + (r.in_queue ? ", in review queue" : ", outside review queue") + "</span>" +
+        (hide ? "" : '<span class="sr-only" lang="en">, rank ' + r.m3_rank + ", M3 " + pct(r.m3_p) + (r.in_queue ? ", in review queue" : ", outside review queue") + "</span>") +
         (has ? "" : '<span class="q-doc-mark" lang="en">No dossier</span>') + "</button></td>" +
-        '<td class="q-pct c-num num">' + pct(r.m3_p) + "</td>" +
+        '<td class="q-pct c-num num">' + (hide ? "—" : pct(r.m3_p)) + "</td>" +
         (state.revealed ? '<td class="q-out">' + outcomeTag(r) + "</td>" : "") + "</tr>");
     });
-    if (!dividerDone && state.show === "all") {
+    if (!dividerDone && state.show === "all" && !cur) {
       html.push('<tr class="cap" lang="en"><td colspan="' + cols + '">Review capacity: ' + q.size + " of " + q.rows.length + "</td></tr>");
     }
     body.innerHTML = html.join("");
@@ -419,12 +592,21 @@
     var assume = claims.find(function (c) { return c.section === "decision" && c.kind === "assumption"; }) ||
       claims.find(function (c) { return c.kind === "assumption"; });
     var next = (d.checklist || [])[0];
-    var html = statsRow([
+    var incl = f.queue_inclusion_probability, fractional = incl != null && incl > 0 && incl < 1;
+    var html = d.outside ? statsRow([
+      ["First generic approval forecast (M3)", "—", "Outside the forecast horizon"],
+      ["Drug-age baseline (B1)", "—", "Outside the forecast horizon"],
+      ["Queue position", "—", "Outside the forecast horizon"],
+      ["To verify", String(open), "Statements across all sections", open ? "v-verify" : ""]
+    ]) : statsRow([
       ["First generic within " + h + " months (M3)", pct(f.m3_p_entry), "Evidence model"],
       ["Drug-age baseline (B1)", pct(f.b1_p_entry), "Same horizon"],
-      ["Queue position", f.m3_rank + (n ? " <small>of " + n + "</small>" : ""), (f.in_queue ? "Inside" : "Outside") + " review capacity (" + (f.queue_size || "—") + ")"],
+      ["Queue position", f.m3_rank + (n ? " <small>of " + n + "</small>" : ""), (f.in_queue ? "Inside" : "Outside") + " review capacity (" + (f.queue_size || "—") + ")" + (fractional ? ", inclusion probability " + pct(incl, 0) : "")],
       ["To verify", String(open), "Statements across all sections", open ? "v-verify" : ""]
     ]);
+    if (state.mode === "current") {
+      html += '<p class="note method-note">' + esc(tx().endpoint) + "</p>" + '<p class="note method-note">' + esc(tx().method) + "</p>";
+    }
     html += '<dl class="kv">' +
       '<dt lang="en">Next action</dt><dd>' + esc(next ? L(next, "text") : tx().nextFallback) +
       (next ? ' <span class="kind" lang="en">Owner: ' + esc(next.owner) + "</span>" : "") + "</dd>" +
@@ -445,7 +627,7 @@
       ["To verify", String(n.verify), "", n.verify ? "v-verify" : ""], ["Sources cited", String(citedIds(d, cs).length)]
     ]) + statementsTable(d, cs);
   }
-  function checkKey(d) { return "mwd.check." + d.molecule.key + "." + d.as_of + "." + (d.forecast || {}).horizon_months; }
+  function checkKey(d) { return "mwd.check." + d.molecule.key + "." + d.as_of + "." + ((d.forecast || {}).horizon_months || "outside"); }
   function handoffPanel(d) {
     var items = d.checklist || [], key = checkKey(d), saved = {};
     try { saved = JSON.parse(store(key) || "{}") || {}; } catch (e) { saved = {}; }
@@ -495,16 +677,23 @@
     var d = state.dossier;
     if (!d) { main.innerHTML = emptyState(); return; }
     var f = d.forecast || {}, name = niceName(d.molecule.display_name);
+    var hz = d.outside ? "Outside the forecast horizon" : (f.horizon_months || state.horizon) + " months";
     var crumb = '<nav class="crumb" aria-label="Breadcrumb" lang="en"><a href="#" data-focus="queue">Queue</a><span class="sep" aria-hidden="true">›</span>' +
-      '<a href="#" data-focus="queue">' + (f.horizon_months || state.horizon) + " months, as of " + fmtDate(d.as_of) + '</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">' + esc(name) + "</span></nav>";
+      '<a href="#" data-focus="queue">' + hz + ", as of " + fmtDate(d.as_of) + '</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">' + esc(name) + "</span></nav>";
     var actions = '<div class="d-actions" lang="en">' +
       (d.outcome_reveal ? '<button type="button" class="btn btn-secondary" id="reveal-btn" aria-pressed="' + state.revealed + '" aria-controls="outcome-slot">' + icon("eye") + (state.revealed ? "Hide outcome" : "Show outcome") + "</button>" : "") +
       '<button type="button" class="btn btn-secondary" id="print-btn">' + icon("print") + "Print dossier</button></div>";
     var forms = (d.molecule.dosage_forms || []).map(niceForm).join("; ");
-    var meta = '<div class="d-meta" lang="en"><span>As of <b>' + fmtDate(d.as_of) + "</b></span><span>Horizon <b>" + (f.horizon_months || state.horizon) + " months</b></span>" +
+    var meta = '<div class="d-meta" lang="en"><span>As of <b>' + fmtDate(d.as_of) + "</b></span><span>Horizon <b>" + hz + "</b></span>" +
       "<span>Jurisdiction <b>" + esc(d.jurisdiction || "—") + "</b></span>" + (forms ? "<span>Dosage forms <b>" + esc(forms) + "</b></span>" : "") + "</div>";
-    var chips = '<div class="chips" lang="en">' + (f.in_queue ? '<span class="chip chip-navy">In review queue</span>' : '<span class="chip">Outside review queue</span>') +
-      '<span class="chip">Development data</span>' + (state.index.fixture || d.fixture ? '<span class="chip chip-fixture">FIXTURE</span>' : "") + "</div>";
+    var queueChip = d.outside ? "" : (f.in_queue ? '<span class="chip chip-navy">In review queue</span>' : '<span class="chip">Outside review queue</span>');
+    var modeChip = state.mode === "current" ? '<span class="chip">' + esc(state.index.label || "Track A t0 forecast, outcome pending") + "</span>" : '<span class="chip">Development data</span>';
+    var chips = '<div class="chips" lang="en">' + queueChip + modeChip + (state.index.fixture || d.fixture ? '<span class="chip chip-fixture">FIXTURE</span>' : "") + "</div>";
+    if (d.outside) {
+      var w = launchInfo();
+      chips += '<div class="outside" role="status"><b lang="en">Outside the forecast horizon</b><p lang="' + state.lang + '">' +
+        esc(tx().outsideBody(fmtDate(state.launch, state.lang), fmtDate(w ? w.end : curAsOf(), state.lang))) + "</p></div>";
+    }
     var printHead = '<p class="print-only note" lang="en">Market Window Dossier · printed ' + fmtDate(new Date().toISOString().slice(0, 10)) + " · " + esc(d.molecule.key) + "</p>";
     var tabs = '<div class="tabs" role="tablist" aria-label="Dossier sections" lang="en">' + SECTIONS.map(function (s) {
       var on = s.id === state.tab;
@@ -589,7 +778,24 @@
     if (state.view === "sources") return sourcesView();
     return settingsView();
   }
+  function dossiersViewCurrent() {
+    var q = state.queue, f = norm(state.dossierFilter), hide = state.outside;
+    var rows = q ? q.rows.filter(function (r) { return !f || norm(r.display_name + " " + r.key).indexOf(f) >= 0; }) : [];
+    rows = rows.slice().sort(function (a, b) { return niceName(a.display_name).localeCompare(niceName(b.display_name)); });
+    var html = '<div class="view" lang="en"><h1>Dossiers</h1><p class="lead">All ' + (q ? q.rows.length : 651) + ' drugs in the current queue as of ' + fmtDate(curAsOf()) + ', ' +
+      (hide ? "outside the forecast horizon (no numbers shown)" : state.horizon + "-month horizon") + '. Open one to see its dossier with the queue.</p>' +
+      '<div class="view-tools"><label class="field"><span>Find a drug</span><input type="search" id="dossier-filter" value="' + esc(state.dossierFilter) + '" placeholder="Name"></label><span class="panel-meta">' + rows.length + " shown</span></div>" +
+      '<table class="reg"><thead><tr><th scope="col">Drug</th><th scope="col" class="c-num">Rank</th><th scope="col" class="c-num">M3</th><th scope="col" class="c-num">B1</th><th scope="col">Queue</th></tr></thead><tbody>';
+    html += rows.map(function (r) {
+      return '<tr><td><a href="#" data-open="' + esc(r.key) + '" data-h="' + state.horizon + '" data-c="' + esc(state.cutoff) + '">' + esc(niceName(r.display_name)) + "</a></td>" +
+        '<td class="c-num num">' + (hide ? "—" : r.m3_rank) + '</td><td class="c-num num">' + (hide ? "—" : pct(r.m3_p)) + '</td><td class="c-num num">' + (hide ? "—" : pct(r.b1_p)) + "</td><td>" +
+        (hide ? "—" : r.in_queue ? '<span class="chip chip-navy">In queue</span>' : '<span class="chip">Outside</span>') + "</td></tr>";
+    }).join("");
+    if (!rows.length) html += '<tr><td colspan="5" class="st-empty">No drug matches “' + esc(state.dossierFilter) + "”.</td></tr>";
+    return html + "</tbody></table></div>";
+  }
   function dossiersView() {
+    if (state.mode === "current") return dossiersViewCurrent();
     var list = (state.index.dossiers || []).slice();
     var f = state.dossierFilter.trim().toLowerCase();
     var html = '<div class="view" lang="en"><h1>Dossiers</h1><p class="lead">Every dossier in the development data, one per molecule, horizon and as-of date. Open one to see it with its review queue.</p>' +
@@ -651,12 +857,16 @@
       "<tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Move between dossier sections (when a section tab has focus)</td></tr>" +
       "<tr><td><kbd>Alt</kbd> + <kbd>1</kbd>–<kbd>7</kbd></td><td>Open a dossier section</td></tr>" +
       "<tr><td><kbd>Ctrl</kbd> + <kbd>P</kbd></td><td>Print the open dossier</td></tr></tbody></table></section>" +
-      '<section><h2>Data</h2><dl class="kv"><dt>Status</dt><dd>' + (idx.fixture ? "FIXTURE (synthetic)" : "Development data, US cutoffs before 2017") + "</dd>" +
-      "<dt>Loaded from</dt><dd>" + esc(state.via) + "</dd><dt>Queues</dt><dd>" + idx.queues.length + "</dd><dt>Dossiers</dt><dd>" + (idx.dossiers || []).length + "</dd>" +
-      "<dt>Contracts</dt><dd>mwd.index.v1, mwd.queue.v1, mwd.dossier.v1</dd></dl></section></div>";
+      '<section><h2>Data</h2><dl class="kv"><dt>Mode</dt><dd>' + (state.mode === "current" ? "Current queue, Track A t0 forecast, outcome pending (reference date " + fmtDate(curAsOf()) + ")" : "Historical time machine") + "</dd><dt>Status</dt><dd>" + (idx.fixture ? "FIXTURE (synthetic)" : state.mode === "current" ? "Frozen Track A forecast (" + esc((idx.version || {}).tag || "freeze not verified") + ")" : "Development data, US cutoffs before 2017") + "</dd>" +
+      "<dt>Loaded from</dt><dd>" + esc(state.via) + "</dd><dt>Queues</dt><dd>" + idx.queues.length + "</dd><dt>Dossiers</dt><dd>" + (state.mode === "current" ? idx.dossiers.length / 2 + " drugs, both horizons in one file each" : (idx.dossiers || []).length) + "</dd>" +
+      "<dt>Contracts</dt><dd>mwd.index.v1, mwd.queue.v1, mwd.dossier.v1</dd></dl></section>" +
+      (state.mode === "current" ? '<section><h2>Data rights</h2><table class="reg"><thead><tr><th scope="col">Source</th><th scope="col">Terms</th></tr></thead><tbody>' +
+        "<tr><td>U.S. FDA Orange Book and Drugs@FDA</td><td>US government work, public domain</td></tr>" +
+        "<tr><td>District court filings, Rai et al. (Harvard Dataverse v1.0)</td><td>CC0 1.0</td></tr>" +
+        "<tr><td>LOE-Bench forecasts and evidence coverage</td><td>Project-generated from the sources above, frozen Track A bytes. No NBER data.</td></tr></tbody></table></section>" : "") + "</div>";
   }
   function bindViewAfterRender() {
-    if (state.view === "dossiers") {
+    if (state.view === "dossiers" && state.mode !== "current") {
       var need = (state.index.dossiers || []).filter(function (e) { return !e._d; });
       if (need.length) {
         Promise.all(need.map(function (e) { return load(e.path).then(function (d) { e._d = d; }, function () { e._d = null; }); }))
@@ -679,7 +889,7 @@
     });
   }
   function renderAll() {
-    renderLayout(); renderFilters(); renderQueue(); renderDossier(); renderSources(); writeHash();
+    renderLayout(); renderFilters(); renderQueue(); renderDossier(); renderSources(); renderModebar(); renderLaunchMsg(); writeHash();
   }
 
   /* ---------- selection ---------- */
@@ -701,8 +911,9 @@
     if (!keepSrc) state.src = null;
     var entry = key && dossierEntry(key);
     if (!entry) { state.dossier = null; renderAll(); return Promise.resolve(); }
-    return load(entry.path).then(function (d) {
-      state.dossier = d;
+    return load(entry.path).then(function (raw) {
+      var d = deriveDossier(raw);
+      state.raw = raw; state.dossier = d;
       if (state.src && !srcIndex(d)[state.src]) state.src = null;
       renderAll();
     }, function (err) { state.dossier = null; state.error = err; renderAll(); });
@@ -722,8 +933,22 @@
     if (l !== "th" && l !== "en") return;
     var active = document.activeElement && document.activeElement.id;
     state.lang = l; store("mwd.lang", l);
-    applyLang(); renderQueue(); renderDossier(); renderSources(); writeHash();
+    applyLang(); renderQueue(); renderDossier(); renderSources(); renderLaunchMsg(); writeHash();
     restoreFocus(active);
+  }
+  function setMode(m) {
+    if (m !== "current" && m !== "history") return;
+    if (m === state.mode && state.index) return;
+    ensureSet(m).then(function () {
+      state.mode = m; activate(m);
+      state.key = null; state.dossier = null; state.raw = null; state.queue = null; state.revealed = false; state.src = null;
+      state.error = null;
+      var hs = horizons(); state.horizon = hs.indexOf(24) >= 0 ? 24 : hs[0];
+      if (m === "current") applyLaunch(); else state.outside = false;
+      var cs = cutoffsFor(state.horizon); state.cutoff = cs[cs.length - 1];
+      applyLang(); renderFilters();
+      return selectQueue().then(function () { scrollQueueToCurrent(); announce(m === "current" ? "Current queue" : "Historical time machine"); });
+    }).catch(function (err) { state.error = err; renderDossier(); });
   }
   function setView(v, focus) {
     if (VIEWS.indexOf(v) < 0) v = "queue";
@@ -773,8 +998,27 @@
     document.querySelectorAll("[data-nav]").forEach(function (a) {
       a.addEventListener("click", function (e) { e.preventDefault(); setView(a.getAttribute("data-nav"), true); });
     });
+    document.querySelector(".mode-switch").addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-mode]"); if (b) setMode(b.getAttribute("data-mode"));
+    });
+    $("f-search").addEventListener("input", function () {
+      state.q = this.value; renderQueue(); writeHash();
+      announce(state.q.trim() ? tx().search.count($("queue-body").querySelectorAll(".q-btn").length, state.queue ? state.queue.rows.length : 0) : "");
+    });
+    $("f-search").addEventListener("keydown", function (e) {
+      var first = $("queue-body").querySelector(".q-btn");
+      if (e.key === "Enter" && first) {
+        e.preventDefault();
+        selectDossier(first.getAttribute("data-key")).then(function () { if (state.view !== "queue") setView("queue"); scrollQueueToCurrent(); });
+      } else if (e.key === "ArrowDown" && first && !e.altKey) { e.preventDefault(); first.tabIndex = 0; first.focus(); }
+    });
+    $("f-launch").addEventListener("change", function () {
+      state.launch = this.value || ""; state.revealed = false;
+      applyLaunch(); renderFilters(); selectQueue();
+    });
     $("f-horizon").addEventListener("change", function () {
       var h = Number(this.value), list = cutoffsFor(h);
+      if (state.mode === "current") { state.launch = ""; state.outside = false; $("f-launch").value = ""; renderLaunchMsg(); }
       state.horizon = h; state.revealed = false;
       if (list.indexOf(state.cutoff) < 0) {
         var target = Number(state.cutoff);
@@ -907,18 +1151,28 @@
     state.lang = h.lang === "en" || h.lang === "th" ? h.lang : (saved === "en" ? "en" : "th");
     state.view = VIEWS.indexOf(h.view) >= 0 ? h.view : "queue";
     state.show = h.show === "all" ? "all" : "dossiers";
+    /* Links made before the current queue existed carry a four-digit cutoff year and no mode: they open the time machine. */
+    var mode = h.mode === "history" || h.mode === "current" ? h.mode : (/^\d{4}$/.test(h.c || "") ? "history" : "current");
+    state.mode = mode; document.body.setAttribute("data-mode", mode);
     applyLang(); bind(); renderLayout();
-    loadData().then(function (res) {
-      state.index = res.index; state.fetcher = res.fetcher; state.via = res.via;
+    ensureSet(mode).then(function () {
+      activate(mode);
+      applyLang();
+      if (mode === "current") {
+        state.q = h.q || "";
+        state.launch = /^\d{4}-\d{2}-\d{2}$/.test(h.ld || "") ? h.ld : "";
+      }
       var hs = horizons();
       if (!hs.length) throw new Error("The index lists no queues");
       state.horizon = hs.indexOf(Number(h.h)) >= 0 ? Number(h.h) : (hs.indexOf(24) >= 0 ? 24 : hs[0]);
+      if (mode === "current") applyLaunch();
       var cs = cutoffsFor(state.horizon);
       state.cutoff = cs.indexOf(h.c) >= 0 ? h.c : cs[cs.length - 1];
       if (h.m) state.key = h.m;
       if (SECTION_IDS.indexOf(h.tab) >= 0) state.tab = h.tab;
-      state.revealed = h.reveal === "1";
+      state.revealed = mode === "history" && h.reveal === "1";
       state.src = h.src || null;
+      renderFilters();
       return selectQueue().then(function () {
         scrollQueueToCurrent();
         if (state.src) focusSource(state.src, false);

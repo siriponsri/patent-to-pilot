@@ -22,7 +22,7 @@ Decision support only. Qualified counsel determines freedom to operate. The disc
 | Evidence pilots C6/C7 | `product/evp/`, `docs/product/evidence/` | Merged. C6 3/5 documented restrictions; C7 17/17 family leads; Thai status 0/6 verified | [EVP](../../loe-bench/receipts/EVP.md) |
 | Web app (F2 design), landing page | `product/demo/`, `product/site/` | Merged. Development data only, TH/EN | [UIBUILD](../../loe-bench/receipts/UIBUILD.md) |
 | Windows desktop app (Tauri, unsigned) | `product/desktop/` | Merged. Installer outside Git in `_private_artifacts/mwd-desktop/` | UIBUILD |
-| Current-queue adapter, snapshot refresh, PDF hook | `product/mwd/current.py`, `refresh.py` | Merged. 651 dossiers built locally; data not committed (was waiting for the freeze) | [PRODV1-DATA](../../loe-bench/receipts/PRODV1-DATA.md) |
+| Current-queue adapter, snapshot refresh, PDF hook | `product/mwd/current.py`, `refresh.py` | Merged. 651 dossiers committed under `product/demo/data/current/` and wired into the app with search and launch-date window (branch `loe/PO-CURRENT`, pending planner review) | [PRODV1-DATA](../../loe-bench/receipts/PRODV1-DATA.md), [PO-CURRENT](../../loe-bench/receipts/PO-CURRENT.md) |
 | Track A scorer and release kit | `loe_bench/score_release`, `build_release` | Merged. Real readouts NOT_RUN until Nov 2027 and Nov 2028 | [SCORER](../../loe-bench/receipts/SCORER.md) |
 | Track A freeze | tag `loe-track-a-freeze-20261127` | Frozen 28 Nov 11:18:44 UTC; OSF update 4 approved 11:30:06 UTC | TRACKA-FREEZE |
 

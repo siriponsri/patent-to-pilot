@@ -1,0 +1,2545 @@
+{
+  "schema_version": "mwd.dossier.v1",
+  "as_of": "2026-11-27",
+  "jurisdiction": "US",
+  "molecule": {
+    "key": "U:C4XNY919FW",
+    "display_name": "MIGALASTAT",
+    "dosage_forms": [
+      "CAPSULE;ORAL"
+    ]
+  },
+  "forecast": {
+    "horizon_months": 24,
+    "m3_p_entry": 0.11017595268723841,
+    "b1_p_entry": 0.14148934799554208,
+    "m3_rank": 75,
+    "queue_size": 130,
+    "in_queue": true,
+    "status": "TRACK_A_FROZEN",
+    "queue_inclusion_probability": 1.0
+  },
+  "forecast_12m": {
+    "horizon_months": 12,
+    "m3_p_entry": 0.059575018448938116,
+    "b1_p_entry": 0.08276637659279058,
+    "m3_rank": 99,
+    "queue_size": 130,
+    "in_queue": true,
+    "status": "TRACK_A_FROZEN",
+    "queue_inclusion_probability": 1.0
+  },
+  "version": {
+    "freeze": "verified",
+    "core_manifest_sha256": "6497ab59ba41b0429a6169d5118c6afd14680233076a6a6693c03599d0176628",
+    "tag": "loe-track-a-freeze-20261127",
+    "manifest_sha256": "8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d"
+  },
+  "label": "Track A t0 forecast, outcome pending",
+  "disclaimer": {
+    "th": "เอกสารนี้ใช้จัดลำดับงานตรวจจากข้อมูลที่ระบุ ณ วันที่แสดง แบบจำลองประเมินโอกาสการอนุมัติยาสามัญครั้งแรกในสหรัฐฯ สถานะสิทธิในไทยและการประเมินเสรีภาพในการดำเนินการด้านสิทธิบัตร (FTO) ต้องให้ผู้เชี่ยวชาญตรวจข้อถือสิทธิ ผลิตภัณฑ์ ประเทศ และสถานะกฎหมายปัจจุบัน เอกสารนี้ไม่ใช่ความเห็นทางกฎหมายหรือความเห็น FTO",
+    "en": "This dossier prioritizes review using the evidence available as of the displayed date. The model estimates the chance of first US generic approval. Qualified experts must verify Thai rights and assess freedom to operate (FTO) against the claims, product, jurisdiction and current legal status. This dossier is neither a legal opinion nor an FTO opinion."
+  },
+  "challenge_state": "UNKNOWN",
+  "fda_piv_coverage": "NO_FRESH_EDITION",
+  "sections": [
+    {
+      "id": "decision",
+      "title_th": "สรุปสำหรับฝ่ายพัฒนาธุรกิจและวิจัย",
+      "title_en": "BD and R&D decision"
+    },
+    {
+      "id": "market",
+      "title_th": "ช่วงเวลาของตลาด",
+      "title_en": "Market window"
+    },
+    {
+      "id": "competition",
+      "title_th": "ภาพการแข่งขัน",
+      "title_en": "Competitive landscape"
+    },
+    {
+      "id": "patents",
+      "title_th": "สิทธิบัตรและสิทธิผูกขาด",
+      "title_en": "Patents and exclusivities"
+    },
+    {
+      "id": "thai_asean",
+      "title_th": "ประเทศไทยและอาเซียน",
+      "title_en": "Thailand and ASEAN"
+    },
+    {
+      "id": "handoff",
+      "title_th": "รายการตรวจสอบสำหรับผู้ประเมิน FTO",
+      "title_en": "FTO evaluator checklist"
+    },
+    {
+      "id": "references",
+      "title_th": "เอกสารอ้างอิงและข้อมูลสำหรับตรวจซ้ำ",
+      "title_en": "References and reproducibility"
+    }
+  ],
+  "claims": [
+    {
+      "id": "queue-12",
+      "section": "decision",
+      "text_th": "12 เดือน · ลำดับ 99 ตามคะแนน M3 · โอกาสเข้าคิวตรวจ 100.00% จากโควตาตรวจ 130 รายการ หากคะแนนตรงเส้นตัดเท่ากัน จะให้โอกาสเข้าคิวเท่ากัน",
+      "text_en": "12 months · M3 rank 99 · 100.00% inclusion probability with 130 expected slots. Boundary ties share the remaining slots uniformly.",
+      "source_ids": [
+        "score-12"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    },
+    {
+      "id": "entry-12",
+      "section": "market",
+      "text_th": "คะแนน M3 สำหรับการอนุมัติ ANDA ขั้นสุดท้ายครั้งแรกในสหรัฐฯ ภายใน 12 เดือน เท่ากับ 0.05958 วันอนุมัติและวันวางจำหน่ายเป็นคนละเหตุการณ์",
+      "text_en": "M3 native score 0.05958 for first final US ANDA approval within 12 months. Approval and commercial launch are separate events.",
+      "source_ids": [
+        "score-12"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    },
+    {
+      "id": "queue-24",
+      "section": "decision",
+      "text_th": "24 เดือน · ลำดับ 75 ตามคะแนน M3 · โอกาสเข้าคิวตรวจ 100.00% จากโควตาตรวจ 130 รายการ หากคะแนนตรงเส้นตัดเท่ากัน จะให้โอกาสเข้าคิวเท่ากัน",
+      "text_en": "24 months · M3 rank 75 · 100.00% inclusion probability with 130 expected slots. Boundary ties share the remaining slots uniformly.",
+      "source_ids": [
+        "score-24"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    },
+    {
+      "id": "entry-24",
+      "section": "market",
+      "text_th": "คะแนน M3 สำหรับการอนุมัติ ANDA ขั้นสุดท้ายครั้งแรกในสหรัฐฯ ภายใน 24 เดือน เท่ากับ 0.1102 วันอนุมัติและวันวางจำหน่ายเป็นคนละเหตุการณ์",
+      "text_en": "M3 native score 0.1102 for first final US ANDA approval within 24 months. Approval and commercial launch are separate events.",
+      "source_ids": [
+        "score-24"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    },
+    {
+      "id": "at-risk",
+      "section": "competition",
+      "text_th": "ไม่พบการอนุมัติ ANDA ต้นฉบับขั้นสุดท้ายถึงวันตัดข้อมูลในประวัติที่เชื่อมโยงได้ จำนวนผู้ผลิตที่วางจำหน่ายยังไม่ทราบ",
+      "text_en": "The Track A roster contains linked histories with no first final original ANDA approval through t0. Marketed producer count is unknown.",
+      "source_ids": [
+        "tracka-scope"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "piv-coverage",
+      "section": "patents",
+      "text_th": "ยังไม่ทราบสถานะจากรายการ Paragraph IV ของ FDA เพราะไม่มีฉบับที่ผ่านเกณฑ์ ณ วันตัดข้อมูล",
+      "text_en": "FDA Paragraph IV list status is unknown because no edition met the as-of coverage rule.",
+      "source_ids": [
+        "tracka-scope"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "challenge-unknown",
+      "section": "patents",
+      "text_th": "ยังไม่ทราบสถานะการท้าทายในชุดหลักฐานที่ตรวจ",
+      "text_en": "Challenge status is unknown within the admitted evidence.",
+      "source_ids": [
+        "tracka-scope"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "forms",
+      "section": "competition",
+      "text_th": "รูปแบบยาและวิธีให้ยาที่เชื่อมโยงได้ในฉบับ 2026-07-10: CAPSULE;ORAL",
+      "text_en": "Linked dosage forms and routes in the 2026-07-10 edition: CAPSULE;ORAL.",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-1",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 208623 / 001 เป็น 2018-08-10",
+      "text_en": "Orange Book lists approval of NDA 208623 / 001 on 2018-08-10.",
+      "source_ids": [
+        "ob-approval-1"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "protection-gaps",
+      "section": "patents",
+      "text_th": "ฉบับ 2026-07-10 พบรายการสิทธิบัตร 67 แถว และสิทธิผูกขาด 0 แถว การตรวจสอบกับทะเบียนและเอกสารต้นทางยังจำเป็น",
+      "text_en": "The linked edition contains 67 patent rows and 0 exclusivity rows. Verify coverage against primary records.",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-1",
+      "section": "patents",
+      "text_th": "US 11304940, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11304940, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-1"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-2",
+      "section": "patents",
+      "text_th": "US 11357764, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11357764, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-2"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-3",
+      "section": "patents",
+      "text_th": "US 11357765, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11357765, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-3"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-4",
+      "section": "patents",
+      "text_th": "US 11376244, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11376244, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-4"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-5",
+      "section": "patents",
+      "text_th": "US 11426396, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11426396, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-5"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-6",
+      "section": "patents",
+      "text_th": "US 11612593, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11612593, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-6"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-7",
+      "section": "patents",
+      "text_th": "US 11612594, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11612594, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-7"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-8",
+      "section": "patents",
+      "text_th": "US 11633387, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11633387, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-8"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-9",
+      "section": "patents",
+      "text_th": "US 11786516, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11786516, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-9"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-10",
+      "section": "patents",
+      "text_th": "US 12042488, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 12042488, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-10"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-11",
+      "section": "patents",
+      "text_th": "US 12042489, NDA 208623 / 001 · DS=1, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 12042489, NDA 208623 / 001 · DS=1, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-11"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-12",
+      "section": "patents",
+      "text_th": "US 12109205, NDA 208623 / 001 · DS=1, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 12109205, NDA 208623 / 001 · DS=1, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-12"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-13",
+      "section": "patents",
+      "text_th": "US 12280042, NDA 208623 / 001 · DS=1, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 12280042, NDA 208623 / 001 · DS=1, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-13"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-14",
+      "section": "patents",
+      "text_th": "US 11903938, NDA 208623 / 001 · DS=1, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-08-17",
+      "text_en": "US 11903938, NDA 208623 / 001 · DS=1, DP=0, use=U-2371, delist=0 · listed expiry 2038-08-17.",
+      "source_ids": [
+        "patent-14"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-15",
+      "section": "patents",
+      "text_th": "US 11826360, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2039-02-16",
+      "text_en": "US 11826360, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2039-02-16.",
+      "source_ids": [
+        "patent-15"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-16",
+      "section": "patents",
+      "text_th": "US 11622962, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2039-03-17",
+      "text_en": "US 11622962, NDA 208623 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2039-03-17.",
+      "source_ids": [
+        "patent-16"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-17",
+      "section": "patents",
+      "text_th": "US 10383864, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2027-05-16",
+      "text_en": "US 10383864, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2027-05-16.",
+      "source_ids": [
+        "patent-17"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-18",
+      "section": "patents",
+      "text_th": "US 10406143, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2027-05-16",
+      "text_en": "US 10406143, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2027-05-16.",
+      "source_ids": [
+        "patent-18"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-19",
+      "section": "patents",
+      "text_th": "US 11241422, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2027-05-16",
+      "text_en": "US 11241422, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2027-05-16.",
+      "source_ids": [
+        "patent-19"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-20",
+      "section": "patents",
+      "text_th": "US 9000011, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2027-05-16",
+      "text_en": "US 9000011, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2027-05-16.",
+      "source_ids": [
+        "patent-20"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-21",
+      "section": "patents",
+      "text_th": "US 9480682, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2027-05-16",
+      "text_en": "US 9480682, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2027-05-16.",
+      "source_ids": [
+        "patent-21"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-22",
+      "section": "patents",
+      "text_th": "US 9987263, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2027-05-16",
+      "text_en": "US 9987263, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2027-05-16.",
+      "source_ids": [
+        "patent-22"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-23",
+      "section": "patents",
+      "text_th": "US 10525045, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2028-04-28",
+      "text_en": "US 10525045, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2028-04-28.",
+      "source_ids": [
+        "patent-23"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-24",
+      "section": "patents",
+      "text_th": "US 10925866, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2028-04-28",
+      "text_en": "US 10925866, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2028-04-28.",
+      "source_ids": [
+        "patent-24"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-25",
+      "section": "patents",
+      "text_th": "US 11033538, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2028-04-28",
+      "text_en": "US 11033538, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2028-04-28.",
+      "source_ids": [
+        "patent-25"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-26",
+      "section": "patents",
+      "text_th": "US 12599595, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2028-04-28",
+      "text_en": "US 12599595, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2028-04-28.",
+      "source_ids": [
+        "patent-26"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-27",
+      "section": "patents",
+      "text_th": "US 9999618, NDA 208623 / 001 · DS=0, DP=0, use=U-2373, delist=0 · วันหมดอายุที่ระบุ 2028-04-28",
+      "text_en": "US 9999618, NDA 208623 / 001 · DS=0, DP=0, use=U-2373, delist=0 · listed expiry 2028-04-28.",
+      "source_ids": [
+        "patent-27"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-28",
+      "section": "patents",
+      "text_th": "US 9999618, NDA 208623 / 001 · DS=0, DP=0, use=U-2372, delist=0 · วันหมดอายุที่ระบุ 2028-04-28",
+      "text_en": "US 9999618, NDA 208623 / 001 · DS=0, DP=0, use=U-2372, delist=0 · listed expiry 2028-04-28.",
+      "source_ids": [
+        "patent-28"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-29",
+      "section": "patents",
+      "text_th": "US 10813921, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2029-02-12",
+      "text_en": "US 10813921, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2029-02-12.",
+      "source_ids": [
+        "patent-29"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-30",
+      "section": "patents",
+      "text_th": "US 8592362, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=1 · วันหมดอายุที่ระบุ 2029-02-12",
+      "text_en": "US 8592362, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=1 · listed expiry 2029-02-12.",
+      "source_ids": [
+        "patent-30"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-31",
+      "section": "patents",
+      "text_th": "US 9095584, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2029-02-12",
+      "text_en": "US 9095584, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2029-02-12.",
+      "source_ids": [
+        "patent-31"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-32",
+      "section": "patents",
+      "text_th": "US RE48608, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2031-10-20",
+      "text_en": "US RE48608, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2031-10-20.",
+      "source_ids": [
+        "patent-32"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-33",
+      "section": "patents",
+      "text_th": "US 12599594, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2036-07-19",
+      "text_en": "US 12599594, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2036-07-19.",
+      "source_ids": [
+        "patent-33"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-34",
+      "section": "patents",
+      "text_th": "US 10076514, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2037-03-15",
+      "text_en": "US 10076514, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2037-03-15.",
+      "source_ids": [
+        "patent-34"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-35",
+      "section": "patents",
+      "text_th": "US 11234972, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2037-03-15",
+      "text_en": "US 11234972, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2037-03-15.",
+      "source_ids": [
+        "patent-35"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-36",
+      "section": "patents",
+      "text_th": "US 10251873, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10251873, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-36"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-37",
+      "section": "patents",
+      "text_th": "US 10471053, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10471053, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-37"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-38",
+      "section": "patents",
+      "text_th": "US 10792278, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10792278, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-38"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-39",
+      "section": "patents",
+      "text_th": "US 10792279, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10792279, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-39"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-40",
+      "section": "patents",
+      "text_th": "US 10799491, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10799491, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-40"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-41",
+      "section": "patents",
+      "text_th": "US 10806727, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10806727, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-41"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-42",
+      "section": "patents",
+      "text_th": "US 10849889, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10849889, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-42"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-43",
+      "section": "patents",
+      "text_th": "US 10849890, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10849890, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-43"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-44",
+      "section": "patents",
+      "text_th": "US 10857141, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10857141, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-44"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-45",
+      "section": "patents",
+      "text_th": "US 10857142, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10857142, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-45"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-46",
+      "section": "patents",
+      "text_th": "US 10874655, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10874655, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-46"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-47",
+      "section": "patents",
+      "text_th": "US 10874656, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10874656, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-47"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-48",
+      "section": "patents",
+      "text_th": "US 10874657, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 10874657, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-48"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-49",
+      "section": "patents",
+      "text_th": "US 11278536, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11278536, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-49"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-50",
+      "section": "patents",
+      "text_th": "US 11278537, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11278537, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-50"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-51",
+      "section": "patents",
+      "text_th": "US 11278538, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11278538, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-51"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-52",
+      "section": "patents",
+      "text_th": "US 11278539, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11278539, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-52"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-53",
+      "section": "patents",
+      "text_th": "US 11278540, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11278540, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-53"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-54",
+      "section": "patents",
+      "text_th": "US 11357761, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11357761, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-54"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-55",
+      "section": "patents",
+      "text_th": "US 11357762, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11357762, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-55"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-56",
+      "section": "patents",
+      "text_th": "US 11357763, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11357763, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-56"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-57",
+      "section": "patents",
+      "text_th": "US 11389436, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11389436, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-57"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-58",
+      "section": "patents",
+      "text_th": "US 11389437, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11389437, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-58"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-59",
+      "section": "patents",
+      "text_th": "US 11458128, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11458128, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-59"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-60",
+      "section": "patents",
+      "text_th": "US 11666564, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11666564, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-60"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-61",
+      "section": "patents",
+      "text_th": "US 11813255, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 11813255, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-61"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-62",
+      "section": "patents",
+      "text_th": "US 12042490, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2038-05-30",
+      "text_en": "US 12042490, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2038-05-30.",
+      "source_ids": [
+        "patent-62"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-63",
+      "section": "patents",
+      "text_th": "US 11357784, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2039-02-06",
+      "text_en": "US 11357784, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2039-02-06.",
+      "source_ids": [
+        "patent-63"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-64",
+      "section": "patents",
+      "text_th": "US 11642334, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2039-02-20",
+      "text_en": "US 11642334, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2039-02-20.",
+      "source_ids": [
+        "patent-64"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-65",
+      "section": "patents",
+      "text_th": "US 11633388, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2039-03-25",
+      "text_en": "US 11633388, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2039-03-25.",
+      "source_ids": [
+        "patent-65"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-66",
+      "section": "patents",
+      "text_th": "US 12594268, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2041-05-23",
+      "text_en": "US 12594268, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2041-05-23.",
+      "source_ids": [
+        "patent-66"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-67",
+      "section": "patents",
+      "text_th": "US 11833164, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · วันหมดอายุที่ระบุ 2042-01-11",
+      "text_en": "US 11833164, NDA 208623 / 001 · DS=0, DP=0, use=U-2371, delist=0 · listed expiry 2042-01-11.",
+      "source_ids": [
+        "patent-67"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "thai-status",
+      "section": "thai_asean",
+      "text_th": "ยังไม่ทราบสถานะสิทธิบัตรและทะเบียนยาในไทยและประเทศอาเซียนเป้าหมาย",
+      "text_en": "Patent and drug registration status in Thailand and target ASEAN jurisdictions is unknown.",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    }
+  ],
+  "sources": [
+    {
+      "id": "tracka-scope",
+      "issuer": "LOE-Bench",
+      "title": "Track A evidence coverage",
+      "version": "6497ab59ba41b0429a6169d5118c6afd14680233076a6a6693c03599d0176628",
+      "public_date": null,
+      "locator": "TRACKA_CORE_MANIFEST.json, eligibility and edition_audit[2026-11-27]",
+      "url": "https://github.com/siriponsri/patent-to-pilot/blob/5861d077/loe-bench/data/TRACKA_CORE_MANIFEST.json",
+      "sha256": "6497ab59ba41b0429a6169d5118c6afd14680233076a6a6693c03599d0176628",
+      "retrieved": null,
+      "evidence_cutoff": "2026-11-27"
+    },
+    {
+      "id": "score-12",
+      "issuer": "LOE-Bench",
+      "title": "Track A native forecast scores",
+      "version": "551bfe3438cefa7cc2c2481faed4b36881df2fa3df343bdf46365629ef6a8740",
+      "public_date": null,
+      "locator": "core_predictions_12m.jsonl, key=U:C4XNY919FW, t0=2026-11-27, horizon_months=12, arms M3 and B1",
+      "url": "https://github.com/siriponsri/patent-to-pilot/blob/5861d077/loe-bench/data/TRACKA_CORE_MANIFEST.json",
+      "sha256": "551bfe3438cefa7cc2c2481faed4b36881df2fa3df343bdf46365629ef6a8740",
+      "retrieved": null,
+      "evidence_cutoff": "2026-11-27"
+    },
+    {
+      "id": "score-24",
+      "issuer": "LOE-Bench",
+      "title": "Track A native forecast scores",
+      "version": "f0155a30ba645c2983fdb3014f1971ba7da1ccdd13b039b4a665fbcd1563f6c0",
+      "public_date": null,
+      "locator": "core_predictions_24m.jsonl, key=U:C4XNY919FW, t0=2026-11-27, horizon_months=24, arms M3 and B1",
+      "url": "https://github.com/siriponsri/patent-to-pilot/blob/5861d077/loe-bench/data/TRACKA_CORE_MANIFEST.json",
+      "sha256": "f0155a30ba645c2983fdb3014f1971ba7da1ccdd13b039b4a665fbcd1563f6c0",
+      "retrieved": null,
+      "evidence_cutoff": "2026-11-27"
+    },
+    {
+      "id": "ob-edition",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "products data row 3877",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "ob-approval-1",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "products data row 3877",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-1",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 14367",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-2",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 16428",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-3",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 18148",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-4",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 17380",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-5",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 18289",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-6",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 17541",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-7",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 15676",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-8",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 19238",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-9",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 19376",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-10",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 15910",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-11",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 7256",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-12",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 10030",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-13",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 7183",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-14",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 7519",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-15",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 19365",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-16",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 17586",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-17",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 2549",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-18",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 2775",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-19",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 12347",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-20",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 2134",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-21",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 1089",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-22",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 1084",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-23",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 2946",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-24",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 6727",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-25",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 4793",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-26",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 13635",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-27",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 1094",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-28",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 2142",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-29",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 9618",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-30",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 3430",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-31",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 2136",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-32",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11232",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-33",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 13639",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-34",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 1250",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-35",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 12349",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-36",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 2505",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-37",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 2643",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-38",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11565",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-39",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11566",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-40",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11769",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-41",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11770",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-42",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11151",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-43",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11150",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-44",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11149",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-45",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11152",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-46",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11159",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-47",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11160",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-48",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11158",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-49",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 12638",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-50",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 12637",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-51",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 12636",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-52",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 12639",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-53",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 12640",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-54",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 8810",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-55",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 8811",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-56",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 8812",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-57",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11330",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-58",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11329",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-59",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 9146",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-60",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 9927",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-61",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11892",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-62",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 7255",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-63",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 8813",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-64",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 6922",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-65",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 6923",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-66",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 13638",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    },
+    {
+      "id": "patent-67",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2026-07-10",
+      "public_date": "2026-07-26",
+      "locator": "patent data row 11891",
+      "url": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download",
+      "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+      "retrieved": "2026-11-27T10:25:57.182624Z"
+    }
+  ],
+  "checklist": [
+    {
+      "id": "check-us-11304940",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11304940 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11304940 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-1"
+      ]
+    },
+    {
+      "id": "check-us-11357764",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11357764 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11357764 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-2"
+      ]
+    },
+    {
+      "id": "check-us-11357765",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11357765 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11357765 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-3"
+      ]
+    },
+    {
+      "id": "check-us-11376244",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11376244 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11376244 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-4"
+      ]
+    },
+    {
+      "id": "check-us-11426396",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11426396 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11426396 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-5"
+      ]
+    },
+    {
+      "id": "check-us-11612593",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11612593 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11612593 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-6"
+      ]
+    },
+    {
+      "id": "check-us-11612594",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11612594 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11612594 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-7"
+      ]
+    },
+    {
+      "id": "check-us-11633387",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11633387 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11633387 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-8"
+      ]
+    },
+    {
+      "id": "check-us-11786516",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11786516 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11786516 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-9"
+      ]
+    },
+    {
+      "id": "check-us-12042488",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 12042488 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 12042488 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-10"
+      ]
+    },
+    {
+      "id": "check-us-12042489",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 12042489 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 12042489 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-11"
+      ]
+    },
+    {
+      "id": "check-us-12109205",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 12109205 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 12109205 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-12"
+      ]
+    },
+    {
+      "id": "check-us-12280042",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 12280042 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 12280042 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-13"
+      ]
+    },
+    {
+      "id": "check-us-11903938",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11903938 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11903938 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-14"
+      ]
+    },
+    {
+      "id": "check-us-11826360",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11826360 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11826360 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-15"
+      ]
+    },
+    {
+      "id": "check-us-11622962",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11622962 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11622962 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-16"
+      ]
+    },
+    {
+      "id": "check-us-10383864",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10383864 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10383864 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-17"
+      ]
+    },
+    {
+      "id": "check-us-10406143",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10406143 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10406143 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-18"
+      ]
+    },
+    {
+      "id": "check-us-11241422",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11241422 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11241422 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-19"
+      ]
+    },
+    {
+      "id": "check-us-9000011",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 9000011 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 9000011 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-20"
+      ]
+    },
+    {
+      "id": "check-us-9480682",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 9480682 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 9480682 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-21"
+      ]
+    },
+    {
+      "id": "check-us-9987263",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 9987263 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 9987263 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-22"
+      ]
+    },
+    {
+      "id": "check-us-10525045",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10525045 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10525045 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-23"
+      ]
+    },
+    {
+      "id": "check-us-10925866",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10925866 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10925866 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-24"
+      ]
+    },
+    {
+      "id": "check-us-11033538",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11033538 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11033538 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-25"
+      ]
+    },
+    {
+      "id": "check-us-12599595",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 12599595 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 12599595 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-26"
+      ]
+    },
+    {
+      "id": "check-us-9999618",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 9999618 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 9999618 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-27",
+        "patent-28"
+      ]
+    },
+    {
+      "id": "check-us-10813921",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10813921 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10813921 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-29"
+      ]
+    },
+    {
+      "id": "check-us-8592362",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 8592362 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 8592362 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-30"
+      ]
+    },
+    {
+      "id": "check-us-9095584",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 9095584 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 9095584 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-31"
+      ]
+    },
+    {
+      "id": "check-us-RE48608",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US RE48608 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US RE48608 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-32"
+      ]
+    },
+    {
+      "id": "check-us-12599594",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 12599594 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 12599594 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-33"
+      ]
+    },
+    {
+      "id": "check-us-10076514",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10076514 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10076514 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-34"
+      ]
+    },
+    {
+      "id": "check-us-11234972",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11234972 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11234972 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-35"
+      ]
+    },
+    {
+      "id": "check-us-10251873",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10251873 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10251873 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-36"
+      ]
+    },
+    {
+      "id": "check-us-10471053",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10471053 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10471053 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-37"
+      ]
+    },
+    {
+      "id": "check-us-10792278",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10792278 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10792278 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-38"
+      ]
+    },
+    {
+      "id": "check-us-10792279",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10792279 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10792279 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-39"
+      ]
+    },
+    {
+      "id": "check-us-10799491",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10799491 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10799491 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-40"
+      ]
+    },
+    {
+      "id": "check-us-10806727",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10806727 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10806727 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-41"
+      ]
+    },
+    {
+      "id": "check-us-10849889",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10849889 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10849889 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-42"
+      ]
+    },
+    {
+      "id": "check-us-10849890",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10849890 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10849890 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-43"
+      ]
+    },
+    {
+      "id": "check-us-10857141",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10857141 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10857141 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-44"
+      ]
+    },
+    {
+      "id": "check-us-10857142",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10857142 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10857142 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-45"
+      ]
+    },
+    {
+      "id": "check-us-10874655",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10874655 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10874655 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-46"
+      ]
+    },
+    {
+      "id": "check-us-10874656",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10874656 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10874656 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-47"
+      ]
+    },
+    {
+      "id": "check-us-10874657",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 10874657 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 10874657 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-48"
+      ]
+    },
+    {
+      "id": "check-us-11278536",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11278536 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11278536 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-49"
+      ]
+    },
+    {
+      "id": "check-us-11278537",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11278537 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11278537 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-50"
+      ]
+    },
+    {
+      "id": "check-us-11278538",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11278538 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11278538 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-51"
+      ]
+    },
+    {
+      "id": "check-us-11278539",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11278539 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11278539 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-52"
+      ]
+    },
+    {
+      "id": "check-us-11278540",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11278540 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11278540 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-53"
+      ]
+    },
+    {
+      "id": "check-us-11357761",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11357761 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11357761 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-54"
+      ]
+    },
+    {
+      "id": "check-us-11357762",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11357762 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11357762 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-55"
+      ]
+    },
+    {
+      "id": "check-us-11357763",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11357763 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11357763 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-56"
+      ]
+    },
+    {
+      "id": "check-us-11389436",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11389436 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11389436 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-57"
+      ]
+    },
+    {
+      "id": "check-us-11389437",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11389437 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11389437 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-58"
+      ]
+    },
+    {
+      "id": "check-us-11458128",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11458128 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11458128 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-59"
+      ]
+    },
+    {
+      "id": "check-us-11666564",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11666564 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11666564 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-60"
+      ]
+    },
+    {
+      "id": "check-us-11813255",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11813255 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11813255 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-61"
+      ]
+    },
+    {
+      "id": "check-us-12042490",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 12042490 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 12042490 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-62"
+      ]
+    },
+    {
+      "id": "check-us-11357784",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11357784 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11357784 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-63"
+      ]
+    },
+    {
+      "id": "check-us-11642334",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11642334 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11642334 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-64"
+      ]
+    },
+    {
+      "id": "check-us-11633388",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11633388 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11633388 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-65"
+      ]
+    },
+    {
+      "id": "check-us-12594268",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 12594268 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 12594268 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-66"
+      ]
+    },
+    {
+      "id": "check-us-11833164",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 11833164 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 11833164 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-67"
+      ]
+    },
+    {
+      "id": "th-dip",
+      "text_th": "Thai DIP · ค้นเลข WO และเลขคำขอที่ใช้อ้างสิทธิครั้งแรก แล้วตรวจเลขคำขอในไทย ข้อถือสิทธิ และสถานะที่กรมทรัพย์สินทางปัญญา (ยังไม่ทราบสถานะ)",
+      "text_en": "Thai DIP · Find WO and priority numbers, then verify Thai application IDs, claims and legal status with DIP. Status unknown.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "agency": "Thai DIP",
+      "lookup_url": "https://patentsearch.ipthailand.go.th/",
+      "state": "unknown",
+      "search_terms": [
+        "MIGALASTAT",
+        "US 10076514",
+        "US 10251873",
+        "US 10383864",
+        "US 10406143",
+        "US 10471053",
+        "US 10525045",
+        "US 10792278",
+        "US 10792279",
+        "US 10799491",
+        "US 10806727",
+        "US 10813921",
+        "US 10849889",
+        "US 10849890",
+        "US 10857141",
+        "US 10857142",
+        "US 10874655",
+        "US 10874656",
+        "US 10874657",
+        "US 10925866",
+        "US 11033538",
+        "US 11234972",
+        "US 11241422",
+        "US 11278536",
+        "US 11278537",
+        "US 11278538",
+        "US 11278539",
+        "US 11278540",
+        "US 11304940",
+        "US 11357761",
+        "US 11357762",
+        "US 11357763",
+        "US 11357764",
+        "US 11357765",
+        "US 11357784",
+        "US 11376244",
+        "US 11389436",
+        "US 11389437",
+        "US 11426396",
+        "US 11458128",
+        "US 11612593",
+        "US 11612594",
+        "US 11622962",
+        "US 11633387",
+        "US 11633388",
+        "US 11642334",
+        "US 11666564",
+        "US 11786516",
+        "US 11813255",
+        "US 11826360",
+        "US 11833164",
+        "US 11903938",
+        "US 12042488",
+        "US 12042489",
+        "US 12042490",
+        "US 12109205",
+        "US 12280042",
+        "US 12594268",
+        "US 12599594",
+        "US 12599595",
+        "US 8592362",
+        "US 9000011",
+        "US 9095584",
+        "US 9480682",
+        "US 9987263",
+        "US 9999618",
+        "US RE48608"
+      ],
+      "wo_numbers": [],
+      "priority_numbers": []
+    },
+    {
+      "id": "asean-ip",
+      "text_th": "ASEAN IP Register and national IP offices · ใช้เลข WO และเลขคำขอที่ใช้อ้างสิทธิครั้งแรกตรวจตระกูลสิทธิบัตรและสถานะกับสำนักงานของประเทศเป้าหมาย (ยังไม่ทราบสถานะ)",
+      "text_en": "ASEAN IP Register and national IP offices · Use WO and priority numbers to verify national family members and legal status in each target country. Status unknown.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "agency": "ASEAN IP Register and national IP offices",
+      "lookup_url": "https://ip-register.aseanip.org/",
+      "state": "unknown",
+      "search_terms": [
+        "MIGALASTAT",
+        "US 10076514",
+        "US 10251873",
+        "US 10383864",
+        "US 10406143",
+        "US 10471053",
+        "US 10525045",
+        "US 10792278",
+        "US 10792279",
+        "US 10799491",
+        "US 10806727",
+        "US 10813921",
+        "US 10849889",
+        "US 10849890",
+        "US 10857141",
+        "US 10857142",
+        "US 10874655",
+        "US 10874656",
+        "US 10874657",
+        "US 10925866",
+        "US 11033538",
+        "US 11234972",
+        "US 11241422",
+        "US 11278536",
+        "US 11278537",
+        "US 11278538",
+        "US 11278539",
+        "US 11278540",
+        "US 11304940",
+        "US 11357761",
+        "US 11357762",
+        "US 11357763",
+        "US 11357764",
+        "US 11357765",
+        "US 11357784",
+        "US 11376244",
+        "US 11389436",
+        "US 11389437",
+        "US 11426396",
+        "US 11458128",
+        "US 11612593",
+        "US 11612594",
+        "US 11622962",
+        "US 11633387",
+        "US 11633388",
+        "US 11642334",
+        "US 11666564",
+        "US 11786516",
+        "US 11813255",
+        "US 11826360",
+        "US 11833164",
+        "US 11903938",
+        "US 12042488",
+        "US 12042489",
+        "US 12042490",
+        "US 12109205",
+        "US 12280042",
+        "US 12594268",
+        "US 12599594",
+        "US 12599595",
+        "US 8592362",
+        "US 9000011",
+        "US 9095584",
+        "US 9480682",
+        "US 9987263",
+        "US 9999618",
+        "US RE48608"
+      ],
+      "wo_numbers": [],
+      "priority_numbers": []
+    },
+    {
+      "id": "th-fda",
+      "text_th": "Thai FDA NDI · ค้นตัวยาสำคัญและรูปแบบยาในทะเบียนของ อย. ไทย แล้วตรวจเลขทะเบียนและสถานะ (ยังไม่ทราบสถานะ)",
+      "text_en": "Thai FDA NDI · Search by active ingredient and dosage form, then verify registration IDs and status with Thai FDA. Status unknown.",
+      "owner": "R&D",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "agency": "Thai FDA NDI",
+      "lookup_url": "https://ndi.fda.moph.go.th/drug_info",
+      "state": "unknown",
+      "search_terms": [
+        "MIGALASTAT"
+      ],
+      "wo_numbers": [],
+      "priority_numbers": []
+    },
+    {
+      "id": "asean-drug",
+      "text_th": "Target national medicines regulators · ระบุประเทศเป้าหมายและตรวจเลขทะเบียนยาและสถานะกับหน่วยงานกำกับดูแลของแต่ละประเทศ (ยังไม่ทราบสถานะ)",
+      "text_en": "Target national medicines regulators · Specify target markets and verify drug registration IDs and status with each national regulator. Status unknown.",
+      "owner": "R&D",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "agency": "Target national medicines regulators",
+      "lookup_url": null,
+      "state": "unknown",
+      "search_terms": [
+        "MIGALASTAT"
+      ],
+      "wo_numbers": [],
+      "priority_numbers": []
+    },
+    {
+      "id": "review-spec",
+      "text_th": "ระบุรูปแบบยา ความแรง ข้อบ่งใช้ และวันเปิดตัวเป้าหมาย",
+      "text_en": "Specify dosage form, strength, indication and target launch date.",
+      "owner": "R&D",
+      "source_ids": [
+        "tracka-scope"
+      ]
+    }
+  ]
+}
