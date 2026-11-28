@@ -245,6 +245,41 @@ class ReadoutTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "ineligible"):
             prepare_publication(later, self.root / "no-second-bundle")
 
+    def test_replay_report_attributes_revised_estimates_to_the_correct_edition(self):
+        extra = tuple(approval(i, "20271126", app=f"ANDA0001{i:02d}") for i in range(12, 20))
+        for horizon, maturity, step, recomputed, retained in (
+                (12, H12, "H3", "-3.70", "+33.33"),
+                (24, H24, "H1", "+2.63", "+33.33")):
+            with self.subTest(horizon=horizon):
+                self.capture(f"original-{horizon}", horizon, maturity)
+                first, _ = self.archive(horizon, maturity)
+                day = maturity + timedelta(days=2)
+                revised_approvals = extra if horizon == 12 else extra[:-1]
+                edition = self.capture(f"revised-{horizon}", horizon, day,
+                                       sources(day, extra=revised_approvals), publish=False)
+                snapshot, _ = tracka_capture.restore(self.scope(horizon), edition, self.root / f"snapshot-{horizon}")
+
+                status, run, result = self.readout(f"revised-run-{horizon}", horizon, day, snapshot=snapshot)
+                self.assertEqual((status, result["family_status"]), ("SCORED", "REPLAY"))
+                first_result = load(first / RESULTS)
+                self.assertEqual(f"{100 * first_result['hypotheses'][step]['estimate']:+.2f}", retained)
+                self.assertEqual(f"{100 * result['hypotheses'][step]['estimate']:+.2f}", recomputed)
+                if horizon == 24:
+                    self.assertEqual(result["hypotheses"]["H3"]["estimate"], first_result["hypotheses"]["H3"]["estimate"])
+
+                report_path = run / "REPORT.md"
+                report = report_path.read_text(encoding="utf-8")
+                context, _, table = report.partition("| Step | Contrast |")
+                self.assertIn("Decision table, current recomputation (not used for inference)", context)
+                role = "first published 12-month panel" if horizon == 12 else "first published 24-month family"
+                release_url = f"https://github.com/{REPO}/releases/tag/{self.scope(horizon, 'result').tag}"
+                self.assertIn(f"H3 estimate from the [{role}]({release_url})", context)
+                self.assertIn("+33.33 pp (95% interval [+20.00, +57.14] pp)", context)
+                self.assertIn(f"{step} differs in the current recomputation ({recomputed} pp) "
+                              f"from the first publication ({retained} pp).", context)
+                self.assertIn(f"| {step} | M3-B1 | {recomputed} |", table)
+                self.assertEqual(load(run / RECEIPT)["files_sha256"]["REPORT.md"], digest(report_path))
+
     def test_staging_the_same_capture_again_never_fetches(self):
         day = H12 + timedelta(days=2)
         area = self.root / "stage"

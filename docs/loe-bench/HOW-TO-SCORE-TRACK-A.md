@@ -26,7 +26,7 @@ LOE-Bench Track A tests whether a fixed-size review queue captures drugs that re
 
 | Status | Exit | What it means |
 | --- | ---: | --- |
-| `SCORED` | 0 | The specified horizon has a complete source panel. The family disposition appears in `family_status`. |
+| `SCORED` | 0 | The specified horizon has a complete source panel. `family_status` records publication and custody status. For inference, read `horizon_months` and each hypothesis's `reached` and `decision` fields. |
 | `RECOVERED` | 0 | `--recover` verified and saved the first publication. The retrieval is a `REPLAY` without a new calculation. |
 | `PENDING` | 0 | The UTC date precedes maturity or the release is a pending rehearsal. The command made no outcome request. Check the status line or `results.json` to distinguish this from a completed readout. |
 | `BLOCKED_SOURCE` | 3 | A required edition, partition, date or identity was missing or inconsistent. The report lists the gaps. For a canonical run, recover the first capture if it is missing. An incomplete preserved edition remains blocked. |
@@ -36,7 +36,23 @@ Each run writes into a new `12m/run-NNNN` or `24m/run-NNNN` directory. `results.
 
 The [canonical GitHub releases](https://github.com/siriponsri/patent-to-pilot/releases) hold the first attested capture and result for each horizon in the registered scope. The first 12-month result supplies the H3 panel. Formal H1–H3 decisions come from the first attested 24-month result based on its verified capture and the verified 12-month result. The archived Zenodo command `loe_bench.score_release` is a local baseline. Treat all of its results as `PROVISIONAL`, including structured decisions it prints. [Clarification for DOI readers](ZENODO-CLARIFICATION.md).
 
+This excerpt shows the custody and inference fields in a first published 12-month `results.json`. `FORMAL` identifies the verified first publication. All three hypotheses have `reached: false`, and H3 is descriptive pending the 24-month sequence.
+
+```json
+{
+  "horizon_months": 12,
+  "family_status": "FORMAL",
+  "hypotheses": {
+    "H1": {"reached": false, "decision": "PENDING"},
+    "H2": {"reached": false, "decision": "PENDING"},
+    "H3": {"reached": false, "decision": "DESCRIPTIVE_PENDING"}
+  }
+}
+```
+
 Retrieval stores the first result assets in `<horizon>m/first-published-<result SHA-256>/`. `REPLAY.md` and `replay_comparison` link to the original and report differences or explain why a comparison was unavailable. An explicit `--snapshot` is for provisional analysis or comparison only. Before first publication, unresolved continuity keeps estimates from a preserved capture or local snapshot descriptive. At 24 months this includes a missing first 12-month result. [Registration-facing clarification](TRACKA-READOUT-ADDENDUM.md).
+
+A scored replay's `REPORT.md` labels the table as a current recomputation for comparison and gives the retained H3 estimate and interval beside it with a link to the first publication. Use the replay table to inspect the effect of revised FDA data. For formal decisions, consult the first published 24-month family.
 
 A published first 24-month aggregate retains its original bytes, decisions and UTC publication date. Both `REPORT.md` and `REPLAY.md` state that it was formal as verified at publication on that date. Replay and `--recover` also repeat canonical 12-month discovery with the same witness rules used before promotion. The reports and `current_12m_witness_check` record `VERIFIED_CONSISTENT` when the result and FDA source-manifest digests match the published H3 reference, `CURRENT_DISPUTE` for disagreeing result pins or a verified result that differs from the reference, or `UNRESOLVED_CONTINUITY` when verification otherwise fails. Use the reported locators to reconcile a dispute or unresolved check with the custodian. Keep the published family intact and record the reconciliation in a later verification run. If recovery itself fails, consult the `missing` list or `REPORT.md` for the discovery reason and available result witness locators.
 
