@@ -69,3 +69,7 @@
   - L1 (an off-the-shelf 7B LLM given one-shot label-free evidence) is worse than the age clock at both horizons. This supports the claim that structured as-of evidence beats prompting, which matches the Paper 53 lesson.
   - GPU spend so far is about USD 0.53 of 20.
   - Next: the owner submits to OSF, the main planner writes PREREG_LOCK, then the C′ gate, C′ scoring and the Track A freeze before 2027-01-31.
+- **28 Nov, correction after co-planner review.**
+  - The development numbers H1 +24.1 and H3 +15.2 pp come from T1v3, before the REG fix. The frozen development results (FREEZE) are H1 +9.80 [+0.14, +19.65], H2 +5.49 [−2.00, +11.25] and H3 +13.00 [+3.27, +23.17] pp. The preregistration already uses the FREEZE values. Lesson: quote results only from the latest frozen receipt.
+  - The overnight entry overstated L1. L1 received only ingredient identity, cutoff and horizon, not the as-of evidence. The defensible claim is only that M3 beat an identity-and-date prompt. An evidence-matched prompt (ledger K24) would be needed to support a "structured evidence beats prompting" claim.
+  - The owner asked about an RL arm. The co-planner (GPT-6.2 Astra high, SciSpace) recommended NO-GO for v1 (ledger K23). The owner decision is pending, and OSF registration waits on it.
