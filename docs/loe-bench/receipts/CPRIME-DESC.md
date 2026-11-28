@@ -237,3 +237,7 @@ Counts pool registered annual cutoff rows within each horizon. The same history 
 - The aggregate audit checked the receipt links, all 29 input digests as recorded in the JSON, all 60 calibration cells, all 28 feature names in each of the six horizon/partition panels, cohort arithmetic and the absence of row keys in the JSON.
 - All 32 spot checks against [CLOSE-DISP development summaries](CLOSE-DISP.md#development-predictor-distributions) matched the published indicator counts and rounded age medians.
 - Root `py -3.12 -m pytest --tb=short -p no:cacheprovider` returned exit 1 with 2,760 passed, 50 skipped, one xfailed and the eight standing SACR r2/r3 supervisor budget failures. [SCORE baseline](SCORE.md#private-outputs-and-verification)
+
+## Planner review note (28 November 2026)
+
+Accepted. The analysis note (87ca03bb, 21:15 +07:00) precedes the results commit (79cbaa4d, 21:27 +07:00). Totals match SCORE. The `<5` and `WITHHELD` cells follow the small-cell rule fixed in the note: `WITHHELD` is complementary suppression, because the total event count is public. The units are drug-cutoff rows, not people, so this is a conservative pre-declared reporting choice rather than a privacy requirement; full counts could be released only through a dated amendment if a journal requests them. The pre-dated-NDA exclusion split and 15 of 28 C′ predictor summaries stay UNAVAILABLE because the authenticated files lack those fields. All values are post hoc descriptive and change no registered decision.
