@@ -116,3 +116,16 @@
 - **28 Nov, registration-text audit by the co-planner.** No incompatible statistical instruction; all seven linked specs match the audited LF hashes. One blocker: the registered text requires a registered-PDF digest that does not exist. Fix: OSF registration update 1 before the C′ gate (OSF-UPDATE-SHEET.md). osf_lock.py now reads the original schema response (6b0a518e…), so the lock (3f911452…) survives updates.
 - **28 Nov, OSF update 1 approved** (05:00:21 UTC, schema response 6b0a5e87…): fields 72-14 and 72-61 now carry the canonical-record lock (3f911452…) and the audited package links; this clears the blocker for the C′ gate. The agent used the older sheet, so the C9 timing edits were missing; update 2 (OSF-UPDATE-2-SHEET.md) is pending. The lock reproduces from the original response.
 - **28 Nov, C′ gate PASS** (custodian GATE, 05:12 UTC, projection sha256 18477704… kept private; no retry). Co-planner verified OSF updates 1 and 2: CLEAR, edits verbatim, lock reproduces. Scoring authorized (owner) and dispatched: SCORE (CPU) and SCORELLM (RunPod, about USD 1–3).
+- **28 Nov, C′ CONFIRMATORY RESULTS (SCORE, no deviation).** 12 m: 5,259 rows, 202 event drugs. 24 m: 4,639 rows, 368 event rows, 202 event drugs.
+  - H1 M3−B1 24 m: +20.37 pp [+14.37, +26.16], one-sided lower +14.37, PASS, and the +10 threshold is met.
+  - H2 M3−M1 24 m: +1.36 pp [−2.20, +3.01], FAIL, so the sequence stopped.
+  - H3 M3−B1 12 m: +16.69 pp [+9.98, +24.21], descriptive only. M1−B1 is +19.01 at 24 m and +17.18 at 12 m.
+  - Interpretation: the dated regulatory evidence carries the gain; the graph adds no confirmed value over the matched flat model.
+  - C3 crowding: M3 79.8
+- **28 Nov, C′ CONFIRMATORY RESULTS (SCORE, no deviation).** 12 m: 5,259 rows, 202 event drugs. 24 m: 4,639 rows, 368 event rows, 202 event drugs.
+  - H1 M3−B1 24 m: +20.37 pp [+14.37, +26.16], one-sided lower +14.37, PASS, and the +10 threshold is met.
+  - H2 M3−M1 24 m: +1.36 pp [−2.20, +3.01], FAIL, so the sequence stopped.
+  - H3 M3−B1 12 m: +16.69 pp [+9.98, +24.21], descriptive only. M1−B1 is +19.01 at 24 m and +17.18 at 12 m.
+  - Interpretation: the dated regulatory evidence carries the gain; the graph adds no confirmed value over the matched flat model.
+  - C3 crowding: M3 79.8% vs B1 49.7%, +30.11 pp [+20.16, +36.86], 92 event drugs.
+  - C4: NOT_RUN, because no pinned post-2017 SDUD outcome payload exists. Auto-clear failed again.
