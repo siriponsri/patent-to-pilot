@@ -6,7 +6,7 @@
 คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง\
 เลขที่ 1 ซอยฉลองกรุง 1 แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520
 
-Mr. Siripon Srihangpiboon\*¹ and Asst. Prof. Dr. Tuchsanai Ploysuwan²\
+Siripon Srihangpiboon\*¹ and Tuchsanai Ploysuwan²\
 School of Information Technology, King Mongkut's Institute of Technology Ladkrabang\
 1 Chalong Krung 1 Alley, Lat Krabang, Bangkok 10520
 
@@ -18,7 +18,7 @@ Market Window Dossier จัดหลักฐานตามวันที่�
 
 ## Abstract
 
-Market Window Dossier organizes dated evidence for freedom-to-operate specialists. LOE-Bench tested whether open US regulatory records improve a review queue limited to 20% of eligible drugs at each annual cutoff. The sealed historical test (C′) was scored after blinded admission under the registered OSF protocol (doi:10.17605/OSF.IO/P2SMD). At 24 months, the evidence-graph model (M3) captured 66.85% of first final generic approvals versus 46.48% for the age baseline (B1). The gain of 20.37 percentage points (95% CI 14.37 to 26.16) passed H1 and exceeded the prespecified 10-point usefulness threshold. The gain over the matched flat model (M1) was 1.36 points (−2.20 to 3.01). H2 failed, leaving the 12-month gain over B1 of 16.69 points (9.98 to 24.21) descriptive. M1 gained 19.01 points over B1 at 24 months, suggesting that dated evidence accounts for most of the gain. In an exploratory analysis, M3 captured 79.8% of events involving at least three approved applicants within 36 months, versus 49.7% for B1. The secondary auto-clear safety check failed for M3. These findings support review prioritization for US approval events. Prospective Track A remains pending.
+Market Window Dossier organizes dated evidence for freedom-to-operate specialists. LOE-Bench tests it under an assumed capacity of one review slot per five eligible drugs at each annual cutoff, with the first final US generic approval as the endpoint. The sealed historical test (C′) was scored after blinded admission under the registered OSF protocol (doi:10.17605/OSF.IO/P2SMD). At 24 months, the evidence-graph queue (M3) captured 66.85% of event rows versus 46.48% for the age baseline (B1), a gain of 20.37 percentage points (95% CI 14.37 to 26.16). H1 passed, and the whole interval exceeded the prespecified 10-point usefulness threshold. The matched flat model (M1) captured 65.49%, so the gain of M3 over M1 (1.36 points, −2.20 to 3.01) failed H2, and the 12-month gain over B1 (16.69 points, 9.98 to 24.21) is descriptive. In exploratory analyses, M3 captured 79.8% of cases reaching at least three approved applicants within 36 months, versus 49.7% for B1, and a 7B language model given the same evidence captured 12.36% of 24-month event rows. M3 failed the auto-clear safety check. The results support prioritizing US review, not the added value of graph state. Prospective Track A remains pending.
 
 **Keywords** generic drugs, market window, evidence graph, review prioritization, freedom to operate
 
@@ -28,17 +28,15 @@ Market Window Dossier organizes dated evidence for freedom-to-operate specialist
 
 ## 1. Introduction
 
-Given review capacity for one in five eligible active-moiety sets, can dated US regulatory evidence bring more impending first final generic approvals into review? LOE-Bench measures event capture, and Market Window Dossier specifies the evidence packet for specialist follow-up. We specified a 20% review budget as a design assumption.
+Given review capacity for one in five eligible active-moiety sets, can dated US regulatory evidence bring more impending first final generic approvals into review? We specified this 20% review budget as a design assumption. On the sealed historical test, the evidence-graph queue captured 66.85% of 24-month event rows, compared with 46.48% for the age baseline (+20.37 percentage points, 95% CI 14.37 to 26.16). The matched flat model captured 65.49%, which left the incremental benefit of graph state unconfirmed. LOE-Bench measures this event capture, and Market Window Dossier specifies the evidence packet for specialist follow-up.
 
 Before investing in bioequivalence or comparative trials, generic and biosimilar developers must decide which products warrant closer review. Competitor entry may shrink the commercial window before a product is ready to launch. When a case goes to a freedom-to-operate (FTO) specialist, the developer also needs to identify the product, relevant patent claims and unresolved questions.
 
 Market Window Dossier uses the proposed ingredient, formulation, jurisdiction, decision date and expected launch date to prepare a review priority, dated evidence, market scenarios and a verification checklist. Qualified specialists assess claim scope, legal status and applicability. LOE-Bench evaluates the US forecast. Thai and ASEAN sources inform the local hand-off.
 
-Competition shapes the commercial window: in FDA data, the median generic price fell to 46% of the pre-entry brand price with two marketed producers and to 21% with four [1]. Our earlier study asked whether instruction wording changed rankings within a fixed candidate pool and found near-zero effects [2]. Here we ask what a reviewer can recover when the dated evidence and the review capacity are fixed instead.
+Competition shapes the commercial window: in FDA data, the median generic price fell to 46.5% of the pre-entry brand price with two marketed producers and to 21% with four [1]. Our earlier conference paper, listed in the iSAI-NLP 2026 program, examined instruction wording within a fixed candidate pool in cross-domain patent reranking [2]. Here we ask what a reviewer can recover when the dated evidence and the review capacity are fixed instead.
 
 This paper makes three contributions. First, LOE-Bench is an as-of benchmark of US first generic approvals built only from open records, with a code-enforced test seal, a preregistered analysis plan and a prospective forecast freeze. Second, it evaluates an evidence-graph review queue at a fixed review capacity against an age baseline and a matched model without graph states. Third, Market Window Dossier links the launch-window forecast to a claim-traceable FTO hand-off designed for Thai and ASEAN developers.
-
-The authors’ earlier conference paper on cross-domain patent reranking is listed as Paper 53 in the iSAI-NLP 2026 program [2].
 
 - **RQ1 (confirmatory, specified in the preregistration protocol).** Using each model’s native scores before deferral, does M3 achieve higher recall of first final original abbreviated new drug application (ANDA) approvals at the 20% review budget? The ordered contrasts are M3 versus B1 at 24 months (H1), M3 versus M1 at 24 months (H2), and M3 versus B1 at 12 months (H3), tested at one-sided α = 0.025.
 - **RQ2 (exploratory).** Do the frozen queues identify drugs with at least three distinct approved generic applicants within 36 months? Does an FDA price-erosion factor improve forecasts of Medicaid reimbursement when applied to queued ingredients?
@@ -80,9 +78,9 @@ At the same review capacity, does adding graph state to a matched model that use
 
 Figure 1 shows the proposed workflow from product intake to the evidence hand-off. The queue ranks active-moiety sets. The dossier records the formulation and jurisdiction so specialists can judge whether the ingredient-level evidence applies to the product. Demand and price outputs are scenarios, and missing or inconsistent records become checklist items for review.
 
-<!-- Figure 1 layout marker. See FIGURE-TABLE-PLAN.md for the workflow artwork and status-label updates. -->
+![Figure 1](figures/fig1_flow_en.png)
 
-*Figure 1. Proposed dossier workflow for specialist review. Development evaluation and historical C′ scoring are complete. The prospective Track A prediction freeze and the dossier’s claim-level audit are pending. Demand and price are scenario outputs.*
+*Figure 1. Proposed dossier workflow for specialist review. Development evaluation and historical C′ scoring are complete, and H1 passed on C′. The prospective Track A prediction freeze is due by 31 January 2027. Demand and price are scenario outputs.*
 
 Each material claim carries a source identifier, version, content hash, exact locator and availability basis in the proposed design. The dossier labels observations, estimates and scenario assumptions, and sends unknowns for manual verification. The audit checks source integrity and whether the cited passage supports the claim.
 
@@ -94,16 +92,9 @@ LOE-Bench treats each active-moiety set at an annual cutoff as an observation. A
 
 Drugs@FDA supplies approvals and dated administrative records. The Global Substance Registration System (GSRS) supports identity resolution. The frozen linkage uses substance identifiers and aliases, with flagged normalized-name fallback when needed. A record without a usable date or link cannot establish an eligible event. Missing predictors on eligible rows are retained. For patent, exclusivity and product breadth, C′ requires the newest eligible historical Orange Book ZIP whose content date falls within the inclusive prior six calendar months, with independent evidence of availability by the cutoff and a matching file hash. Eligible editions can report future expiry dates. Later products and patent submissions are filtered out.
 
-Challenge evidence uses fresh, availability-proven FDA Paragraph IV editions and qualifying court witnesses. A matched undated submission without another timely witness is unknown. A timely court witness can establish an observed challenge. Verified non-observation in a fresh list is an operational negative. If no qualifying edition or positive witness is available, the challenge state is unknown. For expanded court matches, the filing date is an availability proxy and the patent association may be incompletely verified. Later dispositions, approvals and marketing fields are excluded from the predictors. Table 1 gives the cutoff schedules [30].
+Challenge evidence uses fresh, availability-proven FDA Paragraph IV editions and qualifying court witnesses. A matched undated submission without another timely witness is unknown. A timely court witness can establish an observed challenge. Verified non-observation in a fresh list is an operational negative. If no qualifying edition or positive witness is available, the challenge state is unknown. For expanded court matches, the filing date is an availability proxy and the patent association may be incompletely verified. Later dispositions, approvals and marketing fields are excluded from the predictors.
 
-*Table 1. Annual cutoff schedule by horizon.*
-
-| Horizon | Training cutoff year | Development validation years | Sealed test (C′) cutoff years |
-| --- | ---: | --- | --- |
-| 12 months | 2010 | 2012–2015 | 2017–2025 |
-| 24 months | 2010 | 2013–2014 | 2017–2024 |
-
-Cutoffs are on 1 January. The training label availability boundary is the day before development validation starts. The preceding outcome window must end before the next partition begins. The observation end is 27 November 2026 for the scheduled C′ windows. An earlier 36-month evaluation exposed aggregate results from three earlier baseline models on drug histories and periods overlapping C′. The protocol also documents inventory and preflight access [30].
+Both horizons train on the 2010 cutoff. Development validation uses the 2012–2015 cutoffs at 12 months and 2013–2014 at 24 months. The sealed test (C′) uses the 2017–2025 cutoffs at 12 months and 2017–2024 at 24 months [30]. Cutoffs are on 1 January. The training label availability boundary is the day before development validation starts. The preceding outcome window must end before the next partition begins. The observation end is 27 November 2026 for the scheduled C′ windows. Before registration, some C′ information was exposed. An earlier 36-month evaluation reported aggregate results for three baseline models (B0–B2) on drug histories and periods overlapping C′. Programmatic preflight checks read mixed-period data, and the power simulations used candidate counts. The record reports no per-row outcome inspection and no test-based method selection [30].
 
 ### 3.3 Models, queues and inference
 
@@ -115,13 +106,13 @@ Inference uses 2,000 paired whole-drug bootstrap draws per horizon. Fitted model
 
 ### 3.4 Registration, blinded admission and prospective follow-up
 
-The analysis plan was registered publicly on the Open Science Framework (OSF) on 28 November 2026, before any sealed scoring [30]. The sealed release requires the first author's authorization, the hash of the canonical OSF registration record, the pinned code and source identities and a PASS from the blinded gate. The gate first verifies the required edition coverage for every scheduled cutoff. It then checks whether at least 50 distinct eligible event drugs meet the 24-month rule. It releases a verdict while withholding counts and outcomes. Only a technical failure permits one documented retry on identical pinned inputs. A final gate failure yields feasibility evidence only and leaves H1–H3 untested on C′. The scoring receipt records approved OSF updates 1 and 2, the blinded gate verdict and the authorized C′ run on 28 November 2026. Track A follows a separate schedule.
+The analysis plan was registered publicly on the Open Science Framework (OSF) on 28 November 2026, before any sealed scoring [30]. The sealed release requires the first author's authorization, the hash of the canonical OSF registration record, the pinned code and source identities and a PASS from the blinded gate. The gate first verifies the required edition coverage for every scheduled cutoff. It then checks whether at least 50 distinct eligible event drugs meet the 24-month rule. It releases a verdict while withholding counts and outcomes. Only a technical failure permits one documented retry on identical pinned inputs. A final gate failure yields feasibility evidence only and leaves H1–H3 untested on C′. Three registration updates were approved on 28 November 2026. Update 1 replaced the digest of a registered PDF, which OSF did not produce, with the hash of the original canonical public record, and linked the supporting package after ten intended attachments were omitted at submission. Update 2 widened the window for exploratory C9 training from January to December or January. Both preceded the blinded gate at 05:12 UTC, and C′ was scored under them. Update 3, approved at 09:09 UTC after scoring, removed the calendar restriction while keeping training after the gate and before the core Track A freeze. No update changed the inferential rules for C′.
 
 Track A follows its own schedule and retrains the core fitted arms using the same recipe on eligible windows matured by the prospective origin of 27 November 2026. The core includes B1, M1, M3 and the descriptive expiry-only comparator B3. Eligible exploratory arms may be included under their own admission rules. The roster, sources, models, code, policies and predictions must be hashed, tagged in Git and externally timestamped in OSF before 31 January 2027 at 23:59 UTC and before any post-origin outcome fetch. If that condition fails, subsequent analyses are exploratory. The prospective windows mature on 27 November 2027 and 27 November 2028, respectively. Track A is confirmatory if C′ did not run as a confirmatory analysis, and a replication otherwise. Formal H3 still depends on both preceding steps [30].
 
 ### 3.5 Exploratory analyses
 
-For the approved applicant endpoint, the frozen 24-month queues are evaluated at the mature 2013 cutoff against the longer 36-month outcome. The outcome requires at least three distinct legal applicants with final original ANDA approvals. Strengths and repeat approvals are collapsed, and applicant identity uses the first eligible historical Orange Book listing through 12 months after approval, with documented overrides. The current sponsor name supplies a sensitivity analysis. An unresolved applicant remains unknown. Queue membership and tie weights come from the original roster.
+For the approved applicant endpoint, the frozen 24-month queues are evaluated against the longer 36-month outcome at the mature 2013 development cutoff and at the mature 2017–2023 C′ cutoffs. The outcome requires at least three distinct legal applicants with final original ANDA approvals. Strengths and repeat approvals are collapsed, and applicant identity uses the first eligible historical Orange Book listing through 12 months after approval, with documented overrides. The current sponsor name supplies a sensitivity analysis. An unresolved applicant remains unknown. Queue membership and tie weights come from the original roster.
 
 The Medicaid reimbursement analysis forecasts next-year prescription counts and annual gross reimbursement, with a separate fourth-quarter reimbursement-per-prescription endpoint. It uses the mapped subset of national State Drug Utilization Data from the Centers for Medicare & Medicaid Services. Carry-forward is the primary baseline and drift is secondary. On exact cutoff and identity matches, the adjusted arms use the frozen 12-month queues and a shared deterministic boundary order. Each queued ingredient's carry-forward reimbursement forecast is multiplied by 0.465, the FDA median generic-to-brand average manufacturer price ratio under a two-producer scenario. Unqueued ingredients retain carry-forward. No historical Medicaid release vintage was verified for the evaluated origins, and the FDA factor was published after those origins. The analysis is retrospective and vintage-uncontrolled. A separate, assumption-based price scenario uses the FDA ratios with a stated marketed-producer count and price basis.
 
@@ -131,13 +122,16 @@ L1 and L1e use the same pinned Qwen2.5-7B-Instruct checkpoint and decoder. L1 re
 
 ### 4.1 RQ1: First-approval review queues
 
-**Development.** The frozen 24-month panel had 1,083 rows, 91 event rows from 67 event drugs, and 215 slots. The 12-month panel had 2,161 rows, 90 event rows from 90 event drugs, and 430 slots. All development resampling draws were defined.
-
-At 24 months, B1, M1 and M3 recalled 39.65%, 43.96% and 49.45%, respectively. M3 gained +9.80 [0.14, 19.65] percentage points over B1 and +5.49 [−2.00, 11.25] over M1. Both estimates fell below the prespecified +10-point practical-usefulness threshold. At 12 months, the +13.00 [3.27, 23.17] point gain over B1 (48.11% recall) exceeded the threshold on the point estimate. M1 matched M3’s 61.11% recall. H2’s interval includes zero, and undated challenge coding on the training set affected the estimate. The development auto-clear diagnostic failed for every estimable arm and horizon, so cases outside the queue remain in routine review.
-
 **Sealed historical test (C′).** The blinded admission gate returned PASS. The first author authorized scoring, which ran on 28 November 2026 under OSF registration 10.17605/OSF.IO/P2SMD and its approved updates 1 and 2, with no deviation from the registered inference procedure. The 24-month panel covered annual cutoffs in 2017–2024 and had 4,639 rows, including 368 event rows from 202 distinct event drugs. The 12-month panel covered 2017–2025 and had 5,259 rows, including 202 event rows from 202 distinct event drugs. [GATE](../../../loe-bench/receipts/GATE.md) · [SCORE](../../../loe-bench/receipts/SCORE.md#primary-family)
 
-At 24 months, B1, M1 and M3 recalled 46.48%, 65.49% and 66.85%, respectively. At 12 months, the corresponding recalls were 50.64%, 67.82% and 67.33%. Recall uses pooled event rows as its denominator. Table 2 gives the registered contrasts. All primary bootstrap draws were defined. [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses)
+Table 1 gives the recall of every arm on C′. Recall pools event rows across annual cutoffs, with fractional credit for boundary ties. The language-model arms are exploratory (§4.3). Table 2 gives the registered contrasts. All primary bootstrap draws were defined. [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses) · [SCORELLM](../../../loe-bench/receipts/SCORELLM.md)
+
+*Table 1. Recall at the 20% review budget on the sealed historical test (C′).*
+
+| Horizon | Eligible rows | Event rows | Slots | B1 age | M1 flat | M3 graph | L1 identity prompt | L1e evidence prompt |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 24 months | 4,639 | 368 | 924 | 46.48% | 65.49% | 66.85% | 26.14% | 12.36% |
+| 12 months | 5,259 | 202 | 1,048 | 50.64% | 67.82% | 67.33% | 26.58% | 14.50% |
 
 *Table 2. C′ paired recall differences at the 20% review budget and fixed-sequence decisions.*
 
@@ -147,13 +141,17 @@ At 24 months, B1, M1 and M3 recalled 46.48%, 65.49% and 66.85%, respectively. At
 | H2 | 24 months | M3 − M1 | +1.36 | [−2.20, +3.01] | −2.20 | FAIL | No |
 | H3 | 12 months | M3 − B1 | +16.69 | [+9.98, +24.21] | +9.98 | Not reached, descriptive | Yes |
 
-H1 passed the superiority test and exceeded the practical-usefulness threshold. H2 failed and stopped the sequence. H3’s point estimate reached +10 points, and both its interval and the lower quantile shown in the table are descriptive. The secondary M1 − B1 differences were +19.01 points at 24 months and +17.18 at 12 months. The secondary auto-clear diagnostic failed for M3 at both horizons, and cases outside the priority queue remain in routine review. [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses)
+H1 passed the superiority test against zero, and its entire interval also exceeded the separate +10-point usefulness threshold. H2 failed and stopped the sequence. H3 is descriptive because H2 stopped testing; its point estimate reached +10 points. The secondary M1 − B1 differences were +19.01 [+13.34, +25.62] points at 24 months and +17.18 [+9.88, +24.06] at 12 months. They show how much of the gain the flat model achieved, without isolating a causal contribution of dated evidence. The secondary auto-clear diagnostic failed for M3 at both horizons, and cases outside the priority queue remain in routine review. [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses)
 
-<!-- Figure 2 layout marker. See FIGURE-TABLE-PLAN.md for the paired-effect data. -->
+![Figure 2](figures/fig2_effects_en.png)
 
-*Figure 2. Paired differences in first-approval recall at the 20% review budget on development data and C′. Points show estimates and bars show two-sided 95% whole-drug bootstrap intervals. Vertical lines mark zero and +10 percentage points. Labels give distinct event-drug counts. The C′ H3 interval is descriptive.*
+*Figure 2. Paired differences in first-approval recall at the 20% review budget on development data and C′. Points show estimates and bars show two-sided 95% whole-drug bootstrap intervals. Vertical lines mark zero and +10 percentage points. Development had 67 distinct event drugs at 24 months and 90 at 12 months; C′ had 202 at each horizon. The C′ H3 interval is descriptive.*
 
-[RESULT PENDING: Track A timestamped prediction freeze and outcome readouts]
+**Development.** The frozen 24-month panel had 1,083 rows, 91 event rows from 67 event drugs, and 215 slots. The 12-month panel had 2,161 rows, 90 event rows from 90 event drugs, and 430 slots. All development resampling draws were defined.
+
+At 24 months, B1, M1 and M3 recalled 39.65%, 43.96% and 49.45%, respectively. M3 gained +9.80 [0.14, 19.65] percentage points over B1 and +5.49 [−2.00, 11.25] over M1. Both estimates fell below the prespecified +10-point practical-usefulness threshold. At 12 months, the +13.00 [3.27, 23.17] point gain over B1 (48.11% recall) exceeded the threshold on the point estimate. M1 matched M3’s 61.11% recall. H2’s interval includes zero, and undated challenge coding on the training set affected the estimate. The development auto-clear diagnostic failed for every estimable arm and horizon, so cases outside the queue remain in routine review.
+
+Track A predictions had not been frozen at the time of writing. The freeze is due before 31 January 2027 at 23:59 UTC, and the outcome windows mature in November 2027 and November 2028.
 
 ### 4.2 RQ2: Approved applicant counts and Medicaid reimbursement
 
@@ -173,11 +171,11 @@ Applying the 0.465 factor increased mean absolute error (MAE) on both reimbursem
 
 On the same queue-linked subset, drift reduced MAE for both reimbursement endpoints. Gross reimbursement per prescription rose for queued ingredients in the observed subset, and shrinking the carried-forward forecast worsened underprediction. These descriptive contrasts have no multiplicity adjustment. Payment totals are gross and pre-rebate, include amounts in the source's Medicaid and non-Medicaid fields, and reflect mapped packages only. National full-ingredient totals could not be estimated.
 
-C4 on reserved origins from 2017 onward was NOT_RUN. The registered manifest has no pinned State Drug Utilization Data outcome payload for the 2018 target of the first reserved origin. The Medicaid results in Table 3 therefore describe the mapped development subset. [SCORE, C4](../../../loe-bench/receipts/SCORE.md#c4--medicaid-demand-and-reimbursement)
+C4 on reserved origins from 2017 onward was not run. The registered manifest has no pinned State Drug Utilization Data outcome payload for the 2018 target of the first reserved origin. The Medicaid results in Table 3 therefore describe the mapped development subset. [SCORE, C4](../../../loe-bench/receipts/SCORE.md#c4--medicaid-demand-and-reimbursement)
 
 ### 4.3 RQ3: Source trace and evidence-matched language model
 
-The Thai source inventory supports partial demonstrations. The dossier routes unresolved fields to the specialist checklist. [RESULT PENDING: dossier claim-level traceability audit]
+The demonstration build produced 32 development dossiers. Its automated audit traced all 1,789 material claims to a cited source record, 1,757 of them with a content hash, and found no claim dated after its dossier's as-of date. This audit checks source integrity. Whether each cited passage semantically supports its claim still requires a reviewer-level audit. For six demonstration cases, documentary support was found for three of five attempted patent-restriction labels. Patent family traces were found for 17 of 17 key US grants, but Thai patent status and Thai FDA registration were verified for none of the six cases, because four source routes blocked access or automation. The dossier therefore shows Thai status as unknown and routes it to the specialist checklist.
 
 The exploratory L1e run completed the full matched development roster. Table 4 reports the evidence-matched language-model comparison. Grouped average precision (AP) treats equal scores as a group. The event counts for both horizons refer to the development panels in §4.1. Differences use paired whole-drug bootstrap intervals without multiplicity adjustment. The recall gap was negative relative to both L1 and M3 at each horizon.
 
@@ -196,25 +194,27 @@ The exploratory L1e run completed the full matched development roster. Table 4 r
 
 Against M3, L1e recall was lower by 36.87 percentage points at 12 months (L1e − M3, 95% CI [−47.40, −23.92]) and 30.37 at 24 months [−43.08, −16.44]. Against L1, the differences were −10.68 [−17.96, −3.63] and −9.51 [−16.26, −2.43], respectively. L1e versus M3 compares different modelling approaches and evidence representations. L1e versus L1 changes the evidence and instructions together. The results apply to the tested implementations.
 
-[RESULT PENDING: C′ L1 and L1e exploratory results (SCORELLM)]
+On C′, both language-model arms produced 9,898 schema-valid forecasts, and their recall is shown in Table 1. At 24 months, L1e − M3 was −54.48 percentage points [−61.18, −47.61] and L1e − L1 was −13.78 [−17.71, −10.32]. At 12 months, the differences were −52.83 [−59.34, −45.19] and −12.08 [−16.41, −7.45]. These findings apply to one frozen Qwen2.5-7B-Instruct checkpoint, one decoder and one pair of prompts. L1e changed both the evidence fields and their instructions, and the model's pretraining exposure to the historical outcomes is unknown.
 
-The optional prospective comparison uses Qwen2.5-1.5B-Instruct for GRPO and SFT. Training and outcomes are NOT_RUN.
+The optional prospective comparison uses Qwen2.5-1.5B-Instruct for GRPO and SFT. Its training was in progress at the time of writing, and its outcomes await Track A.
 
 ## 5. Conclusion
 
-On the sealed historical test, dated open US regulatory evidence substantially improved review prioritization. The evidence-graph queue captured 20.37 percentage points more first final generic approvals than the age baseline at 24 months, exceeding the prespecified +10-point threshold (H1). The matched flat model gained 19.01 points over the age baseline, suggesting that the dated evidence accounts for most of the gain. H2 left the graph’s incremental value over the matched model unconfirmed. The exploratory applicant-count analysis also favoured M3. The mapped development Medicaid results support keeping the price factor as a scenario assumption. C′ language-model results are pending. Market Window Dossier specifies a source trail and routes unresolved items for specialist review. The claim-level audit is pending.
+On the sealed historical test, dated open US regulatory evidence substantially improved review prioritization. The evidence-graph queue captured 20.37 percentage points more first final generic approvals than the age baseline at 24 months, exceeding the prespecified +10-point threshold (H1). The matched flat model gained 19.01 points over the age baseline, and H2 left the graph’s incremental value over that model unconfirmed. The exploratory applicant-count analysis also favoured M3. The mapped development Medicaid results support keeping the price factor as a scenario assumption. A 7B language model given the same evidence ranked far below both fitted models. Market Window Dossier traces every material claim to a dated source and routes unresolved items for specialist review.
 
 Several limits affect interpretation. The US cohort is restricted to eligible new molecular entity histories and the endpoint is final regulatory approval. Historical editions can miss prior changes, the identity crosswalk partly relies on later records, and some challenge witnesses have uncertain historical availability. The number of independent event drugs limits precision for small effects. C3 measures regulatory crowding through linked approvals. Actual launch and market share require commercial records. The reimbursement analysis uses retrospectively mapped packages without verified historical release vintages. The language-model comparison is limited to a single checkpoint and prompting configuration and leaves pretraining exposure unresolved.
 
-Track A is the prospective replication. Its predictions still need to be timestamped before outcome access, with scoring under the fixed protocol as each window matures. The dossier needs a claim-by-claim audit of the evidence actually shown, with Thai and ASEAN gaps logged for local verification. Future studies should use marketing records for commercial launch, Thai procurement and utilization records for Thai demand, and the completed workflow for reviewer time savings. Product-specific FTO conclusions require a qualified assessment of claims and legal status for the actual formulation and jurisdiction.
+Track A is the prospective replication. Its predictions still need to be timestamped before outcome access, with scoring under the fixed protocol as each window matures. The dossier needs a reviewer-level audit of whether each cited passage supports its claim, with Thai and ASEAN gaps logged for local verification. Future studies should use marketing records for commercial launch, Thai procurement and utilization records for Thai demand, and the completed workflow for reviewer time savings. Product-specific FTO conclusions require a qualified assessment of claims and legal status for the actual formulation and jurisdiction.
 
 Data and code availability. Code, frozen configurations, task receipts and the preregistration are available in the project repository [31] and the OSF registration [30]. The repository includes aggregate C′ results. Row-level test labels remain access-restricted.
+
+Acknowledgment. The authors used AI assistants (Anthropic Claude, OpenAI GPT and SciSpace) for planning, code, drafting, figures and literature search. The authors reviewed all content and take full responsibility for it.
 
 ## References
 
 [1] R. Conrad and R. Lutter, “Generic competition and drug prices: New evidence linking greater generic competition and lower generic drug prices,” US FDA, 2019. [Report](https://www.fda.gov/media/133509/download).
 
-[2] S. Srihangpiboon and T. Ploysuwan, “Diagnosing near-zero instruction effects in cross-domain patent reranking,” conference paper, iSAI-NLP, paper 53, 2026. [Program](https://isai-nlp2026.aiat.or.th/program).
+[2] S. Srihangpiboon and T. Ploysuwan, “Diagnosing near-zero instruction effects in cross-domain patent reranking,” in *Proc. iSAI-NLP*, 2026, paper 53. [Online]. Available: https://isai-nlp2026.aiat.or.th/program
 
 [3] R. F. Beall, J. J. Darrow, and A. S. Kesselheim, “A method for approximating future entry of generic drugs,” *Value Health*, vol. 21, no. 12, pp. 1382–1389, Dec. 2018. [doi: 10.1016/j.jval.2018.04.1827](https://doi.org/10.1016/j.jval.2018.04.1827).
 
@@ -270,6 +270,6 @@ Data and code availability. Code, frozen configurations, task receipts and the p
 
 [29] B. Turtel, D. Franklin, K. Skotheim, L. Hewitt, and P. Schoenegger, “Outcome-based reinforcement learning to predict the future,” *Trans. Mach. Learn. Res.*, Nov. 2025. [Journal article](https://openreview.net/pdf/6854ebdc1a775820ad158c9a284cbe20d6241201.pdf).
 
-[30] S. Srihangpiboon and T. Ploysuwan, “Market Window Dossier / LOE-Bench: evidence-graph review queues for forecasting US first generic approvals from dated open regulatory records,” OSF preregistration, 28 Nov. 2026. [doi: 10.17605/OSF.IO/P2SMD](https://doi.org/10.17605/OSF.IO/P2SMD).
+[30] S. Srihangpiboon, “Market Window Dossier / LOE-Bench: evidence-graph review queues for forecasting US first generic approvals from dated open regulatory records,” OSF preregistration, 28 Nov. 2026. [doi: 10.17605/OSF.IO/P2SMD](https://doi.org/10.17605/OSF.IO/P2SMD).
 
-[31] S. Srihangpiboon, “patent-to-pilot: Market Window Dossier and LOE-Bench,” GitHub repository, 2026. Available: https://github.com/siriponsri/patent-to-pilot
+[31] S. Srihangpiboon, “patent-to-pilot: Market Window Dossier and LOE-Bench,” GitHub repository, commit 3e06537b (C′ scoring), 2026. [Online]. Available: https://github.com/siriponsri/patent-to-pilot

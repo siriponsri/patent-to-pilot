@@ -7,7 +7,7 @@
 <p align="center">
   <a href="LICENSE"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/license-Apache%202.0-1f2a44?style=flat-square"></a>
   <img alt="Python 3.12" src="https://img.shields.io/badge/python-3.12-1f2a44?style=flat-square">
-  <img alt="Status: development, test sealed" src="https://img.shields.io/badge/status-development%20%C2%B7%20test%20sealed-0f766e?style=flat-square">
+  <img alt="Status: sealed test scored, H1 passed" src="https://img.shields.io/badge/status-sealed%20test%20scored%20%C2%B7%20H1%20passed-0f766e?style=flat-square">
 </p>
 
 <p align="center">
@@ -38,7 +38,7 @@ Market Window Dossier runs **before** a bioequivalence study or comparative tria
 - What must an FTO evaluator verify before we commit?
 
 <p align="center">
-  <img src="docs/assets/market-window-flow.svg" alt="Market Window Dossier flow. Inputs feed four stages: a launch-window forecast, a patent evidence pack, Thai and ASEAN status, and the dossier itself. Each stage reads from an as-of evidence store. Forecasts have been tested on development data; the sealed retrospective test and the prospective Track A freeze are pending." width="100%">
+  <img src="docs/assets/market-window-flow.svg" alt="Market Window Dossier flow. Inputs feed four stages: a launch-window forecast, a patent evidence pack, Thai and ASEAN status, and the dossier itself. Each stage reads from an as-of evidence store. On the sealed historical test the queue passed the first registered test (H1); the prospective Track A freeze is due by 31 January 2027." width="100%">
 </p>
 
 | Dossier section | Reader | Content |
@@ -57,7 +57,7 @@ Every claim is labelled **known**, **unknown** or **not applicable**, and **obse
 
 ## LOE-Bench: the benchmark underneath
 
-LOE-Bench tests the forecasts behind the dossier. It asks whether a first generic will reach the US market within 12 or 24 months. Inputs are restricted to public FDA records available on the forecast date. A three-state evidence graph (M3: OPEN, BLOCKED, CONTESTED) competes with a strong drug-age baseline (B1) and a matched flat model (M1) on identical rows.
+LOE-Bench tests the forecasts behind the dossier. It asks whether the first final US generic approval for a drug will occur within 12 or 24 months. Inputs are restricted to public FDA records available on the forecast date. A three-state evidence graph (M3: OPEN, BLOCKED, CONTESTED) competes with a strong drug-age baseline (B1) and a matched flat model (M1) on identical rows.
 
 The primary endpoint models scarce evaluator capacity: **the share of later first-generic events captured when a reviewer can check only 20% of the list.** Three hypotheses are tested in a fixed sequence:
 
@@ -85,11 +85,12 @@ Methods follow the FDA guidance [*Multiple Endpoints in Clinical Trials*](https:
 
 | Item | State |
 |---|---|
-| Development results (validation only) | At the 20% review budget: H1 **+9.80** points [+0.14, +19.65], H2 **+5.49** [−2.00, +11.25], H3 **+13.00** [+3.27, +23.17] ([FREEZE receipt](docs/loe-bench/receipts/FREEZE.md)) |
-| Confirmatory result | **None yet.** The test stays sealed until OSF registration |
-| Preregistration | v2 in preparation; OSF submission planned for 7–13 December 2026 |
+| Confirmatory result (sealed test C′, 28 Nov 2026) | At the 20% review budget and 24 months, M3 captured 66.85% of event rows versus 46.48% for B1. H1 **passed**: +20.37 points [+14.37, +26.16]. H2 **failed**: M3 − M1 +1.36 [−2.20, +3.01], so the added value of graph state is unconfirmed. H3 is descriptive: +16.69 [+9.98, +24.21] ([SCORE receipt](docs/loe-bench/receipts/SCORE.md)) |
+| Exploratory (C′) | Competition at launch: M3 79.8% vs B1 49.7%. Qwen2.5-7B with the same evidence (L1e): 12.36% at 24 months ([SCORELLM receipt](docs/loe-bench/receipts/SCORELLM.md)). Medicaid on reserved origins was not run |
+| Development results (validation only) | H1 +9.80 points [+0.14, +19.65], H2 +5.49 [−2.00, +11.25], H3 +13.00 [+3.27, +23.17] ([FREEZE receipt](docs/loe-bench/receipts/FREEZE.md)) |
+| Preregistration | Public on OSF, [doi:10.17605/OSF.IO/P2SMD](https://doi.org/10.17605/OSF.IO/P2SMD), registered 28 November 2026 with three approved updates |
 | Prospective Track A | Inputs frozen at tag `loe-S0-input-20261127`; forecasts frozen before 31 January 2027 |
-| Dossier generator | In development; first complete one-molecule dossier due December 2026 |
+| Product | Web app, landing page and Windows desktop build on 32 development dossiers; all 1,789 claims trace to a cited source ([UIBUILD receipt](docs/loe-bench/receipts/UIBUILD.md)) |
 
 The [program plan](docs/loe-bench/PLAN.md), [lane handoff](docs/loe-bench/HANDOFF.md) and [task receipts](docs/loe-bench/receipts/) record every decision, failure and data source.
 
