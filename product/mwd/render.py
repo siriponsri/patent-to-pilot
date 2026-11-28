@@ -1,11 +1,13 @@
 """Render dossier JSON as standalone Thai and English HTML, and optionally Chrome PDFs."""
 
 import argparse
+from contextlib import contextmanager
 from html import escape
 from pathlib import Path
+import re
 
 from .audit import web_url
-from .contract import DEMO, DISCLAIMER, read_json
+from .contract import CURRENT, DEMO, DISCLAIMER, read_json
 
 CHROME = Path("C:/Program Files/Google/Chrome/Application/chrome.exe")
 CSS = """
@@ -70,7 +72,7 @@ LABELS = {
 }
 
 
-def render(dossier, lang, alternate, *, for_print=False):
+def render(dossier, lang, alternate, *, for_print=False, horizon=None):
     def esc(value):
         return escape(str(value), quote=True)
 
@@ -93,9 +95,9 @@ def render(dossier, lang, alternate, *, for_print=False):
         if web_url(source["url"]):
             title = f'<a href="{esc(source["url"])}">{title}</a>'
         metadata = [esc(source["issuer"]), title, esc(source["version"]), esc(source["locator"])]
-        for field in ("public_date", "retrieved"):
-            if source[field]:
-                label = labels["public" if field == "public_date" else field]
+        for field in ("public_date", "evidence_cutoff", "retrieved"):
+            if source.get(field):
+                label = labels["retrieved" if field == "retrieved" else "public"]
                 metadata.append(f"{esc(label)} {esc(source[field])}")
         if source["sha256"]:
             metadata.append(f'<code>SHA-256 {esc(source["sha256"])}</code>')
@@ -112,6 +114,25 @@ def render(dossier, lang, alternate, *, for_print=False):
                 f'<p>{esc(labels["first"])} · {esc(outcome)} {refs}<br>'
                 f'{esc(labels["end"])} · {esc(reveal["window_end"])}</p></details>')
 
+    def task_markup(task):
+        text = esc(task[f"text_{lang}"])
+        if web_url(task.get("lookup_url")):
+            text = f'<a href="{esc(task["lookup_url"])}">{text}</a>'
+        if "search_terms" in task:
+            unknown = labels["unknown"]
+            terms = ", ".join(task["search_terms"])
+            wo = ", ".join(task["wo_numbers"]) or unknown
+            priority = ", ".join(task["priority_numbers"]) or unknown
+            metadata = (f"คำค้น {terms} · เลข WO {wo} · เลขคำขอที่ใช้อ้างสิทธิครั้งแรก {priority}"
+                        if lang == "th" else f"Search terms {terms} · WO numbers {wo} · Priority numbers {priority}")
+            text += f" · {esc(metadata)}"
+        return f'<li><strong>{esc(labels[task["owner"]])}</strong> · {text} {citations(task["source_ids"])}</li>'
+
+    forecast = dossier["forecast"]
+    if horizon is not None and horizon != forecast["horizon_months"]:
+        if horizon != 12 or "forecast_12m" not in dossier:
+            raise ValueError(f"Dossier cannot be rendered for the {horizon}-month horizon")
+        forecast = dossier["forecast_12m"]
     sections = []
     for section in dossier["sections"]:
         section_id = section["id"]
@@ -119,8 +140,7 @@ def render(dossier, lang, alternate, *, for_print=False):
         if section_id == "decision":
             content.append(reveal_markup())
         elif section_id == "handoff":
-            tasks = (f'<li><strong>{esc(labels[t["owner"]])}</strong> · {esc(t[f"text_{lang}"])} '
-                     f'{citations(t["source_ids"])}</li>' for t in dossier["checklist"])
+            tasks = map(task_markup, dossier["checklist"])
             content.append(f"<ol>{''.join(tasks)}</ol>")
         elif section_id == "references":
             content.append(f'<ol class="references">{"".join(map(reference_markup, sources))}</ol>')
@@ -128,17 +148,26 @@ def render(dossier, lang, alternate, *, for_print=False):
                         f'{"".join(content)}</section>')
     title = esc(dossier["molecule"]["display_name"])
     alternate_name = "English" if lang == "th" else "ภาษาไทย"
-    status = labels["basis"] if dossier["forecast"]["status"] == "DEVELOPMENT_ONLY" else "Track A frozen"
+    status = dossier.get("label", labels["basis"] if forecast["status"] == "DEVELOPMENT_ONLY" else "Track A frozen")
+    version_markup = ""
+    if version := dossier.get("version"):
+        stamp = (f"freeze: {version['tag']} · manifest SHA-256 {version['manifest_sha256']}"
+                 if version["freeze"] == "verified" else "freeze: pending")
+        version_markup = (f'<p class="facts"><code>{esc(stamp)} · '
+                          f'core SHA-256 {esc(version["core_manifest_sha256"])}</code></p>')
     links = "".join(f'<a href="#{esc(s["id"])}">{esc(s[f"title_{lang}"])}</a>' for s in dossier["sections"])
+    if alternate:
+        other_lang = "en" if lang == "th" else "th"
+        links = f'<a href="{esc(alternate)}" hreflang="{other_lang}">{alternate_name}</a>{links}'
     return f"""<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} · Market Window Dossier</title><style>{CSS}</style></head>
 <body><main><header><p>Market Window Dossier</p><h1>{title}</h1>
 <p class="facts">{esc(status)} · {esc(labels["country"])} · {esc(labels["cutoff"])}
-{esc(dossier["as_of"])} · {esc(dossier["forecast"]["horizon_months"])} {esc(labels["horizon"])}</p>
-<p class="disclaimer">{esc(DISCLAIMER[lang])}</p>
-<nav><a href="{esc(alternate)}" hreflang="{'en' if lang == 'th' else 'th'}">{alternate_name}</a>{links}</nav>
+{esc(dossier["as_of"])} · {esc(forecast["horizon_months"])} {esc(labels["horizon"])}</p>
+{version_markup}<p class="disclaimer">{esc(dossier.get("disclaimer", DISCLAIMER)[lang])}</p>
+<nav>{links}</nav>
 </header>{"".join(sections)}</main></body></html>
 """
 
@@ -152,13 +181,39 @@ def render_file(dossier_path, output_dir, page=None):
         html = output_dir / f"{filename}.html"
         html.write_text(render(dossier, lang, alternate), encoding="utf-8", newline="\n")
         if page is not None:
-            pdf = output_dir / f"{filename}.pdf"
-            page.set_content(render(dossier, lang, alternate, for_print=True), wait_until="load")
-            page.evaluate("document.fonts.ready")
-            content = page.pdf(prefer_css_page_size=True, print_background=True)
-            if not content.startswith(b"%PDF-"):
-                raise ValueError(f"Invalid Chrome PDF: {pdf.name}")
-            pdf.write_bytes(content)
+            write_pdf(page, render(dossier, lang, alternate, for_print=True), output_dir / f"{filename}.pdf")
+
+
+def write_pdf(page, html, target):
+    page.set_content(html, wait_until="load")
+    page.evaluate("document.fonts.ready")
+    content = page.pdf(prefer_css_page_size=True, print_background=True)
+    if not content.startswith(b"%PDF-"):
+        raise ValueError(f"Invalid Chrome PDF: {target.name}")
+    target.write_bytes(content)
+
+
+@contextmanager
+def chrome_page(executable):
+    if not executable.is_file():
+        raise ValueError(f"Chrome executable unavailable: {executable}")
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(executable_path=str(executable), headless=True,
+                                             args=["--disable-gpu"])
+        try:
+            yield browser.new_page()
+        finally:
+            browser.close()
+
+
+def dossier_path(argument):
+    if argument.is_file():
+        return argument
+    if argument == Path(argument.name) and re.fullmatch(r"[A-Za-z0-9_-]+", argument.name):
+        return CURRENT / (f"dossier-{argument.name.removeprefix('dossier-')}.json")
+    return argument
 
 
 def main():
@@ -167,30 +222,44 @@ def main():
     source.add_argument("--dossier", type=Path)
     source.add_argument("--data-dir", type=Path, default=DEMO / "data")
     parser.add_argument("--output-dir", type=Path, default=DEMO / "dossiers")
+    parser.add_argument("--lang", choices=("th", "en"))
+    parser.add_argument("--horizon", type=int, choices=(12, 24))
+    parser.add_argument("--out", type=Path, help="Single .html or .pdf export")
     parser.add_argument("--pdf", action="store_true")
     parser.add_argument("--chrome", type=Path, default=CHROME)
     args = parser.parse_args()
-    paths = [args.dossier] if args.dossier else sorted(args.data_dir.glob("dossier-*.json"))
+    if args.out:
+        if not args.dossier or not args.lang or args.out.suffix.lower() not in {".html", ".pdf"}:
+            parser.error("--out requires --dossier, --lang and an .html or .pdf suffix")
+    elif args.lang or args.horizon:
+        parser.error("--lang and --horizon require --out")
+    paths = [dossier_path(args.dossier)] if args.dossier else sorted(args.data_dir.glob("dossier-*.json"))
     if not paths:
         parser.error("No dossier JSON files found")
-    if args.pdf and not args.chrome.is_file():
-        parser.error(f"Chrome executable unavailable: {args.chrome}")
+    if args.dossier and not paths[0].is_file():
+        parser.error(f"Dossier not found: {paths[0]}")
+    if args.out:
+        pdf = args.out.suffix.lower() == ".pdf"
+        try:
+            html = render(read_json(paths[0]), args.lang, None, for_print=pdf, horizon=args.horizon)
+            args.out.parent.mkdir(parents=True, exist_ok=True)
+            if pdf:
+                with chrome_page(args.chrome) as page:
+                    write_pdf(page, html, args.out)
+            else:
+                args.out.write_text(html, encoding="utf-8", newline="\n")
+        except (ImportError, ValueError) as error:
+            parser.error(str(error))
+        print(f"Rendered {args.out}")
+        return
     args.output_dir.mkdir(parents=True, exist_ok=True)
     if args.pdf:
         try:
-            from playwright.sync_api import sync_playwright
-        except ImportError:
-            parser.error("PDF rendering requires the Python playwright package")
-        # A single headless Chrome session avoids Windows process and profile churn.
-        with sync_playwright() as playwright:
-            browser = playwright.chromium.launch(executable_path=str(args.chrome), headless=True,
-                                                 args=["--disable-gpu"])
-            try:
-                page = browser.new_page()
+            with chrome_page(args.chrome) as page:
                 for path in paths:
                     render_file(path, args.output_dir, page)
-            finally:
-                browser.close()
+        except (ImportError, ValueError) as error:
+            parser.error(str(error))
     else:
         for path in paths:
             render_file(path, args.output_dir)

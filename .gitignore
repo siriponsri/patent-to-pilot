@@ -27,5 +27,9 @@ literature-review/healthtech/papers/
 *.pyc
 deliverables/
 
+# Locally generated Track A dossiers and queues, pending planner publication.
+/product/demo/data/current/
+/product/demo/data/.track-a-*/
+
 # local editable installs
 *.egg-info/
