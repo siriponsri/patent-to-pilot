@@ -1,6 +1,6 @@
 ## Superseded decisions (29 November 2026)
 
-The owner is now the Track A custodian after January 2027. Journal route: STA conditional on confirmation that AI drafting with disclosure is allowed, then JAMIA; PSA and MDM are dropped. Product and writing paused on 29 November for research close-out. Public web hosting is Cloudflare Pages. These decisions supersede conflicting schedule and owner-availability assumptions below. Current close-out status: [research completion checklist](RESEARCH-COMPLETION.md) and [lane handoff](HANDOFF.md); OSF update 4 verified approved 28 November 2026 at 11:30:06 UTC.
+The owner is the Track A custodian after January 2027 on a best-effort basis, backed by layered readout automation (calendar reminders, a Cloudflare Worker that dispatches the scoring workflow, and a public self-service guide); late readouts are valid and recorded as late. Journal route: STA conditional on confirmation that AI drafting with disclosure is allowed, then JAMIA; PSA and MDM are dropped. Product and writing paused on 29 November for research close-out. Public web hosting is Cloudflare Pages. These decisions supersede conflicting schedule and owner-availability assumptions below. Current close-out status: [research completion checklist](RESEARCH-COMPLETION.md) and [lane handoff](HANDOFF.md); OSF update 4 verified approved 28 November 2026 at 11:30:06 UTC.
 
 ---
 
