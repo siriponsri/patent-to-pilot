@@ -102,3 +102,14 @@ These are the only three rows marked as blocking after excluding the deferred pu
 **Research line: complete** for method evidence, reproducibility and archive, and records at `0a5ff7f5`. Not part of this sign-off: the IS2 and journal writing (paused by the owner), the prospective readouts maturing on 27 November 2027 and 2028, the optional power expansion (POWER-PLAN, POWER-SIM, jurisdiction choice) and the live deployment of the readout automation, which is an owner action (Worker, tokens, calendar).
 
 **Status clarification (planner, 28 Nov 2026, 22:23 Bangkok, after [EXTREV-R1](reviews/EXTERNAL-REVIEW-R1.md) R1).** This signature is a completed milestone for the historical results, archive and records at `0a5ff7f5`, and it stands. Final closure of the research track also requires the external review the owner ordered at 21:46, recorded in the [checklist](RESEARCH-COMPLETION.md) as the remaining blocking row.
+
+## Final research-track closure (29 November 2026, 02:19 Bangkok by the system clock)
+
+Under the owner decision of 28 Nov 2026, 21:46, the co-planner acted as external reviewer in ten fresh rounds ([R1](reviews/EXTERNAL-REVIEW-R1.md) to [R10](reviews/EXTERNAL-REVIEW-R10.md); responses in [EXTREV-RESPONSES](reviews/EXTREV-RESPONSES.md)) until it reported **NO REMAINING DOUBT** at evidence cut `2cee4a62` with no blocking, major or minor finding.
+
+| Reviewer | Revision | Verdict |
+|---|---|---|
+| GPT-6.2 Astra high (co-planner, external reviewer) | `2cee4a62` | NO REMAINING DOUBT ([EXTREV-R10](reviews/EXTERNAL-REVIEW-R10.md)) |
+| Claude Opus 5.5 (main planner) | `2cee4a62` | CLOSE: concur |
+
+**Research track: CLOSED.** Historical results are unchanged since the milestone: H1 M3−B1 +20.37 pp [+14.37, +26.16] PASS; H2 M3−M1 +1.36 pp [−2.20, +3.01] FAIL; H3 +16.69 pp descriptive. Prospective Track A outcomes mature on 27 Nov 2027 and 2028 under the readout rules hardened during the review (blind capture before scoring, first canonical publication as the formal family, Sigstore attestations, UNRESOLVED_CONTINUITY, retained 12-month panel for H3). Power expansion: feasibility only, US-only, no filing. Disclosed NOT_RUN: production capture, attestation and publication before maturity; exact source-to-result historical replay; the Zenodo description edit (owner action). What the review changed: Track A readout tooling, its guide and addendum, the legacy 90% policy measure, the jurisdiction rationale wording and the closure records. No frozen forecast, manifest, tag, filed record or pinned scorer source changed.
