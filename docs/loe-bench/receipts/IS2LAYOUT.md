@@ -108,3 +108,14 @@ Docx and pdf hashes can differ across rebuilds because Word embeds timestamps; p
 - Reference [31] shows "(C′" tight against the column edge in the TH page 9 render; cosmetic, not changed.
 - Placement depends on the Word renderer and may shift if the text changes again.
 - Closeout: the lane HANDOFF and lane memory are Orchestrator-owned and not edited here; this receipt is the closeout record for the card.
+
+## IS2REF follow-up
+
+- Change: `docs/writing/is2/mwd/build/md2content.py` only. In reference entries, a zero-width space (U+200B) is inserted after the last "/" of each URL, and `(C′ scoring)` in [31] uses a no-break space between `(C′` and `scoring)`. Draft text, numbers and citations are unchanged. Copying [17] from the PDF or docx includes the invisible U+200B; strip it if the URL is pasted into a browser.
+- Result: [17] now wraps as `https://www.wipo.int/edocs/pubdocs/en/` / `wipo_pub_946.pdf.` in both editions (rendered with pymupdf and viewed). [31] on TH page 9 now sits clear of the column edge. The tight `C′` that remains is in TH body text on page 8 ("ผลของ C′"), outside this card's scope and left unchanged.
+- Builder output (both editions): pages 9; orphan lines 0.
+- SHA-256 (rebuilt in `build/`, gitignored, not committed):
+  - `be43b0d5c8c623036c18938ea6c0d89ec3579f1da5c4a5481de5025166cb634b` IS2-MWD-EN-v2.docx
+  - `ce74be1e9446a6fcf8780a005756aacf1306366e5c096977e2d75b499d21e7a9` IS2-MWD-EN-v2.pdf
+  - `b0f2dab3a86fd90d6a948400017d6103700943312ecff514e277d299e5df31e4` IS2-MWD-TH-v2.docx
+  - `6c571b3e5733ac7b1bbb57cd1b9826d84861aeec2ff3a1e0ab58e7702c5d0463` IS2-MWD-TH-v2.pdf

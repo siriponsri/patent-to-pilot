@@ -25,8 +25,16 @@ def _links(text, ref=False):
     return t.strip()
 
 
+def _breaks(t):
+    """Reference layout: zero-width break after the last "/" of a URL; keep "(C′ scoring)" together."""
+    t = re.sub(r"(https?://\S*/)(?=[^/\s]+)", lambda m: m.group(1) + "​", t)
+    return t.replace("(C′ scoring)", "(C′ scoring)")
+
+
 def inline(text, ref=False):
     t = _links(text, ref)
+    if ref:
+        t = _breaks(t)
     out = []
     for part in EMPH.split(t):
         if not part:
