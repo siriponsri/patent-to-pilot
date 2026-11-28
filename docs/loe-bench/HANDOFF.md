@@ -6,7 +6,7 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 The owner runs the orchestrator on two Claude accounts. Per-account chat memory is not shared, so this section and [MEMORY.md](MEMORY.md) are the main memory. Update both, then commit and push, after every step (owner rule, 28 Nov 2026, night).
 
-Last update: 28 Nov 2026, 21:36 Bangkok time (system clock). The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov). **Focus (owner, 28 Nov): close every research result beyond reviewer doubt (main planner and co-planner review); product and writing paused. Then IS2 revision, then journals.**
+Last update: 28 Nov 2026, 21:34 Bangkok time (system clock). The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov). **Focus (owner, 28 Nov): close every research result beyond reviewer doubt (main planner and co-planner review); product and writing paused. Then IS2 revision, then journals.**
 
 | Line | State | Next action |
 |---|---|---|
