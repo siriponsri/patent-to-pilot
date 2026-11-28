@@ -1,6 +1,6 @@
 # Documentation review history
 
-## 29 November 2026 status note
+## 28 November 2026 status note
 
 This file records the historical D40 documentation review. Its dated status and recommendations are not current operating instructions. Current research status and reconciliation actions are in the [research completion checklist](RESEARCH-COMPLETION.md) and [lane handoff](HANDOFF.md); current evidence is indexed by the [GATE](receipts/GATE.md), [SCORE](receipts/SCORE.md), [SCORELLM](receipts/SCORELLM.md), and [TRACKA-FREEZE](receipts/TRACKA-FREEZE.md) receipts. OSF update 4 approval was verified 28 November 2026 at 11:30:06 UTC.
 
