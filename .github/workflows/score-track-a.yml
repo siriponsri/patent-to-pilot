@@ -1,0 +1,108 @@
+name: Score Track A
+
+on:
+  workflow_dispatch:
+    inputs:
+      horizon:
+        description: Months from the frozen cutoff
+        type: choice
+        options: ["12", "24"]
+        default: "12"
+        required: true
+      release_doi:
+        description: Exact Zenodo version DOI (defaults to TRACKA_RELEASE_DOI)
+        type: string
+      freeze_sha256:
+        description: OSF update 4 manifest SHA-256 (defaults to TRACKA_FREEZE_SHA256)
+        type: string
+      prior_12_run_id:
+        description: GitHub Actions run ID of the archived first 12-month result
+        type: string
+  schedule:
+    # POSIX cron has no year field. The setup step selects 2027 and 2028.
+    - cron: "17 14 1 12 *"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  readout:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Select the scheduled or requested horizon
+        id: readout
+        env:
+          REQUESTED_HORIZON: ${{ inputs.horizon }}
+          RELEASE_DOI: ${{ inputs.release_doi || vars.TRACKA_RELEASE_DOI }}
+          FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
+          PRIOR_RUN_ID: ${{ inputs.prior_12_run_id }}
+        run: |
+          horizon="$REQUESTED_HORIZON"
+          if [[ "$GITHUB_EVENT_NAME" == "schedule" ]]; then
+            case "$(date -u +%Y)" in
+              2027) horizon=12 ;;
+              2028) horizon=24 ;;
+              *) exit 0 ;;
+            esac
+          fi
+          [[ "$horizon" == 12 || "$horizon" == 24 ]]
+          if [[ ! "$RELEASE_DOI" =~ ^(https://doi\.org/)?10\.5281/zenodo\.[0-9]+$ || ! "$FREEZE_SHA256" =~ ^[0-9a-f]{64}$ ]]; then
+            echo "::error::Set the Zenodo version DOI and exact OSF freeze-manifest SHA-256 before running."
+            exit 1
+          fi
+          if [[ -n "$PRIOR_RUN_ID" ]]; then
+            [[ "$horizon" == 24 && "$PRIOR_RUN_ID" =~ ^[0-9]+$ ]]
+          fi
+          echo "horizon=$horizon" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v7
+        if: steps.readout.outputs.horizon != ''
+        with:
+          persist-credentials: false
+          ref: ${{ vars.TRACKA_SCORER_REF || github.sha }}
+      - uses: actions/setup-python@v7
+        if: steps.readout.outputs.horizon != ''
+        with:
+          python-version: "3.12.10"
+      - name: Restore archived 12-month run
+        if: steps.readout.outputs.horizon == '24' && inputs.prior_12_run_id != ''
+        uses: actions/download-artifact@v8
+        with:
+          name: track-a-12m
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.prior_12_run_id }}
+          path: prior-artifact
+      - name: Install the scorer dependency
+        if: steps.readout.outputs.horizon != ''
+        run: |
+          python -m pip install --only-binary=:all: --require-hashes -r loe-bench/requirements-tracka.lock
+      - name: Score the frozen release
+        id: score
+        if: steps.readout.outputs.horizon != ''
+        working-directory: loe-bench
+        env:
+          HORIZON: ${{ steps.readout.outputs.horizon }}
+          RELEASE_DOI: ${{ inputs.release_doi || vars.TRACKA_RELEASE_DOI }}
+          FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
+          PRIOR_RUN_ID: ${{ inputs.prior_12_run_id }}
+        run: |
+          prior=()
+          if [[ -n "$PRIOR_RUN_ID" ]]; then
+            prior=(--prior-12 ../prior-artifact/12m/run-0001)
+          fi
+          status=0
+          python -m loe_bench.score_release --release "$RELEASE_DOI" --horizon "$HORIZON" \
+            --freeze-sha256 "$FREEZE_SHA256" --out ../track-a-results "${prior[@]}" || status=$?
+          case "$status" in
+            0|2|3) cat "../track-a-results/${HORIZON}m/run-0001/REPORT.md" >> "$GITHUB_STEP_SUMMARY" ;;
+            *) exit "$status" ;;
+          esac
+      - name: Upload readout and source provenance
+        if: steps.score.outcome == 'success'
+        uses: actions/upload-artifact@v7
+        with:
+          name: track-a-${{ steps.readout.outputs.horizon }}m
+          path: track-a-results/
+          if-no-files-found: error
+          retention-days: 90
