@@ -39,5 +39,9 @@ Beall et al. 2018 is **not** reproduced. B3 remains the registered "all-listed-e
 
 ## Open items
 
-- The full text and supplement of Hu 2019 are needed to verify its cohort, final feature list and external-validation statistic. Until they are verified, attribute C-index 0.767 to Hu's 2021 presentation only.
+- The full text and supplement of Hu 2019 are needed to verify its cohort, final feature list and external-validation statistic. Until they are verified, attribute C-index 0.767 to Hu's 2021 presentation only. On 28 Nov 2026 the owner could not obtain the article (paywalled). The owner supplied an FDA presentation (Rantou, 2 Aug 2019, `docs/owner/prior-work/prsnt-Rantou20190802-RP.pdf`, owner-local and untracked). Its slide 1 reproduces the Hu 2019 figures:
+  - **Variable importance.** It covers 27 variables, led by sales in the year before the earliest lawful submission date, product-specific guidance in that year, and complex API. It also includes 14 ATC classes, complex dosage form, acute/chronic disease, complex delivery route, days to patent expiration, drug-device combination, oral modified release and REMS.
+  - **Validation.** A per-product prediction is shown for 11 products (A–K) on the first day of the earliest lawful submission date; 10 of the 11 are above 50%.
+  - **No discrimination statistic.** The slide gives no C-index, so the 0.767 still comes only from Hu's 2021 presentation.
+  - **Coverage of P1.** Of the 27 variables, only days to patent expiration (and, partly, route) has an open as-of counterpart in P1. This confirms that P1 adapts the method family and does not reproduce Hu's model.
 - The arm list, the C-index definition and the C′ supplement go into the OSF update 4 sheet with the Track A freeze.
