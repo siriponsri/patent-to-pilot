@@ -2,7 +2,7 @@
 
 This scheduled Cloudflare Worker checks for the canonical 12- and 24-month readout issues and calls **Score Track A** when a mature readout is still missing. When both horizons are due it requests the earlier one first. It has no public HTTP route. The Worker dispatches from 01:13 UTC on 27 November 2027 and 27 November 2028 respectively, and retries missing horizons daily. It re-enables a workflow marked `disabled_inactivity`. A maintainer's manual disable remains in effect. [Cloudflare Cron Triggers](https://developers.cloudflare.com/workers/configuration/cron-triggers/) · [GitHub workflow REST endpoints](https://docs.github.com/en/rest/actions/workflows?apiVersion=2026-03-10).
 
-The Worker checks both open and closed issues. Only a canonical `SCORED` marker from GitHub Actions or a repository maintainer stops dispatches. A `PENDING` or `BLOCKED_SOURCE` issue leaves that horizon due. [Public scoring guide](../../docs/loe-bench/HOW-TO-SCORE-TRACK-A.md).
+The Worker checks both open and closed issues. It stops dispatches after a canonical `SCORED` issue from GitHub Actions or a repository maintainer supplies both digest lines. A `PENDING` or `BLOCKED_SOURCE` issue leaves that horizon due. [Public scoring guide](../../docs/loe-bench/HOW-TO-SCORE-TRACK-A.md).
 
 ## Owner setup
 
@@ -29,5 +29,11 @@ Replace each secret with `npx wrangler@4.169.0 secret put` before it expires. Up
 An accepted dispatch confirms GitHub queued the request. The workflow runs blind FDA capture before scoring. It stages the first admissible bytes in a draft, verifies their Actions attestation and publishes the capture. It then scores the preserved bytes and attests the result. A retry resumes the same capture or result draft. The Worker sends only the horizon. The capture and result releases hold the durable bytes. The optional run artifact expires after 90 days.
 
 The automatic capture window closes seven UTC days after maturity. Later dispatches can verify or resume an existing capture. If required continuity is missing, the workflow records `UNRESOLVED_CONTINUITY`, and any available estimates are descriptive. For known loss, set the repository Actions variable `TRACKA_CONTINUITY_HOLD=true` while establishing the first publication independently. [Scoring and recovery guide](../../docs/loe-bench/HOW-TO-SCORE-TRACK-A.md).
+
+### Maintainer scored issue
+
+Use the issue title `Track A 12-month readout` or `Track A 24-month readout`. Copy the scoped marker from the scoring guide and include the `First result SHA-256` and `FDA source manifest SHA-256` lines. Each line ends with one space, its verified 64-character lowercase digest in backticks, and a period. Use the hashes of `results.json` and `outcome-source-manifest.json` from the verified release. [Copy-ready issue body](../../docs/loe-bench/HOW-TO-SCORE-TRACK-A.md#maintainer-scored-issue).
+
+If a scoped `SCORED` issue is incomplete, the Worker logs its number in Cloudflare Observability and keeps the horizon due unless a complete acknowledgement exists. Verify the archive and edit the flagged issue to correct its digest lines.
 
 Local Worker checks use mock GitHub responses through `npm test`. A branch dispatch with `synthetic=true` tests fictional readouts and signs only two run-specific text files. It skips the production jobs. The deploy steps require the owner account. [Worker receipt](../../docs/loe-bench/receipts/TRACKA-AUTO.md) · [Readout protocol](../../docs/loe-bench/receipts/TRACKA-READOUT5-PROTOCOL.md).

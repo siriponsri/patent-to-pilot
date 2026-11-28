@@ -61,6 +61,8 @@ After owner setup, the [Cloudflare Worker](../../ops/tracka-cron/README.md) disp
 2. Scoring begins only after the workflow independently verifies the published capture. It uses those exact FDA bytes. A retry after scoring uses the same capture or resumes the exact signed result draft if one exists. A late dispatch uses the first capture and records whether capture start, capture publication and scoring came after maturity. After the capture window closes, an existing draft can be completed with its original bytes.
 3. The first result release under `track-a-<12 or 24>m-<Zenodo record ID>-<OSF freeze SHA-256>` carries `track-a-result.zip` with the JSON, checksum, FDA manifest, report and bootstrap draws. The workflow verifies publication before writing the scored issue and its digest pins. [GitHub release assets](https://docs.github.com/en/rest/releases/assets).
 
+Before staging a new or recovered 24-month draft and again before making it public, the workflow verifies the first 12-month release and compares both the result and FDA source-manifest digests with the draft's H3 reference. If a witness disagrees, the first result cannot be verified, or either digest differs from the reference, the workflow records `UNRESOLVED_CONTINUITY` and keeps any existing draft private. After continuity is restored, the workflow can resume with the same signed bytes.
+
 Each attestation signs both the bundle digest and a deterministic scope witness. Discovery calculates the scope digest, retrieves the indexed Sigstore statement and uses `gh attestation verify` to check its signature, public hosted Actions identity, workflow and branch. The signed certificate supplies the run ID, workflow ref and commit checked against release metadata. The verified timestamp orders signing and publication. Public GitHub attestations use Sigstore's public log. Keep both release bundles, their witness bytes, signed Sigstore bundles and release metadata in an independent archive. GitHub's index makes statements discoverable while retained. The transparency log authenticates retained statements and timestamps. [GitHub attestations](https://docs.github.com/en/actions/concepts/security/artifact-attestations) · [GitHub CLI verification](https://cli.github.com/manual/gh_attestation_verify).
 
 To back up provenance, download each ZIP and run `gh attestation download track-a-capture.zip --repo siriponsri/patent-to-pilot` or the corresponding command for `track-a-result.zip`. The same statement signs both the ZIP and its scope witness. The integrated revision can regenerate the witness from the repository, DOI, freeze digest, horizon and kind through `loe_bench.tracka_custody.Scope.witness()`. Keep the release notes and tag commit with the downloaded ZIP and Sigstore bundle. [GitHub CLI download](https://cli.github.com/manual/gh_attestation_download).
@@ -68,6 +70,20 @@ To back up provenance, download each ZIP and run `gh attestation download track-
 The continuity claim assumes a trusted default-branch custodian, the public attestation index and independent retention. A deleted release, tag or issue with surviving signed evidence requires recovery of the original bytes. An empty current listing cannot distinguish no publication from loss of every witness. If a capture was missed or the release, tag and issue are gone and no independent record establishes first publication, record `UNRESOLVED_CONTINUITY`. Treat the family as descriptive. For known or suspected custody loss, set repository Actions variable `TRACKA_CONTINUITY_HOLD=true` and keep it in place until the first publication is independently established. Preserve recovered material and its verification record. [Registration-facing custody rule](TRACKA-READOUT-ADDENDUM.md).
 
 If a frozen prediction file has redistribution limits, the public release records `WITHHELD` and scores the remaining arms. A custodian with lawful access may build a separate controlled release from the same frozen bytes and provide aggregate output, manifest digests and the provenance record for the affected arms.
+
+### Maintainer scored issue
+
+After verifying the first attested release, a repository maintainer can record it in an issue titled `Track A 12-month readout`. Use this body and replace the two example digests with the SHA-256 values of `results.json` and `outcome-source-manifest.json` from the verified bundle. For 24 months, use `Track A 24-month readout` and `tracka:24` in the marker. Keep the digest lines on their own, with lowercase hex, backticks and the final period.
+
+```text
+<!-- tracka:12:SCORED:8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d:24629100 -->
+
+First result SHA-256 `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`.
+
+FDA source manifest SHA-256 `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`.
+```
+
+An incomplete marker leaves the horizon due unless a complete acknowledgement already exists. If the Worker logs an incomplete issue, verify the release and correct the digest lines in that issue. A trusted issue without its result digest or with a conflicting pin can also hold custody verification. [Worker logs and dispatch](../../ops/tracka-cron/README.md#maintainer-scored-issue).
 
 ## Publish the prediction package once
 

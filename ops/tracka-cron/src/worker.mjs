@@ -5,6 +5,9 @@ const MATURITY = { 12: "2027-11-27", 24: "2028-11-27" };
 const HEALTH_TITLE = "Track A automation needs attention";
 const HEALTH_MARKER = "<!-- tracka:token-health -->";
 const DAY_MS = 86_400_000;
+const REQUIRED_PINS = ["First result SHA-256", "FDA source manifest SHA-256"];
+const OPTIONAL_PINS = ["Bootstrap draws SHA-256", "Report SHA-256"];
+const PIN_SUFFIX = /^ `([0-9a-f]{64})`\.$/;
 
 function github(env, token, fetcher) {
   if (!token) throw new Error("GitHub secret is missing");
@@ -50,12 +53,32 @@ function canonicalRecord(env) {
   return `${env.TRACKA_FREEZE_SHA256}:${recordId}`;
 }
 
+function hasCompletePins(lines) {
+  return [...REQUIRED_PINS, ...OPTIONAL_PINS].every(label => {
+    const pins = lines.filter(line => line.startsWith(label));
+    if (pins.length === 0) return !REQUIRED_PINS.includes(label);
+    const digests = pins.map(line => PIN_SUFFIX.exec(line.slice(label.length))?.[1]);
+    return !digests.includes(undefined) && new Set(digests).size === 1;
+  });
+}
+
 function isRecorded(issues, horizon, record) {
-  return issues.some(issue =>
-    issue.title === `Track A ${horizon}-month readout` &&
-    (issue.user?.login === "github-actions[bot]" ||
-      ["OWNER", "MEMBER", "COLLABORATOR"].includes(issue.author_association)) &&
-    issue.body?.split(/\r?\n/).includes(`<!-- tracka:${horizon}:SCORED:${record} -->`));
+  const marker = `<!-- tracka:${horizon}:SCORED:${record} -->`;
+  let recorded = false;
+  for (const issue of issues) {
+    const trusted = issue.user?.login === "github-actions[bot]" ||
+      ["OWNER", "MEMBER", "COLLABORATOR"].includes(issue.author_association);
+    if (!trusted || issue.title !== `Track A ${horizon}-month readout`) continue;
+    const lines = (issue.body ?? "").split(/\r\n|[\n\r]/);
+    if (!lines.includes(marker)) continue;
+    if (hasCompletePins(lines)) {
+      recorded = true;
+    } else {
+      console.warn(`Incomplete Track A ${horizon}-month SCORED issue #${issue.number}. ` +
+        "Verify the published release and correct its digest lines using the Track A scoring guide.");
+    }
+  }
+  return recorded;
 }
 
 async function dispatchDue(env, today, fetcher) {

@@ -1,13 +1,17 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { runScheduled } from "../src/worker.mjs";
 
-const sha = "a".repeat(64);
+const sha = "8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d";
+const recordId = "24629100";
+const guide = readFileSync(new URL("../../../docs/loe-bench/HOW-TO-SCORE-TRACK-A.md", import.meta.url), "utf8");
+const [, maintainerBody] = /^```text\r?\n(<!-- tracka:12:SCORED:[\s\S]*?)\r?\n```\r?$/m.exec(guide);
 const env = {
   GITHUB_REPOSITORY: "someone/repo",
   GITHUB_REF: "main",
-  TRACKA_RELEASE_DOI: "https://doi.org/10.5281/zenodo.123",
+  TRACKA_RELEASE_DOI: `https://doi.org/10.5281/zenodo.${recordId}`,
   TRACKA_FREEZE_SHA256: sha,
   GITHUB_TOKEN: "primary",
   GITHUB_ALERT_TOKEN: "alert",
@@ -41,11 +45,12 @@ function mock(...expected) {
 }
 
 function issue(horizon, status, author = "github-actions[bot]", freeze = sha) {
+  const marker = `<!-- tracka:${horizon}:${status}:${freeze}:${recordId} -->`;
   return {
     number: horizon,
     title: `Track A ${horizon}-month readout`,
     user: { login: author },
-    body: `<!-- tracka:${horizon}:${status}:${freeze}:123 -->\n\nReadout report.`,
+    body: status === "SCORED" ? maintainerBody.replace(/^<!--[^\n]*-->/, marker) : marker,
   };
 }
 
@@ -96,11 +101,38 @@ test("ignores PENDING, wrong pins, pull requests and untrusted markers", async (
 test("a maintainer can mark a verified public readout as recorded", async () => {
   const api = mock(
     ["GET", "/issues?state=all&per_page=100&page=1", [
-      { ...issue(12, "SCORED", "maintainer"), author_association: "OWNER" },
+      { ...issue(12, "SCORED", "maintainer"), author_association: "OWNER", body: maintainerBody },
     ]],
   );
   await run("2027-11-28", daily, api.fetch);
   api.verify();
+});
+
+test("incomplete maintainer acknowledgements log the issue and leave dispatch due", async t => {
+  const [marker, result, manifest] = maintainerBody.split(/\r?\n/).filter(Boolean);
+  const bodies = {
+    "marker only": [marker, "Readout report."],
+    "missing result digest": [marker, manifest],
+    "missing manifest digest": [marker, result],
+    "malformed result digest": [marker, result.slice(0, -1), manifest],
+    "conflicting result digests": [marker, result, result.replace(/`[a-f0-9]{64}`/, `\`${"0".repeat(64)}\``), manifest],
+  };
+  for (const [name, lines] of Object.entries(bodies)) {
+    await t.test(name, async t => {
+      const warn = t.mock.method(console, "warn", () => {});
+      const api = mock(
+        ["GET", "/issues?state=all&per_page=100&page=1", [{
+          ...issue(12, "SCORED", "maintainer"), number: 17, author_association: "OWNER", body: lines.join("\n"),
+        }]],
+        ["GET", workflow, { state: "active" }],
+        ["POST", `${workflow}/dispatches`, null, 204],
+      );
+      await run("2027-11-28", daily, api.fetch);
+      assert.deepEqual(api.verify().at(-1), { ref: "main", inputs: { horizon: "12" } });
+      assert.equal(warn.mock.callCount(), 1);
+      assert.match(warn.mock.calls[0].arguments[0], /12-month SCORED issue #17.*correct its digest lines/);
+    });
+  }
 });
 
 test("waits for the earlier horizon dispatch response before requesting the later horizon", async () => {
