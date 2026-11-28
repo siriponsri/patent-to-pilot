@@ -1,0 +1,966 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Market Window Dossier Gateway",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/tasks": {
+      "post": {
+        "summary": "Run Task",
+        "operationId": "runDossierTask",
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+              "title": "Idempotency-Key"
+            }
+          },
+          {
+            "name": "X-MWD-User",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Mwd-User"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/SummaryRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/LetterRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/QuestionRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ReadingRequest"
+                  }
+                ],
+                "discriminator": {
+                  "propertyName": "task",
+                  "mapping": {
+                    "A1": "#/components/schemas/SummaryRequest",
+                    "A2": "#/components/schemas/LetterRequest",
+                    "A3": "#/components/schemas/QuestionRequest",
+                    "A4": "#/components/schemas/ReadingRequest"
+                  }
+                },
+                "title": "Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Draft or evidence abstention",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Accepted"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Abstained"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Rejected"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Unavailable"
+                    }
+                  ],
+                  "discriminator": {
+                    "propertyName": "state",
+                    "mapping": {
+                      "ok": "#/components/schemas/Accepted",
+                      "abstained": "#/components/schemas/Abstained",
+                      "rejected": "#/components/schemas/Rejected",
+                      "unavailable": "#/components/schemas/Unavailable"
+                    }
+                  },
+                  "title": "Response 200 Rundossiertask",
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Accepted"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Abstained"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rejected"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rejected"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rejected"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rejected"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rejected"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rejected"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unavailable"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Abstained": {
+        "properties": {
+          "reason": {
+            "type": "string",
+            "enum": [
+              "invalid_request",
+              "identity_required",
+              "cross_origin",
+              "dossier_not_found",
+              "claim_text_missing",
+              "evidence_missing",
+              "unsupported_evidence",
+              "invalid_output",
+              "duplicate_request",
+              "request_in_progress",
+              "daily_limit",
+              "attempt_limit",
+              "budget_limit",
+              "envelope_expired",
+              "unknown_billing",
+              "route_or_price_changed",
+              "provider_unqualified",
+              "provider_unavailable",
+              "ledger_unavailable"
+            ],
+            "title": "Reason"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "next_step": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Step"
+          },
+          "state": {
+            "type": "string",
+            "const": "abstained",
+            "title": "State",
+            "default": "abstained"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "reason",
+          "message"
+        ],
+        "title": "Abstained"
+      },
+      "Accepted": {
+        "properties": {
+          "state": {
+            "type": "string",
+            "const": "ok",
+            "title": "State",
+            "default": "ok"
+          },
+          "selection": {
+            "$ref": "#/components/schemas/DossierSelection"
+          },
+          "task": {
+            "type": "string",
+            "enum": [
+              "A1",
+              "A2",
+              "A3",
+              "A4"
+            ],
+            "title": "Task"
+          },
+          "label": {
+            "type": "string",
+            "enum": [
+              "AI draft",
+              "AI-assisted reading; a patent professional must verify"
+            ],
+            "title": "Label"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Proposition"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            },
+            "type": "array",
+            "title": "Citations"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "forecast": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Forecast"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reading": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ClaimReading"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "selection",
+          "task",
+          "label",
+          "disclaimer",
+          "items",
+          "citations",
+          "provenance"
+        ],
+        "title": "Accepted"
+      },
+      "Citation": {
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Claim Id"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceReference"
+            },
+            "type": "array",
+            "title": "Sources"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "claim_id",
+          "sources"
+        ],
+        "title": "Citation"
+      },
+      "ClaimElement": {
+        "properties": {
+          "item_index": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Item Index"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Start"
+          },
+          "end": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "End"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "item_index",
+          "start",
+          "end"
+        ],
+        "title": "ClaimElement"
+      },
+      "ClaimReading": {
+        "properties": {
+          "publication": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Publication"
+          },
+          "claim_number": {
+            "type": "integer",
+            "title": "Claim Number"
+          },
+          "source": {
+            "$ref": "#/components/schemas/SourceReference"
+          },
+          "original_text": {
+            "type": "string",
+            "title": "Original Text"
+          },
+          "parent_claim_numbers": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Parent Claim Numbers"
+          },
+          "elements": {
+            "items": {
+              "$ref": "#/components/schemas/ClaimElement"
+            },
+            "type": "array",
+            "title": "Elements"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "publication",
+          "claim_number",
+          "source",
+          "original_text",
+          "parent_claim_numbers",
+          "elements"
+        ],
+        "title": "ClaimReading"
+      },
+      "DossierSelection": {
+        "properties": {
+          "dossier_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Dossier Id"
+          },
+          "snapshot": {
+            "type": "string",
+            "format": "date",
+            "title": "Snapshot"
+          },
+          "horizon": {
+            "type": "integer",
+            "enum": [
+              12,
+              24
+            ],
+            "title": "Horizon"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "th",
+              "en"
+            ],
+            "title": "Language"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "dossier_id",
+          "snapshot",
+          "horizon",
+          "language"
+        ],
+        "title": "DossierSelection"
+      },
+      "Forecast": {
+        "properties": {
+          "endpoint": {
+            "type": "string",
+            "const": "first_final_us_anda",
+            "title": "Endpoint",
+            "default": "first_final_us_anda"
+          },
+          "horizon": {
+            "type": "integer",
+            "enum": [
+              12,
+              24
+            ],
+            "title": "Horizon"
+          },
+          "m3_probability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "M3 Probability"
+          },
+          "claim_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Claim Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "horizon",
+          "m3_probability",
+          "claim_id"
+        ],
+        "title": "Forecast"
+      },
+      "LetterRequest": {
+        "properties": {
+          "dossier_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Dossier Id"
+          },
+          "snapshot": {
+            "type": "string",
+            "format": "date",
+            "title": "Snapshot"
+          },
+          "horizon": {
+            "type": "integer",
+            "enum": [
+              12,
+              24
+            ],
+            "title": "Horizon"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "th",
+              "en"
+            ],
+            "title": "Language"
+          },
+          "task": {
+            "type": "string",
+            "const": "A2",
+            "title": "Task"
+          },
+          "audience": {
+            "type": "string",
+            "enum": [
+              "fto_evaluator",
+              "dip",
+              "thai_fda"
+            ],
+            "title": "Audience",
+            "default": "fto_evaluator"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "dossier_id",
+          "snapshot",
+          "horizon",
+          "language",
+          "task"
+        ],
+        "title": "LetterRequest"
+      },
+      "Proposition": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "claim_ids": {
+            "items": {
+              "type": "string",
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:*\\-]+$"
+            },
+            "type": "array",
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Claim Ids"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text",
+          "claim_ids"
+        ],
+        "title": "Proposition"
+      },
+      "Provenance": {
+        "properties": {
+          "provider": {
+            "type": "string",
+            "title": "Provider"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "prompt_version": {
+            "type": "string",
+            "title": "Prompt Version"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "provider",
+          "model",
+          "prompt_version",
+          "generated_at"
+        ],
+        "title": "Provenance"
+      },
+      "QuestionRequest": {
+        "properties": {
+          "dossier_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Dossier Id"
+          },
+          "snapshot": {
+            "type": "string",
+            "format": "date",
+            "title": "Snapshot"
+          },
+          "horizon": {
+            "type": "integer",
+            "enum": [
+              12,
+              24
+            ],
+            "title": "Horizon"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "th",
+              "en"
+            ],
+            "title": "Language"
+          },
+          "task": {
+            "type": "string",
+            "const": "A3",
+            "title": "Task"
+          },
+          "question_id": {
+            "type": "string",
+            "enum": [
+              "market_window",
+              "competition",
+              "thai_status",
+              "next_checks"
+            ],
+            "title": "Question Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "dossier_id",
+          "snapshot",
+          "horizon",
+          "language",
+          "task",
+          "question_id"
+        ],
+        "title": "QuestionRequest"
+      },
+      "ReadingRequest": {
+        "properties": {
+          "dossier_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Dossier Id"
+          },
+          "snapshot": {
+            "type": "string",
+            "format": "date",
+            "title": "Snapshot"
+          },
+          "horizon": {
+            "type": "integer",
+            "enum": [
+              12,
+              24
+            ],
+            "title": "Horizon"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "th",
+              "en"
+            ],
+            "title": "Language"
+          },
+          "task": {
+            "type": "string",
+            "const": "A4",
+            "title": "Task"
+          },
+          "patent_publication": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Patent Publication"
+          },
+          "claim_number": {
+            "type": "integer",
+            "maximum": 9999.0,
+            "minimum": 1.0,
+            "title": "Claim Number"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "dossier_id",
+          "snapshot",
+          "horizon",
+          "language",
+          "task",
+          "patent_publication",
+          "claim_number"
+        ],
+        "title": "ReadingRequest"
+      },
+      "Rejected": {
+        "properties": {
+          "reason": {
+            "type": "string",
+            "enum": [
+              "invalid_request",
+              "identity_required",
+              "cross_origin",
+              "dossier_not_found",
+              "claim_text_missing",
+              "evidence_missing",
+              "unsupported_evidence",
+              "invalid_output",
+              "duplicate_request",
+              "request_in_progress",
+              "daily_limit",
+              "attempt_limit",
+              "budget_limit",
+              "envelope_expired",
+              "unknown_billing",
+              "route_or_price_changed",
+              "provider_unqualified",
+              "provider_unavailable",
+              "ledger_unavailable"
+            ],
+            "title": "Reason"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "next_step": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Step"
+          },
+          "state": {
+            "type": "string",
+            "const": "rejected",
+            "title": "State",
+            "default": "rejected"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "reason",
+          "message"
+        ],
+        "title": "Rejected"
+      },
+      "SourceReference": {
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Source Id"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sha256"
+          },
+          "locator": {
+            "type": "string",
+            "title": "Locator"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2083,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_id",
+          "version",
+          "sha256",
+          "locator",
+          "url"
+        ],
+        "title": "SourceReference"
+      },
+      "SummaryRequest": {
+        "properties": {
+          "dossier_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:*\\-]+$",
+            "title": "Dossier Id"
+          },
+          "snapshot": {
+            "type": "string",
+            "format": "date",
+            "title": "Snapshot"
+          },
+          "horizon": {
+            "type": "integer",
+            "enum": [
+              12,
+              24
+            ],
+            "title": "Horizon"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "th",
+              "en"
+            ],
+            "title": "Language"
+          },
+          "task": {
+            "type": "string",
+            "const": "A1",
+            "title": "Task"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "dossier_id",
+          "snapshot",
+          "horizon",
+          "language",
+          "task"
+        ],
+        "title": "SummaryRequest"
+      },
+      "Unavailable": {
+        "properties": {
+          "reason": {
+            "type": "string",
+            "enum": [
+              "invalid_request",
+              "identity_required",
+              "cross_origin",
+              "dossier_not_found",
+              "claim_text_missing",
+              "evidence_missing",
+              "unsupported_evidence",
+              "invalid_output",
+              "duplicate_request",
+              "request_in_progress",
+              "daily_limit",
+              "attempt_limit",
+              "budget_limit",
+              "envelope_expired",
+              "unknown_billing",
+              "route_or_price_changed",
+              "provider_unqualified",
+              "provider_unavailable",
+              "ledger_unavailable"
+            ],
+            "title": "Reason"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "next_step": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Step"
+          },
+          "state": {
+            "type": "string",
+            "const": "unavailable",
+            "title": "State",
+            "default": "unavailable"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "reason",
+          "message"
+        ],
+        "title": "Unavailable"
+      }
+    }
+  }
+}
