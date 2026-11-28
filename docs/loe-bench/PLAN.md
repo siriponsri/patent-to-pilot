@@ -56,6 +56,14 @@ The structure follows the WIPO *Guidelines for Preparing Patent Landscape Report
 | 1–17 Jan | Retrain on matured windows. **Track A freeze**: hashes, Git tag and OSF timestamp | Frozen before any later outcome fetch |
 | 18–31 Jan | **Final IS2.** Track A freeze verified before 2027-01-31 23:59 UTC | Submitted |
 
+**Accelerated schedule (owner-approved 28 November 2026: "go full, adjust as we go").** Target: a working product and a complete IS2 package by 15 December 2026.
+
+| Window | Work | Gate |
+|---|---|---|
+| 28 Nov–1 Dec | OSF update 1 (owner) → custodian projection → C′ gate → H1–H3 and exploratory scoring. In parallel: product build (PRD1 dossier builder, PRD2 time-machine demo), evidence pilots (EVP: C6 and C7), C9 code preparation (C9P) | The C′ gate runs only after OSF update 1 is confirmed |
+| 2–7 Dec | C9 GRPO/SFT training on RunPod (≤ USD 8, live quote, owner approval). Track A retrain and freeze (hashes, Git tag, OSF timestamp) about 6 Dec. IS2 results and docx | The freeze happens before any post-t0 outcome fetch |
+| 8–15 Dec | C8 traceability audit, product polish, IS2 slides (Claude), final audit, GitHub release v1.0 | Owner review |
+
 **Housekeeping.** The owner authorized deleting documents and data that no longer serve this work.
 - Deletions run from a reviewed inventory, using `git rm` so Git history keeps every file.
 - `docs/owner/`, private artifacts, protected code and tests, and the evidence index are not deleted.
