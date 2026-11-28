@@ -24,28 +24,28 @@ T = {
     "en": dict(
         rec="Records available by cutoff", cap=r"Review capacity per cutoff:  $k=\lfloor N/5\rfloor$",
         dos="Dated dossier and checklist for the selected cases", cut="Review cutoff $t_0$",
-        evt="First final US generic approval observed in the window", m12="12 months", m24="24 months",
+        evt="First linked final US ORIG/AP within the window", m12="12-month window", m24="24-month window",
         only="Outcomes are used only to score the queues",
         arms={"B1": "B1  drug age", "M1": "M1  dated-evidence table", "M3": "M3  table + graph states",
-              "L1": "L1  identity prompt (7B)", "L1e": "L1e  evidence prompt (7B)"},
-        pa="Recall at fixed review capacity (sealed test C′)",
-        t24="24 months  ·  368 event cases, 924 slots", t12="12 months  ·  202 event cases, 1,048 slots",
-        pb="Paired differences in the preregistered order H1, H2, H3",
+              "L1": "L1  exploratory identity prompt", "L1e": "L1e  exploratory evidence prompt"},
+        pa="Recall at fixed review capacity (historical C′)",
+        t24="24 months  ·  368 event rows, 924 slots", t12="12 months  ·  202 event rows, 1,048 slots",
+        pb="Paired recall differences · +10 pp practical threshold",
         hl={"H1": "H1  M3 − B1, 24 months", "H2": "H2  M3 − M1, 24 months", "H3": "H3  M3 − B1, 12 months"},
-        note={"H1": "H1 met the criterion", "H2": "Testing stopped at H2", "H3": "Descriptive estimate only"},
+        note={"H1": "H1 PASS against zero", "H2": "H2 FAIL, sequence stops", "H3": "Descriptive estimate only"},
         xl="Paired recall difference (percentage points)"),
     "th": dict(
         rec="หลักฐานที่เผยแพร่ภายในวันตัดข้อมูล", cap=r"จำนวนช่องทบทวนต่อวันตัดข้อมูล  $k=\lfloor N/5\rfloor$",
         dos="แฟ้มหลักฐานและรายการตรวจสอบสำหรับรายการที่เลือก", cut="วันตัดข้อมูล $t_0$",
-        evt="การอนุมัติยาสามัญขั้นสุดท้ายครั้งแรกในสหรัฐฯ ภายในช่วงติดตาม", m12="12 เดือน", m24="24 เดือน",
+        evt="ORIG/AP แรกในสหรัฐฯ ที่เชื่อมกับตัวยาได้ภายในช่วงติดตาม", m12="ติดตาม 12 เดือน", m24="ติดตาม 24 เดือน",
         only="ผลที่เกิดขึ้นใช้ประเมินคิวเท่านั้น",
         arms={"B1": "B1  อายุยา", "M1": "M1  ตารางหลักฐานตามวันที่", "M3": "M3  ตารางร่วมกับสถานะกราฟ",
-              "L1": "L1  คำสั่งระบุตัวยา (7B)", "L1e": "L1e  คำสั่งพร้อมหลักฐาน (7B)"},
-        pa="การครอบคลุมเมื่อกำหนดจำนวนช่องทบทวน (ชุดทดสอบปิดผนึก C′)",
-        t24="24 เดือน  ·  368 รายการที่เกิดเหตุการณ์, 924 ช่อง", t12="12 เดือน  ·  202 รายการที่เกิดเหตุการณ์, 1,048 ช่อง",
-        pb="ผลต่างแบบจับคู่ตามลำดับที่ลงทะเบียน H1, H2, H3",
+              "L1": "L1  สำรวจด้วยคำสั่งระบุตัวยา", "L1e": "L1e  สำรวจด้วยคำสั่งพร้อมหลักฐาน"},
+        pa="การครอบคลุมเมื่อกำหนดจำนวนช่องทบทวน (ชุดย้อนหลัง C′)",
+        t24="24 เดือน  ·  368 แถวเหตุการณ์, 924 ช่อง", t12="12 เดือน  ·  202 แถวเหตุการณ์, 1,048 ช่อง",
+        pb="ผลต่างแบบจับคู่ · เกณฑ์ประโยชน์เชิงปฏิบัติ +10 จุดร้อยละ",
         hl={"H1": "H1  M3 − B1, 24 เดือน", "H2": "H2  M3 − M1, 24 เดือน", "H3": "H3  M3 − B1, 12 เดือน"},
-        note={"H1": "H1 ผ่านเกณฑ์ที่กำหนด", "H2": "การทดสอบสิ้นสุดที่ H2", "H3": "รายงานผลเชิงพรรณนา"},
+        note={"H1": "H1 ผ่านเมื่อเทียบกับศูนย์", "H2": "H2 ไม่ผ่าน จึงหยุดทดสอบ", "H3": "รายงานผลเชิงพรรณนา"},
         xl="ผลต่างการครอบคลุมแบบจับคู่ (จุดร้อยละ)"),
 }
 
@@ -124,7 +124,7 @@ def fig2(lang):
         b.plot([e], [i], marker="s" if kind == "filled" else "o", ms=4.8, mfc=INK if kind == "filled" else "white",
                mec=INK, mew=0.9)
         b.text(-5.6, i, t["hl"][h], ha="right", va="center", fontsize=fs.pt(7.2))
-        b.text(31, i, f"{e:+.2f} [{lo:.2f}, {hi:.2f}]".replace("-", "−"), va="center", fontsize=fs.pt(7))
+        b.text(31, i, f"{e:+.2f} [{lo:+.2f}, {hi:+.2f}]".replace("-", "−"), va="center", fontsize=fs.pt(7))
         b.text(49, i, t["note"][h], va="center", fontsize=fs.pt(7), weight="bold" if h == "H2" else "normal")
     b.axvline(0, color=INK, lw=0.8)
     b.axvline(10, color=MID, lw=0.6, ls=(0, (1, 1.6)))

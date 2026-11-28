@@ -18,6 +18,8 @@ def _links(text, ref=False):
         if not url.startswith("http"):
             return "\x00"  # internal receipt link: dropped in print
         if ref:
+            if label == "Source":
+                return "[Online guide]"
             return label if label.lower().startswith("doi:") else "[Online]. Available: " + url
         return label
     t = LINK.sub(sub, text)
@@ -125,6 +127,8 @@ def load(md_path, lang):
                 j += 1
             full = len(rows[0]) > 5
             widths = _widths(rows, TEXT_W if full else COL_TW)
+            if cap.startswith(("Table 1.", "ตารางที่ 1")) and len(rows[0]) == 3:
+                widths = [840, 1910, 1570]
             body.append(("tbl", cap, [[inline(c) for c in r] for r in rows], widths, full, None, aligns))
             i = j - 1
         elif s.startswith("- "):
