@@ -1,15 +1,16 @@
-OSF attachment manifest | PREREG2 draft
+OSF attachment manifest | Market Window Dossier / LOE-Bench preregistration v2
 
 Each SHA-256 binds the Git blob bytes (UTF-8, LF) at the listed full commit.
-The draft PDF digest is in the PREREG2 receipt. The main planner records the
-audited attachment digests and commit in section 5 and section 6 of the copy sheet.
+The registered text is docs/loe-bench/PREREGISTRATION.md at the same commit;
+PREREGISTRATION.pdf is rendered from it by docs/loe-bench/render_prereg.py.
 
 SHA-256  Commit  Repository path
-d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39  8f8e0568469e71cfce1c2d8e9b018429f122066e  loe-bench/data/FROZEN_CONFIG.json
-7d40be5e2004d887480ce5f337afffd611909f26017622e90ad304a0386d2d1d  8f8e0568469e71cfce1c2d8e9b018429f122066e  loe-bench/data/S0_INPUT_MANIFEST.json
-e5e5ade357ee5faf83efa0ce24ad25feddacdfcbf49ddd817a6b10e494a9ef16  8f8e0568469e71cfce1c2d8e9b018429f122066e  loe-bench/data/L1_FROZEN_CONFIG.json
-dd1dd4ac0d592a48de081c5fc29f68e0ccc78fd7a8daad771d280c7f15901e40  8f8e0568469e71cfce1c2d8e9b018429f122066e  loe-bench/data/L1E_FROZEN_CONFIG.json
-8179101bb7a0adf9e8659bcb0978c73bd32ee869506a50027537741a45e3b0fd  8f8e0568469e71cfce1c2d8e9b018429f122066e  loe-bench/data/C3_SPEC.json
-c0644bb4c1ed9d6050e256191c85bb34dd120a73b6da78850a1faf80e2c400f0  8f8e0568469e71cfce1c2d8e9b018429f122066e  loe-bench/data/C4_SPEC.json
-e865e719e7fcbd8fa636164270c4c3959d007cb9357cbedb59d7802b8951f28f  519d0a94c8845bc3d13e7e75482bb3ff008e4a3d  loe-bench/data/C9_SPEC.json
-9e2f6d3173848636b0ba81f6509735a087f2b9f1632dbdfb58aae12f0c519331  8f8e0568469e71cfce1c2d8e9b018429f122066e  docs/loe-bench/REGULATORY-RULES.md
+dc485bb748bca2645253c95aa88a030921e8cdca9bdb2fa8f3754163e957d4fc  bef62d64b47f325d9eddb5857bd7835315014d62  docs/loe-bench/PREREGISTRATION.md
+d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39  bef62d64b47f325d9eddb5857bd7835315014d62  loe-bench/data/FROZEN_CONFIG.json
+7d40be5e2004d887480ce5f337afffd611909f26017622e90ad304a0386d2d1d  bef62d64b47f325d9eddb5857bd7835315014d62  loe-bench/data/S0_INPUT_MANIFEST.json
+e5e5ade357ee5faf83efa0ce24ad25feddacdfcbf49ddd817a6b10e494a9ef16  bef62d64b47f325d9eddb5857bd7835315014d62  loe-bench/data/L1_FROZEN_CONFIG.json
+dd1dd4ac0d592a48de081c5fc29f68e0ccc78fd7a8daad771d280c7f15901e40  bef62d64b47f325d9eddb5857bd7835315014d62  loe-bench/data/L1E_FROZEN_CONFIG.json
+8179101bb7a0adf9e8659bcb0978c73bd32ee869506a50027537741a45e3b0fd  bef62d64b47f325d9eddb5857bd7835315014d62  loe-bench/data/C3_SPEC.json
+c0644bb4c1ed9d6050e256191c85bb34dd120a73b6da78850a1faf80e2c400f0  bef62d64b47f325d9eddb5857bd7835315014d62  loe-bench/data/C4_SPEC.json
+e865e719e7fcbd8fa636164270c4c3959d007cb9357cbedb59d7802b8951f28f  bef62d64b47f325d9eddb5857bd7835315014d62  loe-bench/data/C9_SPEC.json
+9e2f6d3173848636b0ba81f6509735a087f2b9f1632dbdfb58aae12f0c519331  bef62d64b47f325d9eddb5857bd7835315014d62  docs/loe-bench/REGULATORY-RULES.md
