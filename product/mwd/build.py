@@ -148,12 +148,12 @@ def add_challenges(report, evidence, cutoff, key, fallback):
     return challenged
 
 
-def add_listings(report, evidence, cutoff, key, fallback):
+def add_listings(report, evidence, cutoff, key, fallback, *, challenge_adder=add_challenges):
     from loe_bench.challenge_patents import normalize_patent_number
     from loe_bench.common import add_months
 
     edition, products, patents, exclusivities = evidence.listing(cutoff, key)
-    challenged = add_challenges(report, evidence, cutoff, key, fallback)
+    challenged = challenge_adder(report, evidence, cutoff, key, fallback)
     if not edition:
         report.claim("listings-unknown", "patents", "ยังไม่มีฉบับ Orange Book ที่ยืนยันว่ามีเผยแพร่ทันวันตัดข้อมูล",
                      "Orange Book listings are unknown without an edition proven public by cutoff.",

@@ -9,7 +9,7 @@ import pytest
 
 from product.mwd.audit import audit_dossier
 from product.mwd.build import ranked_queue, select_demo
-from product.mwd.contract import DEMO, SECTIONS, read_json
+from product.mwd.contract import CURRENT, DEMO, SECTIONS, TRACK_A_DISCLAIMER, TRACK_A_LABEL, read_json
 from product.mwd.render import render
 
 
@@ -104,6 +104,24 @@ def test_future_scenario_cannot_launder_a_patent_source(dossier):
     assert not audit_dossier(dossier)["errors"]
 
 
+def test_track_a_requires_all_references_hashed_and_dated(dossier):
+    dossier["forecast"]["status"] = "TRACK_A_PENDING"
+    dossier["as_of"] = "2026-11-27"
+    dossier["label"] = TRACK_A_LABEL
+    dossier["version"] = {"freeze": "pending", "core_manifest_sha256": "0" * 64}
+    dossier["disclaimer"] = TRACK_A_DISCLAIMER
+    assert audit_dossier(dossier)["errors"]
+    dossier.pop("outcome_reveal")
+    source = dossier["sources"][0]
+    source.update(sha256="0" * 64, public_date=None, evidence_cutoff="2026-11-27")
+    assert not audit_dossier(dossier)["errors"]
+    html = render(dossier, "th", None)
+    assert TRACK_A_LABEL in html and TRACK_A_DISCLAIMER["th"] in html
+    assert "freeze: pending" in html and 'class="outcome"' not in html
+    source["evidence_cutoff"] = "2026-11-28"
+    assert audit_dossier(dossier)["errors"]
+
+
 def test_renderer_escapes_values_and_includes_toggle_and_numbered_refs(dossier):
     html = render(dossier, "en", "case.th.html")
     assert "<Drug>" not in html and "&lt;Drug&gt;" in html
@@ -115,7 +133,7 @@ def test_renderer_escapes_values_and_includes_toggle_and_numbered_refs(dossier):
 def test_generated_dossiers_validate(validator):
     paths = sorted((DEMO / "data").glob("dossier-*.json"))
     assert paths, "Build the development demo before validating the generated files"
-    for path in paths:
+    for path in [*paths, *sorted(CURRENT.glob("dossier-*.json"))]:
         dossier = read_json(path)
         validator.validate(dossier)
         assert not audit_dossier(dossier)["errors"], path.name

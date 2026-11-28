@@ -55,8 +55,8 @@ def _get(url: str, retries: int = 3, pause: float = 1.5) -> dict:
 
 
 def iter_records(endpoint: str, search: str, page: int = 1000, max_skip: int = 25000,
-                 sleep: float = 0.35) -> Iterator[dict]:
-    key = os.environ.get("OPENFDA_API_KEY")
+                 sleep: float = 0.35, *, use_api_key: bool = True, observe_meta=None) -> Iterator[dict]:
+    key = os.environ.get("OPENFDA_API_KEY") if use_api_key else None
     skip = 0
     total = None
     while True:
@@ -64,6 +64,8 @@ def iter_records(endpoint: str, search: str, page: int = 1000, max_skip: int = 2
         if key:
             url += f"&api_key={key}"
         d = _get(url)
+        if observe_meta is not None:
+            observe_meta(d.get("meta", {}))
         if total is None:
             total = d.get("meta", {}).get("results", {}).get("total", 0)
             if total > max_skip + page:

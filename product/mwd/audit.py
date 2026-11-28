@@ -10,6 +10,7 @@ from .contract import DEMO, read_json, write_json
 
 REF_SCENARIO = ("price-scenario", "market", "assumption", {"fda-amp-2019"})
 REF_DEMAND = ("demand", "market", "observed", {"sdud", "sdud-ndc"})
+TRACK_A_STATUSES = {"TRACK_A_PENDING", "TRACK_A_FROZEN"}
 
 
 def dated(value):
@@ -35,6 +36,10 @@ def identifiable(source):
                      or web_url(source.get("url"))))
 
 
+def hash_backed(source):
+    return bool(source and re.fullmatch(r"[a-f0-9]{64}", source.get("sha256") or ""))
+
+
 def context_claim(claim, refs):
     context = claim.get("time_basis")
     signature = (claim["id"], claim["section"], claim["kind"], set(refs))
@@ -49,6 +54,7 @@ def context_claim(claim, refs):
 
 def audit_dossier(dossier):
     cutoff = dated(dossier["as_of"])
+    track_a = dossier["forecast"]["status"] in TRACK_A_STATUSES
     sources = {source["id"]: source for source in dossier["sources"]}
     errors = []
     if len(sources) != len(dossier["sources"]):
@@ -57,6 +63,11 @@ def audit_dossier(dossier):
     for id, source in sources.items():
         try:
             days[id] = dated(source["public_date"]) if source["public_date"] is not None else None
+            if track_a:
+                if not days[id] and source.get("evidence_cutoff"):
+                    days[id] = dated(source["evidence_cutoff"])
+                if not days[id] or days[id] > cutoff or not hash_backed(source):
+                    errors.append(f"{id}: Track A source requires a hash and a date at or before cutoff")
         except (ValueError, KeyError):
             errors.append(f"{id}: invalid public date")
     claims = dossier["claims"]
@@ -71,11 +82,10 @@ def audit_dossier(dossier):
         refs = claim["source_ids"]
         valid = [sources[ref] for ref in refs if ref in sources and identifiable(sources[ref])]
         covered += bool(valid)
-        sha256_covered += any(re.fullmatch(r"[a-f0-9]{64}", source.get("sha256") or "")
-                              for source in valid)
+        sha256_covered += any(hash_backed(source) for source in valid)
         if not valid or len(valid) != len(refs):
             errors.append(f"{claim['id']}: unresolved source reference")
-        contextual = context_claim(claim, refs)
+        contextual = not track_a and context_claim(claim, refs)
         if claim.get("time_basis") and not contextual:
             errors.append(f"{claim['id']}: invalid context label")
         for ref in refs:
@@ -85,6 +95,8 @@ def audit_dossier(dossier):
         if not task["source_ids"] or not all(identifiable(sources.get(ref)) for ref in task["source_ids"]):
             errors.append(f"{task['id']}: unresolved checklist reference")
     reveal = dossier.get("outcome_reveal")
+    if track_a and "outcome_reveal" in dossier:
+        errors.append("Track A outcome reveal must be absent")
     if reveal:
         end = dated(reveal["window_end"])
         outcome = reveal["first_final_anda_date"]

@@ -7,6 +7,15 @@ ROOT = Path(__file__).resolve().parents[2]
 BENCH = ROOT / "loe-bench" / "data"
 PRODUCT = ROOT / "docs" / "product"
 DEMO = ROOT / "product" / "demo"
+CURRENT = DEMO / "data" / "current"
+TRACK_A_LABEL = "Track A t0 forecast, outcome pending"
+TRACK_A_DISCLAIMER = {
+    "th": "เอกสารนี้ใช้จัดลำดับงานตรวจจากข้อมูลที่ระบุ ณ วันที่แสดง แบบจำลองประเมินโอกาสการอนุมัติยาสามัญครั้งแรกในสหรัฐฯ สถานะสิทธิในไทยและการประเมินเสรีภาพในการดำเนินการด้านสิทธิบัตร (FTO) ต้องให้ผู้เชี่ยวชาญตรวจข้อถือสิทธิ ผลิตภัณฑ์ ประเทศ และสถานะกฎหมายปัจจุบัน เอกสารนี้ไม่ใช่ความเห็นทางกฎหมายหรือความเห็น FTO",
+    "en": "This dossier prioritizes review using the evidence available as of the displayed date. "
+          "The model estimates the chance of first US generic approval. Qualified experts must verify "
+          "Thai rights and assess freedom to operate (FTO) against the claims, product, jurisdiction "
+          "and current legal status. This dossier is neither a legal opinion nor an FTO opinion.",
+}
 SCHEDULE = {
     12: ("2012-01-01", "2013-01-01", "2014-01-01", "2015-01-01"),
     24: ("2013-01-01", "2014-01-01"),

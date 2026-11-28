@@ -76,8 +76,14 @@
         "status": {
           "enum": [
             "DEVELOPMENT_ONLY",
+            "TRACK_A_PENDING",
             "TRACK_A_FROZEN"
           ]
+        },
+        "queue_inclusion_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         }
       },
       "required": [
@@ -90,6 +96,41 @@
         "status"
       ]
     },
+    "forecast_12m": {
+      "allOf": [
+        { "$ref": "#/properties/forecast" },
+        {
+          "properties": { "horizon_months": { "const": 12 } },
+          "required": ["queue_inclusion_probability"]
+        }
+      ]
+    },
+    "label": { "const": "Track A t0 forecast, outcome pending" },
+    "disclaimer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "th": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      },
+      "required": ["th", "en"]
+    },
+    "version": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "freeze": { "enum": ["pending", "verified"] },
+        "core_manifest_sha256": { "$ref": "#/$defs/digest" },
+        "manifest_sha256": { "$ref": "#/$defs/digest" },
+        "tag": { "type": "string", "minLength": 1 }
+      },
+      "required": ["freeze", "core_manifest_sha256"],
+      "if": { "properties": { "freeze": { "const": "verified" } } },
+      "then": { "required": ["tag", "manifest_sha256"] },
+      "else": { "not": { "anyOf": [{"required": ["tag"]}, {"required": ["manifest_sha256"]}] } }
+    },
+    "challenge_state": { "enum": ["TRUE", "UNKNOWN"] },
+    "fda_piv_coverage": { "const": "NO_FRESH_EDITION" },
     "outcome_reveal": {
       "type": "object",
       "additionalProperties": false,
@@ -287,9 +328,41 @@
           ]
         }
       }
+    },
+    {
+      "if": { "properties": { "forecast": { "properties": { "status": { "const": "TRACK_A_PENDING" } } } } },
+      "then": {
+        "required": ["forecast_12m", "version", "label", "disclaimer", "challenge_state", "fda_piv_coverage"],
+        "properties": {
+          "forecast": {
+            "required": ["queue_inclusion_probability"],
+            "properties": { "horizon_months": { "const": 24 } }
+          },
+          "forecast_12m": { "properties": { "status": { "const": "TRACK_A_PENDING" } } },
+          "version": { "properties": { "freeze": { "const": "pending" } } }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": ["version"],
+        "properties": { "forecast": { "properties": { "status": { "const": "TRACK_A_FROZEN" } } } }
+      },
+      "then": {
+        "required": ["forecast_12m", "label", "disclaimer", "challenge_state", "fda_piv_coverage"],
+        "properties": {
+          "forecast": {
+            "required": ["queue_inclusion_probability"],
+            "properties": { "horizon_months": { "const": 24 } }
+          },
+          "forecast_12m": { "properties": { "status": { "const": "TRACK_A_FROZEN" } } },
+          "version": { "properties": { "freeze": { "const": "verified" } } }
+        }
+      }
     }
   ],
   "$defs": {
+    "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "section": {
       "type": "object",
       "additionalProperties": false,
@@ -419,6 +492,7 @@
             }
           ]
         },
+        "evidence_cutoff": { "type": "string", "format": "date" },
         "locator": {
           "type": "string",
           "minLength": 1
@@ -505,6 +579,12 @@
             "BD"
           ]
         },
+        "agency": { "type": "string", "minLength": 1 },
+        "lookup_url": { "type": ["string", "null"], "format": "uri", "pattern": "^https?://" },
+        "state": { "const": "unknown" },
+        "search_terms": { "$ref": "#/$defs/terms" },
+        "wo_numbers": { "$ref": "#/$defs/terms" },
+        "priority_numbers": { "$ref": "#/$defs/terms" },
         "source_ids": {
           "type": "array",
           "items": {
@@ -522,6 +602,7 @@
         "owner",
         "source_ids"
       ]
-    }
+    },
+    "terms": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
   }
 }
