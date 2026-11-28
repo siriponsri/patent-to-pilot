@@ -69,3 +69,7 @@ L1 and L1e each passed with 200 valid responses in the first 200 against the req
 - The C′ metric supplement is **NOT_RUN**. Zero protected C′ data were opened and zero post-t0 outcome sources were fetched during this card. Predictions remain fixed. The 12-month window matures on 27 November 2027 and the 24-month window on 27 November 2028.
 
 Claude audits the [update 4 sheet](../OSF-UPDATE-4-SHEET.md). The owner files the update and the planner verifies the external timestamp. OSF submission and attachment handling are **NOT_RUN**.
+
+## OSF update 4 verified (main planner, 28 Nov 2026)
+
+The owner filed update 4. The OSF API shows schema response `6b0abacc9917f6722859f5ec` **approved**, submitted at **2026-11-28T11:30:06Z**. The response text contains the freeze manifest SHA-256 8a78b318…c38d, the tag `loe-track-a-freeze-20261127`, the archive SHA-256 85e9521e…2da2, all 10 per-arm file digests (0 missing) and the C9-GRPO abstention sentence. The external timestamp precedes the 2027-01-31 23:59 UTC deadline, and no post-t0 outcome source has been fetched. Track A is externally timestamped.
