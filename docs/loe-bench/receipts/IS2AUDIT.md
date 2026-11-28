@@ -26,3 +26,18 @@ Abstract lengths are 190 English words and 246 Thai tokens (PyThaiNLP newmm). Th
 - The English text from §1 to the references is about 4,900 words including tables, so a ten-page overrun is a real risk. The KMITL template build decides it. If it overruns, move Table 4 (development LLM) and the development paragraphs into a short appendix or the IS2 report.
 - Track A and C9 results remain pending in the text by design.
 - **Next:** build the KMITL docx (TH and EN) with the kmitl-is-paper skill, check pagination and caption placement, then make the IS2 slides.
+
+## Final audit after IS2FIT (28 November 2026)
+
+**DONE.** IS2FIT (merged) cut the body by about 40% and both editions now render at 10 pages in Word. The main planner reread the English body in full and checked numbers mechanically. Against the audited base, the only new numeric strings were sign-formatted forms of existing values: development CIs written with "+", and L1e − M3 written as a signed difference. Both abstracts are unchanged. IS2FIT reported an emphasis difference between the two abstracts. It is not present: both abstracts give M1 65.49% and the 7B result of 12.36%. The planner also checked the rendered contact sheets of all 20 pages: captions sit below figures and above tables, the tables are intact and no column ends early.
+
+Deliverables were copied to `C:/Users/User/Desktop/IS2-MWD/` for the owner. They are local only and covered by the build ignore rules.
+
+| File | SHA-256 |
+| --- | --- |
+| `IS2-MWD-EN.docx` | `682153258ef7df4a819bb805c45daad3814c9905ea334b77ca042beaadafac31` |
+| `IS2-MWD-EN.pdf` | `d838230191f4307622016a31f1251a46a4d17030400379d3e92b30a1905c887c` |
+| `IS2-MWD-TH.docx` | `8f01a433059dce1286da6e11f8f9ccdbadb558c070b0701b09f6f0a23e6231e3` |
+| `IS2-MWD-TH.pdf` | `3cb4e0f4ddbfbdbf991e178db9687171f0df9fd751b4387552751e862d7cc98e` |
+
+**Next:** the IS2 slides (Claude). The C9 and Track A text updates follow the freeze.
