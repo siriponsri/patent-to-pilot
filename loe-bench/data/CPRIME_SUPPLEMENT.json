@@ -1,0 +1,114 @@
+{
+  "status": "POST_HOC_DESCRIPTIVE",
+  "probability_threshold": 0.5,
+  "frozen_config_sha256_lf": "d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39",
+  "score_exports_sha256": {
+    "C1_scores_12m.json": "a644f1d40271c9a59a5405b840724906332ce975854d2afedd3d22c4ded80891",
+    "C1_scores_24m.json": "c3b9e51891fd8f577dfce9f7fbbfb466f25f29ae50ed4edd9d8b2d0fcbcc84e7"
+  },
+  "c_index_unavailable_reason": "C1 score exports omit exact event dates",
+  "horizons": {
+    "12": {
+      "rows": 5259,
+      "unique_drugs": 803,
+      "event_rows": 202,
+      "event_drugs": 202,
+      "prevalence": 0.038410344171895795,
+      "arms": {
+        "B1": {
+          "roc_auc": 0.7094582159422191,
+          "accuracy": 0.9615896558281042,
+          "tp": 0,
+          "fp": 0,
+          "tn": 5057,
+          "fn": 202,
+          "always_negative_accuracy": 0.9615896558281042,
+          "brier_from_score": 0.0373,
+          "c_index": {
+            "estimate": "NOT_ESTIMABLE",
+            "comparable_pairs": null
+          }
+        },
+        "M1": {
+          "roc_auc": 0.8026723079664106,
+          "accuracy": 0.9615896558281042,
+          "tp": 0,
+          "fp": 0,
+          "tn": 5057,
+          "fn": 202,
+          "always_negative_accuracy": 0.9615896558281042,
+          "brier_from_score": 0.0354,
+          "c_index": {
+            "estimate": "NOT_ESTIMABLE",
+            "comparable_pairs": null
+          }
+        },
+        "M3": {
+          "roc_auc": 0.8124832356678421,
+          "accuracy": 0.9615896558281042,
+          "tp": 0,
+          "fp": 0,
+          "tn": 5057,
+          "fn": 202,
+          "always_negative_accuracy": 0.9615896558281042,
+          "brier_from_score": 0.0352,
+          "c_index": {
+            "estimate": "NOT_ESTIMABLE",
+            "comparable_pairs": null
+          }
+        }
+      }
+    },
+    "24": {
+      "rows": 4639,
+      "unique_drugs": 771,
+      "event_rows": 368,
+      "event_drugs": 202,
+      "prevalence": 0.079327441258892,
+      "arms": {
+        "B1": {
+          "roc_auc": 0.726210260299492,
+          "accuracy": 0.920672558741108,
+          "tp": 0,
+          "fp": 0,
+          "tn": 4271,
+          "fn": 368,
+          "always_negative_accuracy": 0.920672558741108,
+          "brier_from_score": 0.0713,
+          "c_index": {
+            "estimate": "NOT_ESTIMABLE",
+            "comparable_pairs": null
+          }
+        },
+        "M1": {
+          "roc_auc": 0.7954569747437216,
+          "accuracy": 0.920672558741108,
+          "tp": 0,
+          "fp": 0,
+          "tn": 4271,
+          "fn": 368,
+          "always_negative_accuracy": 0.920672558741108,
+          "brier_from_score": 0.0654,
+          "c_index": {
+            "estimate": "NOT_ESTIMABLE",
+            "comparable_pairs": null
+          }
+        },
+        "M3": {
+          "roc_auc": 0.8045087954149828,
+          "accuracy": 0.9204569950420349,
+          "tp": 0,
+          "fp": 1,
+          "tn": 4270,
+          "fn": 368,
+          "always_negative_accuracy": 0.920672558741108,
+          "brier_from_score": 0.0647,
+          "c_index": {
+            "estimate": "NOT_ESTIMABLE",
+            "comparable_pairs": null
+          }
+        }
+      }
+    }
+  }
+}
