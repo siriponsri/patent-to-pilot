@@ -4,15 +4,15 @@ Use the KMITL AI4BA short-paper template. Place captions below figures and above
 
 ## Figure 1
 
-- **TH** รูปที่ 1 ใน IS1 ขั้นค้นคืนไม่พบเอกสารเป้าหมายที่ทราบใน 100 อันดับแรกสำหรับ 435 จาก 692 คำค้น ใน IS2 ทีมใช้หลักฐานที่เผยแพร่แล้ว ณ วันตัดข้อมูลเพื่อจัดยาเข้าเกณฑ์หนึ่งในห้าเข้าคิวส่งแฟ้มให้ผู้เชี่ยวชาญ ทีมใช้ผลที่เกิดขึ้นใน 24 เดือนสำหรับให้คะแนนเท่านั้น
-- **EN** Figure 1. IS1 found no known target in the first 100 candidates for 435 of 692 queries. In IS2, the team uses evidence published by the cutoff to queue one in five eligible drug cases for specialist review. The 24-month outcomes enter scoring only.
-- The main planner supplies full-width artwork at `figures/fig1_decision_{en,th}.png`. The IS1 inset counts 435 of 692 queries with no known relevant target in the first 100 candidates. The IS2 path runs from the eligible list through evidence published by the cutoff and the one-in-five queue to the specialist dossier. Place the 24-month outcome beyond the cutoff line and route it only to scoring. Section 3.1 introduces the figure. Section 3.4 anchors the float for pagination.
+- **TH** รูปที่ 1 ณ วันตัดข้อมูลแต่ละปี แต่ละวิธีจัดลำดับรายการยาจากข้อมูลที่เผยแพร่แล้ว โดยเลือกทบทวนได้ ⌊N/5⌋ รายการ และแบ่งน้ำหนักเมื่อคะแนนเสมอตรงขอบลำดับ การอนุมัติขั้นสุดท้ายครั้งแรกที่พบในช่วง 12 หรือ 24 เดือนถัดมาใช้คำนวณสัดส่วนรายการที่เกิดเหตุการณ์ซึ่งได้รับเลือกให้ทบทวน
+- **EN** Figure 1. At each annual cutoff, each method ranks eligible drug cases using records available by that date. Review capacity is ⌊N/5⌋, with fractional allocation at boundary ties. First final approvals observed over the next 12 or 24 months are used to calculate recall.
+- The main planner supplies the full-width timeline at `figures/fig1_timeline_{en,th}.png`. At 6.5 × 1.95 in, the single panel places records available by t0 before the cutoff, ranks N eligible cases into ⌊N/5⌋ review places with fractional boundary ties, and routes selected cases to the dated dossier and checklist. The outcome window (t0, t0+h] feeds recall only. Section 3.1 introduces the figure. Anchor the float at the start of §3.4 to place it near §3.3 in the rendered paper.
 
 ## Figure 2
 
-- **TH** รูปที่ 2 ผลต่างการครอบคลุมแบบจับคู่ที่ความจุร้อยละ 20 (จุดร้อยละ ช่วงความเชื่อมั่น 95% สองด้านจากการสุ่มซ้ำระดับตัวยา) ใน C′ ผล H1 +20.37 [+14.37, +26.16] ผ่าน ส่วน H2 +1.36 [−2.20, +3.01] ไม่ผ่าน ทีมจึงหยุดทดสอบและรายงาน H3 +16.69 [+9.98, +24.21] เชิงพรรณนา ขอบล่างด้านเดียวตรงกับขอบล่างที่ระบุ ค่าประมาณ H1 และ H3 สูงกว่า +10 จุดร้อยละ เส้นอยู่ที่ศูนย์และ +10 จุดร้อยละ ชุดพัฒนามีตัวยาที่เกิดเหตุการณ์แบบไม่นับซ้ำ 67 และ 90 ตัวที่ระยะ 24 และ 12 เดือน ส่วน C′ มี 202 ตัวในแต่ละระยะ
-- **EN** Figure 2. Paired recall differences at 20% capacity (pp, two-sided 95% whole-drug bootstrap CIs). C′ H1 +20.37 [+14.37, +26.16] passed. H2 +1.36 [−2.20, +3.01] failed and stopped testing. H3 +16.69 [+9.98, +24.21] is descriptive. One-sided bounds are the listed lower endpoints. H1 and H3 estimates exceed +10 pp. Lines mark zero and +10 pp. Distinct event drugs at 24 and 12 months were 67 and 90 in development and 202 each in C′.
-- Place immediately after Table 1 in §4.1. Plot H1, H2 and H3 as three horizontal rows, with two vertically offset point-and-interval marks per row. Give C′ greater visual weight and distinguish development by marker shape and legend. Use a common axis in percentage points with vertical lines at zero and the prespecified +10-point practical-usefulness threshold. Label each contrast and horizon and identify the distinct event-drug counts. Mark C′ H3 as descriptive. [FREEZE development results](../../../loe-bench/receipts/FREEZE.md#development-results) · [SCORE C′ results](../../../loe-bench/receipts/SCORE.md#primary-family) · [Preregistration protocol](../../../loe-bench/PREREGISTRATION.md)
+- **TH** รูปที่ 2 ผลต่างการครอบคลุมแบบจับคู่เมื่อกำหนดจำนวนรายการที่ทบทวนไว้ที่ร้อยละ 20 (จุดร้อยละ ช่วงความเชื่อมั่น 95% สองด้านจากการสุ่มซ้ำระดับตัวยา) ใน C′ ผล H1 ผ่าน ลำดับการทดสอบสิ้นสุดที่ H2 และรายงาน H3 เชิงพรรณนา เส้นแนวตั้งระบุศูนย์และเกณฑ์ประโยชน์เชิงปฏิบัติที่กำหนดล่วงหน้า (+10 จุดร้อยละ)
+- **EN** Figure 2. Paired recall differences at 20% review capacity (pp, two-sided 95% whole-drug bootstrap CIs). In C′, H1 passed, the sequence stopped at H2, and H3 is descriptive. Vertical lines mark zero and the prespecified usefulness threshold (+10 pp).
+- Place after Table 1 in §4.1 at 3.0 × 2.70 in. Plot two vertically offset point-and-interval marks for each contrast and horizon. Distinguish development by marker shape and legend and give C′ greater visual weight. On the common percentage-point axis, mark zero and the prespecified usefulness threshold at +10 pp. Use the row labels “H1 passed”, “Sequence stopped at H2” and “H3 descriptive” or the Thai equivalents “H1 ผ่าน”, “ลำดับการทดสอบสิ้นสุดที่ H2” and “H3 เชิงพรรณนา”. [FREEZE development results](../../../loe-bench/receipts/FREEZE.md#development-results) · [SCORE C′ results](../../../loe-bench/receipts/SCORE.md#primary-family) · [Preregistration protocol](../../../loe-bench/PREREGISTRATION.md)
 
 | Row | Horizon | Contrast | Development event drugs | Development estimate [95% CI] (pp) | C′ event drugs | C′ estimate [95% CI] (pp) |
 | --- | ---: | --- | ---: | ---: | ---: | ---: |
@@ -20,7 +20,7 @@ Use the KMITL AI4BA short-paper template. Place captions below figures and above
 | H2 | 24 months | M3 − M1 | 67 | +5.49 [−2.00, +11.25] | 202 | +1.36 [−2.20, +3.01] |
 | H3 | 12 months | M3 − B1 | 90 | +13.00 [+3.27, +23.17] | 202 | +16.69 [+9.98, +24.21] |
 
-`make_fig2.py` renders the development and C′ paired plot for both editions. It is embedded in §4.1 as `figures/fig2_effects_{en,th}.png`; event-drug counts are in the caption.
+The main planner updates the development and C′ paired plot for both editions. It is embedded in §4.1 as `figures/fig2_effects_{en,th}.png`; event-drug counts are in §4.1.
 
 ## Table 1
 
