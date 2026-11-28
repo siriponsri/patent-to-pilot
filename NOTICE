@@ -1,16 +1,34 @@
 Patent-to-Pilot
 Copyright 2026 Siripon Srihangpiboon and Tuchsanai Ploysuwan
 
-The Apache License 2.0 in LICENSE applies to the source code in this repository
-(src/, scripts/, tests/ and frontend/).
+The Apache License 2.0 in LICENSE applies to the whole repository (owner decision D-L,
+28 November 2026). That includes the source code (src/, scripts/, tests/, frontend/),
+the Market Window Dossier product (product/: landing page, web app, desktop shell and
+MCP connector) and the LOE-Bench research code and documentation (loe-bench/, docs/).
 
-It does not apply to third-party datasets, model weights or documents that the code
-downloads or reads. They keep their own terms, for example:
+It does not change the terms of third-party data, models, fonts or documents that the
+code reads, downloads or bundles. They keep their own terms:
+
+Data used by the product and LOE-Bench
+- FDA Orange Book, Drugs@FDA and other FDA public files: United States Government
+  works in the public domain.
+- FDA Global Substance Registration System (GSRS): CC0 1.0.
+- Rai et al. generic-entry data: CC0 1.0.
+- NBER Orange Book dataset: not redistributed. It ships only as a download recipe;
+  fetch it from the source under the source's own terms.
+- Other open sources (CMS Medicaid State Drug Utilization Data, openFDA NDC Directory,
+  Thai public sources): each keeps the source's own terms, recorded with its revision,
+  rights and digest in the receipts under docs/loe-bench/ and docs/ra-pharma/.
+
+Fonts bundled in product/
+- Source Sans 3 and Noto Sans Thai: SIL Open Font License 1.1.
+
+Research datasets and model weights that the code may download (never redistributed
+in this repository)
 - DAPFAM (CC BY-NC-SA 4.0)
 - PANORAMA (CC BY-NC 4.0)
 - PatEmbed (CC BY-NC-SA 4.0)
-- Qwen3 (Apache-2.0)
-None of these datasets or weights is redistributed in this repository.
+- Qwen models (Apache-2.0)
 
 The public-source excerpts in src/patent_to_pilot/workbench/sample/scope_reader.json
 are attributed separately in docs/evidence-scope/receipts/S2-sources.md.
