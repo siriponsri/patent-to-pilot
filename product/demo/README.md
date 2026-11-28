@@ -1,75 +1,76 @@
-# Market Window Dossier demo
+# Market Window Dossier app
 
-A static demo of the Market Window Dossier. Pick a forecast horizon and a development cutoff year, see the first-generic review queue at 1-in-5 review capacity, open a seven-part dossier for a molecule, follow each claim to its dated source, and reveal what happened afterwards. It is decision support for FTO evaluators, not an FTO or legal opinion.
+The working web app of Market Window Dossier. Choose a forecast horizon and an as-of date, review the first-generic review queue at 1-in-5 capacity, open the seven-part dossier for a molecule, follow each statement to its dated source, and show what happened afterwards. It is decision support for BD, R&D and FTO evaluators, not legal advice or an FTO opinion.
 
-The current data are **FIXTURE** data: invented molecule names, companies, numbers, dates and digests. They exist so the interface can be built before card PRD1 delivers real development dossiers. The FIXTURE pill in the top bar and the chip in each dossier header say so.
+The visual system is F2, Regulatory agency, defined in [DESIGN.md](../../DESIGN.md) and chosen by the owner on 28 November 2026. The same files run in a browser, on a static host and inside the [Windows desktop app](../desktop/README.md). The [landing page](../site/README.md) links here.
 
-![Desktop, Thai](screenshots/desktop-th.png)
+![App, Thai content, 1440 px](../screenshots/app-th.png)
+
+## Data status
+
+The app shows **development data**: six example molecules at US cutoffs from 2012 to 2015, built by [PRD1](../../docs/loe-bench/receipts/PRD1.md) with the [EVP](../../docs/loe-bench/receipts/EVP.md) Thai and ASEAN evidence merged by [UIBUILD](../../docs/loe-bench/receipts/UIBUILD.md). The six cases include four catches, one false alarm and one miss. Each dossier carries the "Development data" chip. No sealed-test or Track A material is in `data/`.
 
 ## Open it
 
-Double-click `index.html`, or open it in a browser:
-
-```text
-product/demo/index.html
-```
-
-From `file://` the app reads `data.bundle.js`, because browsers block `fetch()` for local files. No server, build step or network access is needed. Thai is the default language; the TH/EN toggle switches the interface, the `lang` attribute and the claim text.
+Double-click `index.html`, or open it in a browser. No server, build step or network access is needed. From `file://` the app reads `data.bundle.js`. On a web server it reads `data/index.json` and the files it lists, and falls back to the bundle.
 
 The URL hash records the view, so a link reopens the same state:
 
 ```text
-index.html#lang=en&h=12&c=2013&m=talcoxib&tab=patents
-index.html#lang=th&h=12&c=2013&m=zentrapine&reveal=1
-index.html#lang=en&h=12&c=2013&m=talcoxib&tab=handoff&cite=c01   (opens the sources drawer)
+index.html#view=queue&lang=th&h=24&c=2014&m=U%3AU188XYD42P
+index.html#view=queue&lang=en&h=24&c=2014&m=U%3AU188XYD42P&tab=patents&reveal=1
+index.html#view=queue&lang=en&h=24&c=2014&m=U%3AQXS94885MZ&tab=patents&src=challenge-1
+index.html#view=dossiers
 ```
 
-## Refresh the data bundle
+`view` is `queue`, `dossiers`, `sources` or `settings`. `tab` is one of `decision`, `market`, `competition`, `patents`, `thai_asean`, `handoff` and `references`. `reveal=1` shows the outcome, `show=all` lists every ranked molecule, and `src` highlights one source.
+
+## What is on screen
+
+| Region | Contents |
+|---|---|
+| Top bar | Queue, Dossiers, Sources and Settings views, and the TH/EN content toggle |
+| Notice | "Decision support only. Not legal advice or an FTO opinion." It is always visible. |
+| Review queue | Horizon, as-of and show filters, the ranked table (rank, molecule, M3) and the review-capacity divider. After **Show outcome**, an Outcome column marks catches, misses and molecules with no event. |
+| Dossier | Breadcrumb, molecule name, **Show outcome** and **Print dossier**, chips, and seven tabs: Decision summary, Market window, Competition, Patents, Thailand and ASEAN, FTO hand-off and References. Each tab has a stats row and a statements table with Status and Source. |
+| Sources | Numbered sources cited in the open tab, with issuer, edition, publication date, locator, retrieval date, SHA-256 and link. Selecting a citation highlights the source and the statements that cite it. |
+
+Headings, navigation, labels and buttons are English. Statements, checklist items and notes follow the TH/EN toggle, Thai by default, and `<html lang>` follows the content language. Settings, the language choice and checklist ticks are stored in this browser only.
+
+**Keyboard.** Arrow keys, Home and End move through the queue when it has focus. Alt+Down and Alt+Up open the next or previous molecule that has a dossier. Arrow keys move between tabs, and Alt+1 to Alt+7 open a section. Ctrl+P prints the open dossier with every section expanded.
+
+**Layouts.** Three columns from 1280 px. Between 1024 and 1279 px the sources panel moves below the dossier. Below 1024 px the regions stack.
+
+## Refresh the data
 
 ```powershell
-python product/demo/bundle.py                  # data/ if data/index.json exists, else fixtures/
-python product/demo/bundle.py --source fixtures
-python product/demo/fixtures/make_fixtures.py  # regenerate FIXTURE files (seeded, deterministic)
+py -3.12 -m product.mwd.build     # PRD1 builder; needs the private inputs under _private_artifacts
+py -3.12 -m product.mwd.audit     # claim traceability and as-of dates
+python product/demo/bundle.py     # writes data/index.json and data.bundle.js
+python product/demo/fonts_css.py  # only after replacing a font file
 ```
 
-Both scripts use the Python standard library only. Re-run `bundle.py` whenever files under `data/` or `fixtures/` change, and commit the regenerated `data.bundle.js` so `file://` and static hosting stay in sync.
+`bundle.py` uses `data/` when it holds dossier files, and `fixtures/` otherwise (`--source fixtures` forces the old FIXTURE set). Commit the regenerated `data/index.json` and `data.bundle.js` with the data.
 
-## Data layout
+## Files
 
-The app reads an index manifest and loads files relative to the manifest's folder. On a web server it tries `data/index.json` (PRD1 output), then `fixtures/index.json`, then `data.bundle.js`. Real data replaces the fixtures without code changes when it follows this shape:
-
-```jsonc
-// data/index.json  (schema mwd.index.v1)
-{
-  "fixture": false,
-  "queues":   [{ "cutoff": "2013", "as_of": "2013-01-01", "horizon_months": 12, "path": "queues/queue-2013-h12.json" }],
-  "dossiers": [{ "key": "…", "cutoff": "2013", "horizon_months": 12, "path": "dossiers/…-2013-h12.json" }]
-}
-```
-
-- **Queue file** (`mwd.queue.v1`): `rows[]` of `{key, display_name, m3_p, b1_p, in_queue, event}`, plus `queue_size` (review slots), `n_candidates`, and `capture: {events_total, m3_captured, b1_captured}`. The app sorts rows by `m3_p`. `event` and `capture` appear only after **Reveal what happened**.
-- **Dossier file** (`mwd.dossier.v1`): `molecule`, `as_of`, `jurisdiction`, `forecast`, `outcome_reveal` (development only), `sections[7]`, `claims[]`, `sources[]` and `checklist[]`, as defined on card PRD1. The decision section may add `next_action_th`, `next_action_en` and `decisive_claim` (a claim id). Without them, the summary uses the first assumption claim and the first checklist item.
-
-A queue row without a dossier entry stays in the list (no ● marker) and opens a short "no dossier yet" panel.
-
-## Deploy to GitHub Pages
-
-The folder is a self-contained static site with relative paths.
-
-1. Run `python product/demo/bundle.py` and commit `data.bundle.js` with the data.
-2. Publish `product/demo/` as the site root. For example, use a Pages workflow with `actions/upload-pages-artifact` and `path: product/demo`, or push the folder's contents to a `gh-pages` branch.
-3. Open `https://<user>.github.io/<repo>/`. Over HTTPS the app fetches `data/index.json` directly and falls back to the bundle.
-
-Publishing makes the data public. Only open development data may be deployed. Protected test material, sealed outcomes and Track A outputs must never go into `data/`.
-
-## What is built and what is not
-
-| Built in this card (PRD2C) | Not built |
+| File | Purpose |
 |---|---|
-| Time-machine rail: horizon control, cutoff stepper, ranked queue, capacity divider | Real molecules and forecasts (PRD1) |
-| Dossier with seven numbered tabs, decision summary, claim state and kind chips | Thai demo molecules (separate curation card) |
-| Sources drawer with SHA-256 copy, references tab, FTO checklist saved in this browser | Server-side persistence, accounts, sharing |
-| Reveal panel with queue capture (M3 vs B1), respecting reduced motion | Track A or sealed-test views (not available by design) |
-| Thai/English, dark theme, under-900 px drawer layout, keyboard support, print stylesheet | Formal WCAG audit with assistive technology |
+| [`index.html`](index.html) | Page shell |
+| [`styles.css`](styles.css) | Tokens and layout from DESIGN.md, responsive and print rules |
+| [`app.js`](app.js) | Data loading, hash state, queue, dossier, sources, views, checklist storage |
+| [`bundle.py`](bundle.py) | Builds `data/index.json` and `data.bundle.js` |
+| [`fonts_css.py`](fonts_css.py) | Inlines the self-hosted fonts into `assets/fonts/fonts.css` for the app and the landing page |
+| `assets/fonts/` | Source Sans 3 and Noto Sans Thai (SIL OFL 1.1), with licence files |
+| `assets/logo.svg` | Logo, refined for F2 |
+| `fixtures/` | The earlier FIXTURE data set (synthetic), kept for tests of the loader |
 
-Files: [`index.html`](index.html), [`styles.css`](styles.css), [`app.js`](app.js), [`bundle.py`](bundle.py), [`fixtures/make_fixtures.py`](fixtures/make_fixtures.py). Receipt: [PRD2C](../../docs/loe-bench/receipts/PRD2C.md).
+## Deploy
+
+The folder is a static site with relative paths. Publish `product/` so that `site/` and `demo/` sit side by side, because the landing page links to `../demo/index.html`. Publishing makes the data public, so only open development data may be deployed. Protected test material, sealed outcomes and Track A outputs must never go into `data/`.
+
+## Limits
+
+- The dossiers are development examples. The prospective product (molecule, dosage form, jurisdiction and launch date as inputs) is not built.
+- Thai patent and registration status stays "verify" until a person checks the registers.
+- Accessibility was checked with axe-core and keyboard tests, not with a screen-reader user study.

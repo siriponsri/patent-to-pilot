@@ -6,6 +6,9 @@ index and every queue and dossier it references, and writes
 
     window.MWD_DATA = {"base": "...", "index": {...}, "files": {"<path>": {...}}};
 
+PRD1 writes queue-*.json and dossier-*.json into data/ without an index, so for
+data/ the script first writes data/index.json from those files (schema mwd.index.v1).
+
 Run from anywhere:  python product/demo/bundle.py [--source data|fixtures]
 Standard library only.
 """
@@ -20,14 +23,36 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 
 
+def write_data_index(base: Path) -> None:
+    """Index PRD1 output (mwd.queue.v1 / mwd.dossier.v1 files) for the app."""
+    queues, dossiers = [], []
+    for path in sorted(base.glob("queue-*.json")):
+        q = json.loads(path.read_text(encoding="utf-8"))
+        queues.append({"cutoff": q["as_of"][:4], "as_of": q["as_of"], "horizon_months": q["horizon_months"],
+                       "path": path.name})
+    for path in sorted(base.glob("dossier-*.json")):
+        d = json.loads(path.read_text(encoding="utf-8"))
+        dossiers.append({"key": d["molecule"]["key"], "display_name": d["molecule"]["display_name"],
+                         "cutoff": d["as_of"][:4], "as_of": d["as_of"],
+                         "horizon_months": d["forecast"]["horizon_months"], "path": path.name})
+    index = {"schema": "mwd.index.v1", "fixture": False, "status": "DEVELOPMENT_ONLY",
+             "note": "Development data: cutoffs before 2017. Built by product/mwd (PRD1).",
+             "jurisdiction": "US", "queues": queues, "dossiers": dossiers}
+    (base / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n",
+                                     encoding="utf-8", newline="\n")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--source", choices=["data", "fixtures"], help="default: data if data/index.json exists")
     ap.add_argument("--out", default=str(HERE / "data.bundle.js"))
     args = ap.parse_args()
 
-    source = args.source or ("data" if (HERE / "data" / "index.json").exists() else "fixtures")
+    has_data = any((HERE / "data").glob("dossier-*.json"))
+    source = args.source or ("data" if has_data else "fixtures")
     base = HERE / source
+    if source == "data":
+        write_data_index(base)
     index_path = base / "index.json"
     if not index_path.exists():
         print(f"error: {index_path} not found", file=sys.stderr)

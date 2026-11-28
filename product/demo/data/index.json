@@ -1,0 +1,303 @@
+{
+  "schema": "mwd.index.v1",
+  "fixture": false,
+  "status": "DEVELOPMENT_ONLY",
+  "note": "Development data: cutoffs before 2017. Built by product/mwd (PRD1).",
+  "jurisdiction": "US",
+  "queues": [
+    {
+      "cutoff": "2012",
+      "as_of": "2012-01-01",
+      "horizon_months": 12,
+      "path": "queue-2012-01-01-12m.json"
+    },
+    {
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 12,
+      "path": "queue-2013-01-01-12m.json"
+    },
+    {
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 24,
+      "path": "queue-2013-01-01-24m.json"
+    },
+    {
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 12,
+      "path": "queue-2014-01-01-12m.json"
+    },
+    {
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 24,
+      "path": "queue-2014-01-01-24m.json"
+    },
+    {
+      "cutoff": "2015",
+      "as_of": "2015-01-01",
+      "horizon_months": 12,
+      "path": "queue-2015-01-01-12m.json"
+    }
+  ],
+  "dossiers": [
+    {
+      "key": "U:82VFR53I78",
+      "display_name": "Aripiprazole",
+      "cutoff": "2012",
+      "as_of": "2012-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-82VFR53I78-2012-01-01-12m.json"
+    },
+    {
+      "key": "U:82VFR53I78",
+      "display_name": "Aripiprazole",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-82VFR53I78-2013-01-01-12m.json"
+    },
+    {
+      "key": "U:82VFR53I78",
+      "display_name": "Aripiprazole",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-82VFR53I78-2013-01-01-24m.json"
+    },
+    {
+      "key": "U:82VFR53I78",
+      "display_name": "Aripiprazole",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-82VFR53I78-2014-01-01-12m.json"
+    },
+    {
+      "key": "U:82VFR53I78",
+      "display_name": "Aripiprazole",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-82VFR53I78-2014-01-01-24m.json"
+    },
+    {
+      "key": "U:82VFR53I78",
+      "display_name": "Aripiprazole",
+      "cutoff": "2015",
+      "as_of": "2015-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-82VFR53I78-2015-01-01-12m.json"
+    },
+    {
+      "key": "U:A8910SQJ1U",
+      "display_name": "Solifenacin",
+      "cutoff": "2012",
+      "as_of": "2012-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-A8910SQJ1U-2012-01-01-12m.json"
+    },
+    {
+      "key": "U:A8910SQJ1U",
+      "display_name": "Solifenacin",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-A8910SQJ1U-2013-01-01-12m.json"
+    },
+    {
+      "key": "U:A8910SQJ1U",
+      "display_name": "Solifenacin",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-A8910SQJ1U-2013-01-01-24m.json"
+    },
+    {
+      "key": "U:A8910SQJ1U",
+      "display_name": "Solifenacin",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-A8910SQJ1U-2014-01-01-12m.json"
+    },
+    {
+      "key": "U:A8910SQJ1U",
+      "display_name": "Solifenacin",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-A8910SQJ1U-2014-01-01-24m.json"
+    },
+    {
+      "key": "U:AZV954TZ9N",
+      "display_name": "Gadolinium cation (3+)",
+      "cutoff": "2012",
+      "as_of": "2012-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-AZV954TZ9N-2012-01-01-12m.json"
+    },
+    {
+      "key": "U:AZV954TZ9N",
+      "display_name": "Gadolinium cation (3+)",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-AZV954TZ9N-2013-01-01-12m.json"
+    },
+    {
+      "key": "U:AZV954TZ9N",
+      "display_name": "Gadolinium cation (3+)",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-AZV954TZ9N-2013-01-01-24m.json"
+    },
+    {
+      "key": "U:AZV954TZ9N",
+      "display_name": "Gadolinium cation (3+)",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-AZV954TZ9N-2014-01-01-12m.json"
+    },
+    {
+      "key": "U:AZV954TZ9N",
+      "display_name": "Gadolinium cation (3+)",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-AZV954TZ9N-2014-01-01-24m.json"
+    },
+    {
+      "key": "U:AZV954TZ9N",
+      "display_name": "Gadolinium cation (3+)",
+      "cutoff": "2015",
+      "as_of": "2015-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-AZV954TZ9N-2015-01-01-12m.json"
+    },
+    {
+      "key": "U:OCY3U280Y3",
+      "display_name": "ARGATROBAN ANHYDROUS",
+      "cutoff": "2012",
+      "as_of": "2012-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-OCY3U280Y3-2012-01-01-12m.json"
+    },
+    {
+      "key": "U:OCY3U280Y3",
+      "display_name": "ARGATROBAN ANHYDROUS",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-OCY3U280Y3-2013-01-01-12m.json"
+    },
+    {
+      "key": "U:OCY3U280Y3",
+      "display_name": "ARGATROBAN ANHYDROUS",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-OCY3U280Y3-2013-01-01-24m.json"
+    },
+    {
+      "key": "U:OCY3U280Y3",
+      "display_name": "ARGATROBAN ANHYDROUS",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-OCY3U280Y3-2014-01-01-12m.json"
+    },
+    {
+      "key": "U:OCY3U280Y3",
+      "display_name": "ARGATROBAN ANHYDROUS",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-OCY3U280Y3-2014-01-01-24m.json"
+    },
+    {
+      "key": "U:QXS94885MZ",
+      "display_name": "Bimatoprost",
+      "cutoff": "2012",
+      "as_of": "2012-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-QXS94885MZ-2012-01-01-12m.json"
+    },
+    {
+      "key": "U:QXS94885MZ",
+      "display_name": "Bimatoprost",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-QXS94885MZ-2013-01-01-12m.json"
+    },
+    {
+      "key": "U:QXS94885MZ",
+      "display_name": "Bimatoprost",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-QXS94885MZ-2013-01-01-24m.json"
+    },
+    {
+      "key": "U:QXS94885MZ",
+      "display_name": "Bimatoprost",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-QXS94885MZ-2014-01-01-12m.json"
+    },
+    {
+      "key": "U:QXS94885MZ",
+      "display_name": "Bimatoprost",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-QXS94885MZ-2014-01-01-24m.json"
+    },
+    {
+      "key": "U:U188XYD42P",
+      "display_name": "MOXIFLOXACIN",
+      "cutoff": "2012",
+      "as_of": "2012-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-U188XYD42P-2012-01-01-12m.json"
+    },
+    {
+      "key": "U:U188XYD42P",
+      "display_name": "MOXIFLOXACIN",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-U188XYD42P-2013-01-01-12m.json"
+    },
+    {
+      "key": "U:U188XYD42P",
+      "display_name": "MOXIFLOXACIN",
+      "cutoff": "2013",
+      "as_of": "2013-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-U188XYD42P-2013-01-01-24m.json"
+    },
+    {
+      "key": "U:U188XYD42P",
+      "display_name": "MOXIFLOXACIN",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 12,
+      "path": "dossier-U-U188XYD42P-2014-01-01-12m.json"
+    },
+    {
+      "key": "U:U188XYD42P",
+      "display_name": "MOXIFLOXACIN",
+      "cutoff": "2014",
+      "as_of": "2014-01-01",
+      "horizon_months": 24,
+      "path": "dossier-U-U188XYD42P-2014-01-01-24m.json"
+    }
+  ]
+}

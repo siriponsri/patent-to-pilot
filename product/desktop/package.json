@@ -1,0 +1,15 @@
+{
+  "name": "market-window-dossier-desktop",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Tauri v2 desktop shell for the Market Window Dossier web app (product/demo).",
+  "scripts": {
+    "prepare-frontend": "node scripts/prepare-frontend.mjs",
+    "tauri": "tauri",
+    "build": "tauri build",
+    "dev": "tauri dev"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

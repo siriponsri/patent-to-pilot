@@ -518,12 +518,117 @@
       "kind": "observed"
     },
     {
-      "id": "thai-status",
+      "id": "family-5688819",
       "section": "thai_asean",
-      "text_th": "ยังไม่ทราบสถานะในไทย โปรดตรวจที่กรมทรัพย์สินทางปัญญา",
-      "text_en": "Thai status unknown: verify at DIP.",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 5688819 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US07/948,056 US5352708A ( en ), US15424493A, US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ) เลขประกาศ WO: WO1997030710A1 เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 5688819. Priority applications: US07/948,056 US5352708A ( en ), US15424493A, US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ). WO publications: WO1997030710A1. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
       "source_ids": [
-        "dip-lookup"
+        "ob-5688819",
+        "family-5688819"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "family-6403649",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 6403649 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US07/948,056 US5352708A ( en ), US15424493A, US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ), US87693797A, US09/519,834 US6403649B1 ( en ) เลขประกาศ WO: ไม่พบในดัชนี เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 6403649. Priority applications: US07/948,056 US5352708A ( en ), US15424493A, US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ), US87693797A, US09/519,834 US6403649B1 ( en ). WO publications: none returned. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "source_ids": [
+        "ob-6403649",
+        "family-alt-6403649"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "family-7351404",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 7351404 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US35442502P, US10/345,788 US7351404B2 ( en ) เลขประกาศ WO: WO2003066008A1 เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 7351404. Priority applications: US35442502P, US10/345,788 US7351404B2 ( en ). WO publications: WO2003066008A1. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "source_ids": [
+        "ob-7351404",
+        "family-7351404"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "family-7388029",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 7388029 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US19364500P, US09/774,557 US20020172693A1 ( en ), US11/138,097 US7388029B2 ( en ) เลขประกาศ WO: WO2001074315A2 เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 7388029. Priority applications: US19364500P, US09/774,557 US20020172693A1 ( en ), US11/138,097 US7388029B2 ( en ). WO publications: WO2001074315A2. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "source_ids": [
+        "ob-7388029",
+        "family-7388029"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "family-7851504",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 7851504 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US11/083,261 US7851504B2 ( en ) เลขประกาศ WO: WO2006101839A2 เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 7851504. Priority applications: US11/083,261 US7851504B2 ( en ). WO publications: WO2006101839A2. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "source_ids": [
+        "ob-7851504",
+        "family-7851504"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "family-8017655",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 8017655 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US07/948,056 US5352708A ( en ), US15424493A, US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ), US87693797A, US10/282,726 US20030114528A1 ( en ), US12/339,494 US8017655B2 ( en ) เลขประกาศ WO: ไม่พบในดัชนี เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 8017655. Priority applications: US07/948,056 US5352708A ( en ), US15424493A, US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ), US87693797A, US10/282,726 US20030114528A1 ( en ), US12/339,494 US8017655B2 ( en ). WO publications: none returned. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "source_ids": [
+        "ob-8017655",
+        "family-8017655"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "family-8038988",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 8038988 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US35442502P, US10/345,788 US7351404B2 ( en ), US11/805,122 US8101161B2 ( en ), US11/943,714 US8038988B2 ( en ) เลขประกาศ WO: WO2003066008A1 เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 8038988. Priority applications: US35442502P, US10/345,788 US7351404B2 ( en ), US11/805,122 US8101161B2 ( en ), US11/943,714 US8038988B2 ( en ). WO publications: WO2003066008A1. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "source_ids": [
+        "ob-8038988",
+        "family-8038988"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "th-patent-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันสถานะสิทธิบัตรหรือการเข้าสู่ขั้นตอนระดับประเทศในไทยไม่ได้ การอยู่ในตระกูลสิทธิบัตรเดียวกันยังไม่เพียงพอที่จะยืนยันผลบังคับตามกฎหมาย",
+      "text_en": "Current check on 28 November 2026: Thai patent and national-phase status remain unknown. Family data do not establish enforceability.",
+      "source_ids": [
+        "family-5688819",
+        "family-alt-6403649",
+        "family-7351404",
+        "family-7388029",
+        "family-7851504",
+        "family-8017655",
+        "family-8038988",
+        "wipo-U-QXS94885MZ",
+        "asean-U-QXS94885MZ",
+        "dip-U-QXS94885MZ",
+        "wipo-terms"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "th-fda-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันทะเบียนตำรับยาจากระบบ NDI ไม่ได้",
+      "text_en": "Current check on 28 November 2026: NDI registration remains unverified.",
+      "source_ids": [
+        "ndi-U-QXS94885MZ"
       ],
       "state": "unknown",
       "kind": "observed"
@@ -535,7 +640,25 @@
       "text_en": "Decision support. FTO remains undetermined and requires a qualified legal opinion.",
       "source_ids": [
         "ob-edition",
-        "dip-lookup"
+        "ob-5688819",
+        "ob-7388029",
+        "ob-8038988",
+        "ob-7351404",
+        "ob-6403649",
+        "ob-7851504",
+        "ob-8017655",
+        "family-5688819",
+        "family-alt-6403649",
+        "family-7351404",
+        "family-7388029",
+        "family-7851504",
+        "family-8017655",
+        "family-8038988",
+        "wipo-U-QXS94885MZ",
+        "asean-U-QXS94885MZ",
+        "dip-U-QXS94885MZ",
+        "ndi-U-QXS94885MZ",
+        "wipo-terms"
       ],
       "state": "unknown",
       "kind": "observed"
@@ -1313,15 +1436,279 @@
       "retrieved": "2026-11-27T10:56:19.032077+00:00"
     },
     {
-      "id": "dip-lookup",
-      "issuer": "Thailand Department of Intellectual Property",
-      "title": "Patent search portal",
-      "version": "Lookup route",
+      "id": "ob-5688819",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 3909, patent.txt data row 6161",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-7388029",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6817",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8038988",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6818",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8263054",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6821",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-7351404",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6816",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8101161",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6819, patent.txt data row 6820",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8299118",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6163",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8309605",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6164, patent.txt data row 6165",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8338479",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6166",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-6403649",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 3910, patent.txt data row 6162, patent.txt data row 6822",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8278353",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6169",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-7851504",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 6168",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8017655",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 3911, patent.txt data row 6167, patent.txt data row 6823",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "family-5688819",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 5688819",
+      "version": "2026-11-28",
+      "public_date": "1997-11-18",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US5688819A/en",
+      "sha256": "46f4eb2589fc61956bfb016b724af92b9967afd50ebe1a31dd4e9db683cd6bd9",
+      "retrieved": "2026-11-28T05:11:12+00:00"
+    },
+    {
+      "id": "family-alt-6403649",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 6403649",
+      "version": "2026-11-28",
+      "public_date": "2002-06-11",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US6403649B1/en",
+      "sha256": "cced36fec956cd3b4e8768199f47c9f705ff85879da64f79c534f7ee5e157c87",
+      "retrieved": "2026-11-28T05:11:19+00:00"
+    },
+    {
+      "id": "family-7351404",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 7351404",
+      "version": "2026-11-28",
+      "public_date": "2008-04-01",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US7351404B2/en",
+      "sha256": "c4a5d7b79df5da075aab70fa16b7132929b1ac12dd2c790d1d2784445f28f76a",
+      "retrieved": "2026-11-28T05:11:27+00:00"
+    },
+    {
+      "id": "family-7388029",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 7388029",
+      "version": "2026-11-28",
+      "public_date": "2008-06-17",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US7388029B2/en",
+      "sha256": "ecd918367bc8347f54643841db80b118f1debbc6a2934d03da7cfdfaaacbe27e",
+      "retrieved": "2026-11-28T05:11:29+00:00"
+    },
+    {
+      "id": "family-7851504",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 7851504",
+      "version": "2026-11-28",
+      "public_date": "2010-12-14",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US7851504B2/en",
+      "sha256": "0e224a85619ed19186f5359dd6f857122d67af71f9670acb7490406884f67f5b",
+      "retrieved": "2026-11-28T05:11:38+00:00"
+    },
+    {
+      "id": "family-8017655",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 8017655",
+      "version": "2026-11-28",
+      "public_date": "2011-09-13",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US8017655B2/en",
+      "sha256": "c589a7a59e9d3520dff7c48c5beb5e7fa9f8736486c4bd1198bb44ed30517e45",
+      "retrieved": "2026-11-28T05:11:40+00:00"
+    },
+    {
+      "id": "family-8038988",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 8038988",
+      "version": "2026-11-28",
+      "public_date": "2011-10-18",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US8038988B2/en",
+      "sha256": "7edf167c5989af8dc84226d2b3e95108c129d6827772b0ac1464a2e113909786",
+      "retrieved": "2026-11-28T05:11:42+00:00"
+    },
+    {
+      "id": "wipo-U-QXS94885MZ",
+      "issuer": "WIPO",
+      "title": "US07/948,056 US5352708A ( en ), US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ), US09/519,834 US6403649B1 ( en ), US09/774,557 US20020172693A1 ( en ), US10/282,726 US20030114528A1 ( en ), US10/345,788 US7351404B2 ( en ), US11/083,261 US7851504B2 ( en ), US11/138,097 US7388029B2 ( en ), US11/805,122 US8101161B2 ( en ), US11/943,714 US8038988B2 ( en ), US12/339,494 US8017655B2 ( en ), US15424493A, US19364500P, US35442502P, US87693797A, WO1997030710A1, WO2001074315A2, WO2003066008A1, WO2006101839A2",
+      "version": "2026-11-28",
       "public_date": null,
-      "locator": "Patent search form",
-      "url": "https://patentsearch.ipthailand.go.th",
+      "locator": "blocked: PATENTSCOPE terms section 2.1 prohibits automated queries. Case search not submitted.",
+      "url": "https://patentscope.wipo.int/search/en/search.jsf",
+      "sha256": "cff7e81d66ef58094b19f07cbc61789711114f9cb0c55c04b903d6738ed589dd",
+      "retrieved": "2026-11-28T05:04:35+00:00"
+    },
+    {
+      "id": "asean-U-QXS94885MZ",
+      "issuer": "ASEAN IP Register",
+      "title": "US07/948,056 US5352708A ( en ), US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ), US09/519,834 US6403649B1 ( en ), US09/774,557 US20020172693A1 ( en ), US10/282,726 US20030114528A1 ( en ), US10/345,788 US7351404B2 ( en ), US11/083,261 US7851504B2 ( en ), US11/138,097 US7388029B2 ( en ), US11/805,122 US8101161B2 ( en ), US11/943,714 US8038988B2 ( en ), US12/339,494 US8017655B2 ( en ), US15424493A, US19364500P, US35442502P, US87693797A, WO1997030710A1, WO2001074315A2, WO2003066008A1, WO2006101839A2",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt. Case search not submitted.",
+      "url": "https://ip-register.aseanip.org/",
       "sha256": null,
-      "retrieved": null
+      "retrieved": "2026-11-28T05:04:38+00:00"
+    },
+    {
+      "id": "dip-U-QXS94885MZ",
+      "issuer": "Thailand Department of Intellectual Property",
+      "title": "US07/948,056 US5352708A ( en ), US08/371,339 US5607978A ( en ), US08/605,567 US5688819A ( en ), US09/519,834 US6403649B1 ( en ), US09/774,557 US20020172693A1 ( en ), US10/282,726 US20030114528A1 ( en ), US10/345,788 US7351404B2 ( en ), US11/083,261 US7851504B2 ( en ), US11/138,097 US7388029B2 ( en ), US11/805,122 US8101161B2 ( en ), US11/943,714 US8038988B2 ( en ), US12/339,494 US8017655B2 ( en ), US15424493A, US19364500P, US35442502P, US87693797A, WO1997030710A1, WO2001074315A2, WO2003066008A1, WO2006101839A2",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt and public endpoint. Case search not submitted.",
+      "url": "https://patentsearch.ipthailand.go.th/",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:39+00:00"
+    },
+    {
+      "id": "ndi-U-QXS94885MZ",
+      "issuer": "Thai FDA NDI",
+      "title": "BIMATOPROST",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: Connection failed on robots.txt and public endpoint timed out. Case search not submitted.",
+      "url": "https://ndi.fda.moph.go.th/drug_info",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:53+00:00"
+    },
+    {
+      "id": "wipo-terms",
+      "issuer": "WIPO",
+      "title": "PATENTSCOPE terms of use",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "October 2025 Terms of Use, section 2.1, automated queries",
+      "url": "https://www.wipo.int/en/web/patentscope/data/terms_patentscope",
+      "sha256": "6a1e56c9621b4c155fabf2269fabef9248a75c4fee8b62443b11d8a58e1c934e",
+      "retrieved": "2026-11-28T05:08:37+00:00"
     },
     {
       "id": "outcome",
@@ -1522,13 +1909,175 @@
       ]
     },
     {
+      "id": "check-01",
+      "text_th": "ลำดับ 1: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 5688819 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #1: US 5688819. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-5688819"
+      ]
+    },
+    {
+      "id": "check-02",
+      "text_th": "ลำดับ 2: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 7388029 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #2: US 7388029. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-7388029"
+      ]
+    },
+    {
+      "id": "check-03",
+      "text_th": "ลำดับ 3: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8038988 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #3: US 8038988. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-8038988"
+      ]
+    },
+    {
+      "id": "check-04",
+      "text_th": "ลำดับ 4: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8263054 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #4: US 8263054. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-8263054"
+      ]
+    },
+    {
+      "id": "check-05",
+      "text_th": "ลำดับ 5: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 7351404 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #5: US 7351404. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-7351404"
+      ]
+    },
+    {
+      "id": "check-06",
+      "text_th": "ลำดับ 6: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8101161 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #6: US 8101161. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-8101161"
+      ]
+    },
+    {
+      "id": "check-07",
+      "text_th": "ลำดับ 7: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8299118 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #7: US 8299118. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-8299118"
+      ]
+    },
+    {
+      "id": "check-08",
+      "text_th": "ลำดับ 8: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8309605 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #8: US 8309605. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-8309605"
+      ]
+    },
+    {
+      "id": "check-09",
+      "text_th": "ลำดับ 9: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8338479 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #9: US 8338479. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-8338479"
+      ]
+    },
+    {
+      "id": "check-10",
+      "text_th": "ลำดับ 10: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 6403649 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #10: US 6403649. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-6403649"
+      ]
+    },
+    {
+      "id": "check-11",
+      "text_th": "ลำดับ 11: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8278353 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #11: US 8278353. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-8278353"
+      ]
+    },
+    {
+      "id": "check-12",
+      "text_th": "ลำดับ 12: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 7851504 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #12: US 7851504. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-7851504"
+      ]
+    },
+    {
+      "id": "check-13",
+      "text_th": "ลำดับ 13: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8017655 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #13: US 8017655. Review the listed scope and dates for the intended presentation.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-8017655"
+      ]
+    },
+    {
+      "id": "th-register",
+      "text_th": "ใช้เลขคำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรกหรือเลขประกาศ WO ค้นในทะเบียนไทย แล้วตรวจการออกสิทธิบัตร ขอบเขตข้อถือสิทธิ และประวัติสถานะกับกรมทรัพย์สินทางปัญญา",
+      "text_en": "Check the Thai register using the priority/WO identifiers, then confirm grant, scope and legal-event history with DIP.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "family-5688819",
+        "family-alt-6403649",
+        "family-7351404",
+        "family-7388029",
+        "family-7851504",
+        "family-8017655",
+        "family-8038988",
+        "wipo-U-QXS94885MZ",
+        "asean-U-QXS94885MZ",
+        "dip-U-QXS94885MZ"
+      ]
+    },
+    {
+      "id": "th-ndi",
+      "text_th": "ตรวจเลขทะเบียนตำรับยา ผู้รับอนุญาต ความแรง และรูปแบบยาในระบบ NDI ของสำนักงานคณะกรรมการอาหารและยา",
+      "text_en": "Confirm registration, holder, strength and presentation in Thai FDA NDI.",
+      "owner": "R&D",
+      "source_ids": [
+        "ndi-U-QXS94885MZ"
+      ]
+    },
+    {
       "id": "verify-national",
       "text_th": "ตรวจตระกูลสิทธิบัตร ข้อถือสิทธิ และสถานะในแต่ละประเทศที่วางแผนจำหน่าย",
       "text_en": "Verify patent family, claims and legal status in each intended jurisdiction.",
       "owner": "FTO evaluator",
       "source_ids": [
         "ob-edition",
-        "dip-lookup"
+        "ob-5688819",
+        "ob-7388029",
+        "ob-8038988",
+        "ob-7351404",
+        "ob-6403649",
+        "ob-7851504",
+        "ob-8017655",
+        "family-5688819",
+        "family-alt-6403649",
+        "family-7351404",
+        "family-7388029",
+        "family-7851504",
+        "family-8017655",
+        "family-8038988",
+        "wipo-U-QXS94885MZ",
+        "asean-U-QXS94885MZ",
+        "dip-U-QXS94885MZ",
+        "ndi-U-QXS94885MZ",
+        "wipo-terms"
       ]
     },
     {

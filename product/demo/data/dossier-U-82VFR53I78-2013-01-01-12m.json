@@ -917,12 +917,28 @@
       "kind": "observed"
     },
     {
-      "id": "thai-status",
+      "id": "th-patent-status",
       "section": "thai_asean",
-      "text_th": "ยังไม่ทราบสถานะในไทย โปรดตรวจที่กรมทรัพย์สินทางปัญญา",
-      "text_en": "Thai status unknown: verify at DIP.",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันสถานะสิทธิบัตรหรือการเข้าสู่ขั้นตอนระดับประเทศในไทยไม่ได้ การอยู่ในตระกูลสิทธิบัตรเดียวกันยังไม่เพียงพอที่จะยืนยันผลบังคับตามกฎหมาย",
+      "text_en": "Current check on 28 November 2026: Thai patent and national-phase status remain unknown. Family data do not establish enforceability.",
       "source_ids": [
-        "dip-lookup"
+        "family-5006528",
+        "family-6977257",
+        "wipo-U-82VFR53I78",
+        "asean-U-82VFR53I78",
+        "dip-U-82VFR53I78",
+        "wipo-terms"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "th-fda-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันทะเบียนตำรับยาจากระบบ NDI ไม่ได้",
+      "text_en": "Current check on 28 November 2026: NDI registration remains unverified.",
+      "source_ids": [
+        "ndi-U-82VFR53I78"
       ],
       "state": "unknown",
       "kind": "observed"
@@ -934,7 +950,13 @@
       "text_en": "Decision support. FTO remains undetermined and requires a qualified legal opinion.",
       "source_ids": [
         "ob-edition",
-        "dip-lookup"
+        "family-5006528",
+        "family-6977257",
+        "wipo-U-82VFR53I78",
+        "asean-U-82VFR53I78",
+        "dip-U-82VFR53I78",
+        "ndi-U-82VFR53I78",
+        "wipo-terms"
       ],
       "state": "unknown",
       "kind": "observed"
@@ -1811,15 +1833,81 @@
       "retrieved": "2026-11-27T10:57:44.411631+00:00"
     },
     {
-      "id": "dip-lookup",
-      "issuer": "Thailand Department of Intellectual Property",
-      "title": "Patent search portal",
-      "version": "Lookup route",
+      "id": "family-5006528",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 5006528",
+      "version": "2026-11-28",
+      "public_date": "1991-04-09",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US5006528A/en",
+      "sha256": "2cceef7fe4f2d25f4af3e7d27ec7357fb4317b9b8c8d4917384f41e47e60df62",
+      "retrieved": "2026-11-28T05:11:06+00:00"
+    },
+    {
+      "id": "family-6977257",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 6977257",
+      "version": "2026-11-28",
+      "public_date": "2005-12-20",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US6977257B2/en",
+      "sha256": "cba109754561dfd5b5a93cb11c50ffa47290c04e5dc757a013d495624cc8170a",
+      "retrieved": "2026-11-28T05:11:23+00:00"
+    },
+    {
+      "id": "wipo-U-82VFR53I78",
+      "issuer": "WIPO",
+      "title": "JP27695388, JP63-276953, US10/131,304 US6977257B2 ( en ), US28671801P, WO2002085366A1",
+      "version": "2026-11-28",
       "public_date": null,
-      "locator": "Patent search form",
-      "url": "https://patentsearch.ipthailand.go.th",
+      "locator": "blocked: PATENTSCOPE terms section 2.1 prohibits automated queries. Case search not submitted.",
+      "url": "https://patentscope.wipo.int/search/en/search.jsf",
+      "sha256": "cff7e81d66ef58094b19f07cbc61789711114f9cb0c55c04b903d6738ed589dd",
+      "retrieved": "2026-11-28T05:04:35+00:00"
+    },
+    {
+      "id": "asean-U-82VFR53I78",
+      "issuer": "ASEAN IP Register",
+      "title": "JP27695388, JP63-276953, US10/131,304 US6977257B2 ( en ), US28671801P, WO2002085366A1",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt. Case search not submitted.",
+      "url": "https://ip-register.aseanip.org/",
       "sha256": null,
-      "retrieved": null
+      "retrieved": "2026-11-28T05:04:38+00:00"
+    },
+    {
+      "id": "dip-U-82VFR53I78",
+      "issuer": "Thailand Department of Intellectual Property",
+      "title": "JP27695388, JP63-276953, US10/131,304 US6977257B2 ( en ), US28671801P, WO2002085366A1",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt and public endpoint. Case search not submitted.",
+      "url": "https://patentsearch.ipthailand.go.th/",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:39+00:00"
+    },
+    {
+      "id": "ndi-U-82VFR53I78",
+      "issuer": "Thai FDA NDI",
+      "title": "ARIPIPRAZOLE",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: Connection failed on robots.txt and public endpoint timed out. Case search not submitted.",
+      "url": "https://ndi.fda.moph.go.th/drug_info",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:53+00:00"
+    },
+    {
+      "id": "wipo-terms",
+      "issuer": "WIPO",
+      "title": "PATENTSCOPE terms of use",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "October 2025 Terms of Use, section 2.1, automated queries",
+      "url": "https://www.wipo.int/en/web/patentscope/data/terms_patentscope",
+      "sha256": "6a1e56c9621b4c155fabf2269fabef9248a75c4fee8b62443b11d8a58e1c934e",
+      "retrieved": "2026-11-28T05:08:37+00:00"
     }
   ],
   "checklist": [
@@ -1929,13 +2017,41 @@
       ]
     },
     {
+      "id": "th-register",
+      "text_th": "ใช้เลขคำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรกหรือเลขประกาศ WO ค้นในทะเบียนไทย แล้วตรวจการออกสิทธิบัตร ขอบเขตข้อถือสิทธิ และประวัติสถานะกับกรมทรัพย์สินทางปัญญา",
+      "text_en": "Check the Thai register using the priority/WO identifiers, then confirm grant, scope and legal-event history with DIP.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "family-5006528",
+        "family-6977257",
+        "wipo-U-82VFR53I78",
+        "asean-U-82VFR53I78",
+        "dip-U-82VFR53I78"
+      ]
+    },
+    {
+      "id": "th-ndi",
+      "text_th": "ตรวจเลขทะเบียนตำรับยา ผู้รับอนุญาต ความแรง และรูปแบบยาในระบบ NDI ของสำนักงานคณะกรรมการอาหารและยา",
+      "text_en": "Confirm registration, holder, strength and presentation in Thai FDA NDI.",
+      "owner": "R&D",
+      "source_ids": [
+        "ndi-U-82VFR53I78"
+      ]
+    },
+    {
       "id": "verify-national",
       "text_th": "ตรวจตระกูลสิทธิบัตร ข้อถือสิทธิ และสถานะในแต่ละประเทศที่วางแผนจำหน่าย",
       "text_en": "Verify patent family, claims and legal status in each intended jurisdiction.",
       "owner": "FTO evaluator",
       "source_ids": [
         "ob-edition",
-        "dip-lookup"
+        "family-5006528",
+        "family-6977257",
+        "wipo-U-82VFR53I78",
+        "asean-U-82VFR53I78",
+        "dip-U-82VFR53I78",
+        "ndi-U-82VFR53I78",
+        "wipo-terms"
       ]
     },
     {
