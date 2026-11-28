@@ -1,0 +1,288 @@
+{
+ "schema": "mwd.index.v1",
+ "fixture": true,
+ "note": "FIXTURE: synthetic molecules, numbers and dates for UI development only.",
+ "jurisdiction": "US",
+ "queues": [
+  {
+   "cutoff": "2012",
+   "as_of": "2012-01-01",
+   "horizon_months": 12,
+   "path": "queues/queue-2012-h12.json"
+  },
+  {
+   "cutoff": "2013",
+   "as_of": "2013-01-01",
+   "horizon_months": 12,
+   "path": "queues/queue-2013-h12.json"
+  },
+  {
+   "cutoff": "2014",
+   "as_of": "2014-01-01",
+   "horizon_months": 12,
+   "path": "queues/queue-2014-h12.json"
+  },
+  {
+   "cutoff": "2015",
+   "as_of": "2015-01-01",
+   "horizon_months": 12,
+   "path": "queues/queue-2015-h12.json"
+  },
+  {
+   "cutoff": "2013",
+   "as_of": "2013-01-01",
+   "horizon_months": 24,
+   "path": "queues/queue-2013-h24.json"
+  },
+  {
+   "cutoff": "2014",
+   "as_of": "2014-01-01",
+   "horizon_months": 24,
+   "path": "queues/queue-2014-h24.json"
+  }
+ ],
+ "dossiers": [
+  {
+   "key": "lorvastatin",
+   "cutoff": "2012",
+   "horizon_months": 12,
+   "path": "dossiers/lorvastatin-2012-h12.json"
+  },
+  {
+   "key": "brivosartan",
+   "cutoff": "2012",
+   "horizon_months": 12,
+   "path": "dossiers/brivosartan-2012-h12.json"
+  },
+  {
+   "key": "zentrapine",
+   "cutoff": "2012",
+   "horizon_months": 12,
+   "path": "dossiers/zentrapine-2012-h12.json"
+  },
+  {
+   "key": "talcoxib",
+   "cutoff": "2012",
+   "horizon_months": 12,
+   "path": "dossiers/talcoxib-2012-h12.json"
+  },
+  {
+   "key": "mirelukast",
+   "cutoff": "2012",
+   "horizon_months": 12,
+   "path": "dossiers/mirelukast-2012-h12.json"
+  },
+  {
+   "key": "dexoprazole",
+   "cutoff": "2012",
+   "horizon_months": 12,
+   "path": "dossiers/dexoprazole-2012-h12.json"
+  },
+  {
+   "key": "lorvastatin",
+   "cutoff": "2013",
+   "horizon_months": 12,
+   "path": "dossiers/lorvastatin-2013-h12.json"
+  },
+  {
+   "key": "brivosartan",
+   "cutoff": "2013",
+   "horizon_months": 12,
+   "path": "dossiers/brivosartan-2013-h12.json"
+  },
+  {
+   "key": "zentrapine",
+   "cutoff": "2013",
+   "horizon_months": 12,
+   "path": "dossiers/zentrapine-2013-h12.json"
+  },
+  {
+   "key": "talcoxib",
+   "cutoff": "2013",
+   "horizon_months": 12,
+   "path": "dossiers/talcoxib-2013-h12.json"
+  },
+  {
+   "key": "mirelukast",
+   "cutoff": "2013",
+   "horizon_months": 12,
+   "path": "dossiers/mirelukast-2013-h12.json"
+  },
+  {
+   "key": "dexoprazole",
+   "cutoff": "2013",
+   "horizon_months": 12,
+   "path": "dossiers/dexoprazole-2013-h12.json"
+  },
+  {
+   "key": "lorvastatin",
+   "cutoff": "2014",
+   "horizon_months": 12,
+   "path": "dossiers/lorvastatin-2014-h12.json"
+  },
+  {
+   "key": "brivosartan",
+   "cutoff": "2014",
+   "horizon_months": 12,
+   "path": "dossiers/brivosartan-2014-h12.json"
+  },
+  {
+   "key": "zentrapine",
+   "cutoff": "2014",
+   "horizon_months": 12,
+   "path": "dossiers/zentrapine-2014-h12.json"
+  },
+  {
+   "key": "talcoxib",
+   "cutoff": "2014",
+   "horizon_months": 12,
+   "path": "dossiers/talcoxib-2014-h12.json"
+  },
+  {
+   "key": "mirelukast",
+   "cutoff": "2014",
+   "horizon_months": 12,
+   "path": "dossiers/mirelukast-2014-h12.json"
+  },
+  {
+   "key": "dexoprazole",
+   "cutoff": "2014",
+   "horizon_months": 12,
+   "path": "dossiers/dexoprazole-2014-h12.json"
+  },
+  {
+   "key": "lorvastatin",
+   "cutoff": "2015",
+   "horizon_months": 12,
+   "path": "dossiers/lorvastatin-2015-h12.json"
+  },
+  {
+   "key": "brivosartan",
+   "cutoff": "2015",
+   "horizon_months": 12,
+   "path": "dossiers/brivosartan-2015-h12.json"
+  },
+  {
+   "key": "zentrapine",
+   "cutoff": "2015",
+   "horizon_months": 12,
+   "path": "dossiers/zentrapine-2015-h12.json"
+  },
+  {
+   "key": "talcoxib",
+   "cutoff": "2015",
+   "horizon_months": 12,
+   "path": "dossiers/talcoxib-2015-h12.json"
+  },
+  {
+   "key": "mirelukast",
+   "cutoff": "2015",
+   "horizon_months": 12,
+   "path": "dossiers/mirelukast-2015-h12.json"
+  },
+  {
+   "key": "dexoprazole",
+   "cutoff": "2015",
+   "horizon_months": 12,
+   "path": "dossiers/dexoprazole-2015-h12.json"
+  },
+  {
+   "key": "lorvastatin",
+   "cutoff": "2013",
+   "horizon_months": 24,
+   "path": "dossiers/lorvastatin-2013-h24.json"
+  },
+  {
+   "key": "brivosartan",
+   "cutoff": "2013",
+   "horizon_months": 24,
+   "path": "dossiers/brivosartan-2013-h24.json"
+  },
+  {
+   "key": "zentrapine",
+   "cutoff": "2013",
+   "horizon_months": 24,
+   "path": "dossiers/zentrapine-2013-h24.json"
+  },
+  {
+   "key": "talcoxib",
+   "cutoff": "2013",
+   "horizon_months": 24,
+   "path": "dossiers/talcoxib-2013-h24.json"
+  },
+  {
+   "key": "mirelukast",
+   "cutoff": "2013",
+   "horizon_months": 24,
+   "path": "dossiers/mirelukast-2013-h24.json"
+  },
+  {
+   "key": "dexoprazole",
+   "cutoff": "2013",
+   "horizon_months": 24,
+   "path": "dossiers/dexoprazole-2013-h24.json"
+  },
+  {
+   "key": "lorvastatin",
+   "cutoff": "2014",
+   "horizon_months": 24,
+   "path": "dossiers/lorvastatin-2014-h24.json"
+  },
+  {
+   "key": "brivosartan",
+   "cutoff": "2014",
+   "horizon_months": 24,
+   "path": "dossiers/brivosartan-2014-h24.json"
+  },
+  {
+   "key": "zentrapine",
+   "cutoff": "2014",
+   "horizon_months": 24,
+   "path": "dossiers/zentrapine-2014-h24.json"
+  },
+  {
+   "key": "talcoxib",
+   "cutoff": "2014",
+   "horizon_months": 24,
+   "path": "dossiers/talcoxib-2014-h24.json"
+  },
+  {
+   "key": "mirelukast",
+   "cutoff": "2014",
+   "horizon_months": 24,
+   "path": "dossiers/mirelukast-2014-h24.json"
+  },
+  {
+   "key": "dexoprazole",
+   "cutoff": "2014",
+   "horizon_months": 24,
+   "path": "dossiers/dexoprazole-2014-h24.json"
+  }
+ ],
+ "molecules": [
+  {
+   "key": "lorvastatin",
+   "display_name": "Lorvastatin"
+  },
+  {
+   "key": "brivosartan",
+   "display_name": "Brivosartan"
+  },
+  {
+   "key": "zentrapine",
+   "display_name": "Zentrapine"
+  },
+  {
+   "key": "talcoxib",
+   "display_name": "Talcoxib"
+  },
+  {
+   "key": "mirelukast",
+   "display_name": "Mirelukast"
+  },
+  {
+   "key": "dexoprazole",
+   "display_name": "Dexoprazole"
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "schema": "mwd.queue.v1",
+ "fixture": true,
+ "cutoff": "2013",
+ "as_of": "2013-01-01",
+ "horizon_months": 24,
+ "jurisdiction": "US",
+ "n_candidates": 25,
+ "queue_size": 5,
+ "capacity_ratio": "1/5",
+ "rows": [
+  {
+   "key": "mepratadine",
+   "display_name": "Mepratadine",
+   "m3_p": 0.812,
+   "b1_p": 0.55,
+   "in_queue": true,
+   "event": true
+  },
+  {
+   "key": "halvudine",
+   "display_name": "Halvudine",
+   "m3_p": 0.765,
+   "b1_p": 0.484,
+   "in_queue": true,
+   "event": true
+  },
+  {
+   "key": "vortaxetine",
+   "display_name": "Vortaxetine",
+   "m3_p": 0.673,
+   "b1_p": 0.557,
+   "in_queue": true,
+   "event": false
+  },
+  {
+   "key": "talcoxib",
+   "display_name": "Talcoxib",
+   "m3_p": 0.629,
+   "b1_p": 0.344,
+   "in_queue": true,
+   "event": false
+  },
+  {
+   "key": "ibrastatin",
+   "display_name": "Ibrastatin",
+   "m3_p": 0.623,
+   "b1_p": 0.474,
+   "in_queue": true,
+   "event": true
+  },
+  {
+   "key": "tebrinavir",
+   "display_name": "Tebrinavir",
+   "m3_p": 0.551,
+   "b1_p": 0.286,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "brivosartan",
+   "display_name": "Brivosartan",
+   "m3_p": 0.499,
+   "b1_p": 0.377,
+   "in_queue": false,
+   "event": true
+  },
+  {
+   "key": "aprenolol",
+   "display_name": "Aprenolol",
+   "m3_p": 0.496,
+   "b1_p": 0.234,
+   "in_queue": false,
+   "event": true
+  },
+  {
+   "key": "pravuzole",
+   "display_name": "Pravuzole",
+   "m3_p": 0.489,
+   "b1_p": 0.463,
+   "in_queue": false,
+   "event": true
+  },
+  {
+   "key": "quinetiapine",
+   "display_name": "Quinetiapine",
+   "m3_p": 0.486,
+   "b1_p": 0.405,
+   "in_queue": false,
+   "event": true
+  },
+  {
+   "key": "levoxinib",
+   "display_name": "Levoxinib",
+   "m3_p": 0.436,
+   "b1_p": 0.217,
+   "in_queue": false,
+   "event": true
+  },
+  {
+   "key": "oxacitabine",
+   "display_name": "Oxacitabine",
+   "m3_p": 0.407,
+   "b1_p": 0.316,
+   "in_queue": false,
+   "event": true
+  },
+  {
+   "key": "glimapride",
+   "display_name": "Glimapride",
+   "m3_p": 0.395,
+   "b1_p": 0.412,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "cortaglitin",
+   "display_name": "Cortaglitin",
+   "m3_p": 0.355,
+   "b1_p": 0.207,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "rilmotidine",
+   "display_name": "Rilmotidine",
+   "m3_p": 0.334,
+   "b1_p": 0.303,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "mirelukast",
+   "display_name": "Mirelukast",
+   "m3_p": 0.308,
+   "b1_p": 0.364,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "sertoxamine",
+   "display_name": "Sertoxamine",
+   "m3_p": 0.293,
+   "b1_p": 0.124,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "dulvaxetine",
+   "display_name": "Dulvaxetine",
+   "m3_p": 0.287,
+   "b1_p": 0.241,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "fenoxitrel",
+   "display_name": "Fenoxitrel",
+   "m3_p": 0.237,
+   "b1_p": 0.144,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "lorvastatin",
+   "display_name": "Lorvastatin",
+   "m3_p": 0.214,
+   "b1_p": 0.207,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "ursoparin",
+   "display_name": "Ursoparin",
+   "m3_p": 0.179,
+   "b1_p": 0.211,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "ketrolimus",
+   "display_name": "Ketrolimus",
+   "m3_p": 0.155,
+   "b1_p": 0.02,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "nolvastran",
+   "display_name": "Nolvastran",
+   "m3_p": 0.138,
+   "b1_p": 0.083,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "dexoprazole",
+   "display_name": "Dexoprazole",
+   "m3_p": 0.116,
+   "b1_p": 0.054,
+   "in_queue": false,
+   "event": false
+  },
+  {
+   "key": "zentrapine",
+   "display_name": "Zentrapine",
+   "m3_p": 0.057,
+   "b1_p": 0.169,
+   "in_queue": false,
+   "event": false
+  }
+ ],
+ "capture": {
+  "events_total": 9,
+  "m3_captured": 3,
+  "b1_captured": 4
+ }
+}
