@@ -1,5 +1,11 @@
 # Zenodo upload sheet · LOE-Bench Track A
 
+## Published
+
+Zenodo published version 1.0.0 on 28 November 2026. Use version DOI `10.5281/zenodo.24629100` to retrieve the exact release. The concept DOI for all versions is `10.5281/zenodo.24629099`. The record has one file, `track-a-release.zip` (15,983,054 bytes), with Zenodo checksum `md5:2599a90565e28e69019207884877a407`. [Version record](https://doi.org/10.5281/zenodo.24629100) · [Concept record](https://doi.org/10.5281/zenodo.24629099) · [Independent restore receipt](receipts/RESTORE-DOI.md).
+
+## Deposit instructions
+
 Upload the single [`track-a-release.zip`](<C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench/release/track-a-release.zip>) file (15,983,054 bytes) after planner review. The archive contains the scoring guide, source recipes and rights inventory. The [full SHA-256 inventory](<C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench/release/SHA256SUMS>) is for verification. [Zenodo upload instructions](https://help.zenodo.org/docs/deposit/create-new-upload/).
 
 | Zenodo field | Value |
