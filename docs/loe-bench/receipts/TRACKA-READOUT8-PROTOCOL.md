@@ -1,0 +1,15 @@
+# TRACKA-READOUT8 protocol
+
+29 November 2026. Executor branch `loe/TRACKA-READOUT8` starts at `ed1928a9c035862f28febd2508f4367f85c59b1b` on `origin/research/loe-bench`. Push this protocol before changing implementation or running the acceptance checks. [Round 7 finding R7-A](../reviews/EXTERNAL-REVIEW-R7.md#new-findings-table) · [READOUT7 receipt](TRACKA-READOUT7.md).
+
+## Scope and acceptance
+
+1. Retrieve the registered public ZIP for version DOI [10.5281/zenodo.24629100](https://doi.org/10.5281/zenodo.24629100) anonymously. Verify its SHA-256 against [RESTORE-DOI](RESTORE-DOI.md). Read the 25 installed-source pins from the ZIP's `scorer-version.json`, validate the released source bytes against them, and compare every installed file using the release reader's LF-normalized SHA-256 rule. Record each baseline and final match. Restore each mismatch from Git after verifying which revision supplies the pinned bytes.
+2. Move the READOUT7 report rendering to the unpinned integrated readout. Ordinary replay and recovery of a verified publication must distinguish the publication-time formal status from current 12-month continuity. Failed recovery must surface the same reasons and locators in JSON and `REPORT.md`. Render the final report before its digest enters the run manifest. Preserve READOUT2–7 custody, scoring, replay and recovery behavior.
+3. Keep the installed-source gate intact. Add an offline regression to the LOE-Bench suite using the exact published 25-entry source-pin map. Exercise the gate against the current checkout and verify that changing each pinned file in an isolated copy triggers rejection. Exercise the integrated readout and verify the final report digest and the five recovered publication assets on fictional inputs.
+4. Run the integrated reader from the checkout with `--release 10.5281/zenodo.24629100 --horizon 12` and the published freeze SHA-256 in a fresh output directory. Before maturity, acceptance is `PENDING`, exit 0. Also run recovery against the verified public kit before maturity. Rerun the round-6 replay and recovery probes for matching, disputed and unavailable witnesses and the failed-recovery report with a verified capture and disputed result pins.
+5. Run the LOE-Bench unittest suite, the Track A cron npm suite and the root pytest suite. Root pytest accepts only the eight documented SACR r2/r3 supervisor budget failures. Attempt the existing synthetic GitHub dispatch if a branch-scoped fixture run is available. Record commands, interpreters, counts, exit codes, failures and any unavailable checks. Commit explicit card paths and the executor receipt, then push without merging.
+
+## Boundaries
+
+Use the public kit, tracked source, CPU-only synthetic fixtures and existing test suites. The frozen forecast files, freeze manifest, tag, OSF records and Zenodo deposit are read-only. Protected TEST data, sealed files, private artifacts and credentials are outside scope. No paid APIs or GPU. The executor receipt carries the handoff and lessons for Planner integration into the lane records.

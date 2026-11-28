@@ -12,13 +12,13 @@ import numpy as np
 
 from . import tracka_capture, tracka_custody as custody, tracka_secondary, tracka_vintage
 from .common import add_months
-from .score_release import RECEIPT, RESULTS, SOURCES, commit_run, release_directory, replay_publication_lines, write_report
+from .score_release import RECEIPT, RESULTS, RUN, SOURCES, first_result, release_directory, write_report
 from .tracka_outcomes import fetch_outcomes
 from .tracka_release import ARMS, FREEZE, HORIZONS, SCORER, T0, VERSION, digest, dump, load, read_release, require, verify_file
 from .tracka_statistics import panel, sequence
 
 READOUT_VERSION = "2.0.0"
-EXIT = {"SCORED": 0, "RECOVERED": 0, "PENDING": 2, "BLOCKED_SOURCE": 3}
+EXIT = {"SCORED": 0, "RECOVERED": 0, "PENDING": 0, "BLOCKED_SOURCE": 3}
 
 
 def unverified_input(reason, *, detail=None, original=None, discovery=None):
@@ -116,6 +116,22 @@ def family_comparison(result, published, sources, published_sources):
             published["outcome_source_manifest_sha256"]}
 
 
+def replay_publication_lines(result):
+    first = result["first_publication"]
+    lines = [f"The [first published aggregate]({first['release_url']}) was formal as verified at publication "
+             f"on {first['published_at_utc'][:10]} (UTC)."]
+    if check := result.get("current_12m_witness_check"):
+        lines.extend(["", f"Current 12-month witness check `{check['status']}`."])
+        if reason := check.get("reason"):
+            lines.append(f"Discovery or comparison reason `{reason}`.")
+        if detail := check.get("detail"):
+            lines.append(" ".join(detail.splitlines()))
+        if check["custodian_reconciliation_required"]:
+            lines.append("Refer the current witness check to the custodian for reconciliation.")
+            lines.extend(["", *(f"- <{locator}>" for locator in check["witness_locators"])])
+    return lines
+
+
 def write_replay(path, result):
     first = result["first_publication"]
     comparison = result["replay_comparison"]
@@ -139,9 +155,35 @@ def write_replay(path, result):
 
 
 def finish_run(stage, out, result):
+    """Render integrated reports before hashing and promoting the run."""
     if result["family_status"] == "REPLAY":
         write_replay(stage / "REPLAY.md", result)
-    return result["status"], commit_run(stage, out, result)
+
+    status, horizon = result["status"], result["horizon_months"]
+    destination = out / f"{horizon}m"
+    destination.mkdir(parents=True, exist_ok=True)
+    while True:
+        numbers = [int(match[1]) for path in destination.iterdir() if (match := RUN.fullmatch(path.name))]
+        version = max(numbers, default=0) + 1
+        target = destination / f"run-{version:04d}"
+        current, _ = first_result(out, result["release_sha256"], horizon)
+        result.update(run_version=version, result_role="status" if status != "SCORED"
+                      else "revision" if current else "first_scored",
+                      first_scored_run=current.name if current else target.name if status == "SCORED" else None)
+        dump(stage / RESULTS, result)
+        report = stage / "REPORT.md"
+        write_report(report, result)
+        if result.get("first_publication"):
+            with report.open("a", encoding="utf-8") as stream:
+                stream.write("\n" + "\n".join(replay_publication_lines(result)) + "\n")
+        dump(stage / RECEIPT, {"files_sha256": {path.name: digest(path) for path in stage.iterdir()
+                                               if path.is_file() and path.name != RECEIPT}})
+        try:
+            stage.rename(target)
+            return status, target
+        except OSError:
+            if not target.exists():
+                raise
 
 
 def prepare_publication(run, target):

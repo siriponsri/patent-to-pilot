@@ -81,22 +81,6 @@ def first_result(out, release_sha, horizon):
     return None, None
 
 
-def replay_publication_lines(result):
-    first = result["first_publication"]
-    lines = [f"The [first published aggregate]({first['release_url']}) was formal as verified at publication "
-             f"on {first['published_at_utc'][:10]} (UTC)."]
-    if check := result.get("current_12m_witness_check"):
-        lines.extend(["", f"Current 12-month witness check `{check['status']}`."])
-        if reason := check.get("reason"):
-            lines.append(f"Discovery or comparison reason `{reason}`.")
-        if detail := check.get("detail"):
-            lines.append(" ".join(detail.splitlines()))
-        if check["custodian_reconciliation_required"]:
-            lines.append("Refer the current witness check to the custodian for reconciliation.")
-            lines.extend(["", *(f"- <{locator}>" for locator in check["witness_locators"])])
-    return lines
-
-
 def write_report(path, result):
     lines = [f"# Track A · {result['horizon_months']} months", "", f"**{result['status']}**",
              "", f"Window ends {result['maturity']}. Release SHA-256 {result['release_sha256']}.",
@@ -104,8 +88,6 @@ def write_report(path, result):
     if result["missing"]:
         lines.extend(["", "Coverage or release checks", "",
                       *(f"- {item}" for item in result["missing"])])
-    if result.get("first_publication"):
-        lines.extend(["", *replay_publication_lines(result)])
     if result["status"] == "SCORED":
         lines.extend(["", f"Analysis type {result['analysis']}."])
         if result.get("h3_input"):
