@@ -3,7 +3,7 @@
   "technique_ledger": "K25",
   "version": 1,
   "status": "EXPLORATORY_SPECIFICATION",
-  "code_commit_sha": "57d348f656ca115535203a158d709d723e23951e",
+  "code_commit_sha": "bcf8f4789760e58adbae4e4427ce81cc41e21ae6",
   "scope": "US FDA small-molecule regulatory crowding for the Market Window Dossier",
   "endpoint": {
     "roster": "The full C1 criteria-v3 at-risk active-moiety NME roster at each admitted cutoff. Keep its exact row keys and cutoff eligibility.",
@@ -32,7 +32,7 @@
     "label_audit_cutoffs": ["2010-01-01", "2011-01-01", "2012-01-01", "2013-01-01"],
     "observed_through": "2016-01-01",
     "frozen_24_month_validation_panel_with_mature_36_month_outcomes": ["2013-01-01"],
-    "boundary": "Require the development seal closed. Pre-filter ANDA submissions and product outcome fields as bytes before decoding. Do not decode approvals after 2016-01-01. Use only undated ingredient metadata when an ANDA has no admissible final original action. Broader label-audit cutoffs have no role in queue scoring.",
+    "boundary": "Require the development seal closed. Pre-filter ANDA submissions and product outcome fields as bytes before decoding. Do not decode approvals after 2016-01-01. Use only undated ingredient metadata when an ANDA has no admissible final original action. Collect document discovery links only from the admitted action and only when the document's publication date is in development and on or after the approval. Broader label-audit cutoffs have no role in queue scoring.",
     "evidence_status": "DEVELOPMENT_ONLY"
   },
   "sealed_test": {
@@ -62,7 +62,7 @@
   "failure_rules": {
     "zero_known_positive_rows": "Recall and paired point difference undefined. Report label and conditional scenario bounds where available.",
     "undefined_bootstrap_draw": "Retain the undefined draw count and leave the interval unevaluable if any draw has no known positives.",
-    "irrecoverable_applicant_history": "When dated history is unavailable for the panel, or an entire threshold-ambiguous row lacks any dated applicant history, report descriptive bounds only. Suppress point recall and bootstrap. Bounds are conditional on recorded, linked approvals.",
+    "irrecoverable_applicant_history": "When dated history is unavailable for the panel, or a threshold-ambiguous row has no confirmed at-approval applicant, report descriptive bounds only. Suppress point recall and bootstrap. Bounds are conditional on recorded, linked approvals.",
     "missing_existing_frozen_scores": "BLOCKED_FROZEN_QUEUE_UNAVAILABLE. Report only endpoint audit and applicant-count bounds. Queue recall, contrast, confidence interval and queue capture bounds are NOT_RUN. Do not refit.",
     "integrity_or_scope_failure": "Stop before scoring on bad input digest, forecast provenance failure, roster mismatch, incomplete follow-up, nonfinite scores, queue capacity failure or seal failure."
   }
