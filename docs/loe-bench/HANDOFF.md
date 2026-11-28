@@ -6,14 +6,14 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 The owner runs the orchestrator on two Claude accounts. Per-account chat memory is not shared, so this section and [MEMORY.md](MEMORY.md) are the main memory. Update both, then commit and push, after every step (owner rule, 28 Nov 2026, night).
 
-Last update: 28 Nov 2026, about 20:15 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
+Last update: 28 Nov 2026, about 21:40 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
 
 | Line | State | Next action |
 |---|---|---|
 | IS2 short paper | IS2LAYOUT merged (a2cc45c1): figures and Table 1 next to first mention, 9 pages TH/EN, 0 orphans. Gap on pages 1–2 is the KMITL template (abstract pages with pinned footnotes). IS2REF merged (87a9ef4d). Reviewed files delivered to `IS_2_new/01_short-paper/final` (hashes match the IS2LAYOUT receipt); the earlier copies are in `archive/2026-11-28_pre-layout` | Owner reads it; slides wait for that |
 | Slides | Folder structure only | Wait for the owner's reading |
 | Journals (PSA, STA, MDM, JAMIA) | Strategy committed (e99e4940). Owner: only venues that allow AI drafting, so STA (conditional on its AI policy) then JAMIA; PSA and MDM dropped | JAMIA1 drafting on GPT-6.2 Sol high (Gemini quota out until about 5 Dec), then co-planner critique → Claude audit. STA waits for its AI policy (owner may help) |
-| Product | PRD v1 with section 4b revised (23af56eb) from the [co-planner AI memo](../product/prd/COPLANNER-AI-PLATFORM.md) and owner answers: package on the owner's machine, then dr-train; email one-time code; 3–5 invitees; Typhoon free tier with public data only; D43 envelope USD 10 (stop at 8) | PO-CURRENT (Sonnet medium) and BE-GATEWAY (Sol high) running on `loe/PO-CURRENT` and `loe/BE-GATEWAY`. Next cards: PO-AI, B2 BE-GROUND, B3 BE-CLAIMS, B4 BE-ORG, PO-PDF, PO-LANDING |
+| Product | PRD v1 with section 4b revised (23af56eb) from the [co-planner AI memo](../product/prd/COPLANNER-AI-PLATFORM.md) and owner answers: package on the owner's machine, then dr-train; email one-time code; 3–5 invitees; Typhoon free tier with public data only; D43 envelope USD 10 (stop at 8) | PO-CURRENT merged (1ff2db22; 651 dossiers per horizon, C8 16,562/16,562, tests 17/17 rerun by planner). Running: BE-GATEWAY (Sol high), PO-PDF and PO-LANDING (Sonnet medium), co-planner MCP critique (then dispatch B5 BE-MCP). Later: PO-AI after the B1 contract, B2, B3, B4, PO-WOW, PO-QA, PO-SHIP. Deployment: Cloudflare Pages, localhost AI demo (see decision register) |
 | Track A | Frozen; OSF update 4 verified | Zenodo release when the owner logs in |
 | Integration | `main` equals `research/loe-bench` at 23af56eb | Fast-forward main after each merge |
 
