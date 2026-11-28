@@ -173,6 +173,7 @@ class ReadoutTest(unittest.TestCase):
         status, path, result = self.readout(f"score-{horizon}", horizon, day)
         self.assertEqual(status, "SCORED")
         self.assertTrue(result["publication_eligible"])
+        self.assertEqual(load(path / RECEIPT)["files_sha256"]["REPORT.md"], digest(path / "REPORT.md"))
         staged = path / "staged"
         prepare_publication(path, staged)
         bundle = path / "result.zip"
@@ -290,6 +291,8 @@ class ReadoutTest(unittest.TestCase):
         original = load(area / "result" / RESULTS)["h3_input"]["original"]
         self.assertEqual(original["results_sha256"], digest(first / RESULTS))
         self.assertEqual(original["outcome_source_manifest_sha256"], digest(first / SOURCES))
+        report = (area / "result" / "REPORT.md").read_text(encoding="utf-8")
+        self.assertIn("These decisions are formal in the verified first GitHub release", report)
 
     def test_24_month_12_month_pin_conflict_holds_fresh_and_restored_drafts(self):
         first, scope, area = self.stage_24_context()
@@ -569,7 +572,7 @@ class ReadoutTest(unittest.TestCase):
                     for name in ("REPORT.md", "REPLAY.md"):
                         self.assertEqual(manifest[name], digest(folder / name))
                         report = (folder / name).read_text(encoding="utf-8")
-                        self.assertIn(f"formal as verified at publication on {publication_day}", report)
+                        self.assertIn(f"formal as verified at publication on {publication_day} (UTC).", report)
                         self.assertIn(f"Current 12-month witness check `{expected}`", report)
                         self.assertNotIn("remains formal", report)
                         if needs_reconciliation:
@@ -639,15 +642,36 @@ class ReadoutTest(unittest.TestCase):
         self.assertEqual(evidence["reason"], custody.HOLD)
         self.assertIn("Missing publication result digest", evidence["detail"])
 
-    def test_recovery_preserves_result_bytes_without_fda(self):
+    def test_12_month_publication_replay_and_recovery_are_descriptive(self):
         self.capture("capture12", 12, H12)
         first, _ = self.archive(12, H12)
-        status, stage, result = self.readout("recover", 12, H12 + timedelta(days=2), recover=True)
-        self.assertEqual(status, "RECOVERED")
-        self.assertEqual(result["family_status"], "REPLAY")
-        archived = stage.parent / f"first-published-{digest(first / RESULTS)}"
-        for name in tracka_vintage.ASSETS:
-            self.assertEqual((archived / name).read_bytes(), (first / name).read_bytes())
+        decisions = load(first / RESULTS)["hypotheses"]
+        self.assertEqual([decisions[name]["decision"] for name in ("H1", "H2", "H3")],
+                         ["PENDING", "PENDING", "DESCRIPTIVE_PENDING"])
+
+        def assert_descriptive(report_path):
+            report = report_path.read_text(encoding="utf-8").lower()
+            self.assertNotIn("formal", report)
+            self.assertIn("verified first 12-month panel", report)
+            self.assertIn("retained for later h3 use", report)
+            self.assertIn("descriptive only", report)
+            self.assertIn("h3 can be tested only at the 24-month readout (on or after 27 november 2028) "
+                          "and only if h1 and h2 both pass", report)
+
+        assert_descriptive(first / "REPORT.md")
+        for recover, expected_run in ((False, "SCORED"), (True, "RECOVERED")):
+            with self.subTest(recover=recover):
+                status, stage, result = self.readout(expected_run, 12, H12 + timedelta(days=2), recover=recover)
+                self.assertEqual(status, expected_run)
+                self.assertEqual(result["family_status"], "REPLAY")
+                manifest = load(stage / RECEIPT)["files_sha256"]
+                for name in ("REPORT.md", "REPLAY.md"):
+                    self.assertEqual(manifest[name], digest(stage / name))
+                    assert_descriptive(stage / name)
+                archived = stage.parent / f"first-published-{digest(first / RESULTS)}"
+                self.assertEqual(result["first_publication"]["archive_sha256"]["REPORT.md"], digest(first / "REPORT.md"))
+                for name in tracka_vintage.ASSETS:
+                    self.assertEqual((archived / name).read_bytes(), (first / name).read_bytes())
 
     def test_readout_has_no_live_fda_path(self):
         self.patch(tracka_capture, "discover", side_effect=AssertionError("prematurity made a discovery"))

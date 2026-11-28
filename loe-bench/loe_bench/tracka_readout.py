@@ -19,6 +19,10 @@ from .tracka_statistics import panel, sequence
 
 READOUT_VERSION = "2.0.0"
 EXIT = {"SCORED": 0, "RECOVERED": 0, "PENDING": 0, "BLOCKED_SOURCE": 3}
+FIRST_12M_PANEL = (
+    "Verified first 12-month panel, retained for later H3 use. The panel is descriptive only. "
+    "H3 can be tested only at the 24-month readout (on or after 27 November 2028) and only if H1 and H2 both pass."
+)
 
 
 def unverified_input(reason, *, detail=None, original=None, discovery=None):
@@ -118,6 +122,10 @@ def family_comparison(result, published, sources, published_sources):
 
 def replay_publication_lines(result):
     first = result["first_publication"]
+    if result["horizon_months"] == 12:
+        return [FIRST_12M_PANEL,
+                f"[First published on {first['published_at_utc'][:10]} (UTC)]({first['release_url']})."]
+
     lines = [f"The [first published aggregate]({first['release_url']}) was formal as verified at publication "
              f"on {first['published_at_utc'][:10]} (UTC)."]
     if check := result.get("current_12m_witness_check"):
@@ -207,13 +215,15 @@ def prepare_publication(run, target):
     (target / tracka_vintage.CHECKSUM).write_text(f"{digest(target / RESULTS)}  {RESULTS}\n", encoding="ascii")
     report = target / tracka_vintage.REPORT
     write_report(report, result)
+    publication_status = (FIRST_12M_PANEL if result["horizon_months"] == 12 else
+                          "These decisions are formal in the verified first GitHub release for this horizon.")
     with report.open("a", encoding="utf-8") as stream:
         capture = result["capture"]
         stream.write(f"\n[First verified FDA capture]({capture['release_url']}) "
                      f"SHA-256 `{capture['bundle_sha256']}`.\n"
                      f"Capture: {'Late' if capture['capture_late'] else 'On time'}. "
                      f"Scoring: {'Late' if result['scoring_late'] else 'On time'}.\n"
-                     "These decisions are formal in the verified first GitHub release for this horizon.\n")
+                     f"{publication_status}\n")
 
 
 def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=None, archive=None, recover=False):
