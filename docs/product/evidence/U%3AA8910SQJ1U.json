@@ -1,0 +1,291 @@
+{
+  "schema": "mwd.dossier.v1",
+  "key": "U:A8910SQJ1U",
+  "claims": [
+    {
+      "id": "ob-product-scope",
+      "section": "patents",
+      "text_th": "รายการผลิตภัณฑ์ที่จับคู่กับคีย์ของชุดข้อมูลใน Orange Book ฉบับเก็บถาวร: VESICARE (SOLIFENACIN SUCCINATE)",
+      "text_en": "Archived presentation scope for the benchmark key: VESICARE (SOLIFENACIN SUCCINATE).",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-products"
+      ]
+    },
+    {
+      "id": "patent-6017927",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 021518/002: 6017927 วันที่ตามรายการ 2018-11-19 (DS=–, DP=–, รหัสการใช้=–) / NDA 021518/001: 6017927 วันที่ตามรายการ 2018-11-19 (DS=–, DP=–, รหัสการใช้=–)",
+      "text_en": "Orange Book: NDA 021518/002: 6017927, 2018-11-19 (DS=–, DP=–, use code=–) / NDA 021518/001: 6017927, 2018-11-19 (DS=–, DP=–, use code=–)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-6017927"
+      ]
+    },
+    {
+      "id": "ob-excl-coverage",
+      "section": "patents",
+      "text_th": "ฉบับที่เก็บถาวรไม่พบรายการสิทธิผูกขาดที่จับคู่กับทะเบียนยาที่ศึกษา",
+      "text_en": "The archived edition returned no linked exclusivity rows.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "ob-excl-coverage"
+      ]
+    },
+    {
+      "id": "piv-coverage",
+      "section": "patents",
+      "text_th": "ณ วันตัดข้อมูล ยังไม่มีแถวข้อมูลจากบัญชี Paragraph IV ของ FDA ที่ผ่านเกณฑ์การรับหลักฐาน บัญชีฉบับเก็บถาวรล่าสุดที่อ่านได้เก่าเกินเกณฑ์ ณ วันดังกล่าว",
+      "text_en": "The historical FDA list provided no admitted dated PIV row at the cutoff. The last usable archived list was stale at the cutoff.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "piv-coverage"
+      ]
+    },
+    {
+      "id": "restriction",
+      "section": "patents",
+      "text_th": "สำหรับ ANDA 091464 ของ Teva หนังสือ FDA ระบุชัดว่าการยกคดีเกี่ยวกับสิทธิบัตรสหรัฐฯ เลขที่ 6017927 ทำให้คำขอเข้าเกณฑ์อนุมัติตามมาตรา 505(j)(5)(B)(iii) การอนุมัติมีผลวันที่ 2 เมษายน 2557 และ FDA ระบุว่า Teva เป็นรายแรกที่ยื่น ANDA สำหรับผลิตภัณฑ์นี้พร้อมคำรับรองตาม Paragraph IV โดยคำขอมีข้อมูลครบถ้วนในสาระสำคัญ",
+      "text_en": "For Teva ANDA 091464, FDA explicitly linked approval eligibility to dismissal of the litigation over US 6017927 under section 505(j)(5)(B)(iii). The letter records approval effective 2 April 2014 and identifies Teva as the first applicant to submit a substantially complete Paragraph IV ANDA for this product.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "soli-letter",
+        "ob-6017927",
+        "dev-selection",
+        "dev-fda-anda"
+      ]
+    },
+    {
+      "id": "family-6017927",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 6017927 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: JP6-327045, JP32704594, PCT/JP1995/002713 WO1996020194A1 ( en ) เลขประกาศ WO: WO1996020194A1 เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 6017927. Priority applications: JP6-327045, JP32704594, PCT/JP1995/002713 WO1996020194A1 ( en ). WO publications: WO1996020194A1. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-6017927",
+        "family-6017927"
+      ]
+    },
+    {
+      "id": "th-patent-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันสถานะสิทธิบัตรหรือการเข้าสู่ขั้นตอนระดับประเทศในไทยไม่ได้ การอยู่ในตระกูลสิทธิบัตรเดียวกันยังไม่เพียงพอที่จะยืนยันผลบังคับตามกฎหมาย",
+      "text_en": "Current check on 28 November 2026: Thai patent and national-phase status remain unknown. Family data do not establish enforceability.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "family-6017927",
+        "wipo-U-A8910SQJ1U",
+        "asean-U-A8910SQJ1U",
+        "dip-U-A8910SQJ1U",
+        "wipo-terms"
+      ]
+    },
+    {
+      "id": "th-fda-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันทะเบียนตำรับยาจากระบบ NDI ไม่ได้",
+      "text_en": "Current check on 28 November 2026: NDI registration remains unverified.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "ndi-U-A8910SQJ1U"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ob-products",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "products.txt data row 28128, products.txt data row 28129",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-6017927",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 4920, patent.txt data row 4921",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-excl-coverage",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "exclusivity.txt; join by NDA/product against products.txt",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "piv-coverage",
+      "issuer": "US FDA",
+      "title": "Paragraph IV certifications list",
+      "version": "2011-12-19",
+      "public_date": "2011-12-22",
+      "locator": "Archived FDA table, version metadata and product matching",
+      "url": "https://web.archive.org/web/20111222183218id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "sha256": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b",
+      "retrieved": "2026-11-27T11:31:19.808035+00:00"
+    },
+    {
+      "id": "dev-selection",
+      "issuer": "LOE-Bench",
+      "title": "Pinned 24-month development selection replay",
+      "version": "FREEZE development export; 2014-01-01",
+      "public_date": null,
+      "locator": "selection.json cases[key=U:A8910SQJ1U].event",
+      "url": null,
+      "sha256": "c1b65b35f5de8b3914813cbb90794c06c0064c1ec6aae567f4f4ca4cc8eb34dc",
+      "retrieved": "2026-11-28T05:10:04.180051+00:00"
+    },
+    {
+      "id": "soli-letter",
+      "issuer": "US FDA",
+      "title": "Teva ANDA 091464 solifenacin final approval letter",
+      "version": "2026-11-28",
+      "public_date": "2014-04-02",
+      "locator": "PDF pp. 1–2, patent, case 09-CIV-8100, dismissal and statutory approval eligibility; p. 4, signature",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2014/091464Orig1s000ltr.pdf",
+      "sha256": "62a111c32073c208e94dc3c921347a247187b2b0df7796903de4ebd96d3ee4ab",
+      "retrieved": "2026-11-28T05:15:07+00:00"
+    },
+    {
+      "id": "dev-fda-anda",
+      "issuer": "openFDA / Drugs@FDA",
+      "title": "Pinned ANDA snapshot, development projection",
+      "version": "2026-11-27",
+      "public_date": null,
+      "locator": "df_anda.jsonl, line 9619, ANDA091464, ORIG/AP 2014-04-02, Teva solifenacin tablets",
+      "url": "https://open.fda.gov/apis/drug/drugsfda/",
+      "sha256": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "retrieved": "2026-11-27T10:23:14.478072+00:00"
+    },
+    {
+      "id": "family-6017927",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 6017927",
+      "version": "2026-11-28",
+      "public_date": "2000-01-25",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US6017927A/en",
+      "sha256": "df5bba418d70d8b8d045a5dd2de987b770def9e044055c8f45519311b6db0fec",
+      "retrieved": "2026-11-28T05:11:15+00:00"
+    },
+    {
+      "id": "wipo-U-A8910SQJ1U",
+      "issuer": "WIPO",
+      "title": "JP32704594, JP6-327045, PCT/JP1995/002713 WO1996020194A1 ( en ), WO1996020194A1",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: PATENTSCOPE terms section 2.1 prohibits automated queries. Case search not submitted.",
+      "url": "https://patentscope.wipo.int/search/en/search.jsf",
+      "sha256": "cff7e81d66ef58094b19f07cbc61789711114f9cb0c55c04b903d6738ed589dd",
+      "retrieved": "2026-11-28T05:04:35+00:00"
+    },
+    {
+      "id": "asean-U-A8910SQJ1U",
+      "issuer": "ASEAN IP Register",
+      "title": "JP32704594, JP6-327045, PCT/JP1995/002713 WO1996020194A1 ( en ), WO1996020194A1",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt. Case search not submitted.",
+      "url": "https://ip-register.aseanip.org/",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:38+00:00"
+    },
+    {
+      "id": "dip-U-A8910SQJ1U",
+      "issuer": "Thailand Department of Intellectual Property",
+      "title": "JP32704594, JP6-327045, PCT/JP1995/002713 WO1996020194A1 ( en ), WO1996020194A1",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt and public endpoint. Case search not submitted.",
+      "url": "https://patentsearch.ipthailand.go.th/",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:39+00:00"
+    },
+    {
+      "id": "ndi-U-A8910SQJ1U",
+      "issuer": "Thai FDA NDI",
+      "title": "SOLIFENACIN SUCCINATE",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: Connection failed on robots.txt and public endpoint timed out. Case search not submitted.",
+      "url": "https://ndi.fda.moph.go.th/drug_info",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:53+00:00"
+    },
+    {
+      "id": "wipo-terms",
+      "issuer": "WIPO",
+      "title": "PATENTSCOPE terms of use",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "October 2025 Terms of Use, section 2.1, automated queries",
+      "url": "https://www.wipo.int/en/web/patentscope/data/terms_patentscope",
+      "sha256": "6a1e56c9621b4c155fabf2269fabef9248a75c4fee8b62443b11d8a58e1c934e",
+      "retrieved": "2026-11-28T05:08:37+00:00"
+    }
+  ],
+  "checklist": [
+    {
+      "id": "check-01",
+      "text_th": "ลำดับ 1: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 6017927 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #1: US 6017927. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-6017927"
+      ]
+    },
+    {
+      "id": "restriction-review",
+      "text_th": "ยืนยันผู้ยื่นคำขอรายแรกและเงื่อนไขที่ทำให้การอนุมัติมีผล โดยตรวจหนังสืออนุมัติหรือคำสั่งศาลที่ระบุเลขที่สิทธิบัตร",
+      "text_en": "Confirm the earliest applicant and any patent-specific condition on effective approval from the approval letter or operative court order.",
+      "owner": "US regulatory reviewer",
+      "source_ids": [
+        "soli-letter",
+        "ob-6017927",
+        "dev-selection",
+        "dev-fda-anda"
+      ]
+    },
+    {
+      "id": "th-register",
+      "text_th": "ใช้เลขคำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรกหรือเลขประกาศ WO ค้นในทะเบียนไทย แล้วตรวจการออกสิทธิบัตร ขอบเขตข้อถือสิทธิ และประวัติสถานะกับกรมทรัพย์สินทางปัญญา",
+      "text_en": "Check the Thai register using the priority/WO identifiers, then confirm grant, scope and legal-event history with DIP.",
+      "owner": "Thai patent reviewer",
+      "source_ids": [
+        "family-6017927",
+        "wipo-U-A8910SQJ1U",
+        "asean-U-A8910SQJ1U",
+        "dip-U-A8910SQJ1U"
+      ]
+    },
+    {
+      "id": "th-ndi",
+      "text_th": "ตรวจเลขทะเบียนตำรับยา ผู้รับอนุญาต ความแรง และรูปแบบยาในระบบ NDI ของสำนักงานคณะกรรมการอาหารและยา",
+      "text_en": "Confirm registration, holder, strength and presentation in Thai FDA NDI.",
+      "owner": "Thai regulatory reviewer",
+      "source_ids": [
+        "ndi-U-A8910SQJ1U"
+      ]
+    }
+  ]
+}

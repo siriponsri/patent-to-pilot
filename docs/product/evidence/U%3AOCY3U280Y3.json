@@ -1,0 +1,503 @@
+{
+  "schema": "mwd.dossier.v1",
+  "key": "U:OCY3U280Y3",
+  "claims": [
+    {
+      "id": "ob-product-scope",
+      "section": "patents",
+      "text_th": "รายการผลิตภัณฑ์ที่จับคู่กับคีย์ของชุดข้อมูลใน Orange Book ฉบับเก็บถาวร: ACOVA (ARGATROBAN) / ARGATROBAN (ARGATROBAN) / ARGATROBAN IN DEXTROSE (ARGATROBAN) / ARGATROBAN IN SODIUM CHLORIDE (ARGATROBAN)",
+      "text_en": "Archived presentation scope for the benchmark key: ACOVA (ARGATROBAN) / ARGATROBAN (ARGATROBAN) / ARGATROBAN IN DEXTROSE (ARGATROBAN) / ARGATROBAN IN SODIUM CHLORIDE (ARGATROBAN).",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-products"
+      ]
+    },
+    {
+      "id": "patent-7589106",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 022434/001: 7589106 วันที่ตามรายการ 2027-09-26 (DS=–, DP=–, รหัสการใช้=U-1163)",
+      "text_en": "Orange Book: NDA 022434/001: 7589106, 2027-09-26 (DS=–, DP=–, use code=U-1163)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-7589106"
+      ]
+    },
+    {
+      "id": "patent-7687516",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 022434/001: 7687516 วันที่ตามรายการ 2027-09-26 (DS=–, DP=–, รหัสการใช้=U-1164)",
+      "text_en": "Orange Book: NDA 022434/001: 7687516, 2027-09-26 (DS=–, DP=–, use code=U-1164)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-7687516"
+      ]
+    },
+    {
+      "id": "patent-5214052",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 020883/001: 5214052 วันที่ตามรายการ 2014-06-30 (DS=–, DP=–, รหัสการใช้=–)",
+      "text_en": "Orange Book: NDA 020883/001: 5214052, 2014-06-30 (DS=–, DP=–, use code=–)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-5214052"
+      ]
+    },
+    {
+      "id": "ob-excl-coverage",
+      "section": "patents",
+      "text_th": "ฉบับที่เก็บถาวรไม่พบรายการสิทธิผูกขาดที่จับคู่กับทะเบียนยาที่ศึกษา",
+      "text_en": "The archived edition returned no linked exclusivity rows.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "ob-excl-coverage"
+      ]
+    },
+    {
+      "id": "piv-coverage",
+      "section": "patents",
+      "text_th": "ณ วันตัดข้อมูล ยังไม่มีแถวข้อมูลจากบัญชี Paragraph IV ของ FDA ที่ผ่านเกณฑ์การรับหลักฐาน บัญชีฉบับเก็บถาวรล่าสุดที่อ่านได้เก่าเกินเกณฑ์ ณ วันดังกล่าว",
+      "text_en": "The historical FDA list provided no admitted dated PIV row at the cutoff. The last usable archived list was stale at the cutoff.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "piv-coverage"
+      ]
+    },
+    {
+      "id": "challenge-01",
+      "section": "patents",
+      "text_th": "ชุดข้อมูล Rai ระบุคดี D.N.J. 3:12-cv-01938 ยื่นเมื่อ 2012-03-30 จับคู่เลขที่สิทธิบัตร ณ วันยื่นคดีได้เป็น 7589106, 7687516",
+      "text_en": "Rai records docket D.N.J. 3:12-cv-01938, filed 2012-03-30. The patent-number join at filing identifies US 7589106, 7687516.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "challenge-01",
+        "ob-7589106",
+        "ob-7687516"
+      ]
+    },
+    {
+      "id": "challenge-02",
+      "section": "patents",
+      "text_th": "ชุดข้อมูล Rai ระบุคดี D.N.J. 3:12-cv-01965 ยื่นเมื่อ 2012-03-30 จับคู่เลขที่สิทธิบัตร ณ วันยื่นคดีได้เป็น 5214052",
+      "text_en": "Rai records docket D.N.J. 3:12-cv-01965, filed 2012-03-30. The patent-number join at filing identifies US 5214052.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "challenge-02",
+        "ob-5214052"
+      ]
+    },
+    {
+      "id": "arga-hikma-application-scope",
+      "section": "patents",
+      "text_th": "คำวินิจฉัยปี 2555 เชื่อมโยงสิทธิบัตรสหรัฐฯ เลขที่ 5214052 กับคำขอ NDA ของ Exela/Hikma โดยเป็นผู้ยื่นคำขอและช่องทางขึ้นทะเบียนคนละกรณีกับ ANDA ของ Par และ Mylan",
+      "text_en": "The 2012 court opinion links US 5214052 to an Exela/Hikma NDA. Applicant and pathway differ from the Par and Mylan ANDAs.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "arga-hikma",
+        "ob-5214052"
+      ]
+    },
+    {
+      "id": "restriction",
+      "section": "patents",
+      "text_th": "พบ ANDA 091665 ของ Par และ ANDA 202626 ของ Mylan ในวันอนุมัติครั้งแรก 30 มิถุนายน 2557 ลิงก์หนังสืออนุมัติของ FDA ทั้งสองรายการตอบกลับ 404 วันที่ในบัญชีสิทธิบัตรและคดีที่จับคู่ได้ยังไม่เพียงพอที่จะยืนยันเงื่อนไขการอนุมัติของผู้ยื่นคำขอทั้งสองราย",
+      "text_en": "Par ANDA 091665 and Mylan ANDA 202626 were observed on the first approval date of 30 June 2014. The paired FDA approval-letter URLs returned 404. The archived patent dates and litigation matches leave the restriction on these applicants unknown.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "arga-approval-history",
+        "arga-par-letter",
+        "arga-mylan-letter",
+        "ob-5214052",
+        "ob-7589106",
+        "ob-7687516",
+        "dev-selection",
+        "dev-fda-anda"
+      ]
+    },
+    {
+      "id": "family-5214052",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 5214052 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: JP62-188484, JP62188484A JPS6431727A ( en ), US22315288A, US57704290A, US07/851,248 US5214052A ( en ) เลขประกาศ WO: ไม่พบในดัชนี เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 5214052. Priority applications: JP62-188484, JP62188484A JPS6431727A ( en ), US22315288A, US57704290A, US07/851,248 US5214052A ( en ). WO publications: none returned. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-5214052",
+        "family-5214052"
+      ]
+    },
+    {
+      "id": "family-7589106",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 7589106 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US84755606P, US85072506P, US11/904,067 US7589106B2 ( en ) เลขประกาศ WO: WO2008039473A2 เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 7589106. Priority applications: US84755606P, US85072506P, US11/904,067 US7589106B2 ( en ). WO publications: WO2008039473A2. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-7589106",
+        "family-7589106"
+      ]
+    },
+    {
+      "id": "family-7687516",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 7687516 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US84755606P, US85072506P, US11/904,067 US7589106B2 ( en ), PCT/US2007/020725 WO2008039473A2 ( en ), US11/973,485 US7687516B2 ( en ) เลขประกาศ WO: ไม่พบในดัชนี เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 7687516. Priority applications: US84755606P, US85072506P, US11/904,067 US7589106B2 ( en ), PCT/US2007/020725 WO2008039473A2 ( en ), US11/973,485 US7687516B2 ( en ). WO publications: none returned. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-7687516",
+        "family-7687516"
+      ]
+    },
+    {
+      "id": "th-patent-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันสถานะสิทธิบัตรหรือการเข้าสู่ขั้นตอนระดับประเทศในไทยไม่ได้ การอยู่ในตระกูลสิทธิบัตรเดียวกันยังไม่เพียงพอที่จะยืนยันผลบังคับตามกฎหมาย",
+      "text_en": "Current check on 28 November 2026: Thai patent and national-phase status remain unknown. Family data do not establish enforceability.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "family-5214052",
+        "family-7589106",
+        "family-7687516",
+        "wipo-U-OCY3U280Y3",
+        "asean-U-OCY3U280Y3",
+        "dip-U-OCY3U280Y3",
+        "wipo-terms"
+      ]
+    },
+    {
+      "id": "th-fda-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันทะเบียนตำรับยาจากระบบ NDI ไม่ได้",
+      "text_en": "Current check on 28 November 2026: NDI registration remains unverified.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "ndi-U-OCY3U280Y3"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ob-products",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "products.txt data row 5391, products.txt data row 5774, products.txt data row 11289, products.txt data row 11290, products.txt data row 13087",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-7589106",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 7062",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-7687516",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 7063",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-5214052",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 1390",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-excl-coverage",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "exclusivity.txt; join by NDA/product against products.txt",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "piv-coverage",
+      "issuer": "US FDA",
+      "title": "Paragraph IV certifications list",
+      "version": "2011-12-19",
+      "public_date": "2011-12-22",
+      "locator": "Archived FDA table, version metadata and product matching",
+      "url": "https://web.archive.org/web/20111222183218id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "sha256": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b",
+      "retrieved": "2026-11-27T11:31:19.808035+00:00"
+    },
+    {
+      "id": "challenge-01",
+      "issuer": "Rai et al.",
+      "title": "District court patent litigation dataset",
+      "version": "1.0 (2021-06-10), LM_short_patent_cases.tab, file 4789869",
+      "public_date": "2021-06-10",
+      "locator": "TSV line 12729, TSV line 12730",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4789869",
+      "sha256": "abb54817c8e6fbc90077007a42bb1cd7870a64940ce3aa7a7d36d83dafaa06e5",
+      "retrieved": null
+    },
+    {
+      "id": "challenge-02",
+      "issuer": "Rai et al.",
+      "title": "District court patent litigation dataset",
+      "version": "1.0 (2021-06-10), LM_short_patent_cases.tab, file 4789869",
+      "public_date": "2021-06-10",
+      "locator": "TSV line 12284",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4789869",
+      "sha256": "abb54817c8e6fbc90077007a42bb1cd7870a64940ce3aa7a7d36d83dafaa06e5",
+      "retrieved": null
+    },
+    {
+      "id": "arga-hikma",
+      "issuer": "US District Court, District of New Jersey",
+      "title": "GSK v. Hikma, 3:12-cv-01965 doc. 90",
+      "version": "2026-11-28",
+      "public_date": "2012-08-16",
+      "locator": "PDF p. 1, opening paragraphs, 052 patent and Exela NDA",
+      "url": "https://www.govinfo.gov/content/pkg/USCOURTS-njd-3_12-cv-01965/pdf/USCOURTS-njd-3_12-cv-01965-0.pdf",
+      "sha256": "e9f67505fb7acc3b00e92c562753fc735387bb1e980705c4bf568b70cce21ea9",
+      "retrieved": "2026-11-28T05:18:10+00:00"
+    },
+    {
+      "id": "dev-selection",
+      "issuer": "LOE-Bench",
+      "title": "Pinned 24-month development selection replay",
+      "version": "FREEZE development export; 2014-01-01",
+      "public_date": null,
+      "locator": "selection.json cases[key=U:OCY3U280Y3].event",
+      "url": null,
+      "sha256": "c1b65b35f5de8b3914813cbb90794c06c0064c1ec6aae567f4f4ca4cc8eb34dc",
+      "retrieved": "2026-11-28T05:10:04.180051+00:00"
+    },
+    {
+      "id": "arga-approval-history",
+      "issuer": "US FDA",
+      "title": "FDA argatroban reference review lists ANDAs 091665 and 202626",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "Appendix B, p. 5, ANDA 091665 and ANDA 202626 rows (public reader; local download exceeded limit)",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2016/203049Orig1s004.pdf",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:13:17+00:00"
+    },
+    {
+      "id": "arga-par-letter",
+      "issuer": "US FDA",
+      "title": "Par ANDA 091665 June 30 2014 approval letter",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "unavailable: HTTP error",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2014/091665Orig1s000ltr.pdf",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:13:19+00:00"
+    },
+    {
+      "id": "arga-mylan-letter",
+      "issuer": "US FDA",
+      "title": "Mylan ANDA 202626 June 30 2014 approval letter",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "unavailable: HTTP error",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2014/202626Orig1s000ltr.pdf",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:13:21+00:00"
+    },
+    {
+      "id": "dev-fda-anda",
+      "issuer": "openFDA / Drugs@FDA",
+      "title": "Pinned ANDA snapshot, development projection",
+      "version": "2026-11-27",
+      "public_date": null,
+      "locator": "df_anda.jsonl, lines 1191 and 18807, ANDA091665 and ANDA202626, ORIG/AP 2014-06-30, argatroban injection",
+      "url": "https://open.fda.gov/apis/drug/drugsfda/",
+      "sha256": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "retrieved": "2026-11-27T10:23:14.478072+00:00"
+    },
+    {
+      "id": "family-5214052",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 5214052",
+      "version": "2026-11-28",
+      "public_date": "1993-05-25",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US5214052A/en",
+      "sha256": "551b13fa68b3fe21d06ddc72fb309eb0ea63cf9e6ad2e159b60c3cb71bf8acce",
+      "retrieved": "2026-11-28T05:11:08+00:00"
+    },
+    {
+      "id": "family-7589106",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 7589106",
+      "version": "2026-11-28",
+      "public_date": "2009-09-15",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US7589106B2/en",
+      "sha256": "d8b5ea47bb0b8a2cc7e3336a9cb8b5c43c92dd3f25c02d2c64f6cf5148164901",
+      "retrieved": "2026-11-28T05:11:31+00:00"
+    },
+    {
+      "id": "family-7687516",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 7687516",
+      "version": "2026-11-28",
+      "public_date": "2010-03-30",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US7687516B2/en",
+      "sha256": "af0899ed61dcf8bee763e9c9ba076e3f89a2ca821c947820d127324fb2ee6dda",
+      "retrieved": "2026-11-28T05:11:36+00:00"
+    },
+    {
+      "id": "wipo-U-OCY3U280Y3",
+      "issuer": "WIPO",
+      "title": "JP62-188484, JP62188484A JPS6431727A ( en ), PCT/US2007/020725 WO2008039473A2 ( en ), US07/851,248 US5214052A ( en ), US11/904,067 US7589106B2 ( en ), US11/973,485 US7687516B2 ( en ), US22315288A, US57704290A, US84755606P, US85072506P, WO2008039473A2",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: PATENTSCOPE terms section 2.1 prohibits automated queries. Case search not submitted.",
+      "url": "https://patentscope.wipo.int/search/en/search.jsf",
+      "sha256": "cff7e81d66ef58094b19f07cbc61789711114f9cb0c55c04b903d6738ed589dd",
+      "retrieved": "2026-11-28T05:04:35+00:00"
+    },
+    {
+      "id": "asean-U-OCY3U280Y3",
+      "issuer": "ASEAN IP Register",
+      "title": "JP62-188484, JP62188484A JPS6431727A ( en ), PCT/US2007/020725 WO2008039473A2 ( en ), US07/851,248 US5214052A ( en ), US11/904,067 US7589106B2 ( en ), US11/973,485 US7687516B2 ( en ), US22315288A, US57704290A, US84755606P, US85072506P, WO2008039473A2",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt. Case search not submitted.",
+      "url": "https://ip-register.aseanip.org/",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:38+00:00"
+    },
+    {
+      "id": "dip-U-OCY3U280Y3",
+      "issuer": "Thailand Department of Intellectual Property",
+      "title": "JP62-188484, JP62188484A JPS6431727A ( en ), PCT/US2007/020725 WO2008039473A2 ( en ), US07/851,248 US5214052A ( en ), US11/904,067 US7589106B2 ( en ), US11/973,485 US7687516B2 ( en ), US22315288A, US57704290A, US84755606P, US85072506P, WO2008039473A2",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt and public endpoint. Case search not submitted.",
+      "url": "https://patentsearch.ipthailand.go.th/",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:39+00:00"
+    },
+    {
+      "id": "ndi-U-OCY3U280Y3",
+      "issuer": "Thai FDA NDI",
+      "title": "ARGATROBAN",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: Connection failed on robots.txt and public endpoint timed out. Case search not submitted.",
+      "url": "https://ndi.fda.moph.go.th/drug_info",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:53+00:00"
+    },
+    {
+      "id": "wipo-terms",
+      "issuer": "WIPO",
+      "title": "PATENTSCOPE terms of use",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "October 2025 Terms of Use, section 2.1, automated queries",
+      "url": "https://www.wipo.int/en/web/patentscope/data/terms_patentscope",
+      "sha256": "6a1e56c9621b4c155fabf2269fabef9248a75c4fee8b62443b11d8a58e1c934e",
+      "retrieved": "2026-11-28T05:08:37+00:00"
+    }
+  ],
+  "checklist": [
+    {
+      "id": "check-01",
+      "text_th": "ลำดับ 1: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 7589106 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #1: US 7589106. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-7589106"
+      ]
+    },
+    {
+      "id": "check-02",
+      "text_th": "ลำดับ 2: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 7687516 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #2: US 7687516. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-7687516"
+      ]
+    },
+    {
+      "id": "check-03",
+      "text_th": "ลำดับ 3: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 5214052 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #3: US 5214052. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-5214052"
+      ]
+    },
+    {
+      "id": "restriction-review",
+      "text_th": "ยืนยันผู้ยื่นคำขอรายแรกและเงื่อนไขที่ทำให้การอนุมัติมีผล โดยตรวจหนังสืออนุมัติหรือคำสั่งศาลที่ระบุเลขที่สิทธิบัตร",
+      "text_en": "Confirm the earliest applicant and any patent-specific condition on effective approval from the approval letter or operative court order.",
+      "owner": "US regulatory reviewer",
+      "source_ids": [
+        "arga-approval-history",
+        "arga-par-letter",
+        "arga-mylan-letter",
+        "ob-5214052",
+        "ob-7589106",
+        "ob-7687516",
+        "dev-selection",
+        "dev-fda-anda"
+      ]
+    },
+    {
+      "id": "th-register",
+      "text_th": "ใช้เลขคำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรกหรือเลขประกาศ WO ค้นในทะเบียนไทย แล้วตรวจการออกสิทธิบัตร ขอบเขตข้อถือสิทธิ และประวัติสถานะกับกรมทรัพย์สินทางปัญญา",
+      "text_en": "Check the Thai register using the priority/WO identifiers, then confirm grant, scope and legal-event history with DIP.",
+      "owner": "Thai patent reviewer",
+      "source_ids": [
+        "family-5214052",
+        "family-7589106",
+        "family-7687516",
+        "wipo-U-OCY3U280Y3",
+        "asean-U-OCY3U280Y3",
+        "dip-U-OCY3U280Y3"
+      ]
+    },
+    {
+      "id": "th-ndi",
+      "text_th": "ตรวจเลขทะเบียนตำรับยา ผู้รับอนุญาต ความแรง และรูปแบบยาในระบบ NDI ของสำนักงานคณะกรรมการอาหารและยา",
+      "text_en": "Confirm registration, holder, strength and presentation in Thai FDA NDI.",
+      "owner": "Thai regulatory reviewer",
+      "source_ids": [
+        "ndi-U-OCY3U280Y3"
+      ]
+    }
+  ]
+}
