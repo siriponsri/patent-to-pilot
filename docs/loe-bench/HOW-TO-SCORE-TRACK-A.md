@@ -4,7 +4,7 @@ LOE-Bench Track A tests whether a fixed-size review queue captures drugs that re
 
 ## Run the scorer
 
-1. Obtain the **version DOI** of the published Track A release. Download and unpack `track-a-release.zip`. The release metadata must say `"freeze": "frozen"`. Compare the SHA-256 of `freeze-manifest.json` with the digest in OSF update 4. The files in a local rehearsal are marked `pending`.
+1. Download and unpack `track-a-release.zip` from the published [Track A release, version 1.0.0](https://doi.org/10.5281/zenodo.24629100). The release metadata must say `"freeze": "frozen"`. Compare the SHA-256 of `freeze-manifest.json` with the digest in OSF update 4. The files in a local rehearsal are marked `pending`.
 2. Open a terminal in the unpacked directory. Use CPython 3.12.10 and install the NumPy wheel verified by the supplied lock.
 
    ```sh
@@ -17,7 +17,7 @@ LOE-Bench Track A tests whether a fixed-size review queue captures drugs that re
    python -m loe_bench.score_release --release . --horizon 12 --out ../track-a-results --freeze-sha256 FREEZE_SHA256
    ```
 
-   An installed matching scorer also accepts `--release 10.5281/zenodo.VERSION_ID`. The argument must identify one publication version. Use the Zenodo record to obtain a clean copy of the software when replaying years later. [Zenodo record versions](https://help.zenodo.org/docs/deposit/manage-versions/).
+   An installed matching scorer also accepts `--release 10.5281/zenodo.24629100`. The argument must identify one publication version. Use the Zenodo record to obtain a clean copy of the software when replaying years later. [Zenodo record versions](https://help.zenodo.org/docs/deposit/manage-versions/).
 
 4. Save the whole first `SCORED` 12-month directory, including its sources, manifest and bootstrap draws. Publish or transfer that archive before the Actions artifact expires. On or after 27 November 2028, run the same command with `--horizon 24`. Reuse the same output root so the scorer picks the first completed 12-month panel. On a new machine, pass `--prior-12 /path/to/first-12-month-run` and retain the archive. When neither location supplies a 12-month result, the 24-month run computes a late first 12-month readout from its covered snapshot and reports that provenance. Prefer the original 12-month archive when one exists.
 
@@ -55,7 +55,7 @@ After owner setup, the [Cloudflare Worker](../../ops/tracka-cron/README.md) disp
 
 ### If nobody runs this
 
-Anyone can download the public release and use the scoring command above. The version DOI is **10.5281/zenodo.VERSION_ID** until the release link is filled in. Use the published version DOI and the freeze-manifest SHA-256 in OSF update 4. A readout run after the maturity date in UTC is late and remains valid. Record the actual UTC scoring date, the unchanged window end, the FDA edition, both release identifiers and the result table with the archive link. Keep the first scored output for each horizon. A later FDA edition may change the result while the endpoint window stays fixed.
+Anyone can download the public release and use the scoring command above. Use version DOI `10.5281/zenodo.24629100` and the freeze-manifest SHA-256 in OSF update 4. A readout run after the maturity date in UTC is late and remains valid. Record the actual UTC scoring date, the unchanged window end, the FDA edition, both release identifiers and the result table with the archive link. Keep the first scored output for each horizon. A later FDA edition may change the result while the endpoint window stays fixed.
 
 Post the report and archive link in the existing **Track A 12-month readout** or **Track A 24-month readout** GitHub issue, or open an issue with that title when none exists. An OSF registration comment is also suitable where comments are enabled. For an independently scored result, a repository maintainer can verify the report and add `<!-- tracka:HORIZON:SCORED:FREEZE_SHA256:VERSION_ID -->` as a line in a maintainer-authored issue body of that title, replacing the three placeholders. This records the result for the Worker and stops daily dispatches for that horizon. [GitHub issues](https://github.com/siriponsri/patent-to-pilot/issues) · [OSF registration](https://doi.org/10.17605/OSF.IO/P2SMD).
 

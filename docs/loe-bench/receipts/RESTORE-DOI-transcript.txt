@@ -1,0 +1,273 @@
+RESTORE-DOI execution transcript, 28 November 2026 UTC
+
+Local temp and interpreter paths are abbreviated in the captured lines.
+
+=== Unauthenticated curl.exe -q requests ===
+https://zenodo.org/api/records/24629100
+HTTP/1.1 200 OK
+date: Sat, 28 Nov 2026 14:12:10 GMT
+https://zenodo.org/records/24629100
+HTTP/1.1 200 OK
+date: Sat, 28 Nov 2026 14:12:12 GMT
+https://doi.org/10.5281/zenodo.24629100
+HTTP/1.1 302 Found
+Date: Sat, 28 Nov 2026 14:12:53 GMT
+location: https://zenodo.org/doi/10.5281/zenodo.24629100
+HTTP/1.1 302 FOUND
+date: Sat, 28 Nov 2026 14:12:54 GMT
+location: https://zenodo.org/records/24629100
+HTTP/1.1 200 OK
+date: Sat, 28 Nov 2026 14:12:55 GMT
+https://zenodo.org/api/records/24629100/files/track-a-release.zip/content
+HTTP/1.1 200 OK
+date: Sat, 28 Nov 2026 14:13:03 GMT
+https://zenodo.org/records/24629100/files/track-a-release.zip?download=1
+HTTP/1.1 200 OK
+date: Sat, 28 Nov 2026 14:13:34 GMT
+
+Record JSON SHA-256: 7db7fc4134d86fd0d5ef71748af6eb6d1c3e038f24cc29d3d741ae7115053830
+Identical direct and DOI-resolved HTML SHA-256: 25ca83fd878a8b900a32be00695e15bc5fa3376a6f4240c5f9d8a63c630096b7
+Archive bytes from each download: 15983054
+Archive MD5: 2599a90565e28e69019207884877a407
+Archive SHA-256 from both full downloads: acb533afb45f34f40d2ece2b97bc72b2b08fc3f6919fd73e1eb7064bf6e8049a
+Archive entries: 49
+Fixture downloaded over anonymous HTTP 200 from:
+https://raw.githubusercontent.com/siriponsri/patent-to-pilot/8bb93fb7/loe-bench/loe_bench/tests/test_score_release.py
+Fixture SHA-256: 178372f00e38cb23ed92ae6ec0470c236ef54a7b2c5e3720d4773e1655fd044b
+
+=== Independent manifest hashes ===
+Checked 2026-11-28T14:15:33.186329+00:00
+PASS B1           03512b32026d929e8cdcce2a352bfbdafef0d90473330e7177b6e6ca36346c13 B1_predictions.jsonl
+PASS B3           06d02ec233363b16fed5673babe7ef72e4d18a5406b2ef5725a6c038a5971ace B3_predictions.jsonl
+PASS C9-GRPO      75ab8e09e5210fa841818b503eda1b2cc6b42576fa542130c83fff9c263d9de7 C9-GRPO_predictions.jsonl
+PASS C9-SFT       cce35d54f27062e0f2eee1e6c13d1a0742a7181bfdaeed03150a8b5218936488 C9-SFT_predictions.jsonl
+PASS L1           79c3b990ec4b6c38df4861ab51a193968cd4b532290da702d8dc1d6e612e9b41 L1_predictions.jsonl
+PASS L1e          bf910f5635a3bb3c1808387924806d344c9f61ba2e1fba9294c9fcf065e4f51d L1e_predictions.jsonl
+PASS M1           a89086db767ba27e8c15927138c6c2eff2d0b52217679f0bee89c18b9997edd0 M1_predictions.jsonl
+PASS M3           cee7d7a4f77dd57424b7420ccb5c7b5c48dda68a067242bebe52fee45598d410 M3_predictions.jsonl
+PASS P1-RSF-OPEN  40a44ecc1c6b9f477d16e8d638a098fc73f4801624daf4e5476ce9d614470f1f P1-RSF-OPEN_predictions.jsonl
+PASS P2-COX-OPEN  2b0eff2b76a5da5968c434965c44d649469d533f4ea31485d8fb8d34d0dda29f P2-COX-OPEN_predictions.jsonl
+freeze-manifest.json      8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d
+release.json              879d27d9e60fb141d0e46ec2bc17aad3de61938460e678e7178841a8d2ca6d76
+RIGHTS.csv                cfdc47614a26ec741ffdf9d21ed269100ca7ac5aa51831035ad5aee783a9f09c
+requirements-tracka.lock  afaf49125c7f0198e692412f3632ffa8e3844d35cab721c703a1eef2461789a4
+scorer-version.json       470d62ee13f27cdc80ef1cfddff4c12e87553c444a243895d837fa2e3f9bc2d4
+roster.jsonl              31d35d30854006586bf0e9642e6b4abb5f11def7b3da2138599323292173597c
+
+=== Fresh runtime ===
+py -3.12 -I -m venv venv
+PIP_CONFIG_FILE=NUL
+python -I -m pip --isolated --disable-pip-version-check install --index-url https://pypi.org/simple --no-cache-dir --only-binary=:all: --require-hashes -r requirements-tracka.lock --report ../pip-install.json
+[rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+Collecting numpy==2.5.4 (from -r requirements-tracka.lock (line 2))
+  Downloading numpy-2.5.4-cp312-cp312-win_amd64.whl (12.6 MB)
+     --------------------------------------- 12.6/12.6 MB 41.5 MB/s eta 0:00:00
+Installing collected packages: numpy
+Successfully installed numpy-2.5.4
+pip exit: 0
+Wheel: https://files.pythonhosted.org/packages/12/33/fefe62073dc8acfd0f2b9ed7c003af2f50aa61555e113e6db02b8f79f145/numpy-2.5.4-cp312-cp312-win_amd64.whl
+Wheel SHA-256: a7b1b6353e36a7e50de2973a38d705c88ee93adcf120673cee7f45a4a3fa223a
+
+Offline harness invocation: venv/Scripts/python.exe -I -B audit_restore.py [CLI arguments or fixture]
+=== Offline CLI checks on the released bytes ===
+UTC 2026-11-28T14:16:47.854157+00:00; CPython 3.12.10; NumPy 2.5.4
+sys.path: ['<restore-temp>\\release', '<CPython-3.12.10>\\python312.zip', '<CPython-3.12.10>\\DLLs', '<CPython-3.12.10>\\Lib', '<CPython-3.12.10>', '<restore-temp>\\venv', '<restore-temp>\\venv\\Lib\\site-packages']
+Scorer package: <restore-temp>\release\loe_bench\__init__.py
+CLI: loe_bench.score_release --release release --horizon 12 --out pending --freeze-sha256 8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d
+PENDING pending\12m\run-0001
+Socket operations attempted: 0; exit: 2
+pending/12m/run-0001/results.json
+{
+  "first_scored_run": null,
+  "freeze_manifest_sha256": "8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d",
+  "horizon_months": 12,
+  "maturity": "2027-11-27",
+  "missing": [
+    "Calendar maturity is 2027-11-27; UTC date is 2026-11-28."
+  ],
+  "release_sha256": "879d27d9e60fb141d0e46ec2bc17aad3de61938460e678e7178841a8d2ca6d76",
+  "result_role": "status",
+  "run_version": 1,
+  "scorer_version": "1.0.0",
+  "status": "PENDING",
+  "t0": "2026-11-27"
+}
+
+pending/12m/run-0001/outcome-source-manifest.json
+{
+  "missing": [
+    "Calendar maturity is 2027-11-27; UTC date is 2026-11-28."
+  ],
+  "sources": []
+}
+
+pending/12m/run-0001/run-manifest.json
+{
+  "files_sha256": {
+    "REPORT.md": "a4d3f35a873582746b8050b06c32b4bcbca044958910efb7fcf6ff0a09f41ce6",
+    "outcome-source-manifest.json": "2e07559dbb8f70fe6108bc99df23e775e37658e7901d6ae4f03efeb4a4bdb120",
+    "results.json": "c6dc2cecad12b31a3b0a168b6f958b601bcbadb82077ba98c6b75a01ea276a37"
+  }
+}
+
+UTC 2026-11-28T14:16:49.555416+00:00; CPython 3.12.10; NumPy 2.5.4
+sys.path: ['<restore-temp>\\release', '<CPython-3.12.10>\\python312.zip', '<CPython-3.12.10>\\DLLs', '<CPython-3.12.10>\\Lib', '<CPython-3.12.10>', '<restore-temp>\\venv', '<restore-temp>\\venv\\Lib\\site-packages']
+Scorer package: <restore-temp>\release\loe_bench\__init__.py
+CLI: loe_bench.score_release --release release --horizon 12 --out wrong-pin --freeze-sha256 0000000000000000000000000000000000000000000000000000000000000000
+INVALID_RELEASE_OR_RUN: Freeze manifest differs from the external pin
+Socket operations attempted: 0; exit: 1
+UTC 2026-11-28T14:16:50.299661+00:00; CPython 3.12.10; NumPy 2.5.4
+sys.path: ['<restore-temp>\\release', '<CPython-3.12.10>\\python312.zip', '<CPython-3.12.10>\\DLLs', '<CPython-3.12.10>\\Lib', '<CPython-3.12.10>', '<restore-temp>\\venv', '<restore-temp>\\venv\\Lib\\site-packages']
+Scorer package: <restore-temp>\release\loe_bench\__init__.py
+CLI: loe_bench.score_release --release release --horizon 24 --out pending --freeze-sha256 8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d
+PENDING pending\24m\run-0001
+Socket operations attempted: 0; exit: 2
+pending/24m/run-0001/results.json
+{
+  "first_scored_run": null,
+  "freeze_manifest_sha256": "8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d",
+  "horizon_months": 24,
+  "maturity": "2028-11-27",
+  "missing": [
+    "Calendar maturity is 2028-11-27; UTC date is 2026-11-28."
+  ],
+  "release_sha256": "879d27d9e60fb141d0e46ec2bc17aad3de61938460e678e7178841a8d2ca6d76",
+  "result_role": "status",
+  "run_version": 1,
+  "scorer_version": "1.0.0",
+  "status": "PENDING",
+  "t0": "2026-11-27"
+}
+
+pending/24m/run-0001/outcome-source-manifest.json
+{
+  "missing": [
+    "Calendar maturity is 2028-11-27; UTC date is 2026-11-28."
+  ],
+  "sources": []
+}
+
+pending/24m/run-0001/run-manifest.json
+{
+  "files_sha256": {
+    "REPORT.md": "a300b596687aefc55be6bf5ca8f753825a673da4d1e27249abc4b736cbefc7c5",
+    "outcome-source-manifest.json": "bb41cd13c03f96b44382616e0aab62dffbe690fcd72c178b32468b6aba4194cd",
+    "results.json": "ade9fc9d2ea994f7ed74f9606f6d6417ee761941c99c149b07563a65d4d38a9e"
+  }
+}
+
+UTC 2026-11-28T14:16:51.299615+00:00; CPython 3.12.10; NumPy 2.5.4
+sys.path: ['<restore-temp>\\release', '<CPython-3.12.10>\\python312.zip', '<CPython-3.12.10>\\DLLs', '<CPython-3.12.10>\\Lib', '<CPython-3.12.10>', '<restore-temp>\\venv', '<restore-temp>\\venv\\Lib\\site-packages']
+Scorer package: <restore-temp>\release\loe_bench\__init__.py
+CLI: loe_bench.score_release --release release --horizon 24 --out wrong-pin --freeze-sha256 0000000000000000000000000000000000000000000000000000000000000000
+INVALID_RELEASE_OR_RUN: Freeze manifest differs from the external pin
+Socket operations attempted: 0; exit: 1
+=== Public synthetic known-answer fixture ===
+UTC 2026-11-28T14:16:51.987732+00:00; CPython 3.12.10; NumPy 2.5.4
+sys.path: ['<restore-temp>\\release', '<CPython-3.12.10>\\python312.zip', '<CPython-3.12.10>\\DLLs', '<CPython-3.12.10>\\Lib', '<CPython-3.12.10>', '<restore-temp>\\venv', '<restore-temp>\\venv\\Lib\\site-packages']
+Scorer package: <restore-temp>\release\loe_bench\__init__.py
+Socket operations attempted: 0; exit: 0
+test_known_answers_sequence_and_revision (public_test_score_release.ScoreReleaseTest.test_known_answers_sequence_and_revision) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.470s
+
+OK
+
+=== Prediction-byte tamper check ===
+UTC 2026-11-28T14:17:18.903402+00:00; CPython 3.12.10; NumPy 2.5.4
+sys.path: ['<restore-temp>\\release', '<CPython-3.12.10>\\python312.zip', '<CPython-3.12.10>\\DLLs', '<CPython-3.12.10>\\Lib', '<CPython-3.12.10>', '<restore-temp>\\venv', '<restore-temp>\\venv\\Lib\\site-packages']
+Scorer package: <restore-temp>\release\loe_bench\__init__.py
+CLI: loe_bench.score_release --release release-tampered --horizon 12 --out tamper-out --freeze-sha256 8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d
+INVALID_RELEASE_OR_RUN: SHA-256 mismatch: M3_predictions.jsonl
+Socket operations attempted: 0; exit: 1
+UTC 2026-11-28T14:17:19.883271+00:00; CPython 3.12.10; NumPy 2.5.4
+sys.path: ['<restore-temp>\\release', '<CPython-3.12.10>\\python312.zip', '<CPython-3.12.10>\\DLLs', '<CPython-3.12.10>\\Lib', '<CPython-3.12.10>', '<restore-temp>\\venv', '<restore-temp>\\venv\\Lib\\site-packages']
+Scorer package: <restore-temp>\release\loe_bench\__init__.py
+CLI: loe_bench.score_release --release release-tampered --horizon 24 --out tamper-out --freeze-sha256 8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d
+INVALID_RELEASE_OR_RUN: SHA-256 mismatch: M3_predictions.jsonl
+Socket operations attempted: 0; exit: 1
+
+=== Direct version DOI CLI smoke check ===
+From the unpacked release directory:
+python -E -s -B -m loe_bench.score_release --release 10.5281/zenodo.24629100 --horizon 12 --out ../doi-pending --freeze-sha256 8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d
+[rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+PENDING ..\doi-pending\12m\run-0001
+Exit: 2
+{
+  "first_scored_run": null,
+  "freeze_manifest_sha256": "8a78b318a8791649edbee2daab12a4db2d8aa72e33758cd27ae2145a9114c38d",
+  "horizon_months": 12,
+  "maturity": "2027-11-27",
+  "missing": [
+    "Calendar maturity is 2027-11-27; UTC date is 2026-11-28."
+  ],
+  "release_sha256": "879d27d9e60fb141d0e46ec2bc17aad3de61938460e678e7178841a8d2ca6d76",
+  "result_role": "status",
+  "run_version": 1,
+  "scorer_version": "1.0.0",
+  "status": "PENDING",
+  "t0": "2026-11-27"
+}
+{
+  "missing": [
+    "Calendar maturity is 2027-11-27; UTC date is 2026-11-28."
+  ],
+  "sources": []
+}
+
+=== Offline harness source ===
+import importlib.util
+import json
+import platform
+import runpy
+import sys
+import unittest
+from datetime import datetime, timezone
+from pathlib import Path
+
+root = Path.cwd().resolve()
+release = root / "release"
+sys.path.insert(0, str(release))
+expected = [root, Path(sys.base_prefix).resolve()]
+assert all(any(Path(p).resolve().is_relative_to(parent) for parent in expected) for p in sys.path)
+assert sys.prefix != sys.base_prefix
+assert (root / "venv").resolve() == Path(sys.prefix).resolve()
+assert "include-system-site-packages = false" in (root / "venv" / "pyvenv.cfg").read_text()
+assert "3.12.10" == platform.python_version()
+
+import numpy
+import loe_bench
+assert numpy.__version__ == "2.5.4"
+assert Path(numpy.__file__).resolve().is_relative_to(root / "venv")
+assert Path(loe_bench.__file__).resolve().is_relative_to(release)
+
+network_attempts = []
+def deny_network(event, args):
+    if event.startswith("socket.") and event != "socket.__new__":
+        network_attempts.append(event)
+        raise AssertionError(f"Unexpected network access: {event}")
+
+sys.addaudithook(deny_network)
+print(f"UTC {datetime.now(timezone.utc).isoformat()}; CPython {platform.python_version()}; NumPy {numpy.__version__}", flush=True)
+print(f"sys.path: {sys.path}", flush=True)
+print(f"Scorer package: {loe_bench.__file__}", flush=True)
+if sys.argv[1] == "fixture":
+    spec = importlib.util.spec_from_file_location("public_test_score_release", root / "public_test_score_release.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    suite = unittest.TestSuite([module.ScoreReleaseTest("test_known_answers_sequence_and_revision")])
+    outcome = unittest.TextTestRunner(verbosity=2).run(suite)
+    code = 0 if outcome.wasSuccessful() else 1
+else:
+    sys.argv = ["loe_bench.score_release", *sys.argv[1:]]
+    print(f"CLI: {' '.join(sys.argv)}", flush=True)
+    try:
+        runpy.run_module("loe_bench.score_release", run_name="__main__", alter_sys=True)
+    except SystemExit as exc:
+        code = exc.code
+    else:
+        raise AssertionError("CLI returned without a status")
+print(f"Socket operations attempted: {len(network_attempts)}; exit: {code}", flush=True)
+assert not network_attempts
+raise SystemExit(code)
