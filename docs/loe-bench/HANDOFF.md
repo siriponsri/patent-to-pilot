@@ -54,6 +54,14 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 ## Next action (owner returns 4 PM, 28 Nov)
 
+**First, on return.** The owner shut the PC down at about 13:35 Bangkok time while SCORELLM was running. Its executor process is gone, but RunPod pod `hmo8vrw0fq4pw2` (L4, US-GA-2, USD 0.69/h, started 05:28 UTC) may still be running.
+- Check it with the RunPod list-pods tool.
+- If the remote job finished, retrieve the outputs and hashes, delete the pod, and run the comparison against the SCORE per-row exports.
+- If not, delete the pod and rerun SCORELLM.
+- The envelope is now USD 23.
+
+**Then file OSF update 3** (`docs/loe-bench/OSF-UPDATE-3-SHEET.md`) so that C9 can train now, dispatch C9 training, and disable scheduled task 58a1b3e5 (the 1 Dec reminder) so it does not dispatch training twice.
+
 1. Merge SCORELLM when it finishes and fill the IS2 placeholder.
 2. Send IS2 to Astra for critique, then do the main-planner audit, build the KMITL docx (TH/EN) and make the slides (Claude).
 3. On 1 Dec, dispatch C9 training. After it finishes, dispatch the Track A freeze card.
