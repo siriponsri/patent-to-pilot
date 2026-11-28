@@ -10,33 +10,15 @@ from zipfile import BadZipFile
 
 import numpy as np
 
-from . import tracka_secondary, tracka_vintage
+from . import tracka_capture, tracka_custody as custody, tracka_secondary, tracka_vintage
 from .common import add_months
 from .score_release import RECEIPT, RESULTS, SOURCES, commit_run, release_directory, write_report
 from .tracka_outcomes import fetch_outcomes
 from .tracka_release import ARMS, FREEZE, HORIZONS, SCORER, T0, VERSION, digest, dump, load, read_release, require, verify_file
 from .tracka_statistics import panel, sequence
 
-READOUT_VERSION = "1.2.0"
+READOUT_VERSION = "2.0.0"
 EXIT = {"SCORED": 0, "RECOVERED": 0, "PENDING": 2, "BLOCKED_SOURCE": 3}
-
-
-def h3_provenance(evidence, today, source_manifest, source_sha):
-    original = evidence["original"]
-    vintage = {"original": original, "original_maturity": tracka_vintage.MATURITY_12, "discovery": evidence}
-    if "reason" not in evidence:
-        return {**vintage, "status": "FIRST_PUBLISHED",
-                "kind": f"FIRST_PUBLISHED. Scored {original['scored_on_utc']} UTC with FDA edition "
-                        f"{original['fda_edition']}. Result SHA-256 {original['results_sha256']}",
-                "results_sha256": original["results_sha256"]}
-    revised = {"scored_on_utc": today.isoformat(), "fda_edition": source_manifest["covered_through"],
-               "outcome_source_manifest_sha256": source_sha}
-    original_day = original.get("scored_on_utc") or original.get("published_at_utc") or "unknown"
-    return {**vintage, "status": "REVISED_VINTAGE", "reason": evidence["reason"],
-            "revised": revised, **({"detail": evidence["detail"]} if "detail" in evidence else {}),
-            "kind": f"REVISED_VINTAGE ({evidence['reason']}). Original date {original_day} "
-                    f"(12-month maturity {tracka_vintage.MATURITY_12}). Revised scoring date {today} UTC, "
-                    f"FDA edition {revised['fda_edition']}"}
 
 
 def unverified_input(reason, *, detail=None, original=None, discovery=None):
@@ -123,14 +105,14 @@ def prepare_publication(run, target):
     """Stage the pinned bundle for the registered workflow's release creation step."""
     result = load(run / RESULTS)
     require(result["status"] == "SCORED" and result["family_status"] == "PROVISIONAL"
-            and result.get("publication_eligible") is True, "Run is ineligible for first Track A publication")
+            and result.get("publication_eligible") is True
+            and result["capture"]["status"] == "VERIFIED", "Run is ineligible for first Track A publication")
     files = load(run / RECEIPT)["files_sha256"]
     for name in (RESULTS, SOURCES, tracka_vintage.DRAWS):
         verify_file(run, name, files[name])
     target.mkdir()
     result.update(family_status="FORMAL", result_role="first_published")
     del result["publication_eligible"]
-    del result["first_scored_run"]
     for step in result["hypotheses"].values():
         step["decision"] = step.pop("sequence_decision")
         step["reached"] = step.pop("sequence_reached")
@@ -141,7 +123,12 @@ def prepare_publication(run, target):
     report = target / tracka_vintage.REPORT
     write_report(report, result)
     with report.open("a", encoding="utf-8") as stream:
-        stream.write("\nThese decisions are formal in the verified first GitHub release for this horizon.\n")
+        capture = result["capture"]
+        stream.write(f"\n[First verified FDA capture]({capture['release_url']}) "
+                     f"SHA-256 `{capture['bundle_sha256']}`.\n"
+                     f"Capture: {'Late' if capture['capture_late'] else 'On time'}. "
+                     f"Scoring: {'Late' if result['scoring_late'] else 'On time'}.\n"
+                     "These decisions are formal in the verified first GitHub release for this horizon.\n")
 
 
 def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=None, archive=None, recover=False):
@@ -165,40 +152,48 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
 
         repository = repository or tracka_vintage.CANONICAL_REPOSITORY
         canonical = tracka_vintage.canonical_scope(repository, doi, freeze_sha)
-        published, current_absent = None, False
+        published, current, capture, replay = None, None, None, snapshot
         earlier, unverified, discovery = None, None, None
         if canonical:
+            scope = custody.Scope(repository, tracka_vintage.DOI.fullmatch(doi)[1].lower(), freeze_sha, horizon, "capture")
+            captured, capture = tracka_capture.discover(scope, Path(temporary) / "capture")
+            result["capture"] = capture
+            if snapshot is None:
+                replay = captured
             retained = Path(temporary) / "first-published"
             first_panel, current = tracka_vintage.discover(repository, doi, freeze_sha, release.manifest_sha256,
-                                                          retained, horizon=horizon)
+                                                          retained, horizon=horizon, capture=capture)
             result["publication_discovery"] = current
-            current_absent = current.get("reason") == "MISSING_ORIGINAL" and not current["issue_urls"]
             if first_panel is not None:
                 target = recover_published(retained, out, horizon, current["original"])
                 published = load(target / RESULTS)
                 result.update(family_status="REPLAY", first_publication=current["original"])
+            elif capture["status"] != "VERIFIED" or current["reason"] != "MISSING_ORIGINAL":
+                result["family_status"] = custody.HOLD
             if horizon == 24 and not recover:
-                if published is None and archive is not None:
-                    earlier, unverified = local_panel(archive, release.manifest_sha256, freeze_sha)
-                elif published is None and not current_absent:
-                    unverified = unverified_input("FIRST_24_PUBLICATION_UNRESOLVED", discovery=current)
-                elif published is not None:
+                if published is not None:
+                    earlier = published["panels"]["12"]
                     discovery = published["h3_input"]["discovery"]
-                    if published["h3_input"]["status"] == "FIRST_PUBLISHED":
-                        earlier = published["panels"]["12"]
+                elif archive is not None:
+                    earlier, unverified = local_panel(archive, release.manifest_sha256, freeze_sha)
                 else:
                     earlier, discovery = tracka_vintage.discover(repository, doi, freeze_sha, release.manifest_sha256,
                                                                  Path(temporary) / "first-12")
-                    if earlier is None and not tracka_vintage.verified_absence(discovery, release.manifest_sha256):
-                        unverified = unverified_input(discovery["reason"], detail=discovery.get("detail"),
+                    if earlier is None:
+                        unverified = unverified_input(custody.HOLD, detail=discovery.get("detail"),
                                                       original=discovery["original"], discovery=discovery)
+                        result["family_status"] = custody.HOLD
         elif horizon == 24:
             earlier, unverified = local_panel(archive, release.manifest_sha256, freeze_sha)
 
-        if recover:
-            require(published is not None and snapshot is None, "Recovery requires a verified first publication")
+        if recover and published is not None:
             result.update(status="RECOVERED", replay_comparison={"status": "NOT_RUN_RECOVERY_ONLY",
                                                                  "detail": "Recovery retrieves the pinned bytes."})
+            return finish_run(stage, out, result)
+        if replay is None or recover:
+            result.update(status="BLOCKED_SOURCE", family_status=custody.HOLD,
+                          missing=["No verified first capture or explicit local snapshot is available."])
+            dump(stage / SOURCES, {"sources": [], "missing": result["missing"]})
             return finish_run(stage, out, result)
 
         locked = load(release.folder / SCORER)
@@ -207,7 +202,7 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
         result["runtime"] = {"python": python_version(), "numpy": np.__version__}
         sources_dir = stage / "sources"
         sources_dir.mkdir()
-        source_manifest, first_dates, witnesses = fetch_outcomes(release, end, today, sources_dir, snapshot)
+        source_manifest, first_dates, witnesses = fetch_outcomes(release, end, today, sources_dir, replay)
         dump(stage / SOURCES, source_manifest)
         if first_dates is None:
             result.update(status="BLOCKED_SOURCE", missing=source_manifest["missing"])
@@ -219,7 +214,13 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
         source_sha = digest(stage / SOURCES)
         panels, draws = {}, {}
         if horizon == 24:
-            result["h3_input"] = unverified or h3_provenance(discovery, today, source_manifest, source_sha)
+            if unverified is not None:
+                result["h3_input"] = unverified
+            else:
+                original = discovery["original"]
+                result["h3_input"] = {"status": "FIRST_PUBLISHED", "original": original,
+                                      "discovery": discovery, "results_sha256": original["results_sha256"],
+                                      "kind": f"FIRST_PUBLISHED. First 12-month result SHA-256 {original['results_sha256']}."}
             if earlier is not None:
                 panels[12] = earlier
 
@@ -238,7 +239,8 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
             draws.update({f"{h}m:secondary:{key}": value for key, value in extra.items()})
         np.savez_compressed(stage / "bootstrap-draws.npz", **draws)
         dump(stage / "event-witnesses.json", witnesses)
-        hypotheses = sequence(panels, formal=release.manifest["analysis"] == "replication")
+        hypotheses = sequence(panels, formal=release.manifest["analysis"] == "replication"
+                              and result["family_status"] != custody.HOLD)
         if horizon == 24:
             if unverified:
                 hypotheses["H3"].update(decision="DESCRIPTIVE_ONLY", reached=False)
@@ -246,12 +248,15 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
         result.update(status="SCORED", analysis=release.manifest["analysis"],
                       outcome_source_manifest_sha256=source_sha, arm_availability=load(release.folder / ARMS),
                       panels={str(h): values for h, values in panels.items()}, hypotheses=hypotheses,
-                      publication_eligible=current_absent and snapshot is None and unverified is None)
+                      scoring_late=today > end,
+                      publication_eligible=canonical and current.get("reason") == "MISSING_ORIGINAL"
+                      and capture["status"] == "VERIFIED" and snapshot is None and unverified is None)
         if published is not None:
             result["replay_comparison"] = family_comparison(result, published, source_manifest, load(target / SOURCES))
         for step in hypotheses.values():
             step.update(sequence_decision=step["decision"], sequence_reached=step["reached"],
-                        decision=result["family_status"], reached=False)
+                        decision="DESCRIPTIVE_ONLY" if result["family_status"] == custody.HOLD else result["family_status"],
+                        reached=False)
         return finish_run(stage, out, result)
 
 

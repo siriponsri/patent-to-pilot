@@ -16,7 +16,7 @@ on:
         description: OSF update 4 manifest SHA-256 (defaults to TRACKA_FREEZE_SHA256)
         type: string
       synthetic:
-        description: Run only the network-free synthetic readout fixtures
+        description: Run synthetic readout fixtures and an isolated branch attestation
         type: boolean
         default: false
   schedule:
@@ -31,6 +31,10 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && inputs.synthetic
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
     steps:
       - uses: actions/checkout@v7
         with:
@@ -44,6 +48,37 @@ jobs:
       - name: Run the synthetic readout fixtures
         working-directory: loe-bench
         run: python -m unittest -v loe_bench.tests.test_tracka_readout loe_bench.tests.test_tracka_secondary
+      - name: Build isolated synthetic attestation subjects
+        if: github.ref_name != github.event.repository.default_branch
+        run: |
+          printf '%s\n' "synthetic scope $GITHUB_RUN_ID $GITHUB_RUN_ATTEMPT" > synthetic-scope.txt
+          printf '%s\n' "synthetic bundle $GITHUB_RUN_ID $GITHUB_RUN_ATTEMPT" > synthetic-bundle.txt
+          sha256sum synthetic-scope.txt synthetic-bundle.txt > synthetic-subjects.sha256
+      - name: Attest the synthetic subjects only
+        if: github.ref_name != github.event.repository.default_branch
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-checksums: synthetic-subjects.sha256
+      - name: Verify the synthetic workflow identity
+        if: github.ref_name != github.event.repository.default_branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for subject in synthetic-scope.txt synthetic-bundle.txt; do
+            gh attestation verify "$subject" --repo "$GITHUB_REPOSITORY" \
+              --cert-identity "https://github.com/$GITHUB_WORKFLOW_REF" --source-ref "$GITHUB_REF" \
+              --deny-self-hosted-runners --format json |
+              jq -e --arg ref "https://github.com/$GITHUB_WORKFLOW_REF" \
+                --arg commit "$GITHUB_SHA" \
+                --arg run "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/attempts/$GITHUB_RUN_ATTEMPT" \
+                'any(.[];
+                  (.verificationResult.signature.certificate |
+                    .buildConfigURI == $ref and .sourceRepositoryDigest == $commit and
+                    .runInvocationURI == $run and .sourceRepositoryVisibilityAtSigning == "public") and
+                  any(.verificationResult.verifiedTimestamps[]; .type == "Tlog") and
+                  ([.verificationResult.statement.subject[].name] | sort) ==
+                  ["synthetic-bundle.txt", "synthetic-scope.txt"])' > /dev/null
+          done
   select:
     if: github.event_name != 'workflow_dispatch' || !inputs.synthetic
     runs-on: ubuntu-24.04
@@ -75,18 +110,31 @@ jobs:
           echo "horizon=$horizon" >> "$GITHUB_OUTPUT"
   readout:
     needs: select
-    if: needs.select.outputs.horizon != ''
+    if: >-
+      needs.select.outputs.horizon != '' &&
+      github.repository == 'siriponsri/patent-to-pilot' &&
+      github.ref == 'refs/heads/main' &&
+      github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 30
     permissions:
       contents: write
       issues: write
+      id-token: write
+      attestations: write
     concurrency:
       group: score-track-a-publication
       cancel-in-progress: false
     defaults:
       run:
         shell: bash
+        working-directory: loe-bench
+    env:
+      HORIZON: ${{ needs.select.outputs.horizon }}
+      RELEASE_DOI: ${{ inputs.release_doi || vars.TRACKA_RELEASE_DOI }}
+      FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
+      TRACKA_CONTINUITY_HOLD: ${{ vars.TRACKA_CONTINUITY_HOLD }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -96,169 +144,36 @@ jobs:
           python-version: "3.12.10"
       - name: Install the scorer dependency
         run: |
-          python -m pip install --only-binary=:all: --require-hashes -r loe-bench/requirements-tracka.lock
-      - name: Score the frozen release
-        id: score
-        working-directory: loe-bench
-        env:
-          HORIZON: ${{ needs.select.outputs.horizon }}
-          RELEASE_DOI: ${{ inputs.release_doi || vars.TRACKA_RELEASE_DOI }}
-          FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          status=0
-          summary=$(python -m loe_bench.tracka_readout --release "$RELEASE_DOI" --horizon "$HORIZON" \
-            --freeze-sha256 "$FREEZE_SHA256" --out ../track-a-results --repository "$GITHUB_REPOSITORY") || status=$?
-          printf '%s\n' "$summary"
-          case "$status" in
-            0|2|3)
-              folder="${summary#* }"
-              cat "$folder/REPORT.md" >> "$GITHUB_STEP_SUMMARY"
-              if [[ -f "$folder/REPLAY.md" ]]; then
-                cat "$folder/REPLAY.md" >> "$GITHUB_STEP_SUMMARY"
-              fi
-              printf 'folder=%s\n' "${folder#../}" >> "$GITHUB_OUTPUT"
-              ;;
-            *) exit "$status" ;;
-          esac
+          python -m pip install --only-binary=:all: --require-hashes -r requirements-tracka.lock
+      - name: Stage blind FDA capture or restore the existing capture draft
+        id: capture
+        run: python -m loe_bench.tracka_publish stage capture "$GITHUB_WORKSPACE/track-a-work/capture"
+      - name: Attest the capture bundle and scope
+        if: steps.capture.outputs.attest == 'true'
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-checksums: ${{ steps.capture.outputs.checksums }}
+      - name: Verify and publish the capture before scoring
+        if: steps.capture.outputs.publish == 'true'
+        run: python -m loe_bench.tracka_publish publish capture "$GITHUB_WORKSPACE/track-a-work/capture"
+      - name: Score the verified capture or restore the result draft
+        id: result
+        run: python -m loe_bench.tracka_publish stage result "$GITHUB_WORKSPACE/track-a-work/result"
+      - name: Attest the result bundle and scope
+        if: steps.result.outputs.attest == 'true'
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-checksums: ${{ steps.result.outputs.checksums }}
+      - name: Verify and publish the result
+        if: steps.result.outputs.publish == 'true'
+        run: python -m loe_bench.tracka_publish publish result "$GITHUB_WORKSPACE/track-a-work/result"
+      - name: Verify first publication and record its issue
+        run: python -m loe_bench.tracka_publish finalize result "$GITHUB_WORKSPACE/track-a-work/result"
       - name: Upload readout and source provenance
-        if: steps.score.outcome == 'success'
+        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: track-a-${{ needs.select.outputs.horizon }}m
-          path: track-a-results/
-          if-no-files-found: error
+          path: track-a-work/result/readout/
+          if-no-files-found: ignore
           retention-days: 90
-      - name: Record the canonical readout
-        if: >-
-          steps.score.outcome == 'success' && github.ref_name == github.event.repository.default_branch &&
-          github.ref_type == 'branch'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          HORIZON: ${{ needs.select.outputs.horizon }}
-          RELEASE_DOI: ${{ inputs.release_doi || vars.TRACKA_RELEASE_DOI }}
-          FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
-          CANONICAL_DOI: ${{ vars.TRACKA_RELEASE_DOI }}
-          CANONICAL_FREEZE: ${{ vars.TRACKA_FREEZE_SHA256 }}
-          FOLDER: ${{ steps.score.outputs.folder }}
-        run: |
-          if [[ "${RELEASE_DOI#https://doi.org/}" != "${CANONICAL_DOI#https://doi.org/}" ||
-                "$FREEZE_SHA256" != "$CANONICAL_FREEZE" ]]; then
-            echo "This run used non-canonical inputs. The report is available in the run artifacts."
-            exit 0
-          fi
-          folder="$FOLDER"
-          status=$(jq -er '.status | select(. == "SCORED" or . == "PENDING" or . == "BLOCKED_SOURCE")' "$folder/results.json")
-          maturity=$(jq -er '.maturity' "$folder/results.json")
-          started=$(jq -er '.scored_on_utc' "$folder/results.json")
-          title="Track A ${HORIZON}-month readout"
-          record="${FREEZE_SHA256}:${RELEASE_DOI##*.}"
-          scored_marker="<!-- tracka:${HORIZON}:SCORED:${record} -->"
-          endpoint="repos/$GITHUB_REPOSITORY/issues"
-          issues=$(gh api --paginate --slurp "$endpoint?state=all&per_page=100")
-          recorded=false
-          if jq -e --arg title "$title" --arg marker "$scored_marker" '
-            any(.[][]; .title == $title and (.pull_request | not) and
-              (.user.login == "github-actions[bot]" or
-                (.author_association | IN("OWNER", "MEMBER", "COLLABORATOR"))) and
-              ((.body // "") | gsub("\r"; "") | split("\n") | index($marker) != null))
-          ' <<< "$issues" > /dev/null; then
-            recorded=true
-          fi
-          release_sha=$(jq -er '.release_sha256' "$folder/results.json")
-          tag="track-a-${HORIZON}m-${RELEASE_DOI##*.}-${FREEZE_SHA256}"
-          archive_folder=$(mktemp -d)
-          discover() {
-            PYTHONPATH=loe-bench python -m loe_bench.tracka_vintage --repository "$GITHUB_REPOSITORY" \
-              --doi "$RELEASE_DOI" --freeze-sha256 "$FREEZE_SHA256" --release-sha256 "$release_sha" \
-              --horizon "$HORIZON" --out "$archive_folder"
-          }
-          print_pins() {
-            printf 'First result SHA-256 `%s`.\n\nFDA source manifest SHA-256 `%s`.\n\nBootstrap draws SHA-256 `%s`.\n\nReport SHA-256 `%s`.\n\n' "$@"
-          }
-          evidence=$(discover)
-          if [[ "$(jq -r '.reason // empty' <<< "$evidence")" == MISSING_ORIGINAL ]]; then
-            if [[ "$recorded" == true ]] || jq -e '.original.issue_url' <<< "$evidence" > /dev/null; then
-              echo "::error::A first readout issue survives without its archive. Recover the first release."
-              exit 1
-            fi
-            if [[ "$status" == SCORED ]]; then
-              if ! jq -e '.publication_eligible == true' "$folder/results.json" > /dev/null; then
-                echo "::error::The run is ineligible for a first publication. Inspect its discovery and H3 evidence."
-                exit 1
-              fi
-              bundle_parent=$(mktemp -d)
-              bundle="$bundle_parent/first-publication"
-              PYTHONPATH=loe-bench python -c 'import sys; from pathlib import Path; from loe_bench.tracka_readout import prepare_publication; prepare_publication(Path(sys.argv[1]), Path(sys.argv[2]))' "$folder" "$bundle"
-              read -r result_sha _ < "$bundle/results.sha256"
-              read -r source_sha _ < <(sha256sum "$bundle/outcome-source-manifest.json")
-              read -r draws_sha _ < <(sha256sum "$bundle/bootstrap-draws.npz")
-              read -r report_sha _ < <(sha256sum "$bundle/REPORT.md")
-              notes=$(mktemp)
-              {
-                printf 'Scoring started %s UTC.\n\n' "$started"
-                print_pins "$result_sha" "$source_sha" "$draws_sha" "$report_sha"
-                printf '[Workflow run](%s/%s/actions/runs/%s)\n\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
-                cat "$bundle/REPORT.md"
-              } > "$notes"
-              gh release create "$tag" --repo "$GITHUB_REPOSITORY" --latest=false --target "$GITHUB_SHA" \
-                --title "Track A first ${HORIZON}-month readout" --notes-file "$notes" \
-                "$bundle/results.json" "$bundle/results.sha256" "$bundle/outcome-source-manifest.json" \
-                "$bundle/REPORT.md" "$bundle/bootstrap-draws.npz"
-              evidence=$(discover)
-            fi
-          fi
-          if jq -e '.reason | IN("INVALID_ORIGINAL", "DISPUTED")' <<< "$evidence" > /dev/null; then
-            jq -r '.detail' <<< "$evidence"
-            echo "::error::First release failed verification. Preserve its assets and investigate."
-            exit 1
-          fi
-          archive=$(jq -r '.original.release_url // empty' <<< "$evidence")
-          if [[ -n "$archive" ]]; then
-            status=SCORED
-            started=$(jq -er '.original.scored_on_utc' <<< "$evidence")
-            printf '\n[Verified first published aggregate and formal family](%s).\n' "$archive" >> "$GITHUB_STEP_SUMMARY"
-            if [[ "$recorded" == true ]]; then
-              echo "The first canonical scored readout and archive are already verified."
-              exit 0
-            fi
-          elif [[ "$status" == SCORED ]]; then
-            echo "::error::First release is not visible yet. Retry archive verification."
-            exit 1
-          fi
-          marker="<!-- tracka:${HORIZON}:${status}:${record} -->"
-          timing="No completed readout"
-          if [[ "$status" == SCORED ]]; then
-            timing="On time"
-            if [[ "$started" > "$maturity" ]]; then timing="Late"; fi
-          fi
-          number=$(jq -r --arg title "$title" \
-            --arg pending "<!-- tracka:${HORIZON}:PENDING:${record} -->" \
-            --arg blocked "<!-- tracka:${HORIZON}:BLOCKED_SOURCE:${record} -->" '
-            [.[][] | select(.title == $title and (.pull_request | not) and .user.login == "github-actions[bot]" and
-              ((.body // "") | gsub("\r"; "") | split("\n") | index($pending) != null or index($blocked) != null))]
-            | first | .number // empty
-          ' <<< "$issues")
-          body_file=$(mktemp)
-          {
-            printf '%s\n\n' "$marker"
-            printf '**%s**. Scoring started %s UTC. Window ends %s UTC.\n\n' "$timing" "$started" "$maturity"
-            if [[ -n "$archive" ]]; then
-              printf 'First publication UTC %s.\n\n' "$(jq -er '.original.published_at_utc' <<< "$evidence")"
-              print_pins \
-                "$(jq -er '.original.results_sha256' <<< "$evidence")" \
-                "$(jq -er '.original.outcome_source_manifest_sha256' <<< "$evidence")" \
-                "$(jq -er '.original.archive_sha256["bootstrap-draws.npz"]' <<< "$evidence")" \
-                "$(jq -er '.original.archive_sha256["REPORT.md"]' <<< "$evidence")"
-              printf 'Zenodo %s. [First readout report and durable archive](%s).\n' "$RELEASE_DOI" "$archive"
-            else
-              printf 'Release %s. [Workflow run and artifacts](%s/%s/actions/runs/%s).\n\n' \
-                "$RELEASE_DOI" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
-              cat "$folder/REPORT.md"
-            fi
-          } > "$body_file"
-          if [[ -n "$number" ]]; then
-            gh api --method PATCH "$endpoint/$number" -F "body=@$body_file" --jq '.html_url'
-          else
-            gh api --method POST "$endpoint" -f "title=$title" -F "body=@$body_file" --jq '.html_url'
-          fi
