@@ -90,3 +90,7 @@ Resolved by the reviewer: R6-A, R6-B; forecasts, manifest, tag and primary stati
 | ID | Severity | Response |
 |---|---|---|
 | R7-A | BLOCKING | **Accepted; planner error.** The planner approved a report-only edit to `score_release.py` without checking that the release kit pins installed source hashes. **In progress (TRACKA-READOUT8, Sol xhigh):** restore every pinned file byte for byte, move the rendering into an unpinned readout module, and add a regression test using the real published source-pin map. Rerun the DOI smoke check and the round-6 probes. |
+
+**Round 7 outcome (29 Nov, 01:32, TRACKA-READOUT8 merged).** All 25 pinned source files match the published pins; `score_release.py` is restored to blob `7ea6b666` (planner-verified identical to the pre-READOUT7 bytes). The READOUT7 rendering now lives in the unpinned readout module and is written before the run-manifest digest. A regression test and a CI check use the real published pin map. DOI smoke check at 12 months before maturity: `PENDING`, exit 0, in ordinary and recovery modes; round-6 probes pass. [Receipt](../receipts/TRACKA-READOUT8.md)
+
+Next: EXTREV-R8.
