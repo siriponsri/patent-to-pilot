@@ -1,0 +1,54 @@
+{
+  "status": "DEVELOPMENT_ONLY",
+  "history": [
+    {
+      "application": "ANDA078027",
+      "name": "Teva Pharmaceuticals USA",
+      "start": "2015-07-07",
+      "end": "2015-07-07",
+      "evidence": {
+        "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/078027Orig1s000ltr.pdf",
+        "version": "FDA final original approval letter signed 2015-07-07",
+        "sha256": "55f1c802091492269c484d8ea835344709bfcf73ae3e806f5215c03c16e74892",
+        "locator": "PDF page 1 addressee, ANDA number and approval; page 3 signature date"
+      }
+    },
+    {
+      "application": "ANDA091649",
+      "name": "Teva Pharmaceuticals USA",
+      "start": "2013-09-16",
+      "end": "2013-09-16",
+      "evidence": {
+        "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2013/091649Orig1s000ltr.pdf",
+        "version": "FDA final original approval letter signed 2013-09-16",
+        "sha256": "1bc747dcbfa62dd90599d5fc2a9e66d053c8fe96b262dd04302ca71981f1e955",
+        "locator": "PDF page 1 addressee, ANDA number and approval; page 4 signature date"
+      }
+    },
+    {
+      "application": "ANDA202229",
+      "name": "Glenmark Generics Limited",
+      "start": "2013-07-16",
+      "end": "2013-07-16",
+      "evidence": {
+        "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2013/202229Orig1s000ltr.pdf",
+        "version": "FDA final original approval letter signed 2013-07-16",
+        "sha256": "fb8838261f85f796c8f5a2d259948ab1450d4a6ad33c4115eee7a5eb8fe61a11",
+        "locator": "PDF page 1 identifies the principal through its US agent and states the ANDA approval; page 4 signature date"
+      }
+    },
+    {
+      "application": "ANDA202593",
+      "name": "Accord Healthcare Inc.",
+      "start": "2015-04-23",
+      "end": "2015-04-23",
+      "evidence": {
+        "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/202593Orig1s000ltr.pdf",
+        "version": "FDA final original approval letter signed 2015-04-23",
+        "sha256": "dfa1ee667be71a122424efe91ef935e51cf2485f89f80243b21a74feca0d0c70",
+        "locator": "PDF page 1 addressee, ANDA number and approval; page 3 signature date"
+      }
+    }
+  ],
+  "aliases": []
+}
