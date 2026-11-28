@@ -50,7 +50,7 @@ For interpreting the comparisons, [Hopefl et al.](https://doi.org/10.1111/cts.70
 | Decision | Evidence to retain |
 |---|---|
 | Zenodo depositor | Publish the approved ZIP under an exact version DOI, record deposit time and file checksum, then permit the independent anonymous restore. OSF update 4 already has its timestamp. |
-| Post-January custodian | **Decided 29 Nov: the owner is the custodian.** Record contact route, archive access, the two maturity dates and how the first score is preserved in the scoring guide. |
+| Post-January custodian | **Decided 29 Nov: the owner, best effort.** Layered automation (calendar `.ics`, Cloudflare Worker cron dispatching the GitHub scoring workflow, public self-service guide) so readouts do not depend on memory; late readouts are valid and recorded as late. |
 | RunPod storage | **Decided 29 Nov: delete `8n6rnzljwg` if unused.** RUNPOD-CLEANUP verifies local copies, deletes, and records absence and final cost. |
 | STA and sole journal route | Obtain written answers on AI-assisted drafting with disclosure and prior public GitHub drafts. If either answer is negative or remains unresolved at choice time, use the approved JAMIA fallback with advisor agreement. |
 | Author metadata, declarations and approval | Provide first-author degree, both ORCIDs or applicable status, corresponding details. Decide whether OSF should keep its sole contributor. Match Reference 9 to the actual record. Confirm Supervision, any actual advisor review/editing, both authors’ approval, no funding/conflicts, ethics review not sought, AI use and public-version links. Approve sole consideration and any cost before submission. |

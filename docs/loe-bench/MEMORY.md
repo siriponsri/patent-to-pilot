@@ -177,3 +177,4 @@
 - **29 Nov, about 00:40.** Owner paused writing too. Phase now: research close-out with main planner and co-planner as reviewers, aiming at no reviewer doubt for every result. Then IS2 revision, then journals.
 - **29 Nov, about 00:50.** Owner: delete RunPod volume 8n6rnzljwg if unused (executor verifies local copies first); the owner is the Track A custodian after Jan 2027.
 - **29 Nov, about 01:10.** Research completion checklist committed (bc4dc19e). Dispatched REPRO-C1 (independent recomputation from authenticated exports, code-blind first), CLOSE-DISP, DRTRAIN-RECON, RECORDS-SYNC. Joint sign-off waits until results land so both reviewers check one revision.
+- **29 Nov, about 01:20.** Owner: custodian on a best-effort basis; project continuation to Nov 2027 unconfirmed. Layered readout automation chosen (.ics, Cloudflare Worker cron -> GitHub workflow -> issue, public guide). Card TRACKA-AUTO dispatched.
