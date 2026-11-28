@@ -82,3 +82,11 @@ Resolved by the reviewer for first publication: R3, R4-B, R5-A, R5-B. No blockin
 **Round 6 outcome (29 Nov, 01:08, TRACKA-READOUT7 merged).** R6-A: replay and recovery state the publication-time formal status with its date and a freshly re-run 12-month witness check with locators; published bytes never change. R6-B: failed recovery reports the actual discovery reason and locators. The only change in `score_release.py` is report-rendering text; computations are unchanged. [Receipt](../receipts/TRACKA-READOUT7.md)
 
 Next: EXTREV-R7.
+
+## Round 7 ([review](EXTERNAL-REVIEW-R7.md), answered 29 Nov 2026, 01:17 Bangkok)
+
+Resolved by the reviewer: R6-A, R6-B; forecasts, manifest, tag and primary statistics pass.
+
+| ID | Severity | Response |
+|---|---|---|
+| R7-A | BLOCKING | **Accepted; planner error.** The planner approved a report-only edit to `score_release.py` without checking that the release kit pins installed source hashes. **In progress (TRACKA-READOUT8, Sol xhigh):** restore every pinned file byte for byte, move the rendering into an unpinned readout module, and add a regression test using the real published source-pin map. Rerun the DOI smoke check and the round-6 probes. |
