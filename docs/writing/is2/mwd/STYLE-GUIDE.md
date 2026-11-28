@@ -68,3 +68,10 @@ Read rows 2–4 together as the new opening paragraph. Where a table or an earli
 - Results headings name the metric, for example "Recall at fixed review capacity / การครอบคลุมเมื่อกำหนดจำนวนรายการที่ทบทวน".
 - Separate the forecast reference date (27 Nov 2026) from the date the package was generated and timestamped.
 - Track A status sentences wait for the freeze receipt. Keep the target at 9 pages, with 10 as the hard maximum.
+
+## Line endings (owner rule, 28 Nov 2026)
+
+No line may end a paragraph, caption, title, heading, table cell or figure label with only one or two words (Thai: a short fragment of one or two words). This covers the cover-page titles in both languages, the abstracts, the body, captions and every label inside figures.
+- **How to fix.** Rephrase, move a word down from the previous line, or set an explicit break. Never shrink text below the template size.
+- **How to check.** Check the rendered PDF. `make_paper.py` now prints `orphan lines` per page. On 28 Nov 2026 it found 11 in the Thai and 7 in the English IS2STORY PDFs; all must be cleared before delivery.
+
