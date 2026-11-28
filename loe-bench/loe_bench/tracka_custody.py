@@ -11,7 +11,6 @@ from shutil import copyfileobj
 from subprocess import TimeoutExpired, run
 from tempfile import TemporaryDirectory
 from urllib.error import HTTPError
-from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 from zipfile import ZipFile
 
@@ -89,17 +88,9 @@ def fetch(url, limit, *, accept="application/vnd.github+json"):
     return data
 
 
-def verify_statement(scope, witness, bundle, folder):
-    path = folder / "provenance.json"
-    path.write_bytes(bundle)
-    verification = run(["gh", "attestation", "verify", str(witness), "--repo", scope.repository,
-                        "--cert-identity", f"https://github.com/{scope.identity}", "--source-ref", REF,
-                        "--deny-self-hosted-runners", "--bundle", str(path), "--format", "json"],
-                       capture_output=True, text=True, check=False, timeout=90)
-    require(verification.returncode == 0, "GitHub CLI could not verify the scoped Track A attestation")
-    verified, = json.loads(verification.stdout)
+def verified_claim(scope, witness, verified):
     result = verified["verificationResult"]
-    claims = result["signature"]["certificate"]["extensions"]
+    claims = result["signature"]["certificate"]
     run_uri = re.fullmatch(rf"https://github\.com/{re.escape(scope.repository)}/actions/runs/(\d+)/attempts/(\d+)",
                            claims["runInvocationURI"])
     revision = claims["sourceRepositoryDigest"]
@@ -111,40 +102,49 @@ def verify_statement(scope, witness, bundle, folder):
     require(subjects.get(witness.name) == digest(witness) and len(subjects) == 2
             and DIGEST.fullmatch(subjects.get(scope.archive, "")),
             "Track A attestation does not bind the scope and bundle together")
-    timestamp = min(utc_time(value["timestamp"]) for value in result["verifiedTimestamps"])
+    log_times = [utc_time(value["timestamp"]) for value in result["verifiedTimestamps"] if value["type"] == "Tlog"]
+    require(log_times, "Track A attestation lacks a verified transparency log timestamp")
+    timestamp = min(log_times)
     require(timestamp.date() >= scope.maturity, "Track A bundle was signed before maturity")
     return {"bundle_sha256": subjects[scope.archive], "signed_at_utc": timestamp.isoformat(),
             "run_id": run_uri[1], "run_attempt": run_uri[2], "commit": revision, "workflow_ref": scope.identity}
 
 
+def verify_statements(scope, witness, count):
+    # The CLI handles GitHub's compressed hosted Sigstore bundles.
+    verification = run(["gh", "attestation", "verify", str(witness), "--repo", scope.repository,
+                        "--cert-identity", f"https://github.com/{scope.identity}", "--source-ref", REF,
+                        "--deny-self-hosted-runners", "--limit", str(count), "--format", "json"],
+                       capture_output=True, text=True, check=False, timeout=90)
+    require(verification.returncode == 0, "GitHub CLI could not verify the scoped Track A attestation")
+    verified = json.loads(verification.stdout)
+    require(isinstance(verified, list) and len(verified) == count, "Some indexed Track A attestations could not be verified")
+    return [verified_claim(scope, witness, item) for item in verified]
+
+
 def attestations(scope, query):
-    """Read every page of the public digest index before deciding whether intent exists."""
-    witness_sha = sha256(scope.witness()).hexdigest()
-    records = []
+    """Distinguish an empty public index from a failed verification or unavailable index."""
+    witness_bytes = scope.witness()
+    witness_sha = sha256(witness_bytes).hexdigest()
+    url = f"{scope.api}/attestations/sha256:{witness_sha}?per_page=100&page=1"
+    data = query(url, 16 * 2**20)
+    if data is None:
+        # GitHub returns 404 for an unknown subject digest, including in public repositories.
+        repository = query(scope.api, 2**20)
+        require(repository is not None, "Track A repository is unavailable")
+        identity = json.loads(repository)
+        require(identity["full_name"] == scope.repository and identity["visibility"] == "public",
+                "Track A attestation lookup lacks a verified public repository")
+        return []
+    batch = json.loads(data)["attestations"]
+    require(isinstance(batch, list) and len(batch) <= 30, "Malformed or oversized Track A attestation index")
+    if not batch:
+        return []
     with TemporaryDirectory() as temp:
-        folder = Path(temp)
-        witness = folder / "track-a-scope.json"
-        witness.write_bytes(scope.witness())
-        for page in range(1, 31):
-            url = f"{scope.api}/attestations/sha256:{witness_sha}?per_page=100&page={page}"
-            data = query(url, 16 * 2**20)
-            require(data is not None, "Track A attestation index is unavailable")
-            batch = json.loads(data)["attestations"]
-            require(isinstance(batch, list), "Malformed Track A attestation index")
-            for entry in batch:
-                # The REST response supplies a signed, temporary bundle URL in API version 2026-03-10.
-                if "bundle" in entry:
-                    bundle = json.dumps(entry["bundle"]).encode()
-                else:
-                    url = entry["bundle_url"]
-                    require(urlparse(url).scheme == "https", "Invalid attestation bundle locator")
-                    bundle = query(url, 2**20)
-                require(bundle is not None, "Indexed Track A attestation bundle is unavailable")
-                records.append(verify_statement(scope, witness, bundle, folder))
-            if len(batch) < 100:
-                return sorted(records, key=lambda item: (utc_time(item["signed_at_utc"]),
-                                                         int(item["run_id"]), int(item["run_attempt"])))
-    raise ValueError("Track A attestation index exceeded its page limit")
+        witness = Path(temp) / "track-a-scope.json"
+        witness.write_bytes(witness_bytes)
+        records = verify_statements(scope, witness, len(batch))
+    return sorted(records, key=lambda item: (utc_time(item["signed_at_utc"]), int(item["run_id"]), int(item["run_attempt"])))
 
 
 def locate(scope, query):

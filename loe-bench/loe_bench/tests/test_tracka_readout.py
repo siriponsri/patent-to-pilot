@@ -52,7 +52,7 @@ class ReadoutTest(unittest.TestCase):
         self.patch(tracka_vintage, "CANONICAL_DOI", DOI)
         self.patch(tracka_vintage, "CANONICAL_FREEZE", self.freeze)
         self.patch(custody, "fetch", side_effect=self.query)
-        self.patch(custody, "verify_statement", side_effect=lambda scope, witness, bundle, folder: json.loads(bundle))
+        self.patch(custody, "verify_statements", side_effect=self.verify_statements)
 
     def patch(self, obj, name, *args, **kwargs):
         patcher = patch.object(obj, name, *args, **kwargs)
@@ -82,6 +82,12 @@ class ReadoutTest(unittest.TestCase):
 
     def attest(self, scope, pins):
         self.responses[self.index_url(scope)] = json.dumps({"attestations": [{"bundle": item} for item in pins]}).encode()
+
+    def verify_statements(self, scope, witness, count):
+        self.assertEqual(witness.read_bytes(), scope.witness())
+        batch = json.loads(self.responses[self.index_url(scope)])["attestations"]
+        self.assertEqual(len(batch), count)
+        return [item["bundle"] for item in batch]
 
     def release_bundle(self, scope, bundle, day, *, draft=False, attest=True):
         pin = {"bundle_sha256": digest(bundle), "signed_at_utc": at(day, 2 if scope.kind == "capture" else 4).isoformat(),
@@ -349,6 +355,14 @@ class ReadoutTest(unittest.TestCase):
 
 
 class AttestationTest(unittest.TestCase):
+    def test_missing_digest_requires_an_accessible_public_repository(self):
+        scope = custody.Scope(REPO, DOI, "f" * 64, 12, "capture")
+        with patch.object(custody, "verify_statements", side_effect=AssertionError):
+            self.assertEqual(custody.attestations(scope, lambda u, _: (
+                json.dumps({"full_name": REPO, "visibility": "public"}).encode() if u == scope.api else None)), [])
+            with self.assertRaisesRegex(ValueError, "repository is unavailable"):
+                custody.attestations(scope, lambda *_: None)
+
     def test_verifier_requires_scope_and_bundle_in_one_statement(self):
         scope = custody.Scope(REPO, DOI, "f" * 64, 12, "capture")
         with TemporaryDirectory() as temp:
@@ -360,23 +374,30 @@ class AttestationTest(unittest.TestCase):
                       "sourceRepositoryVisibilityAtSigning": "public"}
             statement = {"subject": [{"name": witness.name, "digest": {"sha256": digest(witness)}},
                                      {"name": scope.archive, "digest": {"sha256": "1" * 64}}]}
-            verification = {"signature": {"certificate": {"extensions": claims}},
-                            "verifiedTimestamps": [{"timestamp": at(H12, 2).isoformat()}],
+            verification = {"signature": {"certificate": claims},
+                            "verifiedTimestamps": [{"type": "Tlog", "timestamp": at(H12, 2).isoformat()}],
                             "statement": statement}
 
             def output(result):
                 return SimpleNamespace(returncode=0, stdout=json.dumps([{"verificationResult": result}]))
 
             with patch.object(custody, "run", return_value=output(verification)) as gh:
-                identity = custody.verify_statement(scope, witness, b"fixture", folder)
+                identity, = custody.verify_statements(scope, witness, 1)
                 self.assertEqual((identity["run_id"], identity["run_attempt"], identity["commit"]),
                                  ("12345", "2", COMMIT))
                 self.assertIn(f"https://github.com/{scope.identity}", gh.call_args.args[0])
                 self.assertIn(custody.REF, gh.call_args.args[0])
+                verification["verifiedTimestamps"][0]["type"] = "TimestampAuthority"
+                gh.return_value = output(verification)
+                with self.assertRaisesRegex(ValueError, "transparency log"):
+                    custody.verify_statements(scope, witness, 1)
+                verification["verifiedTimestamps"][0]["type"] = "Tlog"
                 verification["statement"]["subject"].pop()
                 gh.return_value = output(verification)
                 with self.assertRaisesRegex(ValueError, "does not bind"):
-                    custody.verify_statement(scope, witness, b"fixture", folder)
+                    custody.verify_statements(scope, witness, 1)
+                with self.assertRaisesRegex(ValueError, "Some indexed"):
+                    custody.verify_statements(scope, witness, 2)
 
 
 if __name__ == "__main__":

@@ -69,8 +69,13 @@ jobs:
               --cert-identity "https://github.com/$GITHUB_WORKFLOW_REF" --source-ref "$GITHUB_REF" \
               --deny-self-hosted-runners --format json |
               jq -e --arg ref "https://github.com/$GITHUB_WORKFLOW_REF" \
+                --arg commit "$GITHUB_SHA" \
+                --arg run "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/attempts/$GITHUB_RUN_ATTEMPT" \
                 'any(.[];
-                  .verificationResult.signature.certificate.extensions.buildConfigURI == $ref and
+                  (.verificationResult.signature.certificate |
+                    .buildConfigURI == $ref and .sourceRepositoryDigest == $commit and
+                    .runInvocationURI == $run and .sourceRepositoryVisibilityAtSigning == "public") and
+                  any(.verificationResult.verifiedTimestamps[]; .type == "Tlog") and
                   ([.verificationResult.statement.subject[].name] | sort) ==
                   ["synthetic-bundle.txt", "synthetic-scope.txt"])' > /dev/null
           done
