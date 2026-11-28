@@ -94,3 +94,13 @@ Resolved by the reviewer: R6-A, R6-B; forecasts, manifest, tag and primary stati
 **Round 7 outcome (29 Nov, 01:32, TRACKA-READOUT8 merged).** All 25 pinned source files match the published pins; `score_release.py` is restored to blob `7ea6b666` (planner-verified identical to the pre-READOUT7 bytes). The READOUT7 rendering now lives in the unpinned readout module and is written before the run-manifest digest. A regression test and a CI check use the real published pin map. DOI smoke check at 12 months before maturity: `PENDING`, exit 0, in ordinary and recovery modes; round-6 probes pass. [Receipt](../receipts/TRACKA-READOUT8.md)
 
 Next: EXTREV-R8.
+
+## Round 8 ([review](EXTERNAL-REVIEW-R8.md), answered 29 Nov 2026, 01:41 Bangkok)
+
+Resolved by the reviewer: R7-A (25/25 pins, DOI readout PENDING exit 0, CI detects a modified pinned file); 24-month replay and recovery pass in all six cases. No blocking finding.
+
+| ID | Severity | Response |
+|---|---|---|
+| R8-A | MAJOR | **In progress (TRACKA-READOUT9, Sol high).** In the unpinned renderer, 12-month reports describe the first panel as verified and retained for later H3 use, descriptive only, testable only at 24 months if H1 and H2 pass; "formal" is reserved for the 24-month family. Pinned files stay untouched. |
+| R8-B | MINOR | **Fixed.** Both checklist entries now state the inclusive capture window (maturity through day seven), late scoring from retained attested bytes, and the descriptive-only disposition after a missed capture, with a link to the addendum. |
+
