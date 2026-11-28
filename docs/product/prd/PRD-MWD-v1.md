@@ -84,7 +84,14 @@ The owner wants a real product in which AI does useful work: API providers first
 | A3 | P1 | **Questions about the open drug** | Answers only from that dossier's claims, with citations; otherwise says the evidence does not answer it. Not a general chatbot |
 | A4 | P1 | **Patent claim reading aid** | Quotes claim text verbatim with patent number, claim number and source edition, then lists the elements to check. Labelled "AI-assisted reading; a patent professional must verify". Needs an open claim-text source (a data card for Codex) |
 
-No LLM output is ground truth (standing rule 12). Quality is measured with deterministic citation and value checks plus a planner spot-check of a fixed sample, never an LLM judge.
+No LLM output is ground truth (standing rule 12). Quality is measured with deterministic citation and value checks plus a planner spot-check of a fixed sample, never an LLM judge. The full design is in the [co-planner AI platform memo](COPLANNER-AI-PLATFORM.md); the binding points are:
+
+- **Grounding.** The server loads only the released dossier's claims for that snapshot and horizon, excluding outcome and reveal fields. Each output item is one proposition with claim IDs, resolved server-side to source, version, SHA-256 and locator. Numbers and dates are compared as typed tuples (entity, predicate, value, unit, jurisdiction, date role), with Thai digits and Buddhist Era dates normalized. Forecast numbers are injected from canonical fields, never taken from model text.
+- **A3 in the trial.** Common questions map to fixed templates that the user confirms; unmatched free text stays on the device.
+- **A4.** Copies original claim text from an approved claim node with character spans, shows parent claims, and returns a lookup task when the text, a dependency or the rights are missing.
+- **Untrusted input.** Source text and titles are data. The model gets no tools, network, secrets or ability to send anything.
+- **Frozen evaluation (before release inference).** 32 open development fixtures, 8 per task (5 answerable, 3 must-abstain), including unknown Thai status, a US/Thai swap, a changed horizon, a missing parent claim, a conflicting edition and an injected instruction. Gates: 100% resolvable citations, 100% matching numbers and dates, 100% exact A4 quotations, 12/12 correct abstentions, at least 4/5 answerable per task, and planner review of every displayed proposition with zero decision-changing errors, legal conclusions or reveal leaks. Supporting papers: ALCE ([Gao et al. 2023](https://arxiv.org/abs/2305.14627)) for citation completeness versus relevance, AIS ([Rashkin et al.](https://doi.org/10.1162/coli_a_00486)) for human support judgment, and [Greshake et al.](https://arxiv.org/abs/2302.12173) for indirect prompt injection. Competitors for the AI features (PatSnap Eureka, Clarivate Derwent, IQVIA AI Assistant) are external references; no head-to-head exists.
+- **Wording.** Letters are drafts for review, never auto-sent, with no invented signatory, registration number or official response. A4 never states infringement, validity, enforceability, clearance or Thai approval, and never presents a translation as the authoritative claim.
 
 **Platform (planner proposal for web, desktop, a future mobile app and an organization trial).**
 
@@ -101,15 +108,20 @@ No LLM output is ground truth (standing rule 12). Quality is measured with deter
 
 - **One front end, three shells.** The existing static app stays the only UI code. GitHub Pages serves the public web app, Tauri wraps it for Windows (and later macOS), and a responsive layout plus a web-app manifest prepares the mobile path without a second code base.
 - **One gateway.** A small Python FastAPI service holds provider keys server-side, so keys never reach a browser. A provider is a preset of base URL, model name and key name; switching provider or moving to a local model changes configuration, not code. The gateway reuses the project budget ledger (`src/patent_to_pilot/budget/`) to stop calls at the envelope and logs model, tokens, cost and prompt version per call.
-- **Three ways to run it.**
-  1. *Public web (GitHub Pages)*: forecasts and dossiers work for everyone; AI features call the organization gateway only after sign-in, or a visitor's own key (bring your own key) kept in that browser.
-  2. *Organization trial*: the gateway and the web app run as one Docker Compose bundle on an organization server or small cloud VM, with invite-only sign-in and per-user daily limits, so colleagues try it from a browser with no install.
-  3. *Desktop*: the Tauri app points to the organization gateway by default and can switch to the visitor's own key or a local model for offline demos.
-- **Local AI later (v1.1).** Serve an open model such as Typhoon or Qwen with vLLM or Ollama, which already expose an OpenAI-compatible endpoint. The gateway only changes its base URL.
+- **Where it runs (owner, 28 Nov).**
+  1. *Public web (GitHub Pages)*: the queue, sources and printable dossier, with no AI and no keys. A "Use AI with your organization" link opens the trial origin.
+  2. *Organization demo, phase 1*: one Docker Compose package (gateway, web app, persistent SQLite ledger) runs on the owner's machine for a team demonstration.
+  3. *External server, phase 2*: the same package deploys to an external server such as dr-train. Any dr-train step follows the remote-work rules and the [artifact runbook](../../maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md) and needs a dated owner approval. dr-train's approved V100 is also the first candidate for local AI.
+  4. *Desktop (Tauri)*: the bundled reader and PDF stay offline. An online window opens the gateway origin with the open case preserved. No Python sidecar.
+  Browser "bring your own key" is dropped: CORS gives no key secrecy, and keys stay only on the gateway host.
+- **Sign-in.** Email with a one-time code and an explicit allowlist of 3–5 invited colleagues (emails supplied later by the owner), 5 requests per user per day, one outstanding request per user. Implementation options for B4: Cloudflare Access one-time PIN behind a Cloudflare Tunnel (no open ports; needs a domain on Cloudflare) or a gateway-native code sent by email (needs an SMTP sender). B4 proposes, the owner chooses.
+- **Providers.** One Chat Completions client with per-provider presets (Typhoon, OpenRouter, OpenAI, Anthropic, Gemini, Qwen, DeepSeek, vLLM, Ollama). Live compatibility and Thai quality are NOT_RUN for every provider; only a provider-model-task tuple that passes the frozen gates is enabled. Typhoon's free tier collects usage data, so it receives public dossier data only and no user free text (owner, 28 Nov).
+- **Local AI later (v1.1).** Serve an open model such as Typhoon or Qwen with vLLM or Ollama, which expose an OpenAI-compatible endpoint. The gateway changes its base URL; the model needs recorded rights, sizing and its own Thai evaluation.
+- **Subscriptions instead of API keys.** Consumer ChatGPT Plus or Claude Pro plans are for one person through the official apps; routing a shared product through a personal subscription is not offered and is not planned. The legitimate subscription route is the reverse: expose MWD as a read-only MCP connector that each user adds to their own ChatGPT or Claude account. That is a candidate for v1.1, pending an owner decision, and its answers would sit outside the gateway's validator.
 
-**Budget.** USD 10 all-in for API calls until 15 Dec 2026 (owner, 28 Nov). Cheaper models through Typhoon and OpenRouter are the default; each call is logged against the ledger.
+**Budget.** A D43 envelope of USD 10 gross until the end of 15 Dec 2026 (Bangkok), separate from the research envelopes, with an operational stop at USD 8 or 200 attempts, and a pause on unknown billing or a price or route change. The co-planner's indicative estimate for 200 attempts on `openai/gpt-4o-mini` through OpenRouter is USD 0.15 in tokens (price to be verified live).
 
-**Open owner decisions.** Where the organization gateway runs (an existing organization server, or a paid cloud VM at an hourly or monthly quote), who the trial users are, and which sign-in method to use.
+**Open owner decisions.** The allowlist emails; the sign-in implementation (Cloudflare domain or SMTP sender); the dr-train deployment date; the MCP connector for v1.1.
 
 ## 5. Plan and cards for the Product Owner
 
@@ -128,10 +140,10 @@ Backend cards for Codex (D43), dispatched by the planner once the owner approves
 
 | Order | Card | Executor | Covers | Target |
 |---|---|---|---|---|
-| B1 | BE-GATEWAY | GPT-6.2 Sol high | FastAPI gateway, provider presets, budget ledger, audit log, Docker Compose, fixture provider for tests (no paid call in CI) | 3 Dec |
+| B1 | BE-GATEWAY | GPT-6.2 Sol high | FastAPI gateway, typed task API, provider presets, D43 ledger envelope with the USD 8 stop, audit log, Docker Compose package that runs on the owner's machine, fixture provider (no paid call in tests). Contract frozen by 30 Nov | 3 Dec |
 | B2 | BE-GROUND | GPT-6.2 Sol xhigh | Dossier-claim grounding and the deterministic citation and value validator for A1–A3, with a fixed evaluation sample | 5 Dec |
 | B3 | BE-CLAIMS | GPT-6.2 Sol high | Open claim-text source and adapter for A4 (rights recorded) | 8 Dec |
-| B4 | BE-ORG | GPT-6.2 Sol high | Invite-only sign-in and per-user limits for the organization trial | after the hosting decision |
+| B4 | BE-ORG | GPT-6.2 Sol high | Email one-time-code sign-in with allowlist, per-user limits, revocation; a deployment recipe for an external server such as dr-train (no remote step without owner approval) | 9 Dec |
 
 The Product Owner builds the AI panels (PO-AI: A1–A4 in the dossier view, the "AI draft" label, the editor for the hand-off letter) against the B1 fixture provider, so UI and backend proceed in parallel.
 
