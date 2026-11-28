@@ -1,0 +1,625 @@
+{
+  "schema": "mwd.dossier.v1",
+  "key": "U:U188XYD42P",
+  "claims": [
+    {
+      "id": "ob-product-scope",
+      "section": "patents",
+      "text_th": "รายการผลิตภัณฑ์ที่จับคู่กับคีย์ของชุดข้อมูลใน Orange Book ฉบับเก็บถาวร: AVELOX (MOXIFLOXACIN HYDROCHLORIDE) / AVELOX IN SODIUM CHLORIDE 0.8% IN PLASTIC CONTAINER (MOXIFLOXACIN HYDROCHLORIDE) / MOXEZA (MOXIFLOXACIN HYDROCHLORIDE) / VIGAMOX (MOXIFLOXACIN HYDROCHLORIDE)",
+      "text_en": "Archived presentation scope for the benchmark key: AVELOX (MOXIFLOXACIN HYDROCHLORIDE) / AVELOX IN SODIUM CHLORIDE 0.8% IN PLASTIC CONTAINER (MOXIFLOXACIN HYDROCHLORIDE) / MOXEZA (MOXIFLOXACIN HYDROCHLORIDE) / VIGAMOX (MOXIFLOXACIN HYDROCHLORIDE).",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-products"
+      ]
+    },
+    {
+      "id": "patent-5607942",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 021085/001: 5607942 วันที่ตามรายการ 2014-03-04 (DS=–, DP=–, รหัสการใช้=U-298) / NDA 021277/001: 5607942 วันที่ตามรายการ 2014-03-04 (DS=–, DP=–, รหัสการใช้=U-298) / NDA 021598/001: 5607942 วันที่ตามรายการ 2014-03-04 (DS=–, DP=–, รหัสการใช้=U-709) / NDA 022428/001: 5607942 วันที่ตามรายการ 2014-03-04 (DS=–, DP=–, รหัสการใช้=U-709) / NDA 021598/001: 5607942*PED วันที่ตามรายการ 2014-09-04 (DS=–, DP=–, รหัสการใช้=–) / NDA 022428/001: 5607942*PED วันที่ตามรายการ 2014-09-04 (DS=–, DP=–, รหัสการใช้=–)",
+      "text_en": "Orange Book: NDA 021085/001: 5607942, 2014-03-04 (DS=–, DP=–, use code=U-298) / NDA 021277/001: 5607942, 2014-03-04 (DS=–, DP=–, use code=U-298) / NDA 021598/001: 5607942, 2014-03-04 (DS=–, DP=–, use code=U-709) / NDA 022428/001: 5607942, 2014-03-04 (DS=–, DP=–, use code=U-709) / NDA 021598/001: 5607942*PED, 2014-09-04 (DS=–, DP=–, use code=–) / NDA 022428/001: 5607942*PED, 2014-09-04 (DS=–, DP=–, use code=–)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-5607942"
+      ]
+    },
+    {
+      "id": "patent-5849752",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 021085/001: 5849752 วันที่ตามรายการ 2016-12-05 (DS=–, DP=–, รหัสการใช้=U-298) / NDA 021277/001: 5849752 วันที่ตามรายการ 2016-12-05 (DS=–, DP=–, รหัสการใช้=U-298)",
+      "text_en": "Orange Book: NDA 021085/001: 5849752, 2016-12-05 (DS=–, DP=–, use code=U-298) / NDA 021277/001: 5849752, 2016-12-05 (DS=–, DP=–, use code=U-298)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-5849752"
+      ]
+    },
+    {
+      "id": "patent-7671070",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 021598/001: 7671070 วันที่ตามรายการ 2019-09-29 (DS=–, DP=–, รหัสการใช้=U-709) / NDA 022428/001: 7671070 วันที่ตามรายการ 2019-09-29 (DS=–, DP=–, รหัสการใช้=U-709) / NDA 021598/001: 7671070*PED วันที่ตามรายการ 2020-03-29 (DS=–, DP=–, รหัสการใช้=–) / NDA 022428/001: 7671070*PED วันที่ตามรายการ 2020-03-29 (DS=–, DP=–, รหัสการใช้=–)",
+      "text_en": "Orange Book: NDA 021598/001: 7671070, 2019-09-29 (DS=–, DP=–, use code=U-709) / NDA 022428/001: 7671070, 2019-09-29 (DS=–, DP=–, use code=U-709) / NDA 021598/001: 7671070*PED, 2020-03-29 (DS=–, DP=–, use code=–) / NDA 022428/001: 7671070*PED, 2020-03-29 (DS=–, DP=–, use code=–)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-7671070"
+      ]
+    },
+    {
+      "id": "patent-6610327",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 021085/001: 6610327 วันที่ตามรายการ 2019-10-29 (DS=–, DP=–, รหัสการใช้=U-298)",
+      "text_en": "Orange Book: NDA 021085/001: 6610327, 2019-10-29 (DS=–, DP=–, use code=U-298)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-6610327"
+      ]
+    },
+    {
+      "id": "patent-6548079",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 021277/001: 6548079 วันที่ตามรายการ 2020-07-25 (DS=–, DP=–, รหัสการใช้=U-298)",
+      "text_en": "Orange Book: NDA 021277/001: 6548079, 2020-07-25 (DS=–, DP=–, use code=U-298)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-6548079"
+      ]
+    },
+    {
+      "id": "patent-6716830",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 021598/001: 6716830 วันที่ตามรายการ 2019-09-29 (DS=–, DP=–, รหัสการใช้=–) / NDA 022428/001: 6716830 วันที่ตามรายการ 2019-09-29 (DS=–, DP=–, รหัสการใช้=–) / NDA 021598/001: 6716830*PED วันที่ตามรายการ 2020-03-29 (DS=–, DP=–, รหัสการใช้=–) / NDA 022428/001: 6716830*PED วันที่ตามรายการ 2020-03-29 (DS=–, DP=–, รหัสการใช้=–)",
+      "text_en": "Orange Book: NDA 021598/001: 6716830, 2019-09-29 (DS=–, DP=–, use code=–) / NDA 022428/001: 6716830, 2019-09-29 (DS=–, DP=–, use code=–) / NDA 021598/001: 6716830*PED, 2020-03-29 (DS=–, DP=–, use code=–) / NDA 022428/001: 6716830*PED, 2020-03-29 (DS=–, DP=–, use code=–)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-6716830"
+      ]
+    },
+    {
+      "id": "patent-8450311",
+      "section": "patents",
+      "text_th": "รายการใน Orange Book: NDA 022428/001: 8450311 วันที่ตามรายการ 2029-05-29 (DS=–, DP=–, รหัสการใช้=–)",
+      "text_en": "Orange Book: NDA 022428/001: 8450311, 2029-05-29 (DS=–, DP=–, use code=–)",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-8450311"
+      ]
+    },
+    {
+      "id": "ob-excl-1206",
+      "section": "patents",
+      "text_th": "NDA 022428/001 ระบุสิทธิผูกขาดตามข้อกำหนดของ FDA รหัส NP ถึงวันที่ 2013-11-19",
+      "text_en": "NDA 022428/001 lists exclusivity NP through 2013-11-19.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-excl-1206"
+      ]
+    },
+    {
+      "id": "ob-excl-1207",
+      "section": "patents",
+      "text_th": "NDA 022428/001 ระบุสิทธิผูกขาดตามข้อกำหนดของ FDA รหัส PED ถึงวันที่ 2014-05-19",
+      "text_en": "NDA 022428/001 lists exclusivity PED through 2014-05-19.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-excl-1207"
+      ]
+    },
+    {
+      "id": "piv-coverage",
+      "section": "patents",
+      "text_th": "ณ วันตัดข้อมูล ยังไม่มีแถวข้อมูลจากบัญชี Paragraph IV ของ FDA ที่ผ่านเกณฑ์การรับหลักฐาน บัญชีฉบับเก็บถาวรล่าสุดที่อ่านได้เก่าเกินเกณฑ์ ณ วันดังกล่าว",
+      "text_en": "The historical FDA list provided no admitted dated PIV row at the cutoff. The last usable archived list was stale at the cutoff.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "piv-coverage"
+      ]
+    },
+    {
+      "id": "challenge-01",
+      "section": "patents",
+      "text_th": "ชุดข้อมูล Rai ระบุคดี D.Del. 1:11-cv-00293 ยื่นเมื่อ 2011-04-07 จับคู่เลขที่สิทธิบัตร ณ วันยื่นคดีได้เป็น 6716830, 7671070",
+      "text_en": "Rai records docket D.Del. 1:11-cv-00293, filed 2011-04-07. The patent-number join at filing identifies US 6716830, 7671070.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "challenge-01",
+        "ob-6716830",
+        "ob-7671070"
+      ]
+    },
+    {
+      "id": "challenge-02",
+      "section": "patents",
+      "text_th": "ชุดข้อมูล Rai ระบุคดี D.Del. 1:11-cv-00587 ยื่นเมื่อ 2011-07-01 จับคู่เลขที่สิทธิบัตร ณ วันยื่นคดีได้เป็น 6716830, 7671070",
+      "text_en": "Rai records docket D.Del. 1:11-cv-00587, filed 2011-07-01. The patent-number join at filing identifies US 6716830, 7671070.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "challenge-02",
+        "ob-6716830",
+        "ob-7671070"
+      ]
+    },
+    {
+      "id": "moxi-vigamox-application-scope",
+      "section": "patents",
+      "text_th": "คำสั่งศาลสำหรับ Teva ที่อ้างสิทธิบัตรสหรัฐฯ เลขที่ 6716830 ใช้กับคำขอยาหยอดตาที่อ้างอิง Vigamox ส่วนการอนุมัติครั้งแรกที่พบสำหรับคีย์นี้เป็นยาเม็ดที่อ้างอิง Avelox ตาม ANDA 077437",
+      "text_en": "The Teva order on US 6716830 applies to the Vigamox ophthalmic application. The first observed approval for this key was for Avelox tablets, ANDA 077437.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "moxi-vigamox-order",
+        "moxi-letter",
+        "ob-6716830"
+      ]
+    },
+    {
+      "id": "restriction",
+      "section": "patents",
+      "text_th": "Teva ได้รับอนุมัติ ANDA 077437 สำหรับยาเม็ดอ้างอิง Avelox เมื่อวันที่ 18 กุมภาพันธ์ 2557 ซึ่งเป็นการอนุมัติครั้งแรกที่พบ FDA ระบุคำรับรองตาม Paragraph IV สำหรับสิทธิบัตรสหรัฐฯ เลขที่ 5607942, 5849752 และ 6610327 และระบุว่าศาลยกคดีเกี่ยวกับสิทธิบัตรเลขที่ 5607942 หนังสือไม่ได้ระบุชัดว่าสิทธิบัตรฉบับใดเป็นเงื่อนไขให้การอนุมัติมีผล",
+      "text_en": "Teva ANDA 077437 was the first observed Avelox tablet approval on 18 February 2014. FDA lists Paragraph IV certifications for US 5607942, 5849752 and 6610327 and reports dismissal of the 5607942 litigation. The letter gives no explicit patent-specific condition on effective approval.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "moxi-letter",
+        "ob-5607942",
+        "ob-5849752",
+        "ob-6610327",
+        "dev-selection",
+        "dev-fda-anda"
+      ]
+    },
+    {
+      "id": "family-5607942",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 5607942 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: DE3824072, DE3824072.6, DE3906365A DE3906365A1 ( en ), DE3906365.8, US07/375,434 US4990517A ( en ), US07/580,906 US5059597A ( en ), US07/737,631 US5416096A ( en ), US08/406,448 US5607942A ( en ) เลขประกาศ WO: ไม่พบในดัชนี เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 5607942. Priority applications: DE3824072, DE3824072.6, DE3906365A DE3906365A1 ( en ), DE3906365.8, US07/375,434 US4990517A ( en ), US07/580,906 US5059597A ( en ), US07/737,631 US5416096A ( en ), US08/406,448 US5607942A ( en ). WO publications: none returned. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-5607942",
+        "family-5607942"
+      ]
+    },
+    {
+      "id": "family-6716830",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 6716830 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US10250698P, US10250498P, US64679700A, US10/200,868 US6716830B2 ( en ) เลขประกาศ WO: ไม่พบในดัชนี เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 6716830. Priority applications: US10250698P, US10250498P, US64679700A, US10/200,868 US6716830B2 ( en ). WO publications: none returned. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-6716830",
+        "family-6716830"
+      ]
+    },
+    {
+      "id": "family-7671070",
+      "section": "thai_asean",
+      "text_th": "สิทธิบัตรสหรัฐฯ เลขที่ 7671070 คำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรก: US10250698P, US10250498P, PCT/US1999/022622 WO2000018386A2 ( en ), US64679700A, US10/200,868 US6716830B2 ( en ), US10/715,055 US7671070B2 ( en ) เลขประกาศ WO: ไม่พบในดัชนี เลขประกาศ TH ในดัชนีนี้: ไม่พบ เลขอ้างอิงจากประเทศอาเซียนอื่นในดัชนีนี้: ไม่พบ",
+      "text_en": "US 7671070. Priority applications: US10250698P, US10250498P, PCT/US1999/022622 WO2000018386A2 ( en ), US64679700A, US10/200,868 US6716830B2 ( en ), US10/715,055 US7671070B2 ( en ). WO publications: none returned. TH publications in this index: none returned. Other ASEAN references in this index: none returned.",
+      "state": "known",
+      "kind": "observed",
+      "source_ids": [
+        "ob-7671070",
+        "family-7671070"
+      ]
+    },
+    {
+      "id": "th-patent-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันสถานะสิทธิบัตรหรือการเข้าสู่ขั้นตอนระดับประเทศในไทยไม่ได้ การอยู่ในตระกูลสิทธิบัตรเดียวกันยังไม่เพียงพอที่จะยืนยันผลบังคับตามกฎหมาย",
+      "text_en": "Current check on 28 November 2026: Thai patent and national-phase status remain unknown. Family data do not establish enforceability.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "family-5607942",
+        "family-6716830",
+        "family-7671070",
+        "wipo-U-U188XYD42P",
+        "asean-U-U188XYD42P",
+        "dip-U-U188XYD42P",
+        "wipo-terms"
+      ]
+    },
+    {
+      "id": "th-fda-status",
+      "section": "thai_asean",
+      "text_th": "การตรวจสอบ ณ วันที่ 28 พฤศจิกายน 2569 ยังยืนยันทะเบียนตำรับยาจากระบบ NDI ไม่ได้",
+      "text_en": "Current check on 28 November 2026: NDI registration remains unverified.",
+      "state": "unknown",
+      "kind": "observed",
+      "source_ids": [
+        "ndi-U-U188XYD42P"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ob-products",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "products.txt data row 11292, products.txt data row 12484, products.txt data row 12645, products.txt data row 17301",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-5607942",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 3203, patent.txt data row 3912, patent.txt data row 5173, patent.txt data row 7049, patent.txt data row 10211, patent.txt data row 10446",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-5849752",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 3204, patent.txt data row 3913",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-7671070",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 5174, patent.txt data row 7050, patent.txt data row 10209, patent.txt data row 10444",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-6610327",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 3205",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-6548079",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 3914",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-6716830",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 5175, patent.txt data row 7051, patent.txt data row 10210, patent.txt data row 10445",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-8450311",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "patent.txt data row 7052",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-excl-1206",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "exclusivity.txt data row 1206",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "ob-excl-1207",
+      "issuer": "US FDA",
+      "title": "Orange Book data files",
+      "version": "2013-08-30",
+      "public_date": "2013-09-06",
+      "locator": "exclusivity.txt data row 1207",
+      "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "retrieved": "2026-11-27T10:56:19.032077+00:00"
+    },
+    {
+      "id": "piv-coverage",
+      "issuer": "US FDA",
+      "title": "Paragraph IV certifications list",
+      "version": "2011-12-19",
+      "public_date": "2011-12-22",
+      "locator": "Archived FDA table, version metadata and product matching",
+      "url": "https://web.archive.org/web/20111222183218id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "sha256": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b",
+      "retrieved": "2026-11-27T11:31:19.808035+00:00"
+    },
+    {
+      "id": "challenge-01",
+      "issuer": "Rai et al.",
+      "title": "District court patent litigation dataset",
+      "version": "1.0 (2021-06-10), LM_short_patent_cases.tab, file 4789869",
+      "public_date": "2021-06-10",
+      "locator": "TSV line 1533, TSV line 1534",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4789869",
+      "sha256": "abb54817c8e6fbc90077007a42bb1cd7870a64940ce3aa7a7d36d83dafaa06e5",
+      "retrieved": null
+    },
+    {
+      "id": "challenge-02",
+      "issuer": "Rai et al.",
+      "title": "District court patent litigation dataset",
+      "version": "1.0 (2021-06-10), LM_short_patent_cases.tab, file 4789869",
+      "public_date": "2021-06-10",
+      "locator": "TSV line 2807, TSV line 2808",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4789869",
+      "sha256": "abb54817c8e6fbc90077007a42bb1cd7870a64940ce3aa7a7d36d83dafaa06e5",
+      "retrieved": null
+    },
+    {
+      "id": "moxi-vigamox-order",
+      "issuer": "US District Court, District of Delaware (filed copy)",
+      "title": "Alcon v. Teva, 1:06-cv-00234 doc. 135",
+      "version": "2026-11-28",
+      "public_date": "2010-08-05",
+      "locator": "PDF pp. 1–3, Vigamox scope and effective approval order",
+      "url": "https://www.thefdalawblog.com/wp-content/uploads/archives/docs/vigamox---order-8-2010.pdf",
+      "sha256": "2d887c6dd8ad391b5ea157a925977fefb853ceb3ac2bd319073604084d3235f9",
+      "retrieved": "2026-11-28T05:18:15+00:00"
+    },
+    {
+      "id": "moxi-letter",
+      "issuer": "US FDA",
+      "title": "Teva ANDA 077437 moxifloxacin final approval letter",
+      "version": "2026-11-28",
+      "public_date": "2014-02-18",
+      "locator": "PDF p. 1, ANDA 077437 and Avelox tablet reference product",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2014/077437Orig1s000ltr.pdf",
+      "sha256": "29d55b9f74ad75cd05048411a41a91d421c083b19fb073c530914353e227c44e",
+      "retrieved": "2026-11-28T05:12:44+00:00"
+    },
+    {
+      "id": "dev-selection",
+      "issuer": "LOE-Bench",
+      "title": "Pinned 24-month development selection replay",
+      "version": "FREEZE development export; 2014-01-01",
+      "public_date": null,
+      "locator": "selection.json cases[key=U:U188XYD42P].event",
+      "url": null,
+      "sha256": "c1b65b35f5de8b3914813cbb90794c06c0064c1ec6aae567f4f4ca4cc8eb34dc",
+      "retrieved": "2026-11-28T05:10:04.180051+00:00"
+    },
+    {
+      "id": "dev-fda-anda",
+      "issuer": "openFDA / Drugs@FDA",
+      "title": "Pinned ANDA snapshot, development projection",
+      "version": "2026-11-27",
+      "public_date": null,
+      "locator": "df_anda.jsonl, line 15715, ANDA077437, ORIG/AP 2014-02-18, Teva moxifloxacin tablets",
+      "url": "https://open.fda.gov/apis/drug/drugsfda/",
+      "sha256": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "retrieved": "2026-11-27T10:23:14.478072+00:00"
+    },
+    {
+      "id": "family-5607942",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 5607942",
+      "version": "2026-11-28",
+      "public_date": "1997-03-04",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US5607942A/en",
+      "sha256": "e10267aa268ae237ff8889525aa46438c53b278ab1c3b2e5bca2e1f6c9f19692",
+      "retrieved": "2026-11-28T05:11:10+00:00"
+    },
+    {
+      "id": "family-6716830",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 6716830",
+      "version": "2026-11-28",
+      "public_date": "2004-04-06",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US6716830B2/en",
+      "sha256": "bde69e2751919d3b9502f93b3970e4bfa673735c014d30232d614944519a2715",
+      "retrieved": "2026-11-28T05:11:21+00:00"
+    },
+    {
+      "id": "family-7671070",
+      "issuer": "Google Patents / US patent publication and family index",
+      "title": "US 7671070",
+      "version": "2026-11-28",
+      "public_date": "2010-03-02",
+      "locator": "Applications Claiming Priority; Country Status (WO and ASEAN rows)",
+      "url": "https://patents.google.com/patent/US7671070B2/en",
+      "sha256": "1f72084fe0c2a321846aa1f285cd9d0bcdf65a531aaf1cfbcfbe0eb8febc9cbd",
+      "retrieved": "2026-11-28T05:11:34+00:00"
+    },
+    {
+      "id": "wipo-U-U188XYD42P",
+      "issuer": "WIPO",
+      "title": "DE3824072, DE3824072.6, DE3906365.8, DE3906365A DE3906365A1 ( en ), PCT/US1999/022622 WO2000018386A2 ( en ), US07/375,434 US4990517A ( en ), US07/580,906 US5059597A ( en ), US07/737,631 US5416096A ( en ), US08/406,448 US5607942A ( en ), US10/200,868 US6716830B2 ( en ), US10/715,055 US7671070B2 ( en ), US10250498P, US10250698P, US64679700A",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: PATENTSCOPE terms section 2.1 prohibits automated queries. Case search not submitted.",
+      "url": "https://patentscope.wipo.int/search/en/search.jsf",
+      "sha256": "cff7e81d66ef58094b19f07cbc61789711114f9cb0c55c04b903d6738ed589dd",
+      "retrieved": "2026-11-28T05:04:35+00:00"
+    },
+    {
+      "id": "asean-U-U188XYD42P",
+      "issuer": "ASEAN IP Register",
+      "title": "DE3824072, DE3824072.6, DE3906365.8, DE3906365A DE3906365A1 ( en ), PCT/US1999/022622 WO2000018386A2 ( en ), US07/375,434 US4990517A ( en ), US07/580,906 US5059597A ( en ), US07/737,631 US5416096A ( en ), US08/406,448 US5607942A ( en ), US10/200,868 US6716830B2 ( en ), US10/715,055 US7671070B2 ( en ), US10250498P, US10250698P, US64679700A",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt. Case search not submitted.",
+      "url": "https://ip-register.aseanip.org/",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:38+00:00"
+    },
+    {
+      "id": "dip-U-U188XYD42P",
+      "issuer": "Thailand Department of Intellectual Property",
+      "title": "DE3824072, DE3824072.6, DE3906365.8, DE3906365A DE3906365A1 ( en ), PCT/US1999/022622 WO2000018386A2 ( en ), US07/375,434 US4990517A ( en ), US07/580,906 US5059597A ( en ), US07/737,631 US5416096A ( en ), US08/406,448 US5607942A ( en ), US10/200,868 US6716830B2 ( en ), US10/715,055 US7671070B2 ( en ), US10250498P, US10250698P, US64679700A",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: HTTP 403 on robots.txt and public endpoint. Case search not submitted.",
+      "url": "https://patentsearch.ipthailand.go.th/",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:39+00:00"
+    },
+    {
+      "id": "ndi-U-U188XYD42P",
+      "issuer": "Thai FDA NDI",
+      "title": "MOXIFLOXACIN HYDROCHLORIDE",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "blocked: Connection failed on robots.txt and public endpoint timed out. Case search not submitted.",
+      "url": "https://ndi.fda.moph.go.th/drug_info",
+      "sha256": null,
+      "retrieved": "2026-11-28T05:04:53+00:00"
+    },
+    {
+      "id": "wipo-terms",
+      "issuer": "WIPO",
+      "title": "PATENTSCOPE terms of use",
+      "version": "2026-11-28",
+      "public_date": null,
+      "locator": "October 2025 Terms of Use, section 2.1, automated queries",
+      "url": "https://www.wipo.int/en/web/patentscope/data/terms_patentscope",
+      "sha256": "6a1e56c9621b4c155fabf2269fabef9248a75c4fee8b62443b11d8a58e1c934e",
+      "retrieved": "2026-11-28T05:08:37+00:00"
+    }
+  ],
+  "checklist": [
+    {
+      "id": "check-01",
+      "text_th": "ลำดับ 1: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 5607942 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #1: US 5607942. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-5607942"
+      ]
+    },
+    {
+      "id": "check-02",
+      "text_th": "ลำดับ 2: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 5849752 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #2: US 5849752. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-5849752"
+      ]
+    },
+    {
+      "id": "check-03",
+      "text_th": "ลำดับ 3: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 7671070 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #3: US 7671070. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-7671070"
+      ]
+    },
+    {
+      "id": "check-04",
+      "text_th": "ลำดับ 4: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 6610327 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #4: US 6610327. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-6610327"
+      ]
+    },
+    {
+      "id": "check-05",
+      "text_th": "ลำดับ 5: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 6548079 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #5: US 6548079. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-6548079"
+      ]
+    },
+    {
+      "id": "check-06",
+      "text_th": "ลำดับ 6: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 6716830 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #6: US 6716830. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-6716830"
+      ]
+    },
+    {
+      "id": "check-07",
+      "text_th": "ลำดับ 7: ตรวจขอบเขตและวันที่ในรายการสิทธิบัตรสหรัฐฯ เลขที่ 8450311 ให้ตรงกับรูปแบบและความแรงของยาที่จะพัฒนา",
+      "text_en": "Check first #7: US 8450311. Review the listed scope and dates for the intended presentation.",
+      "owner": "Patent reviewer",
+      "source_ids": [
+        "ob-8450311"
+      ]
+    },
+    {
+      "id": "restriction-review",
+      "text_th": "ยืนยันผู้ยื่นคำขอรายแรกและเงื่อนไขที่ทำให้การอนุมัติมีผล โดยตรวจหนังสืออนุมัติหรือคำสั่งศาลที่ระบุเลขที่สิทธิบัตร",
+      "text_en": "Confirm the earliest applicant and any patent-specific condition on effective approval from the approval letter or operative court order.",
+      "owner": "US regulatory reviewer",
+      "source_ids": [
+        "moxi-letter",
+        "ob-5607942",
+        "ob-5849752",
+        "ob-6610327",
+        "dev-selection",
+        "dev-fda-anda"
+      ]
+    },
+    {
+      "id": "th-register",
+      "text_th": "ใช้เลขคำขอที่ใช้อ้างสิทธิวันยื่นครั้งแรกหรือเลขประกาศ WO ค้นในทะเบียนไทย แล้วตรวจการออกสิทธิบัตร ขอบเขตข้อถือสิทธิ และประวัติสถานะกับกรมทรัพย์สินทางปัญญา",
+      "text_en": "Check the Thai register using the priority/WO identifiers, then confirm grant, scope and legal-event history with DIP.",
+      "owner": "Thai patent reviewer",
+      "source_ids": [
+        "family-5607942",
+        "family-6716830",
+        "family-7671070",
+        "wipo-U-U188XYD42P",
+        "asean-U-U188XYD42P",
+        "dip-U-U188XYD42P"
+      ]
+    },
+    {
+      "id": "th-ndi",
+      "text_th": "ตรวจเลขทะเบียนตำรับยา ผู้รับอนุญาต ความแรง และรูปแบบยาในระบบ NDI ของสำนักงานคณะกรรมการอาหารและยา",
+      "text_en": "Confirm registration, holder, strength and presentation in Thai FDA NDI.",
+      "owner": "Thai regulatory reviewer",
+      "source_ids": [
+        "ndi-U-U188XYD42P"
+      ]
+    }
+  ]
+}
