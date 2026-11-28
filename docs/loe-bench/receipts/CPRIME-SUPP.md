@@ -65,3 +65,12 @@ The eight standing failures are the `nan`, `inflated`, `erased` and `insufficien
 The stand-alone PowerShell `Get-FileHash` command was unavailable during the output check. Python `hashlib` verified the aggregate file digest shown above.
 
 No deviation from the locked note. The main planner owns independent review, integration and updates to the lane handoff and memory.
+
+## Planner review note (28 November 2026)
+
+Accepted with an interpretation rule for every later use of these numbers.
+
+- **Thresholded accuracy is uninformative here.** At the frozen calibrated threshold p ≥ 0.5, no arm made a positive call that was an event (TP = 0 everywhere; M3 at 24 months made one false positive). Accuracy therefore equals, or falls just below, the always-negative rate (96.16% at 12 months, 92.07% at 24 months). Report it only beside the always-negative rate and never as evidence of performance. The registered measure for this decision is recall at fixed capacity.
+- **Pooled AUC is descriptive.** It pools rows across annual cutoffs with different prevalence, and it ranks every row, not a fixed-capacity queue. M3 exceeds B1 at both horizons (0.8125 vs 0.7095 at 12 months; 0.8045 vs 0.7262 at 24 months), and M3 and M1 are close, consistent with H1 passing and H2 failing. No interval or test was registered for these values.
+- **Published metrics are external references.** Prior studies use other endpoints (first submission, first Medicaid prescription quarter, Paragraph IV challenge), cohorts and inputs. Place them beside these values only with that label; no head-to-head claim follows.
+- **C-index is NOT_ESTIMABLE** because the authenticated exports omit exact event dates, as the note anticipated.
