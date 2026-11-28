@@ -19,7 +19,7 @@
       <nav class="topnav" aria-label="Main">
         <a href="#overview">Overview</a>
         <a href="#how">Method</a>
-        <a href="#accuracy">Evidence</a>
+        <a href="#evidence">Evidence</a>
         <a href="#download">Download</a>
       </nav>
       <div class="lang" role="group" aria-label="Content language">
@@ -31,7 +31,7 @@
       <a href="#how" data-stage="how">Before development</a>
       <a href="#dossier" data-stage="dossier">Patent review</a>
       <a href="#thai" data-stage="thai">Thailand and ASEAN</a>
-      <a href="#accuracy" data-stage="accuracy">Accuracy testing</a>
+      <a href="#evidence" data-stage="evidence">Results and testing</a>
     </nav>
   </header>
 
@@ -53,37 +53,48 @@
       <section class="panel evidence" aria-labelledby="ev-h">
         <h2 id="ev-h" lang="en">Evidence summary</h2>
         <table class="facts">
-          <caption class="sr-only" lang="en">Results on the sealed historical test, 2017–2024 cutoffs, and prospective status</caption>
+          <caption class="sr-only" lang="en">Results on the sealed historical test (cutoffs 2017–2024, 24 months, 20% review capacity) and prospective status. Each row links to its receipt.</caption>
           <tbody>
             <tr>
-              <th scope="row"><span class="c" lang="th">ยาที่ต่อมามียาสามัญรายแรกได้รับอนุมัติภายใน 24 เดือน และอยู่ในคิวตรวจ 20% (แบบจำลองหลักฐาน)</span><span class="c" lang="en">Upcoming first generic approvals inside a 20% review queue, 24 months (evidence model)</span></th>
-              <td class="v">66.85%</td>
+              <th scope="row"><span class="c" lang="th">คิวตรวจ 20% ของยา ภายใน 24 เดือน: สัดส่วนยาที่ได้ยาสามัญรายแรกและอยู่ในคิว (recall) คู่กับสัดส่วนยาในคิวที่ได้ยาสามัญรายแรกจริง (precision) แบบจำลองหลัก</span><span class="c" lang="en">20% review queue, 24 months: share of first-generic approvals found (recall) beside the share of queued drugs that were approvals (precision). Main model</span>
+                <a class="src" href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORELLM.md#exploratory-c-results" lang="en">Receipt: SCORELLM</a></th>
+              <td class="v">66.85%<span class="ci">recall</span><span class="v2">26.62%</span><span class="ci">precision</span></td>
             </tr>
             <tr>
-              <th scope="row"><span class="c" lang="th">งบตรวจเท่ากัน แต่เรียงตามอายุยาอย่างเดียว</span><span class="c" lang="en">Same review budget, ranked by drug age only</span></th>
-              <td class="v">46.48%</td>
+              <th scope="row"><span class="c" lang="th">งบตรวจเท่ากัน แต่เรียงตามอายุยาอย่างเดียว (B1)</span><span class="c" lang="en">Same review budget, ranked by drug age only (B1)</span>
+                <a class="src" href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORELLM.md#exploratory-c-results" lang="en">Receipt: SCORELLM</a></th>
+              <td class="v">46.48%<span class="ci">recall</span><span class="v2">18.51%</span><span class="ci">precision</span></td>
             </tr>
             <tr>
-              <th scope="row"><span class="c" lang="th">ส่วนต่าง (ช่วงความเชื่อมั่น 95%)</span><span class="c" lang="en">Difference (95% CI)</span>
-                <span class="tag tag-known"><span class="c" lang="th">ยืนยันแล้ว</span><span class="c" lang="en">Confirmed</span></span></th>
+              <th scope="row"><span class="c" lang="th">H1: ส่วนต่างของ recall (ช่วงความเชื่อมั่น 95%)</span><span class="c" lang="en">H1: difference in recall (95% CI)</span>
+                <span class="tag tag-known"><span class="c" lang="th">H1 ผ่าน</span><span class="c" lang="en">H1 PASS</span></span>
+                <a class="src" href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORE.md#primary-family" lang="en">Receipt: SCORE</a></th>
               <td class="v">+20.37 pp<span class="ci">+14.37 to +26.16</span></td>
             </tr>
             <tr>
-              <th scope="row"><span class="c" lang="th">ประโยชน์เพิ่มของกราฟหลักฐาน เทียบแบบจำลองที่ไม่มีกราฟ</span><span class="c" lang="en">Added value of the evidence graph over a matched model without it</span>
-                <span class="tag tag-na"><span class="c" lang="th">ยังไม่ยืนยัน</span><span class="c" lang="en">Not confirmed</span></span></th>
+              <th scope="row"><span class="c" lang="th">H2: ประโยชน์เพิ่มของกราฟหลักฐาน เทียบแบบจำลองที่ไม่มีกราฟ</span><span class="c" lang="en">H2: added value of the evidence graph over a matched model without it</span>
+                <span class="tag tag-na"><span class="c" lang="th">H2 ไม่ผ่าน ยังไม่ยืนยัน</span><span class="c" lang="en">H2 FAIL, not confirmed</span></span>
+                <a class="src" href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORE.md#primary-family" lang="en">Receipt: SCORE</a></th>
               <td class="v">+1.36 pp<span class="ci">−2.20 to +3.01</span></td>
             </tr>
             <tr>
-              <th scope="row"><span class="c" lang="th">คำพยากรณ์ล่วงหน้า (Track A)</span><span class="c" lang="en">Prospective forecasts (Track A)</span>
-                <span class="tag tag-verify"><span class="c" lang="th">รอผล</span><span class="c" lang="en">Pending</span></span></th>
-              <td class="v v-text"><span class="c" lang="th">ตรึงก่อน 31 ม.ค. 2570</span><span class="c" lang="en">Freeze before 31 Jan 2027</span></td>
+              <th scope="row"><span class="c" lang="th">L1e: แบบจำลองภาษาที่ได้รับหลักฐานชุดเดียวกัน (Qwen2.5-7B) ในการตั้งค่าที่ทดสอบเท่านั้น</span><span class="c" lang="en">L1e: a language model given the same dated evidence (Qwen2.5-7B), in the tested setting only</span>
+                <span class="tag tag-na"><span class="c" lang="th">สำรวจเพิ่มเติม</span><span class="c" lang="en">Exploratory</span></span>
+                <a class="src" href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORELLM.md#exploratory-c-results" lang="en">Receipt: SCORELLM</a></th>
+              <td class="v">12.36%<span class="ci">recall</span><span class="v2">4.92%</span><span class="ci">precision</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="c" lang="th">คำพยากรณ์ล่วงหน้า (Track A) ตรึงเมื่อ 28 พ.ย. 2569 ผลยังไม่ออก ผลช่วง 12 เดือนอ่านได้ 27 พ.ย. 2570 และช่วง 24 เดือน 27 พ.ย. 2571</span><span class="c" lang="en">Prospective forecasts (Track A) frozen 28 Nov 2026. Outcomes pending: 12-month readout 27 Nov 2027, 24-month readout 27 Nov 2028</span>
+                <span class="tag tag-verify"><span class="c" lang="th">รอผล</span><span class="c" lang="en">Pending</span></span>
+                <a class="src" href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/TRACKA-FREEZE.md" lang="en">Receipt: TRACKA-FREEZE</a></th>
+              <td class="v v-text"><span class="c" lang="th">ตรึงแล้ว ประทับเวลาที่ OSF</span><span class="c" lang="en">Frozen, timestamped on OSF</span></td>
             </tr>
           </tbody>
         </table>
         <p class="panel-foot">
-          <span class="c" lang="th">ชุดทดสอบย้อนหลังแบบปิดผนึก วันตัดข้อมูลปี 2017–2024 ลงทะเบียนแผนวิเคราะห์ไว้ก่อนเปิดชุดทดสอบ</span>
-          <span class="c" lang="en">Sealed historical test, cutoffs 2017–2024. The analysis plan was registered before the test set was opened.</span>
-          <a href="https://doi.org/10.17605/OSF.IO/P2SMD" lang="en">OSF registration P2SMD</a>
+          <span class="c" lang="th">ชุดทดสอบย้อนหลังแบบปิดผนึก (C′) วันตัดข้อมูลปี 2017–2024 ลงทะเบียนแผนวิเคราะห์ไว้ก่อนเปิดชุดทดสอบ recall คือสัดส่วนของยาที่ได้ยาสามัญรายแรกภายใน 24 เดือนที่อยู่ในคิว precision คือสัดส่วนของยาในคิวที่ได้ยาสามัญรายแรกจริง</span>
+          <span class="c" lang="en">Sealed historical test (C′), cutoffs 2017–2024. The analysis plan was registered before the test set was opened. Recall is the share of drugs that got a first generic within 24 months that the queue contained. Precision is the share of queued drugs that did.</span>
+          <a href="https://doi.org/10.17605/OSF.IO/P2SMD" lang="en">OSF registration doi:10.17605/OSF.IO/P2SMD, update 4 (Track A freeze)</a>
         </p>
       </section>
     </section>
@@ -132,60 +143,87 @@
       </div>
     </section>
 
-    <section class="section" id="accuracy" aria-labelledby="acc-h">
+    <section class="section" id="evidence" aria-labelledby="acc-h">
       <div class="wrap">
-        <h2 id="acc-h" lang="en">How accuracy is tested</h2>
-        <p class="section-lead"><span class="c" lang="th">แผนการวิเคราะห์ลงทะเบียนไว้ที่ OSF ก่อนเปิดชุดทดสอบย้อนหลัง (วันตัดข้อมูล 2017–2024) โค้ดปิดผนึกชุดทดสอบไว้จนถึงวันนั้น ทุกวิธีได้งบตรวจเท่ากันคือ 1 ใน 5 ของยาที่เข้าเกณฑ์ คำพยากรณ์ล่วงหน้า (Track A) จะประทับเวลาไว้ก่อนทราบผล</span><span class="c" lang="en">The analysis plan was registered on OSF before the sealed historical test set (cutoffs 2017–2024) was opened, and code kept the test set sealed until then. Every method gets the same review budget, 1 in 5 eligible molecules. Prospective forecasts (Track A) are timestamped before any outcome exists.</span></p>
+        <h2 id="acc-h" lang="en">How results are tested</h2>
+        <p class="section-lead"><span class="c" lang="th">แผนการวิเคราะห์ลงทะเบียนไว้ที่ OSF ก่อนเปิดชุดทดสอบย้อนหลัง (วันตัดข้อมูล 2017–2024) โค้ดปิดผนึกชุดทดสอบไว้จนถึงวันนั้น ทุกวิธีได้งบตรวจเท่ากันคือ 1 ใน 5 ของยาที่เข้าเกณฑ์ คำพยากรณ์ล่วงหน้า (Track A) ตรึงและประทับเวลาไว้แล้วเมื่อ 28 พ.ย. 2569 ก่อนทราบผล</span><span class="c" lang="en">The analysis plan was registered on OSF before the sealed historical test set (cutoffs 2017–2024) was opened, and code kept the test set sealed until then. Every method gets the same review budget, 1 in 5 eligible molecules. Prospective forecasts (Track A) were frozen and timestamped on 28 Nov 2026, before any outcome exists.</span></p>
         <table class="results">
-          <thead lang="en"><tr><th scope="col">Measure</th><th scope="col">Result</th><th scope="col">Status</th></tr></thead>
+          <thead lang="en"><tr><th scope="col">Measure</th><th scope="col">Result</th><th scope="col">Status</th><th scope="col">Receipt</th></tr></thead>
           <tbody>
             <tr>
-              <td><span class="c" lang="th">ยาที่ต่อมามียาสามัญรายแรกได้รับอนุมัติภายใน 24 เดือน และอยู่ในคิวตรวจ 20%</span><span class="c" lang="en">Upcoming first generic approvals within 24 months caught by a 20% review queue</span></td>
-              <td class="r"><span class="c" lang="th">66.85% เทียบ 46.48% (เรียงตามอายุยา)</span><span class="c" lang="en">66.85% vs 46.48% (drug-age baseline)</span></td>
-              <td><span class="tag tag-known"><span class="c" lang="th">ยืนยันแล้ว</span><span class="c" lang="en">Confirmed</span></span></td>
+              <td><span class="c" lang="th">คิวตรวจ 20% ภายใน 24 เดือน: recall และ precision ของแบบจำลองหลัก M3 เทียบแบบเรียงตามอายุยา B1</span><span class="c" lang="en">Recall and precision of the 20% review queue, 24 months, main model M3 against the drug-age baseline B1</span></td>
+              <td class="r"><span class="c" lang="th">recall 66.85% และ precision 26.62% เทียบ 46.48% และ 18.51% (เรียงตามอายุยา)</span><span class="c" lang="en">recall 66.85% and precision 26.62%, against 46.48% and 18.51% (drug-age baseline)</span></td>
+              <td><span class="tag tag-known"><span class="c" lang="th">วัดจากชุดทดสอบ</span><span class="c" lang="en">Measured</span></span></td>
+              <td class="rc" lang="en"><a href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORELLM.md#exploratory-c-results">SCORELLM</a></td>
             </tr>
             <tr>
-              <td><span class="c" lang="th">ส่วนต่างระหว่างสองวิธี</span><span class="c" lang="en">Difference between the two</span></td>
+              <td><span class="c" lang="th">H1: ส่วนต่างของ recall ระหว่างสองวิธี</span><span class="c" lang="en">H1: difference in recall between the two</span></td>
               <td class="r"><span class="c" lang="th">+20.37 จุดร้อยละ (ช่วงความเชื่อมั่น 95% +14.37 ถึง +26.16)</span><span class="c" lang="en">+20.37 percentage points (95% CI +14.37 to +26.16)</span></td>
-              <td><span class="tag tag-known"><span class="c" lang="th">ยืนยันแล้ว</span><span class="c" lang="en">Confirmed</span></span></td>
+              <td><span class="tag tag-known"><span class="c" lang="th">H1 ผ่าน</span><span class="c" lang="en">H1 PASS</span></span></td>
+              <td class="rc" lang="en"><a href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORE.md#primary-family">SCORE</a></td>
             </tr>
             <tr>
-              <td><span class="c" lang="th">ประโยชน์เพิ่มของกราฟหลักฐาน เทียบแบบจำลองที่เหมือนกันแต่ไม่มีกราฟ</span><span class="c" lang="en">Added value of the evidence graph over a matched model without it</span></td>
+              <td><span class="c" lang="th">H2: ประโยชน์เพิ่มของกราฟหลักฐาน เทียบแบบจำลองที่เหมือนกันแต่ไม่มีกราฟ</span><span class="c" lang="en">H2: added value of the evidence graph over a matched model without it</span></td>
               <td class="r"><span class="c" lang="th">+1.36 จุดร้อยละ (ช่วงความเชื่อมั่น 95% −2.20 ถึง +3.01)</span><span class="c" lang="en">+1.36 percentage points (95% CI −2.20 to +3.01)</span></td>
-              <td><span class="tag tag-na"><span class="c" lang="th">ยังไม่ยืนยัน</span><span class="c" lang="en">Not confirmed</span></span></td>
+              <td><span class="tag tag-na"><span class="c" lang="th">H2 ไม่ผ่าน ยังไม่ยืนยัน</span><span class="c" lang="en">H2 FAIL, not confirmed</span></span></td>
+              <td class="rc" lang="en"><a href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORE.md#primary-family">SCORE</a></td>
+            </tr>
+            <tr>
+              <td><span class="c" lang="th">L1e: แบบจำลองภาษา (Qwen2.5-7B) ที่ได้รับหลักฐานที่ลงวันที่ชุดเดียวกัน ในการตั้งค่าที่ทดสอบเท่านั้น</span><span class="c" lang="en">L1e: a language model (Qwen2.5-7B) given the same dated evidence, in the tested setting only</span></td>
+              <td class="r"><span class="c" lang="th">recall 12.36% และ precision 4.92%</span><span class="c" lang="en">recall 12.36% and precision 4.92%</span></td>
+              <td><span class="tag tag-na"><span class="c" lang="th">สำรวจเพิ่มเติม</span><span class="c" lang="en">Exploratory</span></span></td>
+              <td class="rc" lang="en"><a href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORELLM.md#exploratory-c-results">SCORELLM</a></td>
             </tr>
             <tr>
               <td><span class="c" lang="th">ยาที่มีผู้ยื่นยาสามัญได้รับอนุมัติอย่างน้อย 3 รายภายใน 36 เดือน และอยู่ในคิวตรวจ</span><span class="c" lang="en">Drugs that drew at least three approved generic applicants within 36 months, caught by the queue</span></td>
               <td class="r"><span class="c" lang="th">79.8% เทียบ 49.7% (+30.11 จุดร้อยละ)</span><span class="c" lang="en">79.8% vs 49.7% (+30.11 points)</span></td>
               <td><span class="tag tag-na"><span class="c" lang="th">สำรวจเพิ่มเติม</span><span class="c" lang="en">Exploratory</span></span></td>
+              <td class="rc" lang="en"><a href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/SCORE.md#c3--competition-at-launch">SCORE, C3</a></td>
             </tr>
             <tr>
               <td><span class="c" lang="th">คำพยากรณ์ล่วงหน้า (Track A)</span><span class="c" lang="en">Prospective forecasts (Track A)</span></td>
-              <td class="r"><span class="c" lang="th">ตรึงคำพยากรณ์ก่อน 31 ม.ค. 2570 ผลจะทราบภายหลัง</span><span class="c" lang="en">Forecasts frozen before 31 Jan 2027; outcomes follow later</span></td>
+              <td class="r"><span class="c" lang="th">ตรึงเมื่อ 28 พ.ย. 2569 ผลช่วง 12 เดือนอ่านได้ 27 พ.ย. 2570 และช่วง 24 เดือน 27 พ.ย. 2571</span><span class="c" lang="en">Frozen 28 Nov 2026. 12-month readout 27 Nov 2027, 24-month readout 27 Nov 2028</span></td>
               <td><span class="tag tag-verify"><span class="c" lang="th">รอผล</span><span class="c" lang="en">Pending</span></span></td>
+              <td class="rc" lang="en"><a href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/docs/loe-bench/receipts/TRACKA-FREEZE.md">TRACKA-FREEZE</a> · <a href="https://doi.org/10.17605/OSF.IO/P2SMD">OSF update 4</a></td>
             </tr>
           </tbody>
         </table>
-        <p class="note"><span class="c" lang="th">&ldquo;ยืนยันแล้ว&rdquo; หมายถึงผ่านเกณฑ์ที่ลงทะเบียนไว้ล่วงหน้า &ldquo;สำรวจเพิ่มเติม&rdquo; หมายถึงวิเคราะห์นอกสมมติฐานหลัก ใช้ประกอบเท่านั้น</span><span class="c" lang="en">&ldquo;Confirmed&rdquo; means the result passed the preregistered test. &ldquo;Exploratory&rdquo; means an analysis outside the main hypotheses, reported for context only.</span>
-          <a href="https://doi.org/10.17605/OSF.IO/P2SMD" lang="en">Read the registration (doi:10.17605/OSF.IO/P2SMD)</a></p>
+        <p class="note"><span class="c" lang="th">&ldquo;H1 ผ่าน&rdquo; หมายถึงผ่านเกณฑ์ที่ลงทะเบียนไว้ล่วงหน้า ส่วน H2 ไม่ผ่านจึงยังไม่ยืนยันประโยชน์เพิ่มของกราฟ &ldquo;สำรวจเพิ่มเติม&rdquo; หมายถึงวิเคราะห์นอกสมมติฐานหลัก ใช้ประกอบเท่านั้น ตัวเลขทุกตัวเชื่อมไปยังใบบันทึกผลของตัวเอง</span><span class="c" lang="en">&ldquo;H1 PASS&rdquo; means the result passed the preregistered test. H2 failed, so the graph&rsquo;s added value is not confirmed. &ldquo;Exploratory&rdquo; means an analysis outside the main hypotheses, reported for context only. Every number links to its own receipt.</span>
+          <a href="https://doi.org/10.17605/OSF.IO/P2SMD" lang="en">Read the registration, with update 4 (doi:10.17605/OSF.IO/P2SMD)</a></p>
       </div>
     </section>
 
-    <section class="section section-white" id="limits" aria-labelledby="limits-h">
+    <section class="section section-white" id="roadmap" aria-labelledby="road-h">
+      <div class="wrap">
+        <h2 id="road-h" lang="en">AI assistance and agent access</h2>
+        <div class="two">
+          <div class="panel" id="ai">
+            <h3 lang="en">AI assistance <span class="tag tag-na"><span class="c" lang="th">กำลังพัฒนา ยังไม่ได้ประเมิน</span><span class="c" lang="en">In development; not evaluated</span></span></h3>
+            <p><span class="c" lang="th">กำลังพัฒนาตัวช่วย AI ที่อ่านรายงานที่เปิดอยู่ แล้วร่างสรุปภาษาไทยและร่างหนังสือส่งต่อถึงผู้ประเมิน FTO ทุกประโยคต้องอ้างข้อความในรายงานนั้น และตัวตรวจแบบกำหนดตายตัวจะปฏิเสธประโยคที่ไม่มีการอ้างอิง AI ไม่พยากรณ์ การจัดลำดับมาจากแบบจำลองที่ลงทะเบียนไว้ เนื้อหาที่ AI เขียนเป็นร่างเพื่อให้คนตรวจ และยังไม่ได้ประเมินคุณภาพ เว็บไซต์สาธารณะไม่มี AI</span><span class="c" lang="en">An AI assistant is in development. It will read the open dossier and draft a Thai summary and a hand-off letter to the FTO evaluator. Every sentence must cite a statement in that dossier, and a fixed rule-based checker rejects any sentence without a valid citation. AI does not forecast: the ranking comes from the registered model. AI output is a draft for a person to check. It has not been evaluated, and the public site has no AI.</span></p>
+          </div>
+          <div class="panel" id="mcp">
+            <h3 lang="en">MCP connector <span class="tag tag-verify"><span class="c" lang="th">วางแผนไว้</span><span class="c" lang="en">Planned</span></span></h3>
+            <p><span class="c" lang="th">วางแผนตัวเชื่อมต่อแบบอ่านอย่างเดียว (MCP) เพื่อให้เอเจนต์ AI ของผู้ใช้เองสืบค้นคิวตรวจ รายงาน และแหล่งที่มา ผลลัพธ์แต่ละรายการจะมีรหัสข้อความ แหล่งที่มา วันที่ และคำเตือนคงที่ และไม่มีข้อมูลผลลัพธ์จริงของ Track A ตัวเชื่อมต่อไม่มีโมเดลหรือคีย์ของตัวเอง ยังไม่เปิดให้ใช้ และจะบันทึกผลทดสอบกับแต่ละไคลเอนต์แทนการอ้างว่าใช้ได้</span><span class="c" lang="en">A read-only connector (MCP) is planned so that a user&rsquo;s own AI agent can query the review queue, dossiers and sources. Each result will carry statement IDs, source locators, the as-of date and the fixed disclaimer, and no outcome data from Track A. The connector has no model or keys of its own. It is not available yet, and compatibility will be tested and recorded for each client, not assumed.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="limits" aria-labelledby="limits-h">
       <div class="wrap">
         <h2 id="limits-h" lang="en">Limits</h2>
         <ul class="limits">
           <li><span class="c" lang="th">รายงานตัวอย่างในแอปใช้ข้อมูลช่วงพัฒนา (วันตัดข้อมูลก่อนปี 2017) ไม่ใช่ชุดทดสอบที่ปิดผนึก</span><span class="c" lang="en">The example dossiers in the app use development data (cutoffs before 2017), not the sealed test set.</span></li>
           <li><span class="c" lang="th">คำพยากรณ์ใช้แหล่งข้อมูลเปิดของสหรัฐฯ สถานะในไทยและอาเซียนส่วนใหญ่ยังไม่ได้ยืนยัน</span><span class="c" lang="en">Forecasts use open US sources. Thai and ASEAN status is mostly unverified.</span></li>
           <li><span class="c" lang="th">ระบบพยากรณ์วันอนุมัติขั้นสุดท้ายของยาสามัญรายแรก ไม่ใช่วันวางจำหน่ายหรือราคา</span><span class="c" lang="en">The model forecasts the first generic final approval, not the launch date or the price.</span></li>
-          <li><span class="c" lang="th">ยังไม่ยืนยันว่ากราฟหลักฐานช่วยเพิ่มความแม่นยำเมื่อเทียบกับแบบจำลองที่ไม่มีกราฟ</span><span class="c" lang="en">The evidence graph's added value over a model without it is not confirmed.</span></li>
-          <li><span class="c" lang="th">ผลของคำพยากรณ์ล่วงหน้า (Track A) ยังไม่ออก</span><span class="c" lang="en">Prospective (Track A) results are not yet available.</span></li>
+          <li><span class="c" lang="th">ยังไม่ยืนยันว่ากราฟหลักฐานช่วยเพิ่มผลลัพธ์เมื่อเทียบกับแบบจำลองที่ไม่มีกราฟ (H2 ไม่ผ่าน)</span><span class="c" lang="en">The evidence graph's added value over a model without it is not confirmed (H2 FAIL).</span></li>
+          <li><span class="c" lang="th">ผลของคำพยากรณ์ล่วงหน้า (Track A) ยังไม่ออก ช่วง 12 เดือนครบกำหนด 27 พ.ย. 2570 และช่วง 24 เดือน 27 พ.ย. 2571</span><span class="c" lang="en">Prospective (Track A) outcomes are pending: the 12-month window matures on 27 Nov 2027 and the 24-month window on 27 Nov 2028.</span></li>
           <li><span class="c" lang="th">ใช้ประกอบการตัดสินใจเท่านั้น ไม่ใช่ความเห็นทางกฎหมายหรือความเห็น FTO</span><span class="c" lang="en">Decision support only, not legal advice or an FTO opinion.</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section" id="download" aria-labelledby="dl-h">
+    <section class="section section-white" id="download" aria-labelledby="dl-h">
       <div class="wrap">
         <h2 id="dl-h" lang="en">Download</h2>
         <div class="dl">
@@ -200,7 +238,7 @@
             </dl>
           </div>
           <div class="dl-side">
-            <p><span class="c" lang="th">ตัวติดตั้งยังไม่ได้เผยแพร่บนหน้าดาวน์โหลดสาธารณะ ขอรับได้จากทีมโครงการ หรือสร้างเองจากซอร์สโค้ดตามคู่มือ ตรวจค่า SHA-256 ก่อนติดตั้งทุกครั้ง</span><span class="c" lang="en">The installer is not yet on a public download page. Ask the project team for a copy, or build it from source with the guide. Check the SHA-256 before installing.</span></p>
+            <p><span class="c" lang="th">เว็บไซต์สาธารณะจะอยู่บน Cloudflare Pages (ที่อยู่ลงท้ายด้วย .pages.dev) ซึ่งยังไม่ได้เผยแพร่ ตัวติดตั้งจึงยังไม่อยู่บนหน้าดาวน์โหลดสาธารณะ ขอรับได้จากทีมโครงการ หรือสร้างเองจากซอร์สโค้ดตามคู่มือ ตรวจค่า SHA-256 ก่อนติดตั้งทุกครั้ง</span><span class="c" lang="en">The public website will be hosted on Cloudflare Pages, at an address ending in .pages.dev. It is not deployed yet, so the installer is not on a public download page. Ask the project team for a copy, or build it from source with the guide. Check the SHA-256 before installing.</span></p>
             <div class="btns" lang="en">
               <a class="btn" href="https://github.com/siriponsri/patent-to-pilot/tree/research/loe-bench/product/desktop">Build instructions</a>
               <a class="btn btn-secondary" href="../demo/index.html">Open the web app</a>
@@ -228,7 +266,7 @@
       <ul>
         <li><a href="https://doi.org/10.17605/OSF.IO/P2SMD">OSF registration: doi:10.17605/OSF.IO/P2SMD</a></li>
         <li><a href="https://github.com/siriponsri/patent-to-pilot">Source code on GitHub</a></li>
-        <li>Code: Apache License 2.0. Fonts: SIL Open Font License 1.1. Data terms differ by source.</li>
+        <li>Code and product: Apache License 2.0. Fonts: SIL Open Font License 1.1. Data terms differ by source, see <a href="https://github.com/siriponsri/patent-to-pilot/blob/research/loe-bench/NOTICE">NOTICE</a>.</li>
       </ul>
     </div>
   </footer>
