@@ -64,6 +64,10 @@ Historical language models can encounter outcomes in training or input [22]. Tim
 
 Each method ranks eligible active-moiety sets using records available by the cutoff (Figure 1). The dossier records formulation and jurisdiction so specialists can check whether the evidence applies to the product. It identifies each material claim by source, version, content hash, exact locator and availability basis. It labels observations, estimates and scenarios and flags gaps for review.
 
+![Figure 1](figures/fig1_capacity_en.png)
+
+*Figure 1. Records available at each cutoff determined the review rankings. Each method received one slot per five eligible cases, rounded down. First final US generic approvals over the next 12 or 24 months supplied the outcomes for evaluation.*
+
 ### 3.2 Eligible cases, cutoff evidence and outcome
 
 A drug case at cutoff is an active-moiety set at an annual cutoff. The study requires a usable ingredient key, a dated original final new drug application (NDA) approval, a final original NDA classified exactly TYPE 1 by the cutoff and no first final generic approval by that date. The outcome is the first dated final approval of an original abbreviated new drug application (ANDA, ORIG/AP) after cutoff through the horizon end. The study requires complete follow-up.
@@ -84,10 +88,6 @@ The registered sequence tests M3 versus B1 at 24 months (H1), M3 versus M1 at 24
 
 We registered the analysis publicly on Open Science Framework (OSF) before scoring on 28 November 2026. The blinded gate checked edition coverage and required at least 50 distinct 24-month event drugs. It released only its verdict. The custodian issued that verdict at 05:12 UTC. Updates 1 and 2, approved before the gate, clarified the hash and attachments and allowed C9 training in December or January.
 
-![Figure 1](figures/fig1_capacity_en.png)
-
-*Figure 1. Records available at each cutoff determined the review rankings. Each method received one slot per five eligible cases, rounded down. First final US generic approvals over the next 12 or 24 months supplied the outcomes for evaluation.*
-
 Update 3 removed the month restriction at 09:09 UTC after scoring, preserving the historical inference rules and the requirement to train between admission and the prospective freeze [30].
 
 For prospective follow-up (Track A), we retrained on windows mature at the 27 November 2026 origin. The core includes B1, M1, M3 and the descriptive expiry-only baseline B3. The protocol requires a hash, Git tag and OSF timestamp before 31 January 2027 at 23:59 UTC and before post-origin outcome access. A late freeze leaves only exploratory analyses [30].
@@ -106,12 +106,11 @@ We measured reimbursement per prescription as total reimbursement in the fourth 
 
 ### 4.1 Recall at fixed review capacity
 
+The blinded gate passed, and we scored C′ as registered. Each horizon had 202 distinct event drugs. At equal review capacity, M3 captured 66.85% of the 368 event cases at 24 months, compared with 46.48% for B1. The paired gain was +20.37 percentage points (95% CI [+14.37, +26.16]). H1 passed against zero, and the interval exceeded the separate +10-point threshold. [GATE](../../../loe-bench/receipts/GATE.md) [SCORE](../../../loe-bench/receipts/SCORE.md#primary-family)
 
 ![Figure 2](figures/fig2_recall_en.png)
 
 *Figure 2. (a) Recall of each method at fixed review capacity on the sealed historical test C′. (b) At 24 months, M3 exceeded B1 by 20.37 percentage points; its 1.36-point difference from M1 had an interval spanning zero. Bars give two-sided 95% paired whole-drug bootstrap intervals; the dotted line marks the prespecified 10-point usefulness threshold.*
-
-The blinded gate passed, and we scored C′ as registered. Each horizon had 202 distinct event drugs. At equal review capacity, M3 captured 66.85% of the 368 event cases at 24 months, compared with 46.48% for B1. The paired gain was +20.37 percentage points (95% CI [+14.37, +26.16]). H1 passed against zero, and the interval exceeded the separate +10-point threshold. [GATE](../../../loe-bench/receipts/GATE.md) [SCORE](../../../loe-bench/receipts/SCORE.md#primary-family)
 
 At 24 months M1 captured 65.49%. Adding graph states to M1 changed 24-month recall by +1.36 percentage points (95% CI −2.20 to +3.01). The preregistered sequence stopped at H2. H2 did not establish an incremental gain. H3 is descriptive (+16.69 points, 95% CI [+9.98, +24.21]). In secondary comparisons, the table gained +19.01 [+13.34, +25.62] points over drug age at 24 months and +17.18 [+9.88, +24.06] at 12 months. [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses)
 
@@ -129,8 +128,6 @@ At the 2013 development cutoff, M3 captured 71.43% versus B1’s 45.83% of 21 ev
 
 Applying the 0.465 factor increased mean absolute error (MAE) for both Medicaid reimbursement measures in the retrospectively matched subset. Table 1 reports the differences. Four origins supplied 160 ingredient-origin pairs from 68 ingredients for reimbursement per prescription and 150 from 64 for annual reimbursement. Drift, the secondary baseline, reduced MAE on both measures.
 
-We report these comparisons descriptively, without adjustment for multiple comparisons. Gross pre-rebate payments include both Medicaid and other amounts in the matched source fields. Reserved C4 was not run because the 2018 outcome payload was absent from the freeze. The price factor can serve as a scenario assumption. [C4b](../../../loe-bench/receipts/C4b.md) [SCORE, C4](../../../loe-bench/receipts/SCORE.md#c4--medicaid-demand-and-reimbursement)
-
 *Table 1. Reimbursement MAE versus carry-forward.*
 
 | Comparison with carry-forward | Fourth-quarter USD per prescription [95% CI] | Annual USD millions [95% CI] |
@@ -138,6 +135,8 @@ We report these comparisons descriptively, without adjustment for multiple compa
 | B1-adjusted | +372.05 [193.27, 587.26] | +4.98 [2.24, 8.29] |
 | M3-adjusted | +381.24 [203.61, 606.77] | +21.43 [4.07, 53.21] |
 | Drift minus carry-forward | −172.13 [−292.12, −66.37] | −3.69 [−8.41, −0.20] |
+
+We report these comparisons descriptively, without adjustment for multiple comparisons. Gross pre-rebate payments include both Medicaid and other amounts in the matched source fields. Reserved C4 was not run because the 2018 outcome payload was absent from the freeze. The price factor can serve as a scenario assumption. [C4b](../../../loe-bench/receipts/C4b.md) [SCORE, C4](../../../loe-bench/receipts/SCORE.md#c4--medicaid-demand-and-reimbursement)
 
 ### 4.4 Dossier claim traceability and verification
 
