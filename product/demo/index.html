@@ -4,73 +4,74 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Market Window Dossier</title>
-  <meta name="description" content="Launch-window forecast and FTO evaluator hand-off dossier. Development data; decision support, not an FTO or legal opinion.">
+  <meta name="description" content="Review queue and dated, source-traced dossiers for planning generic development. Development data. Decision support only, not legal advice or an FTO opinion.">
+  <meta name="color-scheme" content="light">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#dossier" data-i18n="skip">ข้ามไปที่รายงาน</a>
+  <a class="skip-link" href="#dossier" lang="en">Skip to dossier</a>
 
-  <header class="topbar">
-    <div class="brand">
+  <header class="topbar" lang="en">
+    <a class="wordmark" href="#view=queue" data-nav="queue">
       <img src="assets/logo.svg" alt="" width="28" height="28">
-      <span class="brand-name">Market Window Dossier</span>
-    </div>
-    <div class="topbar-centre">
-      <span class="pill" data-i18n="pill">ข้อมูลช่วงพัฒนา · ไม่ใช่ความเห็น FTO</span>
-      <span class="pill pill-fixture" id="fixture-pill" hidden data-i18n="fixture">FIXTURE</span>
-    </div>
-    <div class="lang-toggle" role="group" data-i18n-aria="langGroup" aria-label="ภาษา">
-      <button type="button" data-lang="th" aria-pressed="true" lang="th">TH</button>
-      <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      <span>Market Window Dossier</span>
+    </a>
+    <nav class="topnav" aria-label="Main">
+      <a href="#view=queue" data-nav="queue">Queue</a>
+      <a href="#view=dossiers" data-nav="dossiers">Dossiers</a>
+      <a href="#view=sources" data-nav="sources">Sources</a>
+      <a href="#view=settings" data-nav="settings">Settings</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Content language">
+      <button type="button" data-lang="th" aria-pressed="true"><abbr title="Thai">TH</abbr></button>
+      <button type="button" data-lang="en" aria-pressed="false"><abbr title="English">EN</abbr></button>
     </div>
   </header>
 
-  <button type="button" class="rail-toggle" id="rail-toggle" aria-expanded="false" aria-controls="rail">
-    <span id="rail-toggle-label">ย้อนเวลา</span>
-    <span class="rail-toggle-chevron" aria-hidden="true">▾</span>
-  </button>
-
-  <div class="layout">
-    <aside class="rail" id="rail" data-i18n-aria="timeMachine" aria-label="ย้อนเวลา">
-      <h2 class="rail-title" data-i18n="timeMachine">ย้อนเวลา</h2>
-
-      <div class="field">
-        <span class="field-label" id="horizon-label" data-i18n="horizon">ช่วงพยากรณ์</span>
-        <div class="segmented" role="radiogroup" aria-labelledby="horizon-label" id="horizon-group"></div>
-      </div>
-
-      <div class="field">
-        <span class="field-label" id="cutoff-label" data-i18n="cutoff">ปีตัดข้อมูล</span>
-        <div class="stepper" role="group" aria-labelledby="cutoff-label">
-          <button type="button" class="stepper-btn" id="cutoff-prev" data-i18n-aria="prevYear" aria-label="ปีก่อนหน้า">−</button>
-          <output class="stepper-value num" id="cutoff-value" aria-live="polite">—</output>
-          <button type="button" class="stepper-btn" id="cutoff-next" data-i18n-aria="nextYear" aria-label="ปีถัดไป">+</button>
-        </div>
-      </div>
-
-      <p class="capacity" id="capacity"></p>
-      <ol class="queue" id="queue" data-i18n-aria="queueLabel" aria-label="คิวจัดอันดับ"></ol>
-      <p class="rail-legend" id="rail-legend"></p>
-    </aside>
-
-    <main class="dossier" id="dossier" tabindex="-1">
-      <p class="loading" data-i18n="loading">กำลังโหลดข้อมูล…</p>
-    </main>
+  <div class="notice" role="note">
+    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5"/><path d="M12 18h.01"/></svg>
+    <p><b lang="en">Decision support only. Not legal advice or an FTO opinion.</b>
+      <span id="notice-body" data-t="notice"></span></p>
   </div>
 
-  <div class="drawer-scrim" id="drawer-scrim" hidden></div>
-  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
-    <div class="drawer-head">
-      <h2 id="drawer-title" data-i18n="sources">แหล่งข้อมูล</h2>
-      <button type="button" class="icon-btn" id="drawer-close" data-i18n-aria="close" aria-label="ปิด">✕</button>
-    </div>
-    <div class="drawer-body" id="drawer-body"></div>
-  </aside>
+  <div class="app" id="app">
+    <section class="panel queue-panel" id="queue-panel" aria-labelledby="queue-h" tabindex="-1">
+      <div class="panel-head" lang="en"><h2 id="queue-h">Review queue</h2><span class="panel-meta" id="queue-meta"></span></div>
+      <div class="filters" lang="en">
+        <label class="field"><span>Horizon</span>
+          <select id="f-horizon"></select></label>
+        <label class="field"><span>As of</span>
+          <select id="f-asof"></select></label>
+        <label class="field field-wide"><span>Show</span>
+          <select id="f-show">
+            <option value="dossiers">Molecules with a dossier</option>
+            <option value="all">All ranked molecules</option>
+          </select></label>
+      </div>
+      <div class="queue-scroll" id="queue-scroll">
+        <table class="qtable" id="queue-table" aria-labelledby="queue-h" aria-describedby="queue-help">
+          <thead lang="en"><tr><th scope="col" class="c-rank">Rank</th><th scope="col">Molecule</th><th scope="col" class="c-num"><abbr title="Model M3: chance of a first generic approval within the horizon">M3</abbr></th><th scope="col" class="c-out" id="q-out-h" hidden>Outcome</th></tr></thead>
+          <tbody id="queue-body"><tr class="q-loading"><td colspan="3" lang="en">Loading queue…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="queue-help" id="queue-help" lang="en">Ranked by M3. Use the arrow keys to move through the queue.</p>
+    </section>
 
-  <footer class="footer">
-    <p data-i18n="footer1">เครื่องมือประกอบการตัดสินใจ ไม่ใช่ความเห็นด้าน FTO หรือความเห็นทางกฎหมาย</p>
-    <p class="footer-muted" data-i18n="footer2">ข้อมูล: ปีตัดข้อมูลช่วงพัฒนาก่อนปี 2017 ชุดทดสอบที่ปิดผนึกและ Track A ยังรอดำเนินการ</p>
+    <main class="panel dossier-panel" id="dossier" tabindex="-1" aria-live="polite" aria-busy="true">
+      <div class="state" lang="en"><p class="state-title">Loading data…</p></div>
+    </main>
+
+    <aside class="panel sources-panel" id="sources-panel" aria-labelledby="sources-h" tabindex="-1">
+      <div class="panel-head" lang="en"><h2 id="sources-h">Sources</h2><span class="panel-meta" id="sources-meta"></span></div>
+      <ol class="srclist" id="sources-list"></ol>
+    </aside>
+  </div>
+
+  <footer class="footer" lang="en">
+    <p>Market Window Dossier · Patent-to-Pilot project, King Mongkut's Institute of Technology Ladkrabang (KMITL)</p>
+    <p>Development data: US cutoffs before 2017. Analysis plan registered at <a href="https://doi.org/10.17605/OSF.IO/P2SMD">doi:10.17605/OSF.IO/P2SMD</a>.</p>
   </footer>
 
   <div class="sr-only" aria-live="polite" id="announcer"></div>

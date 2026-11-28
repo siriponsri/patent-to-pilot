@@ -1,201 +1,165 @@
-/* Market Window Dossier demo. Vanilla JS, no build step, no dependencies.
+/* Market Window Dossier app. Vanilla JS, no build step, no dependencies.
  *
- * Data loading order:
- *   http(s): data/index.json (PRD1 output) -> fixtures/index.json -> data.bundle.js
- *   file:    data.bundle.js (browsers block fetch() for file:// pages)
- * The index lists queues per (cutoff, horizon) and dossiers per (molecule, cutoff, horizon);
- * paths are relative to the index's folder. Contract: mwd.dossier.v1 / mwd.queue.v1.
+ * Data: http(s) reads data/index.json and the files it lists; file:// and failures fall back to
+ * data.bundle.js (browsers block fetch() for file:// pages). Contracts: mwd.index.v1, mwd.queue.v1
+ * (PRD1 `ranked_rows`, or the older fixture `rows`) and mwd.dossier.v1.
  *
- * URL hash keeps state, e.g. #lang=en&h=12&c=2013&m=talcoxib&tab=decision&reveal=1
- * (cite=<claim id> additionally opens the sources drawer for that claim; used for deep links.)
+ * Interface labels are English. Body content (statements, checklist items, notes) follows the
+ * TH/EN toggle, Thai by default, and the <html lang> attribute follows it.
+ *
+ * URL hash keeps state, e.g. #view=queue&lang=en&h=24&c=2014&m=U%3AU188XYD42P&tab=patents&reveal=1&src=patent-1
  */
 (function () {
   "use strict";
 
-  var SECTION_ORDER = ["decision", "market", "competition", "patents", "thai_asean", "handoff", "references"];
-  var SECTION_FALLBACK = {
-    decision: ["หน้าตัดสินใจ", "Decision"],
-    market: ["ช่วงเวลาตลาด", "Market window"],
-    competition: ["การแข่งขัน", "Competition"],
-    patents: ["สิทธิบัตรและสิทธิผูกขาด", "Patents & exclusivity"],
-    thai_asean: ["ไทยและอาเซียน", "Thailand & ASEAN"],
-    handoff: ["ส่งต่อผู้ประเมิน FTO", "FTO hand-off"],
-    references: ["เอกสารอ้างอิง", "References"]
-  };
+  var SECTIONS = [
+    { id: "decision", label: "Decision summary" },
+    { id: "market", label: "Market window" },
+    { id: "competition", label: "Competition" },
+    { id: "patents", label: "Patents" },
+    { id: "thai_asean", label: "Thailand and ASEAN" },
+    { id: "handoff", label: "FTO hand-off" },
+    { id: "references", label: "References" }
+  ];
+  var SECTION_IDS = SECTIONS.map(function (s) { return s.id; });
+  var VIEWS = ["queue", "dossiers", "sources", "settings"];
+  var MONTHS_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var MONTHS_TH = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
 
-  var I18N = {
+  /* Body content only. Every heading, label and button stays English (DESIGN.md). */
+  var T = {
     th: {
-      skip: "ข้ามไปที่รายงาน",
-      pill: "ข้อมูลช่วงพัฒนา · ไม่ใช่ความเห็น FTO",
-      fixture: "FIXTURE · ข้อมูลสังเคราะห์",
-      langGroup: "ภาษา",
-      timeMachine: "ย้อนเวลา",
-      horizon: "ช่วงพยากรณ์",
-      monthsShort: "เดือน",
-      cutoff: "ปีตัดข้อมูล",
-      prevYear: "ปีก่อนหน้า",
-      nextYear: "ปีถัดไป",
-      capacity: function (n) { return "ขีดความสามารถในการตรวจ: 1 ใน 5 (" + n + " ช่อง)"; },
-      capacityDivider: "ขีดความสามารถ",
-      queueLabel: "คิวจัดอันดับตามโอกาสเข้าตลาด (M3)",
-      inQueue: "อยู่ในคิว",
-      hasDossier: "มีรายงาน",
-      legend: "● มีรายงานให้เปิดดู · แถบสีเขียวอมฟ้า = อยู่ในคิวตรวจ",
-      railToggle: function (c, h) { return "ย้อนเวลา · ปี " + c + " · " + h + " เดือน"; },
-      loading: "กำลังโหลดข้อมูล…",
-      loadError: "โหลดข้อมูลไม่ได้ ถ้าเปิดจากไฟล์ในเครื่อง ให้รัน python product/demo/bundle.py เพื่อสร้าง data.bundle.js",
-      asOf: "ข้อมูล ณ",
-      horizonMeta: function (n) { return "พยากรณ์ " + n + " เดือน"; },
-      jurisdiction: "เขตอำนาจ",
-      forms: "รูปแบบยา",
-      status: { DEVELOPMENT_ONLY: "ใช้ในการพัฒนาเท่านั้น", TRACK_A_FROZEN: "Track A ตรึงแล้ว" },
-      tabsLabel: "ส่วนของรายงาน",
-      state: { known: "ทราบ", unknown: "ต้องตรวจ", not_applicable: "ไม่เกี่ยวข้อง" },
-      kind: { observed: "ข้อมูลสังเกต", estimate: "ค่าประมาณ", assumption: "สมมติฐาน" },
-      openInTab: function (n) { return n + " ข้อต้องตรวจ"; },
-      probTitle: function (h) { return "โอกาสที่ยาสามัญรายแรกได้รับอนุมัติภายใน " + h + " เดือน"; },
-      b1: "เส้นฐาน",
-      queueTitle: "อันดับในคิวผู้ประเมิน",
-      rankOf: function (r, n) { return "จาก " + n; },
-      slots: function (k) { return "คิวรับได้ " + k + " ช่อง"; },
-      inQ: "อยู่ในคิว",
-      outQ: "อยู่นอกคิว",
-      decisive: "สมมติฐานชี้ขาด",
-      openIssues: "ประเด็นที่ยังเปิด",
-      openSub: "ข้อความที่ยังต้องตรวจยืนยันทั้งรายงาน",
-      nextAction: "ขั้นต่อไป",
-      reveal: "เปิดดูสิ่งที่เกิดขึ้นจริง",
-      hideReveal: "ซ่อนผลลัพธ์",
-      revealFirst: function (d) { return "ยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายเมื่อ " + d; },
-      revealNone: function (d) { return "ไม่มียาสามัญรายแรกภายในช่วงพยากรณ์ (ถึง " + d + ")"; },
-      capture: function (x, y, z) { return "คิวนี้จับเหตุการณ์ได้ <b>" + x + " จาก " + y + "</b> เหตุการณ์ (M3) เทียบกับ <b>" + z + "</b> (B1)"; },
-      captured: "เกิดเหตุการณ์ · อยู่ในคิว",
-      missed: "เกิดเหตุการณ์ · พลาด (นอกคิว)",
-      revealedNote: "ผลลัพธ์เป็นข้อมูลช่วงพัฒนา ใช้ทบทวนย้อนหลังเท่านั้น",
-      sources: "แหล่งข้อมูล",
-      close: "ปิด",
-      citeLabel: function (n, issuer) { return "แหล่งข้อมูล " + n + ": " + issuer; },
-      noSource: "ไม่มีแหล่งอ้างอิง",
-      issuer: "ผู้ออก",
-      version: "ฉบับ",
-      publicDate: "วันที่เผยแพร่",
-      undated: "ไม่ระบุวันที่ (ค้นแบบสด)",
-      locator: "ตำแหน่ง",
-      url: "ลิงก์",
-      retrieved: "ดึงข้อมูลเมื่อ",
-      copy: "คัดลอก",
-      copied: "คัดลอกแล้ว",
-      copyLabel: "คัดลอกค่า SHA-256",
-      claimsEmpty: "ไม่มีข้อความในส่วนนี้",
-      claimCount: function (n) { return n + " ข้อความ"; },
-      checklist: "รายการตรวจสำหรับผู้ประเมิน",
+      notice: "แอปนี้ใช้ข้อมูลช่วงพัฒนา (วันตัดข้อมูลก่อนปี 2017) ผู้เชี่ยวชาญกฎหมายที่มีคุณสมบัติเป็นผู้ประเมินเสรีภาพในการดำเนินการ (FTO)",
+      intro: {
+        decision: "อันดับในคิวตรวจ โอกาสที่ยาสามัญรายแรกจะได้รับอนุมัติภายในช่วงพยากรณ์ และสิ่งที่ต้องทำต่อ",
+        market: "โอกาสเข้าตลาดภายในช่วงพยากรณ์ สมมติฐานด้านราคา และข้อมูลความต้องการใช้ยาย้อนหลัง",
+        competition: "ผู้ยื่นขอยาสามัญที่ได้รับอนุมัติแล้ว รูปแบบยา และวันอนุมัติยาต้นแบบ",
+        patents: "สิทธิบัตรและสิทธิผูกขาดใน Orange Book ฉบับที่เผยแพร่ก่อนวันตัดข้อมูล และคดีความที่เกี่ยวข้อง",
+        thai_asean: "ตระกูลสิทธิบัตร สถานะในไทย และทะเบียนตำรับยา รายการที่ยังยืนยันไม่ได้จะแสดงว่า “ต้องตรวจ”",
+        handoff: "รายการที่ส่งต่อให้ผู้ประเมิน FTO และผู้ตรวจที่เกี่ยวข้อง ช่องที่ทำเครื่องหมายบันทึกไว้ในเบราว์เซอร์นี้เท่านั้น",
+        references: "แหล่งข้อมูลทุกรายการ พร้อมฉบับ ตำแหน่งข้อมูล และค่า SHA-256 สำหรับตรวจซ้ำ"
+      },
+      status: { known: "ทราบ", verify: "ต้องตรวจ", assumption: "สมมติฐาน", na: "ไม่เกี่ยวข้อง" },
+      estimate: "ค่าประมาณ",
+      owner: { "FTO evaluator": "ผู้ประเมิน FTO", "Patent reviewer": "ผู้ตรวจสิทธิบัตร", "R&D": "ฝ่ายวิจัยและพัฒนา", "BD": "ฝ่ายพัฒนาธุรกิจ",
+        "Thai patent reviewer": "ผู้ตรวจสิทธิบัตรไทย", "Thai regulatory reviewer": "ผู้ตรวจทะเบียนยาไทย" },
+      outcomeTag: { caught: "จับได้", missed: "พลาด", none: "ไม่เกิด" },
+      firstApproval: function (d, h) { return "ยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายเมื่อ " + d + " ภายในช่วงพยากรณ์ " + h + " เดือน"; },
+      noApproval: function (d) { return "ไม่มียาสามัญรายแรกได้รับอนุมัติภายในช่วงพยากรณ์ (สิ้นสุด " + d + ")"; },
+      result: {
+        caught: "อยู่ในคิวตรวจ และเกิดเหตุการณ์จริง",
+        missed: "อยู่นอกคิวตรวจ แต่เกิดเหตุการณ์จริง ระบบพลาดกรณีนี้",
+        falseAlarm: "อยู่ในคิวตรวจ แต่ไม่เกิดเหตุการณ์ภายในช่วงพยากรณ์",
+        quiet: "อยู่นอกคิวตรวจ และไม่เกิดเหตุการณ์"
+      },
+      capture: function (m, n, b) { return "คิวนี้จับยาที่มียาสามัญรายแรกได้ " + m + " จาก " + n + " รายการ (M3) ส่วนเกณฑ์เทียบตามอายุยา (B1) จับได้ " + b + " รายการ (ค่าคาดหมาย แบ่งกรณีคะแนนเท่ากันที่เส้นขีดความสามารถ)"; },
+      outcomeNote: "ผลลัพธ์นี้เป็นข้อมูลช่วงพัฒนา ใช้ทบทวนย้อนหลังเท่านั้น ระบบไม่เห็นผลนี้ตอนจัดอันดับ",
+      nextFallback: "ตรวจรายการในหัวข้อ FTO hand-off",
+      noDossier: function (n) { return "ยังไม่มีรายงานของ " + n + " สำหรับช่วงพยากรณ์และวันที่นี้"; },
+      noDossierBody: function (r, n, m, b) { return "อันดับ " + r + " จาก " + n + " · M3 " + m + " · B1 " + b + " แอปนี้มีรายงานเฉพาะยาตัวอย่าง 6 รายการในข้อมูลช่วงพัฒนา"; },
+      undated: "ไม่ระบุวันที่",
+      checkNote: "ช่องที่ทำเครื่องหมายบันทึกไว้ในเบราว์เซอร์นี้เท่านั้น ไม่ได้ส่งไปที่ใด",
       progress: function (a, b) { return "ตรวจแล้ว " + a + " จาก " + b; },
-      checklistNote: "ช่องทำเครื่องหมายบันทึกไว้ในเบราว์เซอร์นี้เท่านั้น ไม่ได้ส่งไปที่ใด",
-      owner: { "FTO evaluator": "ผู้ประเมิน FTO", "R&D": "R&D", "BD": "BD" },
-      refsCount: function (n) { return n + " แหล่ง"; },
-      repro: function (schema, asof, fx) { return "สัญญาข้อมูล " + schema + " · ข้อมูล ณ " + asof + (fx ? " · FIXTURE ข้อมูลสังเคราะห์ ไม่ใช่ผลจริง" : ""); },
-      noDossierTitle: function (n) { return "ยังไม่มีรายงานของ " + n + " สำหรับปีตัดข้อมูลนี้"; },
-      noDossierBody: function (p, b, r) { return "อันดับ " + r + " · M3 " + p + "% · B1 " + b + "% เลือกยาที่มีจุด ● ในคิวเพื่อเปิดรายงาน"; },
-      footer1: "เครื่องมือประกอบการตัดสินใจ ไม่ใช่ความเห็นด้าน FTO หรือความเห็นทางกฎหมาย",
-      footer2: "ข้อมูล: ปีตัดข้อมูลช่วงพัฒนาก่อนปี 2017 ชุดทดสอบที่ปิดผนึกและ Track A ยังรอดำเนินการ"
+      emptyClaims: "ไม่มีข้อความในหัวข้อนี้",
+      emptyQueue: "ไม่มีรายงานสำหรับช่วงพยากรณ์และวันที่นี้",
+      settingsLang: "ภาษาของเนื้อหา: ข้อความ รายการตรวจ และหมายเหตุ หัวข้อและปุ่มเป็นภาษาอังกฤษเสมอ",
+      capacityText: "คิวตรวจรับได้ 1 ใน 5 ของยาที่เข้าเกณฑ์ในแต่ละวันตัดข้อมูล ซึ่งเป็นงบการตรวจเดียวกับที่ใช้ทดสอบความแม่นยำ",
+      storageText: function (n) { return "มีรายการตรวจที่บันทึกไว้ในเบราว์เซอร์นี้ " + n + " รายงาน"; },
+      cleared: "ล้างรายการตรวจที่บันทึกไว้แล้ว",
+      copied: "คัดลอกค่า SHA-256 แล้ว"
     },
     en: {
-      skip: "Skip to dossier",
-      pill: "Development data · not an FTO opinion",
-      fixture: "FIXTURE · synthetic data",
-      langGroup: "Language",
-      timeMachine: "Time machine",
-      horizon: "Horizon",
-      monthsShort: "months",
-      cutoff: "Cutoff year",
-      prevYear: "Previous year",
-      nextYear: "Next year",
-      capacity: function (n) { return "Review capacity: 1 in 5 (" + n + " slots)"; },
-      capacityDivider: "capacity",
-      queueLabel: "Queue ranked by entry probability (M3)",
-      inQueue: "in queue",
-      hasDossier: "dossier available",
-      legend: "● dossier available · teal bar = inside review capacity",
-      railToggle: function (c, h) { return "Time machine · " + c + " · " + h + " months"; },
-      loading: "Loading data…",
-      loadError: "Could not load data. When opening from a local file, run python product/demo/bundle.py to create data.bundle.js.",
-      asOf: "As of",
-      horizonMeta: function (n) { return n + "-month horizon"; },
-      jurisdiction: "Jurisdiction",
-      forms: "Forms",
-      status: { DEVELOPMENT_ONLY: "Development only", TRACK_A_FROZEN: "Track A frozen" },
-      tabsLabel: "Dossier sections",
-      state: { known: "known", unknown: "verify", not_applicable: "n/a" },
-      kind: { observed: "observed", estimate: "estimate", assumption: "assumption" },
-      openInTab: function (n) { return n + " to verify"; },
-      probTitle: function (h) { return "Chance a first generic gets final approval within " + h + " months"; },
-      b1: "baseline",
-      queueTitle: "Evaluator queue rank",
-      rankOf: function (r, n) { return "of " + n; },
-      slots: function (k) { return k + " review slots"; },
-      inQ: "In queue",
-      outQ: "Outside queue",
-      decisive: "Decisive assumption",
-      openIssues: "Open issues",
-      openSub: "claims still to verify across the dossier",
-      nextAction: "Next action",
-      reveal: "Reveal what happened",
-      hideReveal: "Hide outcome",
-      revealFirst: function (d) { return "First final ANDA approval on " + d; },
-      revealNone: function (d) { return "No first generic in window (through " + d + ")"; },
-      capture: function (x, y, z) { return "This queue captured <b>" + x + " of " + y + "</b> events (M3) vs <b>" + z + "</b> (B1)"; },
-      captured: "event · in queue",
-      missed: "event · missed (outside queue)",
-      revealedNote: "Development outcome, for retrospective review only.",
-      sources: "Sources",
-      close: "Close",
-      citeLabel: function (n, issuer) { return "Source " + n + ": " + issuer; },
-      noSource: "no source",
-      issuer: "Issuer",
-      version: "Version",
-      publicDate: "Public date",
-      undated: "Undated (live lookup)",
-      locator: "Locator",
-      url: "URL",
-      retrieved: "Retrieved",
-      copy: "Copy",
-      copied: "Copied",
-      copyLabel: "Copy SHA-256",
-      claimsEmpty: "No claims in this section.",
-      claimCount: function (n) { return n + (n === 1 ? " claim" : " claims"); },
-      checklist: "Evaluator checklist",
+      notice: "This app uses development data (cutoffs before 2017). Qualified counsel decides freedom to operate (FTO).",
+      intro: {
+        decision: "Queue position, the chance of a first generic approval within the horizon, and what to do next.",
+        market: "Chance of market entry within the horizon, price assumptions and past demand.",
+        competition: "Approved generic applicants, dosage forms and the originator's approval dates.",
+        patents: "Patents and exclusivities in the Orange Book edition public before the cutoff, and related court cases.",
+        thai_asean: "Patent families, Thai status and drug registration. Anything not yet confirmed is marked verify.",
+        handoff: "Items handed to the FTO evaluator and other reviewers. Ticks are saved in this browser only.",
+        references: "Every source with its edition, locator and SHA-256 hash, so the dossier can be reproduced."
+      },
+      status: { known: "known", verify: "verify", assumption: "assumption", na: "not applicable" },
+      estimate: "estimate",
+      owner: {},
+      outcomeTag: { caught: "Caught", missed: "Missed", none: "No event" },
+      firstApproval: function (d, h) { return "First generic final approval on " + d + ", within the " + h + "-month horizon."; },
+      noApproval: function (d) { return "No first generic approval within the horizon (ended " + d + ")."; },
+      result: {
+        caught: "In the review queue, and the event happened.",
+        missed: "Outside the review queue, but the event happened. The system missed this case.",
+        falseAlarm: "In the review queue, but no event within the horizon.",
+        quiet: "Outside the review queue, and no event."
+      },
+      capture: function (m, n, b) { return "This queue caught " + m + " of " + n + " molecules that got a first generic (M3). The drug-age baseline (B1) caught " + b + " (expected value, ties at the capacity line shared)."; },
+      outcomeNote: "Development outcome, for retrospective review only. The ranking did not see it.",
+      nextFallback: "Work through the FTO hand-off items.",
+      noDossier: function (n) { return "No dossier for " + n + " at this horizon and date."; },
+      noDossierBody: function (r, n, m, b) { return "Rank " + r + " of " + n + " · M3 " + m + " · B1 " + b + ". The app holds dossiers for six example molecules in the development data."; },
+      undated: "Not dated",
+      checkNote: "Ticks are saved in this browser only and are not sent anywhere.",
       progress: function (a, b) { return a + " of " + b + " checked"; },
-      checklistNote: "Checkboxes are saved in this browser only and are not sent anywhere.",
-      owner: { "FTO evaluator": "FTO evaluator", "R&D": "R&D", "BD": "BD" },
-      refsCount: function (n) { return n + (n === 1 ? " source" : " sources"); },
-      repro: function (schema, asof, fx) { return "Contract " + schema + " · as of " + asof + (fx ? " · FIXTURE synthetic data, not real results" : ""); },
-      noDossierTitle: function (n) { return "No dossier for " + n + " at this cutoff yet"; },
-      noDossierBody: function (p, b, r) { return "Rank " + r + " · M3 " + p + "% · B1 " + b + "%. Pick a drug marked ● in the queue to open its dossier."; },
-      footer1: "Decision support, not an FTO or legal opinion",
-      footer2: "Data: development cutoffs before 2017; sealed test and Track A pending"
+      emptyClaims: "No statements in this section.",
+      emptyQueue: "No dossiers for this horizon and date.",
+      settingsLang: "Content language for statements, checklist items and notes. Headings and buttons are always English.",
+      capacityText: "The review queue holds 1 in 5 eligible molecules at each cutoff, the same review budget used in accuracy testing.",
+      storageText: function (n) { return "Checklist ticks are saved in this browser for " + n + (n === 1 ? " dossier." : " dossiers."); },
+      cleared: "Saved checklist ticks cleared.",
+      copied: "SHA-256 copied."
     }
   };
 
   var state = {
-    lang: "th", horizon: 12, cutoff: null, key: null, tab: "decision", revealed: false,
-    index: null, fetcher: null, queue: null, dossier: null, fixture: false
+    lang: "th", view: "queue", horizon: 12, cutoff: null, key: null, tab: "decision", revealed: false,
+    show: "dossiers", src: null, index: null, fetcher: null, via: "", queue: null, dossier: null,
+    error: null, sourceFilter: "", dossierFilter: ""
   };
   var cache = {};
-  var lastFocus = null;
 
+  /* ---------- helpers ---------- */
   function $(id) { return document.getElementById(id); }
-  function t(k) { return I18N[state.lang][k]; }
+  function tx() { return T[state.lang]; }
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
-  function pct(p) { return p == null ? "—" : String(Math.round(p * 100)); }
   function L(obj, base) { return obj[base + "_" + state.lang] || obj[base + "_en"] || obj[base + "_th"] || ""; }
-  function store(get, k, v) {
-    try { if (get) return window.localStorage.getItem(k); window.localStorage.setItem(k, v); } catch (e) { return null; }
+  function pct(p, digits) { return p == null ? "—" : (p * 100).toFixed(digits == null ? 1 : digits) + "%"; }
+  function store(k, v) {
+    try {
+      if (v === undefined) return window.localStorage.getItem(k);
+      if (v === null) window.localStorage.removeItem(k); else window.localStorage.setItem(k, v);
+    } catch (e) { /* storage blocked: the app still works, ticks just do not persist */ }
     return null;
   }
+  function fmtDate(iso, lang) {
+    if (!iso) return "—";
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
+    if (!m) return iso;
+    var d = Number(m[3]), mo = Number(m[2]) - 1, y = Number(m[1]);
+    return (lang || "en") === "th" ? d + " " + MONTHS_TH[mo] + " " + (y + 543) : d + " " + MONTHS_EN[mo] + " " + y;
+  }
+  function niceName(n) {
+    if (!n) return "—";
+    if (n !== n.toUpperCase()) return n;
+    var s = n.toLowerCase();
+    var i = s.search(/[a-z]/);
+    return i < 0 ? s : s.slice(0, i) + s.charAt(i).toUpperCase() + s.slice(i + 1);
+  }
+  function niceForm(f) {
+    return String(f).toLowerCase().replace(/\b(iv|im|sc|er|xr|dr|odt)\b/g, function (w) { return w.toUpperCase(); })
+      .replace(/^./, function (c) { return c.toUpperCase(); });
+  }
+  function icon(name) {
+    var p = {
+      print: '<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="1"/><path d="M6 14h12v7H6z"/>',
+      eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+      link: '<path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'
+    }[name];
+    return '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24">' + p + "</svg>";
+  }
+  function announce(msg) { var a = $("announcer"); a.textContent = ""; setTimeout(function () { a.textContent = msg; }, 30); }
 
   /* ---------- data ---------- */
   function getJSON(url) {
@@ -207,33 +171,50 @@
   function loadScript(src) {
     return new Promise(function (res, rej) {
       var s = document.createElement("script");
-      s.src = src; s.onload = res; s.onerror = function () { rej(new Error("missing " + src)); };
+      s.src = src; s.onload = res; s.onerror = function () { rej(new Error("Missing " + src)); };
       document.head.appendChild(s);
     });
   }
   function fromBundle() {
     var D = window.MWD_DATA;
+    if (!D || !D.index) throw new Error("data.bundle.js has no index");
     return {
-      index: D.index,
-      fetcher: function (p) { return D.files[p] ? Promise.resolve(D.files[p]) : Promise.reject(new Error("not bundled: " + p)); }
+      via: "data.bundle.js (" + D.base + ")", index: D.index,
+      fetcher: function (p) { return D.files[p] ? Promise.resolve(D.files[p]) : Promise.reject(new Error("Not bundled: " + p)); }
     };
   }
   function loadData() {
-    function bundle() {
-      if (window.MWD_DATA) return Promise.resolve(fromBundle());
-      return loadScript("data.bundle.js").then(fromBundle);
-    }
+    function bundle() { return window.MWD_DATA ? Promise.resolve(fromBundle()) : loadScript("data.bundle.js").then(fromBundle); }
     if (location.protocol === "file:") return bundle();
-    function tryBase(base) {
-      return getJSON(base + "/index.json").then(function (idx) {
-        return { index: idx, fetcher: function (p) { return getJSON(base + "/" + p); } };
-      });
-    }
-    return tryBase("data").catch(function () { return tryBase("fixtures"); }).catch(bundle);
+    return getJSON("data/index.json").then(function (idx) {
+      return { via: "data/index.json", index: idx, fetcher: function (p) { return getJSON("data/" + p); } };
+    }).catch(bundle);
   }
   function load(path) {
     if (!cache[path]) cache[path] = state.fetcher(path);
     return cache[path];
+  }
+  function normQueue(q) {
+    var rows = (q.ranked_rows || q.rows || []).slice().sort(function (a, b) {
+      return (a.m3_rank || 0) - (b.m3_rank || 0) || (b.m3_p || 0) - (a.m3_p || 0);
+    });
+    rows.forEach(function (r, i) { if (!r.m3_rank) r.m3_rank = i + 1; });
+    var size = q.queue_size || rows.filter(function (r) { return r.in_queue; }).length;
+    var events = rows.filter(function (r) { return r.event; }).length;
+    var caught = rows.filter(function (r) { return r.event && r.in_queue; }).length;
+    return { as_of: q.as_of, horizon: q.horizon_months, window_end: q.window_end, size: size, rows: rows,
+      events: events, caught: caught, b1: b1Capture(rows, size) };
+  }
+  /* B1 queue at the same capacity: rank by B1; molecules tied at the capacity line share the
+     remaining slots, so the capture is an expected value (as in the registered analysis). */
+  function b1Capture(rows, size) {
+    var sorted = rows.slice().sort(function (a, b) { return (b.b1_p || 0) - (a.b1_p || 0); });
+    if (!sorted.length || !size) return 0;
+    var line = sorted[Math.min(size, sorted.length) - 1].b1_p;
+    var above = sorted.filter(function (r) { return r.b1_p > line; });
+    var tied = sorted.filter(function (r) { return r.b1_p === line; });
+    var share = (size - above.length) / tied.length;
+    return above.filter(function (r) { return r.event; }).length + share * tied.filter(function (r) { return r.event; }).length;
   }
 
   function horizons() {
@@ -248,13 +229,16 @@
   function queueEntry() {
     return state.index.queues.find(function (q) { return q.horizon_months === state.horizon && String(q.cutoff) === state.cutoff; });
   }
-  function dossierEntry(key) {
-    return (state.index.dossiers || []).find(function (d) {
-      return d.key === key && d.horizon_months === state.horizon && String(d.cutoff) === state.cutoff;
-    });
+  function dossierEntry(key, h, c) {
+    h = h || state.horizon; c = c || state.cutoff;
+    return (state.index.dossiers || []).find(function (d) { return d.key === key && d.horizon_months === h && String(d.cutoff) === c; });
+  }
+  function asOfOf(c) {
+    var q = state.index.queues.find(function (x) { return String(x.cutoff) === String(c); });
+    return q ? q.as_of : c + "-01-01";
   }
 
-  /* ---------- hash state ---------- */
+  /* ---------- hash ---------- */
   function readHash() {
     var out = {};
     location.hash.replace(/^#/, "").split("&").forEach(function (kv) {
@@ -264,286 +248,512 @@
     });
     return out;
   }
+  var writingHash = false;
   function writeHash() {
-    var parts = ["lang=" + state.lang, "h=" + state.horizon, "c=" + state.cutoff];
-    if (state.key) parts.push("m=" + encodeURIComponent(state.key));
-    if (state.tab !== "decision") parts.push("tab=" + state.tab);
-    if (state.revealed) parts.push("reveal=1");
-    try { history.replaceState(null, "", "#" + parts.join("&")); } catch (e) { /* file:// in some browsers */ }
+    var p = ["view=" + state.view, "lang=" + state.lang, "h=" + state.horizon, "c=" + state.cutoff];
+    if (state.key) p.push("m=" + encodeURIComponent(state.key));
+    if (state.tab !== "decision") p.push("tab=" + state.tab);
+    if (state.revealed) p.push("reveal=1");
+    if (state.show !== "dossiers") p.push("show=" + state.show);
+    if (state.src) p.push("src=" + encodeURIComponent(state.src));
+    var h = "#" + p.join("&");
+    if (location.hash === h) return;
+    writingHash = true;
+    try { history.replaceState(null, "", h); } catch (e) { location.hash = h; }
+    setTimeout(function () { writingHash = false; }, 0);
   }
 
   /* ---------- language ---------- */
   function applyLang() {
     document.documentElement.lang = state.lang;
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var v = t(el.getAttribute("data-i18n"));
-      if (typeof v === "string") el.textContent = v;
-    });
-    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
-      var v = t(el.getAttribute("data-i18n-aria"));
-      if (typeof v === "string") el.setAttribute("aria-label", v);
-    });
-    document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+    document.querySelectorAll("[data-t]").forEach(function (el) { el.textContent = tx()[el.getAttribute("data-t")]; });
+    document.querySelectorAll(".lang button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === state.lang));
     });
   }
 
-  /* ---------- rail ---------- */
-  function renderHorizon() {
-    var g = $("horizon-group");
-    g.innerHTML = horizons().map(function (h) {
-      var on = h === state.horizon;
-      return '<button type="button" role="radio" aria-checked="' + on + '" tabindex="' + (on ? 0 : -1) +
-        '" data-h="' + h + '"><span class="num">' + h + "</span> " + esc(t("monthsShort")) + "</button>";
+  /* ---------- queue panel ---------- */
+  function renderFilters() {
+    $("f-horizon").innerHTML = horizons().map(function (h) {
+      return '<option value="' + h + '"' + (h === state.horizon ? " selected" : "") + ">" + h + " months</option>";
     }).join("");
+    $("f-asof").innerHTML = cutoffsFor(state.horizon).map(function (c) {
+      return '<option value="' + c + '"' + (c === state.cutoff ? " selected" : "") + ">" + fmtDate(asOfOf(c)) + "</option>";
+    }).join("");
+    $("f-show").value = state.show;
   }
-  function renderStepper() {
-    var list = cutoffsFor(state.horizon), i = list.indexOf(state.cutoff);
-    $("cutoff-value").textContent = state.cutoff || "—";
-    $("cutoff-prev").disabled = i <= 0;
-    $("cutoff-next").disabled = i < 0 || i >= list.length - 1;
+  function outcomeTag(r) {
+    var o = tx().outcomeTag;
+    if (r.event && r.in_queue) return '<span class="tag tag-known">' + esc(o.caught) + "</span>";
+    if (r.event) return '<span class="tag tag-miss">' + esc(o.missed) + "</span>";
+    return '<span class="tag tag-na">' + esc(o.none) + "</span>";
   }
   function renderQueue() {
-    var q = state.queue, ol = $("queue");
-    if (!q) { ol.innerHTML = ""; return; }
-    var slots = q.queue_size || q.rows.filter(function (r) { return r.in_queue; }).length;
-    $("capacity").textContent = t("capacity")(slots);
-    var html = [];
-    q.rows.forEach(function (r, i) {
-      var has = !!dossierEntry(r.key);
-      var cls = "q-row" + (r.in_queue ? " in-queue" : "") + (has ? "" : " no-doc");
-      var ev = "";
-      if (r.event) {
-        ev = r.in_queue ? '<span class="q-event captured">● ' + esc(t("captured")) + "</span>"
-          : '<span class="q-event missed">✕ ' + esc(t("missed")) + "</span>";
+    var q = state.queue, body = $("queue-body");
+    $("q-out-h").hidden = !state.revealed;
+    if (!q) { body.innerHTML = ""; $("queue-meta").textContent = ""; return; }
+    $("queue-meta").textContent = q.size + " of " + q.rows.length + " reviewed";
+    var rows = state.show === "all" ? q.rows : q.rows.filter(function (r) { return dossierEntry(r.key); });
+    var cols = state.revealed ? 4 : 3;
+    if (!rows.length) {
+      body.innerHTML = '<tr class="q-empty"><td colspan="' + cols + '">' + esc(tx().emptyQueue) + "</td></tr>";
+      return;
+    }
+    var html = [], dividerDone = false;
+    rows.forEach(function (r) {
+      if (!dividerDone && !r.in_queue) {
+        html.push('<tr class="cap" lang="en"><td colspan="' + cols + '">Review capacity: ' + q.size + " of " + q.rows.length + " (1 in 5)</td></tr>");
+        dividerDone = true;
       }
-      var label = (i + 1) + ". " + r.display_name + ", M3 " + pct(r.m3_p) + "%" +
-        (r.in_queue ? ", " + t("inQueue") : "") + (has ? ", " + t("hasDossier") : "");
-      html.push('<li><button type="button" class="' + cls + '" data-key="' + esc(r.key) + '"' +
-        (r.key === state.key ? ' aria-current="true"' : "") + ' aria-label="' + esc(label) + '">' +
-        '<span class="q-rank num" aria-hidden="true">' + (i + 1) + "</span>" +
-        '<span class="q-name" aria-hidden="true">' + esc(r.display_name) + (has ? '<span class="q-doc"></span>' : "") + "</span>" +
-        '<span class="bar" aria-hidden="true"><span style="width:' + Math.max(1, Math.round(r.m3_p * 100)) + '%"></span></span>' +
-        '<span class="q-pct num" aria-hidden="true">' + pct(r.m3_p) + "%</span>" +
-        '<span class="q-tick" aria-hidden="true">' + (r.in_queue ? "✓" : "") + "</span>" + ev +
-        "</button></li>");
-      if (i === slots - 1 && i < q.rows.length - 1) {
-        html.push('<li class="cap-divider" role="separator" aria-label="' + esc(t("capacityDivider")) + '">' + esc(t("capacityDivider")) + "</li>");
-      }
+      var has = !!dossierEntry(r.key), cur = r.key === state.key;
+      var label = niceName(r.display_name);
+      html.push('<tr class="q-row' + (cur ? " is-current" : "") + (has ? "" : " q-nodoc") + '" data-key="' + esc(r.key) + '">' +
+        '<td class="q-rank num">' + r.m3_rank + "</td>" +
+        '<td class="q-name"><button type="button" class="q-btn" data-key="' + esc(r.key) + '"' + (cur ? ' aria-current="true"' : "") +
+        ' tabindex="' + (cur ? 0 : -1) + '">' + esc(label) +
+        '<span class="sr-only" lang="en">, rank ' + r.m3_rank + ", M3 " + pct(r.m3_p) + (r.in_queue ? ", in review queue" : ", outside review queue") + "</span>" +
+        (has ? "" : '<span class="q-doc-mark" lang="en">No dossier</span>') + "</button></td>" +
+        '<td class="q-pct c-num num">' + pct(r.m3_p) + "</td>" +
+        (state.revealed ? '<td class="q-out">' + outcomeTag(r) + "</td>" : "") + "</tr>");
     });
-    ol.innerHTML = html.join("");
-    ol.classList.toggle("revealed", state.revealed);
-    $("rail-legend").textContent = t("legend");
-    $("rail-toggle-label").textContent = t("railToggle")(state.cutoff, state.horizon);
+    if (!dividerDone && state.show === "all") {
+      html.push('<tr class="cap" lang="en"><td colspan="' + cols + '">Review capacity: ' + q.size + " of " + q.rows.length + "</td></tr>");
+    }
+    body.innerHTML = html.join("");
+    if (!body.querySelector(".q-btn[tabindex='0']")) { var f = body.querySelector(".q-btn"); if (f) f.tabIndex = 0; }
+  }
+  function scrollQueueToCurrent() {
+    var cur = $("queue-body").querySelector("tr.is-current");
+    if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
   }
 
   /* ---------- dossier ---------- */
-  function sectionsOf(d) {
-    var byId = {};
-    (d.sections || []).forEach(function (s) { byId[s.id] = s; });
-    return SECTION_ORDER.map(function (id, i) {
-      var s = byId[id] || { id: id, title_th: SECTION_FALLBACK[id][0], title_en: SECTION_FALLBACK[id][1] };
-      return { id: id, n: i + 1, src: s, title: L(s, "title") || SECTION_FALLBACK[id][state.lang === "th" ? 0 : 1] };
-    });
+  function statusOf(c) {
+    if (c.state === "unknown") return "verify";
+    if (c.state === "not_applicable") return "na";
+    if (c.kind === "assumption") return "assumption";
+    return "known";
   }
-  function sourceIndex(d) {
+  function statusTag(s) {
+    var cls = { known: "tag-known", verify: "tag-verify", assumption: "tag-assumption", na: "tag-na" }[s];
+    return '<span class="tag ' + cls + '">' + esc(tx().status[s]) + "</span>";
+  }
+  function srcIndex(d) {
+    if (d._idx) return d._idx;
     var m = {};
     (d.sources || []).forEach(function (s, i) { m[s.id] = i + 1; });
+    d._idx = m;
     return m;
   }
-  function stateChip(s) {
-    var cls = s === "known" ? "chip-known" : s === "unknown" ? "chip-unknown" : "chip-na";
-    return '<span class="chip chip-state ' + cls + '">' + esc((t("state")[s]) || s) + "</span>";
+  function citeButtons(ids, d, limit) {
+    var idx = srcIndex(d);
+    ids = (ids || []).filter(function (id) { return idx[id]; });
+    if (!ids.length) return '<span class="cite-more" lang="en">None</span>';
+    limit = limit || 6;
+    var shown = ids.slice(0, limit);
+    return '<span class="cites">' + shown.map(function (id) {
+      var s = d.sources[idx[id] - 1];
+      return '<button type="button" class="cite' + (id === state.src ? " is-on" : "") + '" data-src="' + esc(id) + '" aria-label="' +
+        esc("Source " + idx[id] + ": " + s.issuer + ", " + s.title) + '" lang="en">[' + idx[id] + "]</button>";
+    }).join("") + (ids.length > limit ? '<span class="cite-more" lang="en">+' + (ids.length - limit) + " more</span>" : "") + "</span>";
   }
-  function kindChip(k) {
-    return '<span class="chip chip-kind ' + esc(k) + '">' + esc((t("kind")[k]) || k) + "</span>";
+  function claimsIn(d, sec) { return (d.claims || []).filter(function (c) { return c.section === sec; }); }
+  function statementsTable(d, claims) {
+    if (!claims.length) return '<p class="st-empty">' + esc(tx().emptyClaims) + "</p>";
+    return '<table class="st"><thead lang="en"><tr><th scope="col">Statement</th><th scope="col" class="c-status">Status</th><th scope="col" class="c-src">Source</th></tr></thead><tbody>' +
+      claims.map(function (c) {
+        var cited = state.src && (c.source_ids || []).indexOf(state.src) >= 0;
+        return "<tr" + (cited ? ' class="is-cited"' : "") + "><td>" + esc(L(c, "text")) +
+          (c.kind === "estimate" ? '<span class="kind">' + esc(tx().estimate) + "</span>" : "") + "</td>" +
+          "<td>" + statusTag(statusOf(c)) + "</td><td>" + citeButtons(c.source_ids, d) + "</td></tr>";
+      }).join("") + "</tbody></table>";
   }
-  function cites(ids, claimId, srcIdx, d) {
-    if (!ids || !ids.length) return '<span class="cite-none">(' + esc(t("noSource")) + ")</span>";
-    return '<span class="cites">' + ids.map(function (id) {
-      var n = srcIdx[id], s = (d.sources || [])[n - 1];
-      if (!n) return "";
-      return '<button type="button" class="cite" data-src="' + esc(id) + '" data-claim="' + esc(claimId) +
-        '" aria-label="' + esc(t("citeLabel")(n, s.issuer)) + '">' + n + "</button>";
-    }).join("") + "</span>";
+  function countStatus(claims) {
+    var out = { known: 0, verify: 0, assumption: 0, na: 0 };
+    claims.forEach(function (c) { out[statusOf(c)]++; });
+    return out;
   }
-  function claimList(d, section, srcIdx) {
-    var cs = (d.claims || []).filter(function (c) { return c.section === section; });
-    if (!cs.length) return '<div class="claims"><p class="claims-empty">' + esc(t("claimsEmpty")) + "</p></div>";
-    return '<ul class="claims">' + cs.map(function (c) {
-      return '<li class="claim state-' + esc(c.state) + '">' + stateChip(c.state) +
-        '<p class="claim-text ' + esc(c.kind) + '">' + esc(L(c, "text")) + cites(c.source_ids, c.id, srcIdx, d) + "</p>" +
-        kindChip(c.kind) + "</li>";
-    }).join("") + "</ul>";
+  function citedIds(d, items) {
+    var seen = {}, out = [];
+    items.forEach(function (c) { (c.source_ids || []).forEach(function (id) { if (!seen[id]) { seen[id] = 1; out.push(id); } }); });
+    var idx = srcIndex(d);
+    return out.filter(function (id) { return idx[id]; }).sort(function (a, b) { return idx[a] - idx[b]; });
   }
-  function srcCard(s, n, focus) {
-    var short = s.sha256 ? s.sha256.slice(0, 10) + "…" + s.sha256.slice(-6) : "—";
-    return '<li class="src' + (focus ? " focus" : "") + '" id="src-' + esc(s.id) + '">' +
-      '<span class="src-n">' + n + "</span>" +
-      '<span class="src-title">' + esc(s.title) + "</span>" +
-      "<dl>" +
-      "<dt>" + esc(t("issuer")) + "</dt><dd>" + esc(s.issuer) + "</dd>" +
-      "<dt>" + esc(t("version")) + "</dt><dd>" + esc(s.version || "—") + "</dd>" +
-      "<dt>" + esc(t("publicDate")) + "</dt><dd>" + (s.public_date ? '<time class="num">' + esc(s.public_date) + "</time>" : esc(t("undated"))) + "</dd>" +
-      "<dt>" + esc(t("locator")) + "</dt><dd>" + esc(s.locator || "—") + "</dd>" +
-      "<dt>" + esc(t("url")) + "</dt><dd>" + (s.url ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.url.replace(/^https?:\/\//, "")) + "</a>" : "—") + "</dd>" +
-      "<dt>SHA-256</dt><dd><span class=\"sha\"><code title=\"" + esc(s.sha256 || "") + "\">" + esc(short) + "</code>" +
-      (s.sha256 ? '<button type="button" class="copy-btn" data-copy="' + esc(s.sha256) + '" aria-label="' + esc(t("copyLabel")) + '">' + esc(t("copy")) + "</button>" : "") +
-      "</span></dd>" +
-      (s.retrieved ? "<dt>" + esc(t("retrieved")) + '</dt><dd><time class="num">' + esc(s.retrieved) + "</time></dd>" : "") +
-      "</dl></li>";
+  function itemsForTab(d, sec) {
+    var items = claimsIn(d, sec);
+    if (sec === "handoff") items = items.concat(d.checklist || []);
+    return items;
   }
 
-  function decisionSummary(d, sec) {
-    var f = d.forecast || {}, h = f.horizon_months || state.horizon;
-    var claims = d.claims || [];
-    var dec = sec.src.decisive_claim && claims.find(function (c) { return c.id === sec.src.decisive_claim; });
-    if (!dec) dec = claims.find(function (c) { return c.section === "decision" && c.kind === "assumption"; }) ||
-      claims.find(function (c) { return c.kind === "assumption"; });
-    var open = claims.filter(function (c) { return c.state === "unknown"; }).length;
-    var next = L(sec.src, "next_action") || ((d.checklist || [])[0] ? L(d.checklist[0], "text") : "—");
-    var n = state.queue ? state.queue.n_candidates || state.queue.rows.length : null;
-    function prob(who, p, sub, cls) {
-      return '<div class="prob-row ' + cls + '"><span class="who">' + who + '</span>' +
-        '<span class="bar" role="img" aria-label="' + who + " " + pct(p) + '%"><span style="width:' + Math.max(1, Math.round((p || 0) * 100)) + '%"></span></span>' +
-        '<span class="pct num">' + pct(p) + "%</span></div>";
-    }
-    return '<div class="summary">' +
-      '<section class="card card-prob" aria-label="' + esc(t("probTitle")(h)) + '"><div class="card-label">' + esc(t("probTitle")(h)) + "</div>" +
-      prob("M3", f.m3_p_entry, "", "m3") + prob("B1", f.b1_p_entry, "", "b1") +
-      '<div class="card-sub">B1 = ' + esc(t("b1")) + "</div></section>" +
-      '<section class="card card-queue"><div class="card-label">' + esc(t("queueTitle")) + "</div>" +
-      '<div class="big num">#' + esc(f.m3_rank || "—") + (n ? " <small>" + esc(t("rankOf")(f.m3_rank, n)) + "</small>" : "") + "</div>" +
-      '<div class="card-sub"><span class="' + (f.in_queue ? "in-q" : "out-q") + '">' + (f.in_queue ? "✓ " + esc(t("inQ")) : esc(t("outQ"))) + "</span> · " + esc(t("slots")(f.queue_size || "—")) + "</div></section>" +
-      '<section class="card card-assume"><div class="card-label">' + esc(t("decisive")) + "</div><p>" + esc(dec ? L(dec, "text") : "—") + "</p></section>" +
-      '<section class="card card-open"><div class="card-label">' + esc(t("openIssues")) + "</div>" +
-      '<div class="big num open-n">' + open + "</div><div class=\"card-sub\">" + esc(t("openSub")) + "</div></section>" +
-      '<section class="card card-next"><div class="card-label">' + esc(t("nextAction")) + "</div><p>" + esc(next) + "</p></section>" +
-      "</div>";
+  function outcomeKind(f, o) {
+    var event = !!(o && o.first_final_anda_date);
+    if (f.in_queue) return event ? "caught" : "falseAlarm";
+    return event ? "missed" : "quiet";
   }
-
-  function checklistHtml(d) {
-    var items = d.checklist || [];
-    var key = "mwd.check." + d.molecule.key + "." + d.as_of + "." + (d.forecast || {}).horizon_months;
-    var saved = {};
-    try { saved = JSON.parse(store(true, key) || "{}") || {}; } catch (e) { saved = {}; }
-    var done = items.filter(function (c) { return saved[c.id]; }).length;
-    var srcIdx = sourceIndex(d);
-    return '<div class="subhead"><h3>' + esc(t("checklist")) + '</h3><span class="panel-count num" id="check-progress">' + esc(t("progress")(done, items.length)) + "</span></div>" +
-      '<ul class="checklist" data-store="' + esc(key) + '">' + items.map(function (c) {
-        var fto = c.owner === "FTO evaluator";
-        var id = "chk-" + esc(c.id);
-        return '<li class="check' + (saved[c.id] ? " done" : "") + '"><input type="checkbox" id="' + id + '" data-id="' + esc(c.id) + '"' + (saved[c.id] ? " checked" : "") + ">" +
-          '<label for="' + id + '">' + esc(L(c, "text")) + cites(c.source_ids, c.id, srcIdx, d) + "</label>" +
-          '<span class="check-meta"><span class="chip chip-owner' + (fto ? " fto" : "") + '">' + esc((t("owner")[c.owner]) || c.owner) + "</span></span></li>";
-      }).join("") + "</ul>" +
-      '<p class="note">' + esc(t("checklistNote")) + "</p>";
-  }
-
-  function revealHtml(d) {
-    var o = d.outcome_reveal, q = state.queue;
+  function outcomeBlock(d) {
+    var o = d.outcome_reveal, f = d.forecast || {}, q = state.queue;
     if (!o || !state.revealed) return "";
-    var main = o.first_final_anda_date
-      ? '<div class="reveal-main hit">' + esc(t("revealFirst")(o.first_final_anda_date)) + "</div>"
-      : '<div class="reveal-main none">' + esc(t("revealNone")(o.window_end || "—")) + "</div>";
-    var cap = q && q.capture ? '<div class="reveal-sub">' + t("capture")(q.capture.m3_captured, q.capture.events_total, q.capture.b1_captured) + "</div>" : "";
-    return '<div class="reveal" id="reveal-panel" role="status">' + main + cap + '<div class="reveal-sub">' + esc(t("revealedNote")) + "</div></div>";
+    var k = outcomeKind(f, o), t = tx();
+    var tagCls = k === "caught" ? "tag-known" : k === "missed" ? "tag-miss" : "tag-na";
+    var tagTxt = k === "caught" ? t.outcomeTag.caught : k === "missed" ? t.outcomeTag.missed : t.outcomeTag.none;
+    var main = o.first_final_anda_date ? t.firstApproval(fmtDate(o.first_final_anda_date, state.lang), f.horizon_months)
+      : t.noApproval(fmtDate(o.window_end, state.lang));
+    return '<section class="outcome" id="outcome" aria-labelledby="outcome-h">' +
+      '<div class="outcome-head" lang="en"><h2 id="outcome-h">Outcome</h2><span class="panel-meta">Development data</span></div><dl>' +
+      '<dt lang="en">What happened</dt><dd>' + esc(main) + (o.source_ids && o.source_ids.length ? " " + citeButtons(o.source_ids, d) : "") + "</dd>" +
+      '<dt lang="en">Queue result</dt><dd class="result">' + '<span class="tag ' + tagCls + '">' + esc(tagTxt) + "</span><span>" + esc(t.result[k]) + "</span></dd>" +
+      (q ? '<dt lang="en">This queue</dt><dd>' + esc(t.capture(q.caught, q.events, (Math.round(q.b1 * 10) / 10).toFixed(1))) + "</dd>" : "") +
+      '<dt lang="en">Note</dt><dd>' + esc(t.outcomeNote) + "</dd></dl></section>";
+  }
+
+  function statsRow(cells) {
+    return '<div class="stats" lang="en">' + cells.map(function (c) {
+      return '<div><div class="k">' + c[0] + '</div><div class="v num' + (c[3] ? " " + c[3] : "") + '">' + c[1] + "</div>" + (c[2] ? '<div class="s">' + c[2] + "</div>" : "") + "</div>";
+    }).join("") + "</div>";
+  }
+
+  function decisionPanel(d) {
+    var f = d.forecast || {}, h = f.horizon_months || state.horizon, claims = d.claims || [];
+    var q = state.queue, n = q ? q.rows.length : null;
+    var open = claims.filter(function (c) { return c.state === "unknown"; }).length;
+    var assume = claims.find(function (c) { return c.section === "decision" && c.kind === "assumption"; }) ||
+      claims.find(function (c) { return c.kind === "assumption"; });
+    var next = (d.checklist || [])[0];
+    var html = statsRow([
+      ["First generic within " + h + " months (M3)", pct(f.m3_p_entry), "Evidence model"],
+      ["Drug-age baseline (B1)", pct(f.b1_p_entry), "Same horizon"],
+      ["Queue position", f.m3_rank + (n ? " <small>of " + n + "</small>" : ""), (f.in_queue ? "Inside" : "Outside") + " review capacity (" + (f.queue_size || "—") + ")"],
+      ["To verify", String(open), "Statements across all sections", open ? "v-verify" : ""]
+    ]);
+    html += '<dl class="kv">' +
+      '<dt lang="en">Next action</dt><dd>' + esc(next ? L(next, "text") : tx().nextFallback) +
+      (next ? ' <span class="kind" lang="en">Owner: ' + esc(next.owner) + "</span>" : "") + "</dd>" +
+      '<dt lang="en">Key assumption</dt><dd>' + esc(assume ? L(assume, "text") : "—") + "</dd></dl>";
+    html += '<h3 class="sub" lang="en">Open items by section</h3><table class="open-by"><thead lang="en"><tr><th scope="col">Section</th><th scope="col" class="c-num">Statements</th><th scope="col" class="c-num">To verify</th></tr></thead><tbody lang="en">' +
+      SECTIONS.map(function (s) {
+        var cs = claimsIn(d, s.id), u = cs.filter(function (c) { return c.state === "unknown"; }).length;
+        return '<tr><td><a href="#" data-goto="' + s.id + '">' + s.label + '</a></td><td class="c-num num">' + cs.length + '</td><td class="c-num num">' +
+          (u ? '<span class="tag tag-verify">' + u + "</span>" : "0") + "</td></tr>";
+      }).join("") + "</tbody></table>";
+    html += '<h3 class="sub" lang="en">Statements</h3>' + statementsTable(d, claimsIn(d, "decision"));
+    return html;
+  }
+  function genericPanel(d, sec) {
+    var cs = claimsIn(d, sec), n = countStatus(cs);
+    return statsRow([
+      ["Statements", String(cs.length)], ["Known", String(n.known)],
+      ["To verify", String(n.verify), "", n.verify ? "v-verify" : ""], ["Sources cited", String(citedIds(d, cs).length)]
+    ]) + statementsTable(d, cs);
+  }
+  function checkKey(d) { return "mwd.check." + d.molecule.key + "." + d.as_of + "." + (d.forecast || {}).horizon_months; }
+  function handoffPanel(d) {
+    var items = d.checklist || [], key = checkKey(d), saved = {};
+    try { saved = JSON.parse(store(key) || "{}") || {}; } catch (e) { saved = {}; }
+    var done = items.filter(function (c) { return saved[c.id]; }).length;
+    var cs = claimsIn(d, "handoff");
+    var html = statsRow([
+      ["Checklist items", String(items.length)], ["Checked", '<span id="check-done">' + done + "</span>"],
+      ["FTO evaluator items", String(items.filter(function (c) { return c.owner === "FTO evaluator"; }).length)],
+      ["Sources cited", String(citedIds(d, items.concat(cs)).length)]
+    ]);
+    if (cs.length) html += statementsTable(d, cs);
+    html += '<h3 class="sub"><span lang="en">Evaluator checklist</span><span class="progress" id="check-progress">' + esc(tx().progress(done, items.length)) + "</span></h3>";
+    html += '<table class="st checklist" data-store="' + esc(key) + '"><thead lang="en"><tr><th scope="col" class="c-check"><span class="sr-only">Done</span></th><th scope="col">Task</th><th scope="col" class="c-owner">Owner</th><th scope="col" class="c-src">Source</th></tr></thead><tbody>' +
+      items.map(function (c) {
+        var id = "chk-" + c.id;
+        return '<tr class="' + (saved[c.id] ? "done" : "") + '"><td><input type="checkbox" class="cb" id="' + esc(id) + '" data-id="' + esc(c.id) + '"' + (saved[c.id] ? " checked" : "") + "></td>" +
+          '<td><label class="task-text" for="' + esc(id) + '">' + esc(L(c, "text")) + "</label></td>" +
+          "<td>" + esc(tx().owner[c.owner] || c.owner) + "</td><td>" + citeButtons(c.source_ids, d, 4) + "</td></tr>";
+      }).join("") + "</tbody></table>" +
+      '<p class="note cb-note">' + esc(tx().checkNote) + "</p>";
+    return html;
+  }
+  function referencesPanel(d) {
+    var cs = claimsIn(d, "references"), srcs = d.sources || [];
+    var hashed = srcs.filter(function (s) { return /^[a-f0-9]{64}$/.test(s.sha256 || ""); }).length;
+    var dated = srcs.filter(function (s) { return s.public_date; }).length;
+    var html = statsRow([
+      ["Sources", String(srcs.length)], ["With SHA-256", String(hashed)], ["With a public date", String(dated)],
+      ["Contract", esc(d.schema_version || d.schema || "mwd.dossier.v1").replace("mwd.", "")]
+    ]);
+    html += statementsTable(d, cs);
+    html += '<h3 class="sub" lang="en">All sources</h3><table class="st refs" lang="en"><thead><tr><th scope="col" class="c-no">No.</th><th scope="col">Source</th><th scope="col" class="c-pub">Published</th><th scope="col" class="c-sha">SHA-256</th></tr></thead><tbody>' +
+      srcs.map(function (s, i) {
+        return "<tr><td class=\"num\">" + (i + 1) + "</td><td><b>" + esc(s.issuer) + "</b>, " + esc(s.title) +
+          '<span class="kind">Edition ' + esc(s.version || "—") + " · " + esc(s.locator || "—") + "</span></td>" +
+          '<td class="num">' + (s.public_date ? fmtDate(s.public_date) : "Not dated") + "</td>" +
+          '<td><code class="hash-short" title="' + esc(s.sha256 || "") + '">' + (s.sha256 ? esc(s.sha256.slice(0, 12)) + "…" : "—") + "</code></td></tr>";
+      }).join("") + "</tbody></table>";
+    return html;
   }
 
   function renderDossier() {
-    var main = $("dossier"), d = state.dossier;
-    if (!d) {
-      var r = state.queue && state.queue.rows.find(function (x) { return x.key === state.key; });
-      main.innerHTML = r ? '<div class="empty"><h2>' + esc(t("noDossierTitle")(r.display_name)) + "</h2><p>" +
-        esc(t("noDossierBody")(pct(r.m3_p), pct(r.b1_p), state.queue.rows.indexOf(r) + 1)) + "</p></div>"
-        : '<p class="loading">' + esc(t("loading")) + "</p>";
-      return;
-    }
-    var f = d.forecast || {}, secs = sectionsOf(d), srcIdx = sourceIndex(d);
-    var status = f.status || "DEVELOPMENT_ONLY";
-    var unknownBy = {};
-    (d.claims || []).forEach(function (c) { if (c.state === "unknown") unknownBy[c.section] = (unknownBy[c.section] || 0) + 1; });
-
-    var head = '<div class="d-head"><div class="d-title">' +
-      "<h1>" + esc(d.molecule.display_name) + ' <span class="chip chip-status' + (status === "TRACK_A_FROZEN" ? " frozen" : "") + '">' + esc((t("status")[status]) || status) + "</span>" +
-      (d.fixture || state.fixture ? ' <span class="chip chip-unknown">FIXTURE</span>' : "") + "</h1>" +
-      '<div class="d-meta"><span>' + esc(t("asOf")) + ' <b><time class="num">' + esc(d.as_of) + "</time></b></span>" +
-      "<span><b>" + esc(t("horizonMeta")(f.horizon_months || state.horizon)) + "</b></span>" +
-      "<span>" + esc(t("jurisdiction")) + " <b>" + esc(d.jurisdiction || "—") + "</b></span>" +
-      "<span>" + esc(t("forms")) + " <b>" + esc((d.molecule.dosage_forms || []).join(", ") || "—") + "</b></span></div></div>" +
-      (d.outcome_reveal ? '<button type="button" class="btn" id="reveal-btn" aria-expanded="' + state.revealed + '" aria-controls="reveal-slot">' +
-        esc(state.revealed ? t("hideReveal") : t("reveal")) + "</button>" : "") + "</div>" +
-      '<div id="reveal-slot">' + revealHtml(d) + "</div>";
-
-    var tabs = '<div class="tabs" role="tablist" aria-label="' + esc(t("tabsLabel")) + '">' + secs.map(function (s) {
+    var main = $("dossier");
+    main.setAttribute("aria-busy", "false");
+    if (state.error) { main.innerHTML = errorState(state.error); return; }
+    if (state.view !== "queue") { main.innerHTML = renderView(); bindViewAfterRender(); return; }
+    var d = state.dossier;
+    if (!d) { main.innerHTML = emptyState(); return; }
+    var f = d.forecast || {}, name = niceName(d.molecule.display_name);
+    var crumb = '<nav class="crumb" aria-label="Breadcrumb" lang="en"><a href="#" data-focus="queue">Queue</a><span class="sep" aria-hidden="true">›</span>' +
+      '<a href="#" data-focus="queue">' + (f.horizon_months || state.horizon) + " months, as of " + fmtDate(d.as_of) + '</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">' + esc(name) + "</span></nav>";
+    var actions = '<div class="d-actions" lang="en">' +
+      (d.outcome_reveal ? '<button type="button" class="btn btn-secondary" id="reveal-btn" aria-pressed="' + state.revealed + '" aria-controls="outcome-slot">' + icon("eye") + (state.revealed ? "Hide outcome" : "Show outcome") + "</button>" : "") +
+      '<button type="button" class="btn btn-secondary" id="print-btn">' + icon("print") + "Print dossier</button></div>";
+    var forms = (d.molecule.dosage_forms || []).map(niceForm).join("; ");
+    var meta = '<div class="d-meta" lang="en"><span>As of <b>' + fmtDate(d.as_of) + "</b></span><span>Horizon <b>" + (f.horizon_months || state.horizon) + " months</b></span>" +
+      "<span>Jurisdiction <b>" + esc(d.jurisdiction || "—") + "</b></span>" + (forms ? "<span>Dosage forms <b>" + esc(forms) + "</b></span>" : "") + "</div>";
+    var chips = '<div class="chips" lang="en">' + (f.in_queue ? '<span class="chip chip-navy">In review queue</span>' : '<span class="chip">Outside review queue</span>') +
+      '<span class="chip">Development data</span>' + (state.index.fixture || d.fixture ? '<span class="chip chip-fixture">FIXTURE</span>' : "") + "</div>";
+    var printHead = '<p class="print-only note" lang="en">Market Window Dossier · printed ' + fmtDate(new Date().toISOString().slice(0, 10)) + " · " + esc(d.molecule.key) + "</p>";
+    var tabs = '<div class="tabs" role="tablist" aria-label="Dossier sections" lang="en">' + SECTIONS.map(function (s) {
       var on = s.id === state.tab;
-      return '<button type="button" class="tab" role="tab" id="tab-' + s.id + '" aria-controls="panel-' + s.id + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '" data-tab="' + s.id + '">' +
-        '<span class="tab-n" aria-hidden="true">' + s.n + "</span>" + esc(s.title) +
-        (unknownBy[s.id] ? '<span class="tab-flag" title="' + esc(t("openInTab")(unknownBy[s.id])) + '"></span><span class="sr-only">, ' + esc(t("openInTab")(unknownBy[s.id])) + "</span>" : "") +
-        "</button>";
+      return '<button type="button" class="tab" role="tab" id="tab-' + s.id + '" aria-controls="panel-' + s.id + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '" data-tab="' + s.id + '">' + s.label + "</button>";
     }).join("") + "</div>";
-
-    var panels = secs.map(function (s) {
-      var count = (d.claims || []).filter(function (c) { return c.section === s.id; }).length;
-      var body = "";
-      if (s.id === "decision") body = decisionSummary(d, s) + claimList(d, s.id, srcIdx);
-      else if (s.id === "handoff") body = (count ? claimList(d, s.id, srcIdx) : "") + checklistHtml(d);
-      else if (s.id === "references") {
-        body = '<ol class="src-list">' + (d.sources || []).map(function (src, i) { return srcCard(src, i + 1, false); }).join("") + "</ol>" +
-          '<p class="note repro">' + esc(t("repro")(d.schema || "mwd.dossier.v1", d.as_of, d.fixture || state.fixture)) + "</p>";
-        count = (d.sources || []).length;
-      } else body = claimList(d, s.id, srcIdx);
-      var countTxt = s.id === "references" ? t("refsCount")(count) : t("claimCount")(count);
-      return '<section class="panel" role="tabpanel" id="panel-' + s.id + '" aria-labelledby="tab-' + s.id + '" tabindex="0"' + (s.id === state.tab ? "" : " hidden") + ">" +
-        '<div class="panel-head"><span class="panel-n">' + s.n + '</span><h2>' + esc(s.title) + '</h2><span class="panel-count num">' + esc(countTxt) + "</span></div>" +
-        body + "</section>";
+    var panels = SECTIONS.map(function (s) {
+      var body = s.id === "decision" ? decisionPanel(d) : s.id === "handoff" ? handoffPanel(d) : s.id === "references" ? referencesPanel(d) : genericPanel(d, s.id);
+      return '<section class="tabpanel" role="tabpanel" id="panel-' + s.id + '" aria-labelledby="tab-' + s.id + '" tabindex="0"' + (s.id === state.tab ? "" : " hidden") + ">" +
+        '<h2 lang="en">' + s.label + '</h2><p class="tab-intro">' + esc(tx().intro[s.id]) + "</p>" + body + "</section>";
     }).join("");
-
-    main.innerHTML = head + tabs + panels;
+    main.innerHTML = '<div class="d-wrap">' + printHead + crumb + '<div class="d-head"><h1>' + esc(name) + "</h1>" + actions + "</div>" + meta + chips +
+      '<div id="outcome-slot">' + outcomeBlock(d) + "</div>" + tabs + panels + "</div>";
   }
 
-  /* ---------- drawer ---------- */
-  function openDrawer(srcId, claimId, opener) {
-    var d = state.dossier; if (!d) return;
-    var claim = (d.claims || []).find(function (c) { return c.id === claimId; }) ||
-      (d.checklist || []).find(function (c) { return c.id === claimId; });
-    var ids = claim && claim.source_ids && claim.source_ids.length ? claim.source_ids : [srcId];
-    var idx = sourceIndex(d);
-    var body = (claim ? '<p class="drawer-claim">' + esc(L(claim, "text")) + "</p>" : "") +
-      '<ol class="src-list">' + ids.map(function (id) {
-        var s = d.sources[idx[id] - 1];
-        return s ? srcCard(s, idx[id], id === srcId) : "";
-      }).join("") + "</ol>";
-    $("drawer-body").innerHTML = body;
-    lastFocus = opener || document.activeElement;
-    $("drawer").hidden = false; $("drawer-scrim").hidden = false;
-    $("drawer-close").focus();
-    var focused = $("drawer-body").querySelector(".src.focus");
-    if (focused && focused.scrollIntoView) focused.scrollIntoView({ block: "nearest" });
+  function emptyState() {
+    var q = state.queue, r = q && q.rows.find(function (x) { return x.key === state.key; });
+    if (!r) return '<div class="state" lang="en"><p class="state-title">Choose a molecule</p><p>Select a molecule in the review queue to open its dossier.</p></div>';
+    var t = tx();
+    return '<div class="state"><p class="state-title">' + esc(t.noDossier(niceName(r.display_name))) + "</p><p>" +
+      esc(t.noDossierBody(r.m3_rank, q.rows.length, pct(r.m3_p), pct(r.b1_p))) + '</p><div class="state-actions" lang="en">' +
+      '<button type="button" class="btn" data-action="show-dossiers">Show molecules with a dossier</button></div></div>';
   }
-  function closeDrawer() {
-    if ($("drawer").hidden) return;
-    $("drawer").hidden = true; $("drawer-scrim").hidden = true;
-    if (lastFocus && document.body.contains(lastFocus)) lastFocus.focus();
+  function errorState(err) {
+    return '<div class="state state-error" lang="en" role="alert"><p class="state-title">The data could not be loaded</p>' +
+      "<p>The app needs <code>data/index.json</code> (on a web server) or <code>data.bundle.js</code> (when opened from a file). " +
+      "Run <code>python product/demo/bundle.py</code> to create them, then reload this page.</p>" +
+      '<p class="note">Details: ' + esc(err && err.message ? err.message : String(err)) + "</p></div>";
   }
-  function trapFocus(e) {
-    if ($("drawer").hidden || e.key !== "Tab") return;
-    var f = $("drawer").querySelectorAll("button, a[href], [tabindex]:not([tabindex='-1'])");
-    if (!f.length) return;
-    var first = f[0], last = f[f.length - 1];
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+
+  /* ---------- sources panel ---------- */
+  function srcEntry(d, s, n, focus) {
+    var short = s.sha256 ? s.sha256.slice(0, 10) + "…" + s.sha256.slice(-6) : null;
+    var host = "";
+    if (s.url) { try { host = new URL(s.url).hostname.replace(/^www\./, ""); } catch (e) { host = s.url; } }
+    return '<li class="src' + (focus ? " is-focus" : "") + '" id="src-' + esc(s.id) + '" tabindex="-1">' +
+      '<div class="src-title"><span class="src-n">[' + n + ']</span><span><b>' + esc(s.issuer) + "</b>, " + esc(s.title) + "</span></div>" +
+      '<dl lang="en"><dt>Edition</dt><dd>' + esc(s.version || "—") + "</dd>" +
+      "<dt>Published</dt><dd>" + (s.public_date ? fmtDate(s.public_date) : '<span lang="' + state.lang + '">' + esc(tx().undated) + "</span>") + "</dd>" +
+      "<dt>Locator</dt><dd>" + esc(s.locator || "—") + "</dd>" +
+      (s.retrieved ? "<dt>Retrieved</dt><dd>" + fmtDate(String(s.retrieved).slice(0, 10)) + "</dd>" : "") +
+      "<dt>SHA-256</dt><dd>" + (short ? '<span class="hash"><code title="' + esc(s.sha256) + '">' + esc(short) + '</code><button type="button" class="copy" data-copy="' + esc(s.sha256) + '" aria-label="Copy SHA-256 of source ' + n + '">Copy</button></span>' : "None") + "</dd>" +
+      (s.url ? '<dt>Link</dt><dd><a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(host) + '<span class="sr-only"> (opens in a new tab)</span></a></dd>' : "") +
+      "</dl></li>";
+  }
+  function renderSources() {
+    var list = $("sources-list"), meta = $("sources-meta"), d = state.dossier;
+    if (state.view !== "queue") return;
+    if (!d) { list.innerHTML = '<li class="src-empty" lang="en">Sources appear here when a dossier is open.</li>'; meta.textContent = ""; return; }
+    var idx = srcIndex(d);
+    var ids = state.tab === "references" ? (d.sources || []).map(function (s) { return s.id; }) : citedIds(d, itemsForTab(d, state.tab));
+    var inSection = ids.length;
+    if (state.revealed && d.outcome_reveal) {
+      (d.outcome_reveal.source_ids || []).forEach(function (id) { if (ids.indexOf(id) < 0 && idx[id]) ids.push(id); });
+    }
+    if (state.src && ids.indexOf(state.src) < 0 && idx[state.src]) ids.unshift(state.src);
+    var extra = ids.length - inSection;
+    meta.textContent = state.tab === "references" ? ids.length + " in this dossier"
+      : inSection + " cited in this section" + (extra ? ", " + extra + " more" : "");
+    list.innerHTML = ids.length ? ids.map(function (id) { return srcEntry(d, d.sources[idx[id] - 1], idx[id], id === state.src); }).join("")
+      : '<li class="src-empty" lang="en">No sources cited in this section.</li>';
+  }
+  function focusSource(id, move) {
+    state.src = id;
+    renderSources();
+    document.querySelectorAll("#dossier .cite").forEach(function (b) { b.classList.toggle("is-on", b.getAttribute("data-src") === id); });
+    document.querySelectorAll("#dossier table.st tbody tr").forEach(function (tr) {
+      var hit = !!tr.querySelector('.cite[data-src="' + (window.CSS && CSS.escape ? CSS.escape(id) : id) + '"]');
+      tr.classList.toggle("is-cited", hit);
+    });
+    var el = document.getElementById("src-" + id);
+    if (el) {
+      el.scrollIntoView({ block: window.matchMedia("(max-width: 1279px)").matches ? "start" : "nearest", behavior: reduced() ? "auto" : "smooth" });
+      if (move) el.focus({ preventScroll: true });
+    }
+    writeHash();
+  }
+  function reduced() { return window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
+
+  /* ---------- other views (Dossiers, Sources, Settings) ---------- */
+  function renderView() {
+    if (state.view === "dossiers") return dossiersView();
+    if (state.view === "sources") return sourcesView();
+    return settingsView();
+  }
+  function dossiersView() {
+    var list = (state.index.dossiers || []).slice();
+    var f = state.dossierFilter.trim().toLowerCase();
+    var html = '<div class="view" lang="en"><h1>Dossiers</h1><p class="lead">Every dossier in the development data, one per molecule, horizon and as-of date. Open one to see it with its review queue.</p>' +
+      '<div class="view-tools"><label class="field"><span>Find a molecule</span><input type="search" id="dossier-filter" value="' + esc(state.dossierFilter) + '" placeholder="Name or key"></label></div>' +
+      '<table class="reg"><thead><tr><th scope="col">Molecule</th><th scope="col">As of</th><th scope="col">Horizon</th><th scope="col" class="c-num">Rank</th><th scope="col" class="c-num">M3</th><th scope="col" class="c-num">B1</th><th scope="col">Queue</th></tr></thead><tbody id="dossier-rows">';
+    var rows = list.filter(function (e) {
+      return !f || niceName(e.display_name || "").toLowerCase().indexOf(f) >= 0 || e.key.toLowerCase().indexOf(f) >= 0;
+    }).sort(function (a, b) {
+      return niceName(a.display_name || a.key).localeCompare(niceName(b.display_name || b.key)) || a.horizon_months - b.horizon_months || String(a.cutoff).localeCompare(String(b.cutoff));
+    });
+    html += rows.map(function (e) {
+      var d = e._d, fc = d ? d.forecast : null;
+      var cur = e.key === state.key && e.horizon_months === state.horizon && String(e.cutoff) === state.cutoff;
+      return "<tr" + (cur ? ' class="is-current"' : "") + '><td><a href="#" data-open="' + esc(e.key) + '" data-h="' + e.horizon_months + '" data-c="' + esc(e.cutoff) + '">' + esc(niceName(e.display_name || e.key)) + "</a></td>" +
+        "<td>" + fmtDate(e.as_of || asOfOf(e.cutoff)) + "</td><td>" + e.horizon_months + ' months</td><td class="c-num num">' + (fc ? fc.m3_rank : "—") +
+        '</td><td class="c-num num">' + (fc ? pct(fc.m3_p_entry) : "—") + '</td><td class="c-num num">' + (fc ? pct(fc.b1_p_entry) : "—") + "</td><td>" +
+        (fc ? (fc.in_queue ? '<span class="chip chip-navy">In queue</span>' : '<span class="chip">Outside</span>') : "—") + "</td></tr>";
+    }).join("");
+    if (!rows.length) html += '<tr><td colspan="7" class="st-empty">No dossier matches “' + esc(state.dossierFilter) + "”.</td></tr>";
+    return html + "</tbody></table></div>";
+  }
+  function sourcesView() {
+    var d = state.dossier;
+    if (!d) return '<div class="view" lang="en"><h1>Sources</h1><p class="lead">Open a dossier first. This page lists every source behind it.</p></div>';
+    var f = state.sourceFilter.trim().toLowerCase();
+    var counts = {};
+    (d.claims || []).concat(d.checklist || []).forEach(function (c) { (c.source_ids || []).forEach(function (id) { counts[id] = (counts[id] || 0) + 1; }); });
+    var rows = (d.sources || []).map(function (s, i) { return { s: s, n: i + 1 }; }).filter(function (x) {
+      return !f || [x.s.issuer, x.s.title, x.s.version, x.s.locator, x.s.sha256, x.s.id].join(" ").toLowerCase().indexOf(f) >= 0;
+    });
+    return '<div class="view" lang="en"><nav class="crumb" aria-label="Breadcrumb"><a href="#view=queue" data-nav-link="queue">Queue</a><span class="sep" aria-hidden="true">›</span><span>' + esc(niceName(d.molecule.display_name)) + "</span></nav>" +
+      "<h1>Sources</h1><p class=\"lead\">All " + (d.sources || []).length + " sources behind the " + esc(niceName(d.molecule.display_name)) + " dossier as of " + fmtDate(d.as_of) + ", " + (d.forecast || {}).horizon_months + "-month horizon. Each has an issuer, an edition, a locator and, where the file was captured, a SHA-256 hash.</p>" +
+      '<div class="view-tools"><label class="field"><span>Filter sources</span><input type="search" id="source-filter" value="' + esc(state.sourceFilter) + '" placeholder="Issuer, title, locator or hash"></label><span class="panel-meta">' + rows.length + " shown</span></div>" +
+      '<table class="reg"><thead><tr><th scope="col" class="c-num">No.</th><th scope="col">Issuer and title</th><th scope="col">Edition</th><th scope="col">Published</th><th scope="col">Locator</th><th scope="col">SHA-256</th><th scope="col" class="c-num">Cited by</th></tr></thead><tbody>' +
+      rows.map(function (x) {
+        var s = x.s;
+        return '<tr><td class="c-num num">' + x.n + "</td><td><b>" + esc(s.issuer) + "</b><br>" + (s.url ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.title) + "</a>" : esc(s.title)) + "</td><td>" + esc(s.version || "—") +
+          "</td><td>" + (s.public_date ? fmtDate(s.public_date) : "Not dated") + "</td><td>" + esc(s.locator || "—") + "</td><td>" +
+          (s.sha256 ? '<span class="hash"><code title="' + esc(s.sha256) + '">' + esc(s.sha256.slice(0, 12)) + '…</code><button type="button" class="copy" data-copy="' + esc(s.sha256) + '" aria-label="Copy SHA-256 of source ' + x.n + '">Copy</button></span>' : "None") +
+          '</td><td class="c-num num">' + (counts[s.id] || 0) + "</td></tr>";
+      }).join("") + (rows.length ? "" : '<tr><td colspan="7" class="st-empty">No source matches “' + esc(state.sourceFilter) + "”.</td></tr>") + "</tbody></table></div>";
+  }
+  function savedChecklists() {
+    var n = 0;
+    try { for (var i = 0; i < localStorage.length; i++) if (/^mwd\.check\./.test(localStorage.key(i))) n++; } catch (e) { n = 0; }
+    return n;
+  }
+  function settingsView() {
+    var t = tx(), idx = state.index;
+    return '<div class="view settings" lang="en"><h1>Settings</h1><p class="lead">Settings are kept in this browser only.</p>' +
+      '<section><h2>Content language</h2><p class="tab-intro" lang="' + state.lang + '">' + esc(t.settingsLang) + '</p><div class="radios" role="radiogroup" aria-label="Content language">' +
+      '<label><input type="radio" name="set-lang" value="th"' + (state.lang === "th" ? " checked" : "") + "> Thai</label>" +
+      '<label><input type="radio" name="set-lang" value="en"' + (state.lang === "en" ? " checked" : "") + "> English</label></div></section>" +
+      '<section><h2>Review capacity</h2><p class="tab-intro" lang="' + state.lang + '">' + esc(t.capacityText) + "</p></section>" +
+      '<section><h2>Saved checklist ticks</h2><p class="tab-intro" lang="' + state.lang + '" id="saved-count">' + esc(t.storageText(savedChecklists())) + '</p><button type="button" class="btn btn-secondary" id="clear-checks">Clear saved ticks</button></section>' +
+      '<section><h2>Keyboard shortcuts</h2><table class="reg"><thead><tr><th scope="col">Keys</th><th scope="col">Action</th></tr></thead><tbody>' +
+      "<tr><td><kbd>↑</kbd> <kbd>↓</kbd>, <kbd>Home</kbd> <kbd>End</kbd></td><td>Move through the review queue (when it has focus)</td></tr>" +
+      "<tr><td><kbd>Alt</kbd> + <kbd>↓</kbd> / <kbd>↑</kbd></td><td>Open the next or previous molecule that has a dossier</td></tr>" +
+      "<tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Move between dossier sections (when a section tab has focus)</td></tr>" +
+      "<tr><td><kbd>Alt</kbd> + <kbd>1</kbd>–<kbd>7</kbd></td><td>Open a dossier section</td></tr>" +
+      "<tr><td><kbd>Ctrl</kbd> + <kbd>P</kbd></td><td>Print the open dossier</td></tr></tbody></table></section>" +
+      '<section><h2>Data</h2><dl class="kv"><dt>Status</dt><dd>' + (idx.fixture ? "FIXTURE (synthetic)" : "Development data, US cutoffs before 2017") + "</dd>" +
+      "<dt>Loaded from</dt><dd>" + esc(state.via) + "</dd><dt>Queues</dt><dd>" + idx.queues.length + "</dd><dt>Dossiers</dt><dd>" + (idx.dossiers || []).length + "</dd>" +
+      "<dt>Contracts</dt><dd>mwd.index.v1, mwd.queue.v1, mwd.dossier.v1</dd></dl></section></div>";
+  }
+  function bindViewAfterRender() {
+    if (state.view === "dossiers") {
+      var need = (state.index.dossiers || []).filter(function (e) { return !e._d; });
+      if (need.length) {
+        Promise.all(need.map(function (e) { return load(e.path).then(function (d) { e._d = d; }, function () { e._d = null; }); }))
+          .then(function () { if (state.view === "dossiers") { var a = document.activeElement && document.activeElement.id; renderDossier(); restoreFocus(a); } });
+      }
+    }
+  }
+  function restoreFocus(id) {
+    if (!id) return;
+    var el = $(id);
+    if (el) { el.focus(); if (el.setSelectionRange) { var n = el.value.length; el.setSelectionRange(n, n); } }
+  }
+
+  /* ---------- layout and nav ---------- */
+  function renderLayout() {
+    $("app").classList.toggle("wide", state.view !== "queue");
+    document.querySelectorAll(".topnav a").forEach(function (a) {
+      var on = a.getAttribute("data-nav") === state.view;
+      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+  function renderAll() {
+    renderLayout(); renderFilters(); renderQueue(); renderDossier(); renderSources(); writeHash();
+  }
+
+  /* ---------- selection ---------- */
+  function selectQueue() {
+    var entry = queueEntry();
+    if (!entry) { state.queue = null; state.dossier = null; renderAll(); return Promise.resolve(); }
+    return load(entry.path).then(function (raw) {
+      state.queue = normQueue(raw);
+      var rows = state.queue.rows;
+      if (!state.key || !rows.some(function (r) { return r.key === state.key; })) {
+        var first = rows.find(function (r) { return dossierEntry(r.key); }) || rows[0];
+        state.key = first ? first.key : null;
+      }
+      return selectDossier(state.key, true);
+    });
+  }
+  function selectDossier(key, keepSrc) {
+    state.key = key;
+    if (!keepSrc) state.src = null;
+    var entry = key && dossierEntry(key);
+    if (!entry) { state.dossier = null; renderAll(); return Promise.resolve(); }
+    return load(entry.path).then(function (d) {
+      state.dossier = d;
+      if (state.src && !srcIndex(d)[state.src]) state.src = null;
+      renderAll();
+    }, function (err) { state.dossier = null; state.error = err; renderAll(); });
+  }
+  function setTab(id, focus) {
+    if (SECTION_IDS.indexOf(id) < 0) return;
+    state.tab = id;
+    document.querySelectorAll(".tab").forEach(function (b) {
+      var on = b.getAttribute("data-tab") === id;
+      b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1;
+      if (on && focus) b.focus();
+    });
+    document.querySelectorAll(".tabpanel").forEach(function (p) { p.hidden = p.id !== "panel-" + id; });
+    renderSources(); writeHash();
+  }
+  function setLang(l) {
+    if (l !== "th" && l !== "en") return;
+    var active = document.activeElement && document.activeElement.id;
+    state.lang = l; store("mwd.lang", l);
+    applyLang(); renderQueue(); renderDossier(); renderSources(); writeHash();
+    restoreFocus(active);
+  }
+  function setView(v, focus) {
+    if (VIEWS.indexOf(v) < 0) v = "queue";
+    state.view = v;
+    renderLayout(); renderDossier(); renderSources(); writeHash();
+    if (focus) {
+      var target = v === "queue" ? $("queue-panel") : $("dossier");
+      target.focus({ preventScroll: false });
+      if (v !== "queue") $("dossier").scrollTop = 0;
+    }
+  }
+  function stepDossier(dir) {
+    var q = state.queue; if (!q) return;
+    var withDoc = q.rows.filter(function (r) { return dossierEntry(r.key); });
+    var i = withDoc.findIndex(function (r) { return r.key === state.key; });
+    var next = withDoc[i < 0 ? 0 : Math.max(0, Math.min(withDoc.length - 1, i + dir))];
+    if (next && next.key !== state.key) {
+      selectDossier(next.key).then(function () {
+        scrollQueueToCurrent();
+        announce(niceName(next.display_name));
+      });
+    }
   }
 
   function copyText(text, btn) {
     function done() {
-      var old = btn.textContent; btn.textContent = t("copied");
-      $("announcer").textContent = t("copied");
+      var old = btn.textContent; btn.textContent = "Copied";
+      announce(tx().copied);
       setTimeout(function () { btn.textContent = old; }, 1400);
     }
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
-    } else fallback();
     function fallback() {
       var ta = document.createElement("textarea");
       ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
@@ -551,171 +761,173 @@
       try { document.execCommand("copy"); done(); } catch (e) { /* ignore */ }
       document.body.removeChild(ta);
     }
-  }
-
-  /* ---------- selection ---------- */
-  function selectQueue() {
-    var entry = queueEntry();
-    if (!entry) { state.queue = null; renderQueue(); return Promise.resolve(); }
-    return load(entry.path).then(function (q) {
-      q.rows = (q.rows || []).slice().sort(function (a, b) { return (b.m3_p || 0) - (a.m3_p || 0); });
-      state.queue = q;
-      if (!state.key || !q.rows.some(function (r) { return r.key === state.key; })) {
-        var first = q.rows.find(function (r) { return dossierEntry(r.key); }) || q.rows[0];
-        state.key = first ? first.key : null;
-      }
-      renderQueue();
-      return selectDossier(state.key);
-    });
-  }
-  function selectDossier(key) {
-    state.key = key;
-    var entry = key && dossierEntry(key);
-    if (!entry) { state.dossier = null; renderQueue(); renderDossier(); writeHash(); return Promise.resolve(); }
-    return load(entry.path).then(function (d) {
-      state.dossier = d;
-      renderQueue(); renderDossier(); writeHash();
-    }, function () { state.dossier = null; renderDossier(); });
-  }
-  function setCutoff(c) {
-    if (c === state.cutoff) return;
-    state.cutoff = c; state.revealed = false;
-    renderStepper(); selectQueue();
-  }
-  function setHorizon(h) {
-    if (h === state.horizon) return;
-    state.horizon = h; state.revealed = false;
-    var list = cutoffsFor(h);
-    if (list.indexOf(state.cutoff) < 0) {
-      var target = Number(state.cutoff);
-      state.cutoff = list.slice().sort(function (a, b) { return Math.abs(a - target) - Math.abs(b - target); })[0];
-    }
-    renderHorizon(); renderStepper(); selectQueue();
-  }
-  function setTab(id, focus) {
-    state.tab = id;
-    document.querySelectorAll(".tab").forEach(function (b) {
-      var on = b.getAttribute("data-tab") === id;
-      b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1;
-      if (on && focus) b.focus();
-    });
-    document.querySelectorAll(".panel").forEach(function (p) { p.hidden = p.id !== "panel-" + id; });
-    writeHash();
-  }
-  function setLang(l) {
-    state.lang = l; store(false, "mwd.lang", l);
-    applyLang(); renderHorizon(); renderQueue(); renderDossier(); writeHash();
-  }
-  function closeRailOnMobile() {
-    if (window.matchMedia("(max-width: 899px)").matches) {
-      $("rail").classList.remove("open"); $("rail-toggle").setAttribute("aria-expanded", "false");
-    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
+    else fallback();
   }
 
   /* ---------- events ---------- */
   function bind() {
-    document.querySelector(".lang-toggle").addEventListener("click", function (e) {
+    document.querySelector(".lang").addEventListener("click", function (e) {
       var b = e.target.closest("button[data-lang]"); if (b) setLang(b.getAttribute("data-lang"));
     });
-    var hg = $("horizon-group");
-    hg.addEventListener("click", function (e) {
-      var b = e.target.closest("button[data-h]"); if (b) setHorizon(Number(b.getAttribute("data-h")));
+    document.querySelectorAll("[data-nav]").forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); setView(a.getAttribute("data-nav"), true); });
     });
-    hg.addEventListener("keydown", function (e) {
-      if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].indexOf(e.key) < 0) return;
-      e.preventDefault();
-      var hs = horizons(), i = hs.indexOf(state.horizon);
-      i = (i + (e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 1) + hs.length) % hs.length;
-      setHorizon(hs[i]);
-      var nb = hg.querySelector('[data-h="' + hs[i] + '"]'); if (nb) nb.focus();
+    $("f-horizon").addEventListener("change", function () {
+      var h = Number(this.value), list = cutoffsFor(h);
+      state.horizon = h; state.revealed = false;
+      if (list.indexOf(state.cutoff) < 0) {
+        var target = Number(state.cutoff);
+        state.cutoff = list.slice().sort(function (a, b) { return Math.abs(a - target) - Math.abs(b - target); })[0];
+      }
+      selectQueue();
     });
-    $("cutoff-prev").addEventListener("click", function () {
-      var l = cutoffsFor(state.horizon), i = l.indexOf(state.cutoff); if (i > 0) setCutoff(l[i - 1]);
-    });
-    $("cutoff-next").addEventListener("click", function () {
-      var l = cutoffsFor(state.horizon), i = l.indexOf(state.cutoff); if (i < l.length - 1) setCutoff(l[i + 1]);
-    });
-    $("queue").addEventListener("click", function (e) {
-      var b = e.target.closest("button[data-key]"); if (!b) return;
-      selectDossier(b.getAttribute("data-key")).then(function () {
-        closeRailOnMobile();
-        if (window.matchMedia("(max-width: 899px)").matches) $("dossier").focus();
+    $("f-asof").addEventListener("change", function () { state.cutoff = this.value; state.revealed = false; selectQueue(); });
+    $("f-show").addEventListener("change", function () { state.show = this.value; renderQueue(); writeHash(); scrollQueueToCurrent(); });
+
+    var qb = $("queue-body");
+    qb.addEventListener("click", function (e) {
+      var row = e.target.closest("tr.q-row"); if (!row) return;
+      var key = row.getAttribute("data-key");
+      selectDossier(key).then(function () {
+        if (state.view !== "queue") setView("queue");
+        var b = qb.querySelector('.q-btn[data-key="' + (window.CSS && CSS.escape ? CSS.escape(key) : key) + '"]'); if (b) b.focus();
       });
     });
-    $("rail-toggle").addEventListener("click", function () {
-      var open = !$("rail").classList.contains("open");
-      $("rail").classList.toggle("open", open); this.setAttribute("aria-expanded", String(open));
+    qb.addEventListener("keydown", function (e) {
+      var btn = e.target.closest(".q-btn"); if (!btn) return;
+      var all = Array.prototype.slice.call(qb.querySelectorAll(".q-btn")), i = all.indexOf(btn), j = null;
+      if (e.key === "ArrowDown") j = Math.min(all.length - 1, i + 1);
+      else if (e.key === "ArrowUp") j = Math.max(0, i - 1);
+      else if (e.key === "Home") j = 0;
+      else if (e.key === "End") j = all.length - 1;
+      if (j === null || e.altKey) return;
+      e.preventDefault();
+      var key = all[j].getAttribute("data-key");
+      selectDossier(key).then(function () {
+        var b = qb.querySelector('.q-btn[data-key="' + (window.CSS && CSS.escape ? CSS.escape(key) : key) + '"]');
+        if (b) { b.focus(); scrollQueueToCurrent(); }
+      });
     });
 
     var main = $("dossier");
     main.addEventListener("click", function (e) {
       var tab = e.target.closest(".tab");
       if (tab) { setTab(tab.getAttribute("data-tab")); return; }
+      var go = e.target.closest("[data-goto]");
+      if (go) { e.preventDefault(); setTab(go.getAttribute("data-goto"), true); return; }
       var cite = e.target.closest(".cite");
-      if (cite) { e.preventDefault(); openDrawer(cite.getAttribute("data-src"), cite.getAttribute("data-claim"), cite); return; }
-      var copy = e.target.closest(".copy-btn");
+      if (cite) { e.preventDefault(); focusSource(cite.getAttribute("data-src"), false); return; }
+      var copy = e.target.closest(".copy");
       if (copy) { copyText(copy.getAttribute("data-copy"), copy); return; }
       if (e.target.closest("#reveal-btn")) {
         state.revealed = !state.revealed;
-        renderQueue(); renderDossier(); writeHash();
-        var btn = $("reveal-btn"); if (btn) btn.focus();
+        renderQueue(); renderDossier(); renderSources(); writeHash();
+        var rb = $("reveal-btn"); if (rb) rb.focus();
+        announce(state.revealed ? "Outcome shown" : "Outcome hidden");
+        return;
+      }
+      if (e.target.closest("#print-btn")) { window.print(); return; }
+      var foc = e.target.closest("[data-focus]");
+      if (foc) { e.preventDefault(); $("queue-panel").focus(); return; }
+      var nav = e.target.closest("[data-nav-link]");
+      if (nav) { e.preventDefault(); setView(nav.getAttribute("data-nav-link"), true); return; }
+      var open = e.target.closest("[data-open]");
+      if (open) {
+        e.preventDefault();
+        state.horizon = Number(open.getAttribute("data-h")); state.cutoff = open.getAttribute("data-c"); state.key = open.getAttribute("data-open");
+        state.revealed = false; state.view = "queue";
+        renderFilters(); selectQueue().then(function () { scrollQueueToCurrent(); $("dossier").focus(); });
+        return;
+      }
+      if (e.target.closest("[data-action='show-dossiers']")) {
+        state.show = "dossiers"; renderFilters();
+        var first = state.queue && state.queue.rows.find(function (r) { return dossierEntry(r.key); });
+        if (first) selectDossier(first.key).then(scrollQueueToCurrent); else renderQueue();
+        return;
+      }
+      if (e.target.closest("#clear-checks")) {
+        try {
+          var keys = [];
+          for (var i = 0; i < localStorage.length; i++) if (/^mwd\.check\./.test(localStorage.key(i))) keys.push(localStorage.key(i));
+          keys.forEach(function (k) { localStorage.removeItem(k); });
+        } catch (err) { /* storage blocked */ }
+        $("saved-count").textContent = tx().storageText(0);
+        announce(tx().cleared);
       }
     });
     main.addEventListener("keydown", function (e) {
       var tab = e.target.closest && e.target.closest(".tab"); if (!tab) return;
-      var ids = SECTION_ORDER, i = ids.indexOf(state.tab), n = null;
-      if (e.key === "ArrowRight") n = ids[(i + 1) % ids.length];
-      else if (e.key === "ArrowLeft") n = ids[(i - 1 + ids.length) % ids.length];
-      else if (e.key === "Home") n = ids[0];
-      else if (e.key === "End") n = ids[ids.length - 1];
+      var i = SECTION_IDS.indexOf(state.tab), n = null;
+      if (e.key === "ArrowRight") n = SECTION_IDS[(i + 1) % SECTION_IDS.length];
+      else if (e.key === "ArrowLeft") n = SECTION_IDS[(i - 1 + SECTION_IDS.length) % SECTION_IDS.length];
+      else if (e.key === "Home") n = SECTION_IDS[0];
+      else if (e.key === "End") n = SECTION_IDS[SECTION_IDS.length - 1];
       if (n) { e.preventDefault(); setTab(n, true); }
     });
     main.addEventListener("change", function (e) {
-      var cb = e.target; if (cb.type !== "checkbox") return;
-      var list = cb.closest(".checklist"), key = list.getAttribute("data-store"), saved = {};
-      list.querySelectorAll("input[type=checkbox]").forEach(function (x) { if (x.checked) saved[x.getAttribute("data-id")] = true; });
-      store(false, key, JSON.stringify(saved));
-      cb.closest(".check").classList.toggle("done", cb.checked);
-      var total = list.querySelectorAll("input").length;
-      $("check-progress").textContent = t("progress")(Object.keys(saved).length, total);
+      var el = e.target;
+      if (el.name === "set-lang") { setLang(el.value); return; }
+      if (el.type !== "checkbox") return;
+      var table = el.closest(".checklist"), key = table.getAttribute("data-store"), saved = {};
+      table.querySelectorAll("input[type=checkbox]").forEach(function (x) { if (x.checked) saved[x.getAttribute("data-id")] = true; });
+      store(key, Object.keys(saved).length ? JSON.stringify(saved) : null);
+      el.closest("tr").classList.toggle("done", el.checked);
+      var total = table.querySelectorAll("input[type=checkbox]").length, done = Object.keys(saved).length;
+      $("check-progress").textContent = tx().progress(done, total);
+      $("check-done").textContent = done;
+    });
+    main.addEventListener("input", function (e) {
+      if (e.target.id === "source-filter") { state.sourceFilter = e.target.value; renderDossier(); restoreFocus("source-filter"); }
+      if (e.target.id === "dossier-filter") { state.dossierFilter = e.target.value; renderDossier(); restoreFocus("dossier-filter"); }
     });
 
-    $("drawer").addEventListener("click", function (e) {
-      var copy = e.target.closest(".copy-btn"); if (copy) copyText(copy.getAttribute("data-copy"), copy);
+    $("sources-panel").addEventListener("click", function (e) {
+      var copy = e.target.closest(".copy"); if (copy) copyText(copy.getAttribute("data-copy"), copy);
     });
-    $("drawer-close").addEventListener("click", closeDrawer);
-    $("drawer-scrim").addEventListener("click", closeDrawer);
+
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeDrawer();
-      trapFocus(e);
+      if (!e.altKey || e.ctrlKey || e.metaKey) return;
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); if (state.view !== "queue") setView("queue"); stepDossier(e.key === "ArrowDown" ? 1 : -1); return; }
+      var n = Number(e.key);
+      if (n >= 1 && n <= 7 && state.dossier && state.view === "queue") { e.preventDefault(); setTab(SECTION_IDS[n - 1], true); }
+    });
+    window.addEventListener("hashchange", function () {
+      if (writingHash) return;
+      var h = readHash();
+      if (h.lang && h.lang !== state.lang) setLang(h.lang);
+      if (h.view && h.view !== state.view) setView(h.view);
     });
   }
 
   /* ---------- boot ---------- */
   function boot() {
     var h = readHash();
-    var savedLang = store(true, "mwd.lang");
-    state.lang = h.lang === "en" || h.lang === "th" ? h.lang : (savedLang === "en" ? "en" : "th");
-    applyLang();
-    bind();
+    var saved = store("mwd.lang");
+    state.lang = h.lang === "en" || h.lang === "th" ? h.lang : (saved === "en" ? "en" : "th");
+    state.view = VIEWS.indexOf(h.view) >= 0 ? h.view : "queue";
+    state.show = h.show === "all" ? "all" : "dossiers";
+    applyLang(); bind(); renderLayout();
     loadData().then(function (res) {
-      state.index = res.index; state.fetcher = res.fetcher; state.fixture = !!res.index.fixture;
-      $("fixture-pill").hidden = !state.fixture;
+      state.index = res.index; state.fetcher = res.fetcher; state.via = res.via;
       var hs = horizons();
-      state.horizon = hs.indexOf(Number(h.h)) >= 0 ? Number(h.h) : (hs.indexOf(12) >= 0 ? 12 : hs[0]);
+      if (!hs.length) throw new Error("The index lists no queues");
+      state.horizon = hs.indexOf(Number(h.h)) >= 0 ? Number(h.h) : (hs.indexOf(24) >= 0 ? 24 : hs[0]);
       var cs = cutoffsFor(state.horizon);
-      state.cutoff = cs.indexOf(h.c) >= 0 ? h.c : cs[Math.min(1, cs.length - 1)];
+      state.cutoff = cs.indexOf(h.c) >= 0 ? h.c : cs[cs.length - 1];
       if (h.m) state.key = h.m;
-      if (SECTION_ORDER.indexOf(h.tab) >= 0) state.tab = h.tab;
+      if (SECTION_IDS.indexOf(h.tab) >= 0) state.tab = h.tab;
       state.revealed = h.reveal === "1";
-      renderHorizon(); renderStepper();
+      state.src = h.src || null;
       return selectQueue().then(function () {
-        var c = h.cite && state.dossier && (state.dossier.claims || []).concat(state.dossier.checklist || [])
-          .find(function (x) { return x.id === h.cite; });
-        if (c && c.source_ids && c.source_ids.length) openDrawer(c.source_ids[0], c.id, null);
+        scrollQueueToCurrent();
+        if (state.src) focusSource(state.src, false);
       });
     }).catch(function (err) {
-      $("dossier").innerHTML = '<div class="empty"><h2>' + esc(t("loadError")) + "</h2><p class=\"note\">" + esc(err && err.message) + "</p></div>";
+      state.error = err;
+      $("queue-body").innerHTML = '<tr class="q-empty"><td colspan="3" lang="en">No queue loaded.</td></tr>';
+      renderDossier();
+      $("sources-list").innerHTML = "";
     });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();

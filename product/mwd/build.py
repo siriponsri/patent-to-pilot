@@ -4,6 +4,7 @@ import argparse
 from datetime import date
 from pathlib import Path
 import re
+from urllib.parse import quote
 
 from .contract import BENCH, DEMO, PRODUCT, SECTIONS, read_json, write_json
 from .inputs import Evidence, PRIVATE, SCORE_FILES, scores, verify
@@ -217,23 +218,52 @@ def add_listings(report, evidence, cutoff, key, fallback):
     return names, [base]
 
 
-def add_thai(report, key):
-    path = PRODUCT / "evidence" / f"{key}.json"
-    # Windows also accepts a filename-safe form of the benchmark key.
+EVP_OWNERS = {"Patent reviewer": "FTO evaluator", "Thai patent reviewer": "FTO evaluator",
+              "Thai regulatory reviewer": "R&D"}
+
+
+def evidence_path(key):
+    # EVP writes the URL-encoded key because Windows reserves ":"; a filename-safe slug also works.
     slug = re.sub(r"[^A-Za-z0-9_-]+", "-", key).strip("-")
-    path = path if path.is_file() else PRODUCT / "evidence" / f"{slug}.json"
-    if path.is_file():
+    for name in (key, quote(key, safe=""), slug):
+        path = PRODUCT / "evidence" / f"{name}.json"
+        if path.is_file():
+            return path
+    return None
+
+
+def add_thai(report, key, day):
+    path = evidence_path(key)
+    if path:
         data = read_json(path)
         if "key" in data and data["key"] != key:
             raise ValueError(f"Thai evidence identity differs: {path.name}")
-        for source in data["sources"]:
-            report.source(**source)
-        for claim in data["claims"]:
-            if claim["section"] != "thai_asean":
-                raise ValueError(f"Thai evidence must use thai_asean section: {path.name}")
-            report.claim(claim["id"], claim["section"], claim["text_th"], claim["text_en"],
-                         claim["source_ids"], claim["state"], claim["kind"], claim.get("time_basis"))
-        return [source["id"] for source in data["sources"]]
+        sources = {source["id"]: source for source in data["sources"]}
+        cutoff = date.fromisoformat(day)
+
+        def as_of(refs):
+            # Merge only items whose every source was public on or before the dossier date.
+            dates = [sources[ref]["public_date"] for ref in refs]
+            return all(d is None or date.fromisoformat(d) <= cutoff for d in dates)
+
+        # EVP patent-section claims restate Orange Book rows the builder already lists for each
+        # cutoff, and its restriction review uses documents from the outcome window, so only the
+        # Thai/ASEAN claims and the ranked patent and Thai checklist items are merged.
+        claims = [c for c in data["claims"] if c["section"] == "thai_asean" and as_of(c["source_ids"])]
+        tasks = [t for t in data.get("checklist", []) if t["id"].startswith(("check-", "th-"))
+                 and as_of(t["source_ids"])]
+        used = {ref for item in claims + tasks for ref in item["source_ids"]}
+        if claims:
+            for id in sorted(used, key=list(sources).index):
+                report.source(**sources[id])
+            for claim in claims:
+                report.claim(claim["id"], claim["section"], claim["text_th"], claim["text_en"],
+                             claim["source_ids"], claim["state"], claim["kind"], claim.get("time_basis"))
+            for task in tasks:
+                # mwd.dossier.v1 allows three owners; EVP's patent reviewers hand to the FTO evaluator.
+                owner = EVP_OWNERS.get(task["owner"], task["owner"])
+                report.task(task["id"], task["text_th"], task["text_en"], owner, task["source_ids"])
+            return sorted({ref for claim in claims for ref in claim["source_ids"]}, key=list(sources).index)
     dip = report.source("dip-lookup", "Thailand Department of Intellectual Property",
                         "Patent search portal", "Lookup route", None, "Patent search form",
                         "https://patentsearch.ipthailand.go.th")
@@ -294,7 +324,7 @@ def build_dossier(queue, row, evidence, manifest, demand):
         report.task("review-spec", "ระบุรูปแบบยา ความแรง และข้อบ่งใช้ก่อนประเมินโอกาสอีกครั้ง",
                     "Specify dosage form, strength and indication before revisiting the opportunity.", "R&D", [score])
     dosage_forms, listing_refs = add_listings(report, evidence, day, key, fda)
-    thai_refs = add_thai(report, key)
+    thai_refs = add_thai(report, key, day)
     report.claim("fto-scope", "handoff",
                  "ใช้ประกอบการตัดสินใจ ยังไม่มีข้อสรุป FTO หรือความเห็นทางกฎหมาย",
                  "Decision support. FTO remains undetermined and requires a qualified legal opinion.",

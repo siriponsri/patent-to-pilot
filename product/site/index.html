@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Market Window Dossier</title>
+  <meta name="description" content="Forecast whether a generic market will still be open at launch, rank molecules for scarce FTO review, and hand off dated, source-traced dossiers. Decision support only, not legal advice or an FTO opinion.">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" lang="en">Skip to content</a>
+
+  <header lang="en">
+    <div class="topbar">
+      <a class="wordmark" href="#overview"><img src="assets/logo.svg" alt="" width="30" height="30"><span>Market Window Dossier</span></a>
+      <nav class="topnav" aria-label="Main">
+        <a href="#overview">Overview</a>
+        <a href="#how">Method</a>
+        <a href="#accuracy">Evidence</a>
+        <a href="#download">Download</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Content language">
+        <button type="button" data-lang="th" aria-pressed="true"><abbr title="Thai">TH</abbr></button>
+        <button type="button" data-lang="en" aria-pressed="false"><abbr title="English">EN</abbr></button>
+      </div>
+    </div>
+    <nav class="stages" aria-label="Workflow stages">
+      <a href="#how" data-stage="how">Before development</a>
+      <a href="#dossier" data-stage="dossier">Patent review</a>
+      <a href="#thai" data-stage="thai">Thailand and ASEAN</a>
+      <a href="#accuracy" data-stage="accuracy">Accuracy testing</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="overview" aria-labelledby="hero-h">
+      <div class="hero-text">
+        <h1 id="hero-h" lang="en">Plan generic and biosimilar development with dated evidence</h1>
+        <p class="lead">
+          <span class="c" lang="th">ประเมินว่าตลาดยาสามัญจะยังเปิดอยู่หรือไม่ในวันที่ยาพร้อมวางขาย ก่อนลงทุนศึกษาชีวสมมูลหรือการศึกษาเปรียบเทียบ จัดลำดับยาที่ควรส่งให้ผู้ประเมิน FTO ตรวจก่อน แล้วส่งต่อรายงานที่ทุกข้อความมีแหล่งอ้างอิงและวันที่กำกับ</span>
+          <span class="c" lang="en">Estimate whether the generic market will still be open when your product is ready to launch, before you commit to bioequivalence or comparative studies. Rank which molecules your FTO evaluators should review first, and hand them a dossier in which every statement carries a dated source.</span>
+        </p>
+        <div class="btns" lang="en">
+          <a class="btn" href="../demo/index.html">Open the app</a>
+          <a class="btn btn-secondary" href="#download">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></svg>Download for Windows</a>
+        </div>
+      </div>
+
+      <section class="panel evidence" aria-labelledby="ev-h">
+        <h2 id="ev-h" lang="en">Evidence summary</h2>
+        <table class="facts">
+          <caption class="sr-only" lang="en">Results on the sealed historical test, 2017–2024 cutoffs, and prospective status</caption>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="c" lang="th">ยาที่ต่อมามียาสามัญรายแรกได้รับอนุมัติภายใน 24 เดือน และอยู่ในคิวตรวจ 20% (แบบจำลองหลักฐาน)</span><span class="c" lang="en">Upcoming first generic approvals inside a 20% review queue, 24 months (evidence model)</span></th>
+              <td class="v">66.85%</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="c" lang="th">งบตรวจเท่ากัน แต่เรียงตามอายุยาอย่างเดียว</span><span class="c" lang="en">Same review budget, ranked by drug age only</span></th>
+              <td class="v">46.48%</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="c" lang="th">ส่วนต่าง (ช่วงความเชื่อมั่น 95%)</span><span class="c" lang="en">Difference (95% CI)</span>
+                <span class="tag tag-known"><span class="c" lang="th">ยืนยันแล้ว</span><span class="c" lang="en">Confirmed</span></span></th>
+              <td class="v">+20.37 pp<span class="ci">+14.37 to +26.16</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="c" lang="th">ประโยชน์เพิ่มของกราฟหลักฐาน เทียบแบบจำลองที่ไม่มีกราฟ</span><span class="c" lang="en">Added value of the evidence graph over a matched model without it</span>
+                <span class="tag tag-na"><span class="c" lang="th">ยังไม่ยืนยัน</span><span class="c" lang="en">Not confirmed</span></span></th>
+              <td class="v">+1.36 pp<span class="ci">−2.20 to +3.01</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="c" lang="th">คำพยากรณ์ล่วงหน้า (Track A)</span><span class="c" lang="en">Prospective forecasts (Track A)</span>
+                <span class="tag tag-verify"><span class="c" lang="th">รอผล</span><span class="c" lang="en">Pending</span></span></th>
+              <td class="v v-text"><span class="c" lang="th">ตรึงก่อน 31 ม.ค. 2570</span><span class="c" lang="en">Freeze before 31 Jan 2027</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="panel-foot">
+          <span class="c" lang="th">ชุดทดสอบย้อนหลังแบบปิดผนึก วันตัดข้อมูลปี 2017–2024 ลงทะเบียนแผนวิเคราะห์ไว้ก่อนเปิดชุดทดสอบ</span>
+          <span class="c" lang="en">Sealed historical test, cutoffs 2017–2024. The analysis plan was registered before the test set was opened.</span>
+          <a href="https://doi.org/10.17605/OSF.IO/P2SMD" lang="en">OSF registration P2SMD</a>
+        </p>
+      </section>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-h">
+      <div class="wrap">
+        <h2 id="how-h" lang="en">How it works</h2>
+        <ol class="steps">
+          <li>
+            <h3 lang="en">Rank the review queue</h3>
+            <p><span class="c" lang="th">สำหรับวันตัดสินใจแต่ละวัน ระบบประเมินโอกาสที่ยาสามัญรายแรกจะได้รับอนุมัติขั้นสุดท้ายภายใน 12 หรือ 24 เดือน แล้วเรียงยาทุกตัวที่เข้าเกณฑ์ ทีมตรวจได้ 1 ใน 5 ของรายการ คิวจึงแสดงเส้นขีดความสามารถไว้ชัดเจน</span><span class="c" lang="en">For each decision date, the model estimates the chance that a first generic gets final approval within 12 or 24 months and ranks every eligible molecule. Review capacity is fixed at 1 in 5, and the queue shows where it ends.</span></p>
+          </li>
+          <li>
+            <h3 lang="en">Build a dated dossier</h3>
+            <p><span class="c" lang="th">รายงานเจ็ดส่วนใช้เฉพาะหลักฐานที่เผยแพร่ก่อนวันตัดข้อมูล ทุกข้อความระบุแหล่งที่มา ฉบับ ตำแหน่งข้อมูล และค่า SHA-256 สิ่งที่ยังไม่รู้จะแสดงว่า &ldquo;ต้องตรวจ&rdquo; แทนการเดา</span><span class="c" lang="en">A seven-part dossier uses only evidence that was public before the decision date. Every statement carries its source, edition, locator and SHA-256 hash. Anything not known is marked &ldquo;verify&rdquo; instead of guessed.</span></p>
+          </li>
+          <li>
+            <h3 lang="en">Hand off to the FTO evaluator</h3>
+            <p><span class="c" lang="th">ฝ่ายพัฒนาธุรกิจและฝ่ายวิจัยส่งรายการตรวจที่จัดลำดับแล้วให้ผู้ประเมิน FTO ผู้เชี่ยวชาญกฎหมายที่มีคุณสมบัติเป็นผู้ตัดสินเรื่องเสรีภาพในการดำเนินการ</span><span class="c" lang="en">BD and R&amp;D pass a ranked checklist to the FTO evaluator. Qualified counsel decides freedom to operate.</span></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-white" id="dossier" aria-labelledby="dossier-h">
+      <div class="wrap">
+        <h2 id="dossier-h" lang="en">What the dossier contains</h2>
+        <p class="section-lead"><span class="c" lang="th">รายงานแต่ละฉบับผูกกับยา วันตัดข้อมูล และช่วงพยากรณ์ ใช้ภาษาไทยเป็นหลักและมีฉบับภาษาอังกฤษ พิมพ์เป็น PDF เพื่อส่งต่อได้</span><span class="c" lang="en">Each dossier is tied to one molecule, decision date and horizon. It is Thai first with an English version, and prints to PDF for hand-off.</span></p>
+        <table class="parts">
+          <thead lang="en"><tr><th scope="col">Part</th><th scope="col">What it shows</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" lang="en">Decision summary</th><td><span class="c" lang="th">อันดับในคิวตรวจ โอกาสที่ยาสามัญรายแรกจะได้รับอนุมัติ ขั้นตอนต่อไป และสมมติฐานหลัก</span><span class="c" lang="en">Queue position, the chance of a first generic approval, the next action and the key assumption.</span></td></tr>
+            <tr><th scope="row" lang="en">Market window</th><td><span class="c" lang="th">โอกาสเข้าตลาดภายในช่วงพยากรณ์ สมมติฐานด้านราคา และความต้องการใช้ยาย้อนหลังจาก Medicaid</span><span class="c" lang="en">Chance of entry within the horizon, price assumptions and past Medicaid demand.</span></td></tr>
+            <tr><th scope="row" lang="en">Competition</th><td><span class="c" lang="th">ผู้ยื่นขอยาสามัญที่ได้รับอนุมัติแล้ว รูปแบบยา และวันอนุมัติยาต้นแบบ</span><span class="c" lang="en">Approved generic applicants, dosage forms and the originator's approval dates.</span></td></tr>
+            <tr><th scope="row" lang="en">Patents</th><td><span class="c" lang="th">สิทธิบัตรและสิทธิผูกขาดใน Orange Book ฉบับที่เผยแพร่ก่อนวันตัดข้อมูล และคดีความที่เกี่ยวข้อง</span><span class="c" lang="en">Patents and exclusivities in the Orange Book edition public before the cutoff, and related court cases.</span></td></tr>
+            <tr><th scope="row" lang="en">Thailand and ASEAN</th><td><span class="c" lang="th">ตระกูลสิทธิบัตร สถานะในไทย และทะเบียนตำรับยา</span><span class="c" lang="en">Patent families, Thai patent status and drug registration.</span></td></tr>
+            <tr><th scope="row" lang="en">FTO hand-off</th><td><span class="c" lang="th">รายการตรวจที่จัดลำดับแล้ว พร้อมผู้รับผิดชอบและแหล่งอ้างอิงของแต่ละข้อ</span><span class="c" lang="en">A ranked checklist with an owner and sources for each item.</span></td></tr>
+            <tr><th scope="row" lang="en">References</th><td><span class="c" lang="th">แหล่งข้อมูลทุกรายการ พร้อมฉบับ ตำแหน่งข้อมูล และค่า SHA-256 สำหรับตรวจซ้ำ</span><span class="c" lang="en">Every source with its edition, locator and SHA-256 hash, so the dossier can be reproduced.</span></td></tr>
+          </tbody>
+        </table>
+
+        <div class="subsection" id="thai">
+          <h3 lang="en">Thailand and ASEAN</h3>
+          <p><span class="c" lang="th">สถานะสิทธิบัตรและทะเบียนตำรับยาในไทยส่วนใหญ่ยังต้องตรวจด้วยคน สำหรับยาตัวอย่าง 6 รายการ ระบบสืบตระกูลสิทธิบัตรได้ครบ 17 จาก 17 ฉบับหลักของสหรัฐฯ แต่ยืนยันสมาชิกที่ยื่นในไทยได้ 0 จาก 17 เพราะระบบค้นของกรมทรัพย์สินทางปัญญาและ อย. ไม่เปิดให้ค้นแบบอัตโนมัติ รายงานจึงแสดงรายการเหล่านี้ว่า &ldquo;ต้องตรวจ&rdquo; พร้อมเลขคำขอที่ใช้ค้นต่อได้</span><span class="c" lang="en">Thai patent and drug-registration status mostly needs a person to check. For the six example molecules, patent families were traced for 17 of 17 key US patents, but Thai family members were confirmed for 0 of 17, because the Thai patent office and FDA search systems do not allow automated searches. The dossier marks these items &ldquo;verify&rdquo; and lists the priority and WO numbers to search with.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="accuracy" aria-labelledby="acc-h">
+      <div class="wrap">
+        <h2 id="acc-h" lang="en">How accuracy is tested</h2>
+        <p class="section-lead"><span class="c" lang="th">แผนการวิเคราะห์ลงทะเบียนไว้ที่ OSF ก่อนเปิดชุดทดสอบย้อนหลัง (วันตัดข้อมูล 2017–2024) โค้ดปิดผนึกชุดทดสอบไว้จนถึงวันนั้น ทุกวิธีได้งบตรวจเท่ากันคือ 1 ใน 5 ของยาที่เข้าเกณฑ์ คำพยากรณ์ล่วงหน้า (Track A) จะประทับเวลาไว้ก่อนทราบผล</span><span class="c" lang="en">The analysis plan was registered on OSF before the sealed historical test set (cutoffs 2017–2024) was opened, and code kept the test set sealed until then. Every method gets the same review budget, 1 in 5 eligible molecules. Prospective forecasts (Track A) are timestamped before any outcome exists.</span></p>
+        <table class="results">
+          <thead lang="en"><tr><th scope="col">Measure</th><th scope="col">Result</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="c" lang="th">ยาที่ต่อมามียาสามัญรายแรกได้รับอนุมัติภายใน 24 เดือน และอยู่ในคิวตรวจ 20%</span><span class="c" lang="en">Upcoming first generic approvals within 24 months caught by a 20% review queue</span></td>
+              <td class="r"><span class="c" lang="th">66.85% เทียบ 46.48% (เรียงตามอายุยา)</span><span class="c" lang="en">66.85% vs 46.48% (drug-age baseline)</span></td>
+              <td><span class="tag tag-known"><span class="c" lang="th">ยืนยันแล้ว</span><span class="c" lang="en">Confirmed</span></span></td>
+            </tr>
+            <tr>
+              <td><span class="c" lang="th">ส่วนต่างระหว่างสองวิธี</span><span class="c" lang="en">Difference between the two</span></td>
+              <td class="r"><span class="c" lang="th">+20.37 จุดร้อยละ (ช่วงความเชื่อมั่น 95% +14.37 ถึง +26.16)</span><span class="c" lang="en">+20.37 percentage points (95% CI +14.37 to +26.16)</span></td>
+              <td><span class="tag tag-known"><span class="c" lang="th">ยืนยันแล้ว</span><span class="c" lang="en">Confirmed</span></span></td>
+            </tr>
+            <tr>
+              <td><span class="c" lang="th">ประโยชน์เพิ่มของกราฟหลักฐาน เทียบแบบจำลองที่เหมือนกันแต่ไม่มีกราฟ</span><span class="c" lang="en">Added value of the evidence graph over a matched model without it</span></td>
+              <td class="r"><span class="c" lang="th">+1.36 จุดร้อยละ (ช่วงความเชื่อมั่น 95% −2.20 ถึง +3.01)</span><span class="c" lang="en">+1.36 percentage points (95% CI −2.20 to +3.01)</span></td>
+              <td><span class="tag tag-na"><span class="c" lang="th">ยังไม่ยืนยัน</span><span class="c" lang="en">Not confirmed</span></span></td>
+            </tr>
+            <tr>
+              <td><span class="c" lang="th">ยาที่มีผู้ยื่นยาสามัญได้รับอนุมัติอย่างน้อย 3 รายภายใน 36 เดือน และอยู่ในคิวตรวจ</span><span class="c" lang="en">Drugs that drew at least three approved generic applicants within 36 months, caught by the queue</span></td>
+              <td class="r"><span class="c" lang="th">79.8% เทียบ 49.7% (+30.11 จุดร้อยละ)</span><span class="c" lang="en">79.8% vs 49.7% (+30.11 points)</span></td>
+              <td><span class="tag tag-na"><span class="c" lang="th">สำรวจเพิ่มเติม</span><span class="c" lang="en">Exploratory</span></span></td>
+            </tr>
+            <tr>
+              <td><span class="c" lang="th">คำพยากรณ์ล่วงหน้า (Track A)</span><span class="c" lang="en">Prospective forecasts (Track A)</span></td>
+              <td class="r"><span class="c" lang="th">ตรึงคำพยากรณ์ก่อน 31 ม.ค. 2570 ผลจะทราบภายหลัง</span><span class="c" lang="en">Forecasts frozen before 31 Jan 2027; outcomes follow later</span></td>
+              <td><span class="tag tag-verify"><span class="c" lang="th">รอผล</span><span class="c" lang="en">Pending</span></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note"><span class="c" lang="th">&ldquo;ยืนยันแล้ว&rdquo; หมายถึงผ่านเกณฑ์ที่ลงทะเบียนไว้ล่วงหน้า &ldquo;สำรวจเพิ่มเติม&rdquo; หมายถึงวิเคราะห์นอกสมมติฐานหลัก ใช้ประกอบเท่านั้น</span><span class="c" lang="en">&ldquo;Confirmed&rdquo; means the result passed the preregistered test. &ldquo;Exploratory&rdquo; means an analysis outside the main hypotheses, reported for context only.</span>
+          <a href="https://doi.org/10.17605/OSF.IO/P2SMD" lang="en">Read the registration (doi:10.17605/OSF.IO/P2SMD)</a></p>
+      </div>
+    </section>
+
+    <section class="section section-white" id="limits" aria-labelledby="limits-h">
+      <div class="wrap">
+        <h2 id="limits-h" lang="en">Limits</h2>
+        <ul class="limits">
+          <li><span class="c" lang="th">รายงานตัวอย่างในแอปใช้ข้อมูลช่วงพัฒนา (วันตัดข้อมูลก่อนปี 2017) ไม่ใช่ชุดทดสอบที่ปิดผนึก</span><span class="c" lang="en">The example dossiers in the app use development data (cutoffs before 2017), not the sealed test set.</span></li>
+          <li><span class="c" lang="th">คำพยากรณ์ใช้แหล่งข้อมูลเปิดของสหรัฐฯ สถานะในไทยและอาเซียนส่วนใหญ่ยังไม่ได้ยืนยัน</span><span class="c" lang="en">Forecasts use open US sources. Thai and ASEAN status is mostly unverified.</span></li>
+          <li><span class="c" lang="th">ระบบพยากรณ์วันอนุมัติขั้นสุดท้ายของยาสามัญรายแรก ไม่ใช่วันวางจำหน่ายหรือราคา</span><span class="c" lang="en">The model forecasts the first generic final approval, not the launch date or the price.</span></li>
+          <li><span class="c" lang="th">ยังไม่ยืนยันว่ากราฟหลักฐานช่วยเพิ่มความแม่นยำเมื่อเทียบกับแบบจำลองที่ไม่มีกราฟ</span><span class="c" lang="en">The evidence graph's added value over a model without it is not confirmed.</span></li>
+          <li><span class="c" lang="th">ผลของคำพยากรณ์ล่วงหน้า (Track A) ยังไม่ออก</span><span class="c" lang="en">Prospective (Track A) results are not yet available.</span></li>
+          <li><span class="c" lang="th">ใช้ประกอบการตัดสินใจเท่านั้น ไม่ใช่ความเห็นทางกฎหมายหรือความเห็น FTO</span><span class="c" lang="en">Decision support only, not legal advice or an FTO opinion.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="download" aria-labelledby="dl-h">
+      <div class="wrap">
+        <h2 id="dl-h" lang="en">Download</h2>
+        <div class="dl">
+          <div class="panel">
+            <h3 lang="en">Windows desktop app</h3>
+            <p><span class="c" lang="th">แอปเดียวกับเวอร์ชันเว็บในหน้าต่างของ Windows ใช้งานได้โดยไม่ต้องต่ออินเทอร์เน็ต ข้อมูลตัวอย่างติดมากับตัวติดตั้ง</span><span class="c" lang="en">The same app as the web version, in its own Windows window. It works offline, and the example data ships with the installer.</span></p>
+            <dl class="kv" lang="en">
+              <dt>Version</dt><dd>0.1.0</dd>
+              <dt>Installer</dt><dd>NSIS, 64-bit, per-user install (<span id="dl-size">1.84 MiB, 1,930,817 bytes</span>)</dd>
+              <dt>Requires</dt><dd>Windows 10 or 11 with Microsoft Edge WebView2 (the installer fetches it if missing)</dd>
+              <dt>SHA-256</dt><dd><code id="dl-sha">db6914371b948aff1962082167fff2107554c9997480d00728f1eeb112f8408a</code></dd>
+            </dl>
+          </div>
+          <div class="dl-side">
+            <p><span class="c" lang="th">ตัวติดตั้งยังไม่ได้เผยแพร่บนหน้าดาวน์โหลดสาธารณะ ขอรับได้จากทีมโครงการ หรือสร้างเองจากซอร์สโค้ดตามคู่มือ ตรวจค่า SHA-256 ก่อนติดตั้งทุกครั้ง</span><span class="c" lang="en">The installer is not yet on a public download page. Ask the project team for a copy, or build it from source with the guide. Check the SHA-256 before installing.</span></p>
+            <div class="btns" lang="en">
+              <a class="btn" href="https://github.com/siriponsri/patent-to-pilot/tree/research/loe-bench/product/desktop">Build instructions</a>
+              <a class="btn btn-secondary" href="../demo/index.html">Open the web app</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="alert" role="note">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5"/><path d="M12 18h.01"/></svg>
+        <p><b lang="en">Decision support only. Not legal advice or an FTO opinion.</b>
+          <span class="c" lang="th">ผู้เชี่ยวชาญกฎหมายที่มีคุณสมบัติเป็นผู้ประเมินเสรีภาพในการดำเนินการในแต่ละประเทศ</span><span class="c" lang="en">Qualified counsel assesses freedom to operate in each jurisdiction.</span></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" lang="en">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">Market Window Dossier</p>
+        <p>Patent-to-Pilot project, School of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL), Bangkok.</p>
+      </div>
+      <ul>
+        <li><a href="https://doi.org/10.17605/OSF.IO/P2SMD">OSF registration: doi:10.17605/OSF.IO/P2SMD</a></li>
+        <li><a href="https://github.com/siriponsri/patent-to-pilot">Source code on GitHub</a></li>
+        <li>Code: Apache License 2.0. Fonts: SIL Open Font License 1.1. Data terms differ by source.</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

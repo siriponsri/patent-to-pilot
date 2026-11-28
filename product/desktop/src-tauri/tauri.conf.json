@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Market Window Dossier",
+  "version": "0.1.0",
+  "identifier": "th.ac.kmitl.patenttopilot.mwd",
+  "build": {
+    "frontendDist": "../dist",
+    "beforeBuildCommand": "node scripts/prepare-frontend.mjs",
+    "beforeDevCommand": "node scripts/prepare-frontend.mjs"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Market Window Dossier",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1280,
+        "minHeight": 800,
+        "center": true,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "Patent-to-Pilot project, KMITL",
+    "copyright": "Decision support only. Not legal advice or an FTO opinion.",
+    "category": "Business",
+    "shortDescription": "Launch-window forecasts and FTO review hand-off dossiers",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": { "type": "downloadBootstrapper" },
+      "nsis": { "installMode": "currentUser" }
+    }
+  }
+}
