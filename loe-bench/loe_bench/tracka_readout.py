@@ -12,7 +12,7 @@ import numpy as np
 
 from . import tracka_capture, tracka_custody as custody, tracka_secondary, tracka_vintage
 from .common import add_months
-from .score_release import RECEIPT, RESULTS, SOURCES, commit_run, release_directory, write_report
+from .score_release import RECEIPT, RESULTS, SOURCES, commit_run, release_directory, replay_publication_lines, write_report
 from .tracka_outcomes import fetch_outcomes
 from .tracka_release import ARMS, FREEZE, HORIZONS, SCORER, T0, VERSION, digest, dump, load, read_release, require, verify_file
 from .tracka_statistics import panel, sequence
@@ -52,6 +52,49 @@ def recover_published(stage, out, horizon, identity):
     return target
 
 
+def result_witness_locators(discovery):
+    release = f"https://github.com/{discovery['repository']}/releases/tag/{discovery['tag']}"
+    locators = [release, *discovery.get("issue_urls", []), *(query["url"] for query in discovery["queries"])]
+    return list(dict.fromkeys(locators))
+
+
+def check_current_12m_witnesses(repository, doi, freeze_sha, release_sha, folder, published):
+    """Check today's witnesses against the H3 reference in the published bytes."""
+    earlier, discovery = tracka_vintage.discover(repository, doi, freeze_sha, release_sha, folder, horizon=12)
+    reason, detail = discovery.get("reason"), discovery.get("detail")
+    if earlier is None:
+        status = "CURRENT_DISPUTE" if discovery.get("witness_dispute") else custody.HOLD
+    else:
+        reference = published["h3_input"]
+        recorded = reference.get("original", {})
+        observed = discovery["original"]
+        if (reference.get("results_sha256") == recorded.get("results_sha256") == observed["results_sha256"]
+                and recorded.get("outcome_source_manifest_sha256") == observed["outcome_source_manifest_sha256"]):
+            status = "VERIFIED_CONSISTENT"
+        else:
+            status = "CURRENT_DISPUTE"
+            reason = "PUBLISHED_H3_DIGEST_MISMATCH"
+            detail = "The verified 12-month result or FDA source-manifest digest differs from the published H3 reference."
+    return {"status": status, "reason": reason, "detail": detail, "discovery": discovery,
+            "witness_locators": result_witness_locators(discovery),
+            "custodian_reconciliation_required": status != "VERIFIED_CONSISTENT"}
+
+
+def recovery_missing(capture, discovery):
+    if discovery is None:
+        return ["Recovery requires the registered repository, version DOI and freeze digest."]
+    reason = discovery["reason"]
+    capture_detail = capture.get("detail")
+    if reason == "MISSING_ORIGINAL" and capture["status"] != "VERIFIED" and not capture_detail:
+        return ["No verified first capture is available."]
+    detail = discovery.get("detail", "No first published result was found.")
+    missing = [f"First result discovery reported {reason}. {' '.join(detail.splitlines())}",
+               *(f"Result witness or lookup at <{url}>." for url in result_witness_locators(discovery))]
+    if capture_detail:
+        missing.append(f"First capture verification reported {capture['status']}. {capture_detail}")
+    return missing
+
+
 def family_comparison(result, published, sources, published_sources):
     decisions = {}
     for name, first in published["hypotheses"].items():
@@ -76,7 +119,7 @@ def family_comparison(result, published, sources, published_sources):
 def write_replay(path, result):
     first = result["first_publication"]
     comparison = result["replay_comparison"]
-    lines = ["# Track A replay", "", f"The [first published aggregate]({first['release_url']}) remains formal.",
+    lines = ["# Track A replay", "", *replay_publication_lines(result), "",
              f"[Verified local copy](../first-published-{first['results_sha256']}/REPORT.md).",
              f"First result SHA-256 `{first['results_sha256']}`.", ""]
     if comparison["status"] == "COMPARED":
@@ -168,6 +211,9 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
                 target = recover_published(retained, out, horizon, current["original"])
                 published = load(target / RESULTS)
                 result.update(family_status="REPLAY", first_publication=current["original"])
+                if horizon == 24:
+                    result["current_12m_witness_check"] = check_current_12m_witnesses(
+                        repository, doi, freeze_sha, release.manifest_sha256, Path(temporary) / "first-12", published)
             elif capture["status"] != "VERIFIED" or current["reason"] != "MISSING_ORIGINAL":
                 result["family_status"] = custody.HOLD
             if horizon == 24 and not recover:
@@ -191,8 +237,10 @@ def score(release, horizon, out, *, today, snapshot=None, repository=None, doi=N
                                                                  "detail": "Recovery retrieves the pinned bytes."})
             return finish_run(stage, out, result)
         if replay is None or recover:
+            missing = recovery_missing(capture, current) if recover else [
+                "No verified first capture or explicit local snapshot is available."]
             result.update(status="BLOCKED_SOURCE", family_status=custody.HOLD,
-                          missing=["No verified first capture or explicit local snapshot is available."])
+                          missing=missing)
             dump(stage / SOURCES, {"sources": [], "missing": result["missing"]})
             return finish_run(stage, out, result)
 

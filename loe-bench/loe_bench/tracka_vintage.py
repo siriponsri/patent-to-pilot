@@ -141,7 +141,10 @@ def discover(repository, doi, freeze_sha, release_sha, folder, *, horizon=12, ca
             disputes.extend(publish_pins(issue.get("body") or "", locator, pins))
             if len(pins[RESULTS]) == count:
                 disputes.append(f"Missing publication result digest at {locator}")
-        disputes.extend(pin_disputes(pins))
+        disagreements = pin_disputes(pins)
+        if disagreements:
+            evidence["witness_dispute"] = True
+        disputes.extend(disagreements)
         require(not disputes, "\n".join(disputes))
         with TemporaryDirectory() as temp:
             received = Path(temp)
@@ -167,8 +170,9 @@ def discover(repository, doi, freeze_sha, release_sha, folder, *, horizon=12, ca
                     "First result used bytes outside its capture")
             asset_hashes = {name: digest(folder / name) for name in ASSETS}
             for name, witnesses in pins.items():
-                require(all(item["sha256"] == asset_hashes[name] for item in witnesses),
-                        f"Publication issue digest disagrees with {name}")
+                if any(item["sha256"] != asset_hashes[name] for item in witnesses):
+                    evidence["witness_dispute"] = True
+                    raise ValueError(f"Publication issue digest disagrees with {name}")
             original.update(identity, archive_sha256=asset_hashes, **{
                 key: archive[key] for key in ("release_url", "published_at_utc", "provenance", "bundle_sha256")})
             return panel, evidence

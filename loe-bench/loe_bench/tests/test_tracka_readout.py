@@ -438,6 +438,13 @@ class ReadoutTest(unittest.TestCase):
         self.assertEqual(status, "BLOCKED_SOURCE")
         self.assertIn("bytes disagree", result["capture"]["detail"])
 
+        status, folder, result = self.readout("bad-recovery", 12, H12, recover=True)
+        self.assertEqual(status, "BLOCKED_SOURCE")
+        for text in ("\n".join(result["missing"]), (folder / "REPORT.md").read_text(encoding="utf-8")):
+            self.assertIn("MISSING_ORIGINAL", text)
+            self.assertIn("bytes disagree", text)
+            self.assertNotIn("No verified first capture", text)
+
     def test_issue_conflict_blocks_formal_recovery(self):
         self.capture("first", 12, H12)
         first, _ = self.archive(12, H12)
@@ -449,10 +456,108 @@ class ReadoutTest(unittest.TestCase):
                     "html_url": f"https://github.com/{REPO}/issues/{index}"}
 
         self.issues = [issue(1, digest(first / RESULTS)), issue(2, "0" * 64)]
-        _, _, result = self.readout("disputed", 12, H12)
+        status, folder, result = self.readout("disputed", 12, H12, recover=True)
+        self.assertEqual(status, "BLOCKED_SOURCE")
         self.assertEqual(result["family_status"], custody.HOLD)
-        self.assertEqual(len(result["publication_discovery"]["issue_urls"]), 2)
-        self.assertIn("witnesses disagree", result["publication_discovery"]["detail"])
+        self.assertEqual(result["capture"]["status"], "VERIFIED")
+        discovery = result["publication_discovery"]
+        self.assertEqual(len(discovery["issue_urls"]), 2)
+        report = (folder / "REPORT.md").read_text(encoding="utf-8")
+        for text in ("\n".join(result["missing"]), report):
+            self.assertIn(discovery["reason"], text)
+            self.assertIn(discovery["detail"], text)
+            self.assertNotIn("No verified first capture", text)
+            for url in discovery["issue_urls"]:
+                self.assertIn(url, text)
+
+    def test_recovery_distinguishes_missing_capture_from_missing_result(self):
+        missing_capture = "No verified first capture is available."
+        status, folder, result = self.readout("missing-capture", 12, H12, recover=True)
+        self.assertEqual(status, "BLOCKED_SOURCE")
+        self.assertEqual(result["missing"], [missing_capture])
+        self.assertIn(missing_capture, (folder / "REPORT.md").read_text(encoding="utf-8"))
+
+        self.capture("first", 12, H12)
+        status, folder, result = self.readout("missing-result", 12, H12, recover=True)
+        self.assertEqual(status, "BLOCKED_SOURCE")
+        self.assertEqual(result["capture"]["status"], "VERIFIED")
+        for text in ("\n".join(result["missing"]), (folder / "REPORT.md").read_text(encoding="utf-8")):
+            self.assertIn("MISSING_ORIGINAL", text)
+            self.assertNotIn(missing_capture, text)
+
+    def test_24_month_replay_and_recovery_report_current_witnesses(self):
+        first12, scope, _ = self.stage_24_context()
+        first24, bundle = self.archive(24, H24, publish=False)
+        publication_day = H24 + timedelta(days=1)
+        self.release_bundle(scope, bundle, publication_day)
+        bundle_bytes = bundle.read_bytes()
+
+        _, record = tracka_vintage.publication_scope(self.freeze, DOI)
+        marker = f"<!-- tracka:12:SCORED:{record} -->"
+        trusted = self.scored_issue(1, f"{marker}\nFirst result SHA-256 `{digest(first12 / RESULTS)}`.")
+        conflict = self.scored_issue(2, f"{marker}\nFirst result SHA-256 `{'0' * 64}`.")
+        self.issues = [trusted]
+        for expected in ("VERIFIED_CONSISTENT", "CURRENT_DISPUTE"):
+            disputed = expected == "CURRENT_DISPUTE"
+            if disputed:
+                self.issues.append(conflict)
+                panel, discovery = tracka_vintage.discover(REPO, DOI, self.freeze, self.release.manifest_sha256,
+                                                           self.root / "standalone-dispute")
+                self.assertIsNone(panel)
+                self.assertEqual(discovery["reason"], custody.HOLD)
+            for recover, expected_run in ((False, "SCORED"), (True, "RECOVERED")):
+                with self.subTest(expected=expected, recover=recover):
+                    status, folder, result = self.readout(f"published-{expected}-{recover}", 24,
+                                                          publication_day + timedelta(days=1), recover=recover)
+                    self.assertEqual(status, expected_run)
+                    self.assertEqual(result["family_status"], "REPLAY")
+                    self.assertFalse(result["publication_eligible"])
+                    self.assertEqual(result["first_publication"]["published_at_utc"], at(publication_day, 5).isoformat())
+                    check = result["current_12m_witness_check"]
+                    self.assertEqual(check["status"], expected)
+                    self.assertEqual(check["custodian_reconciliation_required"], disputed)
+                    self.assertEqual(check["discovery"]["issue_urls"], [issue["html_url"] for issue in self.issues])
+                    for name in ("REPORT.md", "REPLAY.md"):
+                        report = (folder / name).read_text(encoding="utf-8")
+                        self.assertIn(f"formal as verified at publication on {publication_day}", report)
+                        self.assertIn(f"Current 12-month witness check `{expected}`", report)
+                        self.assertNotIn("remains formal", report)
+                        if disputed:
+                            self.assertIn("custodian for reconciliation", report)
+                            for issue in self.issues:
+                                self.assertIn(issue["html_url"], report)
+                    archived = folder.parent / f"first-published-{digest(first24 / RESULTS)}"
+                    for name in tracka_vintage.ASSETS:
+                        self.assertEqual((archived / name).read_bytes(), (first24 / name).read_bytes())
+        self.assertEqual(bundle.read_bytes(), bundle_bytes)
+
+    def test_24_month_recovery_checks_unavailable_and_replaced_12_month_result(self):
+        first12, _, _ = self.stage_24_context()
+        self.archive(24, H24)
+        scope = self.scope(12, "result")
+        self.responses.pop(f"{scope.api}/releases/tags/{scope.tag}")
+        self.responses.pop(f"{scope.api}/git/matching-refs/tags/{scope.tag}")
+        self.responses.pop(self.index_url(scope))
+
+        status, folder, result = self.readout("lost-first12", 24, H24, recover=True)
+        self.assertEqual(status, "RECOVERED")
+        check = result["current_12m_witness_check"]
+        self.assertEqual(check["status"], custody.HOLD)
+        self.assertEqual(check["reason"], "MISSING_ORIGINAL")
+        self.assertTrue(check["custodian_reconciliation_required"])
+        report = (folder / "REPORT.md").read_text(encoding="utf-8")
+        self.assertIn(f"Current 12-month witness check `{custody.HOLD}`", report)
+        self.assertIn(f"https://github.com/{REPO}/releases/tag/{scope.tag}", report)
+
+        replacement, _ = self.archive(12, H12 + timedelta(days=1))
+        self.assertNotEqual(digest(replacement / RESULTS), digest(first12 / RESULTS))
+        self.assertEqual(digest(replacement / SOURCES), digest(first12 / SOURCES))
+        status, _, result = self.readout("replaced-first12", 24, H24, recover=True)
+        self.assertEqual(status, "RECOVERED")
+        check = result["current_12m_witness_check"]
+        self.assertEqual(check["status"], "CURRENT_DISPUTE")
+        self.assertEqual(check["reason"], "PUBLISHED_H3_DIGEST_MISMATCH")
+        self.assertEqual(check["discovery"]["original"]["results_sha256"], digest(replacement / RESULTS))
 
     def test_reader_verifies_the_documented_maintainer_acknowledgement(self):
         guide = Path(__file__).resolve().parents[3] / "docs/loe-bench/HOW-TO-SCORE-TRACK-A.md"
