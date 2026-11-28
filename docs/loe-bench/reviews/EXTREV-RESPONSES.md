@@ -38,3 +38,16 @@ Resolved by the reviewer: R1, R2, N3. Partially resolved: R3, N1, N2, carried in
 | R3-C | MINOR | **Fixed.** The owner-action list marks the Zenodo deposit and restore as done and links the DOI and RESTORE-DOI. | [Checklist](../RESEARCH-COMPLETION.md) |
 
 Next: a fresh round 4 (EXTREV-R4).
+
+## Round 4 ([review](EXTERNAL-REVIEW-R4.md), answered 28–29 Nov 2026, 23:49 Bangkok)
+
+Resolved by the reviewer: N2, R3-A, R3-B, R3-C. Partially resolved: R3, N1 (carried into R4-A).
+
+Planner design to end the custody regress (assigned to TRACKA-READOUT5, Sol xhigh):
+
+| ID | Severity | Planned response |
+|---|---|---|
+| R4-A | BLOCKING | **Blind capture before scoring.** A scheduled capture job, triggered automatically by the Worker cron on or after maturity, fetches the FDA sources, computes no outcomes, and publishes the raw bytes and their digests as a scoped capture release. The formal family may use only the **first capture release on or after maturity**. Scoring, retries and late runs read those preserved bytes and never refetch. A failed publication after scoring therefore cannot change the input. If no capture can be established for a horizon, the family is descriptive only. |
+| R4-B | MAJOR | **Independent provenance.** Capture and result files receive GitHub artifact attestations (Sigstore), recorded in the public Rekor transparency log with repository, workflow, commit and time, so evidence survives deletion of the release, tag or issue. Discovery checks the attestation. The trusted-custodian and retention assumptions are stated. If continuity cannot be established, the disposition is UNRESOLVED_CONTINUITY and H1–H3 are descriptive only. |
+| R4-C | MAJOR | Compute the legacy 90% policy from the public thresholds and calibrated probabilities: realized coverage, policy AURC80 where coverage reaches 80%, E-AURC with its coverage condition. Fixture-test against the frozen action rules. Correct the measure map and guide. |
+| R4-D | MINOR | Add a dated clarification file that links the current guide and canonical result location. The Zenodo landing-page description can only be edited from the owner's login, so the paste-ready text goes into the 06:00 owner brief. The timestamped ZIP stays intact. |
