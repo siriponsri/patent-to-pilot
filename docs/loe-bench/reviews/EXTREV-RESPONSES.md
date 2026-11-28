@@ -107,3 +107,12 @@ Resolved by the reviewer: R7-A (25/25 pins, DOI readout PENDING exit 0, CI detec
 **Round 8 outcome (29 Nov, 01:52, TRACKA-READOUT9 merged).** 12-month first publication, replay and recovery reports call the panel verified and retained for later H3 use, descriptive only, with H3 testable at the 24-month readout (on or after 27 Nov 2028) only if H1 and H2 pass. The 24-month wording is unchanged. Source-pin regression passes (25/25; `score_release.py` blob `7ea6b666`). [Receipt](../receipts/TRACKA-READOUT9.md)
 
 Next: EXTREV-R9.
+
+## Round 9 ([review](EXTERNAL-REVIEW-R9.md), answered 29 Nov 2026, 02:00 Bangkok)
+
+Resolved by the reviewer: R8-A, R8-B; pins 25/25, forecasts 10/10, DOI readout PENDING exit 0 in four runs. No blocking finding.
+
+| ID | Severity | Response |
+|---|---|---|
+| R9-A | MAJOR | **In progress (TRACKA-READOUT10, Sol high).** Every replay table is labelled "current recomputation (not used for inference)" and shown next to the retained estimate that supplies H3 or the formal family, with both values when they differ. |
+| R9-B | MINOR | **In progress (same card).** The guide documents `family_status` as publication and custody status, gives a 12-month JSON example, and points to `horizon_months` and per-hypothesis `reached` and `decision` for inference. |
