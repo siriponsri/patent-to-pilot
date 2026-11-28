@@ -73,3 +73,10 @@
   - The development numbers H1 +24.1 and H3 +15.2 pp come from T1v3, before the REG fix. The frozen development results (FREEZE) are H1 +9.80 [+0.14, +19.65], H2 +5.49 [−2.00, +11.25] and H3 +13.00 [+3.27, +23.17] pp. The preregistration already uses the FREEZE values. Lesson: quote results only from the latest frozen receipt.
   - The overnight entry overstated L1. L1 received only ingredient identity, cutoff and horizon, not the as-of evidence. The defensible claim is only that M3 beat an identity-and-date prompt. An evidence-matched prompt (ledger K24) would be needed to support a "structured evidence beats prompting" claim.
   - The owner asked about an RL arm. The co-planner (GPT-6.2 Astra high, SciSpace) recommended NO-GO for v1 (ledger K23). The owner decision is pending, and OSF registration waits on it.
+- **28 Nov, pain-point and redirect consult.**
+  - The owner asked whether LOE-Bench solves their pain points: P1, scarce FTO evaluators; P2, demand gone at launch because competitors entered first. They also asked for redirect ideas with a 5–10 year architecture.
+  - Two co-planner consults (GPT-6.2 Astra high, SciSpace plus web): P1 is partially covered, because the 20% queue models scarce capacity but is US-only and small-molecule only. P2 is not covered.
+  - Ranked directions: (1) keep LOE-Bench and build the demo around the review-queue decision; (2) launch-date competitive crowding, 3–5 weeks as a primary question; (3) Medicaid volume forecasting, 6–10 weeks.
+  - The smallest pre-OSF addition is the crowding endpoint K25, run on frozen scores.
+  - Durable architecture: a bitemporal evidence store, W3C PROV provenance, an OpenAPI decision contract with an MCP adapter, and an evaluation contract with prospective freezes. Models, LLMs and UI are disposable.
+  - The owner decision is pending, and OSF waits on it.
