@@ -106,3 +106,10 @@
   - Registered text: `PREREGISTRATION.md` at `bef62d64` (LF SHA-256 dc485bb7…). PDF rendered by `docs/loe-bench/render_prereg.py` (21fe6ceb…). Audited package commit: `52908944`.
   - Verified upload folder: `C:/Users/User/Desktop/OSF-UPLOAD-LOE-Bench/`.
   - Next: the owner's GPT-6.2 Sol high browser agent submits the registration following the copy sheet. The owner hands back the OSF registration PDF, and the main planner writes PREREG_LOCK, runs the C′ gate and scores.
+- **28 Nov, OSF registered and PREREG_LOCK written.**
+  - Registration https://osf.io/p2smd (doi:10.17605/OSF.IO/P2SMD), registered 2026-11-28 03:59:09 UTC. It is public with no embargo, uses the Secondary Data Preregistration template under CC BY 4.0, and lists the owner as sole contributor.
+  - Deviations, both dated 28 Nov:
+    1. The browser agent uploaded none of the ten attachments; the form's file fields are empty. Mitigation: the registered text links every frozen file at commit-specific GitHub URLs (66dfa799, 8f8e0568, e6deb76a), which pin the content by Git hash.
+    2. The agent reworded some answers instead of pasting them verbatim. A key-string audit found H1–H3, α 0.025, every exploratory component, the development numbers, the Track A deadline, the disclaimers, the AI-use statement and both authors. A full substantive diff by the co-planner is requested.
+  - No OSF PDF exists, so the lock hashes the canonical registration record instead: `loe-bench/data/OSF_REGISTRATION_P2SMD.json`, rebuilt reproducibly by `loe-bench/scripts/osf_lock.py`. PREREG_LOCK sha256 3f911452….
+  - Next: the owner authorizes, then the blinded C′ gate runs (custodian projection), then scoring; Track A freeze by 2027-01-31.

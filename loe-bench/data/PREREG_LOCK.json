@@ -1,0 +1,17 @@
+{
+  "sha256": "3f91145251465b0ed9c89233337748e1b9fd84db8c4c2a6158860374670e1c77",
+  "basis": "SHA-256 of data/OSF_REGISTRATION_P2SMD.json: the canonical OSF registration record (id, DOI, date_registered, template, title, description, registration_responses) as sorted compact UTF-8 JSON, rebuilt by scripts/osf_lock.py from the public OSF API",
+  "registration": {
+    "id": "p2smd",
+    "doi": "10.17605/OSF.IO/P2SMD",
+    "url": "https://osf.io/p2smd",
+    "date_registered_utc": "2026-11-28T03:59:09.365844",
+    "template": "Secondary Data Preregistration",
+    "license": "CC-By Attribution 4.0 International",
+    "public": true,
+    "embargoed": false
+  },
+  "deviation": "Planned basis was the OSF-issued registered PDF. The registration has no file attachments and no OSF-generated PDF, so the immutable registration record is hashed instead (main planner, 28 Nov 2026).",
+  "audited_package_commit": "52908944f8d659a955e3fdc4316a4b6080691ce6",
+  "written_by": "main planner (Claude), 28 Nov 2026"
+}
