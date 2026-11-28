@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>LOE-Bench as-of pipeline</title>
+<style>
+  body { margin: 0; background: #ffffff; }
+  svg { width: 1000px; height: 560px; display: block; font-family: 'TH Sarabun New', 'Sarabun', sans-serif; }
+  .t { font-size: 22px; fill: #1f2a44; }
+  .s { font-size: 19px; fill: #4f5d75; }
+  .h { font-size: 20px; fill: #5a6580; font-weight: 700; letter-spacing: 0.02em; }
+  .b { font-size: 23px; fill: #1f2a44; font-weight: 700; }
+</style>
+</head>
+<body>
+<!-- Sources: docs/loe-bench/PREREGISTRATION.md, receipts/GATE.md, receipts/SCORE.md. Designed by the main planner. -->
+<svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t7 d7">
+  <title id="t7">LOE-Bench as-of pipeline and test boundary</title>
+  <desc id="d7">Evidence available before each cutoff feeds B1, M1 and M3; the review queue takes one fifth of eligible drugs; the later first ANDA approval is joined only for scoring, after registration and a blinded gate.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f5d75"/></marker>
+    <marker id="arA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0072B2"/></marker>
+  </defs>
+
+  <!-- cutoff line -->
+  <line x1="640" y1="20" x2="640" y2="250" stroke="#D55E00" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="648" y="40" class="b" fill="#D55E00" style="fill:#D55E00">วันตัดข้อมูล (1 ม.ค.)</text>
+
+  <text x="24" y="40" class="h">หลักฐานที่เผยแพร่แล้ว ณ วันตัด (ใช้พยากรณ์)</text>
+  <rect x="24" y="58" width="190" height="96" rx="8" fill="#fff" stroke="#c7cdd8"/>
+  <text x="38" y="88" class="t">Drugs@FDA และ GSRS</text>
+  <text x="38" y="116" class="s">ระบุตัวยาและเกณฑ์</text>
+  <text x="38" y="140" class="s">NDA ฉบับแรก TYPE 1</text>
+  <rect x="226" y="58" width="190" height="96" rx="8" fill="#fff" stroke="#c7cdd8"/>
+  <text x="240" y="88" class="t">Orange Book</text>
+  <text x="240" y="116" class="s">ฉบับไม่เกิน 6 เดือนปฏิทิน</text>
+  <text x="240" y="140" class="s">พิสูจน์ว่าเผยแพร่แล้ว</text>
+  <rect x="428" y="58" width="196" height="96" rx="8" fill="#fff" stroke="#c7cdd8"/>
+  <text x="442" y="88" class="t">Paragraph IV และคดี</text>
+  <text x="442" y="116" class="s">ฉบับใหม่หรือหลักฐานทันเวลา</text>
+  <text x="442" y="140" class="s">ไม่มีหลักฐาน = ไม่ทราบ</text>
+
+  <text x="660" y="88" class="h">หลังวันตัด (ใช้ให้คะแนนเท่านั้น)</text>
+  <rect x="660" y="102" width="316" height="96" rx="8" fill="#fff4ec" stroke="#D55E00"/>
+  <text x="676" y="134" class="t">การอนุมัติขั้นสุดท้ายของคำขอ</text>
+  <text x="676" y="160" class="t">ANDA ฉบับแรก ภายใน 12 หรือ 24 เดือน</text>
+  <text x="676" y="186" class="s">ไม่เข้าสู่แบบจำลองไม่ว่ากรณีใด</text>
+
+  <!-- models -->
+  <line x1="320" y1="160" x2="320" y2="262" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#ar)"/>
+  <rect x="24" y="270" width="176" height="88" rx="8" fill="#f4f6f9" stroke="#c7cdd8"/>
+  <text x="38" y="302" class="b">B1</text><text x="38" y="330" class="s">โอกาสตามอายุยา</text>
+  <rect x="226" y="270" width="190" height="88" rx="8" fill="#f4f6f9" stroke="#c7cdd8"/>
+  <text x="240" y="302" class="b">M1</text><text x="240" y="330" class="s">logistic บนหลักฐานตามวันที่</text>
+  <rect x="442" y="270" width="200" height="88" rx="8" fill="#e8f1f8" stroke="#0072B2"/>
+  <text x="456" y="302" class="b">M3 = M1 + กราฟ</text><text x="456" y="330" class="s">OPEN, BLOCKED, CONTESTED</text>
+  <line x1="200" y1="314" x2="222" y2="314" stroke="#4f5d75" marker-end="url(#ar)"/>
+  <line x1="416" y1="314" x2="438" y2="314" stroke="#4f5d75" marker-end="url(#ar)"/>
+  <line x1="642" y1="314" x2="676" y2="314" stroke="#0072B2" stroke-width="1.5" marker-end="url(#arA)"/>
+  <rect x="680" y="262" width="296" height="104" rx="8" fill="#0072B2"/>
+  <text x="696" y="296" class="b" style="fill:#fff">คิวทบทวน 1 ใน 5</text>
+  <text x="696" y="324" class="s" style="fill:#e8f1f8">floor(N/5) ช่องต่อวันตัด</text>
+  <text x="696" y="350" class="s" style="fill:#e8f1f8">คะแนนเสมอที่ขอบได้น้ำหนักเศษส่วน</text>
+
+  <!-- process -->
+  <text x="24" y="420" class="h">ลำดับการเปิดผลชุดทดสอบปิดผนึก C′</text>
+  <rect x="24" y="436" width="250" height="92" rx="8" fill="#fff" stroke="#c7cdd8"/>
+  <text x="40" y="468" class="t">1 ลงทะเบียน OSF</text>
+  <text x="40" y="496" class="s">28 พ.ย. 2026 ก่อนให้คะแนน</text>
+  <text x="40" y="518" class="s">ล็อกด้วยค่าแฮชของบันทึก</text>
+  <rect x="320" y="436" width="300" height="92" rx="8" fill="#fff" stroke="#c7cdd8"/>
+  <text x="336" y="468" class="t">2 ขั้นตรวจความพร้อมก่อนเปิดผล</text>
+  <text x="336" y="496" class="s">ต้องมีตัวยาที่เกิดเหตุการณ์ ≥ 50 รายการ</text>
+  <text x="336" y="518" class="s">เปิดเผยเพียง ผ่าน หรือ ไม่ผ่าน</text>
+  <rect x="666" y="436" width="310" height="92" rx="8" fill="#e8f1f8" stroke="#0072B2"/>
+  <text x="682" y="468" class="t">3 ทดสอบตามลำดับ H1, H2, H3</text>
+  <text x="682" y="496" class="s">α ทางเดียว 0.025 ต่อขั้น</text>
+  <text x="682" y="518" class="s">ขั้นใดไม่ผ่าน ขั้นต่อไปเป็นเชิงพรรณนา</text>
+  <line x1="274" y1="482" x2="316" y2="482" stroke="#4f5d75" marker-end="url(#ar)"/>
+  <line x1="620" y1="482" x2="662" y2="482" stroke="#4f5d75" marker-end="url(#ar)"/>
+</svg>
+</body>
+</html>
