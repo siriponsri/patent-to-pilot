@@ -1,0 +1,24 @@
+name = "mwd-mcp"
+main = "src/worker.ts"
+compatibility_date = "2026-11-28"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+preview_urls = false
+upload_source_maps = false
+
+[vars]
+PUBLIC_ORIGIN = "https://mwd-mcp.replace-with-owner-subdomain.workers.dev"
+ALLOWED_ORIGINS = ""
+
+[observability]
+enabled = false
+
+[[ratelimits]]
+name = "CALLER_LIMIT"
+namespace_id = "1001"
+simple = { limit = 60, period = 60 }
+
+[[ratelimits]]
+name = "LOCATION_LIMIT"
+namespace_id = "1002"
+simple = { limit = 1000, period = 60 }

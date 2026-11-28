@@ -1,0 +1,101 @@
+[
+  {
+    "id": "h1",
+    "horizon": 24,
+    "status": "PASS",
+    "endpoint": "Recall at 20%",
+    "unit": "event rows",
+    "numerator": null,
+    "denominator": 368,
+    "difference_pp": 20.37,
+    "ci95_pp": [
+      14.37,
+      26.16
+    ],
+    "en": "Historical C′: M3 minus B1, +20.37 percentage points. H1 passed.",
+    "th": "ผลย้อนหลัง C′: M3 สูงกว่า B1 20.37 จุดร้อยละ ผ่าน H1",
+    "receipt": "SCORE",
+    "anchor": "primary-family",
+    "locator": "Primary family, H1 and 24-month cohort",
+    "capacity": 0.2,
+    "receipt_date": "2026-11-28"
+  },
+  {
+    "id": "h2",
+    "horizon": 24,
+    "status": "FAIL",
+    "endpoint": "Recall at 20%",
+    "unit": "event rows",
+    "numerator": null,
+    "denominator": 368,
+    "difference_pp": 1.36,
+    "ci95_pp": [
+      -2.2,
+      3.01
+    ],
+    "en": "Historical C′: M3 minus M1, +1.36 percentage points. H2 failed and stopped the sequence.",
+    "th": "ผลย้อนหลัง C′: M3 สูงกว่า M1 1.36 จุดร้อยละ ไม่ผ่าน H2 จึงหยุดการทดสอบตามลำดับ",
+    "receipt": "SCORE",
+    "anchor": "primary-family",
+    "locator": "Primary family, H2 and 24-month cohort",
+    "capacity": 0.2,
+    "receipt_date": "2026-11-28"
+  },
+  {
+    "id": "h3",
+    "horizon": 12,
+    "status": "NOT_REACHED_DESCRIPTIVE",
+    "endpoint": "Recall at 20%",
+    "unit": "event rows",
+    "numerator": null,
+    "denominator": 202,
+    "difference_pp": 16.69,
+    "ci95_pp": [
+      9.98,
+      24.21
+    ],
+    "en": "Historical C′: M3 minus B1, +16.69 percentage points, descriptive only.",
+    "th": "ผลย้อนหลัง C′: M3 สูงกว่า B1 16.69 จุดร้อยละ เป็นผลเชิงพรรณนา",
+    "receipt": "SCORE",
+    "anchor": "primary-family",
+    "locator": "Primary family, H3 and 12-month cohort",
+    "capacity": 0.2,
+    "receipt_date": "2026-11-28"
+  },
+  {
+    "id": "llm",
+    "horizon": null,
+    "status": "EXPLORATORY",
+    "endpoint": "Schema-valid completions",
+    "unit": "forecast rows per arm",
+    "numerator": 9898,
+    "denominator": 9898,
+    "difference_pp": null,
+    "ci95_pp": null,
+    "en": "Exploratory historical C′ comparison of Qwen2.5-7B-Instruct L1 and L1e, using the common 12- and 24-month roster. Pretraining exposure is unknown.",
+    "th": "การเปรียบเทียบเชิงสำรวจย้อนหลัง C′ ของ Qwen2.5-7B-Instruct แบบ L1 และ L1e ใช้ชุดข้อมูลเดียวกันที่ 12 และ 24 เดือน ยังไม่ทราบว่าโมเดลเคยเห็นข้อมูลใดระหว่างฝึก",
+    "receipt": "SCORELLM",
+    "anchor": "exploratory-c-results",
+    "locator": "Exploratory C′ results, valid and complete roster",
+    "capacity": 0.2,
+    "receipt_date": "2026-11-28"
+  },
+  {
+    "id": "track-a",
+    "horizon": null,
+    "status": "PENDING",
+    "endpoint": "First final original ANDA approval",
+    "unit": "active moieties per horizon",
+    "numerator": null,
+    "denominator": 651,
+    "difference_pp": null,
+    "ci95_pp": null,
+    "en": "Frozen Track A t0 forecast, outcome pending.",
+    "th": "ผลคาดการณ์ Track A ณ เวลาเริ่มต้น ยังรอผลจริง",
+    "receipt": "PO-CURRENT",
+    "anchor": "what-changed",
+    "locator": "Current queue and freeze verification, 651 drugs per horizon",
+    "capacity": 0.2,
+    "receipt_date": "2026-11-28"
+  }
+]
