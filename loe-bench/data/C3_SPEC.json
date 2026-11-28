@@ -1,0 +1,69 @@
+{
+  "id": "C3",
+  "technique_ledger": "K25",
+  "version": 1,
+  "status": "EXPLORATORY_SPECIFICATION",
+  "code_commit_sha": "57d348f656ca115535203a158d709d723e23951e",
+  "scope": "US FDA small-molecule regulatory crowding for the Market Window Dossier",
+  "endpoint": {
+    "roster": "The full C1 criteria-v3 at-risk active-moiety NME roster at each admitted cutoff. Keep its exact row keys and cutoff eligibility.",
+    "window": "(cutoff, cutoff plus 36 calendar months], with complete observation through the inclusive endpoint",
+    "horizon_months": 36,
+    "threshold": 3,
+    "positive": "At least three distinct applicants with a first qualifying final original ANDA approval for the group inside the window.",
+    "qualifying_approval": "FDA ANDA application with dated original submission type ORIG and final approved status AP. Use the earliest qualifying date per group and application. Only the existing FIX2c original-composition mapping links approvals to C1 group keys.",
+    "exclude": [
+      "Tentative approvals, supplements, withdrawals without a recorded qualifying final original approval, and non-ANDA applications",
+      "Authorized generics marketed under the original NDA and any explicitly documented authorized generic records",
+      "Approvals outside the window and applications without an admissible link to the group"
+    ],
+    "grouping_limits": "The full active-moiety set identifies the group, with combination sets separate where the pinned mapping supports them. Grouping pools strengths and can pool formulations, salts, routes, indications, reference products and markets. The C1 identity policy and current-snapshot linkage coverage limit inference. FDA approval is permission to market and measures regulatory crowding. Marketed producers, launch dates, competition in a narrower segment and sales require separate evidence."
+  },
+  "applicant_identity": {
+    "unit": "The FDA applicant at the first qualifying approval, collapsed across duplicate strengths and repeated ANDAs within a group.",
+    "evidence": "Require an FDA action letter or other authoritative dated evidence identifying the application's holder on the approval day. Documented transfers use an evidenced effective interval covering that day. A later holder, an undated current sponsor and a later Orange Book listing are corroboration or discovery leads only.",
+    "name_normalization": "Unicode NFC, casefold and whitespace folding. Preserve punctuation, legal suffixes and name differences unless dated source evidence explicitly identifies the same legal applicant.",
+    "alias_rules": "Use a single-hop, date-scoped, evidence-backed alias to a canonical legal applicant. Prohibit fuzzy merges, affiliate and parent rollups, transitive guesses and retrospective changes due to later acquisitions. Conflicting applicable evidence leaves the identity unresolved.",
+    "required_provenance": ["source ID or URL", "version or date", "SHA-256", "exact locator", "ANDA number", "applicant name", "inclusive effective dates"],
+    "row_bounds": "For recorded, linked qualifying approvals, lower bound is the greater of the number of confirmed distinct applicants and one when there is any application. Upper bound is the number of confirmed distinct applicants plus one distinct applicant per unresolved application. An upper bound below three is negative. A lower bound at least three is positive. Otherwise the label is unknown.",
+    "audit_rule": "Count unresolved unique applications and threshold-ambiguous group-cutoff rows overall and by cutoff. On the frozen development queue panel, list the first three rows in each band of exactly two and exactly three distinct qualifying applications, sorted by canonical key and cutoff. Check original final FDA letters with the same application and approval date, or an FDA record explicitly naming the applicant for that action. Use snapshot names only as audit leads. This fixture selection operates independently of scores."
+  },
+  "development": {
+    "label_audit_cutoffs": ["2010-01-01", "2011-01-01", "2012-01-01", "2013-01-01"],
+    "observed_through": "2016-01-01",
+    "frozen_24_month_validation_panel_with_mature_36_month_outcomes": ["2013-01-01"],
+    "boundary": "Require the development seal closed. Pre-filter ANDA submissions and product outcome fields as bytes before decoding. Do not decode approvals after 2016-01-01. Use only undated ingredient metadata when an ANDA has no admissible final original action. Broader label-audit cutoffs have no role in queue scoring.",
+    "evidence_status": "DEVELOPMENT_ONLY"
+  },
+  "sealed_test": {
+    "cutoffs": ["2017-01-01", "2018-01-01", "2019-01-01", "2020-01-01", "2021-01-01", "2022-01-01", "2023-01-01"],
+    "gate": "Require existing seal authorization and planner's registered release procedure before interpreting protected outcome records. Use only complete C1 cutoffs with mature 36-month observation. C3 supplies no release authority and does not change H1 through H3."
+  },
+  "frozen_queue": {
+    "configuration": "FROZEN_CONFIG.json",
+    "config_sha256": "d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39",
+    "prediction_horizon_months": 24,
+    "arms": ["M3", "B1"],
+    "budget": "floor(N/5) per whole cutoff before any label handling",
+    "allocation": "Use the original native risks, strictly descending, with uniform fractional allocation across exact ties at the boundary. Unknown labels occupy their original queue share under every label assignment.",
+    "prohibited": ["refit", "recalibration", "threshold search", "use of C3 labels in predictors", "partial queue scoring", "proxy scores"]
+  },
+  "scoring": {
+    "endpoint": "Pooled expected captured known positive rows divided by known positive rows, with event-row and distinct event-drug counts, unknown rows and drugs, and per-cutoff capacity. Report M3 recall minus B1 recall.",
+    "bootstrap": {
+      "draws": 2000,
+      "seed": 20261127,
+      "rng": "NumPy default_rng PCG64",
+      "unit": "Full active-moiety drug history. Use the same multiplicities for both arms. Recompute whole-cutoff capacities and fractional native-score ties in each sampled roster independently of labels.",
+      "interval": "Two-sided paired 95% percentile interval with linear quantiles conditional on existing frozen scores."
+    },
+    "ambiguity_bounds": "At fixed observed queue shares, report all ambiguous rows negative and all positive, then outer minimum and maximum conditional on at least one positive across independent row assignments. The contrast uses the same assignment in both arms and permits overlapping windows, so outer limits can be wider than jointly feasible history-based limits."
+  },
+  "failure_rules": {
+    "zero_known_positive_rows": "Recall and paired point difference undefined. Report label and conditional scenario bounds where available.",
+    "undefined_bootstrap_draw": "Retain the undefined draw count and leave the interval unevaluable if any draw has no known positives.",
+    "irrecoverable_applicant_history": "When dated history is unavailable for the panel, or an entire threshold-ambiguous row lacks any dated applicant history, report descriptive bounds only. Suppress point recall and bootstrap. Bounds are conditional on recorded, linked approvals.",
+    "missing_existing_frozen_scores": "BLOCKED_FROZEN_QUEUE_UNAVAILABLE. Report only endpoint audit and applicant-count bounds. Queue recall, contrast, confidence interval and queue capture bounds are NOT_RUN. Do not refit.",
+    "integrity_or_scope_failure": "Stop before scoring on bad input digest, forecast provenance failure, roster mismatch, incomplete follow-up, nonfinite scores, queue capacity failure or seal failure."
+  }
+}
