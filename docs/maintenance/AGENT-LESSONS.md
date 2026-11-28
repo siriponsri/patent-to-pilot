@@ -1,6 +1,6 @@
 # Lessons for the next agent account
 
-Read [CLAUDE.md](../../CLAUDE.md), the [root handoff](../../HANDOFF.md), the [LOE-Bench plan](../loe-bench/PLAN.md) and the [LOE-Bench lane handoff](../loe-bench/HANDOFF.md) at takeover. The historical experiments below document failures and operating limits worth preserving.
+Read [CLAUDE.md](../../CLAUDE.md), the [root handoff](../../HANDOFF.md), the [Market Window Dossier plan](../loe-bench/PLAN.md) and the [LOE-Bench lane handoff](../loe-bench/HANDOFF.md) at takeover. The historical experiments below document failures and operating limits worth preserving.
 
 ## Working with the owner
 

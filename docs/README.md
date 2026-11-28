@@ -1,12 +1,12 @@
 # Documentation map
 
-Start with the [LOE-Bench documentation map](loe-bench/README.md) for the active D40 program. Use the [root README](../README.md) to run the local reader and the [evidence index](../INDEX-PLAN.md) to find results and original sources from earlier programs.
+Start with the [Market Window Dossier documentation map](loe-bench/README.md) for the active D41 program and its LOE-Bench benchmark. Use the [root README](../README.md) to run the local reader and the [evidence index](../INDEX-PLAN.md) to find results and original sources from earlier programs.
 
 ## Start here
 
 | Need | Location |
 |---|---|
-| Active program and branch ownership | [LOE-Bench plan and dispatch board](loe-bench/PLAN.md) · [Lane handoff](loe-bench/HANDOFF.md) |
+| Active program and branch ownership | [Market Window Dossier plan and dispatch board](loe-bench/PLAN.md) · [Lane handoff](loe-bench/HANDOFF.md) |
 | Thai-context demo and RA Pharma history | [Thai open data for the demo](loe-bench/THAI-OPEN-DATA.md) · [Historical RA Pharma master plan](ra-pharma/MASTER-PLAN.md) · [Evidence contract](ra-pharma/EVIDENCE-CONTRACT.md) |
 | Historical RA Pharma executor lanes | [Research handoff](ra-pharma/research/HANDOFF.md) · [Product handoff](ra-pharma/product/HANDOFF.md) |
 | Earlier program | [S0–S5 board](evidence-scope/MASTER-PLAN.md) · [Historical research freeze](evidence-scope/FREEZE.md) · [S4 integrated validation](evidence-scope/receipts/S4-integrated-verification.md) |
@@ -42,7 +42,7 @@ Owner-local packages in `docs/owner/` stay outside the published repository. D40
 
 ## Research evidence
 
-For the active study, use the [LOE-Bench plan](loe-bench/PLAN.md) and its [task receipts](loe-bench/receipts/). The earlier receipts below retain their original cohorts, comparators and release scope.
+For Market Window Dossier and its LOE-Bench benchmark, use the [program plan](loe-bench/PLAN.md) and [task receipts](loe-bench/receipts/). The earlier receipts below retain their original cohorts, comparators and release scope.
 
 | Topic | Location |
 |---|---|
@@ -73,7 +73,7 @@ The project excludes arXiv:2605.24297 as a source.
 |---|---|---|
 | Track overview | [writing/README.md](writing/README.md) | Never mix text, numbers or claims between tracks without noting the source |
 | The research paper | [writing/journal/](writing/journal/README.md) | Paper 86 is banned (enforced by `tests/test_org_adaptive_terminology.py`) |
-| Independent Study 2 | [writing/is2/](writing/is2/README.md) | Paper 86 allowed here only; B53 results in [writing/is2/results/](writing/is2/results/) |
+| Independent Study 2 | [Market Window Dossier and LOE-Bench](writing/is2/README.md) | Paper 86 allowed in IS2 only. Earlier [B53 results](writing/is2/results/) remain available for reference. |
 
 ## History
 

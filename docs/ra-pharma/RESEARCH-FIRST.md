@@ -1,6 +1,6 @@
 # Research-first architecture study
 
-> Historical RA Pharma record. D40 superseded this mandate on 27 November 2026. RA Pharma now supplies the Thai-context demo layer for the active [LOE-Bench program](../loe-bench/PLAN.md).
+> Historical RA Pharma record. D40 superseded this mandate on 27 November 2026. RA Pharma supplies the Thai-context demo layer for [Market Window Dossier](../loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026), whose benchmark is LOE-Bench.
 
 ## Mandate and status
 
