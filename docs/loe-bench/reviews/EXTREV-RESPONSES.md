@@ -65,3 +65,7 @@ Resolved by the reviewer: N1, R4-A, R4-C, R4-D (repository part). Partial: R3 an
 |---|---|---|
 | R5-A | BLOCKING | **In progress (TRACKA-READOUT6, Sol xhigh).** One shared promotion gate for fresh and resumed 24-month drafts: rediscover the 12-month result with the same witness rules, reconcile it with the staged H3 reference, and keep the draft unpublished while any conflict persists. Tests: the reviewer probe, an uncontested retry publishing the original bytes, and a staged-reference mismatch. |
 | R5-B | MINOR | **In progress (same card).** One documented maintainer issue body with the result and manifest digests; the Worker and the reader accept the same format, and an incomplete marker no longer stops dispatch. |
+
+**Round 5 outcome (29 Nov, 00:46, TRACKA-READOUT6 merged).** R5-A: fresh and resumed drafts share one promotion gate that rediscovers the 12-month result and reconciles it with the staged H3 reference; a conflict or mismatch keeps the draft unpublished, and the uncontested retry publishes the original bytes. R5-B: one maintainer issue body with digests is accepted by both the Worker and the reader; an incomplete marker is logged and dispatch continues. Production publication NOT_RUN until 2027. [Receipt](../receipts/TRACKA-READOUT6.md)
+
+Next: EXTREV-R6.
