@@ -15,8 +15,8 @@ from zipfile import ZIP_DEFLATED, ZipFile
 from .common import read_jsonl
 from . import dataset, moiety
 from .tracka_release import (ARMS, C9, CORE, DEADLINE, FREEZE, HORIZONS, IDENTITY, LLM, MANIFEST, PRIOR, ROSTER,
-                             SCORER, T0, VERSION, code_digest, digest, dump, load, read_release, require, row_id,
-                             verify_file)
+                             SCORER, T0, TRACKA_FREEZE_SCHEMA, VERSION, code_digest, digest, dump, frozen_pins, load,
+                             read_release, require, row_id, verify_file)
 
 REPO = Path(__file__).resolve().parents[2]
 PRIVATE = Path("C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench")
@@ -100,7 +100,11 @@ def publication(args, frozen):
             "analysis": "exploratory" if args.exploratory or stamped >= DEADLINE else "replication"}
 
 
-def prediction_files(pins, args):
+def prediction_files(pins, args, freeze):
+    if freeze.get("schema") == TRACKA_FREEZE_SCHEMA:
+        require(not args.arm_file, "The Track A freeze already binds each arm to its file")
+        return {arm: {str(h): record["file"] for h in ((24,) if arm in C9 else HORIZONS)}
+                for arm, record in freeze["predictions"].items()}
     files = {}
     for arm in CORE:
         files[arm] = {str(h): f"core_predictions_{h}m.jsonl" for h in HORIZONS}
@@ -147,9 +151,10 @@ def build(args, stage):
         dump(frozen, {"freeze": "pending", "files_sha256": pins})
     else:
         frozen = args.freeze_manifest or package / Path(args.freeze_git_path).name
-        pins = load(frozen)["files_sha256"]
         copyfile(frozen, stage / FREEZE)
     manifest = {"schema": 1, "t0": T0.isoformat(), **publication(args, frozen), "frozen_files": {}}
+    freeze = load(frozen)
+    pins = frozen_pins(freeze)
     rights = []
 
     def declare(name, source, license_name, shareable="yes", details=""):
@@ -169,18 +174,19 @@ def build(args, stage):
     dump(stage / IDENTITY, prepare_identity(private, core, keys))
     declare(IDENTITY, "S0 openFDA and pinned GSRS name/UNII fields; FIX2c", "CC0 1.0 source fields; Apache-2.0 adapter")
     declare(FREEZE, "Track A prediction freeze", "Apache-2.0 project metadata")
-    sources = prediction_files(pins, args)
+    sources = prediction_files(pins, args, freeze)
     share_optional = set(args.share_optional)
     require(not args.dry_run or not share_optional, "GPU outputs are outside the pending rehearsal")
     require(share_optional <= sources.keys(), "An approved optional arm is absent from the freeze manifest")
     require(share_optional.intersection(C9) in (set(), set(C9)), "Share both C9 arms or withhold both")
     include_names = {name for arm, horizons in sources.items() if arm in CORE + PRIOR or arm in share_optional
                      for name in horizons.values()}
+    gpu_files = {name for arm in share_optional for name in sources[arm].values()}
     copies = {}
     for name in sorted(include_names):
         exposed = include(name, name.replace("/", "__"))
         copies[name] = exposed
-        edition = "Project prediction output" if name.startswith(("core_", "priorarms_")) else "Maintainer-reviewed GPU output"
+        edition = "Maintainer-reviewed GPU output" if name in gpu_files else "Project prediction output"
         declare(exposed, edition, "Apache-2.0 project artifact", details="Frozen prediction bytes")
 
     arm_dictionary = {}
@@ -208,10 +214,12 @@ def build(args, stage):
     guide = REPO / "docs/loe-bench/HOW-TO-SCORE-TRACK-A.md"
     copyfile(guide, stage / "README.md")
     copyfile(REPO / "LICENSE", stage / "LICENSE")
+    copyfile(REPO / "NOTICE", stage / "NOTICE")
     copyfile(REPO / "loe-bench/requirements-tracka.lock", stage / "requirements-tracka.lock")
     (stage / "SOURCE-RECIPES.md").write_text(
         "# Source recipes\n\n"
-        "- For S0 input hashes, use `loe-S0-input-20261127` and `loe-bench/data/S0_INPUT_MANIFEST.json`.\n"
+        "- For S0 input editions, download locators and hashes, see the [tagged S0 manifest](https://github.com/"
+        "siriponsri/patent-to-pilot/blob/loe-S0-input-20261127/loe-bench/data/S0_INPUT_MANIFEST.json).\n"
         "- The GSRS recipe uses the [2026-08-06 public export](https://gsrs.ncats.nih.gov/assets/downloads/"
         "dump-public-2026-08-06.gsrs) and the hash in identity.json. The release includes the scoring projection.\n"
         "- If auditing historical NBER-derived features independently, obtain them under the "
@@ -234,7 +242,7 @@ def build(args, stage):
         declare(f"loe_bench/{source.name}", "Patent-to-Pilot repository", "Apache-2.0")
     dump(stage / SCORER, {"version": VERSION, "python": "3.12.10", "numpy": "2.5.4",
                           "source_files_sha256": {path.name: code_digest(path) for path in sorted(code.iterdir())}})
-    for name in ("README.md", "LICENSE", "requirements-tracka.lock", "SOURCE-RECIPES.md", "CITATION",
+    for name in ("README.md", "LICENSE", "NOTICE", "requirements-tracka.lock", "SOURCE-RECIPES.md", "CITATION",
                  "example-output.json", "RIGHTS.csv", SCORER, MANIFEST):
         declare(name, "Patent-to-Pilot release kit", "Apache-2.0")
     with (stage / "RIGHTS.csv").open("w", newline="", encoding="utf-8") as file:

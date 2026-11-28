@@ -57,7 +57,7 @@ An advisor, reviewer or other maintainer can score the public release with no ac
 
 The owner or a consenting depositor can complete this before the handoff. Wait for the audited freeze tag and OSF update 4. In Zenodo choose **New upload**, select Dataset, enter the title **LOE-Bench Track A prediction release**, add Siripon Srihangpiboon and Tuchsanai Ploysuwan as creators, and link the OSF registration and repository. Reserve the draft DOI if it will appear in `CITATION`. [Zenodo upload details](https://help.zenodo.org/docs/deposit/create-new-upload/).
 
-From `loe-bench/`, replace the capitalized arguments with the audited values. The private directory must contain `trackA/`, `raw-20261127/` and `moiety/`. `TAGGED_MANIFEST_PATH` is the repo-relative path at the freeze tag, such as `loe-bench/data/TRACKA_FREEZE_MANIFEST.json`. The original manifest must expose `files_sha256` keyed by the package-relative filenames. If the freeze uses different GPU filenames, specify `--arm-file ARM=relative/path.jsonl` for each changed name. Use `--share-optional ARM` only after reviewing the exact frozen GPU file and rights. Include both C9 arms together.
+From `loe-bench/`, replace the capitalized arguments with the audited values. The private directory must contain `trackA/`, `raw-20261127/` and `moiety/`. The Track A freeze manifest pins the roster and the admitted per-arm files. `TAGGED_MANIFEST_PATH` is the repo-relative path at the freeze tag, `loe-bench/data/TRACKA_FREEZE_MANIFEST.json`. Pass `--share-optional ARM` for each GPU file cleared for redistribution. Include both C9 arms together. Omit `--zenodo-doi` if you have yet to reserve a DOI for this archive.
 
 ```sh
 python -m loe_bench.build_release --private PRIVATE_LOE_ROOT --out RELEASE_DIR \
