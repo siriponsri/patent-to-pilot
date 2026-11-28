@@ -689,6 +689,8 @@
     var queueChip = d.outside ? "" : (f.in_queue ? '<span class="chip chip-navy">In review queue</span>' : '<span class="chip">Outside review queue</span>');
     var modeChip = state.mode === "current" ? '<span class="chip">' + esc(state.index.label || "Track A t0 forecast, outcome pending") + "</span>" : '<span class="chip">Development data</span>';
     var chips = '<div class="chips" lang="en">' + queueChip + modeChip + (state.index.fixture || d.fixture ? '<span class="chip chip-fixture">FIXTURE</span>' : "") + "</div>";
+    var disc = window.MWDPrint ? '<p class="dossier-disclaimer" lang="' + state.lang + '"><b lang="en">Disclaimer</b> ' +
+      esc((d.disclaimer && d.disclaimer[state.lang]) || window.MWDPrint.DISCLAIMER[state.lang]) + "</p>" : "";
     if (d.outside) {
       var w = launchInfo();
       chips += '<div class="outside" role="status"><b lang="en">Outside the forecast horizon</b><p lang="' + state.lang + '">' +
@@ -705,7 +707,7 @@
         '<h2 lang="en">' + s.label + '</h2><p class="tab-intro">' + esc(tx().intro[s.id]) + "</p>" + body + "</section>";
     }).join("");
     main.innerHTML = '<div class="d-wrap">' + printHead + crumb + '<div class="d-head"><h1>' + esc(name) + "</h1>" + actions + "</div>" + meta + chips +
-      '<div id="outcome-slot">' + outcomeBlock(d) + "</div>" + tabs + panels + "</div>";
+      disc + '<div id="outcome-slot">' + outcomeBlock(d) + "</div>" + tabs + panels + "</div>";
   }
 
   function emptyState() {
@@ -1184,5 +1186,22 @@
       $("sources-list").innerHTML = "";
     });
   }
+  /* Print and PDF share one layout (assets/dossier-print.js). Whatever starts a print (the button, Ctrl+P or the
+     browser menu) fires beforeprint, so the report is mounted there and removed afterwards. Other views print as before. */
+  window.addEventListener("beforeprint", function () {
+    var d = state.dossier, P = window.MWDPrint;
+    if (!P || state.view !== "queue" || !d || state.error) return;
+    try {
+      var saved = {}, w = d.outside ? launchInfo() : null;
+      try { saved = JSON.parse(store(checkKey(d)) || "{}") || {}; } catch (e) { saved = {}; }
+      P.mount(document, P.build(d, {
+        lang: state.lang, horizon: (d.forecast || {}).horizon_months || state.horizon, outside: !!d.outside, launch: state.launch,
+        windowEnd: w ? w.end : null, revealed: state.revealed && state.mode !== "current", queueTotal: state.queue ? state.queue.rows.length : null,
+        checked: (d.checklist || []).filter(function (c) { return saved[c.id]; }).map(function (c) { return c.id; })
+      }));
+    } catch (e) { /* if the report cannot be built, the browser prints the page with the older print rules */ }
+  });
+  window.addEventListener("afterprint", function () { if (window.MWDPrint) window.MWDPrint.unmount(document); });
+
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();

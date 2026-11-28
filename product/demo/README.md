@@ -42,9 +42,22 @@ index.html#view=dossiers
 
 Headings, navigation, labels and buttons are English. Statements, checklist items and notes follow the TH/EN toggle, Thai by default, and `<html lang>` follows the content language. Settings, the language choice and checklist ticks are stored in this browser only.
 
-**Keyboard.** Arrow keys, Home and End move through the queue when it has focus. Alt+Down and Alt+Up open the next or previous molecule that has a dossier. Arrow keys move between tabs, and Alt+1 to Alt+7 open a section. Ctrl+P prints the open dossier with every section expanded.
+**Keyboard.** Arrow keys, Home and End move through the queue when it has focus. Alt+Down and Alt+Up open the next or previous molecule that has a dossier. Arrow keys move between tabs, and Alt+1 to Alt+7 open a section. Ctrl+P, **Print dossier** and the browser menu all print the same report layout as the generated PDF (see Print and PDF below).
 
 **Layouts.** Three columns from 1280 px. Between 1024 and 1279 px the sources panel moves below the dossier. Below 1024 px the regions stack.
+
+## Print and PDF
+
+One layout serves both. `assets/dossier-print.js` turns a dossier (language, horizon, reveal state) into a report: page one carries the decision summary (drug, jurisdiction, as-of date, horizon, mode label, M3 and B1, queue position and capacity, the forecast event, uncertainty, next action with its owner, version tag and the fixed disclaimer), then the seven sections in the app's order, with long statement and checklist overflow and the full source table moved to appendices (a section keeps 8 statements, the checklist keeps every agency lookup and 6 other tasks). Headings and labels are English; the body follows the TH/EN choice. A current dossier never carries an outcome field. A historical dossier hides its development outcome, and an export made after **Show outcome** is marked "Revealed export" and "REVEALED: development outcome shown" on every page.
+
+- **In the app**, anything that starts a print (the button, Ctrl+P, the browser menu) fires `beforeprint`. The app mounts the report, hides the rest of the page, and removes the report on `afterprint`. Other views print as before. Ticks in the FTO hand-off checklist (stored in this browser only) print as checked boxes.
+- **As PDF or HTML files**, from the repository root (needs Playwright and the installed Chrome):
+
+```powershell
+py -3.12 -m product.mwd.render --dossier product/demo/data/current/dossier-U-DKO1W9H7M1-2026-11-27.json --lang th --horizon 24 --out dolutegravir-24m.th.pdf
+py -3.12 -m product.mwd.render --dossier <historical dossier.json> --lang en --out case.en.pdf --reveal   # marks the export as revealed
+py -3.12 -m product.mwd.pdf_check U-DKO1W9H7M1 --lang th en --horizon 12 24 --out-dir <dir>              # screen, PDF and browser print compared
+```
 
 ## Refresh the data
 
@@ -66,6 +79,7 @@ python product/demo/fonts_css.py  # only after replacing a font file
 | [`index.html`](index.html) | Page shell |
 | [`styles.css`](styles.css) | Tokens and layout from DESIGN.md, responsive and print rules |
 | [`app.js`](app.js) | Data loading, hash state, queue, dossier, sources, views, checklist storage |
+| [`assets/dossier-print.js`](assets/dossier-print.js) | The report layout for print and PDF (F2 style): one function from a dossier JSON to HTML. Used by the app on `beforeprint` and by `product/mwd/render.py` for the PDFs |
 | [`bundle.py`](bundle.py) | Builds `data/index.json` and `data.bundle.js`; `--current` builds `data.current.bundle.js` |
 | `data/current/` | Current queue: 2 queue files, 651 dossiers, `index.json` (frozen Track A, outcome pending) |
 | [`fonts_css.py`](fonts_css.py) | Inlines the self-hosted fonts into `assets/fonts/fonts.css` for the app and the landing page |

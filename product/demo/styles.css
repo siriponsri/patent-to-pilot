@@ -200,6 +200,8 @@ input[type="search"]:hover, input[type="date"]:hover { border-color: var(--muted
 .btn-secondary[aria-pressed="true"] { background: var(--navy); color: #fff; }
 .btn-link { background: none; color: var(--link); padding: 0; height: auto; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .btn-link:hover { background: none; text-decoration-thickness: 2px; }
+.dossier-disclaimer { background: var(--amber-bg); border: 1px solid var(--amber-line); border-left: 4px solid var(--amber); border-radius: 3px; padding: 8px 12px; margin: 0 0 16px; font-size: 14px; line-height: 1.55; }
+.dossier-disclaimer b { color: var(--amber); margin-right: 6px; }
 .d-meta { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-top: 8px; font-size: 14.5px; color: var(--muted); }
 .d-meta b { color: var(--ink); font-weight: 600; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
