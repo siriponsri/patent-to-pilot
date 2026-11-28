@@ -91,3 +91,13 @@
   - Co-planner design: a launch-window forecast covering US entry timing (LOE-Bench), competition at launch (K25), a price-erosion scenario (FDA medians: manufacturer-price index 46 with 2 producers and 21 with 4) and a demand baseline (Medicaid SDUD, descriptive only; vintages unverified).
   - Report: a seven-part hierarchy with claim-level citations and known/unknown/not-applicable states. Validation by scripted traceability audit. The reader test is optional because KMITL ethics review asks for about three months' notice.
   - Weekly plan: freeze before OSF by 6 Dec, OSF 7–13 Dec, draft 31 Dec, Track A freeze mid-January. Merged Goal-Phase plan awaiting owner approval.
+- **28 Nov, pre-OSF cards (D41 week 1).**
+  - DOCS2 merged: documents aligned to D41. The deletion inventory proposes only 3 duplicate images, because nearly everything else is linked from tests or the evidence trail.
+  - C9 merged: prospective-only GRPO versus SFT on Qwen2.5-1.5B. Training cutoffs run from 1995 to 2014, with windows closed before 2016. Evaluation is on Track A only, at 24 months, using Brier and recall@20%. The cap is USD 8.
+  - C3 and C3b merged. The applicant at approval comes from the first Orange Book edition within 12 months of approval, which resolved 219 of 221 ANDAs. The rule agreed with current sponsor names on 268 of 601 comparable applicants (abbreviations explain much of the gap), and only 2 labels changed.
+  - The FREEZE per-row score export reproduces the published report exactly: `_private_artifacts/loe-bench/FREEZE_dev_scores*.json`.
+  - C3 development result (2013 cutoff only, 21 events): M3 recall 71.43% versus B1 45.83%, a difference of +25.60 pp [+6.25, +45.00].
+  - C4 and C4b merged. All Medicaid vintages are retrospective and vintage-uncontrolled, and national totals are NOT_ESTIMABLE. Mapped-package identity coverage is only 14–26%.
+  - On annual prescriptions, carry-forward MAE 25,002 beat drift MAE 31,114.
+  - Gross reimbursement per prescription rose for queued ingredients (carry-forward bias −454 USD). Applying the FDA factor of 0.465 made the forecast worse for both the M3 queue (+381 USD MAE) and the B1 queue (+372 USD). Lesson: first entry does not collapse gross Medicaid reimbursement within four quarters; crowding (C3) is the better P2 signal. No further tuning, to avoid forking paths.
+  - Remaining before OSF: C2 (L1e), then preregistration v2 drafting, main-planner audit and the copy-sheet hashes.
