@@ -101,7 +101,7 @@ def load(md_path, lang):
             f = LINK.match(s).group(2).split("/")[-1]
             j = nonblank(i + 1)
             cap = L[j].strip().strip("*")
-            full = f.startswith("fig1")
+            full = f.startswith(("fig1", "fig2_recall"))
             body.append(("fig", f, 6.5 if full else 3.0, cap, full))
             i = j
         elif s.startswith("*") and re.match(r"^\*(Table \d|ตารางที่ \d)", s):

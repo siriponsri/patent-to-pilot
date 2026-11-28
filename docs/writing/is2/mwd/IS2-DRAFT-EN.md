@@ -18,7 +18,7 @@ School of Information Technology, King Mongkut's Institute of Technology Ladkrab
 
 ## Abstract
 
-The evaluation limited review to one fifth of eligible drug cases at each annual cutoff, rounded down to a whole number of cases. We ranked eligible cases using evidence available at each cutoff and evaluated recall in a sealed historical test (C′). The event was the first final US approval of an original abbreviated new drug application (ANDA). At 24 months, the dated-evidence table with graph states (M3) captured 66.85% of event cases, compared with 46.48% for the drug-age baseline (B1) and 65.49% for the dated-evidence table (M1). The paired difference between M3 and B1 was 20.37 percentage points (95% CI 14.37 to 26.16). The test did not establish an incremental gain from adding graph states to M1. The historical results support prioritization for review. The automatic clearance rule failed the safety check, so cases outside the queue still require routine review.
+The evaluation limited review to one fifth of eligible drug cases at each annual cutoff, rounded down to a whole number of cases. We ranked eligible cases using evidence available at each cutoff and evaluated recall in a sealed historical test (C′). The event was the first final US approval of an original abbreviated new drug application (ANDA). At 24 months, the dated-evidence table with graph states (M3) captured 66.85% of event cases, compared with 46.48% for the drug-age baseline (B1) and 65.49% for the dated-evidence table (M1). The paired difference between M3 and B1 was 20.37 percentage points (95% CI 14.37 to 26.16). The test did not establish an incremental gain from adding graph states to M1. The results support prioritization for review. The automatic clearance rule failed the safety check, so cases outside the queue require routine review.
 
 **Keywords** generic drugs, market window, evidence graph, review prioritization, freedom to operate
 
@@ -35,12 +35,12 @@ LOE-Bench evaluates these rankings on historical US records. The fixed review ca
 ### Research objectives
 
 - RQ1 compared recall at fixed review capacity for M3 versus drug age (B1) and for M3 versus dated tabular evidence (M1), in the preregistered sequence.
-- RQ2 comprised three exploratory analyses: recall under a 7B language model given the same upstream evidence, capture of cases with at least three approved applicants within 36 months, and reimbursement forecast error after applying a price factor.
+- RQ2 comprised three exploratory analyses: recall under a 7B language model given the same upstream evidence, capture of cases with at least three approved applicants within 36 months, and reimbursement error after a price factor.
 - RQ3 assessed which dossier claims could be traced to a dated source and which required further specialist verification.
 
 ## 2. Background and Related Work
 
-### 2.1 Generic entry estimates and review prioritization
+### 2.1 Estimating generic entry and review priority
 
 Beall et al. estimated generic entry from patents and exclusivity [2], [3]. LOE-Bench compares recall for rankings based on evidence available at the cutoff under a common review capacity. Other studies measure time to approval [4] or predict first submission [5], [6]. The FDA documents a lag between approval and marketing [7].
 
@@ -56,7 +56,7 @@ WIPO distinguishes patent landscaping from FTO analysis and describes the eviden
 
 ### 2.4 Evaluation
 
-Historical language models can encounter outcomes in training or input [22]. Time-consistent models and ForecastBench illustrate controls [23], [24]. We draw on preregistration, selective classification, clustered resampling, fixed-sequence testing [25]–[28] and outcome-based reinforcement learning [29].
+Historical language models can encounter outcomes in training or input [22]. Time-consistent models and ForecastBench illustrate controls [23], [24]. We draw on preregistration, selective classification, clustered resampling, fixed-sequence testing [25]–[28] and outcome-based RL [29].
 
 ## 3. Methods
 
@@ -70,13 +70,13 @@ A drug case at cutoff is an active-moiety set at an annual cutoff. The study req
 
 Drugs@FDA and the Global Substance Registration System link approvals to ingredients. For the sealed historical test (C′), we admitted the latest hash-matched Orange Book edition dated within six calendar months with independent proof of public availability by cutoff. We used fresh, availability-proven FDA Paragraph IV lists and qualifying court records for challenge status. A fresh list can support operational non-observation. Without a qualifying list or positive witness, we retained an unknown state [30].
 
-Both horizons use 2010 for training. Development uses 2012–2015 at 12 months and 2013–2014 at 24 months. C′ uses 2017–2025 and 2017–2024, respectively. Before registration, overlapping 36-month B0–B2 aggregates, mixed-period preflight checks and power-simulation candidate counts exposed some C′ information. The record reports no per-case outcome inspection or test-based method selection [30]. The same drug can contribute at successive annual cutoffs. Cases and distinct event drugs therefore have separate counts.
+Both horizons use 2010 for training. Development uses 2012–2015 at 12 months and 2013–2014 at 24 months. C′ uses 2017–2025 and 2017–2024, respectively. Before registration, overlapping 36-month B0–B2 aggregates, mixed-period preflight checks and power-simulation candidate counts exposed some C′ information. The record reports no per-case outcome inspection or test-based method selection [30]. Because a drug can recur at successive cutoffs, we count cases and distinct event drugs separately.
 
 ### 3.3 Queues and registered test sequence
 
 The drug-age baseline (B1) estimates approval hazard from age since first NDA approval. The dated-evidence table model (M1) uses L2 logistic regression on age, dated evidence and the B1 logit. The table model with added graph states (M3), called the graph queue, adds OPEN, BLOCKED and CONTESTED indicators. The graph uses patent and exclusivity expiries and observed challenges, carrying unknowns through Kleene three-valued logic. OPEN is a model variable. Specialists make legal determinations separately [30].
 
-At each cutoff and horizon, the evaluation allocated one fifth of eligible cases to review, rounded down. We ranked cases by native scores before calibration or deferral and allocated fractional credit at boundary ties. Recall divides expected captured event cases by all event cases across cutoffs.
+At each cutoff and horizon, the evaluation allocated one fifth of eligible cases to review, rounded down. We ranked cases by native scores before calibration or deferral, with fractional credit at boundary ties. Recall divides expected captured event cases by all event cases across cutoffs.
 
 The registered sequence tests M3 versus B1 at 24 months (H1), M3 versus M1 at 24 months (H2), and M3 versus B1 at 12 months (H3), at one-sided α = 0.025. We generated 2,000 paired whole-drug bootstrap samples per horizon with fixed models and recomputed queues. A nonpositive lower bound or undefined interval stops the sequence. Estimable contrasts receive two-sided 95% percentile intervals, and unreached steps are descriptive. The +10-point usefulness threshold is assessed separately [30].
 
@@ -84,9 +84,9 @@ The registered sequence tests M3 versus B1 at 24 months (H1), M3 versus M1 at 24
 
 We registered the analysis publicly on Open Science Framework (OSF) before scoring on 28 November 2026. The blinded gate checked edition coverage and required at least 50 distinct 24-month event drugs. It released only its verdict. The custodian issued that verdict at 05:12 UTC. Updates 1 and 2, approved before the gate, clarified the hash and attachments and allowed C9 training in December or January.
 
-![Figure 1](figures/fig1_timeline_en.png)
+![Figure 1](figures/fig1_capacity_en.png)
 
-*Figure 1. At each annual cutoff, each method ranks eligible drug cases using records available by that date. Review capacity is ⌊N/5⌋, with fractional allocation at boundary ties. First final approvals observed over the next 12 or 24 months are used to calculate recall.*
+*Figure 1. Records available at each cutoff determined the review rankings. Each method received one slot per five eligible cases, rounded down. First final US generic approvals over the next 12 or 24 months supplied the outcomes for evaluation.*
 
 Update 3 removed the month restriction at 09:09 UTC after scoring, preserving the historical inference rules and the requirement to train between admission and the prospective freeze [30].
 
@@ -106,22 +106,16 @@ We measured reimbursement per prescription as total reimbursement in the fourth 
 
 ### 4.1 Recall at fixed review capacity
 
-*Table 1. Recall at the 20% review budget on the sealed historical test (C′).*
 
-| Horizon | Eligible cases | Event cases | Slots | B1 age | M1 table | M3 graph | L1 identity prompt | L1e evidence prompt |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 24 months | 4,639 | 368 | 924 | 46.48% | 65.49% | 66.85% | 26.14% | 12.36% |
-| 12 months | 5,259 | 202 | 1,048 | 50.64% | 67.82% | 67.33% | 26.58% | 14.50% |
+![Figure 2](figures/fig2_recall_en.png)
 
-![Figure 2](figures/fig2_effects_en.png)
-
-*Figure 2. Paired recall differences at 20% review capacity (pp, two-sided 95% whole-drug bootstrap CIs). In C′, H1 passed, the sequence stopped at H2, and H3 is descriptive. Vertical lines mark zero and the prespecified usefulness threshold (+10 pp).*
+*Figure 2. (a) Recall of each method at fixed review capacity on the sealed historical test C′. (b) At 24 months, M3 exceeded B1 by 20.37 percentage points; its 1.36-point difference from M1 had an interval spanning zero. Bars give two-sided 95% paired whole-drug bootstrap intervals; the dotted line marks the prespecified 10-point usefulness threshold.*
 
 The blinded gate passed, and we scored C′ as registered. Each horizon had 202 distinct event drugs. At equal review capacity, M3 captured 66.85% of the 368 event cases at 24 months, compared with 46.48% for B1. The paired gain was +20.37 percentage points (95% CI [+14.37, +26.16]). H1 passed against zero, and the interval exceeded the separate +10-point threshold. [GATE](../../../loe-bench/receipts/GATE.md) [SCORE](../../../loe-bench/receipts/SCORE.md#primary-family)
 
 At 24 months M1 captured 65.49%. Adding graph states to M1 changed 24-month recall by +1.36 percentage points (95% CI −2.20 to +3.01). The preregistered sequence stopped at H2. H2 did not establish an incremental gain. H3 is descriptive (+16.69 points, 95% CI [+9.98, +24.21]). In secondary comparisons, the table gained +19.01 [+13.34, +25.62] points over drug age at 24 months and +17.18 [+9.88, +24.06] at 12 months. [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses)
 
-The lower endpoints in Figure 2 are also the one-sided bounds. In C′, the H1 and H3 estimates exceeded +10 pp. Development included 67 distinct event drugs at 24 months and 90 at 12 months. Development estimates for H1, H2 and H3 were +9.80 [+0.14, +19.65], +5.49 [−2.00, +11.25] and +13.00 [+3.27, +23.17] points (95% CIs, Figure 2). Only the H3 estimate reached +10 points in development. The automatic clearance rule failed for all estimable development arms. The historical results support prioritization for review. The automatic clearance rule failed the prespecified safety criterion for M3 at both horizons. Cases outside the queue therefore remain eligible for routine review. [FREEZE](../../../loe-bench/receipts/FREEZE.md#development-results) [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses)
+The lower endpoints in Figure 2 are also the one-sided bounds. In C′, the H1 and H3 estimates exceeded +10 pp. Development included 67 distinct event drugs at 24 months and 90 at 12 months. Development estimates for H1, H2 and H3 were +9.80 [+0.14, +19.65], +5.49 [−2.00, +11.25] and +13.00 [+3.27, +23.17] points (95% CIs). Only the H3 estimate reached +10 points in development. The automatic clearance rule failed for all estimable development arms. The historical results support prioritization for review. The automatic clearance rule failed the prespecified safety criterion for M3 at both horizons. Cases outside the queue therefore remain eligible for routine review. [FREEZE](../../../loe-bench/receipts/FREEZE.md#development-results) [SCORE](../../../loe-bench/receipts/SCORE.md#secondary-analyses)
 
 ### 4.2 Recall of the 7B language model
 
@@ -131,13 +125,13 @@ Development differences for L1e − M3 were −36.87 [−47.40, −23.92] points
 
 ### 4.3 Approved-applicant recall and reimbursement forecast error
 
-At the 2013 development cutoff, M3 captured 71.43% versus B1’s 45.83% of 21 events across 539 cases and 107 slots per arm (+25.60 points, 95% CI [6.25, 45.00]). The current-sponsor rule gave the same result. On mature C′ cutoffs, the exploratory approved-applicant analysis (C3) found 173 known-positive cases across 92 drugs. M3 captured 79.8% and B1 49.7% (+30.11 points, 95% CI [+20.16, +36.86]). The denominator excludes four cases with unknown labels. The snapshot-sponsor difference was +30.16 points. The number of approved applicants provides an indicator of potential competition. Estimating the number of producers that marketed a product would require sales data. [C3b](../../../loe-bench/receipts/C3b.md) [SCORE, C3](../../../loe-bench/receipts/SCORE.md#c3--competition-at-launch)
+At the 2013 development cutoff, M3 captured 71.43% versus B1’s 45.83% of 21 events across 539 cases and 107 slots per arm (+25.60 points, 95% CI [6.25, 45.00]). The current-sponsor rule gave the same result. On mature C′ cutoffs, the exploratory approved-applicant analysis (C3) found 173 known-positive cases across 92 drugs. M3 captured 79.8% and B1 49.7% (+30.11 points, 95% CI [+20.16, +36.86]). The denominator excludes four cases with unknown labels. The snapshot-sponsor difference was +30.16 points. The number of approved applicants provides an indicator of potential competition. Counting producers that marketed a product would require sales data. [C3b](../../../loe-bench/receipts/C3b.md) [SCORE, C3](../../../loe-bench/receipts/SCORE.md#c3--competition-at-launch)
 
-Applying the 0.465 factor increased mean absolute error for both Medicaid reimbursement measures in the retrospectively matched subset. Table 2 reports the differences in mean absolute error (MAE). Four origins supplied 160 ingredient-origin pairs from 68 ingredients for reimbursement per prescription and 150 from 64 for annual reimbursement. Drift reduced MAE on both measures.
+Applying the 0.465 factor increased mean absolute error (MAE) for both Medicaid reimbursement measures in the retrospectively matched subset. Table 1 reports the differences. Four origins supplied 160 ingredient-origin pairs from 68 ingredients for reimbursement per prescription and 150 from 64 for annual reimbursement. Drift, the secondary baseline, reduced MAE on both measures.
 
 We report these comparisons descriptively, without adjustment for multiple comparisons. Gross pre-rebate payments include both Medicaid and other amounts in the matched source fields. Reserved C4 was not run because the 2018 outcome payload was absent from the freeze. The price factor can serve as a scenario assumption. [C4b](../../../loe-bench/receipts/C4b.md) [SCORE, C4](../../../loe-bench/receipts/SCORE.md#c4--medicaid-demand-and-reimbursement)
 
-*Table 2. Reimbursement MAE versus carry-forward.*
+*Table 1. Reimbursement MAE versus carry-forward.*
 
 | Comparison with carry-forward | Fourth-quarter USD per prescription [95% CI] | Annual USD millions [95% CI] |
 | --- | ---: | ---: |
@@ -157,9 +151,9 @@ The historical evaluation supports using dated regulatory evidence to prioritize
 
 The cohort covers eligible US new molecular entity histories. Historical edition gaps, later ingredient linkage, uncertain challenge dates and the number of independent event drugs limit inference. The Medicaid analysis lacks verified historical vintages, and the language-model comparison uses one checkpoint with unknown training exposure. Measuring commercial launch, Thai demand and reviewer time requires direct observation. Specialists still need to verify source support and Thai and ASEAN records for product-specific FTO review.
 
-We completed training for both C9 arms. The Track A core forecasts cover 651 drugs per horizon and use 27 November 2026 as the forecast reference date. We froze the complete prediction package for all ten arms on 28 November 2026 at 11:18:44 UTC under Git tag loe-track-a-freeze-20261127; OSF registration update 4, approved on 28 November 2026 at 11:30:06 UTC, records the manifest and file digests. The GRPO arm of C9 returned the abstention action for all 651 cases. Follow-up at 12 and 24 months will end on 27 November 2027 and 27 November 2028, respectively.
+We completed training for both C9 arms. The Track A core forecasts cover 651 drugs per horizon and use 27 November 2026 as the forecast reference date. We froze the complete prediction package for all ten arms on 28 November 2026 at 11:18:44 UTC under Git tag loe-track-a-freeze-20261127; OSF registration update 4, approved on 28 November 2026 at 11:30:06 UTC, records the manifest and file digests. The GRPO arm of C9 returned the abstention action for all 651 cases. The 12- and 24-month windows end on 27 November 2027 and 2028.
 
-Data and code availability. Code, frozen configurations, task receipts and the preregistration are available in the project repository [31] and the OSF registration [30]. The repository includes aggregate C′ results. Row-level test labels remain access-restricted.
+Data and code availability. Code, frozen configurations, receipts and the preregistration are in the project repository [31] and the OSF registration [30]. The repository includes aggregate C′ results. Row-level test labels remain access-restricted under the registered seal.
 
 Acknowledgment. The authors used AI assistants (Anthropic Claude, OpenAI GPT and SciSpace) for planning, code, drafting, figures and literature search. The authors reviewed all content and take full responsibility for it.
 
