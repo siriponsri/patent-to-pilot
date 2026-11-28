@@ -1,0 +1,1181 @@
+{
+  "component": "C4",
+  "schema_version": 1,
+  "raw_storage": "C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench/medicaid_sdud/",
+  "acquisition": {
+    "user_agent": "Patent-to-Pilot LOE-Bench C4 research (github.com/siriponsri/patent-to-pilot)",
+    "access": "Anonymous HTTPS, sequential SDUD payloads, bounded Wayback CDX probes",
+    "catalog_objects": [
+      {
+        "file": "cms-index.html",
+        "url": "https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data",
+        "retrieved_utc": "2026-11-28T01:45:34.2977312Z",
+        "bytes": 134313,
+        "sha256": "6f88071218e8280b3d542e329e09a7eb3f2e8efd1970a6cbfeef1ee1fb2e0b17"
+      },
+      {
+        "file": "cms-table.html",
+        "url": "https://www.medicaid.gov/datatables/2020-03-23/87371",
+        "retrieved_utc": "2026-11-28T01:45:32.0472677Z",
+        "bytes": 126957,
+        "sha256": "eaec08a89aa31cc98129aa99845cecdf34eb0ee5b057365208dd41c85badab2a"
+      },
+      {
+        "file": "cms-distributions.json",
+        "url": "https://www.medicaid.gov/sites/default/files/2026-11/drug-utilization-2026_1.json",
+        "retrieved_utc": "2026-11-28T01:46:10.2236125Z",
+        "bytes": 780515,
+        "sha256": "95fdbdf5afe925560e8bc3e763c5129674642159524b073ca4ce51c180285c43"
+      },
+      {
+        "file": "cms-data.json",
+        "url": "https://data.medicaid.gov/data.json",
+        "retrieved_utc": "2026-11-28T01:45:36.6789801Z",
+        "bytes": 901723,
+        "sha256": "483ab46de69217d06ebeab98d1d7d23d0a3d6f024c03ffb9958b129ce834d618"
+      },
+      {
+        "file": "openfda-download-index.json",
+        "url": "https://api.fda.gov/download.json",
+        "retrieved_utc": "2026-11-28T01:45:40.3136527Z",
+        "bytes": 602509,
+        "sha256": "190456cdaec5ce9262e96ac322ed33f17e131c2abaa828d7a1cbd8a6a48c2537"
+      }
+    ],
+    "federal_catalog_pages": [
+      {
+        "year": 2010,
+        "requested_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2010",
+        "http": 200,
+        "effective_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2010",
+        "file": "catalog-2010.html",
+        "sha256": "80e94bd93ca122f8c8ad4940fca1485c233494c82904cea268df63dfbbc415e4",
+        "bytes": 135695,
+        "csv_url_in_page": true,
+        "retrieved_utc": "2026-11-28T01:54:01.851281+00:00"
+      },
+      {
+        "year": 2011,
+        "requested_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2011",
+        "http": 200,
+        "effective_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2011",
+        "file": "catalog-2011.html",
+        "sha256": "a8159231a6e7872316c53b21f21660234aac3bb6dfbb46634ac39759f0fe865b",
+        "bytes": 135694,
+        "csv_url_in_page": true,
+        "retrieved_utc": "2026-11-28T01:54:04.253617+00:00"
+      },
+      {
+        "year": 2012,
+        "requested_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2012",
+        "http": 200,
+        "effective_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2012",
+        "file": "catalog-2012.html",
+        "sha256": "55dcfd0b9461f5462abca692f8b318b8a74be8d2ae70a76668f75c9e94420093",
+        "bytes": 135694,
+        "csv_url_in_page": true,
+        "retrieved_utc": "2026-11-28T01:54:06.511807+00:00"
+      },
+      {
+        "year": 2013,
+        "requested_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2013",
+        "http": 200,
+        "effective_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2013",
+        "file": "catalog-2013.html",
+        "sha256": "bdb198d738bf3ae495bc6c98f926a72d69a0c95cb417bead590d31f27ef20fe2",
+        "bytes": 135694,
+        "csv_url_in_page": true,
+        "retrieved_utc": "2026-11-28T01:54:08.770017+00:00"
+      },
+      {
+        "year": 2014,
+        "requested_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2014",
+        "http": 200,
+        "effective_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2014",
+        "file": "catalog-2014.html",
+        "sha256": "2269f63eb61fa0e6fda5bb06e77800fe8b1a3de19fadebdff124b3e07cdd5ef2",
+        "bytes": 135694,
+        "csv_url_in_page": true,
+        "retrieved_utc": "2026-11-28T01:54:10.988211+00:00"
+      },
+      {
+        "year": 2015,
+        "requested_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2015",
+        "http": 200,
+        "effective_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2015",
+        "file": "catalog-2015.html",
+        "sha256": "2e8ff1f7525df3d96a43ab5eb5ad40bf243f8496f25351108a1a860832515b26",
+        "bytes": 135699,
+        "csv_url_in_page": true,
+        "retrieved_utc": "2026-11-28T01:54:13.377669+00:00"
+      },
+      {
+        "name": "catalog-2016.html",
+        "requested_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2016",
+        "http": 200,
+        "effective_url": "https://catalog.data.gov/dataset/state-drug-utilization-data-2016",
+        "file": "catalog-2016.html",
+        "sha256": "545094f8588efbedfdf3f0b85e55c48571e6c6f9a8f9da08aa0c3a14589a9e9f",
+        "bytes": 135696,
+        "retrieved_utc": "2026-11-28T01:49:35.224183+00:00"
+      }
+    ],
+    "federal_catalog_failed_probe": {
+      "url": "https://catalog.data.gov/api/3/action/package_show?id=state-drug-utilization-data-2016",
+      "http": 404,
+      "fallback": "Successful catalog HTML download"
+    }
+  },
+  "files": {
+    "sdud-2008": {
+      "file": "StateDrugUtilizationData-2008.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2008.csv",
+      "retrieved_utc": "2026-11-28T01:47:44.351108+00:00",
+      "bytes": 218890000,
+      "sha256": "fb87105f0f63ee6109593868485c01088caa14e793f65b4bbe56703931b780b7",
+      "year": 2008,
+      "title": "State Drug Utilization Data 2008",
+      "distribution_id": "89de7fb8-b9ef-52fb-badc-ffc1128a9ada",
+      "format": "text/csv",
+      "catalog_issued_utc": "2015-06-11T13:10:50Z",
+      "catalog_modified_utc": "2026-04-03T15:37:01Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:32:30 GMT",
+      "download_etag": "\"3084d956649b8f3a3657ec7761a960fc:1775147550.417421\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/89de7fb8-b9ef-52fb-badc-ffc1128a9ada/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2009": {
+      "file": "StateDrugUtilizationData-2009.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2009.csv",
+      "retrieved_utc": "2026-11-28T01:48:26.464730+00:00",
+      "bytes": 229240312,
+      "sha256": "f764ec8f2347e59792c610723d287f886ee06cf622f623ed2b5f6a6237bb902b",
+      "year": 2009,
+      "title": "State Drug Utilization Data 2009",
+      "distribution_id": "737f7186-b4d5-5272-a997-0ee94f4d4c3b",
+      "format": "text/csv",
+      "catalog_issued_utc": "2015-06-11T13:10:36Z",
+      "catalog_modified_utc": "2026-04-03T15:42:43Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:32:30 GMT",
+      "download_etag": "\"55e452a4f72b28873419fadd847f3ec8:1775147550.439175\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/737f7186-b4d5-5272-a997-0ee94f4d4c3b/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2010": {
+      "file": "StateDrugUtilizationData-2010.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2010.csv",
+      "retrieved_utc": "2026-11-28T01:49:25.203181+00:00",
+      "bytes": 309978216,
+      "sha256": "1f44c1e5520d6822d1bc0744d71fbdb860a44ce9f3892511eb4828564ba77cb2",
+      "year": 2010,
+      "title": "State Drug Utilization Data 2010",
+      "distribution_id": "1db0f12c-e4d6-5a70-8c1b-5af9635999be",
+      "format": "text/csv",
+      "catalog_issued_utc": "2015-06-11T12:35:21Z",
+      "catalog_modified_utc": "2026-04-03T15:49:50Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:32:30 GMT",
+      "download_etag": "\"d8861fd8a9bc5652f9ee8e8bf6ba8f15:1775147550.419194\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/1db0f12c-e4d6-5a70-8c1b-5af9635999be/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2011": {
+      "file": "StateDrugUtilizationData-2011.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2011.csv",
+      "retrieved_utc": "2026-11-28T01:50:33.176763+00:00",
+      "bytes": 349761290,
+      "sha256": "93667fb84c4f5590be3ee769adad7caeba54043635a0849f0544e0c73f905b25",
+      "year": 2011,
+      "title": "State Drug Utilization Data 2011",
+      "distribution_id": "138872f1-b1ba-5e05-be13-8be200306a58",
+      "format": "text/csv",
+      "catalog_issued_utc": "2015-06-11T12:34:21Z",
+      "catalog_modified_utc": "2026-04-03T05:58:16Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:34:49 GMT",
+      "download_etag": "\"f6d3deec48eb3226963c4db9188618c8:1775147689.256286\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/138872f1-b1ba-5e05-be13-8be200306a58/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2012": {
+      "file": "StateDrugUtilizationData-2012.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2012.csv",
+      "retrieved_utc": "2026-11-28T01:51:48.076899+00:00",
+      "bytes": 382920526,
+      "sha256": "f44dffa896c3d2d736595032bec88a83f8de015a87693398bd813845b962fef9",
+      "year": 2012,
+      "title": "State Drug Utilization Data 2012",
+      "distribution_id": "992936b2-2a72-5df6-a734-a56a8631b87a",
+      "format": "text/csv",
+      "catalog_issued_utc": "2015-06-11T12:33:26Z",
+      "catalog_modified_utc": "2026-04-03T16:08:16Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:34:49 GMT",
+      "download_etag": "\"c47e11089fbd81b301a285de1a16468d:1775147689.177558\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/992936b2-2a72-5df6-a734-a56a8631b87a/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2013": {
+      "file": "StateDrugUtilizationData-2013.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2013.csv",
+      "retrieved_utc": "2026-11-28T01:53:09.626663+00:00",
+      "bytes": 401478542,
+      "sha256": "3ad549cf1141d5525e39d85bf3673117508fc1bce17dd066eb052aed817a2d9d",
+      "year": 2013,
+      "title": "State Drug Utilization Data 2013",
+      "distribution_id": "6a91f80f-e2fd-5f43-8e38-afcebebb8387",
+      "format": "text/csv",
+      "catalog_issued_utc": "2015-06-11T12:31:51Z",
+      "catalog_modified_utc": "2026-04-03T16:17:41Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:34:49 GMT",
+      "download_etag": "\"5683bfe46382f17c9975224d2a5343aa:1775147689.19078\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/6a91f80f-e2fd-5f43-8e38-afcebebb8387/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2014": {
+      "file": "StateDrugUtilizationData-2014.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2014.csv",
+      "retrieved_utc": "2026-11-28T01:54:28.848809+00:00",
+      "bytes": 419688246,
+      "sha256": "32c435fbc1eced4d2e79e5939f270e6b9291dde13a8c842cce6f1e48681d25e5",
+      "year": 2014,
+      "title": "State Drug Utilization Data 2014",
+      "distribution_id": "a9cfe5e9-d7d8-5b87-a7db-b45a7daf84fc",
+      "format": "text/csv",
+      "catalog_issued_utc": "2015-06-01T02:28:14Z",
+      "catalog_modified_utc": "2026-04-03T04:31:11Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:34:49 GMT",
+      "download_etag": "\"f0a7c8e826f9d9fe9cbb741113ccabf8:1775147689.21305\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/a9cfe5e9-d7d8-5b87-a7db-b45a7daf84fc/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2015": {
+      "file": "StateDrugUtilizationData-2015.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2015.csv",
+      "retrieved_utc": "2026-11-28T01:55:44.109184+00:00",
+      "bytes": 442342604,
+      "sha256": "35f80c633adf646fb851ddfcc63196a69cedcf877661af4929cf20f1b2376f6a",
+      "year": 2015,
+      "title": "State Drug Utilization Data 2015",
+      "distribution_id": "2fed5758-5fd6-5dbb-8f92-34b3a0c3c8dd",
+      "format": "text/csv",
+      "catalog_issued_utc": "2015-09-04T10:48:02Z",
+      "catalog_modified_utc": "2026-04-03T16:44:56Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:34:49 GMT",
+      "download_etag": "\"2c17a3e3e47c80cf5a817a93a17a64ca:1775147689.208271\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/2fed5758-5fd6-5dbb-8f92-34b3a0c3c8dd/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2016": {
+      "file": "StateDrugUtilizationData-2016.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2016.csv",
+      "retrieved_utc": "2026-11-28T01:57:10.866943+00:00",
+      "bytes": 456608466,
+      "sha256": "88d8e166dccbfed73bc15226407fc414aaa5aeb214e3196c9d3441399da05ff7",
+      "year": 2016,
+      "title": "State Drug Utilization Data 2016",
+      "distribution_id": "53cf9f05-97e3-5bd6-a237-bc971e3642d9",
+      "format": "text/csv",
+      "catalog_issued_utc": "2016-08-01T19:24:51Z",
+      "catalog_modified_utc": "2026-04-03T17:28:43Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:38:27 GMT",
+      "download_etag": "\"dd3cd0d01e4b67e1ebcaa17c9a234c12:1775147907.210631\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/53cf9f05-97e3-5bd6-a237-bc971e3642d9/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "sdud-2017": {
+      "file": "StateDrugUtilizationData-2017.csv",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2017.csv",
+      "retrieved_utc": "2026-11-28T01:58:34.794120+00:00",
+      "bytes": 465206068,
+      "sha256": "5b913c4edb0f595a7589731d9ed58fda93d3f6b0715389692babc7d5d11ef5f4",
+      "year": 2017,
+      "title": "State Drug Utilization Data 2017",
+      "distribution_id": "776a3880-a62d-5990-8b40-4406e6861dbb",
+      "format": "text/csv",
+      "catalog_issued_utc": "2017-07-20T18:11:04Z",
+      "catalog_modified_utc": "2026-04-03T11:59:02Z",
+      "download_last_modified": "Thu, 02 Apr 2026 16:38:27 GMT",
+      "download_etag": "\"a36e72ca073d191cea4e57cf0bcdaad4:1775147907.203861\"",
+      "license": "https://www.usa.gov/government-works",
+      "national_view": "https://data.medicaid.gov/dataset/776a3880-a62d-5990-8b40-4406e6861dbb/data?conditions[0][resource]=t&conditions[0][property]=state&conditions[0][value]=xx&conditions[0][operator]=%3D",
+      "availability": null,
+      "locator": "National rows where State=XX, by Year, Quarter, NDC and Utilization Type"
+    },
+    "openfda-ndc-2026-11-27": {
+      "file": "openfda-ndc.zip",
+      "url": "https://download.open.fda.gov/drug/ndc/drug-ndc-0001-of-0001.json.zip",
+      "retrieved_utc": "2026-11-28T01:46:13.5719762Z",
+      "bytes": 28190379,
+      "sha256": "6045f9c3b1b74c0a7aa32e45caa5a33a0a75b8554feac64aa774fb3eaca85497",
+      "vintage": "2026-11-27",
+      "member": "drug-ndc-0001-of-0001.json",
+      "locator": "$.results[*].{active_ingredients,packaging,marketing_start_date}",
+      "license": "https://open.fda.gov/license/",
+      "terms": "https://open.fda.gov/terms/",
+      "availability": null
+    }
+  },
+  "archive_inventory": {
+    "cdx_upper_bound_utc_date": "2016-12-31",
+    "cdx_archive_and_early_path_probes": [
+      {
+        "name": "2008",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2008.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2008.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2008.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:32.558928+00:00"
+      },
+      {
+        "name": "2009",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2009.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2009.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2009.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:35.386547+00:00"
+      },
+      {
+        "name": "2010",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2010.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2010.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2010.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:38.297922+00:00"
+      },
+      {
+        "name": "2011",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2011.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2011.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2011.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:41.173647+00:00"
+      },
+      {
+        "name": "2012",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2012.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2012.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2012.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:44.761768+00:00"
+      },
+      {
+        "name": "2013",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2013.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2013.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2013.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:47.636667+00:00"
+      },
+      {
+        "name": "2014",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2014.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2014.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2014.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:50.719681+00:00"
+      },
+      {
+        "name": "2015",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2015.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2015.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2015.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:53.503734+00:00"
+      },
+      {
+        "name": "2016",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2016.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=download.medicaid.gov%2Fdata%2FStateDrugUtilizationData-2016.csv&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-2016.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:47:56.315714+00:00"
+      },
+      {
+        "name": "legacy-catalog",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid%2Fprescription-drugs%2Fstate-drug-utilization-data%2Findex.html&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid%2Fprescription-drugs%2Fstate-drug-utilization-data%2Findex.html&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 1884,
+        "file": "cdx-legacy-catalog.json",
+        "sha256": "6bb93ae67a7c18ec1026d7a1f00fa939708d444f9778b9a4017f5af0493268ab",
+        "rows": 7,
+        "retrieved_utc": "2026-11-28T01:47:59.181391+00:00"
+      },
+      {
+        "name": "current-catalog",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid%2Fprescription-drugs%2Fstate-drug-utilization-data&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid%2Fprescription-drugs%2Fstate-drug-utilization-data&matchType=exact&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-current-catalog.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:48:01.980734+00:00"
+      },
+      {
+        "name": "legacy-sdud-prefix",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid-chip-program-information%2Fby-topics%2Fprescription-drugs%2Fdownloads%2Fsdud&matchType=prefix&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid-chip-program-information%2Fby-topics%2Fprescription-drugs%2Fdownloads%2Fsdud&matchType=prefix&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-legacy-sdud-prefix.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:48:25.248414+00:00"
+      },
+      {
+        "name": "legacy-utilization-prefix",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid-chip-program-information%2Fby-topics%2Fprescription-drugs%2Fdownloads%2Futilization&matchType=prefix&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid-chip-program-information%2Fby-topics%2Fprescription-drugs%2Fdownloads%2Futilization&matchType=prefix&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-legacy-utilization-prefix.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:48:41.331909+00:00"
+      },
+      {
+        "name": "legacy-drug-utilization-prefix",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid-chip-program-information%2Fby-topics%2Fprescription-drugs%2Fdownloads%2Fdrug-utilization&matchType=prefix&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid-chip-program-information%2Fby-topics%2Fprescription-drugs%2Fdownloads%2Fdrug-utilization&matchType=prefix&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "bytes": 3,
+        "file": "cdx-legacy-drug-utilization-prefix.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "rows": 0,
+        "retrieved_utc": "2026-11-28T01:48:54.939921+00:00"
+      },
+      {
+        "name": "legacy-national-prefix",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid-chip-program-information%2Fby-topics%2Fprescription-drugs%2Fdownloads%2Fnational&matchType=prefix&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "error": "The read operation timed out",
+        "retrieved_utc": "2026-11-28T01:49:22.395148+00:00"
+      },
+      {
+        "name": "legacy-state-drug-prefix",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fmedicaid-chip-program-information%2Fby-topics%2Fprescription-drugs%2Fdownloads%2Fstate-drug&matchType=prefix&to=20161231&output=json&filter=statuscode%3A200&limit=250",
+        "error": "The read operation timed out",
+        "retrieved_utc": "2026-11-28T01:49:49.864773+00:00"
+      }
+    ],
+    "historical_cms_page_replays": [
+      {
+        "url": "https://web.archive.org/web/20161212135806id_/https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html",
+        "capture_utc": "20161212135806",
+        "http": 200,
+        "effective": "https://web.archive.org/web/20161212135806id_/https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html",
+        "file": "archive-cms-20161212135806.html",
+        "sha256": "9660d83d8d73bf01b76da87776f5babbcc6c74128172e3c02905355588e35a2c",
+        "bytes": 88486,
+        "retrieved_utc": "2026-11-28T01:48:40.258332+00:00"
+      },
+      {
+        "url": "https://web.archive.org/web/20161219135758id_/https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html",
+        "capture_utc": "20161219135758",
+        "http": 200,
+        "effective": "https://web.archive.org/web/20161219135758id_/https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html",
+        "file": "archive-cms-20161219135758.html",
+        "sha256": "e11002ac20a0be8db583db5a52960e4c2513b71d60c675c230af67af62c8f184",
+        "bytes": 88481,
+        "retrieved_utc": "2026-11-28T01:48:43.770555+00:00"
+      },
+      {
+        "url": "https://web.archive.org/web/20161226135809id_/https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html",
+        "capture_utc": "20161226135809",
+        "http": 200,
+        "effective": "https://web.archive.org/web/20161226135809id_/https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html",
+        "file": "archive-cms-20161226135809.html",
+        "sha256": "ce290f3587a4e814c7b21b0ba66cf21234a73d7f81a49e485dc7764cddfa4eca",
+        "bytes": 88488,
+        "retrieved_utc": "2026-11-28T01:48:47.286296+00:00"
+      }
+    ],
+    "historical_cms_catalog_chain": [
+      {
+        "name": "cdx-legacy-script.json",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fresources%2Fjs%2Fdrug-utilization.js&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fresources%2Fjs%2Fdrug-utilization.js&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "file": "cdx-legacy-script.json",
+        "sha256": "af219f34f190f1c1f1af6ff21a804d974ce183f7dea737b8978f54c886058f9d",
+        "bytes": 282,
+        "retrieved_utc": "2026-11-28T01:49:19.279191+00:00"
+      },
+      {
+        "name": "legacy-js-20161031135814.js",
+        "requested_url": "https://web.archive.org/web/20161031135814id_/https://www.medicaid.gov/resources/js/drug-utilization.js",
+        "http": 200,
+        "effective_url": "https://web.archive.org/web/20161031135814id_/https://www.medicaid.gov/resources/js/drug-utilization.js",
+        "file": "legacy-js-20161031135814.js",
+        "sha256": "c297a29fc834d7eb982d107f77bc896da4d93c2ff7cbfd6330ec75e8bc6344e6",
+        "bytes": 2847,
+        "retrieved_utc": "2026-11-28T01:49:22.566435+00:00"
+      },
+      {
+        "name": "cdx-legacy-healthdata.gov-2010-bytes.json",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=healthdata.gov%2Fapi%2Fviews%2Fvewv-r8hu%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=healthdata.gov%2Fapi%2Fviews%2Fvewv-r8hu%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "file": "cdx-legacy-healthdata.gov-2010-bytes.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "retrieved_utc": "2026-11-28T01:49:25.769390+00:00"
+      },
+      {
+        "name": "cdx-legacy-data.medicaid.gov-2010-bytes.json",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fvewv-r8hu%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fvewv-r8hu%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "file": "cdx-legacy-data.medicaid.gov-2010-bytes.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "retrieved_utc": "2026-11-28T01:49:28.963311+00:00"
+      },
+      {
+        "name": "cdx-legacy-healthdata.gov-2010-catalog.json",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=healthdata.gov%2Fd%2Fvewv-r8hu&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=healthdata.gov%2Fd%2Fvewv-r8hu&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "file": "cdx-legacy-healthdata.gov-2010-catalog.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "retrieved_utc": "2026-11-28T01:49:31.982439+00:00"
+      },
+      {
+        "name": "cdx-legacy-distribution-json.json",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fresources%2Fdata%2Fdrug-utilization.json&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=www.medicaid.gov%2Fresources%2Fdata%2Fdrug-utilization.json&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=250",
+        "file": "cdx-legacy-distribution-json.json",
+        "sha256": "cb880b89846d078b2f38e63e07438be13734f8f4abd29fa003e7de917cd0bf48",
+        "bytes": 277,
+        "retrieved_utc": "2026-11-28T01:51:20.734575+00:00"
+      },
+      {
+        "name": "legacy-index-20161031174253.json",
+        "requested_url": "https://web.archive.org/web/20161031174253id_/https://www.medicaid.gov/resources/data/drug-utilization.json",
+        "http": 200,
+        "effective_url": "https://web.archive.org/web/20161031174253id_/https://www.medicaid.gov/resources/data/drug-utilization.json",
+        "file": "legacy-index-20161031174253.json",
+        "sha256": "65e1db5894cda17aa6e099379806f7fb2e841fa42ccb308d6e9d8b7983576808",
+        "bytes": 378229,
+        "retrieved_utc": "2026-11-28T01:51:24.679987+00:00"
+      }
+    ],
+    "historical_catalog_capture_utc": "2016-10-31T17:42:53Z",
+    "historical_catalog_distributions": [
+      {
+        "year": 2008,
+        "view": "Entire Dataset",
+        "id": "ny8j-2ymd",
+        "url": "https://data.medicaid.gov/d/ny8j-2ymd"
+      },
+      {
+        "year": 2008,
+        "view": "National Totals",
+        "id": "bzcm-rrj6",
+        "url": "https://data.medicaid.gov/d/bzcm-rrj6"
+      },
+      {
+        "year": 2009,
+        "view": "Entire Dataset",
+        "id": "fhmx-iqs3",
+        "url": "https://data.medicaid.gov/d/fhmx-iqs3"
+      },
+      {
+        "year": 2009,
+        "view": "National Totals",
+        "id": "6tcm-8x84",
+        "url": "https://data.medicaid.gov/d/6tcm-8x84"
+      },
+      {
+        "year": 2010,
+        "view": "Entire Dataset",
+        "id": "mmgn-kvy5",
+        "url": "https://data.medicaid.gov/d/mmgn-kvy5"
+      },
+      {
+        "year": 2010,
+        "view": "National Totals",
+        "id": "dgte-3gu8",
+        "url": "https://data.medicaid.gov/d/dgte-3gu8"
+      },
+      {
+        "year": 2011,
+        "view": "Entire Dataset",
+        "id": "ra84-ffhc",
+        "url": "https://data.medicaid.gov/d/ra84-ffhc"
+      },
+      {
+        "year": 2011,
+        "view": "National Totals",
+        "id": "de79-47w8",
+        "url": "https://data.medicaid.gov/d/de79-47w8"
+      },
+      {
+        "year": 2012,
+        "view": "Entire Dataset",
+        "id": "yi2j-kk5z",
+        "url": "https://data.medicaid.gov/d/yi2j-kk5z"
+      },
+      {
+        "year": 2012,
+        "view": "National Totals",
+        "id": "mkpf-yey3",
+        "url": "https://data.medicaid.gov/d/mkpf-yey3"
+      },
+      {
+        "year": 2013,
+        "view": "Entire Dataset",
+        "id": "rkct-3tm8",
+        "url": "https://data.medicaid.gov/d/rkct-3tm8"
+      },
+      {
+        "year": 2013,
+        "view": "National Totals",
+        "id": "kmyc-3n7k",
+        "url": "https://data.medicaid.gov/d/kmyc-3n7k"
+      },
+      {
+        "year": 2014,
+        "view": "Entire Dataset",
+        "id": "955u-9h9g",
+        "url": "https://data.medicaid.gov/d/955u-9h9g"
+      },
+      {
+        "year": 2014,
+        "view": "National Totals",
+        "id": "hz5c-g52b",
+        "url": "https://data.medicaid.gov/d/hz5c-g52b"
+      },
+      {
+        "year": 2015,
+        "view": "Entire Dataset",
+        "id": "ju2h-vcgs",
+        "url": "https://data.medicaid.gov/d/ju2h-vcgs"
+      },
+      {
+        "year": 2015,
+        "view": "National Totals",
+        "id": "h5ii-2ar3",
+        "url": "https://data.medicaid.gov/d/h5ii-2ar3"
+      },
+      {
+        "year": 2016,
+        "view": "Entire Dataset",
+        "id": "3v6v-qk5s",
+        "url": "https://data.medicaid.gov/d/3v6v-qk5s"
+      },
+      {
+        "year": 2016,
+        "view": "National Totals",
+        "id": "4kp3-zsqr",
+        "url": "https://data.medicaid.gov/d/4kp3-zsqr"
+      }
+    ],
+    "legacy_payload_prefix_probes": [
+      {
+        "id": "ny8j-2ymd",
+        "year": 2008,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fny8j-2ymd%2Frows.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "error": "The read operation timed out",
+        "http": null,
+        "retrieved_utc": "2026-11-28T01:53:44.389419+00:00"
+      },
+      {
+        "id": "ny8j-2ymd",
+        "year": 2008,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fresource%2Fny8j-2ymd.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "error": "The read operation timed out",
+        "http": null,
+        "retrieved_utc": "2026-11-28T01:54:05.993992+00:00"
+      },
+      {
+        "id": "bzcm-rrj6",
+        "year": 2008,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fbzcm-rrj6%2Frows.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "error": "HTTP Error 503: Service Unavailable",
+        "http": 503,
+        "retrieved_utc": "2026-11-28T01:54:12.746836+00:00"
+      },
+      {
+        "id": "bzcm-rrj6",
+        "year": 2008,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fresource%2Fbzcm-rrj6.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fresource%2Fbzcm-rrj6.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-bzcm-rrj6-resource.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:54:28.537323+00:00"
+      },
+      {
+        "id": "fhmx-iqs3",
+        "year": 2009,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Ffhmx-iqs3%2Frows.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Ffhmx-iqs3%2Frows.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-fhmx-iqs3-api.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:54:43.791706+00:00"
+      },
+      {
+        "id": "fhmx-iqs3",
+        "year": 2009,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fresource%2Ffhmx-iqs3.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "error": "The read operation timed out",
+        "http": null,
+        "retrieved_utc": "2026-11-28T01:55:06.236453+00:00"
+      },
+      {
+        "id": "6tcm-8x84",
+        "year": 2009,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F6tcm-8x84%2Frows.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "error": "The read operation timed out",
+        "http": null,
+        "retrieved_utc": "2026-11-28T01:55:28.027855+00:00"
+      },
+      {
+        "id": "6tcm-8x84",
+        "year": 2009,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fresource%2F6tcm-8x84.csv&to=20161231&matchType=prefix&output=json&filter=statuscode%3A200&limit=50",
+        "error": "The read operation timed out",
+        "http": null,
+        "retrieved_utc": "2026-11-28T01:55:49.567195+00:00"
+      }
+    ],
+    "legacy_payload_exact_probes": [
+      {
+        "id": "4kp3-zsqr",
+        "year": 2016,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F4kp3-zsqr%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F4kp3-zsqr%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-4kp3-zsqr-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:55:55.210353+00:00"
+      },
+      {
+        "id": "3v6v-qk5s",
+        "year": 2016,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F3v6v-qk5s%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F3v6v-qk5s%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-3v6v-qk5s-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:55:58.167911+00:00"
+      },
+      {
+        "id": "h5ii-2ar3",
+        "year": 2015,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fh5ii-2ar3%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fh5ii-2ar3%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-h5ii-2ar3-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:01.154331+00:00"
+      },
+      {
+        "id": "ju2h-vcgs",
+        "year": 2015,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fju2h-vcgs%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fju2h-vcgs%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-ju2h-vcgs-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:04.891912+00:00"
+      },
+      {
+        "id": "hz5c-g52b",
+        "year": 2014,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fhz5c-g52b%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fhz5c-g52b%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-hz5c-g52b-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:07.672069+00:00"
+      },
+      {
+        "id": "955u-9h9g",
+        "year": 2014,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F955u-9h9g%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F955u-9h9g%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-955u-9h9g-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:10.861367+00:00"
+      },
+      {
+        "id": "kmyc-3n7k",
+        "year": 2013,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fkmyc-3n7k%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fkmyc-3n7k%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-kmyc-3n7k-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:13.655331+00:00"
+      },
+      {
+        "id": "rkct-3tm8",
+        "year": 2013,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Frkct-3tm8%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Frkct-3tm8%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-rkct-3tm8-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:16.433519+00:00"
+      },
+      {
+        "id": "mkpf-yey3",
+        "year": 2012,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fmkpf-yey3%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fmkpf-yey3%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-mkpf-yey3-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:19.288086+00:00"
+      },
+      {
+        "id": "yi2j-kk5z",
+        "year": 2012,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fyi2j-kk5z%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fyi2j-kk5z%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-yi2j-kk5z-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:22.087166+00:00"
+      },
+      {
+        "id": "de79-47w8",
+        "year": 2011,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fde79-47w8%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fde79-47w8%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-de79-47w8-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:24.991950+00:00"
+      },
+      {
+        "id": "ra84-ffhc",
+        "year": 2011,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fra84-ffhc%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fra84-ffhc%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-ra84-ffhc-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:28.569550+00:00"
+      },
+      {
+        "id": "dgte-3gu8",
+        "year": 2010,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fdgte-3gu8%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fdgte-3gu8%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-dgte-3gu8-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:31.492010+00:00"
+      },
+      {
+        "id": "mmgn-kvy5",
+        "year": 2010,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fmmgn-kvy5%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fmmgn-kvy5%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-mmgn-kvy5-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:36.457351+00:00"
+      },
+      {
+        "id": "6tcm-8x84",
+        "year": 2009,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F6tcm-8x84%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2F6tcm-8x84%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-6tcm-8x84-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:39.402598+00:00"
+      },
+      {
+        "id": "fhmx-iqs3",
+        "year": 2009,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Ffhmx-iqs3%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Ffhmx-iqs3%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-fhmx-iqs3-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:42.393739+00:00"
+      },
+      {
+        "id": "bzcm-rrj6",
+        "year": 2008,
+        "view": "National Totals",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fbzcm-rrj6%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fbzcm-rrj6%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-bzcm-rrj6-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:45.517855+00:00"
+      },
+      {
+        "id": "ny8j-2ymd",
+        "year": 2008,
+        "view": "Entire Dataset",
+        "requested_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fny8j-2ymd%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "http": 200,
+        "effective_url": "https://web.archive.org/cdx/search/cdx?url=data.medicaid.gov%2Fapi%2Fviews%2Fny8j-2ymd%2Frows.csv%3FaccessType%3DDOWNLOAD&to=20161231&matchType=exact&output=json&filter=statuscode%3A200&limit=50",
+        "file": "cdx-socrata-ny8j-2ymd-exact.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "captures": [],
+        "retrieved_utc": "2026-11-28T01:56:48.532750+00:00"
+      }
+    ],
+    "scope_note": "CDX success with no capture is scoped to the queried URL and filter. Prefix probes were stopped after service errors, with exact download URLs checked separately. Catalog pages and indexes do not bind downloadable bytes."
+  },
+  "origins": [
+    {
+      "origin": "2010-12-31",
+      "last_fit_quarter": [
+        2010,
+        2
+      ],
+      "audit_distribution": "sdud-2010",
+      "training_files": {
+        "2008": "sdud-2008",
+        "2009": "sdud-2009",
+        "2010": "sdud-2010"
+      },
+      "crosswalk": "openfda-ndc-2026-11-27",
+      "verified_pre_origin_sdud_payload": null,
+      "verified_pre_origin_crosswalk_payload": null,
+      "verdict": "RETROSPECTIVE_VINTAGE_UNCONTROLLED"
+    },
+    {
+      "origin": "2011-12-31",
+      "last_fit_quarter": [
+        2011,
+        2
+      ],
+      "audit_distribution": "sdud-2011",
+      "training_files": {
+        "2009": "sdud-2009",
+        "2010": "sdud-2010",
+        "2011": "sdud-2011"
+      },
+      "crosswalk": "openfda-ndc-2026-11-27",
+      "verified_pre_origin_sdud_payload": null,
+      "verified_pre_origin_crosswalk_payload": null,
+      "verdict": "RETROSPECTIVE_VINTAGE_UNCONTROLLED"
+    },
+    {
+      "origin": "2012-12-31",
+      "last_fit_quarter": [
+        2012,
+        2
+      ],
+      "audit_distribution": "sdud-2012",
+      "training_files": {
+        "2010": "sdud-2010",
+        "2011": "sdud-2011",
+        "2012": "sdud-2012"
+      },
+      "crosswalk": "openfda-ndc-2026-11-27",
+      "verified_pre_origin_sdud_payload": null,
+      "verified_pre_origin_crosswalk_payload": null,
+      "verdict": "RETROSPECTIVE_VINTAGE_UNCONTROLLED"
+    },
+    {
+      "origin": "2013-12-31",
+      "last_fit_quarter": [
+        2013,
+        2
+      ],
+      "audit_distribution": "sdud-2013",
+      "training_files": {
+        "2011": "sdud-2011",
+        "2012": "sdud-2012",
+        "2013": "sdud-2013"
+      },
+      "crosswalk": "openfda-ndc-2026-11-27",
+      "verified_pre_origin_sdud_payload": null,
+      "verified_pre_origin_crosswalk_payload": null,
+      "verdict": "RETROSPECTIVE_VINTAGE_UNCONTROLLED"
+    },
+    {
+      "origin": "2014-12-31",
+      "last_fit_quarter": [
+        2014,
+        2
+      ],
+      "audit_distribution": "sdud-2014",
+      "training_files": {
+        "2012": "sdud-2012",
+        "2013": "sdud-2013",
+        "2014": "sdud-2014"
+      },
+      "crosswalk": "openfda-ndc-2026-11-27",
+      "verified_pre_origin_sdud_payload": null,
+      "verified_pre_origin_crosswalk_payload": null,
+      "verdict": "RETROSPECTIVE_VINTAGE_UNCONTROLLED"
+    },
+    {
+      "origin": "2015-12-31",
+      "last_fit_quarter": [
+        2015,
+        2
+      ],
+      "audit_distribution": "sdud-2015",
+      "training_files": {
+        "2013": "sdud-2013",
+        "2014": "sdud-2014",
+        "2015": "sdud-2015"
+      },
+      "crosswalk": "openfda-ndc-2026-11-27",
+      "verified_pre_origin_sdud_payload": null,
+      "verified_pre_origin_crosswalk_payload": null,
+      "verdict": "RETROSPECTIVE_VINTAGE_UNCONTROLLED"
+    },
+    {
+      "origin": "2016-12-31",
+      "last_fit_quarter": [
+        2016,
+        2
+      ],
+      "audit_distribution": "sdud-2016",
+      "training_files": {
+        "2014": "sdud-2014",
+        "2015": "sdud-2015",
+        "2016": "sdud-2016"
+      },
+      "crosswalk": "openfda-ndc-2026-11-27",
+      "verified_pre_origin_sdud_payload": null,
+      "verified_pre_origin_crosswalk_payload": null,
+      "verdict": "RETROSPECTIVE_VINTAGE_UNCONTROLLED"
+    }
+  ],
+  "outcome_freeze": {
+    "id": "C4-SDUD-retrospective-outcomes-2026-11-28",
+    "quarters": "2011Q1 through 2017Q4, only outcomes of development origins",
+    "files": {
+      "2011": "sdud-2011",
+      "2012": "sdud-2012",
+      "2013": "sdud-2013",
+      "2014": "sdud-2014",
+      "2015": "sdud-2015",
+      "2016": "sdud-2016",
+      "2017": "sdud-2017"
+    },
+    "crosswalk": "openfda-ndc-2026-11-27"
+  },
+  "reporting_cross_reference": {
+    "registry": "FDA/NCATS GSRS 2026-08-06",
+    "file": "../moiety/dump-public-2026-08-06.gsrs",
+    "url": "https://gsrs.ncats.nih.gov/assets/downloads/dump-public-2026-08-06.gsrs",
+    "license": "https://gsrs.ncats.nih.gov/licensing",
+    "sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad"
+  }
+}
