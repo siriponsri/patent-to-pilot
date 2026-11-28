@@ -1,9 +1,17 @@
 {
-  "component": "C4 Medicaid demand baseline and volume forecast",
-  "protocol_version": "C4-v1",
+  "component": "C4 Medicaid demand and reimbursement forecasts",
+  "protocol_version": "C4-v2",
+  "supersedes": "C4-v1",
+  "predecessor_spec_sha256": "97849e4ce21d6fc529af9f9253fdbb302fd7c54bc28789f9707cf27fdb2145c7",
+  "rationale": "C4 found unresolved package identities in every origin window and lower mapped-subset MAE for carry-forward than drift. The planner promotes the mapped package subset to the primary target, retains drift as a frozen comparator, and adds reimbursement forecasts for D41 pain point P2 with an external price-erosion scenario.",
   "scope": "DEVELOPMENT_ONLY",
+  "vintage_verdict": "RETROSPECTIVE_VINTAGE_UNCONTROLLED",
+  "vintage_label": "retrospective, vintage-uncontrolled",
   "status": "PRE_SCORE_FREEZE",
-  "code_commit": "04aec886954b653dd5de85263d8fe29c2f504070",
+  "code_sha256": {
+    "c4.py": "613bf9463cc55ec989d3ba110d866b3e693cee303e5c94c297c27dd4024f8d63",
+    "c4b.py": "b0f4196d1b91c9881fd9c4fd3d01ba7a7380f63ccd71257246bedfc5f1cc4c54"
+  },
   "input_manifest": "C4_INPUTS.json",
   "input_manifest_sha256": "b5298819fb5d5870c5f8c7c375361fe1f2732333383793cb821aa7e259d60721",
   "gsrs_sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad",
@@ -18,13 +26,15 @@
   ],
   "reserved_origins_from_inclusive": "2017-01-01",
   "endpoint": {
-    "population": "Covered outpatient drug prescription counts reported in CMS SDUD for US Medicaid, national XX for the 50 states and DC",
-    "unit": "Prescription claims as defined by CMS for each utilization type",
+    "population": "Covered outpatient drug records in US Medicaid CMS SDUD national XX for the 50 states and DC, restricted to date-eligible packages with resolved NDC-to-ingredient identity",
     "grain": "Exact FDA-listed ingredient name per calendar quarter, uppercased with whitespace normalized",
-    "combinations": "A prescription for a combination contributes once to each distinct listed ingredient. Ingredient counts overlap across ingredients.",
-    "target": "Sum of the four calendar quarters following the origin",
+    "combinations": "A combination program record contributes its full claims and reimbursement once to each distinct listed ingredient. Ingredients overlap and their totals cannot be added to estimate program-wide volume or spending.",
+    "annual_prescriptions": "Sum of the four calendar quarters after the origin, in prescription claims. Both count baselines are retained for continuity.",
+    "reimbursement_per_prescription_q4": "At the fourth quarter after the origin, divide the ingredient-quarter sum of total amount reimbursed by the sum of prescriptions across the same mapped packages and utilization types. The denominator must be positive. Unit is nominal USD per prescription.",
+    "annual_reimbursement": "Sum of the total amount reimbursed in the four calendar quarters following the origin. Forecast quarterly dollars directly, then sum. Unit is nominal USD per ingredient-year.",
+    "reimbursement_field": "Total Amount Reimbursed, which covers Medicaid and non-Medicaid payments reported in SDUD to pharmacies and other providers. It is gross, pre-rebate provider reimbursement and a distinct measure from net drug price or manufacturer revenue.",
     "types": "FFSU through 2009Q4, FFSU plus MCOU beginning in 2010Q1, at most one record per package-quarter-type",
-    "non_target_fields": "State counts, reimbursed units and dollars do not enter the target. State NDC/type presence can identify missing XX rows."
+    "non_target_fields": "State counts, state reimbursement, units, and separately reported payer dollar fields do not enter the targets. State NDC/type presence identifies missing XX rows."
   },
   "sources": {
     "sdud_publisher": "https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data",
@@ -34,6 +44,7 @@
     "historical_index": "https://web.archive.org/web/20161031174253id_/https://www.medicaid.gov/resources/data/drug-utilization.json",
     "release_calendar": "https://www.medicaid.gov/faq/2020-04-09/92101",
     "utilization_types": "https://www.medicaid.gov/medicaid/prescription-drugs/downloads/cms-r-144-state-invoice-data-definitions-2019.pdf",
+    "reimbursement_pre_rebate": "https://www.medicaid.gov/faq/2020-04-09/92001",
     "suppression": "https://www.medicaid.gov/faq/2020-04-09/91831",
     "ndc_map": "https://open.fda.gov/apis/drug/ndc/download/",
     "ndc_map_vintage": "2026-11-27",
@@ -51,28 +62,57 @@
     "join": "CMS NDC-11 to exact FDA package NDC using the 4-4-2, 5-3-2 or 5-4-1 segmented padding rules. Already segmented 5-4-2 is unchanged.",
     "identity": "Use active_ingredients[].name. Reject conflicting ingredient sets, missing identities and packages with no usable product or package marketing start date. Take the later date per record and the earliest supported date among same-identity records. Apply quarter end as an eligibility ceiling.",
     "historical_limits": "Current listings omit many historical NDCs. Historical reuse and changed labels may be invisible. No brand-name inference or automatic salt merging. Marketing start gates mapping, without implying historic release availability.",
-    "loe_bench_linkage": "Resolve mapped ingredient names using LOE-Bench's pinned GSRS Registry.composition. Admit nonempty keys without a low-confidence flag. Report linked unique candidates and linked unique paired diagnostic ingredients, each over its own denominator. GSRS is a reporting cross-reference only."
+    "loe_bench_linkage": "Resolve mapped ingredient names using LOE-Bench's pinned GSRS Registry.composition. Admit nonempty keys without a low-confidence flag and exact full-key matches to the C3b roster. No partial combination matching or future-cutoff substitution. Report key resolution and roster linkage separately."
   },
   "models": {
-    "history": "Latest eight consecutive observed quarters ending at the same designated last published quarter for both arms. Abstain after any gap, even with eight older observations.",
+    "history": "Eight consecutive observed quarterly values of the endpoint's underlying series through Q2 of the origin year. Abstain after any gap. The ratio uses an independently valid positive denominator in each fit quarter.",
     "carry_forward": "Last observed quarter carried forward through lag and horizon",
     "drift": "At step h from the last observed quarter, max(0, last + h * (last - first) / 7)",
-    "lag": "With L quarters between the last fit quarter and the origin, aggregate the predictions at h=L+1 through L+4. Keep fractional forecasts.",
+    "entry_adjusted_carry_forward": "For each reimbursement endpoint, multiply carry-forward by the fixed factor when the ingredient is selected by the M3 queue. Compare with the identical policy using B1, and both unadjusted baselines on the same roster-linked rows. A roster-linked ingredient outside the queue receives carry-forward. Prescription count forecasts use no price adjustment.",
+    "lag": "With L=2 quarters between the last fit quarter and the origin, annual outcomes sum h=3 through 6 and the per-prescription ratio uses h=6 only. The comparator is a plain, unweighted quarterly series forecast. Keep fractional forecasts.",
     "benchmark_paper": "https://doi.org/10.1016/j.ijforecast.2015.08.001",
     "formula_reference": "https://otexts.com/fpp3/toolbox.html#drift-method",
     "design_note": "The paper motivates the comparator from UK pharmaceutical series. The quarterly history, nonnegative clamp and reporting lag are choices for C4."
   },
+  "entry_policy": {
+    "factor": 0.465,
+    "assumption": "Two generic producers in the first forecast year. Use the full FDA generic-to-brand AMP median ratio as a scenario multiplier across the target year. Timing within the year, molecule-specific erosion and real reimbursement terms are unmodeled. No estimation or factor selection uses Medicaid outcomes.",
+    "source": {
+      "title": "Generic Competition and Drug Prices: New Evidence Linking Greater Generic Competition and Lower Generic Drug Prices",
+      "source_id": "FDA media 133509",
+      "version": "December 2019",
+      "url": "https://www.fda.gov/media/133509/download",
+      "retrieved_utc_date": "2026-11-28",
+      "sha256": "5b748fa2eb20a4af86d1c28705add5e99a9351f58dbfaf6833736871c6610a4b",
+      "locator": "Page 9, Generic-to-Brand Price Ratios in the Main Figure, Average Manufacturer Price table, 2 generic producers, Median column"
+    },
+    "score_source": "C3b per-row native M3 and B1 development export for the exact replay of the published FREEZE configuration. The 12-month file is FREEZE_dev_scores_12m.json or FREEZE_dev_scores.json if the latter carries the 12-month horizon.",
+    "config_sha256": "d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39",
+    "export_sha256": "e9f7d9af0033207488adf1bb582e24a12982d5d72039ce8c8c611b1792227db7",
+    "rows_by_cutoff": {
+      "2012-01-01": 533,
+      "2013-01-01": 539,
+      "2014-01-01": 544,
+      "2015-01-01": 545
+    },
+    "cutoff": "Use January 1 immediately after the December 31 C4 origin, the first day of the same target calendar year. Both the Medicaid origin and LOE-Bench cutoff must precede 2017-01-01 for the queue analysis. The December 2016 baseline uses 2017 SDUD outcomes only.",
+    "capacity": "Rank the entire export roster for each cutoff independently by each arm's descending native score. Select exactly floor(N/5) eligible active-moiety keys before joining Medicaid outcomes.",
+    "ties": "For a binary deployable queue, resolve exact ties by ascending SHA-256 of the UTF-8 string seed|ISO cutoff|key, with lexical key as the final fallback. Both arms use the same fixed permutation. This is one label-free tie allocation, while the benchmark reports expected capture over tied allocations.",
+    "tie_seed": 20261128
+  },
   "metrics": {
-    "primary": "Paired mean absolute error in annual prescription counts for both arms and paired mean of absolute-error differences (drift minus carry-forward)",
-    "bias": "Mean prediction minus observed annual count per arm",
-    "pairing": "Use identical ingredient-origin rows. Weight each pair equally and report distinct ingredients, scored origins and row denominators.",
-    "coverage": "Report package-quarter identity gaps, national rows and suppressed national rows, available and fully mapped quarters, and exclusions for incomplete ingredient history or outcome."
+    "primary": "Mean absolute error and paired MAE differences for each outcome, including M3-adjusted minus B1-adjusted and each adjusted arm minus unadjusted carry-forward on the common queue-linked cohort.",
+    "bias": "Mean signed forecast minus observation for each arm, in endpoint units.",
+    "pairing": "Within each endpoint and comparison use identical ingredient-origin rows and weight each row equally. Retain separate baseline-only coverage for all evaluable mapped origins. Report distinct ingredients, evaluable origins, paired rows, linkage exclusions and actual trigger counts by queue.",
+    "bootstrap": {"draws": 2000, "seed": 20261128, "unit": "FDA-listed ingredient", "interval": "Percentile 95% on pooled estimates. Resample ingredient clusters with replacement, retaining all origin rows for each sampled ingredient and using the same draw across arms within the comparison."},
+    "coverage": "In fit, annual outcome and Q4 outcome windows report the mapped NDC-quarter share across the observed frame and the number of mapped NDC-quarters per ingredient with shares having complete national count, complete national reimbursement, and both. Use identity-resolved NDC-quarters for the ingredient-level denominator. An unresolved package's ingredient is unknown, so the ingredient's share of its full identity frame is unavailable in affected windows. Also report suppressions and incomplete-series exclusions."
   },
   "failure": {
-    "unknown": "Suppressed, missing, duplicate, invalid or noninteger counts remain unknown. An absent required utilization type remains unknown unless structurally out of scope under the CMS reporting schema. No imputed zeros, residual inference or state-sum substitution.",
-    "primary": "NOT_ESTIMABLE if the complete published ingredient data cannot be reconstructed. An unidentified package in a required quarter could belong to any ingredient. Without evidence excluding that membership, the entire quarter fails full-frame admission.",
-    "mapped_diagnostic": "Separately report arithmetic over date-eligible mapped packages only, with complete observed counts for each ingredient-quarter in the fit and target windows. The diagnostic measures a changing mapped subset, never substitutes for the full target and does not select a method.",
+    "unknown": "Suppressed, missing, duplicate and invalid fields remain unknown. Counts must be nonnegative integers and total amounts nonnegative USD with at most two decimal places. An absent required utilization type remains unknown unless structurally out of scope under the CMS reporting schema. No imputed zeros, residual inference or state-sum substitution.",
+    "full_national": "NOT_ESTIMABLE when the complete published ingredient data cannot be reconstructed. An unidentified package in a required quarter could belong to any ingredient. Every frozen C4 window has unresolved identities.",
+    "mapped_primary": "Report date-eligible mapped packages with complete observed inputs for each ingredient-quarter used by the endpoint. Report NOT_ESTIMABLE where there are no complete rows. The package subset can change over time and results are valid only for that observed subset.",
+    "queue": "Label the adjusted arms PENDING_SCORE_EXPORT if no pinned 12-month export is available. Reject an invalid 12-month export. At missing cutoffs or on unresolved keys and keys outside the frozen roster, retain the unadjusted mapped baselines and exclude those rows from the adjusted comparison. A benchmark cutoff from 2017-01-01 is always reserved.",
     "empty_vintage_arm": "NOT_RUN if no origins qualify for the vintage arm",
-    "reserved": "The C4 runner rejects origins on or after 2017-01-01 before opening any CMS or openFDA payload."
+    "reserved": "The C4 v2 runner requires a closed seal and rejects origins on or after 2017-01-01 before opening any CMS or openFDA payload. It never scores a LOE-Bench cutoff on or after 2017-01-01."
   }
 }
