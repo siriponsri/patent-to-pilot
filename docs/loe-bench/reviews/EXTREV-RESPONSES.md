@@ -26,3 +26,14 @@ Next: a fresh round 2 (EXTREV-R2) verifies all six responses against the frozen 
 | N3 | MAJOR | **Fixed (fixture).** Both horizons publish scoped first-result release assets with four digests in the notes and issue. After deleting the transient directory the fixture retrieved the exact original 24-month JSON, manifest, report and draws, including 12 missed clears with the original upper bound and FAIL disposition. **Disclosed:** production release and issue permissions are NOT_RUN until deployment; a synthetic GitHub run passed 15 tests with production jobs skipped. | [Receipt](../receipts/TRACKA-READOUT3.md), [run](https://github.com/siriponsri/patent-to-pilot/actions/runs/46163617027) |
 
 Next: a fresh round 3 (EXTREV-R3) verifies the round-2 responses.
+
+## Round 3 ([review](EXTERNAL-REVIEW-R3.md), answered 28 Nov 2026, 23:19 Bangkok)
+
+Resolved by the reviewer: R1, R2, N3. Partially resolved: R3, N1, N2, carried into the new findings below.
+
+| ID | Severity | Response | Where |
+|---|---|---|---|
+| R3-A (with R3, N1 remainder) | BLOCKING | **In progress (TRACKA-READOUT4, Sol xhigh).** Planner rule: the formal Track A family (H1, H2, H3) is the **first published aggregate** in the registered scope. Only the canonical publication path, which fetches live FDA bytes at run time, can create it. Any computation with a caller-chosen snapshot, or any unpublished computation, is PROVISIONAL for the whole family. After publication, every other run is a replay checked against the published aggregate. Regression: two covered snapshots with a fixed first 12-month result, and with documented absence, cannot yield different formal decisions. | Receipt to follow |
+| R3-B (with N2 remainder) | MAJOR | **In progress (same card).** Collect and validate every trusted issue witness before classifying absence; agreeing witnesses permit the predeclared fallback, conflicting or malformed witnesses yield DISPUTED with H3 descriptive and all locators recorded. Tests for agreeing, conflicting and malformed issue-only cases. | Receipt to follow |
+| R3-C | MINOR | **Fixed.** The owner-action list marks the Zenodo deposit and restore as done and links the DOI and RESTORE-DOI. | [Checklist](../RESEARCH-COMPLETION.md) |
+

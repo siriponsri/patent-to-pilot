@@ -52,7 +52,7 @@ For interpreting the comparisons, [Hopefl et al.](https://doi.org/10.1111/cts.70
 
 | Decision | Evidence to retain |
 |---|---|
-| Zenodo depositor | Publish the approved ZIP under an exact version DOI, record deposit time and file checksum, then permit the independent anonymous restore. OSF update 4 already has its timestamp. |
+| Zenodo depositor | **Done 28 Nov** (marked 23:19 after EXTREV-R3 R3-C): published as [10.5281/zenodo.24629100](https://doi.org/10.5281/zenodo.24629100) and restored anonymously by an independent executor ([RESTORE-DOI](receipts/RESTORE-DOI.md)). No further deposit is needed. |
 | Post-January custodian | **Decided 28 Nov: the owner, best effort.** Layered automation (calendar `.ics`, Cloudflare Worker cron dispatching the GitHub scoring workflow, public self-service guide) so readouts do not depend on memory; late readouts are valid and recorded as late. |
 | RunPod storage | **Decided 28 Nov: delete `8n6rnzljwg` if unused.** RUNPOD-CLEANUP verifies local copies, deletes, and records absence and final cost. |
 | STA and sole journal route | Obtain written answers on AI-assisted drafting with disclosure and prior public GitHub drafts. If either answer is negative or remains unresolved at choice time, use the approved JAMIA fallback with advisor agreement. |
