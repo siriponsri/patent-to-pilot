@@ -10,12 +10,12 @@
 2. Open https://osf.io/p2smd and choose **Update** (OSF registration update). Do not withdraw, re-register or create a new registration.
 3. Paste text **verbatim** from this sheet. Do not reword, shorten or translate.
 4. Change only the two fields below, using exact find-and-replace. Leave every other field untouched.
-5. **Stop before submitting the update.** Show the owner the justification, the two edited fields and a count of changed sentences (expected: 2 in the first field, 4 in the second). Submit only after the owner types `submit`.
+5. **Stop before submitting the update.** Show the owner the justification, the two edited fields and a count of changed sentences (expected: 2 in the first field, 7 in the second). Submit only after the owner types `submit`.
 6. After submission, report the update's timestamp and the version shown on the registration page.
 
 ## 1. Justification (paste into the update's justification box)
 
-> The original registration was submitted on 28 November 2026 at 03:59 UTC. Some responses were reworded during entry, and none of the ten intended supporting files was attached. The repository release lock was subsequently calculated from the canonical public OSF registration record. The original text requires a registered-PDF digest, but no OSF-issued registration PDF was available for that lock. We are documenting the artifact substitution before running the C′ gate or inspecting any new protected labels, counts or scores. The original registration and the prior-exposure disclosures remain part of the study record. The statistical plan, hypotheses, thresholds, retry rules and prospective-freeze rules are unchanged.
+> The original registration was submitted on 28 November 2026 at 03:59 UTC. Some responses were reworded during entry, and none of the ten intended supporting files was attached. The repository release lock was subsequently calculated from the canonical public OSF registration record. The original text requires a registered-PDF digest, but no OSF-issued registration PDF was available for that lock. We are documenting the artifact substitution before running the C′ gate or inspecting any new protected labels, counts or scores. The original registration and the prior-exposure disclosures remain part of the study record. The exploratory C9 training window is widened from January 2027 to December 2026 or January 2027, still before the core Track A freeze, so that the study can finish earlier; C9 data, roster, budget and failure rules are unchanged. The statistical plan, hypotheses, thresholds, retry rules and prospective-freeze rules are unchanged.
 
 ## 2. Field containing "The preregistration PDF records the exact checksums." (data access and availability)
 
@@ -29,7 +29,7 @@ Replace it with:
 
 ## 3. Field containing "Secondary measures of forecasting performance" (the long exploratory and release field)
 
-Make these four find-and-replace edits. Each "find" text occurs exactly once.
+Make these seven find-and-replace edits. Each "find" text occurs exactly once.
 
 **3a.** Find:
 
@@ -62,6 +62,30 @@ Replace with:
 Replace with:
 
 > For C′ release, use the SHA-256 of the original registration's canonical UTF-8 JSON archived at https://github.com/siriponsri/patent-to-pilot/blob/f0bdb0c5/loe-bench/data/OSF_REGISTRATION_P2SMD.json and rebuilt from the original OSF schema response by loe-bench/scripts/osf_lock.py. Its digest is 3f91145251465b0ed9c89233337748e1b9fd84db8c4c2a6158860374670e1c77. Preserve these original bytes across registration updates. Follow the post-registration sequence above. Before C′ scoring, require this exact lowercase digest in PREREG_LOCK.json and LOE_PREREG_SHA256, the first author's authorization, a PASS gate verdict and verified source and code identities. A failed release check stops scoring. All statistical, retry and prospective-freeze rules continue to apply.
+
+**3e.** Find:
+
+> Verify fit and throughput in January before proceeding.
+
+Replace with:
+
+> Verify fit and throughput before training.
+
+**3f.** Find:
+
+> January 2027 training.
+
+Replace with:
+
+> Training in December 2026 or January 2027, after the C′ gate and before the core Track A freeze.
+
+**3g.** Find:
+
+> Re-quote all line items live in January and obtain the first author's recorded approval before creating a pod.
+
+Replace with:
+
+> Re-quote all line items live before training and obtain the first author's recorded approval before creating a pod.
 
 ## Hand-back
 
