@@ -1,47 +1,43 @@
 # IS2 figure and table plan
 
-Use the KMITL AI4BA short-paper template. Captions go below figures and above tables, with the same numbering in both editions. Match labels to the body language at layout. The existing system figure is linked in both drafts. The timeline is a placement marker. The table contents are already in both manuscripts.
+Use the KMITL AI4BA short-paper template. Place captions below figures and above tables. Keep the numbering and data identical across editions and localize labels at layout.
 
 ## Figure 1
 
-- **TH:** รูปที่ 1 ขั้นตอนจากการรับข้อมูลผลิตภัณฑ์และพยากรณ์ช่วงเวลาเข้าสู่ตลาดจนถึงการส่งต่อหลักฐานให้ผู้เชี่ยวชาญ
-- **EN:** Figure 1. Market Window Dossier workflow from product intake and launch-window forecast to evidence hand-off for specialist review.
-- **Sources:** [Existing system flow](../../../assets/market-window-flow.svg) and [D41 product specification](../../../loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026).
-- Place in Methods before the explanation of the source trail. Use full width if required to read the stage labels. Prepare Thai labels during typesetting. Change “Backtested: sealed and retrospective” and “Track A, frozen before outcomes” to status-accurate wording in both rendered editions. Update the accessible description as well. Define the review action and traceability fields in the text.
+- **TH:** ขั้นตอนการจัดทำแฟ้มที่ออกแบบไว้สำหรับผู้เชี่ยวชาญ ประเมินย้อนหลังในขั้นพัฒนาแล้ว ส่วนการตรวจรับและให้คะแนน C′ การตรึงคำพยากรณ์ Track A และการตรวจหลักฐานรายข้อความในแฟ้มยังรอดำเนินการ ผลด้านความต้องการและราคาเป็นสถานการณ์จำลอง
+- **EN:** Proposed dossier workflow for specialist review. Historical development evaluation is complete. Sealed C′ admission and scoring, the Track A prediction freeze and the dossier’s claim-level audit are pending. Demand and price are scenario outputs.
+- Place in §3.1 before the explanation of the source trail. Reuse the corrected SVG and preserve its pending-test, freeze-deadline and scenario wording in translated labels and accessible descriptions. Use full width if needed for legibility. [System flow](../../../assets/market-window-flow.svg) · [D41 product specification](../../../loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026)
 
 ## Figure 2
 
-- **TH:** รูปที่ 2 ลำดับงานจากการพัฒนาและลงทะเบียนกับ OSF ผ่านการตรวจรับ C′ จนถึงการตรึงคำพยากรณ์และการประเมินเมื่อครบระยะติดตาม
-- **EN:** Figure 2. Evidence timeline from development through OSF registration and blinded C′ admission to the prospective prediction freeze and outcome readouts.
-- **Sources:** [FREEZE](../../../loe-bench/receipts/FREEZE.md), [PREREG2](../../../loe-bench/receipts/PREREG2.md) and [Track A protocol](../../../loe-bench/PREREGISTRATION.md#track-a-prospective-protocol).
-- Use a process timeline. Mark development as complete and the later milestones as pending. Draw the two C′ paths: a PASS with authorized scoring, or a final failure with feasibility only. Both lead to the independently scheduled Track A freeze. Place the external timestamp before outcome access. Use the protocol's deadline and maturity dates if dates appear.
+- **TH:** ผลต่างการครอบคลุมการอนุมัติครั้งแรกแบบจับคู่ในชุดพัฒนา ที่ความจุคิวร้อยละ 20 จุดแสดงค่าประมาณ เส้นช่วงแสดงช่วงความเชื่อมั่น 95% แบบสองด้านจากการสุ่มซ้ำระดับตัวยา เส้นแนวตั้งแสดงเกณฑ์ศูนย์และ +10 จุดร้อยละ ป้ายแต่ละแถวแสดงจำนวนตัวยาที่เกิดเหตุการณ์แบบไม่นับซ้ำ
+- **EN:** Paired differences in first-approval recall at the 20% review budget on development data. Points are estimates, bars are two-sided 95% whole-drug bootstrap intervals, and vertical lines mark zero and +10 percentage points. Labels give the number of distinct event drugs.
+- Place at the marker in §4.1. Plot three horizontal interval rows in H1, H2, H3 order from top to bottom. Use a common linear axis in percentage points, with a vertical line at zero and a distinct vertical line at +10 for the prespecified practical-usefulness threshold. Center each point on its estimate and plot the supplied lower and upper endpoints. Include the horizon, contrast and distinct event-drug count in each row label. The counts are development denominators. [FREEZE development results](../../../loe-bench/receipts/FREEZE.md#development-results) · [Preregistration protocol](../../../loe-bench/PREREGISTRATION.md)
+
+| Row | Horizon | Contrast | Distinct event drugs | Point estimate (pp) | 95% lower (pp) | 95% upper (pp) |
+| --- | ---: | --- | ---: | ---: | ---: | ---: |
+| H1 | 24 months | M3 v1 − B1 | 67 | +9.80 | +0.14 | +19.65 |
+| H2 | 24 months | M3 v1 − M1 | 67 | +5.49 | −2.00 | +11.25 |
+| H3 | 12 months | M3 v1 − B1 | 90 | +13.00 | +3.27 | +23.17 |
+
+The main planner renders this plot for both editions. The methods describe the release and follow-up timeline in §3.4.
 
 ## Table 1
 
-- **TH:** ตารางที่ 1 ปีของวันตัดข้อมูลสำหรับแต่ละระยะพยากรณ์
-- **EN:** Table 1. Annual cutoff schedule by horizon.
-- **Sources:** [FREEZE](../../../loe-bench/receipts/FREEZE.md) and [Preregistration splits](../../../loe-bench/PREREGISTRATION.md#splits-and-blinded-admission).
-- Use the training, development and sealed-cutoff columns. These are scheduled years. Keep the outcome admission verdict in the results section.
+- **TH:** ปีของวันตัดข้อมูลสำหรับแต่ละระยะพยากรณ์
+- **EN:** Annual cutoff schedule by horizon.
+- Use the training, development and sealed-cutoff columns. Presented years are scheduled cutoffs. Keep the pending admission verdict in Results. [FREEZE](../../../loe-bench/receipts/FREEZE.md) · [Preregistration splits](../../../loe-bench/PREREGISTRATION.md#splits-and-blinded-admission)
 
 ## Table 2
 
-- **TH:** ตารางที่ 2 อัตราการครอบคลุมการอนุมัติครั้งแรกที่ความจุคิวร้อยละ 20 และผลต่างเฉพาะขั้นพัฒนา
-- **EN:** Table 2. Frozen first-approval recall at a 20% budget and development-only contrasts.
-- **Sources:** [FREEZE results](../../../loe-bench/receipts/FREEZE.md#development-results).
-- Present native recalls and paired development differences in percentage points with 95% intervals. The caption must retain the development-only status. Keep the C′ entries immediately after the development discussion until the gate and the formal sequence are resolved.
+- **TH:** ผลต่าง MAE ของยอดเบิกจ่ายเทียบกับการยกค่าล่าสุดในชุดย่อยขั้นพัฒนาที่เชื่อมกับคิว
+- **EN:** Paired reimbursement MAE differences relative to carry-forward on the linked development subset.
+- Retain both reimbursement units, paired intervals and the retrospective, vintage-uncontrolled qualifier. Include B1-adjusted, M3-adjusted and drift, each relative to carry-forward. A positive difference means greater MAE. Keep the queue-linked denominators next to the table. [C4b queue-linked results](../../../loe-bench/receipts/C4b.md)
 
 ## Table 3
 
-- **TH:** ตารางที่ 3 ผลต่าง MAE ของยอดเบิกจ่ายเทียบกับการยกค่าล่าสุดในชุดย่อยขั้นพัฒนาที่เชื่อมกับคิว
-- **EN:** Table 3. Paired reimbursement MAE differences relative to carry-forward on the linked development subset.
-- **Sources:** [C4b queue-linked results](../../../loe-bench/receipts/C4b.md).
-- Retain both reimbursement units, paired intervals and the retrospective, vintage-uncontrolled qualifier. A positive difference means greater MAE. Keep the denominators next to the table.
+- **TH:** ผลขั้นพัฒนาของแบบจำลองภาษาที่ได้รับหลักฐานและวิธีเปรียบเทียบ
+- **EN:** Evidence-matched language model and comparator results on development data.
+- Present native recall, precision and grouped average precision. Keep paired recall contrasts, intervals and the exploratory status in the adjacent text. [C2 development results](../../../loe-bench/receipts/C2.md#development-results)
 
-## Table 4
-
-- **TH:** ตารางที่ 4 ผลขั้นพัฒนาของแบบจำลองภาษาที่ได้รับหลักฐานและวิธีเปรียบเทียบ
-- **EN:** Table 4. Evidence-matched language model and comparator results on development data.
-- **Sources:** [C2 results](../../../loe-bench/receipts/C2.md#development-results) and [L1DEV](../../../loe-bench/receipts/L1DEV.md).
-- Present native recall, precision and grouped average precision. The paired recall contrasts and their intervals are adjacent to the table. Preserve the exploratory status.
-
-The C3b result fits in the RQ2 text. Its single-cutoff numerator and denominator context and paired interval come from the [C3b receipt](../../../loe-bench/receipts/C3b.md#c3-development-queue-result). No image files were created for this card.
+The C3b result stays in §4.2 with its single-cutoff scope, fractional-tie counts and paired interval. [C3b development result](../../../loe-bench/receipts/C3b.md#c3-development-queue-result)
