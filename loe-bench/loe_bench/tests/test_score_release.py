@@ -29,7 +29,7 @@ def jsonl(path, rows):
     path.write_bytes("".join(json.dumps(row) + "\n" for row in rows).encode())
 
 
-def synthetic_release(folder):
+def synthetic_release(folder, *, diagnostic_fields=None):
     folder.mkdir()
     dictionary = {
         arm: {"status": "INCLUDED", "files": {
@@ -45,7 +45,8 @@ def synthetic_release(folder):
         backwards = [.1] * 12 + [.9] * 8
         scores = {"B1": backwards, "M1": backwards, "M3": graph, "B3": [1] * 20}
         for group in (CORE, PRIOR):
-            rows = [{**row, "arms": {arm: {"native": scores.get(arm, graph)[i], "calibrated": .4} for arm in group}}
+            rows = [{**row, "arms": {arm: {"native": scores.get(arm, graph)[i], "calibrated": .4,
+                                           **(diagnostic_fields or {})} for arm in group}}
                     for i, row in enumerate(roster)]
             jsonl(folder / dictionary[group[0]]["files"][str(h)], rows)
         for arm in LLM + (C9 if h == 24 else ()):

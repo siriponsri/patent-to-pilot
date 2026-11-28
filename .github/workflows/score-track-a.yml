@@ -15,20 +15,37 @@ on:
       freeze_sha256:
         description: OSF update 4 manifest SHA-256 (defaults to TRACKA_FREEZE_SHA256)
         type: string
-      prior_12_run_id:
-        description: GitHub Actions run ID of the archived first 12-month result
-        type: string
+      synthetic:
+        description: Run only the network-free synthetic readout fixtures
+        type: boolean
+        default: false
   schedule:
     # POSIX cron has no year field. The setup step selects 2027 and 2028.
     - cron: "17 14 1 12 *"
 
 permissions:
   contents: read
-  actions: read
-  issues: write
 
 jobs:
+  synthetic:
+    if: github.event_name == 'workflow_dispatch' && inputs.synthetic
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12.10"
+      - name: Install the scorer dependency
+        run: |
+          python -m pip install --only-binary=:all: --require-hashes -r loe-bench/requirements-tracka.lock
+      - name: Run the synthetic readout fixtures
+        working-directory: loe-bench
+        run: python -m unittest -v loe_bench.tests.test_tracka_readout loe_bench.tests.test_tracka_secondary
   select:
+    if: github.event_name != 'workflow_dispatch' || !inputs.synthetic
     runs-on: ubuntu-24.04
     timeout-minutes: 2
     permissions: {}
@@ -41,7 +58,6 @@ jobs:
           REQUESTED_HORIZON: ${{ inputs.horizon }}
           RELEASE_DOI: ${{ inputs.release_doi || vars.TRACKA_RELEASE_DOI }}
           FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
-          PRIOR_RUN_ID: ${{ inputs.prior_12_run_id }}
         run: |
           horizon="$REQUESTED_HORIZON"
           if [[ "$GITHUB_EVENT_NAME" == "schedule" ]]; then
@@ -56,15 +72,15 @@ jobs:
             echo "::error::Set the Zenodo version DOI and exact OSF freeze-manifest SHA-256 before running."
             exit 1
           fi
-          if [[ -n "$PRIOR_RUN_ID" ]]; then
-            [[ "$horizon" == 24 && "$PRIOR_RUN_ID" =~ ^[0-9]+$ ]]
-          fi
           echo "horizon=$horizon" >> "$GITHUB_OUTPUT"
   readout:
     needs: select
     if: needs.select.outputs.horizon != ''
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    permissions:
+      contents: write
+      issues: write
     concurrency:
       group: score-track-a-${{ needs.select.outputs.horizon }}
       cancel-in-progress: false
@@ -75,18 +91,9 @@ jobs:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
-          ref: ${{ vars.TRACKA_SCORER_REF || github.sha }}
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12.10"
-      - name: Restore archived 12-month run
-        if: needs.select.outputs.horizon == '24' && inputs.prior_12_run_id != ''
-        uses: actions/download-artifact@v8
-        with:
-          name: track-a-12m
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.prior_12_run_id }}
-          path: prior-artifact
       - name: Install the scorer dependency
         run: |
           python -m pip install --only-binary=:all: --require-hashes -r loe-bench/requirements-tracka.lock
@@ -97,15 +104,14 @@ jobs:
           HORIZON: ${{ needs.select.outputs.horizon }}
           RELEASE_DOI: ${{ inputs.release_doi || vars.TRACKA_RELEASE_DOI }}
           FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
-          PRIOR_RUN_ID: ${{ inputs.prior_12_run_id }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "started_utc=$(date -u +%F)" >> "$GITHUB_OUTPUT"
           prior=()
-          if [[ -n "$PRIOR_RUN_ID" ]]; then
-            prior=(--prior-12 ../prior-artifact/12m/run-0001)
+          if [[ "$HORIZON" == 24 ]]; then
+            prior=(--repository "$GITHUB_REPOSITORY")
           fi
           status=0
-          python -m loe_bench.score_release --release "$RELEASE_DOI" --horizon "$HORIZON" \
+          python -m loe_bench.tracka_readout --release "$RELEASE_DOI" --horizon "$HORIZON" \
             --freeze-sha256 "$FREEZE_SHA256" --out ../track-a-results "${prior[@]}" || status=$?
           case "$status" in
             0|2|3)
@@ -128,7 +134,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           HORIZON: ${{ needs.select.outputs.horizon }}
-          STARTED_UTC: ${{ steps.score.outputs.started_utc }}
           RELEASE_DOI: ${{ inputs.release_doi || vars.TRACKA_RELEASE_DOI }}
           FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
           CANONICAL_DOI: ${{ vars.TRACKA_RELEASE_DOI }}
@@ -142,14 +147,9 @@ jobs:
           folder="track-a-results/${HORIZON}m/run-0001"
           status=$(jq -er '.status | select(. == "SCORED" or . == "PENDING" or . == "BLOCKED_SOURCE")' "$folder/results.json")
           maturity=$(jq -er '.maturity' "$folder/results.json")
-          timing="No completed readout"
-          if [[ "$status" == SCORED ]]; then
-            timing="On time"
-            if [[ "$STARTED_UTC" > "$maturity" ]]; then timing="Late"; fi
-          fi
+          started=$(jq -er '.scored_on_utc' "$folder/results.json")
           title="Track A ${HORIZON}-month readout"
           record="${FREEZE_SHA256}:${RELEASE_DOI##*.}"
-          marker="<!-- tracka:${HORIZON}:${status}:${record} -->"
           scored_marker="<!-- tracka:${HORIZON}:SCORED:${record} -->"
           endpoint="repos/$GITHUB_REPOSITORY/issues"
           issues=$(gh api --paginate --slurp "$endpoint?state=all&per_page=100")
@@ -162,6 +162,55 @@ jobs:
             echo "The first canonical scored readout is already recorded."
             exit 0
           fi
+          archive=""
+          if [[ "$HORIZON" == 12 ]]; then
+            release_sha=$(jq -er '.release_sha256' "$folder/results.json")
+            tag="track-a-12m-${RELEASE_DOI##*.}-${FREEZE_SHA256}"
+            archive_folder=$(mktemp -d)
+            discover() {
+              PYTHONPATH=loe-bench python -m loe_bench.tracka_vintage --repository "$GITHUB_REPOSITORY" \
+                --doi "$RELEASE_DOI" --freeze-sha256 "$FREEZE_SHA256" --release-sha256 "$release_sha" \
+                --out "$archive_folder"
+            }
+            evidence=$(discover)
+            if [[ "$(jq -r '.reason // empty' <<< "$evidence")" == MISSING_ORIGINAL && "$status" == SCORED ]]; then
+              existing=$(gh api "repos/$GITHUB_REPOSITORY/git/matching-refs/tags/$tag" \
+                --jq '.[].ref')
+              if grep -Fxq "refs/tags/$tag" <<< "$existing"; then
+                echo "::error::First publication tag already exists. Recover its release assets without replacing them."
+                exit 1
+              fi
+              (cd "$folder" && sha256sum results.json > results.sha256)
+              read -r result_sha _ < "$folder/results.sha256"
+              notes=$(mktemp)
+              printf 'Scoring started %s UTC.\n\nFirst result SHA-256 `%s`.\n\n[Workflow run](%s/%s/actions/runs/%s)\n\n' \
+                "$started" "$result_sha" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > "$notes"
+              cat "$folder/REPORT.md" >> "$notes"
+              gh release create "$tag" --repo "$GITHUB_REPOSITORY" --latest=false --target "$GITHUB_SHA" \
+                --title 'Track A first 12-month readout' --notes-file "$notes" \
+                "$folder/results.json" "$folder/results.sha256" "$folder/outcome-source-manifest.json" \
+                "$folder/REPORT.md" "$folder/bootstrap-draws.npz"
+              evidence=$(discover)
+            fi
+            if jq -e '.reason == "INVALID_ORIGINAL"' <<< "$evidence" > /dev/null; then
+              echo "::error::First 12-month release failed verification. Preserve its assets and investigate."
+              exit 1
+            fi
+            archive=$(jq -r '.original.release_url // empty' <<< "$evidence")
+            if [[ -n "$archive" ]]; then
+              status=SCORED
+              started=$(jq -er '.original.scored_on_utc' <<< "$evidence")
+            elif [[ "$status" == SCORED ]]; then
+              echo "::error::First 12-month release is not visible yet. Retry archive verification."
+              exit 1
+            fi
+          fi
+          marker="<!-- tracka:${HORIZON}:${status}:${record} -->"
+          timing="No completed readout"
+          if [[ "$status" == SCORED ]]; then
+            timing="On time"
+            if [[ "$started" > "$maturity" ]]; then timing="Late"; fi
+          fi
           number=$(jq -r --arg title "$title" \
             --arg pending "<!-- tracka:${HORIZON}:PENDING:${record} -->" \
             --arg blocked "<!-- tracka:${HORIZON}:BLOCKED_SOURCE:${record} -->" '
@@ -172,13 +221,18 @@ jobs:
           body_file=$(mktemp)
           {
             printf '%s\n\n' "$marker"
-            printf '**%s**. Scoring started %s UTC. Window ends %s UTC.\n\n' "$timing" "$STARTED_UTC" "$maturity"
-            printf 'Release %s. [Workflow run and artifacts](%s/%s/actions/runs/%s).\n\n' \
-              "$RELEASE_DOI" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
-            if [[ "$HORIZON" == 12 && "$status" == SCORED ]]; then
-              printf 'Preserve the first scored artifact before it expires so the 24-month run can reuse it.\n\n'
+            printf '**%s**. Scoring started %s UTC. Window ends %s UTC.\n\n' "$timing" "$started" "$maturity"
+            if [[ -n "$archive" ]]; then
+              printf 'First publication UTC %s.\n\n' "$(jq -er '.original.published_at_utc' <<< "$evidence")"
+              printf 'First result SHA-256 `%s`.\n\nFDA source manifest SHA-256 `%s`.\n\n' \
+                "$(jq -er '.original.results_sha256' <<< "$evidence")" \
+                "$(jq -er '.original.outcome_source_manifest_sha256' <<< "$evidence")"
+              printf 'Zenodo %s. [First readout report and durable archive](%s).\n' "$RELEASE_DOI" "$archive"
+            else
+              printf 'Release %s. [Workflow run and artifacts](%s/%s/actions/runs/%s).\n\n' \
+                "$RELEASE_DOI" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
+              cat "$folder/REPORT.md"
             fi
-            cat "$folder/REPORT.md"
           } > "$body_file"
           if [[ -n "$number" ]]; then
             gh api --method PATCH "$endpoint/$number" -F "body=@$body_file" --jq '.html_url'
