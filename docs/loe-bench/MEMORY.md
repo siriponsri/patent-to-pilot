@@ -185,3 +185,4 @@
 - **28 Nov, evening.** RUNPOD-CLEANUP merged (volume deleted 13:34:39 UTC; no RunPod resources left). CPRIME-SUPP merged with a planner note: thresholded accuracy equals the always-negative rate (TP = 0) and is uninformative; pooled AUC descriptive; prior-study metrics external references only; C-index NOT_ESTIMABLE.
 - **28 Nov, evening.** CLOSE-DISP merged: benchmark card; C8 strict hash target SHORT 1,757/1,789 (32 Thai FDA NDI claims); 4 UNAVAILABLE items, three of which an aggregate-only C′ run could fill if the owner approves.
 - **28 Nov, evening.** REPRO-C1 merged: independent, code-blind recomputation reproduced H1–H3 and the 47 checked JSON values exactly (differences ≤ 2.22e-14 pp from summation order). Joint sign-off dispatched to the co-planner at this revision.
+- **28 Nov, evening.** TRACKA-AUTO merged (secrets clean; per-job permissions; 7-event calendar). Owner setup waits for the Zenodo DOI. Joint sign-off review running at c020ff7c.
