@@ -1,4 +1,67 @@
-# LOE-Bench program plan (D40)
+# Market Window Dossier program plan (D41; LOE-Bench is its benchmark, D40)
+
+## D41: Market Window Dossier (owner-approved 28 November 2026)
+
+**Decision.** The product becomes **Market Window Dossier**, a working name that may change. It is a pharma market-research workflow that runs from a pre-development market forecast to an FTO hand-off report. LOE-Bench stays as the research benchmark inside it. The owner approved the full option: every component below is built. Where open data cannot support an as-of test, the component is evaluated retrospectively and labelled as such. Authors are Siripon Srihangpiboon and Asst. Prof. Dr. Tuchsanai Ploysuwan.
+
+**Pain points served.**
+- **P1, scarce FTO evaluators:** a review queue and a dated evidence pack with a verification checklist. It is decision support for the evaluator and never an FTO opinion.
+- **P2, demand gone at launch:** a launch-window forecast made before bioequivalence or comparative trials. It covers entry timing, competition at launch, a price-erosion scenario and a demand baseline.
+
+The co-planner consults behind this plan are recorded in [lane memory](MEMORY.md) (28 November entries) and the [technique ledger](TECHNIQUE-LEDGER.md) (K23–K25).
+
+**User flow.**
+1. The user enters ingredient, form, jurisdiction, decision date and planned launch date.
+2. The launch-window forecast is computed.
+3. The competition and patent evidence pack is assembled.
+4. The Thai and ASEAN status rows are filled.
+5. The FTO evaluator checklist is generated.
+6. The one-molecule report is produced, with Thai for the decision page and bilingual technical sections.
+
+**Components.**
+
+| ID | Component | Evidence status | Freeze before OSF |
+|---|---|---|---|
+| C1 | First-generic review queue, H1 → H2 → H3 (criteria v3) | Confirmatory | Yes (frozen) |
+| C2 | L1e: the LLM given the same as-of evidence as M3 (K24) | Exploratory | Yes |
+| C3 | Competition at launch: at least three distinct approved ANDA applicants within 36 months, scored on frozen queues (K25) | Exploratory | Yes |
+| C4 | Demand baseline and volume forecast from CMS Medicaid SDUD. As-of release vintages are used where they can be proven; otherwise the analysis is labelled retrospective and vintage-uncontrolled | Exploratory | Yes (endpoint and baseline: naïve with drift, Nikolopoulos et al. 2016) |
+| C5 | Price-erosion scenario from FDA medians by number of producers | Scenario, not fitted | Assumptions stated |
+| C6 | Patent evidence pack: a document-backed restricting patent label, a ranked checklist, and patent type. Pilot on development products | Descriptive in IS2; journal protocol later | No (development only) |
+| C7 | Thai and ASEAN family and status trace (WIPO/ASEAN PATENTSCOPE, ASEAN IP Register, DIP) | Descriptive. A failed lookup is shown as unknown | No |
+| C8 | Report generator: seven-part hierarchy, claim-level citations, known/unknown/not-applicable states, and an observed/estimate/assumption label on every claim | Scripted traceability audit (100% target) | No |
+| C9 | RL arm (K23) | Pending the co-planner plan: exploratory only, with Track A as the clean test | Decided in week 1 |
+| C10 | Novice reader test with AI4BA volunteers | Only if KMITL ethics clearance arrives in time | No |
+
+**Report hierarchy (C8).**
+1. BD/R&D decision page
+2. Market window
+3. Competitive landscape
+4. Patent and exclusivity landscape
+5. Thailand and ASEAN
+6. FTO evaluator hand-off checklist
+7. References and reproducibility appendix
+
+The structure follows the WIPO *Guidelines for Preparing Patent Landscape Reports* (2015) and the WIPO FTO search guide (pub. 1062). The cover wording states that freedom to operate remains undetermined and that qualified counsel must assess the product.
+
+**Schedule.**
+
+| Week | Goal | Exit criterion |
+|---|---|---|
+| 30 Nov–6 Dec | Run C2, C3 and C4 development work. Write preregistration v2. Select demo molecules by source availability | Configurations pinned. The main planner audits preregistration v2 |
+| 7–13 Dec | The owner submits OSF through a GPT-6.2 Sol high browser agent, using the copy sheet. The main planner writes PREREG_LOCK from the PDF hash | Registered PDF received |
+| 14–20 Dec | C′ gate, confirmatory and exploratory scoring. First complete dossier | Results or a documented gate failure |
+| 21–27 Dec | Traceability audit and metric reproduction | No open discrepancies on decision pages |
+| 28–31 Dec | **IS2 draft** (KMITL template, Thai and English) | Every unrun analysis is marked |
+| 1–17 Jan | Retrain on matured windows. **Track A freeze**: hashes, Git tag and OSF timestamp | Frozen before any later outcome fetch |
+| 18–31 Jan | **Final IS2.** Track A freeze verified before 2027-01-31 23:59 UTC | Submitted |
+
+**Housekeeping.** The owner authorized deleting documents and data that no longer serve this work.
+- Deletions run from a reviewed inventory, using `git rm` so Git history keeps every file.
+- `docs/owner/`, private artifacts, protected code and tests, and the evidence index are not deleted.
+- The Workbench and the RA Pharma inputs are kept, because the Thai demo uses them.
+
+## LOE-Bench benchmark plan (D40)
 
 LOE-Bench forecasts whether a first generic (ANDA) or biosimilar (351(k)) approval will occur within 12, 24 or 36 months, using only open public regulatory records. The proposed method combines a three-state (Kleene) evidence graph, a calibrated probability, abstention with referral to a human FTO evaluator, and value-of-information ordering of the next evidence item. The owner's original package is preserved in Thai under [owner-source](owner-source/) with [source hashes](owner-source/SOURCE-SHA256.txt). Code and small data are in [`loe-bench/`](../../loe-bench/).
 

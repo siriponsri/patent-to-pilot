@@ -198,3 +198,11 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
   - Inputs may be pre-staged. The plan is a network volume, so no pod sits idle.
   - Every pod's rate, start, stop and cost is logged, and pods are deleted after each stage.
   - The LLM arm is secondary and non-confirmatory. Its configuration must be frozen before the test unlock.
+- 28 Nov 2026, **D41: Market Window Dossier.**
+  - The owner approved a full-option plan and renamed the product Market Window Dossier (working name). It is a pharma market-research workflow from a pre-development launch-window forecast to an FTO hand-off report. LOE-Bench remains its benchmark.
+  - Where data cannot support an as-of test, the component is evaluated retrospectively and labelled as such.
+  - Authors are the owner and Asst. Prof. Dr. Tuchsanai Ploysuwan.
+  - IS2 draft is due end of December 2026, and the final version end of January 2027.
+  - The owner will submit OSF through a GPT-6.2 Sol high browser agent, using a copy sheet that the main planner audits.
+  - The owner authorized deleting documents and data no longer used by this work. This is done from a reviewed inventory with `git rm`.
+  - [Plan](../loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026)
