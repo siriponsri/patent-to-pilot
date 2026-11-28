@@ -1,0 +1,1960 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="267.84pt" height="172.8pt" viewBox="0 0 267.84 172.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-28T17:24:13.972421</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 172.8 
+L 267.84 172.8 
+L 267.84 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 34.8192 138.24 
+L 259.8048 138.24 
+L 259.8048 13.824 
+L 34.8192 13.824 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 45.045818 138.24 
+L 71.918683 138.24 
+L 71.918683 52.983936 
+L 45.045818 52.983936 
+z
+" clip-path="url(#pfb429e3484)" style="fill: #a3a3a3; opacity: 0.55"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 73.41162 138.24 
+L 100.284486 138.24 
+L 100.284486 46.141056 
+L 73.41162 46.141056 
+z
+" clip-path="url(#pfb429e3484)" style="fill: #a3a3a3"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 119.692666 138.24 
+L 146.565532 138.24 
+L 146.565532 61.350912 
+L 119.692666 61.350912 
+z
+" clip-path="url(#pfb429e3484)" style="fill: #d55e00; opacity: 0.55"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 148.058468 138.24 
+L 174.931334 138.24 
+L 174.931334 50.340096 
+L 148.058468 50.340096 
+z
+" clip-path="url(#pfb429e3484)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 194.339514 138.24 
+L 221.21238 138.24 
+L 221.21238 36.156672 
+L 194.339514 36.156672 
+z
+" clip-path="url(#pfb429e3484)" style="fill: #0072b2; opacity: 0.55"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 222.705317 138.24 
+L 249.578182 138.24 
+L 249.578182 29.562624 
+L 222.705317 29.562624 
+z
+" clip-path="url(#pfb429e3484)" style="fill: #0072b2"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="me0520e09aa" d="M 0 0 
+L 0 2.5 
+" style="stroke: #1f1f1f; stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#me0520e09aa" x="72.665152" y="138.24" style="fill: #1f1f1f; stroke: #1f1f1f; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- Qwen3 -->
+      <g style="fill: #1f1f1f" transform="translate(62.276386 152.864) scale(0.098 -0.098)">
+       <defs>
+        <path id="THSarabunNew-32" d="M 2970 1517 
+Q 2970 966 2701 550 
+Q 2419 115 1933 -6 
+Q 2310 -166 2803 -192 
+L 2714 -429 
+Q 2080 -282 1555 -64 
+Q 928 -64 534 384 
+Q 141 832 141 1517 
+Q 141 2202 534 2650 
+Q 928 3098 1555 3098 
+Q 2182 3098 2576 2650 
+Q 2970 2202 2970 1517 
+z
+M 2720 1517 
+Q 2720 2080 2393 2480 
+Q 2067 2880 1555 2880 
+Q 1043 2880 716 2480 
+Q 390 2080 390 1517 
+Q 390 954 716 554 
+Q 1043 154 1555 154 
+Q 2067 154 2393 554 
+Q 2720 954 2720 1517 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-58" d="M 3245 2176 
+L 2464 0 
+L 2246 0 
+L 1619 1920 
+L 960 0 
+L 730 0 
+L 19 2176 
+L 282 2176 
+L 858 294 
+L 1510 2176 
+L 1747 2176 
+L 2362 294 
+L 2995 2176 
+L 3245 2176 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-46" d="M 2074 307 
+L 2093 96 
+Q 1722 -58 1286 -58 
+Q 787 -58 480 249 
+Q 173 557 173 1030 
+Q 173 1568 480 1894 
+Q 787 2221 1261 2221 
+Q 2176 2221 2195 1075 
+L 416 1075 
+Q 429 640 675 400 
+Q 922 160 1312 160 
+Q 1696 160 2074 307 
+z
+M 1958 1274 
+Q 1952 1536 1811 1741 
+Q 1619 2022 1229 2022 
+Q 877 2022 653 1766 
+Q 474 1562 429 1274 
+L 1958 1274 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-4f" d="M 2163 0 
+L 1914 0 
+L 1914 1235 
+Q 1914 2016 1261 2016 
+Q 998 2016 790 1795 
+Q 582 1574 582 1318 
+L 582 0 
+L 333 0 
+L 333 1638 
+Q 333 1811 288 2176 
+L 525 2176 
+Q 570 2042 576 1786 
+Q 826 2221 1312 2221 
+Q 2163 2221 2163 1235 
+L 2163 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-14" d="M 2099 1030 
+Q 2099 544 1766 243 
+Q 1434 -58 909 -70 
+Q 486 -83 218 166 
+L 326 365 
+Q 563 186 947 186 
+Q 1318 186 1580 435 
+Q 1843 685 1843 1018 
+Q 1843 1267 1689 1433 
+Q 1536 1600 1299 1600 
+Q 1024 1600 870 1453 
+L 749 1658 
+Q 992 1843 1235 2035 
+Q 1600 2342 1600 2515 
+Q 1600 2829 1165 2829 
+Q 685 2829 448 2349 
+L 269 2445 
+Q 371 2726 620 2892 
+Q 870 3059 1184 3059 
+Q 1453 3059 1645 2915 
+Q 1837 2771 1837 2522 
+Q 1837 2227 1312 1830 
+L 1350 1830 
+Q 1690 1830 1894 1603 
+Q 2099 1376 2099 1030 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-32"/>
+       <use xlink:href="#THSarabunNew-58" transform="translate(48.703125 0)"/>
+       <use xlink:href="#THSarabunNew-46" transform="translate(99.40625 0)"/>
+       <use xlink:href="#THSarabunNew-4f" transform="translate(136.8125 0)"/>
+       <use xlink:href="#THSarabunNew-14" transform="translate(175.8125 0)"/>
+      </g>
+      <!-- ไม่ฝึกเพิ่ม -->
+      <g style="fill: #1f1f1f" transform="translate(60.606558 164.232) scale(0.098 -0.098)">
+       <defs>
+        <path id="THSarabunNew-115" d="M 1466 384 
+Q 1466 205 1338 77 
+Q 1210 -51 1037 -51 
+Q 832 -51 704 90 
+Q 595 211 595 384 
+L 595 3846 
+L 134 3181 
+L -77 3258 
+Q -109 3686 -224 4256 
+L -26 4256 
+Q 77 3699 96 3418 
+L 621 4192 
+Q 704 4186 765 4115 
+Q 826 4045 826 3968 
+L 826 762 
+Q 915 813 1037 813 
+Q 1210 813 1338 688 
+Q 1466 563 1466 384 
+z
+M 1248 384 
+Q 1248 474 1184 538 
+Q 1120 602 1030 602 
+Q 941 602 877 538 
+Q 813 474 813 384 
+Q 813 294 877 230 
+Q 941 166 1030 166 
+Q 1120 166 1184 230 
+Q 1248 294 1248 384 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-f6" d="M 2202 0 
+L 1952 0 
+Q 1453 384 1018 506 
+Q 1037 448 1037 390 
+Q 1037 205 905 77 
+Q 774 -51 589 -51 
+Q 403 -51 275 77 
+Q 147 205 147 390 
+Q 147 576 275 707 
+Q 403 838 589 838 
+Q 659 838 723 819 
+L 723 1760 
+Q 640 1715 531 1715 
+Q 358 1715 233 1840 
+Q 109 1965 109 2138 
+Q 109 2310 233 2435 
+Q 358 2560 531 2560 
+Q 704 2560 829 2435 
+Q 954 2310 954 2138 
+L 954 755 
+Q 1587 531 1971 237 
+L 1971 2509 
+L 2202 2509 
+L 2202 0 
+z
+M 826 397 
+Q 826 493 755 563 
+Q 685 634 589 634 
+Q 493 634 422 563 
+Q 352 493 352 397 
+Q 352 301 422 230 
+Q 493 160 589 160 
+Q 685 160 755 230 
+Q 826 301 826 397 
+z
+M 749 2138 
+Q 749 2227 685 2291 
+Q 621 2355 531 2355 
+Q 442 2355 378 2291 
+Q 314 2227 314 2138 
+Q 314 2048 378 1984 
+Q 442 1920 531 1920 
+Q 621 1920 685 1984 
+Q 749 2048 749 2138 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-160" d="M -358 3072 
+L -595 3072 
+L -595 3994 
+L -358 3994 
+L -358 3072 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-f2" d="M 2080 0 
+L 1824 0 
+L 1165 1011 
+L 512 0 
+L 256 0 
+L 256 2138 
+Q 256 2310 377 2435 
+Q 499 2560 678 2560 
+Q 851 2560 976 2435 
+Q 1101 2310 1101 2138 
+Q 1101 1971 979 1843 
+Q 858 1715 678 1715 
+Q 589 1715 486 1760 
+L 486 346 
+L 1075 1254 
+L 1248 1254 
+L 1850 346 
+L 1850 3578 
+L 2080 3578 
+L 2080 0 
+z
+M 902 2138 
+Q 902 2227 838 2291 
+Q 774 2355 685 2355 
+Q 595 2355 531 2291 
+Q 467 2227 467 2138 
+Q 467 2048 531 1984 
+Q 595 1920 685 1920 
+Q 774 1920 838 1984 
+Q 902 2048 902 2138 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-159" d="M -845 2912 
+Q -1581 3174 -2227 3174 
+Q -2458 3174 -2733 3136 
+Q -2726 3469 -2458 3674 
+Q -2214 3859 -1875 3859 
+Q -1530 3859 -1280 3693 
+Q -1299 3744 -1299 3795 
+Q -1299 3923 -1206 4016 
+Q -1114 4109 -986 4109 
+Q -858 4109 -765 4016 
+Q -672 3923 -672 3795 
+Q -672 3667 -765 3574 
+Q -858 3482 -986 3482 
+Q -1018 3482 -1069 3494 
+Q -909 3270 -845 2912 
+z
+M -1094 3155 
+Q -1376 3674 -1869 3674 
+Q -2317 3674 -2470 3334 
+Q -2336 3354 -2170 3354 
+Q -1555 3354 -1094 3155 
+z
+M -819 3795 
+Q -819 3866 -867 3914 
+Q -915 3962 -986 3962 
+Q -1056 3962 -1104 3914 
+Q -1152 3866 -1152 3795 
+Q -1152 3725 -1104 3677 
+Q -1056 3629 -986 3629 
+Q -915 3629 -867 3677 
+Q -819 3725 -819 3795 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-d6" d="M 2112 0 
+L 1882 0 
+L 1882 1670 
+Q 1882 1984 1686 2169 
+Q 1491 2355 1184 2355 
+Q 966 2355 761 2233 
+Q 557 2112 480 1920 
+Q 858 1888 998 1638 
+Q 845 1606 729 1468 
+Q 614 1331 614 1165 
+L 614 0 
+L 384 0 
+L 384 1158 
+Q 384 1536 717 1670 
+Q 506 1773 230 1741 
+Q 282 2099 554 2329 
+Q 826 2560 1197 2560 
+Q 1613 2560 1862 2329 
+Q 2112 2099 2112 1696 
+L 2112 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-111" d="M 1203 397 
+Q 1203 218 1078 90 
+Q 954 -38 774 -38 
+Q 576 -38 448 102 
+Q 339 224 339 397 
+L 339 2560 
+L 570 2560 
+L 570 774 
+Q 659 826 774 826 
+Q 954 826 1078 701 
+Q 1203 576 1203 397 
+z
+M 992 397 
+Q 992 486 928 550 
+Q 864 614 774 614 
+Q 685 614 621 550 
+Q 557 486 557 397 
+Q 557 307 621 243 
+Q 685 179 774 179 
+Q 864 179 928 243 
+Q 992 307 992 397 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-f3" d="M 2502 0 
+L 2221 0 
+L 1613 2221 
+L 1005 0 
+L 723 0 
+L 723 1760 
+Q 640 1715 531 1715 
+Q 358 1715 233 1840 
+Q 109 1965 109 2138 
+Q 109 2310 233 2435 
+Q 358 2560 531 2560 
+Q 704 2560 829 2435 
+Q 954 2310 954 2138 
+L 954 800 
+Q 954 640 922 352 
+Q 966 563 1037 819 
+L 1504 2509 
+L 1722 2509 
+L 2189 819 
+Q 2259 563 2304 352 
+Q 2272 640 2272 800 
+L 2272 2509 
+L 2502 2509 
+L 2502 0 
+z
+M 749 2138 
+Q 749 2227 685 2291 
+Q 621 2355 531 2355 
+Q 442 2355 378 2291 
+Q 314 2227 314 2138 
+Q 314 2048 378 1984 
+Q 442 1920 531 1920 
+Q 621 1920 685 1984 
+Q 749 2048 749 2138 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-109" d="M -320 2912 
+Q -1056 3174 -1702 3174 
+Q -1933 3174 -2208 3136 
+Q -2202 3469 -1933 3674 
+Q -1690 3859 -1350 3859 
+Q -486 3859 -320 2912 
+z
+M -570 3155 
+Q -851 3674 -1344 3674 
+Q -1792 3674 -1946 3334 
+Q -1811 3354 -1645 3354 
+Q -1030 3354 -570 3155 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-119" d="M -358 4352 
+L -570 4352 
+L -570 5062 
+L -358 5062 
+L -358 4352 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-115"/>
+       <use xlink:href="#THSarabunNew-f6" transform="translate(24.40625 0)"/>
+       <use xlink:href="#THSarabunNew-160" transform="translate(64.40625 0)"/>
+       <use xlink:href="#THSarabunNew-f2" transform="translate(64.40625 0)"/>
+       <use xlink:href="#THSarabunNew-159" transform="translate(102.5 0)"/>
+       <use xlink:href="#THSarabunNew-d6" transform="translate(102.5 0)"/>
+       <use xlink:href="#THSarabunNew-111" transform="translate(141.09375 0)"/>
+       <use xlink:href="#THSarabunNew-f3" transform="translate(161.390625 0)"/>
+       <use xlink:href="#THSarabunNew-109" transform="translate(206.09375 0)"/>
+       <use xlink:href="#THSarabunNew-119" transform="translate(206.09375 0)"/>
+       <use xlink:href="#THSarabunNew-f6" transform="translate(206.09375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#me0520e09aa" x="147.312" y="138.24" style="fill: #1f1f1f; stroke: #1f1f1f; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- Qwen3 หลังฝึก -->
+      <g style="fill: #1f1f1f" transform="translate(126.7075 152.864) scale(0.098 -0.098)">
+       <defs>
+        <path id="THSarabunNew-1f0" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-100" d="M 2374 0 
+L 2144 0 
+L 2144 1382 
+Q 2144 1677 1990 1677 
+Q 1894 1677 1760 1453 
+L 934 0 
+L 723 0 
+L 723 1760 
+Q 640 1715 531 1715 
+Q 358 1715 233 1840 
+Q 109 1965 109 2138 
+Q 109 2310 233 2435 
+Q 358 2560 531 2560 
+Q 704 2560 829 2435 
+Q 954 2310 954 2138 
+L 954 749 
+Q 954 691 922 352 
+Q 998 512 1062 634 
+L 1581 1587 
+Q 1670 1747 1792 1811 
+Q 1638 1933 1638 2138 
+Q 1638 2310 1763 2435 
+Q 1888 2560 2061 2560 
+Q 2234 2560 2358 2435 
+Q 2483 2310 2483 2138 
+Q 2483 1894 2272 1773 
+Q 2374 1664 2374 1382 
+L 2374 0 
+z
+M 749 2138 
+Q 749 2227 685 2291 
+Q 621 2355 531 2355 
+Q 442 2355 378 2291 
+Q 314 2227 314 2138 
+Q 314 2048 378 1984 
+Q 442 1920 531 1920 
+Q 621 1920 685 1984 
+Q 749 2048 749 2138 
+z
+M 2278 2138 
+Q 2278 2227 2214 2291 
+Q 2150 2355 2061 2355 
+Q 1971 2355 1907 2291 
+Q 1843 2227 1843 2138 
+Q 1843 2048 1907 1984 
+Q 1971 1920 2061 1920 
+Q 2150 1920 2214 1984 
+Q 2278 2048 2278 2138 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-fa" d="M 2080 0 
+L 1850 0 
+L 1850 1094 
+Q 1850 1318 1613 1453 
+Q 1414 1562 1152 1562 
+Q 896 1562 717 1424 
+Q 538 1286 538 1069 
+L 538 749 
+Q 627 794 749 794 
+Q 928 794 1049 669 
+Q 1171 544 1171 371 
+Q 1171 198 1049 73 
+Q 928 -51 749 -51 
+Q 550 -51 428 77 
+Q 307 205 307 378 
+L 307 1069 
+Q 307 1389 563 1594 
+Q 800 1786 1133 1786 
+Q 1581 1786 1850 1530 
+L 1850 1843 
+Q 1850 2074 1606 2227 
+Q 1395 2355 1139 2355 
+Q 870 2355 653 2240 
+Q 416 2112 358 1894 
+L 134 1894 
+Q 179 2189 480 2381 
+Q 762 2560 1126 2560 
+Q 1498 2560 1766 2387 
+Q 2080 2182 2080 1830 
+L 2080 0 
+z
+M 960 365 
+Q 960 454 896 518 
+Q 832 582 742 582 
+Q 653 582 592 518 
+Q 531 454 531 365 
+Q 531 275 592 214 
+Q 653 154 742 154 
+Q 832 154 896 214 
+Q 960 275 960 365 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-106" d="M 314 3962 
+Q 307 3526 25 3248 
+Q -256 2970 -685 2970 
+Q -1056 2970 -1280 3123 
+Q -1504 3277 -1504 3526 
+Q -1504 3693 -1382 3814 
+Q -1261 3936 -1094 3936 
+Q -928 3936 -806 3817 
+Q -685 3699 -685 3533 
+Q -685 3315 -877 3187 
+Q -787 3168 -640 3168 
+Q -326 3174 -122 3418 
+Q 58 3642 70 3962 
+L 314 3962 
+z
+M -890 3539 
+Q -890 3629 -950 3689 
+Q -1011 3750 -1094 3750 
+Q -1178 3750 -1242 3689 
+Q -1306 3629 -1306 3539 
+Q -1306 3450 -1242 3392 
+Q -1178 3334 -1094 3334 
+Q -1011 3334 -950 3392 
+Q -890 3450 -890 3539 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-dc" d="M 1523 0 
+L 1293 0 
+L 102 1331 
+L 230 1478 
+L 1293 326 
+L 1293 1760 
+Q 1203 1715 1094 1715 
+Q 922 1715 797 1840 
+Q 672 1965 672 2131 
+Q 672 2317 793 2438 
+Q 915 2560 1094 2560 
+Q 1299 2560 1421 2426 
+Q 1523 2304 1523 2131 
+L 1523 0 
+z
+M 1312 2144 
+Q 1312 2234 1248 2298 
+Q 1184 2362 1094 2362 
+Q 1005 2362 941 2298 
+Q 877 2234 877 2144 
+Q 877 2054 941 1990 
+Q 1005 1926 1094 1926 
+Q 1184 1926 1248 1990 
+Q 1312 2054 1312 2144 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-32"/>
+       <use xlink:href="#THSarabunNew-58" transform="translate(48.703125 0)"/>
+       <use xlink:href="#THSarabunNew-46" transform="translate(99.40625 0)"/>
+       <use xlink:href="#THSarabunNew-4f" transform="translate(136.8125 0)"/>
+       <use xlink:href="#THSarabunNew-14" transform="translate(175.8125 0)"/>
+       <use xlink:href="#THSarabunNew-1f0" transform="translate(212.015625 0)"/>
+       <use xlink:href="#THSarabunNew-100" transform="translate(233.609375 0)"/>
+       <use xlink:href="#THSarabunNew-fa" transform="translate(276.3125 0)"/>
+       <use xlink:href="#THSarabunNew-106" transform="translate(314.40625 0)"/>
+       <use xlink:href="#THSarabunNew-dc" transform="translate(314.40625 0)"/>
+       <use xlink:href="#THSarabunNew-f2" transform="translate(343.8125 0)"/>
+       <use xlink:href="#THSarabunNew-159" transform="translate(381.90625 0)"/>
+       <use xlink:href="#THSarabunNew-d6" transform="translate(381.90625 0)"/>
+      </g>
+      <!-- (สูตรที่เลือก) -->
+      <g style="fill: #1f1f1f" transform="translate(131.334172 164.232) scale(0.098 -0.098)">
+       <defs>
+        <path id="THSarabunNew-9" d="M 1082 -371 
+L 838 -371 
+Q 128 403 128 1498 
+Q 128 2534 832 3405 
+L 1088 3405 
+Q 371 2586 371 1498 
+Q 371 480 1082 -371 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-ff" d="M 2080 0 
+L 1850 0 
+L 1850 1043 
+Q 1850 1267 1613 1402 
+Q 1414 1510 1152 1510 
+Q 896 1510 717 1372 
+Q 538 1235 538 1018 
+L 538 749 
+Q 627 794 749 794 
+Q 928 794 1049 669 
+Q 1171 544 1171 371 
+Q 1171 198 1049 73 
+Q 928 -51 749 -51 
+Q 550 -51 428 77 
+Q 307 205 307 378 
+L 307 1018 
+Q 307 1338 563 1542 
+Q 800 1734 1133 1734 
+L 1171 1734 
+Q 1459 1971 1658 2195 
+Q 1421 2355 1139 2355 
+Q 870 2355 653 2240 
+Q 416 2112 358 1894 
+L 134 1894 
+Q 179 2189 480 2381 
+Q 762 2560 1126 2560 
+Q 1491 2560 1786 2374 
+Q 1920 2528 1958 2733 
+L 2189 2733 
+Q 2144 2477 1946 2227 
+Q 2080 2054 2080 1830 
+L 2080 0 
+z
+M 1850 1478 
+L 1850 1843 
+Q 1850 1933 1792 2048 
+Q 1613 1856 1408 1702 
+Q 1677 1638 1850 1478 
+z
+M 960 365 
+Q 960 454 896 518 
+Q 832 582 742 582 
+Q 653 582 592 518 
+Q 531 454 531 365 
+Q 531 275 592 214 
+Q 653 154 742 154 
+Q 832 154 896 214 
+Q 960 275 960 365 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-10e" d="M -358 -1171 
+Q -358 -1568 -819 -1568 
+Q -1254 -1568 -1254 -1184 
+L -1254 -966 
+Q -1306 -986 -1370 -986 
+Q -1510 -986 -1609 -886 
+Q -1709 -787 -1709 -646 
+Q -1709 -506 -1609 -406 
+Q -1510 -307 -1370 -307 
+Q -1229 -307 -1129 -406 
+Q -1030 -506 -1030 -646 
+L -1030 -1222 
+Q -1030 -1370 -806 -1370 
+Q -589 -1370 -589 -1222 
+L -589 -333 
+L -358 -333 
+L -358 -1171 
+z
+M -1203 -640 
+Q -1203 -570 -1251 -522 
+Q -1299 -474 -1370 -474 
+Q -1440 -474 -1488 -522 
+Q -1536 -570 -1536 -640 
+Q -1536 -710 -1488 -758 
+Q -1440 -806 -1370 -806 
+Q -1299 -806 -1251 -758 
+Q -1203 -710 -1203 -640 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-ea" d="M 2144 0 
+L 1914 0 
+L 1914 1664 
+Q 1914 2138 1606 2323 
+L 1197 1946 
+L 762 2323 
+Q 442 2118 442 1658 
+Q 442 1459 544 1110 
+Q 646 762 646 506 
+Q 710 634 905 794 
+Q 1101 954 1165 1050 
+Q 1018 1062 918 1164 
+Q 819 1267 819 1421 
+Q 819 1581 924 1689 
+Q 1030 1798 1190 1798 
+Q 1350 1798 1459 1689 
+Q 1568 1581 1568 1421 
+Q 1568 1126 1120 716 
+Q 672 307 653 0 
+L 422 0 
+L 422 576 
+Q 422 762 313 1104 
+Q 205 1446 205 1626 
+Q 205 1939 346 2195 
+Q 512 2483 800 2560 
+L 1197 2208 
+L 1562 2560 
+Q 1843 2509 2003 2234 
+Q 2144 1997 2144 1696 
+L 2144 0 
+z
+M 1402 1427 
+Q 1402 1510 1344 1568 
+Q 1286 1626 1203 1626 
+Q 1120 1626 1062 1568 
+Q 1005 1510 1005 1427 
+Q 1005 1344 1062 1286 
+Q 1120 1229 1203 1229 
+Q 1286 1229 1344 1286 
+Q 1402 1344 1402 1427 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-f8" d="M 1626 371 
+Q 1626 198 1510 73 
+Q 1395 -51 1203 -51 
+Q 1030 -51 905 73 
+Q 781 198 781 371 
+Q 781 544 905 669 
+Q 1030 794 1203 794 
+Q 1312 794 1395 749 
+L 1395 1421 
+Q 1395 1683 160 1882 
+Q 198 2560 781 2560 
+Q 915 2560 1161 2493 
+Q 1408 2426 1517 2426 
+Q 1581 2426 1638 2573 
+L 1837 2522 
+Q 1741 2214 1510 2214 
+Q 1376 2214 1123 2284 
+Q 870 2355 742 2355 
+Q 627 2355 528 2256 
+Q 429 2157 422 2054 
+Q 832 1984 1229 1843 
+Q 1626 1702 1626 1440 
+L 1626 371 
+z
+M 1421 371 
+Q 1421 461 1357 525 
+Q 1293 589 1203 589 
+Q 1114 589 1050 525 
+Q 986 461 986 371 
+Q 986 282 1050 218 
+Q 1114 154 1203 154 
+Q 1293 154 1357 218 
+Q 1421 282 1421 371 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-ec" d="M 2394 0 
+L 2163 0 
+L 2163 2048 
+Q 2163 2336 1978 2336 
+Q 1862 2336 1779 2170 
+L 966 0 
+L 723 0 
+L 723 1760 
+Q 640 1715 531 1715 
+Q 358 1715 233 1840 
+Q 109 1965 109 2138 
+Q 109 2310 233 2435 
+Q 358 2560 531 2560 
+Q 704 2560 829 2435 
+Q 954 2310 954 2138 
+L 954 883 
+Q 941 589 922 461 
+Q 960 589 1037 819 
+L 1555 2202 
+Q 1690 2560 1997 2560 
+Q 2394 2560 2394 2048 
+L 2394 0 
+z
+M 749 2138 
+Q 749 2227 685 2291 
+Q 621 2355 531 2355 
+Q 442 2355 378 2291 
+Q 314 2227 314 2138 
+Q 314 2048 378 1984 
+Q 442 1920 531 1920 
+Q 621 1920 685 1984 
+Q 749 2048 749 2138 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-10a" d="M -320 2912 
+Q -1056 3174 -1702 3174 
+Q -1933 3174 -2208 3136 
+Q -2202 3469 -1933 3674 
+Q -1690 3859 -1350 3859 
+Q -838 3859 -570 3520 
+L -570 4141 
+L -358 4141 
+L -358 3085 
+Q -333 3002 -320 2912 
+z
+M -570 3155 
+Q -851 3674 -1344 3674 
+Q -1792 3674 -1946 3334 
+Q -1811 3354 -1645 3354 
+Q -1030 3354 -570 3155 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-10c" d="M -320 2912 
+Q -1056 3174 -1702 3174 
+Q -1933 3174 -2208 3136 
+Q -2202 3469 -1933 3674 
+Q -1690 3859 -1350 3859 
+Q -1203 3859 -1082 3834 
+L -1082 4141 
+L -870 4141 
+L -870 3757 
+Q -691 3674 -570 3520 
+L -570 4141 
+L -358 4141 
+L -358 3085 
+Q -333 3002 -320 2912 
+z
+M -570 3155 
+Q -851 3674 -1344 3674 
+Q -1792 3674 -1946 3334 
+Q -1811 3354 -1645 3354 
+Q -1030 3354 -570 3155 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-102" d="M 1056 1331 
+Q 1056 1421 992 1485 
+Q 928 1549 838 1549 
+Q 749 1549 685 1485 
+Q 621 1421 621 1331 
+Q 621 1242 685 1178 
+Q 749 1114 838 1114 
+Q 928 1114 992 1178 
+Q 1056 1242 1056 1331 
+z
+M 2118 544 
+Q 2106 -51 1261 -51 
+Q 416 -51 416 544 
+L 416 1331 
+Q 416 1504 541 1629 
+Q 666 1754 838 1754 
+Q 1011 1754 1136 1629 
+Q 1261 1504 1261 1331 
+Q 1261 1158 1145 1033 
+Q 1030 909 838 909 
+Q 730 909 646 954 
+L 646 595 
+Q 646 160 1274 160 
+Q 1888 160 1888 595 
+L 1888 1786 
+Q 1888 2054 1664 2214 
+Q 1459 2355 1158 2355 
+Q 896 2355 678 2234 
+Q 442 2099 397 1894 
+L 166 1894 
+Q 230 2195 502 2377 
+Q 774 2560 1171 2560 
+Q 1549 2560 1811 2381 
+Q 2118 2176 2118 1824 
+L 2118 544 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-a" d="M 1082 1517 
+Q 1082 454 371 -371 
+L 128 -371 
+Q 838 518 838 1517 
+Q 838 2528 128 3405 
+L 371 3405 
+Q 1082 2605 1082 1517 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-9"/>
+       <use xlink:href="#THSarabunNew-ff" transform="translate(19 0)"/>
+       <use xlink:href="#THSarabunNew-10e" transform="translate(57.09375 0)"/>
+       <use xlink:href="#THSarabunNew-ea" transform="translate(57.09375 0)"/>
+       <use xlink:href="#THSarabunNew-f8" transform="translate(96.1875 0)"/>
+       <use xlink:href="#THSarabunNew-ec" transform="translate(128.390625 0)"/>
+       <use xlink:href="#THSarabunNew-10a" transform="translate(171.390625 0)"/>
+       <use xlink:href="#THSarabunNew-119" transform="translate(171.390625 0)"/>
+       <use xlink:href="#THSarabunNew-111" transform="translate(171.390625 0)"/>
+       <use xlink:href="#THSarabunNew-fa" transform="translate(191.6875 0)"/>
+       <use xlink:href="#THSarabunNew-10c" transform="translate(229.78125 0)"/>
+       <use xlink:href="#THSarabunNew-102" transform="translate(229.78125 0)"/>
+       <use xlink:href="#THSarabunNew-d6" transform="translate(268.484375 0)"/>
+       <use xlink:href="#THSarabunNew-a" transform="translate(307.078125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#me0520e09aa" x="221.958848" y="138.24" style="fill: #1f1f1f; stroke: #1f1f1f; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- PatEmbed -->
+      <g style="fill: #1f1f1f" transform="translate(206.828567 152.864) scale(0.098 -0.098)">
+       <defs>
+        <path id="THSarabunNew-31" d="M 2208 2202 
+Q 2208 1722 1824 1459 
+Q 1491 1235 992 1242 
+Q 787 1242 595 1280 
+L 595 0 
+L 346 0 
+L 346 3014 
+Q 730 3078 1082 3078 
+Q 1542 3078 1856 2867 
+Q 2208 2624 2208 2202 
+z
+M 1971 2182 
+Q 1971 2861 1075 2861 
+Q 755 2861 595 2829 
+L 595 1498 
+Q 768 1453 1043 1453 
+Q 1971 1504 1971 2182 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-42" d="M 1946 0 
+L 1722 -45 
+L 1632 307 
+Q 1338 -58 858 -58 
+Q 576 -58 371 102 
+Q 166 262 166 544 
+Q 166 1357 1581 1357 
+L 1619 1357 
+L 1619 1395 
+Q 1619 1606 1523 1766 
+Q 1376 2022 1024 2022 
+Q 800 2022 333 1875 
+L 301 2106 
+Q 659 2221 1043 2221 
+Q 1869 2221 1869 1312 
+L 1869 531 
+Q 1869 262 1946 0 
+z
+M 1619 704 
+L 1619 1139 
+Q 429 1139 429 589 
+Q 429 378 557 266 
+Q 685 154 877 154 
+Q 1382 154 1587 582 
+Q 1619 653 1619 704 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-55" d="M 1344 198 
+L 1370 0 
+Q 1242 -58 1030 -58 
+Q 749 -58 602 160 
+Q 474 352 474 640 
+L 474 1978 
+L 38 1978 
+L 38 2176 
+L 474 2176 
+L 474 2822 
+L 723 2938 
+L 723 2176 
+L 1421 2176 
+L 1421 1978 
+L 723 1978 
+L 723 646 
+Q 723 160 1050 160 
+Q 1248 160 1344 198 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-26" d="M 2003 0 
+L 346 0 
+L 346 3046 
+L 2003 3046 
+L 2003 2835 
+L 595 2835 
+L 595 1715 
+L 1850 1715 
+L 1850 1504 
+L 595 1504 
+L 595 211 
+L 2003 211 
+L 2003 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-4e" d="M 3514 0 
+L 3264 0 
+L 3264 1203 
+Q 3264 1574 3113 1795 
+Q 2963 2016 2675 2016 
+Q 2426 2016 2237 1821 
+Q 2048 1626 2048 1382 
+L 2048 0 
+L 1798 0 
+L 1798 1318 
+Q 1798 2016 1248 2016 
+Q 992 2016 787 1795 
+Q 582 1574 582 1318 
+L 582 0 
+L 333 0 
+L 333 1638 
+Q 333 1811 288 2176 
+L 525 2176 
+Q 570 2042 576 1786 
+Q 826 2221 1306 2221 
+Q 1747 2221 1965 1734 
+Q 2221 2221 2746 2221 
+Q 3104 2221 3309 1949 
+Q 3514 1677 3514 1210 
+L 3514 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-43" d="M 2387 1114 
+Q 2387 589 2112 265 
+Q 1837 -58 1370 -58 
+Q 858 -58 557 384 
+Q 557 166 544 0 
+L 314 0 
+Q 333 166 333 531 
+L 333 3232 
+L 582 3232 
+L 582 1760 
+Q 864 2221 1408 2221 
+Q 1862 2221 2124 1907 
+Q 2387 1594 2387 1114 
+z
+M 2144 1107 
+Q 2144 1510 1939 1766 
+Q 1734 2022 1363 2022 
+Q 1056 2022 832 1811 
+Q 582 1587 582 1235 
+L 582 870 
+Q 582 563 800 358 
+Q 1018 154 1338 154 
+Q 2144 154 2144 1107 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-45" d="M 2253 0 
+L 2022 0 
+Q 2010 166 2010 384 
+Q 1709 -58 1197 -58 
+Q 730 -58 454 265 
+Q 179 589 179 1114 
+Q 179 1594 441 1907 
+Q 704 2221 1158 2221 
+Q 1702 2221 1984 1760 
+L 1984 3232 
+L 2234 3232 
+L 2234 531 
+Q 2234 166 2253 0 
+z
+M 1984 870 
+L 1984 1235 
+Q 1984 1587 1734 1811 
+Q 1510 2022 1203 2022 
+Q 832 2022 627 1766 
+Q 422 1510 422 1107 
+Q 422 154 1229 154 
+Q 1549 154 1766 358 
+Q 1984 563 1984 870 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-31"/>
+       <use xlink:href="#THSarabunNew-42" transform="translate(37.796875 0)"/>
+       <use xlink:href="#THSarabunNew-55" transform="translate(72.203125 0)"/>
+       <use xlink:href="#THSarabunNew-26" transform="translate(96 0)"/>
+       <use xlink:href="#THSarabunNew-4e" transform="translate(131.09375 0)"/>
+       <use xlink:href="#THSarabunNew-43" transform="translate(191.1875 0)"/>
+       <use xlink:href="#THSarabunNew-46" transform="translate(231.28125 0)"/>
+       <use xlink:href="#THSarabunNew-45" transform="translate(268.6875 0)"/>
+      </g>
+      <!-- ไม่ฝึกเพิ่ม -->
+      <g style="fill: #1f1f1f" transform="translate(209.900254 164.232) scale(0.098 -0.098)">
+       <use xlink:href="#THSarabunNew-115"/>
+       <use xlink:href="#THSarabunNew-f6" transform="translate(24.40625 0)"/>
+       <use xlink:href="#THSarabunNew-160" transform="translate(64.40625 0)"/>
+       <use xlink:href="#THSarabunNew-f2" transform="translate(64.40625 0)"/>
+       <use xlink:href="#THSarabunNew-159" transform="translate(102.5 0)"/>
+       <use xlink:href="#THSarabunNew-d6" transform="translate(102.5 0)"/>
+       <use xlink:href="#THSarabunNew-111" transform="translate(141.09375 0)"/>
+       <use xlink:href="#THSarabunNew-f3" transform="translate(161.390625 0)"/>
+       <use xlink:href="#THSarabunNew-109" transform="translate(206.09375 0)"/>
+       <use xlink:href="#THSarabunNew-119" transform="translate(206.09375 0)"/>
+       <use xlink:href="#THSarabunNew-f6" transform="translate(206.09375 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_4">
+      <defs>
+       <path id="med12658ee2" d="M 0 0 
+L -2.5 0 
+" style="stroke: #1f1f1f; stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#med12658ee2" x="34.8192" y="138.24" style="fill: #1f1f1f; stroke: #1f1f1f; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 0.0 -->
+      <g style="fill: #1f1f1f" transform="translate(20.507641 142.2265) scale(0.0938 -0.0938)">
+       <defs>
+        <path id="THSarabunNew-11" d="M 2112 1453 
+Q 2112 922 1907 486 
+Q 1645 -70 1158 -70 
+Q 666 -70 403 486 
+Q 198 915 198 1453 
+Q 198 2099 422 2547 
+Q 685 3066 1158 3066 
+Q 1632 3066 1894 2547 
+Q 2112 2099 2112 1453 
+z
+M 1856 1459 
+Q 1856 2016 1696 2400 
+Q 1504 2848 1158 2848 
+Q 806 2848 614 2400 
+Q 454 2022 454 1459 
+Q 454 998 608 627 
+Q 800 147 1158 147 
+Q 1510 147 1702 627 
+Q 1856 998 1856 1459 
+z
+" transform="scale(0.015625)"/>
+        <path id="THSarabunNew-f" d="M 736 179 
+Q 736 90 669 26 
+Q 602 -38 512 -38 
+Q 422 -38 358 26 
+Q 294 90 294 179 
+Q 294 269 358 336 
+Q 422 403 512 403 
+Q 602 403 669 336 
+Q 736 269 736 179 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-11"/>
+       <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+       <use xlink:href="#THSarabunNew-11" transform="translate(52.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#med12658ee2" x="34.8192" y="107.136" style="fill: #1f1f1f; stroke: #1f1f1f; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 0.1 -->
+      <g style="fill: #1f1f1f" transform="translate(20.507641 111.1225) scale(0.0938 -0.0938)">
+       <defs>
+        <path id="THSarabunNew-12" d="M 1837 0 
+L 621 0 
+L 621 230 
+L 1101 230 
+L 1101 2669 
+L 621 2253 
+L 480 2413 
+L 1216 3059 
+Q 1357 3059 1357 2816 
+L 1357 230 
+L 1837 230 
+L 1837 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-11"/>
+       <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+       <use xlink:href="#THSarabunNew-12" transform="translate(52.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#med12658ee2" x="34.8192" y="76.032" style="fill: #1f1f1f; stroke: #1f1f1f; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 0.2 -->
+      <g style="fill: #1f1f1f" transform="translate(20.507641 80.0185) scale(0.0938 -0.0938)">
+       <defs>
+        <path id="THSarabunNew-13" d="M 2144 250 
+L 2093 0 
+L 166 0 
+Q 192 160 256 365 
+Q 531 646 864 966 
+Q 1197 1286 1606 1779 
+Q 1811 2054 1811 2304 
+Q 1811 2554 1651 2688 
+Q 1491 2822 1235 2822 
+Q 659 2822 582 2246 
+L 352 2310 
+Q 390 2682 646 2880 
+Q 877 3059 1242 3059 
+Q 1600 3059 1833 2838 
+Q 2067 2618 2067 2285 
+Q 2067 1798 1299 1062 
+Q 742 512 512 250 
+L 2144 250 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-11"/>
+       <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+       <use xlink:href="#THSarabunNew-13" transform="translate(52.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#med12658ee2" x="34.8192" y="44.928" style="fill: #1f1f1f; stroke: #1f1f1f; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 0.3 -->
+      <g style="fill: #1f1f1f" transform="translate(20.507641 48.9145) scale(0.0938 -0.0938)">
+       <use xlink:href="#THSarabunNew-11"/>
+       <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+       <use xlink:href="#THSarabunNew-14" transform="translate(52.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#med12658ee2" x="34.8192" y="13.824" style="fill: #1f1f1f; stroke: #1f1f1f; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 0.4 -->
+      <g style="fill: #1f1f1f" transform="translate(20.507641 17.8105) scale(0.0938 -0.0938)">
+       <defs>
+        <path id="THSarabunNew-15" d="M 1498 947 
+L 1498 2797 
+Q 1056 2579 768 2035 
+Q 493 1517 480 947 
+L 1498 947 
+z
+M 1754 947 
+L 2208 947 
+L 2176 710 
+L 1754 710 
+L 1754 0 
+L 1498 0 
+L 1498 710 
+L 205 710 
+Q 218 1664 637 2323 
+Q 1056 2982 1754 3123 
+L 1754 947 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#THSarabunNew-11"/>
+       <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+       <use xlink:href="#THSarabunNew-15" transform="translate(52.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_9">
+     <!-- OUT Recall@200 -->
+     <g style="fill: #1f1f1f" transform="translate(14.057641 100.517453) rotate(-90) scale(0.098 -0.098)">
+      <defs>
+       <path id="THSarabunNew-30" d="M 2970 1517 
+Q 2970 832 2576 384 
+Q 2182 -64 1555 -64 
+Q 928 -64 534 384 
+Q 141 832 141 1517 
+Q 141 2202 534 2650 
+Q 928 3098 1555 3098 
+Q 2182 3098 2576 2650 
+Q 2970 2202 2970 1517 
+z
+M 2720 1517 
+Q 2720 2080 2393 2480 
+Q 2067 2880 1555 2880 
+Q 1043 2880 716 2480 
+Q 390 2080 390 1517 
+Q 390 954 716 554 
+Q 1043 154 1555 154 
+Q 2067 154 2393 554 
+Q 2720 954 2720 1517 
+z
+" transform="scale(0.015625)"/>
+       <path id="THSarabunNew-36" d="M 2637 1286 
+Q 2637 -58 1491 -58 
+Q 346 -58 346 1286 
+L 346 3046 
+L 595 3046 
+L 595 1293 
+Q 595 691 841 422 
+Q 1088 154 1491 154 
+Q 1901 154 2147 422 
+Q 2394 691 2387 1293 
+L 2387 3046 
+L 2637 3046 
+L 2637 1286 
+z
+" transform="scale(0.015625)"/>
+       <path id="THSarabunNew-35" d="M 2458 2835 
+L 1338 2835 
+L 1338 0 
+L 1094 0 
+L 1094 2835 
+L -32 2835 
+L -32 3046 
+L 2458 3046 
+L 2458 2835 
+z
+" transform="scale(0.015625)"/>
+       <path id="THSarabunNew-33" d="M 2291 0 
+L 2048 0 
+Q 1875 1389 1184 1389 
+L 595 1389 
+L 595 0 
+L 346 0 
+L 346 3008 
+Q 704 3078 1094 3078 
+Q 1587 3072 1875 2886 
+Q 2208 2669 2208 2259 
+Q 2208 1690 1619 1472 
+Q 1958 1286 2131 781 
+Q 2214 518 2291 0 
+z
+M 1971 2227 
+Q 1971 2861 1094 2861 
+Q 742 2861 595 2816 
+L 595 1587 
+L 1165 1587 
+Q 1542 1587 1756 1756 
+Q 1971 1926 1971 2227 
+z
+" transform="scale(0.015625)"/>
+       <path id="THSarabunNew-44" d="M 1907 301 
+L 1997 96 
+Q 1722 -58 1325 -58 
+Q 787 -58 480 252 
+Q 173 563 173 1082 
+Q 173 1600 480 1910 
+Q 787 2221 1325 2221 
+Q 1722 2221 1997 2067 
+L 1907 1862 
+Q 1670 2016 1312 2016 
+Q 922 2016 669 1766 
+Q 416 1517 416 1082 
+Q 416 646 669 396 
+Q 922 147 1312 147 
+Q 1670 147 1907 301 
+z
+" transform="scale(0.015625)"/>
+       <path id="THSarabunNew-4d" d="M 1165 173 
+L 1139 -45 
+Q 333 -6 333 1094 
+L 333 3232 
+L 582 3232 
+L 582 1190 
+Q 582 723 666 512 
+Q 794 179 1165 173 
+z
+" transform="scale(0.015625)"/>
+       <path id="THSarabunNew-21" d="M 3264 1126 
+Q 3264 691 2995 384 
+Q 2726 77 2413 58 
+L 2214 45 
+L 2150 333 
+Q 1894 6 1472 6 
+Q 1395 6 1350 13 
+Q 1146 45 1002 192 
+Q 858 339 858 531 
+Q 858 1248 2138 1248 
+L 2138 1280 
+Q 2138 1824 1619 1824 
+Q 1338 1824 1139 1670 
+L 1069 1830 
+Q 1318 2016 1632 2016 
+Q 2362 2016 2362 1203 
+L 2362 518 
+Q 2362 378 2387 256 
+Q 2637 269 2841 518 
+Q 3046 768 3046 1107 
+Q 3046 1638 2713 1987 
+Q 2381 2336 1811 2336 
+Q 1210 2336 813 1939 
+Q 390 1517 390 851 
+Q 390 301 742 -60 
+Q 1094 -422 1613 -422 
+Q 2054 -422 2362 -230 
+L 2451 -416 
+Q 2067 -621 1594 -621 
+Q 992 -621 569 -211 
+Q 147 198 147 832 
+Q 147 1530 595 2010 
+Q 1069 2522 1843 2522 
+Q 2483 2522 2873 2125 
+Q 3264 1728 3264 1126 
+z
+M 2138 672 
+L 2138 1062 
+Q 1094 1050 1094 570 
+Q 1094 186 1485 186 
+Q 1946 186 2125 589 
+Q 2138 614 2138 672 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#THSarabunNew-30"/>
+      <use xlink:href="#THSarabunNew-36" transform="translate(48.59375 0)"/>
+      <use xlink:href="#THSarabunNew-35" transform="translate(95.1875 0)"/>
+      <use xlink:href="#THSarabunNew-1f0" transform="translate(133.09375 0)"/>
+      <use xlink:href="#THSarabunNew-33" transform="translate(154.6875 0)"/>
+      <use xlink:href="#THSarabunNew-46" transform="translate(192.59375 0)"/>
+      <use xlink:href="#THSarabunNew-44" transform="translate(230 0)"/>
+      <use xlink:href="#THSarabunNew-42" transform="translate(263.09375 0)"/>
+      <use xlink:href="#THSarabunNew-4d" transform="translate(297.5 0)"/>
+      <use xlink:href="#THSarabunNew-4d" transform="translate(317.5 0)"/>
+      <use xlink:href="#THSarabunNew-21" transform="translate(337.5 0)"/>
+      <use xlink:href="#THSarabunNew-13" transform="translate(391.09375 0)"/>
+      <use xlink:href="#THSarabunNew-11" transform="translate(427.296875 0)"/>
+      <use xlink:href="#THSarabunNew-11" transform="translate(463.5 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="patch_9">
+    <path d="M 34.8192 138.24 
+L 34.8192 13.824 
+" style="fill: none; stroke: #1f1f1f; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 34.8192 138.24 
+L 259.8048 138.24 
+" style="fill: none; stroke: #1f1f1f; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <!-- 0.2741 -->
+    <g style="fill: #1f1f1f" transform="translate(49.646851 51.117696) scale(0.0896 -0.0896)">
+     <defs>
+      <path id="THSarabunNew-18" d="M 1107 0 
+L 838 0 
+Q 838 966 1222 1850 
+Q 1312 2054 1529 2422 
+Q 1747 2790 1754 2797 
+L 211 2797 
+L 307 3040 
+L 2106 3040 
+L 2054 2784 
+Q 1626 2221 1366 1565 
+Q 1107 909 1107 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#THSarabunNew-11"/>
+     <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+     <use xlink:href="#THSarabunNew-13" transform="translate(52.40625 0)"/>
+     <use xlink:href="#THSarabunNew-18" transform="translate(88.609375 0)"/>
+     <use xlink:href="#THSarabunNew-15" transform="translate(124.8125 0)"/>
+     <use xlink:href="#THSarabunNew-12" transform="translate(161.015625 0)"/>
+    </g>
+   </g>
+   <g id="text_11">
+    <!-- 0.2961 -->
+    <g style="fill: #1f1f1f" transform="translate(78.012653 44.274816) scale(0.0896 -0.0896)">
+     <defs>
+      <path id="THSarabunNew-1a" d="M 2061 1952 
+Q 2061 1216 1606 637 
+Q 1152 58 448 -77 
+L 429 109 
+Q 858 230 1210 563 
+Q 1606 934 1754 1446 
+Q 1728 1350 1568 1242 
+Q 1363 1114 1094 1114 
+Q 717 1114 480 1402 
+Q 243 1690 243 2093 
+Q 243 2509 476 2790 
+Q 710 3072 1114 3072 
+Q 1568 3072 1830 2726 
+Q 2061 2419 2061 1952 
+z
+M 1805 2093 
+Q 1805 2406 1613 2630 
+Q 1421 2854 1146 2854 
+Q 838 2854 668 2630 
+Q 499 2406 499 2093 
+Q 499 1773 672 1549 
+Q 845 1325 1146 1325 
+Q 1421 1325 1613 1549 
+Q 1805 1773 1805 2093 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-17" d="M 2061 928 
+Q 2061 512 1827 230 
+Q 1594 -51 1190 -51 
+Q 736 -51 474 294 
+Q 243 602 243 1069 
+Q 243 1805 697 2384 
+Q 1152 2963 1856 3098 
+L 1875 2912 
+Q 1446 2790 1094 2458 
+Q 698 2086 550 1574 
+Q 576 1670 736 1779 
+Q 941 1907 1210 1907 
+Q 1587 1907 1824 1619 
+Q 2061 1331 2061 928 
+z
+M 1805 928 
+Q 1805 1248 1632 1472 
+Q 1459 1696 1158 1696 
+Q 883 1696 691 1472 
+Q 499 1248 499 928 
+Q 499 614 691 390 
+Q 883 166 1158 166 
+Q 1466 166 1635 390 
+Q 1805 614 1805 928 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#THSarabunNew-11"/>
+     <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+     <use xlink:href="#THSarabunNew-13" transform="translate(52.40625 0)"/>
+     <use xlink:href="#THSarabunNew-1a" transform="translate(88.609375 0)"/>
+     <use xlink:href="#THSarabunNew-17" transform="translate(124.8125 0)"/>
+     <use xlink:href="#THSarabunNew-12" transform="translate(161.015625 0)"/>
+    </g>
+   </g>
+   <g id="text_12">
+    <!-- 0.2472 -->
+    <g style="fill: #1f1f1f" transform="translate(124.293699 59.484672) scale(0.0896 -0.0896)">
+     <use xlink:href="#THSarabunNew-11"/>
+     <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+     <use xlink:href="#THSarabunNew-13" transform="translate(52.40625 0)"/>
+     <use xlink:href="#THSarabunNew-15" transform="translate(88.609375 0)"/>
+     <use xlink:href="#THSarabunNew-18" transform="translate(124.8125 0)"/>
+     <use xlink:href="#THSarabunNew-13" transform="translate(161.015625 0)"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <!-- 0.2826 -->
+    <g style="fill: #1f1f1f" transform="translate(152.659501 48.473856) scale(0.0896 -0.0896)">
+     <defs>
+      <path id="THSarabunNew-19" d="M 1843 800 
+Q 1843 1050 1670 1277 
+Q 1498 1504 1152 1523 
+Q 813 1504 640 1277 
+Q 467 1050 467 800 
+Q 467 512 662 342 
+Q 858 173 1158 173 
+Q 1453 173 1648 342 
+Q 1843 512 1843 800 
+z
+M 1747 2310 
+Q 1747 2534 1587 2681 
+Q 1427 2829 1158 2829 
+Q 883 2829 723 2681 
+Q 563 2534 563 2310 
+Q 563 1914 1152 1766 
+Q 1747 1914 1747 2310 
+z
+M 2099 819 
+Q 2099 410 1843 179 
+Q 1587 -51 1152 -51 
+Q 723 -51 467 179 
+Q 211 410 211 819 
+Q 211 1133 393 1360 
+Q 576 1587 858 1645 
+Q 621 1715 464 1897 
+Q 307 2080 307 2291 
+Q 307 2630 544 2848 
+Q 781 3066 1158 3066 
+Q 1530 3066 1766 2848 
+Q 2003 2630 2003 2291 
+Q 2003 2080 1846 1897 
+Q 1690 1715 1453 1645 
+Q 1734 1587 1916 1360 
+Q 2099 1133 2099 819 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#THSarabunNew-11"/>
+     <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+     <use xlink:href="#THSarabunNew-13" transform="translate(52.40625 0)"/>
+     <use xlink:href="#THSarabunNew-19" transform="translate(88.609375 0)"/>
+     <use xlink:href="#THSarabunNew-13" transform="translate(124.8125 0)"/>
+     <use xlink:href="#THSarabunNew-17" transform="translate(161.015625 0)"/>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- 0.3282 -->
+    <g style="fill: #1f1f1f" transform="translate(198.940547 34.290432) scale(0.0896 -0.0896)">
+     <use xlink:href="#THSarabunNew-11"/>
+     <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+     <use xlink:href="#THSarabunNew-14" transform="translate(52.40625 0)"/>
+     <use xlink:href="#THSarabunNew-13" transform="translate(88.609375 0)"/>
+     <use xlink:href="#THSarabunNew-19" transform="translate(124.8125 0)"/>
+     <use xlink:href="#THSarabunNew-13" transform="translate(161.015625 0)"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <!-- 0.3494 -->
+    <g style="fill: #1f1f1f" transform="translate(227.306349 27.696384) scale(0.0896 -0.0896)">
+     <use xlink:href="#THSarabunNew-11"/>
+     <use xlink:href="#THSarabunNew-f" transform="translate(36.203125 0)"/>
+     <use xlink:href="#THSarabunNew-14" transform="translate(52.40625 0)"/>
+     <use xlink:href="#THSarabunNew-15" transform="translate(88.609375 0)"/>
+     <use xlink:href="#THSarabunNew-1a" transform="translate(124.8125 0)"/>
+     <use xlink:href="#THSarabunNew-15" transform="translate(161.015625 0)"/>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- แท่งจาง = DEV, แท่งเข้ม = VAL -->
+    <g style="fill: #6e6e6e" transform="translate(37.069056 25.41048) scale(0.0924 -0.0924)">
+     <defs>
+      <path id="THSarabunNew-112" d="M 1203 397 
+Q 1203 218 1078 90 
+Q 954 -38 774 -38 
+Q 576 -38 448 102 
+Q 339 224 339 397 
+L 339 2560 
+L 570 2560 
+L 570 774 
+Q 659 826 774 826 
+Q 954 826 1078 701 
+Q 1203 576 1203 397 
+z
+M 992 397 
+Q 992 486 928 550 
+Q 864 614 774 614 
+Q 685 614 621 550 
+Q 557 486 557 397 
+Q 557 307 621 243 
+Q 685 179 774 179 
+Q 864 179 928 243 
+Q 992 307 992 397 
+z
+M 2310 397 
+Q 2310 218 2185 90 
+Q 2061 -38 1882 -38 
+Q 1683 -38 1555 102 
+Q 1446 224 1446 397 
+L 1446 2560 
+L 1677 2560 
+L 1677 774 
+Q 1766 826 1882 826 
+Q 2061 826 2185 701 
+Q 2310 576 2310 397 
+z
+M 2099 397 
+Q 2099 486 2035 550 
+Q 1971 614 1882 614 
+Q 1792 614 1728 550 
+Q 1664 486 1664 397 
+Q 1664 307 1728 243 
+Q 1792 179 1882 179 
+Q 1971 179 2035 243 
+Q 2099 307 2099 397 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-dd" d="M 1990 416 
+Q 1990 -58 1536 -58 
+Q 1178 -58 1126 301 
+L 1018 1018 
+Q 922 960 800 960 
+Q 640 960 531 1069 
+Q 422 1178 422 1338 
+Q 422 1504 531 1616 
+Q 640 1728 800 1728 
+Q 941 1728 1049 1635 
+Q 1158 1542 1184 1402 
+L 1370 314 
+Q 1395 154 1549 154 
+Q 1760 154 1760 384 
+L 1760 1888 
+Q 1760 2138 1561 2243 
+Q 1363 2349 1101 2349 
+Q 813 2349 624 2227 
+Q 435 2106 390 1894 
+L 154 1894 
+Q 186 2163 403 2342 
+Q 666 2560 1094 2560 
+Q 1990 2560 1990 1888 
+L 1990 416 
+z
+M 1005 1338 
+Q 1005 1421 947 1478 
+Q 890 1536 806 1536 
+Q 723 1536 668 1478 
+Q 614 1421 614 1338 
+Q 614 1254 668 1200 
+Q 723 1146 806 1146 
+Q 890 1146 947 1200 
+Q 1005 1254 1005 1338 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-107" d="M 1664 0 
+L 1434 0 
+L 1434 1914 
+Q 1434 2106 1290 2230 
+Q 1146 2355 896 2355 
+Q 672 2355 537 2204 
+Q 403 2054 390 1882 
+L 154 1882 
+Q 160 2150 368 2355 
+Q 576 2560 902 2560 
+Q 1274 2560 1469 2381 
+Q 1664 2202 1664 1907 
+L 1664 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-1e" d="M 2278 1696 
+L 2278 1485 
+L 352 1485 
+L 352 1696 
+L 2278 1696 
+z
+M 2278 864 
+L 2278 653 
+L 352 653 
+L 352 864 
+L 2278 864 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-25" d="M 2573 1587 
+Q 2573 -26 1126 -26 
+Q 934 -26 346 32 
+L 346 3002 
+Q 934 3078 1254 3078 
+Q 1837 3078 2202 2688 
+Q 2573 2278 2573 1587 
+z
+M 2323 1587 
+Q 2323 2195 2003 2541 
+Q 1709 2861 1235 2861 
+Q 1037 2861 595 2810 
+L 595 230 
+Q 915 192 1203 192 
+Q 1722 192 2022 560 
+Q 2323 928 2323 1587 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-37" d="M 2496 3046 
+L 1382 0 
+L 1114 0 
+L 0 3046 
+L 282 3046 
+L 1248 288 
+L 2214 3046 
+L 2496 3046 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-d" d="M 787 173 
+Q 774 -173 576 -435 
+Q 442 -621 282 -698 
+L 192 -602 
+Q 525 -378 563 -45 
+Q 461 -45 387 25 
+Q 314 96 314 192 
+Q 314 288 384 361 
+Q 454 435 550 435 
+Q 653 435 720 358 
+Q 787 282 787 173 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-d7" d="M 2061 531 
+Q 2061 -51 1472 -51 
+Q 896 -51 896 531 
+L 896 1139 
+Q 896 1299 1056 1574 
+Q 1216 1850 1216 2003 
+Q 1216 2150 1091 2262 
+Q 966 2374 787 2374 
+Q 506 2374 358 2189 
+Q 416 2214 506 2214 
+Q 672 2214 777 2108 
+Q 883 2003 883 1843 
+Q 883 1677 777 1565 
+Q 672 1453 506 1453 
+Q 307 1453 201 1600 
+Q 96 1747 96 1958 
+Q 96 2195 278 2377 
+Q 461 2560 787 2560 
+Q 1069 2560 1251 2419 
+Q 1434 2278 1434 2035 
+Q 1434 1850 1280 1549 
+Q 1126 1248 1126 1107 
+L 1126 512 
+Q 1126 154 1478 154 
+Q 1830 154 1830 512 
+L 1830 2509 
+L 2061 2509 
+L 2061 531 
+z
+M 710 1837 
+Q 710 1926 652 1984 
+Q 595 2042 506 2042 
+Q 416 2042 358 1984 
+Q 301 1926 301 1837 
+Q 301 1747 358 1689 
+Q 416 1632 506 1632 
+Q 595 1632 652 1689 
+Q 710 1747 710 1837 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-161" d="M 122 4115 
+Q 26 3507 -403 3258 
+Q -755 3053 -1350 3053 
+L -1478 3053 
+L -1478 3187 
+Q -1229 3290 -1133 3482 
+Q -1498 3526 -1498 3846 
+Q -1498 3987 -1395 4080 
+Q -1293 4173 -1152 4173 
+Q -992 4173 -899 4070 
+Q -806 3968 -806 3814 
+Q -806 3456 -1101 3238 
+Q -243 3302 -141 4115 
+L 122 4115 
+z
+M -979 3827 
+Q -979 3898 -1027 3946 
+Q -1075 3994 -1146 3994 
+Q -1216 3994 -1264 3946 
+Q -1312 3898 -1312 3827 
+Q -1312 3757 -1264 3709 
+Q -1216 3661 -1146 3661 
+Q -1075 3661 -1027 3709 
+Q -979 3757 -979 3827 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-22" d="M 2560 0 
+L 2285 0 
+L 1933 979 
+L 621 979 
+L 275 0 
+L 0 0 
+L 1152 3091 
+L 1408 3091 
+L 2560 0 
+z
+M 1856 1190 
+L 1280 2816 
+L 698 1190 
+L 1856 1190 
+z
+" transform="scale(0.015625)"/>
+      <path id="THSarabunNew-2d" d="M 2093 0 
+L 346 0 
+L 346 3046 
+L 595 3046 
+L 595 211 
+L 2093 211 
+L 2093 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#THSarabunNew-112"/>
+     <use xlink:href="#THSarabunNew-ec" transform="translate(37.703125 0)"/>
+     <use xlink:href="#THSarabunNew-160" transform="translate(80.703125 0)"/>
+     <use xlink:href="#THSarabunNew-dc" transform="translate(80.703125 0)"/>
+     <use xlink:href="#THSarabunNew-dd" transform="translate(110.109375 0)"/>
+     <use xlink:href="#THSarabunNew-107" transform="translate(146.8125 0)"/>
+     <use xlink:href="#THSarabunNew-dc" transform="translate(178.40625 0)"/>
+     <use xlink:href="#THSarabunNew-1f0" transform="translate(207.8125 0)"/>
+     <use xlink:href="#THSarabunNew-1e" transform="translate(229.40625 0)"/>
+     <use xlink:href="#THSarabunNew-1f0" transform="translate(270.5 0)"/>
+     <use xlink:href="#THSarabunNew-25" transform="translate(292.09375 0)"/>
+     <use xlink:href="#THSarabunNew-26" transform="translate(335.1875 0)"/>
+     <use xlink:href="#THSarabunNew-37" transform="translate(370.28125 0)"/>
+     <use xlink:href="#THSarabunNew-d" transform="translate(409.28125 0)"/>
+     <use xlink:href="#THSarabunNew-1f0" transform="translate(425.484375 0)"/>
+     <use xlink:href="#THSarabunNew-112" transform="translate(447.078125 0)"/>
+     <use xlink:href="#THSarabunNew-ec" transform="translate(484.78125 0)"/>
+     <use xlink:href="#THSarabunNew-160" transform="translate(527.78125 0)"/>
+     <use xlink:href="#THSarabunNew-dc" transform="translate(527.78125 0)"/>
+     <use xlink:href="#THSarabunNew-111" transform="translate(557.1875 0)"/>
+     <use xlink:href="#THSarabunNew-d7" transform="translate(574.484375 0)"/>
+     <use xlink:href="#THSarabunNew-161" transform="translate(612.28125 0)"/>
+     <use xlink:href="#THSarabunNew-f6" transform="translate(612.28125 0)"/>
+     <use xlink:href="#THSarabunNew-1f0" transform="translate(652.28125 0)"/>
+     <use xlink:href="#THSarabunNew-1e" transform="translate(673.875 0)"/>
+     <use xlink:href="#THSarabunNew-1f0" transform="translate(714.96875 0)"/>
+     <use xlink:href="#THSarabunNew-37" transform="translate(736.5625 0)"/>
+     <use xlink:href="#THSarabunNew-22" transform="translate(770.5625 0)"/>
+     <use xlink:href="#THSarabunNew-2d" transform="translate(810.5625 0)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfb429e3484">
+   <rect x="34.8192" y="13.824" width="224.9856" height="124.416"/>
+  </clipPath>
+ </defs>
+</svg>
