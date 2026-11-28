@@ -1,3 +1,11 @@
+# Documentation review history
+
+## 29 November 2026 status note
+
+This file records the historical D40 documentation review. Its dated status and recommendations are not current operating instructions. Current research status and reconciliation actions are in the [research completion checklist](RESEARCH-COMPLETION.md) and [lane handoff](HANDOFF.md); current evidence is indexed by the [GATE](receipts/GATE.md), [SCORE](receipts/SCORE.md), [SCORELLM](receipts/SCORELLM.md), and [TRACKA-FREEZE](receipts/TRACKA-FREEZE.md) receipts. OSF update 4 approval was verified 28 November 2026 at 11:30:06 UTC.
+
+---
+
 # D40 documentation review
 
 27 November 2026. The DOCS task branch `loe/DOCS` started at `3fb7300f6cdbf090983c394bb71acc7337c694e7`, verified against `origin/research/loe-bench`. LOE-Bench is the active program, with RA Pharma as its Thai-context demo layer. Wave 2 is development only. The confirmatory test is sealed and has no result. The publishing rules retain the Paper 86 restriction to IS2 and exclude arXiv:2605.24297 as a source. [Owner decision D40](../maintenance/OWNER-DECISIONS-20261122.md#d40--loe-bench-becomes-the-active-program-27-november-2026) · [Standing rules](../../CLAUDE.md#3-standing-rules-all-remain-in-force).

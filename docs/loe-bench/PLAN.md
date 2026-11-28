@@ -1,3 +1,5 @@
+> **Status update (29 November 2026):** Historical confirmatory inference is complete; the project is in research close-out. Track A is frozen and OSF update 4 was approved and verified at 11:30:06 UTC on 28 November. See [GATE](receipts/GATE.md), [SCORE](receipts/SCORE.md), [SCORELLM](receipts/SCORELLM.md), [TRACKA-FREEZE](receipts/TRACKA-FREEZE.md), and [completion checklist](RESEARCH-COMPLETION.md). Product and writing are paused for close-out.
+
 # Market Window Dossier program plan (D41; LOE-Bench is its benchmark, D40)
 
 ## D41: Market Window Dossier (owner-approved 28 November 2026)

@@ -4,7 +4,7 @@
 
 Market Window Dossier is the active project on `research/loe-bench`. It spans a pre-development launch-window forecast and an evidence hand-off for freedom-to-operate review. LOE-Bench is its research benchmark. RA Pharma and the Workbench supply the Thai-context demo layer. [D41 plan](docs/loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026).
 
-Wave 2 evidence is for development only. The confirmatory test remains sealed and has no result. Start with the [documentation map](docs/loe-bench/README.md), [plan and dispatch board](docs/loe-bench/PLAN.md), [lane handoff](docs/loe-bench/HANDOFF.md), [technique ledger](docs/loe-bench/TECHNIQUE-LEDGER.md) and [IS2 writing entry point](docs/writing/is2/README.md).
+As of 29 November 2026, historical confirmatory inference is complete and research close-out is active. Track A is frozen; OSF update 4 was verified approved 28 November at 11:30:06 UTC. Current queue traceability is 16,562/16,562. See [completion checklist](docs/loe-bench/RESEARCH-COMPLETION.md) and [current receipts](docs/loe-bench/receipts/GATE.md), [SCORE](docs/loe-bench/receipts/SCORE.md), [SCORELLM](docs/loe-bench/receipts/SCORELLM.md), [TRACKA-FREEZE](docs/loe-bench/receipts/TRACKA-FREEZE.md). Product and writing paused 29 November; public web hosting is Cloudflare Pages. Start with the [documentation map](docs/loe-bench/README.md), [plan and dispatch board](docs/loe-bench/PLAN.md), [lane handoff](docs/loe-bench/HANDOFF.md), [technique ledger](docs/loe-bench/TECHNIQUE-LEDGER.md) and [IS2 writing entry point](docs/writing/is2/README.md).
 
 ## Historical index
 
