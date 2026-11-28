@@ -6,15 +6,16 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 The owner runs the orchestrator on two Claude accounts. Per-account chat memory is not shared, so this section and [MEMORY.md](MEMORY.md) are the main memory. Update both, then commit and push, after every step (owner rule, 28 Nov 2026, night).
 
-Last update: 28 Nov 2026, about 19:30 Bangkok time.
+Last update: 28 Nov 2026, about 20:15 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
 
 | Line | State | Next action |
 |---|---|---|
-| IS2 short paper | v2 with direction-A figures built: TH and EN, 9 pages each, 0 orphan lines (04378b0f). Delivered to `IS_2_new/01_short-paper/final` (TH/EN docx and pdf) | Owner reads it; slides wait for that |
-| Slides | Folder structure only (`IS_2_new/03_slides`) | Wait for the owner's reading |
-| Journals (PSA, STA, MDM, JAMIA) | Guidelines collected in `IS_2_new/04_journals/*/guidelines`; no manuscript drafted yet. Owner: four venue-tailored drafts, submitted one at a time | Co-planner strategy running (`docs/writing/journal/JOURNAL-STRATEGY-4V.md`), then drafter → co-planner → Claude audit |
-| Product | D42: Sonnet 5.5 medium is Product Owner. [PRD v1](../product/prd/PRD-MWD-v1.md) drafted with co-planner input. Owner then asked for an AI-assisted product (API first, then local AI; OpenAI-compatible providers; Codex builds the backend) | D43 recorded; PRD section 4b proposes the gateway and platform. Co-planner critique running (`docs/product/prd/COPLANNER-AI-PLATFORM.md`). Then: owner approves 4b and the org-trial hosting, dispatch PO-CURRENT (Sonnet) and BE-GATEWAY (Sol high) |
+| IS2 short paper | IS2LAYOUT merged (a2cc45c1): figures and Table 1 next to first mention, 9 pages TH/EN, 0 orphans. Gap on pages 1–2 is the KMITL template (abstract pages with pinned footnotes). `IS_2_new/01_short-paper/final` still holds the pre-layout v2 | IS2REF (Sonnet low) fixing the reference [17] URL wrap; on review, deliver the rebuilt files to `final` |
+| Slides | Folder structure only | Wait for the owner's reading |
+| Journals (PSA, STA, MDM, JAMIA) | Guidelines collected. Co-planner strategy running; output file `docs/writing/journal/JOURNAL-STRATEGY-4V.md` (uncommitted while in progress) | Review the strategy, then dispatch drafting (drafter → co-planner → Claude audit) |
+| Product | PRD v1 with section 4b revised (23af56eb) from the [co-planner AI memo](../product/prd/COPLANNER-AI-PLATFORM.md) and owner answers: package on the owner's machine, then dr-train; email one-time code; 3–5 invitees; Typhoon free tier with public data only; D43 envelope USD 10 (stop at 8) | PO-CURRENT (Sonnet medium) and BE-GATEWAY (Sol high) running on `loe/PO-CURRENT` and `loe/BE-GATEWAY`. Next cards: PO-AI, B2 BE-GROUND, B3 BE-CLAIMS, B4 BE-ORG, PO-PDF, PO-LANDING |
 | Track A | Frozen; OSF update 4 verified | Zenodo release when the owner logs in |
+| Integration | `main` equals `research/loe-bench` at 23af56eb | Fast-forward main after each merge |
 
 ## Current state (28 November 2026, afternoon, D41 accelerated plan)
 
