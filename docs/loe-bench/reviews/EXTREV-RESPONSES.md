@@ -78,3 +78,7 @@ Resolved by the reviewer for first publication: R3, R4-B, R5-A, R5-B. No blockin
 |---|---|---|
 | R6-A | MAJOR | **In progress (TRACKA-READOUT7).** Post-publication rule: the first 24-month aggregate keeps its bytes, decisions and date. Every replay or recovery report states "formal as verified at publication on <date>" and, separately, a current re-run of the 12-month witness check (VERIFIED_CONSISTENT, or CURRENT_DISPUTE or UNRESOLVED_CONTINUITY with locators). A later dispute is reported for custodian reconciliation and never rewrites the published family. |
 | R6-B | MINOR | **In progress (same card).** Failed recovery reports the actual discovery reason and locators; the missing-capture message is reserved for a missing capture. |
+
+**Round 6 outcome (29 Nov, 01:08, TRACKA-READOUT7 merged).** R6-A: replay and recovery state the publication-time formal status with its date and a freshly re-run 12-month witness check with locators; published bytes never change. R6-B: failed recovery reports the actual discovery reason and locators. The only change in `score_release.py` is report-rendering text; computations are unchanged. [Receipt](../receipts/TRACKA-READOUT7.md)
+
+Next: EXTREV-R7.
