@@ -1,0 +1,423 @@
+{
+ "schema": "mwd.dossier.v1",
+ "fixture": true,
+ "molecule": {
+  "key": "mirelukast",
+  "display_name": "Mirelukast",
+  "dosage_forms": [
+   "tablet",
+   "chewable tablet",
+   "oral granules"
+  ]
+ },
+ "as_of": "2012-01-01",
+ "jurisdiction": "US",
+ "forecast": {
+  "horizon_months": 12,
+  "m3_p_entry": 0.056,
+  "b1_p_entry": 0.189,
+  "m3_rank": 24,
+  "queue_size": 5,
+  "in_queue": false,
+  "status": "DEVELOPMENT_ONLY"
+ },
+ "outcome_reveal": {
+  "first_final_anda_date": null,
+  "window_end": "2013-01-01"
+ },
+ "sections": [
+  {
+   "id": "decision",
+   "title_th": "หน้าตัดสินใจ",
+   "title_en": "Decision",
+   "next_action_th": "ยังไม่อยู่ในคิว ติดตาม Orange Book ฉบับถัดไป",
+   "next_action_en": "Not in the queue; watch the next Orange Book edition.",
+   "decisive_claim": "c02"
+  },
+  {
+   "id": "market",
+   "title_th": "ช่วงเวลาตลาด",
+   "title_en": "Market window"
+  },
+  {
+   "id": "competition",
+   "title_th": "การแข่งขัน",
+   "title_en": "Competition"
+  },
+  {
+   "id": "patents",
+   "title_th": "สิทธิบัตรและสิทธิผูกขาด",
+   "title_en": "Patents & exclusivity"
+  },
+  {
+   "id": "thai_asean",
+   "title_th": "ไทยและอาเซียน",
+   "title_en": "Thailand & ASEAN"
+  },
+  {
+   "id": "handoff",
+   "title_th": "ส่งต่อผู้ประเมิน FTO",
+   "title_en": "FTO hand-off"
+  },
+  {
+   "id": "references",
+   "title_th": "เอกสารอ้างอิง",
+   "title_en": "References"
+  }
+ ],
+ "claims": [
+  {
+   "id": "c01",
+   "section": "decision",
+   "text_th": "M3 ประเมินโอกาสที่ยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายภายใน 12 เดือน ที่ 6% (B1: 19%)",
+   "text_en": "M3 estimates a 6% chance that a first generic receives final approval within 12 months (B1: 19%).",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "mirelukast-ob",
+    "mirelukast-df"
+   ]
+  },
+  {
+   "id": "c02",
+   "section": "decision",
+   "text_th": "สมมติว่าสิทธิบัตรสารออกฤทธิ์ฉบับหลักหมดอายุตามวันที่ใน Orange Book และไม่มีการขยายอายุเพิ่ม",
+   "text_en": "Assumes the main compound patent expires on its Orange Book date with no further term extension.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": [
+    "mirelukast-ob"
+   ]
+  },
+  {
+   "id": "c03",
+   "section": "decision",
+   "text_th": "ยังไม่ได้ยืนยันว่ามีคดี Paragraph IV ค้างอยู่หรือไม่",
+   "text_en": "Whether Paragraph IV litigation is pending is not yet verified.",
+   "state": "unknown",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-p4"
+   ]
+  },
+  {
+   "id": "c04",
+   "section": "market",
+   "text_th": "ปริมาณยาที่ Medicaid จ่ายในปี 2010: 48.1 ล้านหน่วย",
+   "text_en": "Medicaid reimbursed 48.1 million units in 2010.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-sdud"
+   ]
+  },
+  {
+   "id": "c05",
+   "section": "market",
+   "text_th": "คาดว่าความต้องการยายังคงอยู่ถึงวันเปิดตัวที่วางแผน (ค่าพื้นฐาน naïve with drift)",
+   "text_en": "Demand is expected to persist to the planned launch date (naïve-with-drift baseline).",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "mirelukast-sdud"
+   ]
+  },
+  {
+   "id": "c06",
+   "section": "market",
+   "text_th": "สมมติวันเปิดตัวที่วางแผนไว้คือ 2015-07-01",
+   "text_en": "Assumes a planned launch date of 2015-07-01.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": []
+  },
+  {
+   "id": "c07",
+   "section": "competition",
+   "text_th": "ผู้ถือ NDA ต้นแบบ: Halden Pharma",
+   "text_en": "Reference NDA holder: Halden Pharma.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-df"
+   ]
+  },
+  {
+   "id": "c08",
+   "section": "competition",
+   "text_th": "มี ANDA ที่ได้รับอนุมัติเบื้องต้น (tentative) 4 รายการ",
+   "text_en": "4 ANDAs hold tentative approval.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-df"
+   ]
+  },
+  {
+   "id": "c09",
+   "section": "competition",
+   "text_th": "โอกาสมีผู้ยื่น ANDA ที่ได้รับอนุมัติอย่างน้อย 3 รายภายใน 36 เดือน: 5%",
+   "text_en": "Chance of at least three approved ANDA applicants within 36 months: 5%.",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "mirelukast-df",
+    "mirelukast-ob"
+   ]
+  },
+  {
+   "id": "c10",
+   "section": "competition",
+   "text_th": "สถานการณ์จำลอง: ราคาลดลงราว 44% เมื่อมีผู้ผลิต 3 ราย (ค่ามัธยฐานของ FDA ไม่ได้ปรับให้เข้ากับยานี้)",
+   "text_en": "Scenario: price falls about 44% with three manufacturers (FDA median, not fitted to this product).",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": [
+    "mirelukast-price"
+   ]
+  },
+  {
+   "id": "c11",
+   "section": "patents",
+   "text_th": "มีสิทธิบัตร 3 ฉบับใน Orange Book ฉบับหลักหมดอายุ 2013-07-26",
+   "text_en": "3 patents are listed in the Orange Book; the main patent expires 2013-07-26.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-ob",
+    "mirelukast-pv"
+   ]
+  },
+  {
+   "id": "c12",
+   "section": "patents",
+   "text_th": "สิทธิผูกขาดทางการตลาด (exclusivity) สิ้นสุด 2012-11-15",
+   "text_en": "Regulatory exclusivity ends 2012-11-15.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-ob"
+   ]
+  },
+  {
+   "id": "c13",
+   "section": "patents",
+   "text_th": "ประเภทของสิทธิบัตรที่จำกัดการเข้าตลาด (สารออกฤทธิ์ สูตรตำรับ หรือวิธีใช้) ต้องตรวจจากเอกสารสิทธิบัตร",
+   "text_en": "The type of restricting patent (compound, formulation or method of use) must be checked against the patent documents.",
+   "state": "unknown",
+   "kind": "estimate",
+   "source_ids": [
+    "mirelukast-pv"
+   ]
+  },
+  {
+   "id": "c14",
+   "section": "thai_asean",
+   "text_th": "ค้นทะเบียนตำรับยาของ อย. ไม่สำเร็จ จึงแสดงเป็นไม่ทราบ",
+   "text_en": "The Thai FDA registration lookup failed, so the status is shown as unknown.",
+   "state": "unknown",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-thfda"
+   ]
+  },
+  {
+   "id": "c15",
+   "section": "thai_asean",
+   "text_th": "ยังไม่พบครอบครัวสิทธิบัตรในฐานข้อมูลกรมทรัพย์สินทางปัญญา ต้องค้นซ้ำด้วยชื่อผู้ขอ",
+   "text_en": "No patent family was found in the DIP database; repeat the search by applicant name.",
+   "state": "unknown",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-dip"
+   ]
+  },
+  {
+   "id": "c16",
+   "section": "thai_asean",
+   "text_th": "ASEAN IP Register พบสมาชิกครอบครัวสิทธิบัตรใน SG, MY",
+   "text_en": "The ASEAN IP Register shows family members in SG, MY.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "mirelukast-aip"
+   ]
+  },
+  {
+   "id": "c17",
+   "section": "thai_asean",
+   "text_th": "การขยายอายุสิทธิบัตร (PTE) แบบสหรัฐฯ ไม่มีในระบบสิทธิบัตรไทย",
+   "text_en": "US-style patent term extension does not exist in the Thai patent system.",
+   "state": "not_applicable",
+   "kind": "observed",
+   "source_ids": []
+  },
+  {
+   "id": "c18",
+   "section": "handoff",
+   "text_th": "รายการนี้เป็นข้อมูลประกอบการตัดสินใจ ผู้ประเมิน FTO ต้องยืนยันทุกข้อก่อนใช้",
+   "text_en": "This list is decision support; the FTO evaluator must confirm every item before use.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": []
+  }
+ ],
+ "sources": [
+  {
+   "id": "mirelukast-ob",
+   "issuer": "U.S. FDA",
+   "title": "Orange Book: Approved Drug Products with Therapeutic Equivalence Evaluations",
+   "version": "2011-12 edition (FIXTURE)",
+   "public_date": "2011-12-20",
+   "locator": "Patent and exclusivity data for mirelukast",
+   "url": "https://www.accessdata.fda.gov/scripts/cder/ob/",
+   "sha256": "83c907ade4ac0533b43a202f38635bf011c36f73542308d914fc3353758da33c",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "mirelukast-df",
+   "issuer": "U.S. FDA",
+   "title": "Drugs@FDA data files",
+   "version": "2011-12-18 snapshot (FIXTURE)",
+   "public_date": "2011-12-18",
+   "locator": "Applications and Submissions tables, ORIG/AP rows",
+   "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files",
+   "sha256": "dfd0816e39c6cf58319feb0aa31d4d867f161ae1d597b069f81764608e565df4",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "mirelukast-p4",
+   "issuer": "U.S. FDA",
+   "title": "Paragraph IV Patent Certifications list",
+   "version": "2011-11 update (FIXTURE)",
+   "public_date": "2011-11-30",
+   "locator": "Row for mirelukast",
+   "url": "https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+   "sha256": "beb8e712f08bb36cce7d017a8672eef03196f7870bb7a8206909c641dec3f9b0",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "mirelukast-pv",
+   "issuer": "USPTO",
+   "title": "PatentsView granted patent data",
+   "version": "2011-10 release (FIXTURE)",
+   "public_date": "2011-10-01",
+   "locator": "patent, application and cpc_current tables",
+   "url": "https://patentsview.org/download/data-download-tables",
+   "sha256": "8212b7df4b8b6174f4a472644e6fe023f5c7c207abe2febcf04e24cf8cde01be",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "mirelukast-sdud",
+   "issuer": "CMS",
+   "title": "State Drug Utilization Data",
+   "version": "2010 annual file (FIXTURE)",
+   "public_date": "2011-06-30",
+   "locator": "National totals, units reimbursed",
+   "url": "https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data",
+   "sha256": "2b9291371edd0a46a1b7beaefd94ea79fb8203c41123fbf51ef24c2eb10e03ec",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "mirelukast-price",
+   "issuer": "U.S. FDA",
+   "title": "Generic competition and drug prices (median price by number of manufacturers)",
+   "version": "Scenario table (FIXTURE)",
+   "public_date": "2011-05-01",
+   "locator": "Table 1, ratio to brand price",
+   "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/generic-competition-and-drug-prices",
+   "sha256": "b3940e515ce9634d129610bee5d4fd79f192bbab9b9b48966c4eef2c0a93c7f7",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "mirelukast-thfda",
+   "issuer": "Thai FDA (อย.)",
+   "title": "ฐานข้อมูลทะเบียนตำรับยา / Drug registration search",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Search term: mirelukast",
+   "url": "https://pertento.fda.moph.go.th/FDA_SEARCH_DRUG/SEARCH_DRUG/FRM_SEARCH_DRUG.aspx",
+   "sha256": "072abfb1ae8c12ca8640ac14310776f9bc971ac7cbb5fc3d7387d7fbfec834d9",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "mirelukast-dip",
+   "issuer": "Department of Intellectual Property, Thailand",
+   "title": "DIP patent search",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Search term: mirelukast",
+   "url": "https://patentsearch.ipthailand.go.th/",
+   "sha256": "6515c9281d5021e22dbd1b138eabd6491443249a7d39af68489a7d0b5f1dea56",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "mirelukast-aip",
+   "issuer": "ASEAN IP Register / WIPO PATENTSCOPE",
+   "title": "Patent family trace",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Family search seeded from US patents for mirelukast",
+   "url": "https://patentscope.wipo.int/search/en/search.jsf",
+   "sha256": "d6ce4c22ff93082a927bb7cf73d912552beab0de96ee0b3f4be8de64ceebe531",
+   "retrieved": "2026-11-28"
+  }
+ ],
+ "checklist": [
+  {
+   "id": "k1",
+   "text_th": "ตรวจสถานะและวันหมดอายุของสิทธิบัตรทุกฉบับใน Orange Book",
+   "text_en": "Check the status and expiry of every Orange Book patent.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "mirelukast-ob"
+   ]
+  },
+  {
+   "id": "k2",
+   "text_th": "อ่านข้อถือสิทธิของสิทธิบัตรสูตรตำรับเทียบกับสูตรที่วางแผนไว้",
+   "text_en": "Read formulation patent claims against the planned formulation.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "mirelukast-pv"
+   ]
+  },
+  {
+   "id": "k3",
+   "text_th": "ตรวจคดี Paragraph IV และคำพิพากษาที่เกี่ยวข้อง",
+   "text_en": "Check Paragraph IV litigation and related judgments.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "mirelukast-p4"
+   ]
+  },
+  {
+   "id": "k4",
+   "text_th": "ยืนยันรูปแบบยาและความแรงที่จะใช้ศึกษาชีวสมมูล",
+   "text_en": "Confirm the dosage form and strength for the bioequivalence study.",
+   "owner": "R&D",
+   "source_ids": [
+    "mirelukast-df"
+   ]
+  },
+  {
+   "id": "k5",
+   "text_th": "ทบทวนสมมติฐานวันเปิดตัวและราคาเทียบกับคู่แข่ง",
+   "text_en": "Review the launch-date and price assumptions against competitors.",
+   "owner": "BD",
+   "source_ids": [
+    "mirelukast-sdud",
+    "mirelukast-price"
+   ]
+  },
+  {
+   "id": "k6",
+   "text_th": "ค้นครอบครัวสิทธิบัตรในไทยกับกรมทรัพย์สินทางปัญญาซ้ำ",
+   "text_en": "Repeat the Thai patent family search with the DIP.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "mirelukast-dip"
+   ]
+  }
+ ]
+}

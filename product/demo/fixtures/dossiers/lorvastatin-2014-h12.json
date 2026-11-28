@@ -1,0 +1,421 @@
+{
+ "schema": "mwd.dossier.v1",
+ "fixture": true,
+ "molecule": {
+  "key": "lorvastatin",
+  "display_name": "Lorvastatin",
+  "dosage_forms": [
+   "tablet"
+  ]
+ },
+ "as_of": "2014-01-01",
+ "jurisdiction": "US",
+ "forecast": {
+  "horizon_months": 12,
+  "m3_p_entry": 0.198,
+  "b1_p_entry": 0.059,
+  "m3_rank": 19,
+  "queue_size": 5,
+  "in_queue": false,
+  "status": "DEVELOPMENT_ONLY"
+ },
+ "outcome_reveal": {
+  "first_final_anda_date": "2014-10-04",
+  "window_end": "2015-01-01"
+ },
+ "sections": [
+  {
+   "id": "decision",
+   "title_th": "หน้าตัดสินใจ",
+   "title_en": "Decision",
+   "next_action_th": "ยังไม่อยู่ในคิว ติดตาม Orange Book ฉบับถัดไป",
+   "next_action_en": "Not in the queue; watch the next Orange Book edition.",
+   "decisive_claim": "c02"
+  },
+  {
+   "id": "market",
+   "title_th": "ช่วงเวลาตลาด",
+   "title_en": "Market window"
+  },
+  {
+   "id": "competition",
+   "title_th": "การแข่งขัน",
+   "title_en": "Competition"
+  },
+  {
+   "id": "patents",
+   "title_th": "สิทธิบัตรและสิทธิผูกขาด",
+   "title_en": "Patents & exclusivity"
+  },
+  {
+   "id": "thai_asean",
+   "title_th": "ไทยและอาเซียน",
+   "title_en": "Thailand & ASEAN"
+  },
+  {
+   "id": "handoff",
+   "title_th": "ส่งต่อผู้ประเมิน FTO",
+   "title_en": "FTO hand-off"
+  },
+  {
+   "id": "references",
+   "title_th": "เอกสารอ้างอิง",
+   "title_en": "References"
+  }
+ ],
+ "claims": [
+  {
+   "id": "c01",
+   "section": "decision",
+   "text_th": "M3 ประเมินโอกาสที่ยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายภายใน 12 เดือน ที่ 20% (B1: 6%)",
+   "text_en": "M3 estimates a 20% chance that a first generic receives final approval within 12 months (B1: 6%).",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "lorvastatin-ob",
+    "lorvastatin-df"
+   ]
+  },
+  {
+   "id": "c02",
+   "section": "decision",
+   "text_th": "สมมติว่าสิทธิบัตรสารออกฤทธิ์ฉบับหลักหมดอายุตามวันที่ใน Orange Book และไม่มีการขยายอายุเพิ่ม",
+   "text_en": "Assumes the main compound patent expires on its Orange Book date with no further term extension.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": [
+    "lorvastatin-ob"
+   ]
+  },
+  {
+   "id": "c03",
+   "section": "decision",
+   "text_th": "ไม่พบการรับรอง Paragraph IV ในรายการล่าสุดก่อนวันตัดข้อมูล",
+   "text_en": "No Paragraph IV certification appears in the last list before the cutoff.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-p4"
+   ]
+  },
+  {
+   "id": "c04",
+   "section": "market",
+   "text_th": "ปริมาณยาที่ Medicaid จ่ายในปี 2012: 116.3 ล้านหน่วย",
+   "text_en": "Medicaid reimbursed 116.3 million units in 2012.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-sdud"
+   ]
+  },
+  {
+   "id": "c05",
+   "section": "market",
+   "text_th": "คาดว่าความต้องการยายังคงอยู่ถึงวันเปิดตัวที่วางแผน (ค่าพื้นฐาน naïve with drift)",
+   "text_en": "Demand is expected to persist to the planned launch date (naïve-with-drift baseline).",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "lorvastatin-sdud"
+   ]
+  },
+  {
+   "id": "c06",
+   "section": "market",
+   "text_th": "สมมติวันเปิดตัวที่วางแผนไว้คือ 2017-07-01",
+   "text_en": "Assumes a planned launch date of 2017-07-01.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": []
+  },
+  {
+   "id": "c07",
+   "section": "competition",
+   "text_th": "ผู้ถือ NDA ต้นแบบ: Corvale Pharma",
+   "text_en": "Reference NDA holder: Corvale Pharma.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-df"
+   ]
+  },
+  {
+   "id": "c08",
+   "section": "competition",
+   "text_th": "มี ANDA ที่ได้รับอนุมัติเบื้องต้น (tentative) 1 รายการ",
+   "text_en": "1 ANDAs hold tentative approval.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-df"
+   ]
+  },
+  {
+   "id": "c09",
+   "section": "competition",
+   "text_th": "โอกาสมีผู้ยื่น ANDA ที่ได้รับอนุมัติอย่างน้อย 3 รายภายใน 36 เดือน: 17%",
+   "text_en": "Chance of at least three approved ANDA applicants within 36 months: 17%.",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "lorvastatin-df",
+    "lorvastatin-ob"
+   ]
+  },
+  {
+   "id": "c10",
+   "section": "competition",
+   "text_th": "สถานการณ์จำลอง: ราคาลดลงราว 52% เมื่อมีผู้ผลิต 3 ราย (ค่ามัธยฐานของ FDA ไม่ได้ปรับให้เข้ากับยานี้)",
+   "text_en": "Scenario: price falls about 52% with three manufacturers (FDA median, not fitted to this product).",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": [
+    "lorvastatin-price"
+   ]
+  },
+  {
+   "id": "c11",
+   "section": "patents",
+   "text_th": "มีสิทธิบัตร 4 ฉบับใน Orange Book ฉบับหลักหมดอายุ 2015-09-10",
+   "text_en": "4 patents are listed in the Orange Book; the main patent expires 2015-09-10.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-ob",
+    "lorvastatin-pv"
+   ]
+  },
+  {
+   "id": "c12",
+   "section": "patents",
+   "text_th": "ไม่มีสิทธิผูกขาดทางการตลาดคงเหลือ",
+   "text_en": "No regulatory exclusivity remains.",
+   "state": "not_applicable",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-ob"
+   ]
+  },
+  {
+   "id": "c13",
+   "section": "patents",
+   "text_th": "ประเภทของสิทธิบัตรที่จำกัดการเข้าตลาด (สารออกฤทธิ์ สูตรตำรับ หรือวิธีใช้) ต้องตรวจจากเอกสารสิทธิบัตร",
+   "text_en": "The type of restricting patent (compound, formulation or method of use) must be checked against the patent documents.",
+   "state": "unknown",
+   "kind": "estimate",
+   "source_ids": [
+    "lorvastatin-pv"
+   ]
+  },
+  {
+   "id": "c14",
+   "section": "thai_asean",
+   "text_th": "พบทะเบียนตำรับยาในไทย 2 ทะเบียน",
+   "text_en": "2 Thai drug registrations were found.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-thfda"
+   ]
+  },
+  {
+   "id": "c15",
+   "section": "thai_asean",
+   "text_th": "ยังไม่พบครอบครัวสิทธิบัตรในฐานข้อมูลกรมทรัพย์สินทางปัญญา ต้องค้นซ้ำด้วยชื่อผู้ขอ",
+   "text_en": "No patent family was found in the DIP database; repeat the search by applicant name.",
+   "state": "unknown",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-dip"
+   ]
+  },
+  {
+   "id": "c16",
+   "section": "thai_asean",
+   "text_th": "ASEAN IP Register พบสมาชิกครอบครัวสิทธิบัตรใน PH, SG, TH",
+   "text_en": "The ASEAN IP Register shows family members in PH, SG, TH.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "lorvastatin-aip"
+   ]
+  },
+  {
+   "id": "c17",
+   "section": "thai_asean",
+   "text_th": "การขยายอายุสิทธิบัตร (PTE) แบบสหรัฐฯ ไม่มีในระบบสิทธิบัตรไทย",
+   "text_en": "US-style patent term extension does not exist in the Thai patent system.",
+   "state": "not_applicable",
+   "kind": "observed",
+   "source_ids": []
+  },
+  {
+   "id": "c18",
+   "section": "handoff",
+   "text_th": "รายการนี้เป็นข้อมูลประกอบการตัดสินใจ ผู้ประเมิน FTO ต้องยืนยันทุกข้อก่อนใช้",
+   "text_en": "This list is decision support; the FTO evaluator must confirm every item before use.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": []
+  }
+ ],
+ "sources": [
+  {
+   "id": "lorvastatin-ob",
+   "issuer": "U.S. FDA",
+   "title": "Orange Book: Approved Drug Products with Therapeutic Equivalence Evaluations",
+   "version": "2013-12 edition (FIXTURE)",
+   "public_date": "2013-12-20",
+   "locator": "Patent and exclusivity data for lorvastatin",
+   "url": "https://www.accessdata.fda.gov/scripts/cder/ob/",
+   "sha256": "3bfd56965f23d2e0205a786b88a110fba9b1677482dc581e998e952b14b75199",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "lorvastatin-df",
+   "issuer": "U.S. FDA",
+   "title": "Drugs@FDA data files",
+   "version": "2013-12-18 snapshot (FIXTURE)",
+   "public_date": "2013-12-18",
+   "locator": "Applications and Submissions tables, ORIG/AP rows",
+   "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files",
+   "sha256": "c19d66c29e5150e9e317c1cef2f397fddd6e81ce8cb470db8ed8ba95f1b39ee6",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "lorvastatin-p4",
+   "issuer": "U.S. FDA",
+   "title": "Paragraph IV Patent Certifications list",
+   "version": "2013-11 update (FIXTURE)",
+   "public_date": "2013-11-30",
+   "locator": "Row for lorvastatin",
+   "url": "https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+   "sha256": "960f3da1bdf8ac0f4e474ade2d672d7fae4c1e3dcbaf4c2722aff190fc670f12",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "lorvastatin-pv",
+   "issuer": "USPTO",
+   "title": "PatentsView granted patent data",
+   "version": "2013-10 release (FIXTURE)",
+   "public_date": "2013-10-01",
+   "locator": "patent, application and cpc_current tables",
+   "url": "https://patentsview.org/download/data-download-tables",
+   "sha256": "fb99c6334052f776d6b4197cbf3068bb8ff16d114e1f24b84021e1b002bde203",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "lorvastatin-sdud",
+   "issuer": "CMS",
+   "title": "State Drug Utilization Data",
+   "version": "2012 annual file (FIXTURE)",
+   "public_date": "2013-06-30",
+   "locator": "National totals, units reimbursed",
+   "url": "https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data",
+   "sha256": "1d3d95f8eddfb67218295e32780ddf2cf8feb24121600d7b34e78c83fff7ace5",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "lorvastatin-price",
+   "issuer": "U.S. FDA",
+   "title": "Generic competition and drug prices (median price by number of manufacturers)",
+   "version": "Scenario table (FIXTURE)",
+   "public_date": "2013-05-01",
+   "locator": "Table 1, ratio to brand price",
+   "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/generic-competition-and-drug-prices",
+   "sha256": "e474426790c2cfc158a8c00df67ae51dfa539d2fa358083fa5b78d8ffe21ce9d",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "lorvastatin-thfda",
+   "issuer": "Thai FDA (อย.)",
+   "title": "ฐานข้อมูลทะเบียนตำรับยา / Drug registration search",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Search term: lorvastatin",
+   "url": "https://pertento.fda.moph.go.th/FDA_SEARCH_DRUG/SEARCH_DRUG/FRM_SEARCH_DRUG.aspx",
+   "sha256": "c65ba57012d87cbf7fbf4037798cd8eb54c1def6d06aec074b2f3288a0a539e2",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "lorvastatin-dip",
+   "issuer": "Department of Intellectual Property, Thailand",
+   "title": "DIP patent search",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Search term: lorvastatin",
+   "url": "https://patentsearch.ipthailand.go.th/",
+   "sha256": "74fc9c35a1305fc8727ded93eaa0b539a149cef17fe632acb81e41374db7e4cd",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "lorvastatin-aip",
+   "issuer": "ASEAN IP Register / WIPO PATENTSCOPE",
+   "title": "Patent family trace",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Family search seeded from US patents for lorvastatin",
+   "url": "https://patentscope.wipo.int/search/en/search.jsf",
+   "sha256": "d4484f22b8b031f98f04bb98a7f3d6874890df3eec5b4e99d3fbe3e8e0ebf442",
+   "retrieved": "2026-11-28"
+  }
+ ],
+ "checklist": [
+  {
+   "id": "k1",
+   "text_th": "ตรวจสถานะและวันหมดอายุของสิทธิบัตรทุกฉบับใน Orange Book",
+   "text_en": "Check the status and expiry of every Orange Book patent.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "lorvastatin-ob"
+   ]
+  },
+  {
+   "id": "k2",
+   "text_th": "อ่านข้อถือสิทธิของสิทธิบัตรสูตรตำรับเทียบกับสูตรที่วางแผนไว้",
+   "text_en": "Read formulation patent claims against the planned formulation.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "lorvastatin-pv"
+   ]
+  },
+  {
+   "id": "k3",
+   "text_th": "ตรวจคดี Paragraph IV และคำพิพากษาที่เกี่ยวข้อง",
+   "text_en": "Check Paragraph IV litigation and related judgments.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "lorvastatin-p4"
+   ]
+  },
+  {
+   "id": "k4",
+   "text_th": "ยืนยันรูปแบบยาและความแรงที่จะใช้ศึกษาชีวสมมูล",
+   "text_en": "Confirm the dosage form and strength for the bioequivalence study.",
+   "owner": "R&D",
+   "source_ids": [
+    "lorvastatin-df"
+   ]
+  },
+  {
+   "id": "k5",
+   "text_th": "ทบทวนสมมติฐานวันเปิดตัวและราคาเทียบกับคู่แข่ง",
+   "text_en": "Review the launch-date and price assumptions against competitors.",
+   "owner": "BD",
+   "source_ids": [
+    "lorvastatin-sdud",
+    "lorvastatin-price"
+   ]
+  },
+  {
+   "id": "k6",
+   "text_th": "ค้นครอบครัวสิทธิบัตรในไทยกับกรมทรัพย์สินทางปัญญาซ้ำ",
+   "text_en": "Repeat the Thai patent family search with the DIP.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "lorvastatin-dip"
+   ]
+  }
+ ]
+}

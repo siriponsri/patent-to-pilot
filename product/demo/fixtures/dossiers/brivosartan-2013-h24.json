@@ -1,0 +1,421 @@
+{
+ "schema": "mwd.dossier.v1",
+ "fixture": true,
+ "molecule": {
+  "key": "brivosartan",
+  "display_name": "Brivosartan",
+  "dosage_forms": [
+   "tablet"
+  ]
+ },
+ "as_of": "2013-01-01",
+ "jurisdiction": "US",
+ "forecast": {
+  "horizon_months": 24,
+  "m3_p_entry": 0.499,
+  "b1_p_entry": 0.377,
+  "m3_rank": 7,
+  "queue_size": 5,
+  "in_queue": false,
+  "status": "DEVELOPMENT_ONLY"
+ },
+ "outcome_reveal": {
+  "first_final_anda_date": "2013-03-15",
+  "window_end": "2015-01-01"
+ },
+ "sections": [
+  {
+   "id": "decision",
+   "title_th": "หน้าตัดสินใจ",
+   "title_en": "Decision",
+   "next_action_th": "ยังไม่อยู่ในคิว ติดตาม Orange Book ฉบับถัดไป",
+   "next_action_en": "Not in the queue; watch the next Orange Book edition.",
+   "decisive_claim": "c02"
+  },
+  {
+   "id": "market",
+   "title_th": "ช่วงเวลาตลาด",
+   "title_en": "Market window"
+  },
+  {
+   "id": "competition",
+   "title_th": "การแข่งขัน",
+   "title_en": "Competition"
+  },
+  {
+   "id": "patents",
+   "title_th": "สิทธิบัตรและสิทธิผูกขาด",
+   "title_en": "Patents & exclusivity"
+  },
+  {
+   "id": "thai_asean",
+   "title_th": "ไทยและอาเซียน",
+   "title_en": "Thailand & ASEAN"
+  },
+  {
+   "id": "handoff",
+   "title_th": "ส่งต่อผู้ประเมิน FTO",
+   "title_en": "FTO hand-off"
+  },
+  {
+   "id": "references",
+   "title_th": "เอกสารอ้างอิง",
+   "title_en": "References"
+  }
+ ],
+ "claims": [
+  {
+   "id": "c01",
+   "section": "decision",
+   "text_th": "M3 ประเมินโอกาสที่ยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายภายใน 24 เดือน ที่ 50% (B1: 38%)",
+   "text_en": "M3 estimates a 50% chance that a first generic receives final approval within 24 months (B1: 38%).",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "brivosartan-ob",
+    "brivosartan-df"
+   ]
+  },
+  {
+   "id": "c02",
+   "section": "decision",
+   "text_th": "สมมติว่าสิทธิบัตรสารออกฤทธิ์ฉบับหลักหมดอายุตามวันที่ใน Orange Book และไม่มีการขยายอายุเพิ่ม",
+   "text_en": "Assumes the main compound patent expires on its Orange Book date with no further term extension.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": [
+    "brivosartan-ob"
+   ]
+  },
+  {
+   "id": "c03",
+   "section": "decision",
+   "text_th": "ไม่พบการรับรอง Paragraph IV ในรายการล่าสุดก่อนวันตัดข้อมูล",
+   "text_en": "No Paragraph IV certification appears in the last list before the cutoff.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-p4"
+   ]
+  },
+  {
+   "id": "c04",
+   "section": "market",
+   "text_th": "ปริมาณยาที่ Medicaid จ่ายในปี 2011: 136.6 ล้านหน่วย",
+   "text_en": "Medicaid reimbursed 136.6 million units in 2011.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-sdud"
+   ]
+  },
+  {
+   "id": "c05",
+   "section": "market",
+   "text_th": "คาดว่าความต้องการยายังคงอยู่ถึงวันเปิดตัวที่วางแผน (ค่าพื้นฐาน naïve with drift)",
+   "text_en": "Demand is expected to persist to the planned launch date (naïve-with-drift baseline).",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "brivosartan-sdud"
+   ]
+  },
+  {
+   "id": "c06",
+   "section": "market",
+   "text_th": "สมมติวันเปิดตัวที่วางแผนไว้คือ 2016-07-01",
+   "text_en": "Assumes a planned launch date of 2016-07-01.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": []
+  },
+  {
+   "id": "c07",
+   "section": "competition",
+   "text_th": "ผู้ถือ NDA ต้นแบบ: Northgate Therapeutics",
+   "text_en": "Reference NDA holder: Northgate Therapeutics.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-df"
+   ]
+  },
+  {
+   "id": "c08",
+   "section": "competition",
+   "text_th": "มี ANDA ที่ได้รับอนุมัติเบื้องต้น (tentative) 5 รายการ",
+   "text_en": "5 ANDAs hold tentative approval.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-df"
+   ]
+  },
+  {
+   "id": "c09",
+   "section": "competition",
+   "text_th": "โอกาสมีผู้ยื่น ANDA ที่ได้รับอนุมัติอย่างน้อย 3 รายภายใน 36 เดือน: 28%",
+   "text_en": "Chance of at least three approved ANDA applicants within 36 months: 28%.",
+   "state": "known",
+   "kind": "estimate",
+   "source_ids": [
+    "brivosartan-df",
+    "brivosartan-ob"
+   ]
+  },
+  {
+   "id": "c10",
+   "section": "competition",
+   "text_th": "สถานการณ์จำลอง: ราคาลดลงราว 44% เมื่อมีผู้ผลิต 3 ราย (ค่ามัธยฐานของ FDA ไม่ได้ปรับให้เข้ากับยานี้)",
+   "text_en": "Scenario: price falls about 44% with three manufacturers (FDA median, not fitted to this product).",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": [
+    "brivosartan-price"
+   ]
+  },
+  {
+   "id": "c11",
+   "section": "patents",
+   "text_th": "มีสิทธิบัตร 4 ฉบับใน Orange Book ฉบับหลักหมดอายุ 2014-06-07",
+   "text_en": "4 patents are listed in the Orange Book; the main patent expires 2014-06-07.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-ob",
+    "brivosartan-pv"
+   ]
+  },
+  {
+   "id": "c12",
+   "section": "patents",
+   "text_th": "ไม่มีสิทธิผูกขาดทางการตลาดคงเหลือ",
+   "text_en": "No regulatory exclusivity remains.",
+   "state": "not_applicable",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-ob"
+   ]
+  },
+  {
+   "id": "c13",
+   "section": "patents",
+   "text_th": "ประเภทของสิทธิบัตรที่จำกัดการเข้าตลาด (สารออกฤทธิ์ สูตรตำรับ หรือวิธีใช้) ต้องตรวจจากเอกสารสิทธิบัตร",
+   "text_en": "The type of restricting patent (compound, formulation or method of use) must be checked against the patent documents.",
+   "state": "unknown",
+   "kind": "estimate",
+   "source_ids": [
+    "brivosartan-pv"
+   ]
+  },
+  {
+   "id": "c14",
+   "section": "thai_asean",
+   "text_th": "ค้นทะเบียนตำรับยาของ อย. ไม่สำเร็จ จึงแสดงเป็นไม่ทราบ",
+   "text_en": "The Thai FDA registration lookup failed, so the status is shown as unknown.",
+   "state": "unknown",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-thfda"
+   ]
+  },
+  {
+   "id": "c15",
+   "section": "thai_asean",
+   "text_th": "ยังไม่พบครอบครัวสิทธิบัตรในฐานข้อมูลกรมทรัพย์สินทางปัญญา ต้องค้นซ้ำด้วยชื่อผู้ขอ",
+   "text_en": "No patent family was found in the DIP database; repeat the search by applicant name.",
+   "state": "unknown",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-dip"
+   ]
+  },
+  {
+   "id": "c16",
+   "section": "thai_asean",
+   "text_th": "ASEAN IP Register พบสมาชิกครอบครัวสิทธิบัตรใน SG, MY",
+   "text_en": "The ASEAN IP Register shows family members in SG, MY.",
+   "state": "known",
+   "kind": "observed",
+   "source_ids": [
+    "brivosartan-aip"
+   ]
+  },
+  {
+   "id": "c17",
+   "section": "thai_asean",
+   "text_th": "การขยายอายุสิทธิบัตร (PTE) แบบสหรัฐฯ ไม่มีในระบบสิทธิบัตรไทย",
+   "text_en": "US-style patent term extension does not exist in the Thai patent system.",
+   "state": "not_applicable",
+   "kind": "observed",
+   "source_ids": []
+  },
+  {
+   "id": "c18",
+   "section": "handoff",
+   "text_th": "รายการนี้เป็นข้อมูลประกอบการตัดสินใจ ผู้ประเมิน FTO ต้องยืนยันทุกข้อก่อนใช้",
+   "text_en": "This list is decision support; the FTO evaluator must confirm every item before use.",
+   "state": "known",
+   "kind": "assumption",
+   "source_ids": []
+  }
+ ],
+ "sources": [
+  {
+   "id": "brivosartan-ob",
+   "issuer": "U.S. FDA",
+   "title": "Orange Book: Approved Drug Products with Therapeutic Equivalence Evaluations",
+   "version": "2012-12 edition (FIXTURE)",
+   "public_date": "2012-12-20",
+   "locator": "Patent and exclusivity data for brivosartan",
+   "url": "https://www.accessdata.fda.gov/scripts/cder/ob/",
+   "sha256": "7eac1da14a874bf348fdde39b9a3a2cbe5b2093dba038af52a48c2e7f4617174",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "brivosartan-df",
+   "issuer": "U.S. FDA",
+   "title": "Drugs@FDA data files",
+   "version": "2012-12-18 snapshot (FIXTURE)",
+   "public_date": "2012-12-18",
+   "locator": "Applications and Submissions tables, ORIG/AP rows",
+   "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files",
+   "sha256": "fa9e0633c6530e0c8e6ea65da0d2d6dd4e64baece8c1a5299410e68f2683249f",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "brivosartan-p4",
+   "issuer": "U.S. FDA",
+   "title": "Paragraph IV Patent Certifications list",
+   "version": "2012-11 update (FIXTURE)",
+   "public_date": "2012-11-30",
+   "locator": "Row for brivosartan",
+   "url": "https://www.fda.gov/drugs/abbreviated-new-drug-application-anda/patent-certifications-and-suitability-petitions",
+   "sha256": "2883feb94f4cdfd3473d3caa041e17293b3b65ad1d5b6086227dc1dc5e0e1983",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "brivosartan-pv",
+   "issuer": "USPTO",
+   "title": "PatentsView granted patent data",
+   "version": "2012-10 release (FIXTURE)",
+   "public_date": "2012-10-01",
+   "locator": "patent, application and cpc_current tables",
+   "url": "https://patentsview.org/download/data-download-tables",
+   "sha256": "3945f53dab9c368e5c4d28aad2b121c17fc5cebc49281acdfe98e6f9e953ebda",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "brivosartan-sdud",
+   "issuer": "CMS",
+   "title": "State Drug Utilization Data",
+   "version": "2011 annual file (FIXTURE)",
+   "public_date": "2012-06-30",
+   "locator": "National totals, units reimbursed",
+   "url": "https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data",
+   "sha256": "c243805a1c6b322cc2acfcce9d769e480fe6c343a7e5df5f562f037c7abfbb8e",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "brivosartan-price",
+   "issuer": "U.S. FDA",
+   "title": "Generic competition and drug prices (median price by number of manufacturers)",
+   "version": "Scenario table (FIXTURE)",
+   "public_date": "2012-05-01",
+   "locator": "Table 1, ratio to brand price",
+   "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/generic-competition-and-drug-prices",
+   "sha256": "d947ea575a2b3b4596c25b224ad7e3ad61447ff4bfc9ca3bd52eb37cb00551a9",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "brivosartan-thfda",
+   "issuer": "Thai FDA (อย.)",
+   "title": "ฐานข้อมูลทะเบียนตำรับยา / Drug registration search",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Search term: brivosartan",
+   "url": "https://pertento.fda.moph.go.th/FDA_SEARCH_DRUG/SEARCH_DRUG/FRM_SEARCH_DRUG.aspx",
+   "sha256": "58c0ad2cce6474fe14db253e12b3deaf672db8d26c8eed1c1a0615094c6e9abd",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "brivosartan-dip",
+   "issuer": "Department of Intellectual Property, Thailand",
+   "title": "DIP patent search",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Search term: brivosartan",
+   "url": "https://patentsearch.ipthailand.go.th/",
+   "sha256": "6d07e535b28cf0470875c5eca372117cb63a1fbdcf280b02e0b8fe46280e6e56",
+   "retrieved": "2026-11-28"
+  },
+  {
+   "id": "brivosartan-aip",
+   "issuer": "ASEAN IP Register / WIPO PATENTSCOPE",
+   "title": "Patent family trace",
+   "version": "Lookup (FIXTURE)",
+   "public_date": null,
+   "locator": "Family search seeded from US patents for brivosartan",
+   "url": "https://patentscope.wipo.int/search/en/search.jsf",
+   "sha256": "ce9f574a9e537c617d27026bd1e88d52a07ae3ad65ddf1f26fc1fb1c4855e180",
+   "retrieved": "2026-11-28"
+  }
+ ],
+ "checklist": [
+  {
+   "id": "k1",
+   "text_th": "ตรวจสถานะและวันหมดอายุของสิทธิบัตรทุกฉบับใน Orange Book",
+   "text_en": "Check the status and expiry of every Orange Book patent.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "brivosartan-ob"
+   ]
+  },
+  {
+   "id": "k2",
+   "text_th": "อ่านข้อถือสิทธิของสิทธิบัตรสูตรตำรับเทียบกับสูตรที่วางแผนไว้",
+   "text_en": "Read formulation patent claims against the planned formulation.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "brivosartan-pv"
+   ]
+  },
+  {
+   "id": "k3",
+   "text_th": "ตรวจคดี Paragraph IV และคำพิพากษาที่เกี่ยวข้อง",
+   "text_en": "Check Paragraph IV litigation and related judgments.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "brivosartan-p4"
+   ]
+  },
+  {
+   "id": "k4",
+   "text_th": "ยืนยันรูปแบบยาและความแรงที่จะใช้ศึกษาชีวสมมูล",
+   "text_en": "Confirm the dosage form and strength for the bioequivalence study.",
+   "owner": "R&D",
+   "source_ids": [
+    "brivosartan-df"
+   ]
+  },
+  {
+   "id": "k5",
+   "text_th": "ทบทวนสมมติฐานวันเปิดตัวและราคาเทียบกับคู่แข่ง",
+   "text_en": "Review the launch-date and price assumptions against competitors.",
+   "owner": "BD",
+   "source_ids": [
+    "brivosartan-sdud",
+    "brivosartan-price"
+   ]
+  },
+  {
+   "id": "k6",
+   "text_th": "ค้นครอบครัวสิทธิบัตรในไทยกับกรมทรัพย์สินทางปัญญาซ้ำ",
+   "text_en": "Repeat the Thai patent family search with the DIP.",
+   "owner": "FTO evaluator",
+   "source_ids": [
+    "brivosartan-dip"
+   ]
+  }
+ ]
+}
