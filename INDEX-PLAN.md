@@ -1,10 +1,10 @@
 # Index: plan and evidence
 
-## D40 · LOE-Bench (27 November 2026)
+## D41 · Market Window Dossier (28 November 2026)
 
-LOE-Bench is the active program on `research/loe-bench`. It forecasts first generic and biosimilar approvals from open regulatory records and can abstain when the evidence is insufficient. RA Pharma supplies the Thai-context demo layer. [Owner decision D40](docs/maintenance/OWNER-DECISIONS-20261122.md#d40--loe-bench-becomes-the-active-program-27-november-2026).
+Market Window Dossier is the active project on `research/loe-bench`. It spans a pre-development launch-window forecast and an evidence hand-off for freedom-to-operate review. LOE-Bench is its research benchmark. RA Pharma and the Workbench supply the Thai-context demo layer. [D41 plan](docs/loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026).
 
-Wave 2 evidence is for development only. The confirmatory test remains sealed, and there is no confirmatory result. Start with the [LOE-Bench documentation map](docs/loe-bench/README.md), [plan and dispatch board](docs/loe-bench/PLAN.md), [lane handoff](docs/loe-bench/HANDOFF.md) and [technique ledger](docs/loe-bench/TECHNIQUE-LEDGER.md).
+Wave 2 evidence is for development only. The confirmatory test remains sealed and has no result. Start with the [documentation map](docs/loe-bench/README.md), [plan and dispatch board](docs/loe-bench/PLAN.md), [lane handoff](docs/loe-bench/HANDOFF.md), [technique ledger](docs/loe-bench/TECHNIQUE-LEDGER.md) and [IS2 writing entry point](docs/writing/is2/README.md).
 
 ## Historical index
 
@@ -82,9 +82,9 @@ Option A closed NULL in the Thai controlled comparison, with diagnostic-only evi
 | Audit convention and run records | [docs/healthtech/audits/README.md](docs/healthtech/audits/README.md) | Historical receipts |
 | Literature | [literature-review/](literature-review/README.md) | Curated, not a systematic review |
 
-## 4. Writing
+## 4. Earlier writing records
 
 | Track | Location | Rule |
 |---|---|---|
 | The one paper (P5) | `docs/writing/journal/` | Paper 86 banned; arXiv:2605.24297 not used |
-| IS2 | [docs/writing/is2/](docs/writing/is2/) | Paper 86 allowed here only (D10) |
+| B53-era IS2 materials | [IS2 writing history](docs/writing/is2/README.md#earlier-is2-materials) | Paper 86 allowed in IS2 only (D10) |

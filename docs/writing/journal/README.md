@@ -1,8 +1,8 @@
 # Journal manuscript
 
-The [RA Pharma research brief](../../ra-pharma/research/BRIEF.md) sets the active scientific question. Use the [original-source record](../../evidence-scope/00-organization.md#original-source-corrections) for IS1 and Paper 53. The [earlier synthesis plan](../../evidence-scope/05-synthesis.md) and dated outlines below preserve their historical scope. Write project documentation in English.
+This folder preserves the earlier journal manuscript plans. D41 sets the current study direction as Market Window Dossier with LOE-Bench as its benchmark. The [IS2 entry point](../is2/README.md) has the current report scope. Use the [original-source record](../../evidence-scope/00-organization.md#original-source-corrections) for IS1 and Paper 53. The [earlier synthesis plan](../../evidence-scope/05-synthesis.md) preserves the earlier scope. Write project documentation in English.
 
-> **22 Nov 2026 (owner note 22112026, N09 / task P5-T01):** the program now has **one** manuscript with three linked
+> **22 Nov 2026 (owner note 22112026, N09 / task P5-T01):** the program consolidated its work into **one** manuscript with three linked
 > contributions: [MANUSCRIPT-DRAFT-v1.md](MANUSCRIPT-DRAFT-v1.md) (design only; every new result `NOT_RUN`). The P1–P3 table
 > below is kept as history of the earlier three-paper plan.
 
@@ -17,5 +17,4 @@ labels (checked by `tests/test_org_adaptive_terminology.py`). No committee-respo
 
 The former plan reserved three manuscript directories. Use the consolidated draft linked above and consult `VENUES.md` for venue history.
 
-Not in this track: the closed P1-DAPFAM study (`docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md`, H1 inconclusive).
-Whether it becomes an IS2 chapter is an owner decision (listed in `../is2/README.md`).
+The closed P1-DAPFAM study (`docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md`, H1 inconclusive) belongs to the earlier research record. Its proposed use in IS2 is recorded in the [earlier IS2 materials](../is2/README.md#earlier-is2-materials).

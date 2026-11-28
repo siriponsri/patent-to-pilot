@@ -1,5 +1,7 @@
 # IS2 deliverables and report plan (v1, 19 Nov 2026; scope changed 22 Nov)
 
+> Historical B53-era deliverables. Use the [Market Window Dossier IS2 entry point](README.md) for the D41 report, evidence and deadlines.
+
 > **Historical correction, 22 November 2026.** The authors suspended reuse of Paper 53’s 37.1% until the source table could confirm its denominator. The [later source-page check](../../evidence-scope/00-organization.md#original-source-corrections) confirms 257/692 queries. B53’s measured π@100 = 0.371 on 905 queries belongs to a separate cohort.
 
 > **Owner decision 22 Nov 2026 (D1, D5, D6 in `docs/maintenance/OWNER-DECISIONS-20261122.md`):**

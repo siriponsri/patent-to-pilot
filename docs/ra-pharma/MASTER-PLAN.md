@@ -1,6 +1,6 @@
 #
 
-> Historical RA Pharma record. D40 superseded this mandate on 27 November 2026. RA Pharma now supplies the Thai-context demo layer for the active [LOE-Bench program](../loe-bench/PLAN.md).
+> Historical RA Pharma record. D40 superseded this mandate on 27 November 2026. The Workbench and RA Pharma evidence inputs now supply the Thai-context demo layer for [Market Window Dossier](../loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026). LOE-Bench is the research benchmark.
 
 Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.
 

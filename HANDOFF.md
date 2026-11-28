@@ -1,10 +1,12 @@
 # Patent-to-Pilot handoff
 
-## D40 · LOE-Bench is the active program (27 November 2026)
+## D41 · Market Window Dossier (28 November 2026)
 
-The owner replaced the RA Pharma mandate with [LOE-Bench](docs/loe-bench/PLAN.md). RA Pharma becomes the Thai-context demo layer. Current state, roles and next actions are in the [lane handoff](docs/loe-bench/HANDOFF.md). Decisions D40 and later are in the [register](docs/maintenance/OWNER-DECISIONS-20261122.md#d40--loe-bench-becomes-the-active-program-27-november-2026). Wave 2 is development only. The test is sealed, and no confirmatory result exists. The sections below are historical RA Pharma and earlier handoffs.
+The owner approved the full [Market Window Dossier plan](docs/loe-bench/PLAN.md#d41-market-window-dossier-owner-approved-28-november-2026). It forecasts the launch window before bioequivalence or comparative trials and prepares a dated evidence pack and checklist for scarce freedom-to-operate (FTO) evaluators. The review queue supports evaluator decisions. Qualified counsel determines freedom to operate. LOE-Bench remains the research benchmark, and the Workbench and RA Pharma inputs support the Thai-context demo. [Owner decision register](docs/maintenance/OWNER-DECISIONS-20261122.md#d40--loe-bench-becomes-the-active-program-27-november-2026).
 
-## Current research-first handoff
+Continue on `research/loe-bench` from the [lane handoff](docs/loe-bench/HANDOFF.md). The next milestone is C2–C4 development and main-planner audit of preregistration v2, before the owner submits to OSF. The confirmatory test remains sealed and has no result. Siripon Srihangpiboon and Asst. Prof. Dr. Tuchsanai Ploysuwan are the IS2 authors. The draft is due by the end of December 2026 and the final by the end of January 2027. [IS2 entry point](docs/writing/is2/README.md).
+
+## Historical research-first handoff · RA Pharma
 
 The owner requested a [detailed Plan B proposal](docs/ra-pharma/ip-pharma/PLAN-B-RESEARCH.md). B1 package-first feasibility is proposed. Execution, enrollment and scoring await a separate owner decision.
 
@@ -26,7 +28,7 @@ Start the next research session on `research/ra-pharma` with GPT 6.2 Sol at medi
 
 **Research update.** The [Planner audit](docs/ra-pharma/RESEARCH-AUDIT-20261126.md) accepted the first research handback for engineering and feasibility at `d956473c`. The eight IS1 cells and R4 transfer remain unmeasured. Both D31 cohorts are closed. D32 requires a primary paper and a benchmark or named competitor for every Planner assignment, proposal and substantive claim. The dispatch table below describes the original starting allocation.
 
-**RA Pharma is the active program.** The owner will open two sessions in separate branch checkouts. Both start from the same planning commit on origin. No executor, new research score, pod, deployment or paid booking was started in this dispatch. The existing demo is the Windows S4 reader. The new three-agent dossier is ready for implementation.
+**RA Pharma dispatch at the time.** The owner planned two sessions in separate branch checkouts from the same planning commit on origin. No executor, new research score, pod, deployment or paid booking was started in this dispatch. The existing demo was the Windows S4 reader. The three-agent dossier was ready for implementation.
 
 | Lane | Assigned session | First action and writable record |
 |---|---|---|
@@ -35,7 +37,7 @@ Start the next research session on `research/ra-pharma` with GPT 6.2 Sol at medi
 
 The [master board](docs/ra-pharma/MASTER-PLAN.md) assigns paths; the [contract](docs/ra-pharma/EVIDENCE-CONTRACT.md) defines evidence role, subject, authority, source and missing items. The Planner integrates common files and owns [project memory](docs/ra-pharma/MEMORY.md). Update the affected documentation, handoff and memory in English at each closeout. Address the owner in Thai.
 
-## Active Planner and Research review
+## Historical Planner and Research review
 
 The Product session now holds the original project checkout. Planner uses the dedicated local worktree `../_worktrees/ptp-ra-pharma-planner` on main, and Research retains its own checkout.
 
