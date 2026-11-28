@@ -6,14 +6,14 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 The owner runs the orchestrator on two Claude accounts. Per-account chat memory is not shared, so this section and [MEMORY.md](MEMORY.md) are the main memory. Update both, then commit and push, after every step (owner rule, 28 Nov 2026, night).
 
-Last update: 28 Nov 2026, about 19:10 Bangkok time.
+Last update: 28 Nov 2026, about 19:30 Bangkok time.
 
 | Line | State | Next action |
 |---|---|---|
-| IS2 short paper | v2 with direction-A figures built: TH and EN, 9 pages each, 0 orphan lines (04378b0f). Delivery to `IS_2_new/01_short-paper/final` in progress | Owner reads it; slides wait for that |
+| IS2 short paper | v2 with direction-A figures built: TH and EN, 9 pages each, 0 orphan lines (04378b0f). Delivered to `IS_2_new/01_short-paper/final` (TH/EN docx and pdf) | Owner reads it; slides wait for that |
 | Slides | Folder structure only (`IS_2_new/03_slides`) | Wait for the owner's reading |
-| Journals (PSA, STA, MDM, JAMIA) | Guidelines collected in `IS_2_new/04_journals/*/guidelines`; no manuscript drafted yet | Co-planner strategy for four venues, then drafting (owner requirement answers pending) |
-| Product | D42: Sonnet 5.5 medium is Product Owner. [PRD v1](../product/prd/PRD-MWD-v1.md) drafted with co-planner input. Owner then asked for an AI-assisted product (API first, then local AI; OpenAI-compatible providers; Codex builds the backend) | Requirement questions to the owner, then PRD v2 and dispatch |
+| Journals (PSA, STA, MDM, JAMIA) | Guidelines collected in `IS_2_new/04_journals/*/guidelines`; no manuscript drafted yet. Owner: four venue-tailored drafts, submitted one at a time | Co-planner strategy running (`docs/writing/journal/JOURNAL-STRATEGY-4V.md`), then drafter → co-planner → Claude audit |
+| Product | D42: Sonnet 5.5 medium is Product Owner. [PRD v1](../product/prd/PRD-MWD-v1.md) drafted with co-planner input. Owner then asked for an AI-assisted product (API first, then local AI; OpenAI-compatible providers; Codex builds the backend) | D43 recorded; PRD section 4b proposes the gateway and platform. Co-planner critique running (`docs/product/prd/COPLANNER-AI-PLATFORM.md`). Then: owner approves 4b and the org-trial hosting, dispatch PO-CURRENT (Sonnet) and BE-GATEWAY (Sol high) |
 | Track A | Frozen; OSF update 4 verified | Zenodo release when the owner logs in |
 
 ## Current state (28 November 2026, afternoon, D41 accelerated plan)
