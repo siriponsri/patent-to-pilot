@@ -1,6 +1,6 @@
 # Endgame plan: finish research and product by 31 January 2027
 
-Proposed by the main planner and the co-planner (GPT-6.2 Astra high with SciSpace) on 28 November 2026. It awaits owner approval. The owner will not follow the project into 2027, so nothing in this plan requires the owner's account, machine or labour after 31 January 2027.
+Proposed by the main planner and the co-planner (GPT-6.2 Astra high with SciSpace) on 28 November 2026. **The owner approved it on 28 November 2026**: Apache-2.0 for the whole repository, a public web app, and a different GPU type if no L4 is available by 10 Dec (see the decision register). The owner will not follow the project into 2027, so nothing in this plan requires the owner's account, machine or labour after 31 January 2027.
 
 ## Goal
 
