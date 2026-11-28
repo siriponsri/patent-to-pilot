@@ -1,6 +1,12 @@
 # OSF registration update sheet (update 4, Track A prediction freeze)
 
-**AUDITED: NO**. Claude audits this sheet before the owner files the update.
+**AUDITED: YES** (main planner, 28 Nov 2026). Checks:
+- The manifest LF SHA-256 recomputes to 8a78b318…c38d, and the manifest is present in tagged commit 6712f32c.
+- The ten file digests and the archive digest match the TRACKA-FREEZE receipt.
+- The target field exists in the registration (response key 72-61, "Secondary measures of forecasting performance").
+- The Qwen2.5-7B revision matches SCORELLM.
+- The repository is public, so the manifest link resolves.
+- One transparency sentence was added: C9-GRPO abstained on all rows.
 
 ## Rules for the agent
 
@@ -42,7 +48,7 @@ Append this block at the end of the existing field.
 >
 > L1 uses the active-moiety identity, cutoff and horizon. L1e adds dated evidence. Both use Qwen2.5-7B-Instruct revision a09a35458c702b33eeacc393d103063234e8bc28 with the registered fp16 greedy decoder, batches of eight, up to 160 new tokens and independent 180-of-200 validity and full-roster gates. Malformed outputs are referrals ranked below valid probabilities.
 >
-> The C9-SFT and C9-GRPO pair uses Qwen2.5-1.5B-Instruct revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306 with the matched 651-row 24-month roster, shared prompt bytes, the frozen adapters and greedy decoding. Retain valid abstention probabilities. Malformed outputs use Brier probability 0.5 and rank below every valid probability. Report raw Brier and recall at the registered review capacity under the C9 specification.
+> The C9-SFT and C9-GRPO pair uses Qwen2.5-1.5B-Instruct revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306 with the matched 651-row 24-month roster, shared prompt bytes, the frozen adapters and greedy decoding. Retain valid abstention probabilities. Malformed outputs use Brier probability 0.5 and rank below every valid probability. Report raw Brier and recall at the registered review capacity under the C9 specification. At the freeze, C9-GRPO returned the valid abstention action on all 651 rows, and C9-SFT on none.
 >
 > External-reference metrics at maturity for B1, M1, M3, B3, P1 and P2 are ROC AUC on native scores, accuracy at the inclusive 0.5 threshold, Brier and horizon-restricted C-index at each horizon. ROC AUC gives half credit to ties and is undefined on a single-class roster. Accuracy and Brier use calibrated probabilities for B1, M1 and M3 and native survival probabilities for P1 and P2. B3 uses the binary expiry call and hard-rule Brier. Report prevalence, confusion counts and always-negative accuracy. The restricted C-index compares an observed event to strictly later times at the same cutoff, including administrative censoring. Tied native scores receive half credit. Report the comparable-pair denominator and NOT_ESTIMABLE if there are no pairs. Published values are external references for their own endpoints, cohorts and validation designs.
 >
