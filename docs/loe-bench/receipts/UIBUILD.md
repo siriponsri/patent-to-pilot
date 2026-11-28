@@ -8,7 +8,7 @@
 |---|---|---|
 | Web app | [`product/demo/`](../../../product/demo/README.md) | Built on real development data (32 dossiers, 6 queues), checked in headless Chromium at 1440, 1366, 1280, 1100 and 1024 px |
 | Landing page | [`product/site/`](../../../product/site/README.md) | Built, Thai and English |
-| Desktop app | [`product/desktop/`](../../../product/desktop/README.md) | Built. NSIS installer 1,930,817 bytes, outside Git |
+| Desktop app | [`product/desktop/`](../../../product/desktop/README.md) | Built. NSIS installer 1,930,722 bytes, outside Git |
 | Screenshots | [`product/screenshots/`](../../../product/screenshots/) | 9 images, each opened and inspected |
 | PRD1 exports | `product/demo/dossiers/` | Re-rendered after the data change (`py -3.12 -m product.mwd.render --pdf`: 64 HTML and 64 PDF). Their visual design is still PRD1's. |
 
@@ -46,7 +46,7 @@ No customers, prices, deployments or comparative product claims appear anywhere.
 - **Interface language.** Headings, navigation, labels, table headers, buttons and status column names are English. Statements, checklist items, notes, outcome text and status-tag text follow the content language, and `<html lang>` follows it. English UI regions carry `lang="en"`.
 - **Logo refined for F2.** Navy square with a 10/96 radius, a white page with a folded corner, a navy trend line and a light-blue launch-window band. The teal accent and circle are gone. The refined file is `product/demo/assets/logo.svg` and `product/site/assets/logo.svg`. `docs/assets/logo.svg` is unchanged.
 - **Tabs at narrow widths.** All seven tabs stay on one row from 1024 to 1440 px. The side columns and tab padding step down at 1399 and 1319 px. Between 1024 and 1279 px the Sources panel stacks below the dossier.
-- **Stats row.** The detector flagged the bordered stats box inside the dossier panel as a card inside a card. It now uses a 2 px navy top rule and a 1 px bottom rule.
+- **Stats row and outcome block.** The detector flagged the bordered stats box and the bordered Outcome block inside the dossier panel as cards inside a card. Both now use a 2 px navy top rule and a 1 px bottom rule.
 - **Superseded screenshots removed.** The seven PRD2C screenshots of the rejected UI were deleted from `product/demo/screenshots/`. The PRD2C receipt still describes them as history.
 
 ## Toolchain and licences
@@ -70,11 +70,11 @@ No Visual Studio, administrator rights, paid service or GPU were used. The machi
 |---|---|
 | Command | `npx tauri build` in `product/desktop`, PATH prefixed with `%USERPROFILE%\.cargo\bin` and the WinLibs `mingw64\bin` |
 | Installer | `C:/Users/User/Desktop/myProject/_private_artifacts/mwd-desktop/Market Window Dossier_0.1.0_x64-setup.exe` (copied from `src-tauri/target/release/bundle/nsis/`) |
-| Size | 1,930,817 bytes (1.84 MiB) |
-| SHA-256 | `db6914371b948aff1962082167fff2107554c9997480d00728f1eeb112f8408a` |
-| Program | `market-window-dossier.exe`, SHA-256 `a2f95ae837e45b50a4b309b6178c58075f4968e436cdfabf048df4aff38eb8a1` |
+| Size | 1,930,722 bytes (1.84 MiB) |
+| SHA-256 | `06e44808097498e060b50060f3473ad3a8ab1d304baad7730137bee380693d43` |
+| Program | `market-window-dossier.exe`, SHA-256 `35e0f2e44329e80dd8501bd37946f7f47a830905bffc80aae30b5cba1c6e0e75` |
 | Settings | Window title "Market Window Dossier", 1440 × 900 default, minimum 1280 × 800, NSIS per-user install, WebView2 download bootstrapper, CSP limited to bundled files and inline fonts |
-| Build times | First build 7 min 33 s (warm-up, older frontend). Final rebuild 1 min 27 s. All four builds exited 0. |
+| Build times | First build 7 min 33 s (warm-up, older frontend). Final rebuild 1 min 20 s. All five builds exited 0. |
 | Linker warning | `ld.exe: .rsrc merge failure: multiple non-default manifests`. The GNU linker kept one of the two manifests (MinGW default and Tauri's). The program still starts, shows its icon and title, and renders. |
 | Run check | The built program was started directly from `target/release` (the installer itself was not run, to leave this computer's Start menu unchanged). It opened a native window titled "Market Window Dossier", loaded the bundled data without network access, rendered both fonts under the CSP and was closed after the screenshot. |
 | Minimum size | Configured in `tauri.conf.json`. A programmatic `MoveWindow` to 900 × 600 went through, because that call bypasses the minimum tracking size. A drag resize was not tested. |
@@ -88,7 +88,7 @@ No Visual Studio, administrator rights, paid service or GPU were used. The machi
 | `python product/demo/bundle.py` | 38 files bundled, `data.bundle.js` 2,602,392 bytes, SHA-256 8de2dec64ed2f8ef4231de5a4ffacb8f4e3d61a7b11768128b552e7425432df7; `data/index.json` 6d422a11550991bad31741f8f5c9442d6eac6ee24235c20bba3cdb7971c3dd51 |
 | `py -3.12 -m pytest product/mwd/tests -q` | First run after the merge: 1 failure, because `mwd.dossier.v1` allows only the owners FTO evaluator, R&D and BD, while EVP uses Patent reviewer, Thai patent reviewer and Thai regulatory reviewer. After the owner mapping below and a rebuild: 8 passed |
 | Impeccable detector, static scan of all six changed UI files | First run: 1 contrast and 9 cramped-padding warnings on the landing page. Fixed the tag padding, gave the navy bars an explicit background and set an explicit hero inset. The last static finding, "hero children flush", comes from the unresolved `max()` inset. The rendered scan below does not report it. |
-| Impeccable detector, rendered at 1440×900 (landing TH and EN, app decision with outcome, FTO hand-off, Thailand and ASEAN EN, Dossiers, Sources, Settings) and 1280×800 | First run: Thai stragglers, card in card and line length 98 characters. After `text-wrap: pretty`, the stats-row change and shorter measures, the final scans returned no findings. |
+| Impeccable detector, rendered | Scans called through `impeccable.cmd` passed the URL to `cmd.exe`, which cut it at the first `&` (and ran `view` as a command). Those first scans therefore covered only each page's default state: the landing page in Thai and English, and the app's default dossier. They found Thai stragglers, a card in a card (stats row) and a 98-character line on the landing page, all fixed. The rescans used the `sh` launcher with the full URL. They then found the Outcome block nested as a card and an 88-character lead in the Sources view, both fixed. Final rescan of ten states with no findings: 1440×900 Moxifloxacin with outcome (EN), Solifenacin with outcome (TH), Sources view, Dossiers view, Settings view, Bimatoprost Thailand and ASEAN (EN) and Patents (TH), the no-dossier state; 1280×800 FTO hand-off; 1024×768 References. |
 | axe-core 4.14.1, WCAG 2.0/2.1/2.2 A and AA tags, 11 page states | One serious finding on the first run: `label-content-name-mismatch` on 538 queue buttons, whose `aria-label` omitted the visible "No dossier" text. The fix drops `aria-label`, uses the visible name, and adds screen-reader-only rank, M3 and queue status. Final: 0 violations on every state. Incomplete items are colour-contrast cases axe could not compute (text over the select arrow image and highlighted rows) and the hidden Outcome header. |
 | Contrast computed from the tokens (WCAG 2 formula) | Ink on page 14.2:1, muted on white 6.0:1, muted on page 5.5:1, muted on selected row 5.2:1, link on white 6.7:1, link on selected row 5.8:1, amber on amber-bg 5.4:1, green on green-bg 5.7:1, red on red-bg 5.7:1, bar text on navy 10.5:1, on navy-2 8.8:1. All text pairs pass AA. |
 | Keyboard and state, Playwright | Arrow keys in the queue, Alt+Down, Alt+6, arrow keys between tabs, checklist tick saved across reload, TH→EN switch updates `<html lang>`, Show outcome sets `aria-pressed`, horizon change, Dossiers filter and open. No page errors. |
