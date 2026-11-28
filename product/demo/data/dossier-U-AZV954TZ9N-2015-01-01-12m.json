@@ -1,0 +1,2022 @@
+{
+  "schema_version": "mwd.dossier.v1",
+  "molecule": {
+    "key": "U:AZV954TZ9N",
+    "display_name": "Gadolinium cation (3+)",
+    "dosage_forms": [
+      "INJECTABLE;INJECTION",
+      "INJECTABLE;INTRAVENOUS",
+      "SOLUTION;INTRAVENOUS"
+    ]
+  },
+  "as_of": "2015-01-01",
+  "jurisdiction": "US",
+  "forecast": {
+    "horizon_months": 12,
+    "m3_p_entry": 0.0790005596417038,
+    "b1_p_entry": 0.017578399662494727,
+    "m3_rank": 53,
+    "queue_size": 109,
+    "in_queue": true,
+    "status": "DEVELOPMENT_ONLY"
+  },
+  "outcome_reveal": {
+    "first_final_anda_date": null,
+    "window_end": "2016-01-01",
+    "source_ids": []
+  },
+  "sections": [
+    {
+      "id": "decision",
+      "title_th": "สรุปสำหรับฝ่ายพัฒนาธุรกิจและวิจัย",
+      "title_en": "BD and R&D decision"
+    },
+    {
+      "id": "market",
+      "title_th": "ช่วงเวลาของตลาด",
+      "title_en": "Market window"
+    },
+    {
+      "id": "competition",
+      "title_th": "ภาพการแข่งขัน",
+      "title_en": "Competitive landscape"
+    },
+    {
+      "id": "patents",
+      "title_th": "สิทธิบัตรและสิทธิผูกขาด",
+      "title_en": "Patents and exclusivities"
+    },
+    {
+      "id": "thai_asean",
+      "title_th": "ประเทศไทยและอาเซียน",
+      "title_en": "Thailand and ASEAN"
+    },
+    {
+      "id": "handoff",
+      "title_th": "รายการตรวจสอบสำหรับผู้ประเมิน FTO",
+      "title_en": "FTO evaluator checklist"
+    },
+    {
+      "id": "references",
+      "title_th": "เอกสารอ้างอิงและข้อมูลสำหรับตรวจซ้ำ",
+      "title_en": "References and reproducibility"
+    }
+  ],
+  "claims": [
+    {
+      "id": "queue",
+      "section": "decision",
+      "text_th": "อยู่ในคิวตรวจทบทวน · ลำดับ 53 จาก 545 รายการ และรับตรวจได้ 109 รายการ ใช้ทบทวนข้อมูลก่อนตัดสินใจพัฒนา",
+      "text_en": "Rank 53 of 545, in the queue of 109 slots. Use the evidence to plan the next development review.",
+      "source_ids": [
+        "freeze-score"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    },
+    {
+      "id": "entry",
+      "section": "market",
+      "text_th": "โอกาสได้รับอนุมัติ ANDA ขั้นสุดท้ายครั้งแรกภายใน 12 เดือน M3 7.9% และเกณฑ์เทียบตามอายุยา B1 1.8% วันอนุมัติและวันเริ่มจำหน่ายเป็นคนละเหตุการณ์",
+      "text_en": "Estimated first final ANDA approval within 12 months: M3 7.9%; drug-age baseline B1 1.8%. Approval and marketing are separate events.",
+      "source_ids": [
+        "freeze-score"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    },
+    {
+      "id": "approved-applicants",
+      "section": "competition",
+      "text_th": "พบผู้ยื่น ANDA ที่ได้รับอนุมัติขั้นสุดท้ายก่อนหรือ ณ วันตัดข้อมูล 0 ราย ในกลุ่มตัวยาสำคัญที่เชื่อมโยงได้ จำนวนผู้ผลิตที่วางจำหน่ายยังไม่ทราบ",
+      "text_en": "Zero distinct final ANDA applicants in linked records through the cutoff, as required for eligibility. Marketed producer count is unknown.",
+      "source_ids": [
+        "anda-at-risk",
+        "freeze-score"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "price-scenario",
+      "section": "market",
+      "text_th": "สมมติฐานย้อนหลังจาก FDA ปี 2019 หากมีผู้ผลิตยาสามัญวางจำหน่าย 2, 3 หรือ 4 ราย ราคาเฉลี่ยผู้ผลิต (AMP) ของยาสามัญเท่ากับ 46.5%, 32.2% หรือ 21.2% ของ AMP ยาต้นแบบก่อนมียาสามัญตามลำดับ ยังไม่มีราคาอ้างอิงเพื่อคำนวณราคาของยานี้",
+      "text_en": "Retrospective scenario from the FDA's 2019 study. With 2, 3 or 4 marketed generic producers, assume generic average manufacturer price (AMP) of 46.5%, 32.2% or 21.2% of the pre-entry brand AMP, respectively. The implied price is unknown without a documented brand AMP.",
+      "source_ids": [
+        "fda-amp-2019"
+      ],
+      "state": "known",
+      "kind": "assumption",
+      "time_basis": "retrospective_scenario"
+    },
+    {
+      "id": "demand",
+      "section": "market",
+      "text_th": "ข้อมูล Medicaid ย้อนหลัง ไตรมาส 2 ปี 2014 · จำนวนใบสั่งยาในชุดรหัสบรรจุภัณฑ์ที่เชื่อมโยงได้และข้อมูลครบ GADOXETATE DISODIUM 53 ตัวเลขนี้ครอบคลุมเฉพาะชุดที่เชื่อมโยงได้",
+      "text_en": "Retrospective, vintage-uncontrolled Medicaid 2014 Q2 prescription claims in complete linked-package subsets: GADOXETATE DISODIUM 53. National market demand remains unknown.",
+      "source_ids": [
+        "sdud",
+        "sdud-ndc"
+      ],
+      "state": "known",
+      "kind": "observed",
+      "time_basis": "retrospective_demand"
+    },
+    {
+      "id": "challenge-unknown",
+      "section": "patents",
+      "text_th": "ยังไม่มีหลักฐานการท้าทายที่เข้าเกณฑ์ในชุดที่ตรวจ",
+      "text_en": "Challenge status is unknown within the searched evidence.",
+      "source_ids": [
+        "challenge-scope",
+        "anda-at-risk"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "forms",
+      "section": "competition",
+      "text_th": "รูปแบบยาและวิธีให้ยาที่เชื่อมโยงได้ในฉบับ 2014-09-10: INJECTABLE;INJECTION, INJECTABLE;INTRAVENOUS, SOLUTION;INTRAVENOUS",
+      "text_en": "Linked dosage forms and routes in the 2014-09-10 edition: INJECTABLE;INJECTION, INJECTABLE;INTRAVENOUS, SOLUTION;INTRAVENOUS.",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-1",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020975 / 001 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020975 / 001 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-1"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-2",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020937 / 001 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020937 / 001 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-2"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-3",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020937 / 002 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020937 / 002 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-3"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-4",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020937 / 003 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020937 / 003 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-4"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-5",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020937 / 004 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020937 / 004 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-5"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-6",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020976 / 002 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020976 / 002 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-6"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-7",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020976 / 003 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020976 / 003 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-7"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-8",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020976 / 004 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020976 / 004 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-8"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-9",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 020976 / 001 เป็น 1999-12-08",
+      "text_en": "Orange Book lists approval of NDA 020976 / 001 on 1999-12-08.",
+      "source_ids": [
+        "ob-approval-9"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-10",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021357 / 001 เป็น 2004-11-23",
+      "text_en": "Orange Book lists approval of NDA 021357 / 001 on 2004-11-23.",
+      "source_ids": [
+        "ob-approval-10"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-11",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021357 / 002 เป็น 2004-11-23",
+      "text_en": "Orange Book lists approval of NDA 021357 / 002 on 2004-11-23.",
+      "source_ids": [
+        "ob-approval-11"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-12",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021357 / 003 เป็น 2004-11-23",
+      "text_en": "Orange Book lists approval of NDA 021357 / 003 on 2004-11-23.",
+      "source_ids": [
+        "ob-approval-12"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-13",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021357 / 004 เป็น 2004-11-23",
+      "text_en": "Orange Book lists approval of NDA 021357 / 004 on 2004-11-23.",
+      "source_ids": [
+        "ob-approval-13"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-14",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021358 / 001 เป็น 2004-11-23",
+      "text_en": "Orange Book lists approval of NDA 021358 / 001 on 2004-11-23.",
+      "source_ids": [
+        "ob-approval-14"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-15",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021358 / 002 เป็น 2004-11-23",
+      "text_en": "Orange Book lists approval of NDA 021358 / 002 on 2004-11-23.",
+      "source_ids": [
+        "ob-approval-15"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-16",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021711 / 001 เป็น 2008-12-22",
+      "text_en": "Orange Book lists approval of NDA 021711 / 001 on 2008-12-22.",
+      "source_ids": [
+        "ob-approval-16"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-17",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021711 / 002 เป็น 2008-12-22",
+      "text_en": "Orange Book lists approval of NDA 021711 / 002 on 2008-12-22.",
+      "source_ids": [
+        "ob-approval-17"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-18",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 204781 / 002 เป็น 2013-03-20",
+      "text_en": "Orange Book lists approval of NDA 204781 / 002 on 2013-03-20.",
+      "source_ids": [
+        "ob-approval-18"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-19",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 204781 / 003 เป็น 2013-03-20",
+      "text_en": "Orange Book lists approval of NDA 204781 / 003 on 2013-03-20.",
+      "source_ids": [
+        "ob-approval-19"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-20",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 204781 / 004 เป็น 2013-03-20",
+      "text_en": "Orange Book lists approval of NDA 204781 / 004 on 2013-03-20.",
+      "source_ids": [
+        "ob-approval-20"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-21",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 204781 / 001 เป็น 2013-03-20",
+      "text_en": "Orange Book lists approval of NDA 204781 / 001 on 2013-03-20.",
+      "source_ids": [
+        "ob-approval-21"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-22",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 022090 / 001 เป็น 2008-07-03",
+      "text_en": "Orange Book lists approval of NDA 022090 / 001 on 2008-07-03.",
+      "source_ids": [
+        "ob-approval-22"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-23",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 022090 / 002 เป็น 2013-02-04",
+      "text_en": "Orange Book lists approval of NDA 022090 / 002 on 2013-02-04.",
+      "source_ids": [
+        "ob-approval-23"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-24",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 201277 / 006 เป็น 2013-12-18",
+      "text_en": "Orange Book lists approval of NDA 201277 / 006 on 2013-12-18.",
+      "source_ids": [
+        "ob-approval-24"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-25",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 201277 / 001 เป็น 2011-03-14",
+      "text_en": "Orange Book lists approval of NDA 201277 / 001 on 2011-03-14.",
+      "source_ids": [
+        "ob-approval-25"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-26",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 201277 / 002 เป็น 2011-03-14",
+      "text_en": "Orange Book lists approval of NDA 201277 / 002 on 2011-03-14.",
+      "source_ids": [
+        "ob-approval-26"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-27",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 201277 / 003 เป็น 2011-03-14",
+      "text_en": "Orange Book lists approval of NDA 201277 / 003 on 2011-03-14.",
+      "source_ids": [
+        "ob-approval-27"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-28",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 201277 / 004 เป็น 2011-03-14",
+      "text_en": "Orange Book lists approval of NDA 201277 / 004 on 2011-03-14.",
+      "source_ids": [
+        "ob-approval-28"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-29",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 201277 / 005 เป็น 2011-03-14",
+      "text_en": "Orange Book lists approval of NDA 201277 / 005 on 2011-03-14.",
+      "source_ids": [
+        "ob-approval-29"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-1",
+      "section": "patents",
+      "text_th": "US 7060250, NDA 021711 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2015-05-26",
+      "text_en": "US 7060250, NDA 021711 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2015-05-26.",
+      "source_ids": [
+        "patent-1"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-2",
+      "section": "patents",
+      "text_th": "US 7060250, NDA 021711 / 002 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2015-05-26",
+      "text_en": "US 7060250, NDA 021711 / 002 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2015-05-26.",
+      "source_ids": [
+        "patent-2"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-3",
+      "section": "patents",
+      "text_th": "US 8017105, NDA 021711 / 001 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2015-05-26",
+      "text_en": "US 8017105, NDA 021711 / 001 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2015-05-26.",
+      "source_ids": [
+        "patent-3"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-4",
+      "section": "patents",
+      "text_th": "US 8017105, NDA 021711 / 002 · DS=1, DP=0, use=∅, delist=0 · วันหมดอายุที่ระบุ 2015-05-26",
+      "text_en": "US 8017105, NDA 021711 / 002 · DS=1, DP=0, use=∅, delist=0 · listed expiry 2015-05-26.",
+      "source_ids": [
+        "patent-4"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-5",
+      "section": "patents",
+      "text_th": "US 5798092, NDA 022090 / 001 · DS=1, DP=1, use=∅, delist=0 · วันหมดอายุที่ระบุ 2015-08-25",
+      "text_en": "US 5798092, NDA 022090 / 001 · DS=1, DP=1, use=∅, delist=0 · listed expiry 2015-08-25.",
+      "source_ids": [
+        "patent-5"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-6",
+      "section": "patents",
+      "text_th": "US 5980864, NDA 201277 / 001 · DS=1, DP=1, use=U-1119, delist=0 · วันหมดอายุที่ระบุ 2016-11-09",
+      "text_en": "US 5980864, NDA 201277 / 001 · DS=1, DP=1, use=U-1119, delist=0 · listed expiry 2016-11-09.",
+      "source_ids": [
+        "patent-6"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-7",
+      "section": "patents",
+      "text_th": "US 5980864, NDA 201277 / 002 · DS=1, DP=1, use=U-1119, delist=0 · วันหมดอายุที่ระบุ 2016-11-09",
+      "text_en": "US 5980864, NDA 201277 / 002 · DS=1, DP=1, use=U-1119, delist=0 · listed expiry 2016-11-09.",
+      "source_ids": [
+        "patent-7"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-8",
+      "section": "patents",
+      "text_th": "US 5980864, NDA 201277 / 003 · DS=1, DP=1, use=U-1119, delist=0 · วันหมดอายุที่ระบุ 2016-11-09",
+      "text_en": "US 5980864, NDA 201277 / 003 · DS=1, DP=1, use=U-1119, delist=0 · listed expiry 2016-11-09.",
+      "source_ids": [
+        "patent-8"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-9",
+      "section": "patents",
+      "text_th": "US 5980864, NDA 201277 / 004 · DS=1, DP=1, use=U-1119, delist=0 · วันหมดอายุที่ระบุ 2016-11-09",
+      "text_en": "US 5980864, NDA 201277 / 004 · DS=1, DP=1, use=U-1119, delist=0 · listed expiry 2016-11-09.",
+      "source_ids": [
+        "patent-9"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-10",
+      "section": "patents",
+      "text_th": "US 5980864, NDA 201277 / 005 · DS=1, DP=1, use=U-1119, delist=0 · วันหมดอายุที่ระบุ 2016-11-09",
+      "text_en": "US 5980864, NDA 201277 / 005 · DS=1, DP=1, use=U-1119, delist=0 · listed expiry 2016-11-09.",
+      "source_ids": [
+        "patent-10"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-11",
+      "section": "patents",
+      "text_th": "US 6676929, NDA 021711 / 001 · DS=0, DP=1, use=∅, delist=0 · วันหมดอายุที่ระบุ 2020-05-04",
+      "text_en": "US 6676929, NDA 021711 / 001 · DS=0, DP=1, use=∅, delist=0 · listed expiry 2020-05-04.",
+      "source_ids": [
+        "patent-11"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-12",
+      "section": "patents",
+      "text_th": "US 6676929, NDA 021711 / 002 · DS=0, DP=1, use=∅, delist=0 · วันหมดอายุที่ระบุ 2020-05-04",
+      "text_en": "US 6676929, NDA 021711 / 002 · DS=0, DP=1, use=∅, delist=0 · listed expiry 2020-05-04.",
+      "source_ids": [
+        "patent-12"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-13",
+      "section": "patents",
+      "text_th": "US 7011815, NDA 021711 / 001 · DS=0, DP=0, use=U-1112, delist=0 · วันหมดอายุที่ระบุ 2015-02-01",
+      "text_en": "US 7011815, NDA 021711 / 001 · DS=0, DP=0, use=U-1112, delist=0 · listed expiry 2015-02-01.",
+      "source_ids": [
+        "patent-13"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-14",
+      "section": "patents",
+      "text_th": "US 7011815, NDA 021711 / 002 · DS=0, DP=0, use=U-1112, delist=0 · วันหมดอายุที่ระบุ 2015-02-01",
+      "text_en": "US 7011815, NDA 021711 / 002 · DS=0, DP=0, use=U-1112, delist=0 · listed expiry 2015-02-01.",
+      "source_ids": [
+        "patent-14"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-15",
+      "section": "patents",
+      "text_th": "US 8394356, NDA 021711 / 001 · DS=0, DP=0, use=U-1112, delist=0 · วันหมดอายุที่ระบุ 2015-02-01",
+      "text_en": "US 8394356, NDA 021711 / 001 · DS=0, DP=0, use=U-1112, delist=0 · listed expiry 2015-02-01.",
+      "source_ids": [
+        "patent-15"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-16",
+      "section": "patents",
+      "text_th": "US 8394356, NDA 021711 / 002 · DS=0, DP=0, use=U-1112, delist=0 · วันหมดอายุที่ระบุ 2015-02-01",
+      "text_en": "US 8394356, NDA 021711 / 002 · DS=0, DP=0, use=U-1112, delist=0 · listed expiry 2015-02-01.",
+      "source_ids": [
+        "patent-16"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-17",
+      "section": "patents",
+      "text_th": "US 7229606, NDA 021711 / 001 · DS=0, DP=0, use=U-1112, delist=0 · วันหมดอายุที่ระบุ 2015-05-26",
+      "text_en": "US 7229606, NDA 021711 / 001 · DS=0, DP=0, use=U-1112, delist=0 · listed expiry 2015-05-26.",
+      "source_ids": [
+        "patent-17"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-18",
+      "section": "patents",
+      "text_th": "US 7229606, NDA 021711 / 002 · DS=0, DP=0, use=U-1112, delist=0 · วันหมดอายุที่ระบุ 2015-05-26",
+      "text_en": "US 7229606, NDA 021711 / 002 · DS=0, DP=0, use=U-1112, delist=0 · listed expiry 2015-05-26.",
+      "source_ids": [
+        "patent-18"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-19",
+      "section": "patents",
+      "text_th": "US 6039931, NDA 022090 / 001 · DS=0, DP=0, use=U-1239, delist=0 · วันหมดอายุที่ระบุ 2021-11-13",
+      "text_en": "US 6039931, NDA 022090 / 001 · DS=0, DP=0, use=U-1239, delist=0 · listed expiry 2021-11-13.",
+      "source_ids": [
+        "patent-19"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-1",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-654, NDA 021357 / 001 · วันสิ้นสุดที่ระบุ 2015-07-06",
+      "text_en": "Exclusivity I-654, NDA 021357 / 001 · listed end 2015-07-06.",
+      "source_ids": [
+        "exclusivity-1"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-2",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-654, NDA 021357 / 002 · วันสิ้นสุดที่ระบุ 2015-07-06",
+      "text_en": "Exclusivity I-654, NDA 021357 / 002 · listed end 2015-07-06.",
+      "source_ids": [
+        "exclusivity-2"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-3",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-654, NDA 021357 / 003 · วันสิ้นสุดที่ระบุ 2015-07-06",
+      "text_en": "Exclusivity I-654, NDA 021357 / 003 · listed end 2015-07-06.",
+      "source_ids": [
+        "exclusivity-3"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-4",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-654, NDA 021357 / 004 · วันสิ้นสุดที่ระบุ 2015-07-06",
+      "text_en": "Exclusivity I-654, NDA 021357 / 004 · listed end 2015-07-06.",
+      "source_ids": [
+        "exclusivity-4"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-5",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-654, NDA 021358 / 001 · วันสิ้นสุดที่ระบุ 2015-07-06",
+      "text_en": "Exclusivity I-654, NDA 021358 / 001 · listed end 2015-07-06.",
+      "source_ids": [
+        "exclusivity-5"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-6",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-654, NDA 021358 / 002 · วันสิ้นสุดที่ระบุ 2015-07-06",
+      "text_en": "Exclusivity I-654, NDA 021358 / 002 · listed end 2015-07-06.",
+      "source_ids": [
+        "exclusivity-6"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-7",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 021711 / 001 · วันสิ้นสุดที่ระบุ 2013-12-22",
+      "text_en": "Exclusivity NCE, NDA 021711 / 001 · listed end 2013-12-22.",
+      "source_ids": [
+        "exclusivity-7"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-8",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 021711 / 002 · วันสิ้นสุดที่ระบุ 2013-12-22",
+      "text_en": "Exclusivity NCE, NDA 021711 / 002 · listed end 2013-12-22.",
+      "source_ids": [
+        "exclusivity-8"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-9",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 022090 / 001 · วันสิ้นสุดที่ระบุ 2013-07-03",
+      "text_en": "Exclusivity NCE, NDA 022090 / 001 · listed end 2013-07-03.",
+      "source_ids": [
+        "exclusivity-9"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-10",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 022090 / 002 · วันสิ้นสุดที่ระบุ 2013-07-03",
+      "text_en": "Exclusivity NCE, NDA 022090 / 002 · listed end 2013-07-03.",
+      "source_ids": [
+        "exclusivity-10"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-11",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 201277 / 001 · วันสิ้นสุดที่ระบุ 2016-03-14",
+      "text_en": "Exclusivity NCE, NDA 201277 / 001 · listed end 2016-03-14.",
+      "source_ids": [
+        "exclusivity-11"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-12",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-688, NDA 201277 / 001 · วันสิ้นสุดที่ระบุ 2017-06-11",
+      "text_en": "Exclusivity I-688, NDA 201277 / 001 · listed end 2017-06-11.",
+      "source_ids": [
+        "exclusivity-12"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-13",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 201277 / 002 · วันสิ้นสุดที่ระบุ 2016-03-14",
+      "text_en": "Exclusivity NCE, NDA 201277 / 002 · listed end 2016-03-14.",
+      "source_ids": [
+        "exclusivity-13"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-14",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-688, NDA 201277 / 002 · วันสิ้นสุดที่ระบุ 2017-06-11",
+      "text_en": "Exclusivity I-688, NDA 201277 / 002 · listed end 2017-06-11.",
+      "source_ids": [
+        "exclusivity-14"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-15",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 201277 / 003 · วันสิ้นสุดที่ระบุ 2016-03-14",
+      "text_en": "Exclusivity NCE, NDA 201277 / 003 · listed end 2016-03-14.",
+      "source_ids": [
+        "exclusivity-15"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-16",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-688, NDA 201277 / 003 · วันสิ้นสุดที่ระบุ 2017-06-11",
+      "text_en": "Exclusivity I-688, NDA 201277 / 003 · listed end 2017-06-11.",
+      "source_ids": [
+        "exclusivity-16"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-17",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 201277 / 004 · วันสิ้นสุดที่ระบุ 2016-03-14",
+      "text_en": "Exclusivity NCE, NDA 201277 / 004 · listed end 2016-03-14.",
+      "source_ids": [
+        "exclusivity-17"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-18",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-688, NDA 201277 / 004 · วันสิ้นสุดที่ระบุ 2017-06-11",
+      "text_en": "Exclusivity I-688, NDA 201277 / 004 · listed end 2017-06-11.",
+      "source_ids": [
+        "exclusivity-18"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-19",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 201277 / 005 · วันสิ้นสุดที่ระบุ 2016-03-14",
+      "text_en": "Exclusivity NCE, NDA 201277 / 005 · listed end 2016-03-14.",
+      "source_ids": [
+        "exclusivity-19"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-20",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-688, NDA 201277 / 005 · วันสิ้นสุดที่ระบุ 2017-06-11",
+      "text_en": "Exclusivity I-688, NDA 201277 / 005 · listed end 2017-06-11.",
+      "source_ids": [
+        "exclusivity-20"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-21",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด I-688, NDA 201277 / 006 · วันสิ้นสุดที่ระบุ 2017-06-11",
+      "text_en": "Exclusivity I-688, NDA 201277 / 006 · listed end 2017-06-11.",
+      "source_ids": [
+        "exclusivity-21"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-22",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 201277 / 006 · วันสิ้นสุดที่ระบุ 2016-03-14",
+      "text_en": "Exclusivity NCE, NDA 201277 / 006 · listed end 2016-03-14.",
+      "source_ids": [
+        "exclusivity-22"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-23",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 204781 / 001 · วันสิ้นสุดที่ระบุ 2018-03-20",
+      "text_en": "Exclusivity NCE, NDA 204781 / 001 · listed end 2018-03-20.",
+      "source_ids": [
+        "exclusivity-23"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-24",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 204781 / 002 · วันสิ้นสุดที่ระบุ 2018-03-20",
+      "text_en": "Exclusivity NCE, NDA 204781 / 002 · listed end 2018-03-20.",
+      "source_ids": [
+        "exclusivity-24"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-25",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 204781 / 003 · วันสิ้นสุดที่ระบุ 2018-03-20",
+      "text_en": "Exclusivity NCE, NDA 204781 / 003 · listed end 2018-03-20.",
+      "source_ids": [
+        "exclusivity-25"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "exclusivity-26",
+      "section": "patents",
+      "text_th": "สิทธิผูกขาด NCE, NDA 204781 / 004 · วันสิ้นสุดที่ระบุ 2018-03-20",
+      "text_en": "Exclusivity NCE, NDA 204781 / 004 · listed end 2018-03-20.",
+      "source_ids": [
+        "exclusivity-26"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "thai-status",
+      "section": "thai_asean",
+      "text_th": "ยังไม่ทราบสถานะในไทย โปรดตรวจที่กรมทรัพย์สินทางปัญญา",
+      "text_en": "Thai status unknown: verify at DIP.",
+      "source_ids": [
+        "dip-lookup"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "fto-scope",
+      "section": "handoff",
+      "text_th": "ใช้ประกอบการตัดสินใจ ยังไม่มีข้อสรุป FTO หรือความเห็นทางกฎหมาย",
+      "text_en": "Decision support. FTO remains undetermined and requires a qualified legal opinion.",
+      "source_ids": [
+        "ob-edition",
+        "dip-lookup"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "reproduce",
+      "section": "references",
+      "text_th": "คะแนนและลำดับใช้ไฟล์ development ที่ตรึงไว้ หากคะแนน M3 เท่ากัน ให้เรียงตามรหัสตัวยา",
+      "text_en": "Reproduce the ranking from frozen development scores, breaking M3 ties by ascending key.",
+      "source_ids": [
+        "freeze-score"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    }
+  ],
+  "sources": [
+    {
+      "id": "freeze-score",
+      "issuer": "LOE-Bench",
+      "title": "Frozen native development scores",
+      "version": "f683017c4fb73aadd91bb97f3381f5dd9308c9ca",
+      "public_date": null,
+      "locator": "FREEZE_dev_scores_12m.json $.rows[cutoff=2015-01-01, key=U:AZV954TZ9N].{M3,B1}",
+      "url": "https://github.com/siriponsri/patent-to-pilot/blob/7f3593b8/loe-bench/data/FREEZE_DEV_SCORES_MANIFEST.json",
+      "sha256": "e9f7d9af0033207488adf1bb582e24a12982d5d72039ce8c8c611b1792227db7",
+      "retrieved": null
+    },
+    {
+      "id": "anda-at-risk",
+      "issuer": "U.S. FDA",
+      "title": "Drugs@FDA original final ANDA approvals",
+      "version": "2026-11-27T10:23:14.478072+00:00",
+      "public_date": null,
+      "locator": "df_anda.jsonl, exact development active-moiety U:AZV954TZ9N; ORIG/AP through 2015-01-01",
+      "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files",
+      "sha256": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "retrieved": "2026-11-27T10:23:14.478072+00:00"
+    },
+    {
+      "id": "fda-amp-2019",
+      "issuer": "U.S. FDA",
+      "title": "Generic Competition and Drug Prices",
+      "version": "December 2019 (month precision)",
+      "public_date": "2019-12-31",
+      "locator": "PDF p. 9, median AMP ratio, producer counts 2–4",
+      "url": "https://www.fda.gov/media/133509/download#page=9",
+      "sha256": "5b748fa2eb20a4af86d1c28705add5e99a9351f58dbfaf6833736871c6610a4b",
+      "retrieved": null
+    },
+    {
+      "id": "sdud",
+      "issuer": "U.S. CMS",
+      "title": "State Drug Utilization Data 2014",
+      "version": "Thu, 02 Apr 2026 16:34:49 GMT",
+      "public_date": "2026-04-03",
+      "locator": "Year=2014; Quarter=2; State=XX; FFSU and MCOU; linked ingredient(s): GADOBENATE DIMEGLUMINE, GADOBUTROL, GADOLINIUM OXIDE, GADOTERATE MEGLUMINE, GADOXETATE DISODIUM",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2014.csv",
+      "sha256": "32c435fbc1eced4d2e79e5939f270e6b9291dde13a8c842cce6f1e48681d25e5",
+      "retrieved": "2026-11-28T01:54:28.848809+00:00"
+    },
+    {
+      "id": "sdud-ndc",
+      "issuer": "U.S. FDA",
+      "title": "National Drug Code directory",
+      "version": "2026-11-27",
+      "public_date": "2026-11-27",
+      "locator": "$.results[*].{active_ingredients,packaging,marketing_start_date}",
+      "url": "https://download.open.fda.gov/drug/ndc/drug-ndc-0001-of-0001.json.zip",
+      "sha256": "6045f9c3b1b74c0a7aa32e45caa5a33a0a75b8554feac64aa774fb3eaca85497",
+      "retrieved": "2026-11-28T01:46:13.5719762Z"
+    },
+    {
+      "id": "challenge-scope",
+      "issuer": "LOE-Bench",
+      "title": "Development challenge search scope",
+      "version": "E7/E7b development",
+      "public_date": null,
+      "locator": "E7b receipt, admission rules and limitations",
+      "url": "https://github.com/siriponsri/patent-to-pilot/blob/7f3593b8/docs/loe-bench/receipts/E7b.md",
+      "sha256": null,
+      "retrieved": null
+    },
+    {
+      "id": "ob-edition",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9786, products data row 9787, products data row 9788, products data row 9789, products data row 9790, products data row 9791, products data row 9792, products data row 9793, products data row 9794, products data row 11596, products data row 11597, products data row 11598, products data row 11599, products data row 11600, products data row 11601, products data row 13375, products data row 13376, products data row 13395, products data row 13396, products data row 13397, products data row 13398, products data row 13399, products data row 13400, products data row 13404, products data row 13405, products data row 13406, products data row 13407, products data row 13408, products data row 13409",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-1",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9786",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-2",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9787",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-3",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9788",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-4",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9789",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-5",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9790",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-6",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9791",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-7",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9792",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-8",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9793",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-9",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 9794",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-10",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 11596",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-11",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 11597",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-12",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 11598",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-13",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 11599",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-14",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 11600",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-15",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 11601",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-16",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13375",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-17",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13376",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-18",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13395",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-19",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13396",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-20",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13397",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-21",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13398",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-22",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13399",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-23",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13400",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-24",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13404",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-25",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13405",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-26",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13406",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-27",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13407",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-28",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13408",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "ob-approval-29",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "products data row 13409",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-1",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5375",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-2",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5368",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-3",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5374",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-4",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5367",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-5",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 2707",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-6",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 7649",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-7",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 7648",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-8",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 7647",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-9",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 7646",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-10",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 7645",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-11",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5373",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-12",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5369",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-13",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5370",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-14",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5364",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-15",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5372",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-16",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5366",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-17",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5371",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-18",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 5365",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "patent-19",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "patent data row 2706",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-1",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 363",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-2",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 362",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-3",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 361",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-4",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 360",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-5",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 365",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-6",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 364",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-7",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 492",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-8",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 491",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-9",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 246",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-10",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 245",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-11",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 950",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-12",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 951",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-13",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 948",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-14",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 949",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-15",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 946",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-16",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 947",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-17",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 944",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-18",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 945",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-19",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 942",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-20",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 943",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-21",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 952",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-22",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 953",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-23",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 1284",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-24",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 1283",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-25",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 1282",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "exclusivity-26",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2014-09-10",
+      "public_date": "2014-09-15",
+      "locator": "exclusivity data row 1281",
+      "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "retrieved": "2026-11-27T10:24:54.755821Z"
+    },
+    {
+      "id": "dip-lookup",
+      "issuer": "Thailand Department of Intellectual Property",
+      "title": "Patent search portal",
+      "version": "Lookup route",
+      "public_date": null,
+      "locator": "Patent search form",
+      "url": "https://patentsearch.ipthailand.go.th",
+      "sha256": null,
+      "retrieved": null
+    }
+  ],
+  "checklist": [
+    {
+      "id": "review-spec",
+      "text_th": "ระบุรูปแบบยา ความแรง ข้อบ่งใช้ และวันเปิดตัวเป้าหมาย",
+      "text_en": "Specify dosage form, strength, indication and target launch date.",
+      "owner": "R&D",
+      "source_ids": [
+        "freeze-score"
+      ]
+    },
+    {
+      "id": "check-us-7060250",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 7060250 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 7060250 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-1",
+        "patent-2"
+      ]
+    },
+    {
+      "id": "check-us-8017105",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 8017105 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 8017105 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-3",
+        "patent-4"
+      ]
+    },
+    {
+      "id": "check-us-5798092",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 5798092 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 5798092 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-5"
+      ]
+    },
+    {
+      "id": "check-us-5980864",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 5980864 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 5980864 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-6",
+        "patent-7",
+        "patent-8",
+        "patent-9",
+        "patent-10"
+      ]
+    },
+    {
+      "id": "check-us-6676929",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 6676929 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 6676929 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-11",
+        "patent-12"
+      ]
+    },
+    {
+      "id": "check-us-7011815",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 7011815 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 7011815 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-13",
+        "patent-14"
+      ]
+    },
+    {
+      "id": "check-us-8394356",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 8394356 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 8394356 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-15",
+        "patent-16"
+      ]
+    },
+    {
+      "id": "check-us-7229606",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 7229606 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 7229606 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-17",
+        "patent-18"
+      ]
+    },
+    {
+      "id": "check-us-6039931",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 6039931 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 6039931 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-19"
+      ]
+    },
+    {
+      "id": "verify-national",
+      "text_th": "ตรวจตระกูลสิทธิบัตร ข้อถือสิทธิ และสถานะในแต่ละประเทศที่วางแผนจำหน่าย",
+      "text_en": "Verify patent family, claims and legal status in each intended jurisdiction.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-edition",
+        "dip-lookup"
+      ]
+    },
+    {
+      "id": "verify-price",
+      "text_th": "หา AMP ยาต้นแบบและตรวจผู้ผลิตที่ขายจริง รวมทั้งความต้องการ ณ วันเปิดตัว",
+      "text_en": "Document brand AMP, marketed producers and demand at the intended launch date.",
+      "owner": "BD",
+      "source_ids": [
+        "fda-amp-2019"
+      ]
+    }
+  ]
+}

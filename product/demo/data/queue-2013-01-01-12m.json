@@ -1,0 +1,4872 @@
+{
+  "schema_version": "mwd.queue.v1",
+  "as_of": "2013-01-01",
+  "horizon_months": 12,
+  "status": "DEVELOPMENT_ONLY",
+  "window_end": "2014-01-01",
+  "queue_size": 107,
+  "ranked_rows": [
+    {
+      "key": "U:941N5DUU5C",
+      "display_name": "SEVELAMER",
+      "m3_p": 0.16671094653666152,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 1,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:1XU104G55N",
+      "display_name": "COLESEVELAM",
+      "m3_p": 0.13202229950882652,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 2,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:K6106LV5Q8",
+      "display_name": "Oseltamivir acid",
+      "m3_p": 0.12534495328016168,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 3,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:D27V6190PM",
+      "display_name": "OLOPATADINE",
+      "m3_p": 0.12344541684667644,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 4,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:OCY3U280Y3",
+      "display_name": "ARGATROBAN ANHYDROUS",
+      "m3_p": 0.11628925314422743,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 5,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:NNU2O4609D",
+      "display_name": "ENTECAVIR ANHYDROUS",
+      "m3_p": 0.11610520396913301,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 6,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:AZV954TZ9N",
+      "display_name": "Gadolinium cation (3+)",
+      "m3_p": 0.11362607300342747,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 7,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:O3J8G9O825",
+      "display_name": "Ritonavir",
+      "m3_p": 0.11199959151814334,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 8,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:U188XYD42P",
+      "display_name": "MOXIFLOXACIN",
+      "m3_p": 0.11173302747464112,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 9,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:80M03YXJ7I",
+      "display_name": "Valsartan",
+      "m3_p": 0.10848722481302181,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 10,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:NA8320J834",
+      "display_name": "EPTIFIBATIDE",
+      "m3_p": 0.1075131694740395,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 11,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:8RWB05I6ON",
+      "display_name": "5'-DEOXY-5-FLUOROCYTIDINE",
+      "m3_p": 0.10556841787292126,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 12,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:J4T82NDH7E",
+      "display_name": "ERLOTINIB",
+      "m3_p": 0.10543999783655271,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 13,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:QXS94885MZ",
+      "display_name": "Bimatoprost",
+      "m3_p": 0.10135270954636733,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 14,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:55JG375S6M",
+      "display_name": "Pregabalin",
+      "m3_p": 0.09890716911295244,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 15,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:8W1IQP3U10",
+      "display_name": "OLMESARTAN",
+      "m3_p": 0.0978767034188752,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 16,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:030Y90569U",
+      "display_name": "Nebivolol",
+      "m3_p": 0.09715339632749122,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 17,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:U782C039QP",
+      "display_name": "GLATIRAMER",
+      "m3_p": 0.09593856304007391,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 18,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:V8G4MOF2V9",
+      "display_name": "Deferasirox",
+      "m3_p": 0.09556814175190328,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 19,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:BHV525JOBH",
+      "display_name": "DORIPENEM",
+      "m3_p": 0.09321823866488992,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 20,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:TN9BEX005G",
+      "display_name": "BIVALIRUDIN",
+      "m3_p": 0.09292445464539545,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 21,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:JE6H2O27P8",
+      "display_name": "EFAVIRENZ",
+      "m3_p": 0.09239866789655125,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 22,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:699121PHCA",
+      "display_name": "DOCETAXEL ANHYDROUS",
+      "m3_p": 0.09230804425356152,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 23,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:6TK1G07BHZ",
+      "display_name": "Posaconazole",
+      "m3_p": 0.09192977931091341,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 24,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:S8Q36MD2XX",
+      "display_name": "Candesartan",
+      "m3_p": 0.09119784479749732,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 25,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:82VFR53I78",
+      "display_name": "Aripiprazole",
+      "m3_p": 0.09042970705653536,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 26,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:9MG78X43ZT",
+      "display_name": "INDINAVIR ANHYDROUS",
+      "m3_p": 0.09032474893261958,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 27,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:U5SYW473RQ",
+      "display_name": "Telmisartan",
+      "m3_p": 0.09024038649626857,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 28,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:70HZ18PH24",
+      "display_name": "ZOLEDRONIC ACID ANHYDROUS",
+      "m3_p": 0.08865998451273445,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 29,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:YEH1EZ96K6",
+      "display_name": "Loteprednol Etabonate",
+      "m3_p": 0.08853461784587519,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 30,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:003N66TS6T",
+      "display_name": "RASAGILINE",
+      "m3_p": 0.08848680305959136,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 31,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:GGX234SI5H",
+      "display_name": "TIROFIBAN",
+      "m3_p": 0.08777340685653842,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 32,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:JCX84Q7J1L",
+      "display_name": "Celecoxib",
+      "m3_p": 0.08728984905948556,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 33,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:CIF6334OLY",
+      "display_name": "TOLCAPONE",
+      "m3_p": 0.08608252566702987,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 34,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:0QTW8Z7MCR",
+      "display_name": "ROFECOXIB",
+      "m3_p": 0.08558745032564609,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 35,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:9451Z89515",
+      "display_name": "BRINZOLAMIDE",
+      "m3_p": 0.08508030072869038,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 36,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:YO603Y8113",
+      "display_name": "Darunavir",
+      "m3_p": 0.08273748955534804,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 37,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:H82Q2D5WA7",
+      "display_name": "Frovatriptan",
+      "m3_p": 0.08086875784212036,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 38,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:ZZT404XD09",
+      "display_name": "TIPRANAVIR",
+      "m3_p": 0.07961148661210707,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 39,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:R4Z9X1N2ND",
+      "display_name": "DOFETILIDE",
+      "m3_p": 0.07960301682168368,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 40,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:4Z8R6ORS6L",
+      "display_name": "THALIDOMIDE",
+      "m3_p": 0.07955003676816957,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 41,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:5S0W860XNR",
+      "display_name": "AMPRENAVIR",
+      "m3_p": 0.07949650414257807,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 42,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:5D06587D6R",
+      "display_name": "PALONOSETRON",
+      "m3_p": 0.07946786718717243,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 43,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:32828355LL",
+      "display_name": "RABEPRAZOLE",
+      "m3_p": 0.07942138150500817,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 44,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:0NJ98Y462X",
+      "display_name": "CONIVAPTAN",
+      "m3_p": 0.0791312598647696,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 45,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:D3FM8FA78T",
+      "display_name": "PRAMLINTIDE",
+      "m3_p": 0.07893011862947354,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 46,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:QX5LK7YCHV",
+      "display_name": "FOMIVIRSEN",
+      "m3_p": 0.07780772800933958,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 47,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:9P1872D4OL",
+      "display_name": "EXENATIDE",
+      "m3_p": 0.07767489507224437,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 48,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:88755TAZ87",
+      "display_name": "AMINOLEVULINIC ACID",
+      "m3_p": 0.0774633984696029,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 49,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:0F65R8P09N",
+      "display_name": "GOSERELIN",
+      "m3_p": 0.07712523139743692,
+      "b1_p": 0.08775137111517368,
+      "m3_rank": 50,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:GG1LBM463S",
+      "display_name": "RAPACURONIUM",
+      "m3_p": 0.07687257035538633,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 51,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:67VB76HONO",
+      "display_name": "DEXMEDETOMIDINE",
+      "m3_p": 0.07681117688308287,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 52,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:O7FU5X12W5",
+      "display_name": "LANTHANUM CATION (3+)",
+      "m3_p": 0.07622523321467696,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 53,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:30IW36W5B2",
+      "display_name": "OXYBATE",
+      "m3_p": 0.07574611757281013,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 54,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:05V02F2KDG",
+      "display_name": "ROSIGLITAZONE",
+      "m3_p": 0.07539637967595499,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 55,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:901AS54I69",
+      "display_name": "RAMELTEON",
+      "m3_p": 0.07497834264280796,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 56,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:V1L22WVE2S",
+      "display_name": "ZILEUTON",
+      "m3_p": 0.07492437544682798,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 57,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:95M8R751W8",
+      "display_name": "ORLISTAT",
+      "m3_p": 0.07423747802943936,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 58,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:0EB439235F",
+      "display_name": "Tiotropium",
+      "m3_p": 0.07399682194136148,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 59,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:R10H71BSWG",
+      "display_name": "Micafungin",
+      "m3_p": 0.07393197812899668,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 60,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:9081Y98W2V",
+      "display_name": "TRIPTORELIN",
+      "m3_p": 0.0738761153000563,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 61,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:28O5C1J38A",
+      "display_name": "AMFENAC",
+      "m3_p": 0.07303393299204855,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 62,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:NG99554ANW",
+      "display_name": "Desvenlafaxine",
+      "m3_p": 0.07276532179646478,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 63,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:5ZZ84GCW8B",
+      "display_name": "FORMOTEROL",
+      "m3_p": 0.07234667663146666,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 64,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:7IO5LYA57N",
+      "display_name": "Ropivacaine",
+      "m3_p": 0.07209856298370061,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 65,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:KI8H7H19WL",
+      "display_name": "TELITHROMYCIN",
+      "m3_p": 0.0719642655081916,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 66,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:A8910SQJ1U",
+      "display_name": "Solifenacin",
+      "m3_p": 0.07180414572382636,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 67,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:APG9819VLM",
+      "display_name": "DARIFENACIN",
+      "m3_p": 0.07177178416278988,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 68,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:71M78END5S",
+      "display_name": "OMEGA-3 FATTY ACIDS",
+      "m3_p": 0.07175915225901427,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 69,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:W36ZG6FT64",
+      "display_name": "Sirolimus",
+      "m3_p": 0.0716104134670378,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 70,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:HW8W27HTXX",
+      "display_name": "Iodixanol",
+      "m3_p": 0.07140149035607779,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 71,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:838F01T721",
+      "display_name": "Paliperidone",
+      "m3_p": 0.07123318830758582,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 72,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:P10582JYYK",
+      "display_name": "REMIFENTANIL",
+      "m3_p": 0.0711489604529154,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 73,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:70JE2N95KR",
+      "display_name": "TIGECYCLINE",
+      "m3_p": 0.07095485359359338,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 74,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:EOR26LQQ24",
+      "display_name": "Ezetimibe",
+      "m3_p": 0.07072094886563757,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 75,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:L6O3XI777I",
+      "display_name": "ZANAMIVIR",
+      "m3_p": 0.07019433824615909,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 76,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:IX503L9WN0",
+      "display_name": "GANIRELIX",
+      "m3_p": 0.06999138869098231,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 77,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:2OC4HKD3SF",
+      "display_name": "TELBIVUDINE",
+      "m3_p": 0.06945749090744607,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 78,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:7I64C51O16",
+      "display_name": "ZICONOTIDE",
+      "m3_p": 0.06922797739277145,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 79,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:2C09NV773M",
+      "display_name": "PEMIROLAST",
+      "m3_p": 0.06919139653872208,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 80,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:F0P408N6V4",
+      "display_name": "LENALIDOMIDE",
+      "m3_p": 0.06909385124608977,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 81,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:OON1HFZ4BA",
+      "display_name": "CETRORELIX",
+      "m3_p": 0.06881282851285318,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 82,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:8M1YF8951V",
+      "display_name": "CEFORANIDE",
+      "m3_p": 0.06819096136083316,
+      "b1_p": 0.12285191956124315,
+      "m3_rank": 83,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:9KY0QXD6LI",
+      "display_name": "BITOLTEROL",
+      "m3_p": 0.06816048498600073,
+      "b1_p": 0.12285191956124315,
+      "m3_rank": 84,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:04Q9AIZ7NO",
+      "display_name": "Pemetrexed",
+      "m3_p": 0.067921207430723,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 85,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:S59502J185",
+      "display_name": "Ciclesonide",
+      "m3_p": 0.06778720161826,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 86,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:7662KG2R6K",
+      "display_name": "Lubiprostone",
+      "m3_p": 0.06718773521145867,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 87,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:BRL1C2459K",
+      "display_name": "AMLEXANOX",
+      "m3_p": 0.06714615779168061,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 88,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:413KH5ZJ73",
+      "display_name": "Rosuvastatin",
+      "m3_p": 0.06695055797471025,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 89,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:QFP0P1DV7Z",
+      "display_name": "Sitagliptin",
+      "m3_p": 0.06682471929512587,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 90,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:9G1OE216XY",
+      "display_name": "Docosanol",
+      "m3_p": 0.06649535573516806,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 91,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:K27005NP0A",
+      "display_name": "IXABEPILONE",
+      "m3_p": 0.06614214333811841,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 92,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:IV7T84QA4T",
+      "display_name": "TECHNETIUM TC-99M APCITIDE",
+      "m3_p": 0.06609029543895725,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 93,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:A61RXM4375",
+      "display_name": "BEXAROTENE",
+      "m3_p": 0.06605976678277437,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 94,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:H8A007M585",
+      "display_name": "Tapentadol",
+      "m3_p": 0.06563854917264297,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 95,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:2H1PA8H1EN",
+      "display_name": "PEGAPTANIB",
+      "m3_p": 0.06558628347316851,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 96,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:A6IEZ5M406",
+      "display_name": "Ranolazine",
+      "m3_p": 0.06557335263501675,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 97,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:O5TNM5N07U",
+      "display_name": "Duloxetine",
+      "m3_p": 0.06426747476238419,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 98,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:RUM6K67ESG",
+      "display_name": "Treprostinil",
+      "m3_p": 0.06421892478503623,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 99,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:L0FPV48Q5R",
+      "display_name": "TRILOSTANE",
+      "m3_p": 0.06416179420058774,
+      "b1_p": 0.12285191956124315,
+      "m3_rank": 100,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:3J962UJT8H",
+      "display_name": "CEFMETAZOLE",
+      "m3_p": 0.064153386861607,
+      "b1_p": 0.08775137111517368,
+      "m3_rank": 101,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:1HIZ4DL86F",
+      "display_name": "PIMOZIDE",
+      "m3_p": 0.06412393927589334,
+      "b1_p": 0.12285191956124315,
+      "m3_rank": 102,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:W4HFE001U5",
+      "display_name": "Tenofovir anhydrous",
+      "m3_p": 0.06367818602166755,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 103,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:T432289GYZ",
+      "display_name": "SINECATECHINS",
+      "m3_p": 0.0634407853470439,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 104,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:W6KX9E6D8X",
+      "display_name": "UREA C-13",
+      "m3_p": 0.0634107877372999,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 105,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:668Z8C33LU",
+      "display_name": "REPAGLINIDE",
+      "m3_p": 0.06314432805382376,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 106,
+      "in_queue": true,
+      "event": true
+    },
+    {
+      "key": "U:13Z9HTH115",
+      "display_name": "ALOSETRON",
+      "m3_p": 0.06305110996782798,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 107,
+      "in_queue": true,
+      "event": false
+    },
+    {
+      "key": "U:624KN6GM2T",
+      "display_name": "TEMSIROLIMUS",
+      "m3_p": 0.06303632513152607,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 108,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:91Y494NL0X",
+      "display_name": "BUTENAFINE",
+      "m3_p": 0.06289255862778943,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 109,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:G4586WF35M",
+      "display_name": "IODOHIPPURIC ACID I-123",
+      "m3_p": 0.0628500850508431,
+      "b1_p": 0.12285191956124315,
+      "m3_rank": 110,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0X9PA28K43",
+      "display_name": "VERTEPORFIN",
+      "m3_p": 0.06242805450663694,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 111,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6X4F561V3W",
+      "display_name": "UNOPROSTONE",
+      "m3_p": 0.06212277446038105,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 112,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2FS66TH3YW",
+      "display_name": "ZOLMITRIPTAN",
+      "m3_p": 0.06205860560198162,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 113,
+      "in_queue": false,
+      "event": true
+    },
+    {
+      "key": "U:23OW28RS7P|U:R9M4FJE48E",
+      "display_name": "QUINUPRISTIN + DALFOPRISTIN",
+      "m3_p": 0.06193308576044041,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 114,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9HLM53094I",
+      "display_name": "ANIDULAFUNGIN",
+      "m3_p": 0.06144148597267644,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 115,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:G32F6EID2H",
+      "display_name": "ERTAPENEM",
+      "m3_p": 0.06127712047818233,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 116,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:52QK2NZ2T0|U:FX3WJ41CMX",
+      "display_name": "Colfosceril Miristate + PERFLEXANE",
+      "m3_p": 0.06127176827842605,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 117,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:22QOO9B8KI",
+      "display_name": "ELETRIPTAN",
+      "m3_p": 0.061127687006636906,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 118,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7KYV510875",
+      "display_name": "Pimecrolimus",
+      "m3_p": 0.060934976989194166,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 119,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:1O4XL5SN61",
+      "display_name": "Almotriptan",
+      "m3_p": 0.060835690237802685,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 120,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3AZF20DM1T",
+      "display_name": "INDECAINIDE",
+      "m3_p": 0.060802335199657755,
+      "b1_p": 0.08775137111517368,
+      "m3_rank": 121,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:P936YA152N",
+      "display_name": "CEFPIRAMIDE",
+      "m3_p": 0.06073437879893904,
+      "b1_p": 0.08775137111517368,
+      "m3_rank": 122,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:81QS09V3YW",
+      "display_name": "CEFDITOREN",
+      "m3_p": 0.0607243450560642,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 123,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2919279Q3W",
+      "display_name": "VALDECOXIB",
+      "m3_p": 0.06053456594368408,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 124,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:O9M39HTM5W",
+      "display_name": "Promazine",
+      "m3_p": 0.06016881745571925,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 125,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4MG6O8991R",
+      "display_name": "RETAPAMULIN",
+      "m3_p": 0.06006414507999595,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 126,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:CK0N3WH0SR",
+      "display_name": "PERFLUTREN",
+      "m3_p": 0.059906350187316895,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 127,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:1UA8E65KDZ",
+      "display_name": "Alitretinoin",
+      "m3_p": 0.059888102712119695,
+      "b1_p": 0.12159346966540538,
+      "m3_rank": 128,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:502FWN4Q32",
+      "display_name": "ALISKIREN",
+      "m3_p": 0.05981687522430177,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 129,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:60158CV180",
+      "display_name": "NELARABINE",
+      "m3_p": 0.059711129821986356,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 130,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:304GTH6RNH|U:423D2T571U",
+      "display_name": "Etonogestrel + ETHINYL ESTRADIOL",
+      "m3_p": 0.05965797800684834,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 131,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "PINACIDIL",
+      "display_name": "PINACIDIL",
+      "m3_p": 0.05955542605751451,
+      "b1_p": 0.08775137111517368,
+      "m3_rank": 132,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:NWQ5N31VKK",
+      "display_name": "Daptomycin",
+      "m3_p": 0.059498704566777603,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 133,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0RH81L854J",
+      "display_name": "Glutamine",
+      "m3_p": 0.05946343394415996,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 134,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0V5436JAQW",
+      "display_name": "MIGLITOL",
+      "m3_p": 0.05936546445059064,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 135,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:P7WI8UL647",
+      "display_name": "NESIRITIDE",
+      "m3_p": 0.05919427924279525,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 136,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:27DXO59SAN",
+      "display_name": "TOCAINIDE",
+      "m3_p": 0.0590725659525995,
+      "b1_p": 0.12285191956124315,
+      "m3_rank": 137,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:SI86V6QNEG",
+      "display_name": "HALCINONIDE",
+      "m3_p": 0.058688409190784586,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 138,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:8883YP2R6D",
+      "display_name": "Ivermectin",
+      "m3_p": 0.058613511515503015,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 139,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:16CHD79MIX",
+      "display_name": "IOTHALAMIC ACID",
+      "m3_p": 0.058284354286766746,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 140,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:51G6I8B902",
+      "display_name": "NILUTAMIDE",
+      "m3_p": 0.05813277428530167,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 141,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:JR0N7XD5GZ",
+      "display_name": "QUINESTROL",
+      "m3_p": 0.05811039965222085,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 142,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:F0XDI6ZL63",
+      "display_name": "CASPOFUNGIN",
+      "m3_p": 0.05800244012451766,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 143,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:MEH3MCE8X1",
+      "display_name": "FLUPROSTENOL, (+)-",
+      "m3_p": 0.05772794135569459,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 144,
+      "in_queue": false,
+      "event": true
+    },
+    {
+      "key": "U:RT3Y3QMF8N",
+      "display_name": "MOLINDONE",
+      "m3_p": 0.05763632744483827,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 145,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:K7Q1JQR04M",
+      "display_name": "Dinoprostone",
+      "m3_p": 0.057631379014547165,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 146,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:X78UG0A0RN",
+      "display_name": "Dasatinib anhydrous",
+      "m3_p": 0.05762887760478679,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 147,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:BI6GY4U9CW",
+      "display_name": "DANAPAROID",
+      "m3_p": 0.05695172193636301,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 148,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2N81MY12TE",
+      "display_name": "Fosfomycin",
+      "m3_p": 0.056950983978535596,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 149,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Q90AGA787L",
+      "display_name": "SPARFLOXACIN",
+      "m3_p": 0.056950983978535596,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 150,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6HJV9H13XS",
+      "display_name": "FERUMOXSIL",
+      "m3_p": 0.05694906339061478,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 151,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:G6N3J05W84",
+      "display_name": "FERUMOXIDES NON-STOICHIOMETRIC MAGNETITE",
+      "m3_p": 0.05693449692518532,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 152,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:87T4T8BO2E",
+      "display_name": "Rotigotine",
+      "m3_p": 0.05672916259057919,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 153,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2C6NUM6878",
+      "display_name": "VALRUBICIN",
+      "m3_p": 0.056289578258907305,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 154,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:XJM390A33U",
+      "display_name": "RIFAPENTINE",
+      "m3_p": 0.0562766385240784,
+      "b1_p": 0.1899128938595548,
+      "m3_rank": 155,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:MD6P741W8A",
+      "display_name": "Maraviroc",
+      "m3_p": 0.05625858887513825,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 156,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7UQ7X4Y489",
+      "display_name": "TINZAPARIN",
+      "m3_p": 0.055839228330178944,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 157,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:IU5QR144QX",
+      "display_name": "ESTROGENS, CONJUGATED",
+      "m3_p": 0.05581766576411004,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 158,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:YPJ8ZV99ZP",
+      "display_name": "Clofarabine triphosphate",
+      "m3_p": 0.05571624560780355,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 159,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:YC09CA0VBB",
+      "display_name": "HYDRODOLASETRON",
+      "m3_p": 0.055692087830297866,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 160,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5XE4NWM740",
+      "display_name": "MESORIDAZINE",
+      "m3_p": 0.05556585834970592,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 161,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:563KS2PQY5",
+      "display_name": "Lacosamide",
+      "m3_p": 0.05556219828453332,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 162,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:458VC51857",
+      "display_name": "TEGASEROD",
+      "m3_p": 0.05555640183876984,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 163,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N9YNS0M02X",
+      "display_name": "Acetylcholine",
+      "m3_p": 0.05531421164307249,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 164,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:A0426J905J",
+      "display_name": "SECRETIN HUMAN",
+      "m3_p": 0.05525410264680781,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 165,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6GQP90I798",
+      "display_name": "ADEFOVIR",
+      "m3_p": 0.055204529196538156,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 166,
+      "in_queue": false,
+      "event": true
+    },
+    {
+      "key": "U:0VUA21238F",
+      "display_name": "Lapatinib",
+      "m3_p": 0.0551586227312254,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 167,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:UVL329170W",
+      "display_name": "CISAPRIDE",
+      "m3_p": 0.054757925482678646,
+      "b1_p": 0.013442305624260673,
+      "m3_rank": 168,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9S7OD60EWP",
+      "display_name": "CHLORPROTHIXENE",
+      "m3_p": 0.05462764749225136,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 169,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N4K14YGM3J",
+      "display_name": "Acamprosate",
+      "m3_p": 0.05412544187486844,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 170,
+      "in_queue": false,
+      "event": true
+    },
+    {
+      "key": "U:15KFG88UOJ",
+      "display_name": "TIZOXANIDE",
+      "m3_p": 0.05377149878551452,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 171,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:C96613F5AV",
+      "display_name": "ARSENIC CATION (3+)",
+      "m3_p": 0.05355902466657605,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 172,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:AM91H2KS67",
+      "display_name": "CERIVASTATIN",
+      "m3_p": 0.05352065963205136,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 173,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:V99T50803M",
+      "display_name": "SUNITINIB",
+      "m3_p": 0.053499186044332625,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 174,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:S79O08V79F",
+      "display_name": "DALTEPARIN",
+      "m3_p": 0.053498777347125076,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 175,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:RO16TQF95Y",
+      "display_name": "TRIFLUPROMAZINE",
+      "m3_p": 0.05337051385819498,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 176,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3H404ZGG9W|U:7F465U79Q1|U:A3N5ZCN45C",
+      "display_name": "QUATERNIUM-18 CATIONS + BENTOQUATAM + Bentonite",
+      "m3_p": 0.0523964858590679,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 177,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0199MV609F",
+      "display_name": "Gadoteridol",
+      "m3_p": 0.0523198455509428,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 178,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2I4BC502BT",
+      "display_name": "SALMETEROL",
+      "m3_p": 0.05211267539741083,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 179,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:22VKV8053U",
+      "display_name": "Raltegravir",
+      "m3_p": 0.05210165989941252,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 180,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:HO3OGH5D7I",
+      "display_name": "NELFINAVIR",
+      "m3_p": 0.052098761398533804,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 181,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:L36O5T016N",
+      "display_name": "Rifaximin",
+      "m3_p": 0.05208632473041263,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 182,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:IW71N46B4Y",
+      "display_name": "CEFTIBUTEN",
+      "m3_p": 0.05193491626236877,
+      "b1_p": 0.015234613040828763,
+      "m3_rank": 183,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:XUL93R30K2",
+      "display_name": "BOSENTAN ANHYDROUS",
+      "m3_p": 0.05190967608776578,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 184,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:58IFB293JI",
+      "display_name": "VORINOSTAT",
+      "m3_p": 0.051494214678647336,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 185,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2NX48Z0A9G",
+      "display_name": "ICODEXTRIN",
+      "m3_p": 0.05134160855078411,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 186,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:F2VW3D43YT",
+      "display_name": "Azelaic acid",
+      "m3_p": 0.05133451578044897,
+      "b1_p": 0.015234613040828763,
+      "m3_rank": 187,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:8ETK1WAF6R",
+      "display_name": "THIETHYLPERAZINE",
+      "m3_p": 0.05123037399437818,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 188,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:22X328QOC4",
+      "display_name": "FULVESTRANT",
+      "m3_p": 0.05122211568823934,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 189,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5BGA9FD55H",
+      "display_name": "BECLOMETHASONE 17-MONOPROPIONATE",
+      "m3_p": 0.05112790030852148,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 190,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:UAZ6V7728S",
+      "display_name": "CINACALCET",
+      "m3_p": 0.05062872383505308,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 191,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:L3JE09KZ2F",
+      "display_name": "SAQUINAVIR",
+      "m3_p": 0.050625246603023984,
+      "b1_p": 0.015234613040828763,
+      "m3_rank": 192,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "SIBUTRAMINE HYDROCHLORIDE",
+      "display_name": "SIBUTRAMINE HYDROCHLORIDE",
+      "m3_p": 0.05060433808379558,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 193,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:L1M1U2HC31",
+      "display_name": "GREPAFLOXACIN",
+      "m3_p": 0.05047271331597838,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 194,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4419T9MX03",
+      "display_name": "Iohexol",
+      "m3_p": 0.050453306289309885,
+      "b1_p": 0.016322799686602246,
+      "m3_rank": 195,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:85FDJ14553",
+      "display_name": "TAZAROTENIC ACID",
+      "m3_p": 0.05040401359128218,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 196,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9ZOQ3TZI87",
+      "display_name": "SORAFENIB",
+      "m3_p": 0.05037574817347253,
+      "b1_p": 0.11142595978062157,
+      "m3_rank": 197,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:WJZ06C0H8L",
+      "display_name": "INDIUM CATION IN-111",
+      "m3_p": 0.05035784724343253,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 198,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9F388J00UK",
+      "display_name": "TROVAFLOXACIN",
+      "m3_p": 0.050354435537364746,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 199,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7QVV6I50DT",
+      "display_name": "ALATROFLOXACIN",
+      "m3_p": 0.0503046228469667,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 200,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:CRS35BZ94Q",
+      "display_name": "Desflurane",
+      "m3_p": 0.050273230445112393,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 201,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:8GM2J22278",
+      "display_name": "Bacampicillin",
+      "m3_p": 0.05004429471043971,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 202,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0RK7M7IABE",
+      "display_name": "METHYLNALTREXONE",
+      "m3_p": 0.049882083842691514,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 203,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:M03GIQ7Z6P",
+      "display_name": "SINCALIDE",
+      "m3_p": 0.049798570939542625,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 204,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:W6HS99O8ZO",
+      "display_name": "Varenicline",
+      "m3_p": 0.049792009269630344,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 205,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:JF8V0828ZI",
+      "display_name": "QUAZEPAM",
+      "m3_p": 0.04938500351089364,
+      "b1_p": 0.016322799686602246,
+      "m3_rank": 206,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:O5CB12L4FN",
+      "display_name": "Diazoxide",
+      "m3_p": 0.04931230630440111,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 207,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:GNN1DV99GX",
+      "display_name": "Penicillamine",
+      "m3_p": 0.049158552713589605,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 208,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:OH2O403D1G",
+      "display_name": "MEZLOCILLIN",
+      "m3_p": 0.0491285258120686,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 209,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:84F6U3J2R6",
+      "display_name": "GADODIAMIDE",
+      "m3_p": 0.04912850467452596,
+      "b1_p": 0.013442305624260673,
+      "m3_rank": 210,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:C56709M5NH",
+      "display_name": "MAZINDOL",
+      "m3_p": 0.04904887796360131,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 211,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6J9BLA949Q",
+      "display_name": "TESTOLACTONE",
+      "m3_p": 0.049010705384792456,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 212,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:550Z839889",
+      "display_name": "Rubidium cation Rb-82",
+      "m3_p": 0.049007239025332376,
+      "b1_p": 0.08775137111517368,
+      "m3_rank": 213,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:I66ZZ0ZN0E",
+      "display_name": "TROGLITAZONE",
+      "m3_p": 0.04895067902169756,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 214,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:M5DP350VZV",
+      "display_name": "Ethacrynic Acid",
+      "m3_p": 0.04876701504272099,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 215,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:F59P8B75R4",
+      "display_name": "PENTOSAN POLYSULFATE",
+      "m3_p": 0.04872419287825741,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 216,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:K5BN214699",
+      "display_name": "NITISINONE",
+      "m3_p": 0.04855357459735661,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 217,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0475EA27Q3",
+      "display_name": "BENZQUINAMIDE",
+      "m3_p": 0.0484401922095541,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 218,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9J1H7Y9OJV",
+      "display_name": "EMEDASTINE",
+      "m3_p": 0.048423806604585874,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 219,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:JED5K35YGL",
+      "display_name": "ILOPROST",
+      "m3_p": 0.048296200047934994,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 220,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6EW75241VU",
+      "display_name": "TECHNETIUM TC-99M",
+      "m3_p": 0.04826878046244509,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 221,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:768N7QO4KH",
+      "display_name": "TRYPAN BLUE FREE ACID",
+      "m3_p": 0.048252927546942784,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 222,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:B07L15YAEV",
+      "display_name": "ARBUTAMINE",
+      "m3_p": 0.04824087953003349,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 223,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N02W67RKJS",
+      "display_name": "MANGAFODIPIR",
+      "m3_p": 0.04822332340271113,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 224,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "METHYPRYLON",
+      "display_name": "METHYPRYLON",
+      "m3_p": 0.04814735679180593,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 225,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:46627O600J",
+      "display_name": "Levodopa",
+      "m3_p": 0.04810533941734648,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 226,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7AXV542LZ4",
+      "display_name": "REGADENOSON ANHYDROUS",
+      "m3_p": 0.048096570784847116,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 227,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TECHNETIUM TC 99M TETROFOSMIN KIT",
+      "display_name": "TECHNETIUM TC 99M TETROFOSMIN KIT",
+      "m3_p": 0.04779504661162673,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 228,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:P7MU9UTP52",
+      "display_name": "PRALIDOXIME",
+      "m3_p": 0.04767156753385989,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 229,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:65UEH262IS",
+      "display_name": "SAFFLOWER OIL",
+      "m3_p": 0.0475262734405547,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 230,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:ADC79EK5Q8",
+      "display_name": "ETHYLESTRENOL",
+      "m3_p": 0.0474823127260104,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 231,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:TPY09G7XIR",
+      "display_name": "Fluorescein",
+      "m3_p": 0.04727677171935607,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 232,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N21FAR7B4S",
+      "display_name": "Apomorphine",
+      "m3_p": 0.04727154833567086,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 233,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:EGX657432I",
+      "display_name": "SAPROPTERIN",
+      "m3_p": 0.047207692749989434,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 234,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0FRP6G56LD",
+      "display_name": "Biperiden",
+      "m3_p": 0.04696369642881809,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 235,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:YU871O78GR",
+      "display_name": "Desfesoterodine",
+      "m3_p": 0.04684469594458815,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 236,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7BRF0Z81KG",
+      "display_name": "Lomustine",
+      "m3_p": 0.04671087327885416,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 237,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Q153V49P3Z",
+      "display_name": "ALVIMOPAN ANHYDROUS",
+      "m3_p": 0.046695379783103286,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 238,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:OKR68Y0E4T",
+      "display_name": "GEMIFLOXACIN",
+      "m3_p": 0.04668128645269749,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 239,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:P6708E7555",
+      "display_name": "SELENOMETHIONINE SE-75",
+      "m3_p": 0.04664332596921611,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 240,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:G70B4ETF4S",
+      "display_name": "EMTRICITABINE",
+      "m3_p": 0.046640791485505366,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 241,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:LGP81V5245",
+      "display_name": "Idoxuridine",
+      "m3_p": 0.04660168533889608,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 242,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "INDIUM IN 111 PENTETREOTIDE KIT",
+      "display_name": "INDIUM IN 111 PENTETREOTIDE KIT",
+      "m3_p": 0.04658091419628076,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 243,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:BKJ8M8G5HI",
+      "display_name": "Imatinib",
+      "m3_p": 0.04651842876098159,
+      "b1_p": 0.042362730883187295,
+      "m3_rank": 244,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:99T03J52W0",
+      "display_name": "GALLIUM CATION GA-67",
+      "m3_p": 0.04650794829538209,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 245,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:OG645J8RVW",
+      "display_name": "PIRBUTEROL",
+      "m3_p": 0.04640852940416737,
+      "b1_p": 0.02856489945155393,
+      "m3_rank": 246,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:U4VJ29L7BQ",
+      "display_name": "METHOXSALEN",
+      "m3_p": 0.046357847941280395,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 247,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:13S1S8SF37|U:7A314HQM0I",
+      "display_name": "ZINC CATION + PENTETIC ACID",
+      "m3_p": 0.046298104337304795,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 248,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2M83C4R6ZB|U:7A314HQM0I",
+      "display_name": "CALCIUM CATION + PENTETIC ACID",
+      "m3_p": 0.046298104337304795,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 249,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:M801H13NRU",
+      "display_name": "Azacitidine",
+      "m3_p": 0.04629105798350127,
+      "b1_p": 0.08571227675432429,
+      "m3_rank": 250,
+      "in_queue": false,
+      "event": true
+    },
+    {
+      "key": "U:765C9332T4",
+      "display_name": "GUANADREL",
+      "m3_p": 0.046219518088675283,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 251,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:H95KBR1GDB",
+      "display_name": "XENON XE-127",
+      "m3_p": 0.04620250110326066,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 252,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0F350BVT6S",
+      "display_name": "ECHOTHIOPHATE",
+      "m3_p": 0.046136431172827085,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 253,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:DOL5F9JD3E",
+      "display_name": "DELAVIRDINE",
+      "m3_p": 0.046136157756668066,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 254,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:320YC168LF",
+      "display_name": "HALAZEPAM",
+      "m3_p": 0.04613027377555923,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 255,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:W8S3YM7AUU",
+      "display_name": "BETHANIDINE",
+      "m3_p": 0.04610699292612734,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 256,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:T0WXW8F54E",
+      "display_name": "CALCIFEDIOL ANHYDROUS",
+      "m3_p": 0.046047610048299194,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 257,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:19O2GP3B7Q",
+      "display_name": "CLEVIDIPINE",
+      "m3_p": 0.04600964505612734,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 258,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:W72I5ZT78Z",
+      "display_name": "LORACARBEF ANHYDROUS",
+      "m3_p": 0.04588066235789593,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 259,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:CUZ39LUY82",
+      "display_name": "SILODOSIN",
+      "m3_p": 0.04581123970643766,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 260,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N3RIB7X24K",
+      "display_name": "Ioversol",
+      "m3_p": 0.04538953561235521,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 261,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:AZV954TZ9N|U:V7OK6J19HQ",
+      "display_name": "Gadolinium cation (3+) + GADOPENTETATE",
+      "m3_p": 0.045381221799316356,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 262,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4O5J85GJJB",
+      "display_name": "Netilmicin",
+      "m3_p": 0.04532718016756589,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 263,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "POLYTHIAZIDE",
+      "display_name": "POLYTHIAZIDE",
+      "m3_p": 0.045309740283355666,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 264,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5W494URQ81",
+      "display_name": "STREPTOZOCIN",
+      "m3_p": 0.04521296204364373,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 265,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:35LT29625A",
+      "display_name": "ESTRAMUSTINE",
+      "m3_p": 0.04518741339050148,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 266,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:71Q1A3O279",
+      "display_name": "ANILERIDINE",
+      "m3_p": 0.04518076973789001,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 267,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:E5B8ND5IPE",
+      "display_name": "METHOHEXITAL",
+      "m3_p": 0.04517597001693966,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 268,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "MEPENZOLATE BROMIDE",
+      "display_name": "MEPENZOLATE BROMIDE",
+      "m3_p": 0.04509542024660259,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 269,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:KL6248WNW4",
+      "display_name": "PIPERACETAZINE",
+      "m3_p": 0.04508967384465477,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 270,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:SX0XJI3A11",
+      "display_name": "DEGARELIX",
+      "m3_p": 0.045076466898910116,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 271,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7B5032XT6O",
+      "display_name": "CARBOPROST",
+      "m3_p": 0.0449733082187932,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 272,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N8ZUB7XE0H",
+      "display_name": "CLOCORTOLONE",
+      "m3_p": 0.04486823171737904,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 273,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7HE50A367X",
+      "display_name": "TRIDIHEXETHYL",
+      "m3_p": 0.04484431971291663,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 274,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:94Z39NID6C",
+      "display_name": "AZATADINE",
+      "m3_p": 0.04483726854039952,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 275,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N0F8P22L1P",
+      "display_name": "Norfloxacin",
+      "m3_p": 0.04481836170397529,
+      "b1_p": 0.02856489945155393,
+      "m3_rank": 276,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3SCV180C9W",
+      "display_name": "BETAINE",
+      "m3_p": 0.044813412140629616,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 277,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2I8BD50I8B",
+      "display_name": "CHLOROXINE",
+      "m3_p": 0.044802821356032224,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 278,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:F4216019LN",
+      "display_name": "Albendazole",
+      "m3_p": 0.04479719168159481,
+      "b1_p": 0.07678244972577697,
+      "m3_rank": 279,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3XQD2MEW34",
+      "display_name": "VIDARABINE ANHYDROUS",
+      "m3_p": 0.04476580897968529,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 280,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:72W71I16EG",
+      "display_name": "SERTACONAZOLE",
+      "m3_p": 0.04475912292869524,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 281,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:VLA4NZX2P4",
+      "display_name": "PERCHLORATE ION",
+      "m3_p": 0.044649822874605685,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 282,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:ZQN1G5V6SR",
+      "display_name": "EFLORNITHINE",
+      "m3_p": 0.04462235414807661,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 283,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:FA675Q0E3E",
+      "display_name": "IOCETAMIC ACID",
+      "m3_p": 0.04452418882652528,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 284,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:01T23W89FR",
+      "display_name": "THIAMYLAL",
+      "m3_p": 0.04450390783103802,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 285,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:AIU7053OWL",
+      "display_name": "HALOPROGIN",
+      "m3_p": 0.0443275800819961,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 286,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:8X50N88ZDP",
+      "display_name": "PARAMETHASONE ACETATE",
+      "m3_p": 0.04431937820620904,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 287,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:776B62CQ27",
+      "display_name": "Decitabine",
+      "m3_p": 0.044256512803970936,
+      "b1_p": 0.04914076782449726,
+      "m3_rank": 288,
+      "in_queue": false,
+      "event": true
+    },
+    {
+      "key": "U:D2UFC189XF",
+      "display_name": "MEDRYSONE",
+      "m3_p": 0.04422356562408224,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 289,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "CHLORMEZANONE",
+      "display_name": "CHLORMEZANONE",
+      "m3_p": 0.04422354457091795,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 290,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4F05V145YR",
+      "display_name": "TYROPANIC ACID",
+      "m3_p": 0.044214978797467545,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 291,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:F41401512X",
+      "display_name": "Nilotinib",
+      "m3_p": 0.04415919734233899,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 292,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0G3DE8943Y",
+      "display_name": "LANREOTIDE",
+      "m3_p": 0.04414420336504206,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 293,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:ILP8XJ8R5K",
+      "display_name": "DEMECARIUM",
+      "m3_p": 0.04413911538074745,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 294,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:RHH3W8F1CO",
+      "display_name": "METRIZAMIDE",
+      "m3_p": 0.04402157033008721,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 295,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:NQO8R319LY",
+      "display_name": "DIPHENIDOL",
+      "m3_p": 0.04398080260130358,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 296,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N1Q45E87DT",
+      "display_name": "Thiabendazole",
+      "m3_p": 0.04393694189972746,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 297,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3L179F09D6",
+      "display_name": "SULFAMETER",
+      "m3_p": 0.043909074349702946,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 298,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:1N3O74HM92",
+      "display_name": "PIPECURONIUM",
+      "m3_p": 0.04389207345380544,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 299,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9016E3VB47",
+      "display_name": "DESERPIDINE",
+      "m3_p": 0.04388905134390173,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 300,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:1X0094V6JV",
+      "display_name": "NAFARELIN",
+      "m3_p": 0.04387254098466043,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 301,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:G1LN9045DK",
+      "display_name": "Busulfan",
+      "m3_p": 0.04384741052814313,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 302,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:C668Q9I33J",
+      "display_name": "OXICONAZOLE",
+      "m3_p": 0.043828828212043223,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 303,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TECHNETIUM TC 99M MERTIATIDE KIT",
+      "display_name": "TECHNETIUM TC 99M MERTIATIDE KIT",
+      "m3_p": 0.04375600953984027,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 304,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Y6UY8OV51T",
+      "display_name": "TRIOXSALEN",
+      "m3_p": 0.043722665925858974,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 305,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:C6QE1Q1TKR",
+      "display_name": "PROCYCLIDINE",
+      "m3_p": 0.04369536157213494,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 306,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:P71U09G5BW",
+      "display_name": "CYCLOTHIAZIDE",
+      "m3_p": 0.043631269160162856,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 307,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:KBZ4844CXN",
+      "display_name": "CEFMENOXIME",
+      "m3_p": 0.043623467070200025,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 308,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:455E0S048W",
+      "display_name": "QUINETHAZONE",
+      "m3_p": 0.043595330294468555,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 309,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:755BO701MA",
+      "display_name": "BEPRIDIL",
+      "m3_p": 0.04356248809604921,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 310,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:76LA80IG2G",
+      "display_name": "Glucagon",
+      "m3_p": 0.04354604043257807,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 311,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:239IF5W61J",
+      "display_name": "BENTIROMIDE",
+      "m3_p": 0.04351101158106282,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 312,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:25W8454H16",
+      "display_name": "SULFAMETHIZOLE",
+      "m3_p": 0.043495774189572727,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 313,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:MKF129JIZX",
+      "display_name": "ROSE BENGAL I-131",
+      "m3_p": 0.043485769865418224,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 314,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4R1VB9P8V3",
+      "display_name": "STANOZOLOL",
+      "m3_p": 0.04346967438341692,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 315,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:543567RFQQ",
+      "display_name": "CYCRIMINE",
+      "m3_p": 0.04346468357491637,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 316,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:8620H6K4QH",
+      "display_name": "ACETOPHENAZINE",
+      "m3_p": 0.04339164959546807,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 317,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:A7D84513GV",
+      "display_name": "OXYPHENBUTAZONE ANHYDROUS",
+      "m3_p": 0.04336206192625467,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 318,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:712BAC33MZ",
+      "display_name": "IOPROMIDE",
+      "m3_p": 0.04336070875526697,
+      "b1_p": 0.015234613040828763,
+      "m3_rank": 319,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:242Z0PM79Y",
+      "display_name": "PROPIOMAZINE",
+      "m3_p": 0.04335754262683987,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 320,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:34237V843T",
+      "display_name": "ISOCARBOXAZID",
+      "m3_p": 0.04320826665759147,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 321,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Y883P1Z2LT",
+      "display_name": "ATOVAQUONE",
+      "m3_p": 0.043137895892513614,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 322,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TROLAMINE POLYPEPTIDE OLEATE CONDENSATE",
+      "display_name": "TROLAMINE POLYPEPTIDE OLEATE CONDENSATE",
+      "m3_p": 0.04310056126882316,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 323,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:P14877CDX2",
+      "display_name": "POLYESTRADIOL PHOSPHATE",
+      "m3_p": 0.04297267402693182,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 324,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:S747T1ERAJ",
+      "display_name": "ANISINDIONE",
+      "m3_p": 0.042969109159595176,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 325,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:LL3147PI1T",
+      "display_name": "HEXOCYCLIUM",
+      "m3_p": 0.04295394123860082,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 326,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Y3N00BK5WK",
+      "display_name": "HYDROCORTAMATE",
+      "m3_p": 0.04291784311845317,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 327,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5D9HAA5Q5S",
+      "display_name": "SULCONAZOLE",
+      "m3_p": 0.042916006108503456,
+      "b1_p": 0.016322799686602246,
+      "m3_rank": 328,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:L16PUN799N",
+      "display_name": "AMBENONIUM",
+      "m3_p": 0.042867764763881835,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 329,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:353613BU4U",
+      "display_name": "LEVALLORPHAN",
+      "m3_p": 0.04286746399780785,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 330,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:742SXX0ICT",
+      "display_name": "Tadalafil",
+      "m3_p": 0.04281600622052964,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 331,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:IAN371PP48",
+      "display_name": "ETHINAMATE",
+      "m3_p": 0.04274356055639821,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 332,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:FFL0D546HO",
+      "display_name": "Carprofen",
+      "m3_p": 0.04271313157892904,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 333,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:78W62V43DY",
+      "display_name": "Penbutolol",
+      "m3_p": 0.04271297782926287,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 334,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4YIR8202AX",
+      "display_name": "TALBUTAL",
+      "m3_p": 0.04268908468821507,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 335,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5Y5F15120W",
+      "display_name": "PROTIRELIN",
+      "m3_p": 0.0426080444071854,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 336,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:E6S1NJ4Y5Q",
+      "display_name": "CELLULOSE SODIUM PHOSPHATE",
+      "m3_p": 0.0424973447536083,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 337,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:36EI79TX7I",
+      "display_name": "METHANTHELINE",
+      "m3_p": 0.042320878597771415,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 338,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:W486SJ5824",
+      "display_name": "ABARELIX",
+      "m3_p": 0.04219473283157331,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 339,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5BSH2G9BH8",
+      "display_name": "LUCINACTANT",
+      "m3_p": 0.04216265241462084,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 340,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:65M2UDR9AG",
+      "display_name": "ETRETINATE",
+      "m3_p": 0.04212177793187477,
+      "b1_p": 0.02856489945155393,
+      "m3_rank": 341,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2GT1D0TMX1",
+      "display_name": "MORICIZINE",
+      "m3_p": 0.042090766931901925,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 342,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:P3CTH044XJ",
+      "display_name": "PROBUCOL",
+      "m3_p": 0.042090622183240695,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 343,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7BO8G1BYQU",
+      "display_name": "MASOPROCOL",
+      "m3_p": 0.04206090326776709,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 344,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:L6BR2WJD8V",
+      "display_name": "LOMEFLOXACIN",
+      "m3_p": 0.04203514412924775,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 345,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:V0M92G2U26",
+      "display_name": "METOCURINE",
+      "m3_p": 0.0420262455965157,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 346,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:ZS9KD92H6V",
+      "display_name": "METYRAPONE",
+      "m3_p": 0.04197544896959575,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 347,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:H25WJA31XE",
+      "display_name": "TECHNETIUM TC-99M BICISATE",
+      "m3_p": 0.041919813349096675,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 348,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:LV23B78IJC",
+      "display_name": "IOFETAMINE I-123",
+      "m3_p": 0.041819756608738455,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 349,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:69G8BD63PP",
+      "display_name": "Bortezomib",
+      "m3_p": 0.041743052314737156,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 350,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:S65743JHBS",
+      "display_name": "Gefitinib",
+      "m3_p": 0.0417085351083323,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 351,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6490C9U457",
+      "display_name": "PRAZIQUANTEL",
+      "m3_p": 0.0416095092877874,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 352,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:19OWO1T3ZE",
+      "display_name": "ENFUVIRTIDE",
+      "m3_p": 0.04154389244427834,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 353,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "AMINOGLUTETHIMIDE",
+      "display_name": "AMINOGLUTETHIMIDE",
+      "m3_p": 0.04146947963031351,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 354,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "OXAMNIQUINE",
+      "display_name": "OXAMNIQUINE",
+      "m3_p": 0.041451627969249685,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 355,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:DOQ0J0TPF7",
+      "display_name": "METYROSINE",
+      "m3_p": 0.04139741121623313,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 356,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:325OGW249P",
+      "display_name": "ENOXACIN",
+      "m3_p": 0.04134481637892857,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 357,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:03V657ZD3V",
+      "display_name": "METHACHOLINE",
+      "m3_p": 0.041246055905595776,
+      "b1_p": 0.02856489945155393,
+      "m3_rank": 358,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6Q99RDT97R",
+      "display_name": "PIPOBROMAN",
+      "m3_p": 0.0412278593426381,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 359,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:T11645226K",
+      "display_name": "YTTERBIUM YB-169",
+      "m3_p": 0.041145668927769385,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 360,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:T795873AJP",
+      "display_name": "SULFACYTINE",
+      "m3_p": 0.041109129899929306,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 361,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9G34HU7RV0",
+      "display_name": "Edetic Acid",
+      "m3_p": 0.04110083743680824,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 362,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:WS821Z52LQ",
+      "display_name": "Triamterene",
+      "m3_p": 0.04105662797798031,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 363,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:EF0NX91490",
+      "display_name": "PENTAGASTRIN",
+      "m3_p": 0.04102438295562254,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 364,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5634T58D89",
+      "display_name": "FERROUS CATION FE-59",
+      "m3_p": 0.04097825296055813,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 365,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:W9YXS298BM",
+      "display_name": "TUBOCURARINE",
+      "m3_p": 0.04086599617351458,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 366,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TECHNETIUM TC 99M TEBOROXIME KIT",
+      "display_name": "TECHNETIUM TC 99M TEBOROXIME KIT",
+      "m3_p": 0.040715068598122066,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 367,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:78E4J5IB5J",
+      "display_name": "MITOTANE",
+      "m3_p": 0.04070539649978004,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 368,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2128O9F90Y|U:745X144DZY",
+      "display_name": "SAMARIUM CATION SM-153 + SAMARIUM SM-153 LEXIDRONAM",
+      "m3_p": 0.0407045099939438,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 369,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6PNS59HP4Y",
+      "display_name": "TILUDRONIC ACID",
+      "m3_p": 0.040702278424104434,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 370,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:NIJ123W41V",
+      "display_name": "Plicamycin",
+      "m3_p": 0.040691051952612314,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 371,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:ZTI6C33Q2Q",
+      "display_name": "GUANETHIDINE",
+      "m3_p": 0.04066774973663515,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 372,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:35S93Y190K",
+      "display_name": "PROCARBAZINE",
+      "m3_p": 0.04062617913964042,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 373,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2PU6O23V1G",
+      "display_name": "Sutilains",
+      "m3_p": 0.04061706683433072,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 374,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:89243S03TE",
+      "display_name": "SERMORELIN",
+      "m3_p": 0.0404795426409509,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 375,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:RP4A60D26L",
+      "display_name": "Pentazocine",
+      "m3_p": 0.04045740472172878,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 376,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "DOXACURIUM CHLORIDE",
+      "display_name": "DOXACURIUM CHLORIDE",
+      "m3_p": 0.04044092515091089,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 377,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5RNZ8GJO7K",
+      "display_name": "DAPIPRAZOLE",
+      "m3_p": 0.0403747008466099,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 378,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:ULS5I8J03O",
+      "display_name": "Olsalazine",
+      "m3_p": 0.04035428202781932,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 379,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2880D3468G",
+      "display_name": "Levamisole",
+      "m3_p": 0.04034849481974777,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 380,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "ETHOTOIN",
+      "display_name": "ETHOTOIN",
+      "m3_p": 0.04034762338748935,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 381,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:91W6Z2N718",
+      "display_name": "CEFOTIAM",
+      "m3_p": 0.04033206413457295,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 382,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0G76K8X6C0",
+      "display_name": "METHSUXIMIDE",
+      "m3_p": 0.04032718790170417,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 383,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:WIX31ZPX66",
+      "display_name": "THIOGUANINE ANHYDROUS",
+      "m3_p": 0.04032583172675726,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 384,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:OAY8ORS3CQ",
+      "display_name": "Ethionamide",
+      "m3_p": 0.04026200979620241,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 385,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:HW6NV07QEC",
+      "display_name": "AMBRISENTAN",
+      "m3_p": 0.04022242828999295,
+      "b1_p": 0.038391224862888484,
+      "m3_rank": 386,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:A4YJ7J11TG",
+      "display_name": "IOXILAN",
+      "m3_p": 0.040211810748186416,
+      "b1_p": 0.015234613040828763,
+      "m3_rank": 387,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:TOV02TDP9I",
+      "display_name": "NALMEFENE",
+      "m3_p": 0.04018406779304945,
+      "b1_p": 0.015234613040828763,
+      "m3_rank": 388,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:W7KQ46GJ8U",
+      "display_name": "URACIL MUSTARD",
+      "m3_p": 0.0400229052006903,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 389,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9O7312W37G",
+      "display_name": "GONADORELIN",
+      "m3_p": 0.039987963124717,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 390,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:XZA9HY6Z98",
+      "display_name": "METHYSERGIDE",
+      "m3_p": 0.03996855893770938,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 391,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4RZ82L2GY5",
+      "display_name": "Acetohydroxamic acid",
+      "m3_p": 0.039963443295379535,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 392,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:JI8Z5M7NA3",
+      "display_name": "THIOPENTAL",
+      "m3_p": 0.039740969468295036,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 393,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:VPO7KJ050N",
+      "display_name": "ILOPERIDONE",
+      "m3_p": 0.03954242100401872,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 394,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2N4O9L084N",
+      "display_name": "NABILONE",
+      "m3_p": 0.03950699109085157,
+      "b1_p": 0.016322799686602246,
+      "m3_rank": 395,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:18D0SL7309",
+      "display_name": "CHLORAMBUCIL",
+      "m3_p": 0.03949308747767627,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 396,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "E:SODIUM BICARBONATE|TARTARIC ACID",
+      "display_name": "SODIUM BICARBONATE + TARTARIC ACID",
+      "m3_p": 0.039485548519057376,
+      "b1_p": 0.016322799686602246,
+      "m3_rank": 397,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6EE945D3OK",
+      "display_name": "MECAMYLAMINE",
+      "m3_p": 0.03938758505605965,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 398,
+      "in_queue": false,
+      "event": true
+    },
+    {
+      "key": "U:1801D76STL",
+      "display_name": "DIRITHROMYCIN",
+      "m3_p": 0.03934938343508653,
+      "b1_p": 0.015234613040828763,
+      "m3_rank": 399,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6G8X656T45",
+      "display_name": "TRIMETHAPHAN",
+      "m3_p": 0.03919767367842434,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 400,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6WVL9C355G",
+      "display_name": "PHENSUXIMIDE",
+      "m3_p": 0.039131956017387795,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 401,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Z3614QOX8W",
+      "display_name": "Pyrimethamine",
+      "m3_p": 0.03906630910896554,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 402,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:G56VK1HF36",
+      "display_name": "MILNACIPRAN",
+      "m3_p": 0.039065048686071094,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 403,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9L2KA76MG5",
+      "display_name": "MONOBENZONE",
+      "m3_p": 0.03904489595977213,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 404,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:320T6RNW1F",
+      "display_name": "MIFEPRISTONE",
+      "m3_p": 0.039039843861444386,
+      "b1_p": 0.06964122486288848,
+      "m3_rank": 405,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9HW64Q8G6G",
+      "display_name": "Everolimus",
+      "m3_p": 0.03901205217736947,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 406,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TECHNETIUM TC 99M GLUCEPTATE KIT",
+      "display_name": "TECHNETIUM TC 99M GLUCEPTATE KIT",
+      "m3_p": 0.038956242966355956,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 407,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "IOPANOIC ACID",
+      "display_name": "IOPANOIC ACID",
+      "m3_p": 0.038903855557772024,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 408,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:PAI7J52V09",
+      "display_name": "PHENACEMIDE",
+      "m3_p": 0.03889855681867346,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 409,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:O7M2E4264D",
+      "display_name": "RIMEXOLONE",
+      "m3_p": 0.038757979985710275,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 410,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Q461L7AK4R",
+      "display_name": "IOBENGUANE I-131",
+      "m3_p": 0.038726548401991856,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 411,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:SPU695OD73",
+      "display_name": "LODOXAMIDE",
+      "m3_p": 0.03871103948313916,
+      "b1_p": 0.013442305624260673,
+      "m3_rank": 412,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:50D9XSG0VR",
+      "display_name": "MECHLORETHAMINE",
+      "m3_p": 0.03864942927466001,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 413,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:ADN3S497AZ",
+      "display_name": "Miglustat",
+      "m3_p": 0.038299632686016605,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 414,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:U68WG3173Y",
+      "display_name": "Carmustine",
+      "m3_p": 0.03825494971810975,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 415,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:H50H3S3W74",
+      "display_name": "HISTRELIN",
+      "m3_p": 0.03816803491640716,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 416,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TECHNETIUM TC 99M ETIDRONATE KIT",
+      "display_name": "TECHNETIUM TC 99M ETIDRONATE KIT",
+      "m3_p": 0.03799280710276968,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 417,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:M15H03K69B",
+      "display_name": "PORFIMER",
+      "m3_p": 0.0379240802367786,
+      "b1_p": 0.015234613040828763,
+      "m3_rank": 418,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:494JNQ8L28|U:6EW75241VU",
+      "display_name": "TECHNETIUM TC-99M SUCCIMER + TECHNETIUM TC-99M",
+      "m3_p": 0.03790213232321664,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 419,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TECHNETIUM TC 99M LIDOFENIN KIT",
+      "display_name": "TECHNETIUM TC 99M LIDOFENIN KIT",
+      "m3_p": 0.03760527251361561,
+      "b1_p": 0.02856489945155393,
+      "m3_rank": 420,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4FB1TON47A",
+      "display_name": "Naftifine",
+      "m3_p": 0.037593675976159056,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 421,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0C50HW4FO1",
+      "display_name": "Etravirine",
+      "m3_p": 0.03748597596990404,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 422,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:WBZ6M63TEE",
+      "display_name": "UREA C-14",
+      "m3_p": 0.03741331139902862,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 423,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4VX7YNB537",
+      "display_name": "TACRINE",
+      "m3_p": 0.03739895787561843,
+      "b1_p": 0.013442305624260673,
+      "m3_rank": 424,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:QZU4H47A3S",
+      "display_name": "Atazanavir",
+      "m3_p": 0.03726263598413541,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 425,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:XK134822Z0",
+      "display_name": "TELAVANCIN",
+      "m3_p": 0.03721341235033354,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 426,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:M5681Q5F9P",
+      "display_name": "PITAVASTATIN",
+      "m3_p": 0.03706422750456464,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 427,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:VVJ6673MHY",
+      "display_name": "Dichlorphenamide",
+      "m3_p": 0.036811455230000976,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 428,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:UPN4ITI8T4",
+      "display_name": "TRIMETREXATE",
+      "m3_p": 0.03675926153358633,
+      "b1_p": 0.013442305624260673,
+      "m3_rank": 429,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:101V0R1N2E",
+      "display_name": "Febuxostat",
+      "m3_p": 0.036745017598510045,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 430,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:WFW942PR79",
+      "display_name": "RUFINAMIDE",
+      "m3_p": 0.03641264173133846,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 431,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:8I7IO46IVQ",
+      "display_name": "SAXAGLIPTIN ANHYDROUS",
+      "m3_p": 0.036353883316382785,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 432,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3H04W2810V",
+      "display_name": "AURANOFIN",
+      "m3_p": 0.036274599433605004,
+      "b1_p": 0.016322799686602246,
+      "m3_rank": 433,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6RC3ZT4HB0",
+      "display_name": "PROPIOLACTONE",
+      "m3_p": 0.036202985675309475,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 434,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:21G72T1950",
+      "display_name": "Tolvaptan",
+      "m3_p": 0.036159866996173406,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 435,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:JKZ19V908O",
+      "display_name": "ASENAPINE",
+      "m3_p": 0.03600998477241644,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 436,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:D959AE5USF",
+      "display_name": "Clofazimine",
+      "m3_p": 0.03597374237916679,
+      "b1_p": 0.02856489945155393,
+      "m3_rank": 437,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7RN5DR86CK",
+      "display_name": "PAZOPANIB",
+      "m3_p": 0.035957471826784805,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 438,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:LKG8494WBH",
+      "display_name": "Benzyl alcohol",
+      "m3_p": 0.03589428324327421,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 439,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:JX56W9N61Q",
+      "display_name": "PEGINESATIDE",
+      "m3_p": 0.03559545854324628,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 440,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:BFE2NBZ7NX",
+      "display_name": "BESIFLOXACIN",
+      "m3_p": 0.03533257013108385,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 441,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:K0U68Q2TXA",
+      "display_name": "Corticotropin",
+      "m3_p": 0.03532279783438121,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 442,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:839I73S42A",
+      "display_name": "LIRAGLUTIDE",
+      "m3_p": 0.035288431847705914,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 443,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:I0IO929019",
+      "display_name": "CALCITONIN HUMAN",
+      "m3_p": 0.035211096541314685,
+      "b1_p": 0.02856489945155393,
+      "m3_rank": 444,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:H68BP06S81",
+      "display_name": "LEVOCABASTINE",
+      "m3_p": 0.0350962025878536,
+      "b1_p": 0.013442305624260673,
+      "m3_rank": 445,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Q1D0Q7R4D9",
+      "display_name": "PERFLUBRON",
+      "m3_p": 0.03508682170606779,
+      "b1_p": 0.013442305624260673,
+      "m3_rank": 446,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:22IC88528T",
+      "display_name": "Lurasidone",
+      "m3_p": 0.03507849242635078,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 447,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5UX2SD1KE2",
+      "display_name": "CYSTEAMINE",
+      "m3_p": 0.034942568047188344,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 448,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:YX9162EO3I",
+      "display_name": "RALOXIFENE",
+      "m3_p": 0.03489523569184807,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 449,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TECHNETIUM TC 99M DISOFENIN KIT",
+      "display_name": "TECHNETIUM TC 99M DISOFENIN KIT",
+      "m3_p": 0.03481614350403851,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 450,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7NFE54O27T",
+      "display_name": "TOREMIFENE",
+      "m3_p": 0.03475154874975298,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 451,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7SEV7J4R1U",
+      "display_name": "Talc",
+      "m3_p": 0.03473483212219174,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 452,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Q8BIH59O7H",
+      "display_name": "ALTRETAMINE",
+      "m3_p": 0.034462082509074274,
+      "b1_p": 0.025391021734714605,
+      "m3_rank": 453,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:HYD2U48IAS",
+      "display_name": "BEPOTASTINE",
+      "m3_p": 0.03437165761732956,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 454,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:H36Z0FHR8K",
+      "display_name": "CEFTAROLINE",
+      "m3_p": 0.03431227900874485,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 455,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9NDF7JZ4M3",
+      "display_name": "Rivaroxaban",
+      "m3_p": 0.03418443631685787,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 456,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:S239O2OOV3",
+      "display_name": "VILAZODONE",
+      "m3_p": 0.03379426856942549,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 457,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6L3XT8CB3I",
+      "display_name": "ZALCITABINE",
+      "m3_p": 0.03369299451925236,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 458,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:KZW0R0686Q",
+      "display_name": "ETHIODIZED OIL",
+      "m3_p": 0.03344561223858817,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 459,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "AZILSARTAN KAMEDOXOMIL",
+      "display_name": "AZILSARTAN KAMEDOXOMIL",
+      "m3_p": 0.033275470001727134,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 460,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7Z8O94ECSX",
+      "display_name": "ALCAFTADINE",
+      "m3_p": 0.03307983225828912,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 461,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:S56D65XJ9G",
+      "display_name": "Eltrombopag",
+      "m3_p": 0.033009090540437644,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 462,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:1W306TDA6S",
+      "display_name": "RIFABUTIN",
+      "m3_p": 0.03300187647504934,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 463,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "HALOFANTRINE HYDROCHLORIDE",
+      "display_name": "HALOFANTRINE HYDROCHLORIDE",
+      "m3_p": 0.032986250871030486,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 464,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:957E6438QA",
+      "display_name": "TENIPOSIDE",
+      "m3_p": 0.032985215146051156,
+      "b1_p": 0.02077447232840286,
+      "m3_rank": 465,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:34K66TBT99",
+      "display_name": "Prasugrel",
+      "m3_p": 0.032853363036486255,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 466,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3X29ZEJ4R2",
+      "display_name": "Linagliptin",
+      "m3_p": 0.03262603822706659,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 467,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:XPA88EAP6V",
+      "display_name": "Spinosad",
+      "m3_p": 0.0323346990518811,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 468,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:FI96A8X663",
+      "display_name": "Rilpivirine",
+      "m3_p": 0.03223296411981744,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 469,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:51F690397J",
+      "display_name": "CABAZITAXEL",
+      "m3_p": 0.03212612162224612,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 470,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:JQZ1L091Y2",
+      "display_name": "Dronedarone",
+      "m3_p": 0.031996486043131586,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 471,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:I0VM4M70GC",
+      "display_name": "DABIGATRAN",
+      "m3_p": 0.031924528862568864,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 472,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:DX1U2629QE",
+      "display_name": "SUCCIMER",
+      "m3_p": 0.031704627036667286,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 473,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:F7K5MP217W",
+      "display_name": "GALLIUM CATION",
+      "m3_p": 0.031703264369759614,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 474,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:GLH0314RVC",
+      "display_name": "Ticagrelor",
+      "m3_p": 0.0316248844340869,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 475,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:U4RY8MRX7C",
+      "display_name": "ETHANOLAMINE OLEATE",
+      "m3_p": 0.031621369705503326,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 476,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:C5W04GO61S",
+      "display_name": "Tiopronin",
+      "m3_p": 0.031606424942513006,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 477,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0P6C6ZOP5U",
+      "display_name": "Roflumilast",
+      "m3_p": 0.03137377650855473,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 478,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:8OR09251MQ",
+      "display_name": "INDACATEROL",
+      "m3_p": 0.03126798266752199,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 479,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "TECHNETIUM TC 99M EXAMETAZIME KIT",
+      "display_name": "TECHNETIUM TC 99M EXAMETAZIME KIT",
+      "m3_p": 0.031028038912741505,
+      "b1_p": 0.017578399662494727,
+      "m3_rank": 480,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:SJ76Y07H5F",
+      "display_name": "Trientine",
+      "m3_p": 0.03096386356963121,
+      "b1_p": 0.016322799686602246,
+      "m3_rank": 481,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:VFU0OU98LO",
+      "display_name": "MONOCTANOIN",
+      "m3_p": 0.03096266240103323,
+      "b1_p": 0.016322799686602246,
+      "m3_rank": 482,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:DR5S136IVO",
+      "display_name": "AVANAFIL",
+      "m3_p": 0.03087992185066619,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 483,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:LR24G6354G",
+      "display_name": "Eribulin",
+      "m3_p": 0.030856603264253962,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 484,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:MVR3JL3B2V",
+      "display_name": "Mirabegron",
+      "m3_p": 0.03081833684100682,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 485,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3QN8BYN5QF",
+      "display_name": "Fingolimod",
+      "m3_p": 0.030698873263642505,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 486,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:IC77UZI9G8",
+      "display_name": "INGENOL",
+      "m3_p": 0.030691797472438206,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 487,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:C9LVQ0YUXG",
+      "display_name": "Axitinib",
+      "m3_p": 0.030669395359495442,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 488,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:K17VY42F6C",
+      "display_name": "ACLIDINIUM",
+      "m3_p": 0.030281171595627362,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 489,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:QZH7WR4VKJ",
+      "display_name": "LEVOMETHADYL",
+      "m3_p": 0.029921746614172455,
+      "b1_p": 0.013442305624260673,
+      "m3_rank": 490,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4MQ5UQAIB8",
+      "display_name": "FR-135313",
+      "m3_p": 0.029889630936722235,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 491,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:S8A06QG2QE",
+      "display_name": "Difluprednate",
+      "m3_p": 0.02986776916342405,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 492,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:R09078E41Y|U:T6V3LHY838|U:XF417D3PSL",
+      "display_name": "Deacetylbisacodyl + MAGNESIUM CATION + Anhydrous citric acid",
+      "m3_p": 0.02984006373504291,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 493,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:WTV8EPZ396",
+      "display_name": "Tafluprost acid",
+      "m3_p": 0.029694930029360952,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 494,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:S915P5499N",
+      "display_name": "PLERIXAFOR",
+      "m3_p": 0.029524864793956617,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 495,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:TLE294X33A",
+      "display_name": "FERRIC FERROCYANIDE",
+      "m3_p": 0.029451396858360995,
+      "b1_p": 0.012027326084864813,
+      "m3_rank": 496,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:S07O44R1ZM",
+      "display_name": "CAPSAICIN",
+      "m3_p": 0.029227836223410356,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 497,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3MM99T8R5Q",
+      "display_name": "IOFLUPANE I-123",
+      "m3_p": 0.02885542058620982,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 498,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:0AWH8BFG9A",
+      "display_name": "POLIDOCANOL",
+      "m3_p": 0.02883309703773374,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 499,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6W15Z5R0RU",
+      "display_name": "FLORBETAPIR F-18",
+      "m3_p": 0.02881626894522134,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 500,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:G819A456D0",
+      "display_name": "ABIRATERONE",
+      "m3_p": 0.028547493486566277,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 501,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:A8Q8I19Q20",
+      "display_name": "Pralatrexate",
+      "m3_p": 0.028187464259062572,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 502,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:25X868M3DS",
+      "display_name": "Vismodegib",
+      "m3_p": 0.02791744450084328,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 503,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6J5J15Q2X8",
+      "display_name": "Ulipristal",
+      "m3_p": 0.02776065655846391,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 504,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:BH3B64OKL9",
+      "display_name": "Dalfampridine",
+      "m3_p": 0.02773541989442627,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 505,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:12G01I6BBU",
+      "display_name": "EZOGABINE",
+      "m3_p": 0.02765198295283984,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 506,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:6A9O50735X|U:F38R0JR742",
+      "display_name": "Artenimol + LUMEFANTRINE",
+      "m3_p": 0.02742120442302229,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 507,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:82S8X8XX8H",
+      "display_name": "Ruxolitinib",
+      "m3_p": 0.026923916093178624,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 508,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:72X6E3J5AR",
+      "display_name": "Carfilzomib",
+      "m3_p": 0.026515275794942506,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 509,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:9266D9P3PQ",
+      "display_name": "BENDAMUSTINE",
+      "m3_p": 0.02629568185648844,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 510,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:YO460OQ37K",
+      "display_name": "VANDETANIB",
+      "m3_p": 0.026154811617716794,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 511,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:53AH36668S",
+      "display_name": "Crizotinib",
+      "m3_p": 0.025898075347108546,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 512,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:207SMY3FQT",
+      "display_name": "VEMURAFENIB",
+      "m3_p": 0.02525150701170459,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 513,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Z5N076G8YQ",
+      "display_name": "Fidaxomicin",
+      "m3_p": 0.025119119585778824,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 514,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:Z9O08YRN8O",
+      "display_name": "Tetrabenazine",
+      "m3_p": 0.02495092052261825,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 515,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:N0TXR0XR5X",
+      "display_name": "LINACLOTIDE",
+      "m3_p": 0.02462238890348143,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 516,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:GR120KRT6K",
+      "display_name": "Vigabatrin",
+      "m3_p": 0.02458336723158749,
+      "b1_p": 0.010881866457734831,
+      "m3_rank": 517,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:P2TH1XYZ84",
+      "display_name": "IOBENGUANE I-123",
+      "m3_p": 0.02432129112908855,
+      "b1_p": 0.012695510867357302,
+      "m3_rank": 518,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7PG89G35Q7",
+      "display_name": "Icatibant",
+      "m3_p": 0.024268685389923737,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 519,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:1Y740ILL1Z",
+      "display_name": "Ivacaftor",
+      "m3_p": 0.024002720698843894,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 520,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2MRO291B4U",
+      "display_name": "Clobazam",
+      "m3_p": 0.023756226333918332,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 521,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:30905R8O7B",
+      "display_name": "METHOXYFLURANE",
+      "m3_p": 0.02318793339383711,
+      "b1_p": 0.03042100140728368,
+      "m3_rank": 522,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5L0HB4V1EW",
+      "display_name": "CARGLUMIC ACID",
+      "m3_p": 0.02228904368827101,
+      "b1_p": 0.011425959780621572,
+      "m3_rank": 523,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:93T0T9GKNU",
+      "display_name": "Enzalutamide",
+      "m3_p": 0.022113858718530527,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 524,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:2BTY8KH53L",
+      "display_name": "DEFERIPRONE",
+      "m3_p": 0.022002222468947164,
+      "b1_p": 0.009935617200540498,
+      "m3_rank": 525,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:87LA6FU830",
+      "display_name": "Tofacitinib",
+      "m3_p": 0.020552633763288305,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 526,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:H821664NPK",
+      "display_name": "Perampanel",
+      "m3_p": 0.02055234374632723,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 527,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:PY79D6C8RX",
+      "display_name": "CROFELEMER",
+      "m3_p": 0.018857659407670865,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 528,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:3Z9Y7UWC1J",
+      "display_name": "Apixaban",
+      "m3_p": 0.018857607140570186,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 529,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:M4AS4XGD4Q",
+      "display_name": "CHOLINE C-11",
+      "m3_p": 0.018855709433106996,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 530,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:7M19191IKG",
+      "display_name": "TEDUGLUTIDE",
+      "m3_p": 0.017490954722557697,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 531,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:82KUB0583F",
+      "display_name": "LOMITAPIDE",
+      "m3_p": 0.017490954722557697,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 532,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:98H1T17066",
+      "display_name": "PASIREOTIDE",
+      "m3_p": 0.017490841001811273,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 533,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:84MI6OYN4Z",
+      "display_name": "OMACETAXINE",
+      "m3_p": 0.017490037699281986,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 534,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:5018V4AEZ0",
+      "display_name": "Bosutinib",
+      "m3_p": 0.017489171325915612,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 535,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:78846I289Y",
+      "display_name": "BEDAQUILINE",
+      "m3_p": 0.016043620352442015,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 536,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:4340891KFS",
+      "display_name": "Ponatinib",
+      "m3_p": 0.016043411663304558,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 537,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:1C39JW444G",
+      "display_name": "Cabozantinib",
+      "m3_p": 0.016043187010937477,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 538,
+      "in_queue": false,
+      "event": false
+    },
+    {
+      "key": "U:24T2A1DOYB",
+      "display_name": "Regorafenib anhydrous",
+      "m3_p": 0.016042231533106743,
+      "b1_p": 0.009140767824497258,
+      "m3_rank": 539,
+      "in_queue": false,
+      "event": false
+    }
+  ],
+  "tie_rule": "M3 descending, key ascending",
+  "score_export_sha256": "e9f7d9af0033207488adf1bb582e24a12982d5d72039ce8c8c611b1792227db7",
+  "capture": {
+    "eligible": 539,
+    "events": 17,
+    "captured": 10,
+    "queued_without_event": 97,
+    "missed": 7,
+    "recall": 0.5882352941176471,
+    "precision": 0.09345794392523364
+  }
+}

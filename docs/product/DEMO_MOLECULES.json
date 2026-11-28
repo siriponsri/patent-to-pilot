@@ -1,0 +1,38 @@
+[
+  {
+    "key": "U:U188XYD42P",
+    "display_name": "MOXIFLOXACIN",
+    "m3_rank": 6,
+    "role": "supported_event"
+  },
+  {
+    "key": "U:OCY3U280Y3",
+    "display_name": "ARGATROBAN ANHYDROUS",
+    "m3_rank": 12,
+    "role": "supported_event"
+  },
+  {
+    "key": "U:82VFR53I78",
+    "display_name": "Aripiprazole",
+    "m3_rank": 15,
+    "role": "supported_event"
+  },
+  {
+    "key": "U:QXS94885MZ",
+    "display_name": "Bimatoprost",
+    "m3_rank": 31,
+    "role": "supported_event"
+  },
+  {
+    "key": "U:AZV954TZ9N",
+    "display_name": "Gadolinium cation (3+)",
+    "m3_rank": 1,
+    "role": "false_alarm"
+  },
+  {
+    "key": "U:A8910SQJ1U",
+    "display_name": "Solifenacin",
+    "m3_rank": 143,
+    "role": "miss"
+  }
+]

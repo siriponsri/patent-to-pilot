@@ -1,0 +1,409 @@
+{
+  "schema_version": "mwd.dossier.v1",
+  "molecule": {
+    "key": "U:A8910SQJ1U",
+    "display_name": "Solifenacin",
+    "dosage_forms": [
+      "TABLET; ORAL"
+    ]
+  },
+  "as_of": "2012-01-01",
+  "jurisdiction": "US",
+  "forecast": {
+    "horizon_months": 12,
+    "m3_p_entry": 0.10207821594486848,
+    "b1_p_entry": 0.11142595978062157,
+    "m3_rank": 23,
+    "queue_size": 106,
+    "in_queue": true,
+    "status": "DEVELOPMENT_ONLY"
+  },
+  "outcome_reveal": {
+    "first_final_anda_date": null,
+    "window_end": "2013-01-01",
+    "source_ids": []
+  },
+  "sections": [
+    {
+      "id": "decision",
+      "title_th": "สรุปสำหรับฝ่ายพัฒนาธุรกิจและวิจัย",
+      "title_en": "BD and R&D decision"
+    },
+    {
+      "id": "market",
+      "title_th": "ช่วงเวลาของตลาด",
+      "title_en": "Market window"
+    },
+    {
+      "id": "competition",
+      "title_th": "ภาพการแข่งขัน",
+      "title_en": "Competitive landscape"
+    },
+    {
+      "id": "patents",
+      "title_th": "สิทธิบัตรและสิทธิผูกขาด",
+      "title_en": "Patents and exclusivities"
+    },
+    {
+      "id": "thai_asean",
+      "title_th": "ประเทศไทยและอาเซียน",
+      "title_en": "Thailand and ASEAN"
+    },
+    {
+      "id": "handoff",
+      "title_th": "รายการตรวจสอบสำหรับผู้ประเมิน FTO",
+      "title_en": "FTO evaluator checklist"
+    },
+    {
+      "id": "references",
+      "title_th": "เอกสารอ้างอิงและข้อมูลสำหรับตรวจซ้ำ",
+      "title_en": "References and reproducibility"
+    }
+  ],
+  "claims": [
+    {
+      "id": "queue",
+      "section": "decision",
+      "text_th": "อยู่ในคิวตรวจทบทวน · ลำดับ 23 จาก 533 รายการ และรับตรวจได้ 106 รายการ ใช้ทบทวนข้อมูลก่อนตัดสินใจพัฒนา",
+      "text_en": "Rank 23 of 533, in the queue of 106 slots. Use the evidence to plan the next development review.",
+      "source_ids": [
+        "freeze-score"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    },
+    {
+      "id": "entry",
+      "section": "market",
+      "text_th": "โอกาสได้รับอนุมัติ ANDA ขั้นสุดท้ายครั้งแรกภายใน 12 เดือน M3 10.2% และเกณฑ์เทียบตามอายุยา B1 11.1% วันอนุมัติและวันเริ่มจำหน่ายเป็นคนละเหตุการณ์",
+      "text_en": "Estimated first final ANDA approval within 12 months: M3 10.2%; drug-age baseline B1 11.1%. Approval and marketing are separate events.",
+      "source_ids": [
+        "freeze-score"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    },
+    {
+      "id": "approved-applicants",
+      "section": "competition",
+      "text_th": "พบผู้ยื่น ANDA ที่ได้รับอนุมัติขั้นสุดท้ายก่อนหรือ ณ วันตัดข้อมูล 0 ราย ในกลุ่มตัวยาสำคัญที่เชื่อมโยงได้ จำนวนผู้ผลิตที่วางจำหน่ายยังไม่ทราบ",
+      "text_en": "Zero distinct final ANDA applicants in linked records through the cutoff, as required for eligibility. Marketed producer count is unknown.",
+      "source_ids": [
+        "anda-at-risk",
+        "freeze-score"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "price-scenario",
+      "section": "market",
+      "text_th": "สมมติฐานย้อนหลังจาก FDA ปี 2019 หากมีผู้ผลิตยาสามัญวางจำหน่าย 2, 3 หรือ 4 ราย ราคาเฉลี่ยผู้ผลิต (AMP) ของยาสามัญเท่ากับ 46.5%, 32.2% หรือ 21.2% ของ AMP ยาต้นแบบก่อนมียาสามัญตามลำดับ ยังไม่มีราคาอ้างอิงเพื่อคำนวณราคาของยานี้",
+      "text_en": "Retrospective scenario from the FDA's 2019 study. With 2, 3 or 4 marketed generic producers, assume generic average manufacturer price (AMP) of 46.5%, 32.2% or 21.2% of the pre-entry brand AMP, respectively. The implied price is unknown without a documented brand AMP.",
+      "source_ids": [
+        "fda-amp-2019"
+      ],
+      "state": "known",
+      "kind": "assumption",
+      "time_basis": "retrospective_scenario"
+    },
+    {
+      "id": "demand",
+      "section": "market",
+      "text_th": "ยังไม่ทราบความต้องการย้อนหลังจาก Medicaid ไตรมาส 2 ปี 2011 เพราะไม่พบกลุ่มรหัสบรรจุภัณฑ์ที่เชื่อมโยงได้และมีจำนวนใบสั่งยาครบ",
+      "text_en": "Retrospective Medicaid 2011 Q2 baseline is unknown. No exact linked package subset has complete prescription counts in the available vintage.",
+      "source_ids": [
+        "sdud",
+        "sdud-ndc"
+      ],
+      "state": "unknown",
+      "kind": "observed",
+      "time_basis": "retrospective_demand"
+    },
+    {
+      "id": "challenge-1",
+      "section": "patents",
+      "text_th": "รายการ FDA ระบุวันที่ยื่น Paragraph IV 2009-04-08",
+      "text_en": "FDA lists a Paragraph IV submission dated 2009-04-08.",
+      "source_ids": [
+        "challenge-1"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "forms",
+      "section": "competition",
+      "text_th": "รูปแบบยาและวิธีให้ยาที่เชื่อมโยงได้ในฉบับ 2011-12-14: TABLET; ORAL",
+      "text_en": "Linked dosage forms and routes in the 2011-12-14 edition: TABLET; ORAL.",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-1",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021518 / 002 เป็น 2004-11-19",
+      "text_en": "Orange Book lists approval of NDA 021518 / 002 on 2004-11-19.",
+      "source_ids": [
+        "ob-approval-1"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "ob-approval-2",
+      "section": "competition",
+      "text_th": "Orange Book ระบุวันที่อนุมัติ NDA 021518 / 001 เป็น 2004-11-19",
+      "text_en": "Orange Book lists approval of NDA 021518 / 001 on 2004-11-19.",
+      "source_ids": [
+        "ob-approval-2"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "protection-gaps",
+      "section": "patents",
+      "text_th": "ฉบับ 2011-12-14 พบรายการสิทธิบัตร 2 แถว และสิทธิผูกขาด 0 แถว การตรวจสอบกับทะเบียนและเอกสารต้นทางยังจำเป็น",
+      "text_en": "The linked edition contains 2 patent rows and 0 exclusivity rows. Verify coverage against primary records.",
+      "source_ids": [
+        "ob-edition"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-1",
+      "section": "patents",
+      "text_th": "US 6017927, NDA 021518 / 001 · DS=1, DP=1, use=∅, delist=0 · วันหมดอายุที่ระบุ 2018-11-19",
+      "text_en": "US 6017927, NDA 021518 / 001 · DS=1, DP=1, use=∅, delist=0 · listed expiry 2018-11-19.",
+      "source_ids": [
+        "patent-1"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "patent-2",
+      "section": "patents",
+      "text_th": "US 6017927, NDA 021518 / 002 · DS=1, DP=1, use=∅, delist=0 · วันหมดอายุที่ระบุ 2018-11-19",
+      "text_en": "US 6017927, NDA 021518 / 002 · DS=1, DP=1, use=∅, delist=0 · listed expiry 2018-11-19.",
+      "source_ids": [
+        "patent-2"
+      ],
+      "state": "known",
+      "kind": "observed"
+    },
+    {
+      "id": "thai-status",
+      "section": "thai_asean",
+      "text_th": "ยังไม่ทราบสถานะในไทย โปรดตรวจที่กรมทรัพย์สินทางปัญญา",
+      "text_en": "Thai status unknown: verify at DIP.",
+      "source_ids": [
+        "dip-lookup"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "fto-scope",
+      "section": "handoff",
+      "text_th": "ใช้ประกอบการตัดสินใจ ยังไม่มีข้อสรุป FTO หรือความเห็นทางกฎหมาย",
+      "text_en": "Decision support. FTO remains undetermined and requires a qualified legal opinion.",
+      "source_ids": [
+        "ob-edition",
+        "dip-lookup"
+      ],
+      "state": "unknown",
+      "kind": "observed"
+    },
+    {
+      "id": "reproduce",
+      "section": "references",
+      "text_th": "คะแนนและลำดับใช้ไฟล์ development ที่ตรึงไว้ หากคะแนน M3 เท่ากัน ให้เรียงตามรหัสตัวยา",
+      "text_en": "Reproduce the ranking from frozen development scores, breaking M3 ties by ascending key.",
+      "source_ids": [
+        "freeze-score"
+      ],
+      "state": "known",
+      "kind": "estimate"
+    }
+  ],
+  "sources": [
+    {
+      "id": "freeze-score",
+      "issuer": "LOE-Bench",
+      "title": "Frozen native development scores",
+      "version": "f683017c4fb73aadd91bb97f3381f5dd9308c9ca",
+      "public_date": null,
+      "locator": "FREEZE_dev_scores_12m.json $.rows[cutoff=2012-01-01, key=U:A8910SQJ1U].{M3,B1}",
+      "url": "https://github.com/siriponsri/patent-to-pilot/blob/7f3593b8/loe-bench/data/FREEZE_DEV_SCORES_MANIFEST.json",
+      "sha256": "e9f7d9af0033207488adf1bb582e24a12982d5d72039ce8c8c611b1792227db7",
+      "retrieved": null
+    },
+    {
+      "id": "anda-at-risk",
+      "issuer": "U.S. FDA",
+      "title": "Drugs@FDA original final ANDA approvals",
+      "version": "2026-11-27T10:23:14.478072+00:00",
+      "public_date": null,
+      "locator": "df_anda.jsonl, exact development active-moiety U:A8910SQJ1U; ORIG/AP through 2012-01-01",
+      "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files",
+      "sha256": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "retrieved": "2026-11-27T10:23:14.478072+00:00"
+    },
+    {
+      "id": "fda-amp-2019",
+      "issuer": "U.S. FDA",
+      "title": "Generic Competition and Drug Prices",
+      "version": "December 2019 (month precision)",
+      "public_date": "2019-12-31",
+      "locator": "PDF p. 9, median AMP ratio, producer counts 2–4",
+      "url": "https://www.fda.gov/media/133509/download#page=9",
+      "sha256": "5b748fa2eb20a4af86d1c28705add5e99a9351f58dbfaf6833736871c6610a4b",
+      "retrieved": null
+    },
+    {
+      "id": "sdud",
+      "issuer": "U.S. CMS",
+      "title": "State Drug Utilization Data 2011",
+      "version": "Thu, 02 Apr 2026 16:34:49 GMT",
+      "public_date": "2026-04-03",
+      "locator": "Year=2011; Quarter=2; State=XX; FFSU and MCOU; linked ingredient(s): SOLIFENACIN SUCCINATE",
+      "url": "https://download.medicaid.gov/data/StateDrugUtilizationData-2011.csv",
+      "sha256": "93667fb84c4f5590be3ee769adad7caeba54043635a0849f0544e0c73f905b25",
+      "retrieved": "2026-11-28T01:50:33.176763+00:00"
+    },
+    {
+      "id": "sdud-ndc",
+      "issuer": "U.S. FDA",
+      "title": "National Drug Code directory",
+      "version": "2026-11-27",
+      "public_date": "2026-11-27",
+      "locator": "$.results[*].{active_ingredients,packaging,marketing_start_date}",
+      "url": "https://download.open.fda.gov/drug/ndc/drug-ndc-0001-of-0001.json.zip",
+      "sha256": "6045f9c3b1b74c0a7aa32e45caa5a33a0a75b8554feac64aa774fb3eaca85497",
+      "retrieved": "2026-11-28T01:46:13.5719762Z"
+    },
+    {
+      "id": "challenge-1",
+      "issuer": "U.S. FDA",
+      "title": "Paragraph IV certification list",
+      "version": "2011-12-19",
+      "public_date": "2011-12-22",
+      "locator": "PDF table row object 1220",
+      "url": "https://web.archive.org/web/20111222183218id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+      "sha256": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b",
+      "retrieved": "2026-11-27T11:31:19.808035+00:00"
+    },
+    {
+      "id": "ob-edition",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2011-12-14",
+      "public_date": "2011-12-29",
+      "locator": "products data row 23720, products data row 23721",
+      "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+      "retrieved": "2026-11-27T10:56:16.168224+00:00"
+    },
+    {
+      "id": "ob-approval-1",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2011-12-14",
+      "public_date": "2011-12-29",
+      "locator": "products data row 23720",
+      "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+      "retrieved": "2026-11-27T10:56:16.168224+00:00"
+    },
+    {
+      "id": "ob-approval-2",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2011-12-14",
+      "public_date": "2011-12-29",
+      "locator": "products data row 23721",
+      "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+      "retrieved": "2026-11-27T10:56:16.168224+00:00"
+    },
+    {
+      "id": "patent-1",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2011-12-14",
+      "public_date": "2011-12-29",
+      "locator": "patent data row 7761",
+      "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+      "retrieved": "2026-11-27T10:56:16.168224+00:00"
+    },
+    {
+      "id": "patent-2",
+      "issuer": "U.S. FDA",
+      "title": "Orange Book historical FDA ZIP",
+      "version": "2011-12-14",
+      "public_date": "2011-12-29",
+      "locator": "patent data row 7762",
+      "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+      "retrieved": "2026-11-27T10:56:16.168224+00:00"
+    },
+    {
+      "id": "dip-lookup",
+      "issuer": "Thailand Department of Intellectual Property",
+      "title": "Patent search portal",
+      "version": "Lookup route",
+      "public_date": null,
+      "locator": "Patent search form",
+      "url": "https://patentsearch.ipthailand.go.th",
+      "sha256": null,
+      "retrieved": null
+    }
+  ],
+  "checklist": [
+    {
+      "id": "review-spec",
+      "text_th": "ระบุรูปแบบยา ความแรง ข้อบ่งใช้ และวันเปิดตัวเป้าหมาย",
+      "text_en": "Specify dosage form, strength, indication and target launch date.",
+      "owner": "R&D",
+      "source_ids": [
+        "freeze-score"
+      ]
+    },
+    {
+      "id": "check-us-6017927",
+      "text_th": "ตรวจข้อถือสิทธิและสถานะของ US 6017927 เทียบกับผลิตภัณฑ์ที่จะพัฒนา",
+      "text_en": "Compare claims and verified status of US 6017927 with the proposed product.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "patent-1",
+        "patent-2"
+      ]
+    },
+    {
+      "id": "verify-national",
+      "text_th": "ตรวจตระกูลสิทธิบัตร ข้อถือสิทธิ และสถานะในแต่ละประเทศที่วางแผนจำหน่าย",
+      "text_en": "Verify patent family, claims and legal status in each intended jurisdiction.",
+      "owner": "FTO evaluator",
+      "source_ids": [
+        "ob-edition",
+        "dip-lookup"
+      ]
+    },
+    {
+      "id": "verify-price",
+      "text_th": "หา AMP ยาต้นแบบและตรวจผู้ผลิตที่ขายจริง รวมทั้งความต้องการ ณ วันเปิดตัว",
+      "text_en": "Document brand AMP, marketed producers and demand at the intended launch date.",
+      "owner": "BD",
+      "source_ids": [
+        "fda-amp-2019"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,527 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Market Window Dossier v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "mwd.dossier.v1"
+    },
+    "molecule": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dosage_forms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "key",
+        "display_name",
+        "dosage_forms"
+      ]
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "jurisdiction": {
+      "const": "US"
+    },
+    "forecast": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "horizon_months": {
+          "enum": [
+            12,
+            24
+          ]
+        },
+        "m3_p_entry": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "b1_p_entry": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "m3_rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "queue_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "in_queue": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "DEVELOPMENT_ONLY",
+            "TRACK_A_FROZEN"
+          ]
+        }
+      },
+      "required": [
+        "horizon_months",
+        "m3_p_entry",
+        "b1_p_entry",
+        "m3_rank",
+        "queue_size",
+        "in_queue",
+        "status"
+      ]
+    },
+    "outcome_reveal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "first_final_anda_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "window_end": {
+          "type": "string",
+          "format": "date"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "first_final_anda_date",
+        "window_end"
+      ]
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "prefixItems": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/section"
+            },
+            {
+              "properties": {
+                "id": {
+                  "const": "decision"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/section"
+            },
+            {
+              "properties": {
+                "id": {
+                  "const": "market"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/section"
+            },
+            {
+              "properties": {
+                "id": {
+                  "const": "competition"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/section"
+            },
+            {
+              "properties": {
+                "id": {
+                  "const": "patents"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/section"
+            },
+            {
+              "properties": {
+                "id": {
+                  "const": "thai_asean"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/section"
+            },
+            {
+              "properties": {
+                "id": {
+                  "const": "handoff"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/section"
+            },
+            {
+              "properties": {
+                "id": {
+                  "const": "references"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      },
+      "minItems": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      },
+      "minItems": 1
+    },
+    "checklist": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/task"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "molecule",
+    "as_of",
+    "jurisdiction",
+    "forecast",
+    "sections",
+    "claims",
+    "sources",
+    "checklist"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "forecast": {
+            "properties": {
+              "status": {
+                "const": "DEVELOPMENT_ONLY"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "outcome_reveal"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "outcome_reveal"
+          ]
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "enum": [
+            "decision",
+            "market",
+            "competition",
+            "patents",
+            "thai_asean",
+            "handoff",
+            "references"
+          ]
+        },
+        "title_th": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title_en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "title_th",
+        "title_en"
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "section": {
+          "enum": [
+            "decision",
+            "market",
+            "competition",
+            "patents",
+            "thai_asean",
+            "handoff",
+            "references"
+          ]
+        },
+        "text_th": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "observed",
+            "estimate",
+            "assumption"
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "time_basis": {
+          "enum": [
+            "current_lookup",
+            "retrospective_scenario",
+            "retrospective_demand"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "section",
+        "text_th",
+        "text_en",
+        "state",
+        "kind",
+        "source_ids"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "public_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https?://"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "retrieved": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "issuer",
+        "title",
+        "version",
+        "public_date",
+        "locator",
+        "url",
+        "sha256",
+        "retrieved"
+      ],
+      "anyOf": [
+        {
+          "properties": {
+            "sha256": { "type": "string" }
+          }
+        },
+        {
+          "properties": {
+            "url": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text_th": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner": {
+          "enum": [
+            "FTO evaluator",
+            "R&D",
+            "BD"
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "text_th",
+        "text_en",
+        "owner",
+        "source_ids"
+      ]
+    }
+  }
+}
