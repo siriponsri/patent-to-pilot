@@ -41,7 +41,7 @@ The dossier is Thai first, with an English version. It exports to PDF and is han
 - **Data.** Open US sources: historical Orange Book editions, Drugs@FDA, Purple Book, Paragraph IV lists, court records and CMS Medicaid. Thai and ASEAN registry and patent status mostly requires manual verification, and the product shows it as unknown when unverified.
 - **Results so far.** Development results only. The sealed-test scoring is in progress, and Track A outcomes mature in November 2027 and November 2028.
 - **Demo content.** Six development-period molecules: four catches, one false alarm and one miss. Fixture data must stay labelled FIXTURE until real data replaces it.
-- **Language.** Thai and English throughout. Thai uses TH Sarabun New/Sarabun-compatible fonts.
+- **Language.** Thai and English throughout. In the product UI, headings and controls are English and body content switches TH/EN; Thai uses Noto Sans Thai and English uses Source Sans 3 (DESIGN.md). Paper figures for the KMITL template use TH Sarabun New.
 
 ## Brand Commitments
 
