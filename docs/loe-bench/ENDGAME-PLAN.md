@@ -1,3 +1,9 @@
+## Superseded decisions (29 November 2026)
+
+The owner is now the Track A custodian after January 2027. Journal route: STA conditional on confirmation that AI drafting with disclosure is allowed, then JAMIA; PSA and MDM are dropped. Product and writing paused on 29 November for research close-out. Public web hosting is Cloudflare Pages. These decisions supersede conflicting schedule and owner-availability assumptions below. Current close-out status: [research completion checklist](RESEARCH-COMPLETION.md) and [lane handoff](HANDOFF.md); OSF update 4 verified approved 28 November 2026 at 11:30:06 UTC.
+
+---
+
 # Endgame plan: finish research and product by 31 January 2027
 
 Proposed by the main planner and the co-planner (GPT-6.2 Astra high with SciSpace) on 28 November 2026. **The owner approved it on 28 November 2026**: Apache-2.0 for the whole repository, a public web app, and a different GPU type if no L4 is available by 10 Dec (see the decision register). The owner will not follow the project into 2027, so nothing in this plan requires the owner's account, machine or labour after 31 January 2027.
