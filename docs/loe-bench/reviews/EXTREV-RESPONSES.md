@@ -56,3 +56,12 @@ Planner design to end the custody regress (assigned to TRACKA-READOUT5, Sol xhig
 
 Next: EXTREV-R5.
 
+
+## Round 5 ([review](EXTERNAL-REVIEW-R5.md), answered 29 Nov 2026, 00:32 Bangkok)
+
+Resolved by the reviewer: N1, R4-A, R4-C, R4-D (repository part). Partial: R3 and R4-B, both through R5-A.
+
+| ID | Severity | Response |
+|---|---|---|
+| R5-A | BLOCKING | **In progress (TRACKA-READOUT6, Sol xhigh).** One shared promotion gate for fresh and resumed 24-month drafts: rediscover the 12-month result with the same witness rules, reconcile it with the staged H3 reference, and keep the draft unpublished while any conflict persists. Tests: the reviewer probe, an uncontested retry publishing the original bytes, and a staged-reference mismatch. |
+| R5-B | MINOR | **In progress (same card).** One documented maintainer issue body with the result and manifest digests; the Worker and the reader accept the same format, and an incomplete marker no longer stops dispatch. |
