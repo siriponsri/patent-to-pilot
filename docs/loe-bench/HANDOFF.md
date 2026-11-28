@@ -6,14 +6,14 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 The owner runs the orchestrator on two Claude accounts. Per-account chat memory is not shared, so this section and [MEMORY.md](MEMORY.md) are the main memory. Update both, then commit and push, after every step (owner rule, 28 Nov 2026, night).
 
-Last update: 28 Nov 2026, about 23:20 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
+Last update: 28 Nov 2026, about 23:40 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
 
 | Line | State | Next action |
 |---|---|---|
 | IS2 short paper | IS2LAYOUT merged (a2cc45c1): figures and Table 1 next to first mention, 9 pages TH/EN, 0 orphans. Gap on pages 1–2 is the KMITL template (abstract pages with pinned footnotes). IS2REF merged (87a9ef4d). Reviewed files delivered to `IS_2_new/01_short-paper/final` (hashes match the IS2LAYOUT receipt); the earlier copies are in `archive/2026-11-28_pre-layout` | Owner reads it; slides wait for that |
 | Slides | Folder structure only | Wait for the owner's reading |
 | Journals (STA conditional, JAMIA) | JAMIA v2 (outside Git) audited: PASS with minor fixes F1–F5 ([audit](receipts/JAMIA-AUDIT-v2.md)). PSA and MDM dropped. Owner is asking STA about AI drafting and prior public versions | JAMIAFIG (Claude Sonnet) makes Figures 1–2 and applies F1, F3, F4; then planner re-check and advisor review by 8 Jan |
-| Product | Merged: PO-CURRENT (1ff2db22), PO-LANDING (1ae7f500; numbers checked against SCORE/SCORELLM; NOTICE Apache-2.0), BE-GATEWAY B1 (4922cc83; 36 tests rerun; localhost-only Compose; frozen contract `product/gateway/CONTRACT.md`). [PRD](../product/prd/PRD-MWD-v1.md) 4b and 4c current; MCP contract adopted from the co-planner memo (7cb1c92e). Deployment: Cloudflare Pages, AI on localhost | BE-MCP B5 merged (aa6865b9; 10 MCP tests rerun). B5 follow-ups: 10 oversized single records return ROW_TOO_LARGE (split rows), first-call CPU above the Workers Free 10 ms limit locally (measure after the owner deploys), remote clients NOT_RUN until the owner deploys the Worker. Running: PO-PDF (Sonnet). Carry-over fix for the next PO card: landing hero says "generic and biosimilar"; biologics are out of v1.0 scope, so drop "biosimilar"; native Thai review of new landing copy; 320 px and focus order in PO-QA. Next: PO-AI after PO-PDF merges (both touch the app), then B2 BE-GROUND, B3 BE-CLAIMS, B4 BE-ORG, PO-WOW, PO-QA, PO-SHIP |
+| Product | Merged: PO-CURRENT (1ff2db22), PO-LANDING (1ae7f500), BE-GATEWAY B1 (4922cc83), BE-MCP B5 (aa6865b9), PO-PDF (02e432e5; one print layout, 64/64 parity, Semaglutide TH 59→30 pages; 39 tests rerun). B5 follow-ups: ROW_TOO_LARGE on 10 oversized records, first-call CPU vs Workers Free 10 ms, remote clients NOT_RUN until the owner deploys | Running: PO-WOW (Sonnet; also fixes the historical References-tab reveal leak, the "biosimilar" hero word and the 128 old exports), BE-GROUND B2 (Sol xhigh), BE-CLAIMS B3 (Sol high), JAMIAFIG (Sonnet). Next: PO-AI after PO-WOW, B4, PO-QA, PO-SHIP. Owner actions later: Cloudflare Pages and Worker deploy |
 | Track A | Frozen; OSF update 4 verified | Zenodo release when the owner logs in |
 | Integration | `main` equals `research/loe-bench` at 23af56eb | Fast-forward main after each merge |
 
