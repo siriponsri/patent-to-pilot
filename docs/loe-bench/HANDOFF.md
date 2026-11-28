@@ -22,7 +22,7 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 | Release | PREREG_LOCK 3f911452… (canonical original record, `scripts/osf_lock.py`) | Done |
 | Release | C′ gate (custodian) | PASS |
 | Confirmatory | SCORE: H1–H3, secondary, C3, C4 | Done. See "Results" |
-| Exploratory | SCORELLM: L1/L1e on C′ (RunPod, ≤ USD 3) | Running |
+| Exploratory | SCORELLM: L1/L1e on C′ | Done. L1e 12.36% and L1 26.14% versus M3 66.85% at 24 m. USD 2.543; pod deleted |
 | Exploratory | C9 GRPO/SFT: code, approved development projection (10,603 rows), frozen roster (256 rows) | Ready. Training is scheduled for 1 Dec 2026 00:15 UTC (scheduled task 58a1b3e5) on an L4 in US-MO-2 at USD 0.69/h, all-in cap about USD 4.5 |
 | Track A | Retrain on matured windows and freeze (hash, tag, OSF timestamp) | Not started. Runs after C9 trains, around 2–6 Dec, and before 2027-01-31 |
 | Product | PRD1 builder (32 dossiers, C8 audit 1,789/1,789), EVP (C6 3/5 documented restrictions; C7 17/17 family leads, 0/6 Thai statuses verified) | Done |
@@ -54,7 +54,9 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 ## Next action (owner returns 4 PM, 28 Nov)
 
-**First, on return.** The owner shut the PC down at about 13:35 Bangkok time while SCORELLM was running. Its executor process is gone, but RunPod pod `hmo8vrw0fq4pw2` (L4, US-GA-2, USD 0.69/h, started 05:28 UTC) may still be running.
+**SCORELLM resolved.** It completed, and the pod was deleted at 09:06 UTC.
+
+**Earlier note.** The owner shut the PC down at about 13:35 Bangkok time while SCORELLM was running. Its executor process is gone, but RunPod pod `hmo8vrw0fq4pw2` (L4, US-GA-2, USD 0.69/h, started 05:28 UTC) may still be running.
 - Check it with the RunPod list-pods tool.
 - If the remote job finished, retrieve the outputs and hashes, delete the pod, and run the comparison against the SCORE per-row exports.
 - If not, delete the pod and rerun SCORELLM.

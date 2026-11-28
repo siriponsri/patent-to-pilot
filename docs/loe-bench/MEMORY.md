@@ -129,3 +129,9 @@
   - Interpretation: the dated regulatory evidence carries the gain; the graph adds no confirmed value over the matched flat model.
   - C3 crowding: M3 79.8% vs B1 49.7%, +30.11 pp [+20.16, +36.86], 92 event drugs.
   - C4: NOT_RUN, because no pinned post-2017 SDUD outcome payload exists. Auto-clear failed again.
+- **28 Nov, SCORELLM on C′ (exploratory).**
+  - Recall at 20%:
+    - 24 m: L1 26.14%, L1e 12.36%, B1 46.48%, M3 66.85%.
+    - 12 m: L1 26.58%, L1e 14.50%, B1 50.64%, M3 67.33%.
+  - L1e−M3 is −54.48 pp at 24 m and −52.83 pp at 12 m. L1e−L1 is −13.78 and −12.08: giving the evidence in the prompt made the 7B LLM worse. This replicates the development pattern.
+  - RunPod USD 2.543. Pod hmo8vrw0fq4pw2 was deleted 09:06 UTC, about 36 minutes of idle billing after completion because the PC was off. Total GPU is about USD 3.51 of USD 23.
