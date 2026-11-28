@@ -35,3 +35,7 @@ Delivered in `C:/Users/User/Desktop/myDegree/IS/IS_2_new/01_short-paper/revision
 | `IS2-MWD-TH.pdf` | 9 | `4654c4c96b5ce3b0d41372bb7dcf2138bd2796314d9b5aa95a03d4c328d5eb1d` |
 
 The main planner can audit the branch and the four local files against these digests. The planner owns the LOE-Bench handoff and memory updates at integration. Include footnotes, bibliography and table cell continuations in subsequent final-PDF line checks. The builder's final-line heuristic alone missed those cases.
+
+## Planner audit (Claude Opus 5.5, 29 November 2026, 03:04 Bangkok)
+
+**PASS.** Delivered hashes match this receipt (TH PDF `4654c4c9…`, EN PDF `29bb2d9c…`, TH DOCX `70392e63…`, EN DOCX `dc048c33…`). Both PDFs carry H1 +20.37 [+14.37, +26.16], H2 +1.36 [−2.20, +3.01] and H3 +16.69 [+9.98, +24.21], the Zenodo DOI and reference [31] at `5448904e`. No code tokens (NOT_RUN, NOT_ESTIMABLE, PROVISIONAL) remain in either PDF. The Thai DOCX text carries the US-only decision with Canada and Japan failing M3, and the co-planner disclosure for the ten review rounds. Thai PDF text extraction with pdftotext is unreliable, so Thai checks used the DOCX XML. A visual orphan check was not repeated because no PDF renderer is installed here; the executor's render-and-segment check and the co-planner critique both report none. Chain: IS2REV2 `f958e044` → IS2CRIT2 `94de21e5` (ACCEPT WITH FIXES) → IS2FIX2 `95c0aebd`.
