@@ -1,0 +1,1211 @@
+{
+  "terms": {
+    "LABEL_FACTS": {
+      "url": "https://dailymed.nlm.nih.gov/dailymed/about-dailymed.cfm",
+      "quote": null,
+      "scope": "Third-party labeling read for factual active-moiety UNII only. No document reuse grant established."
+    },
+    "OGL": {
+      "url": "https://open.canada.ca/en/open-government-licence-canada",
+      "quote": "Copy, modify, publish, translate, adapt, distribute or otherwise use the Information in any medium, mode or format for any lawful purpose.",
+      "attribution": "Contains information licensed under the Open Government Licence – Canada."
+    },
+    "CA_RESEARCH": {
+      "url": "https://www.canada.ca/en/transparency/terms.html",
+      "quote": "may reproduce the materials in whole or in part for non-commercial purposes",
+      "attribution": "Health Canada, Government of Canada. Derived research record."
+    },
+    "PDL": {
+      "url": "https://www.digital.go.jp/en/resources/open_data/public_data_license_v1.0",
+      "quote": "may be freely used, copied, publicly transmitted, translated or otherwise modified",
+      "attribution": "Edited from the indicated government source under Public Data License Version 1.0."
+    },
+    "MHLW_PDL": {
+      "url": "https://www.mhlw.go.jp/chosakuken/",
+      "quote": "「公共データ利用規約（第1.0版）」（PDL1.0）に準拠した利用条件の下で、利用することができます。",
+      "attribution": "Edited from the Ministry of Health, Labour and Welfare source under PDL 1.0."
+    },
+    "PMDA_PDL": {
+      "url": "https://www.pmda.go.jp/english/0013.html",
+      "quote": "(PDL 1.0) (website of the Digital Agency) applies to the Content unless otherwise indicated.",
+      "attribution": "Edited from the PMDA source under PDL 1.0."
+    },
+    "FDA": {
+      "url": "https://open.fda.gov/terms/",
+      "quote": "CC0 1.0 Universal dedication"
+    },
+    "GSRS": {
+      "url": "https://gsrs.ncats.nih.gov/licensing",
+      "quote": "CC0 1.0 Universal"
+    }
+  },
+  "public_sources": [
+    {
+      "file": "ca-patent-complete.zip",
+      "url": "https://pr-rdb.hc-sc.gc.ca/patent/Patent.zip",
+      "bytes": 4318576,
+      "sha256": "0e3519d732055ebfe3e031992f2a9bfd0b6c0ca527c21c047c5e453b133e2b75",
+      "retrieved_utc": "2026-11-28T14:49:25+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "jp-2025-dec-alt.pdf",
+      "url": "https://www.mhlw.go.jp/content/12404000/001604893.pdf",
+      "bytes": 576648,
+      "sha256": "100aa0b5ea3154bda04e89a053b7e0ea7da69c2cecf04d6c5feca63762669d46",
+      "retrieved_utc": "2026-11-28T14:44:58+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-2024-dec.pdf",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/info/ymente241205.pdf",
+      "bytes": 102692,
+      "sha256": "17a2d99f65870c122e37bf70d74a0027ade264574e74516c815269e88af87ffe",
+      "retrieved_utc": "2026-11-28T14:44:59+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-2023-june.pdf",
+      "url": "https://kouseikyoku.mhlw.go.jp/hokkaido/info/tsuchi/06_yakka/000281070.pdf",
+      "bytes": 322686,
+      "sha256": "27bbb2c8f773a1c6525224f0f46f7eac458800c44a3ed5ef2d154f3ba528a706",
+      "retrieved_utc": "2026-11-28T14:44:58+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "ca-rid-2020.pdf",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/drug-products/applications-submissions/register-innovative-drugs/reg-innov-dr-eng-07-May-2020.pdf",
+      "bytes": 115961,
+      "sha256": "c2a905b1b3c9b7f0c91d87eb4f7a4a21f1ac5dc8931816931f8366cadd7dce5a",
+      "retrieved_utc": "2026-11-28T14:45:00+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "ca-patent.zip",
+      "url": "https://pr-rdb.hc-sc.gc.ca/patent/Patent.zip",
+      "error": "curl: (28) Operation timed out after 25014 milliseconds with 421885 out of 4318576 bytes received",
+      "retrieved_utc": "2026-11-28T14:41:01+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-legacy.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/notice-compliance/listings.html",
+      "bytes": 32442,
+      "sha256": "b063a8e799e596ff2708536da95775d618d3faeed0350786ac54e4c7590f4c52",
+      "retrieved_utc": "2026-11-28T14:40:40+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-noc-terms.html",
+      "url": "https://healthycanadians.gc.ca/important-eng.php",
+      "bytes": 62103,
+      "sha256": "f5f83e13aa6464e5088320d7838cc41ff4cf34505ed28171f5feeef3a6db40dc",
+      "retrieved_utc": "2026-11-28T14:40:54+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "ca-dpd-allfiles.zip",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drug-product-database/allfiles.zip",
+      "bytes": 1508674,
+      "sha256": "e89dc3e303c5372b101059b273cb96230d957a37ca760440b85db6a2e3575737",
+      "retrieved_utc": "2026-11-28T14:40:40+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-dpd-allfiles_ia.zip",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drug-product-database/allfiles_ia.zip",
+      "bytes": 5603318,
+      "sha256": "080b267ac7cc0c3e2e5c9d6dd1ef3c6edea406eb6be0b09d4d92fdbfa35ac0bf",
+      "retrieved_utc": "2026-11-28T14:40:40+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-dpd-allfiles_ap.zip",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drug-product-database/allfiles_ap.zip",
+      "bytes": 369402,
+      "sha256": "8b95c9313e6bc61828c865c7b4cf2a4dc4aa655f019401e013795893c9cc3a43",
+      "retrieved_utc": "2026-11-28T14:40:44+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-dpd-allfiles_dr.zip",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drug-product-database/allfiles_dr.zip",
+      "bytes": 315297,
+      "sha256": "1cd881bc3e9ccec598d75b619feed3834d63c372e8b8ad71b869e454d9483d95",
+      "retrieved_utc": "2026-11-28T14:40:43+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "jp-pmda-fy2023.xlsx",
+      "url": "https://www.pmda.go.jp/files/000252454.xlsx",
+      "bytes": 30744,
+      "sha256": "58ca3a93e9d2052182d95300c470e488bceb041063fe0391b43598c431424cde",
+      "retrieved_utc": "2026-11-28T14:40:41+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2024.xlsx",
+      "url": "https://www.pmda.go.jp/files/000274663.xlsx",
+      "bytes": 31594,
+      "sha256": "8053ecf3f373e9dad05ed705611c2921825c396020202109e4a144d90edfce81",
+      "retrieved_utc": "2026-11-28T14:40:43+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2025.xlsx",
+      "url": "https://www.pmda.go.jp/files/000277966.xlsx",
+      "bytes": 32825,
+      "sha256": "94ad54b5b7bc112bd4ee19f1698ff53d036a5ac7c6fcf3d907105146c6cf3742",
+      "retrieved_utc": "2026-11-28T14:40:45+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "ca-noc-page-native.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/notice-compliance/database/data-extract.html",
+      "bytes": 23418,
+      "sha256": "e92fbcc6d2138308e6bd28ea4cb55078f4c7ecf391d889339314d8c7888f89fa",
+      "retrieved_utc": "2026-11-28T14:39:54+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-noc-schema-native.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/notice-compliance/database/read-file.html",
+      "bytes": 32724,
+      "sha256": "d222754fd0e2619e4525ad72f7b1833f3083adb7fe26dea4e6d9aa948d1a4aee",
+      "retrieved_utc": "2026-11-28T14:39:55+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-noc-types-native.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/notice-compliance/database/terminology.html",
+      "bytes": 34860,
+      "sha256": "85a3d3d325ba744c416c1987b78dccffac991e1b176b5f0d0d6add56655dab47",
+      "retrieved_utc": "2026-11-28T14:39:54+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-noc-licence-native.html",
+      "url": "https://open.canada.ca/data/info/67995d41-0928-4a9f-b012-f38a90036812",
+      "bytes": 34202,
+      "sha256": "a726c760f602884da76e38fba006ac271cc020535d273bf383f1844f3610e82e",
+      "retrieved_utc": "2026-11-28T14:39:54+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-dpd-page-native.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database/what-data-extract-drug-product-database.html",
+      "bytes": 36658,
+      "sha256": "19ae92cd3a8636fba9ca2b859baf62b4c32239fbf1903bfd8eac5505504bfee7",
+      "retrieved_utc": "2026-11-28T14:39:54+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-patent-page-native.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/patent-register/database-download.html",
+      "bytes": 22455,
+      "sha256": "d1f42a76fb27aff2da1a83cce40f256fa6275119e5a34ec782cee36c2b474049",
+      "retrieved_utc": "2026-11-28T14:39:56+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-patent-catalogue-native.html",
+      "url": "https://open.canada.ca/data/en/dataset/1674baf5-6822-4788-afb3-f8659531d7c0",
+      "bytes": 34759,
+      "sha256": "641e12708746d70a4504e68d57da607f34e211e329241b17578bd758397d4587",
+      "retrieved_utc": "2026-11-28T14:39:55+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-rid-native.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/register-innovative-drugs.html",
+      "bytes": 249350,
+      "sha256": "486006e72f68591ac3e322569f37fb923af044a2ffc25f98e77a8b428bfaafd4",
+      "retrieved_utc": "2026-11-28T14:39:55+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "ca-rid-feb-2026-native.pdf",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/drug-products/applications-submissions/register-innovative-drugs/reg-innov-dr-eng-11-feb-2026.pdf",
+      "bytes": 274699,
+      "sha256": "8eb68be699f43576fce4714fcab2338d847d0dd579a33b73b9556be0bd328b84",
+      "retrieved_utc": "2026-11-28T14:39:57+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "ca-ogl-native.html",
+      "url": "https://open.canada.ca/en/open-government-licence-canada",
+      "bytes": 23088,
+      "sha256": "e62c3211e4bdc94fa4b6ca6bf541749c18b468c994ccae55e32603fafe7204cd",
+      "retrieved_utc": "2026-11-28T14:39:56+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-terms-native.html",
+      "url": "https://www.canada.ca/en/transparency/terms.html",
+      "bytes": 35419,
+      "sha256": "64e36e4cb02467812082abbed7e8a2ecb4e93d45b119ee1f4ae0043628c26f51",
+      "retrieved_utc": "2026-11-28T14:39:57+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "jp-pmda-fy2025.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0039.html",
+      "bytes": 132204,
+      "sha256": "232e315cdb47a003d74550b69b7744f68c512c847f51f2812948722cd0bcddfb",
+      "retrieved_utc": "2026-11-28T14:39:57+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2024.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0037.html",
+      "bytes": 132204,
+      "sha256": "6debeda69fb2361dad984cb5f99b5ec552c3ba09505eadf41214a2c1018e540b",
+      "retrieved_utc": "2026-11-28T14:39:57+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2023.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0036.html",
+      "bytes": 133130,
+      "sha256": "a6603958927641987b2c3d7d2eaabd2762519732d8d6e8c12554a8d42a864acd",
+      "retrieved_utc": "2026-11-28T14:39:57+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "ca-dpd-ckan.json",
+      "url": "https://open.canada.ca/data/api/3/action/package_show?id=bf55e42a-63cb-4556-bfd8-44f26e5a36fe",
+      "bytes": 69866,
+      "sha256": "682cbcf107a9ae656ce549f8351b4c89b107308fc84c26474f838443d44e9741",
+      "retrieved_utc": "2026-11-28T14:39:58+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-patent-ckan.json",
+      "url": "https://open.canada.ca/data/api/3/action/package_show?id=1674baf5-6822-4788-afb3-f8659531d7c0",
+      "bytes": 5217,
+      "sha256": "97da92e5c42eec94799039a98c4b55ba0f79ecd9ec3efaa830d7f2e8bb511519",
+      "retrieved_utc": "2026-11-28T14:39:58+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "jp-nhi-index.html",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000078916.html",
+      "bytes": 51976,
+      "sha256": "6cc68400d439354f8ba27c695b269b1fa024fc825ebaacefcd0631beb431e312",
+      "retrieved_utc": "2026-11-28T14:39:58+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2022.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0035.html",
+      "bytes": 132188,
+      "sha256": "c56be2048211c86668b6e2e252a6999652e9fa0253b45c23cc6f6708f3583cf7",
+      "retrieved_utc": "2026-11-28T14:45:48+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2021.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0034.html",
+      "bytes": 132178,
+      "sha256": "e03d23e8920f1128f896d14c2fa026b0143f9ad6b0e60b8e8afc099a4263277d",
+      "retrieved_utc": "2026-11-28T14:45:48+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2020.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0032.html",
+      "bytes": 131852,
+      "sha256": "5a2938fcbf1902f97a957e21c92dbdc9cb30d747f2c9c7b1e2710998e355f41d",
+      "retrieved_utc": "2026-11-28T14:45:48+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2019.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0031.html",
+      "bytes": 131852,
+      "sha256": "9468deec7137ab9efa68c5d87403adba1fcc11a78f2a4212c8c9ddcb72071a8b",
+      "retrieved_utc": "2026-11-28T14:45:48+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2018.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0030.html",
+      "bytes": 131832,
+      "sha256": "12468b7ee7e02327175093e000678fc548418305d92eb4645dbd6650d2133c95",
+      "retrieved_utc": "2026-11-28T14:45:48+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2017.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0029.html",
+      "bytes": 131581,
+      "sha256": "3b961b8bf76119e5cfbd73bdf75cc4316ecbdae14648c15090ff0639d1e19f53",
+      "retrieved_utc": "2026-11-28T14:45:50+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2016.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0026.html",
+      "bytes": 131260,
+      "sha256": "04999b97efb84ebc034f726ba39054cd8ee3535a99c9dd914e055d7bea9c8832",
+      "retrieved_utc": "2026-11-28T14:45:50+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2015.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0025.html",
+      "bytes": 130807,
+      "sha256": "af613150906669a4961e9dd2123d6be8bed6208fc504340dffb683090acca7c5",
+      "retrieved_utc": "2026-11-28T14:45:50+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2014.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0022.html",
+      "bytes": 130733,
+      "sha256": "c4278ee9869ad7056d6536c4cfc6a91642a98defed26aa0061ed0e9afa506881",
+      "retrieved_utc": "2026-11-28T14:45:50+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2013.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0009.html",
+      "bytes": 130755,
+      "sha256": "908f69f8a97a9868d89b22f0d6606fdebb59457df1d854492b52957db4a91d11",
+      "retrieved_utc": "2026-11-28T14:45:50+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2012.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0004.html",
+      "bytes": 130924,
+      "sha256": "c4b270dd95ff8f6ef71101178a1e5a34fb1e182ce02e0cf77a038304c19f451a",
+      "retrieved_utc": "2026-11-28T14:45:51+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2011.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0001.html",
+      "bytes": 130714,
+      "sha256": "87b0ba6487059b871098809f335168b20fb51ab219996082441ca81cabf3facd",
+      "retrieved_utc": "2026-11-28T14:45:51+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2010.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0012.html",
+      "bytes": 130623,
+      "sha256": "e0d8ca1670dfc7ebb5fa7447f004f2e5e311275d80aabea6c35f9019cb408665",
+      "retrieved_utc": "2026-11-28T14:45:51+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2009.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0005.html",
+      "bytes": 130636,
+      "sha256": "584b1c6417548394306521faa73e00acc0cad55defdde8a1a0d60492d44c9c2a",
+      "retrieved_utc": "2026-11-28T14:45:51+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2008.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0008.html",
+      "bytes": 130226,
+      "sha256": "fce1868a6ace059a69a4f38f15f146ba16712c81dbbceabe55f2152dfd339afb",
+      "retrieved_utc": "2026-11-28T14:45:51+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2007.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0023.html",
+      "bytes": 130226,
+      "sha256": "d547bcfe54c6d014dae904582774ff03de02e56394e1c4e055c3e47df439ff3c",
+      "retrieved_utc": "2026-11-28T14:45:53+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2006.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0003.html",
+      "bytes": 130463,
+      "sha256": "b986f9a10d8d6435c939e412ec2b318f5a69ab0d01e4d2990ac72ef6cc2c48db",
+      "retrieved_utc": "2026-11-28T14:45:53+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2005.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0014.html",
+      "bytes": 130274,
+      "sha256": "4c463a8a84ff6dca892a15ae35dea2760e439e2b42f26737be13ff955adfe0ec",
+      "retrieved_utc": "2026-11-28T14:45:53+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2004.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0011.html",
+      "bytes": 129825,
+      "sha256": "47dd62cc07ba4e27d5254842213c0f08f7994d7915bfb917c66cb8f5732b00dd",
+      "retrieved_utc": "2026-11-28T14:45:53+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-amendment-index.html",
+      "url": "https://kouseikyoku.mhlw.go.jp/hokkaido/info/tsuchi/06_yakka/index.html",
+      "bytes": 104696,
+      "sha256": "c73da14f187b8b81bdfacec6b3e43994d8a14c2cc65acfb17eb8d89773e50a66",
+      "retrieved_utc": "2026-11-28T14:45:53+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2012.pdf",
+      "url": "https://www.pmda.go.jp/files/000160046.pdf",
+      "bytes": 243866,
+      "sha256": "470933395aff6d118ac075800899ea1c246bae7b4bc25ae821b3ca7f7fc9ae57",
+      "retrieved_utc": "2026-11-28T14:49:11+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2013.pdf",
+      "url": "https://www.pmda.go.jp/files/000232598.pdf",
+      "bytes": 251856,
+      "sha256": "86671a64423d29d52220a48831f137b062900e391b799a67f81fa7dda8751569",
+      "retrieved_utc": "2026-11-28T14:49:11+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2014.pdf",
+      "url": "https://www.pmda.go.jp/files/000205149.pdf",
+      "bytes": 234928,
+      "sha256": "bcd7dcf0d27516db95cf43f2d1b3e0e6241718026e637388ea1c04561042a4cd",
+      "retrieved_utc": "2026-11-28T14:49:11+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2015.pdf",
+      "url": "https://www.pmda.go.jp/files/000233677.pdf",
+      "bytes": 214128,
+      "sha256": "5886e8de3cc0d7baced6e22f70fb4a1b10615a66667cf94fd67506a3ccd27725",
+      "retrieved_utc": "2026-11-28T14:49:11+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2016.pdf",
+      "url": "https://www.pmda.go.jp/files/000232595.pdf",
+      "bytes": 211528,
+      "sha256": "ac00eea128b3cf4d039c6f2dcf5b0b1b836be719830fcb97a3ab314e4c4fe000",
+      "retrieved_utc": "2026-11-28T14:49:11+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2017.pdf",
+      "url": "https://www.pmda.go.jp/files/000224215.pdf",
+      "bytes": 205126,
+      "sha256": "de5a22e02e9853e1fd25f4ea985b8cb1bc4f3dc36e0e5e890d1628009685e211",
+      "retrieved_utc": "2026-11-28T14:49:12+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2022.xlsx",
+      "url": "https://www.pmda.go.jp/files/000251012.xlsx",
+      "bytes": 32161,
+      "sha256": "d8ac862eb2a788cecc26e3de55f9a6fcf54c007b7425dab07e7699693e56dbfc",
+      "retrieved_utc": "2026-11-28T14:46:01+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2021.xlsx",
+      "url": "https://www.pmda.go.jp/files/000240479.xlsx",
+      "bytes": 30223,
+      "sha256": "f76c2366748a5253592e5e11d40158ee36a784d01c2eaf5fc75cc0f188d77836",
+      "retrieved_utc": "2026-11-28T14:46:00+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2020.xlsx",
+      "url": "https://www.pmda.go.jp/files/000239966.xlsx",
+      "bytes": 29387,
+      "sha256": "a1f7722f69f26cb7f24ccc207d43f50d7e1d9ee9d8a4d0462a4e2672693b7362",
+      "retrieved_utc": "2026-11-28T14:46:00+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2019.xlsx",
+      "url": "https://www.pmda.go.jp/files/000235353.xlsx",
+      "bytes": 32997,
+      "sha256": "9212055e48a58cf626d88fc846df8c385b5fe8705af864a9faace7ac077fc441",
+      "retrieved_utc": "2026-11-28T14:46:00+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2018.xlsx",
+      "url": "https://www.pmda.go.jp/files/000233676.xlsx",
+      "bytes": 32160,
+      "sha256": "703efe802d1bedb1c9f2f14c2a4fa89f2b8c48eee6b82be71d08040f4a7ed972",
+      "retrieved_utc": "2026-11-28T14:46:00+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2017.xls",
+      "url": "https://www.pmda.go.jp/files/000224216.xls",
+      "bytes": 74752,
+      "sha256": "32c83b1b2db3629259b9a030707db6352ed64ac0402f8d47f38f43bc8d9755b3",
+      "retrieved_utc": "2026-11-28T14:46:01+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2016.xls",
+      "url": "https://www.pmda.go.jp/files/000232597.xls",
+      "bytes": 88064,
+      "sha256": "db2407495faa2394285ac380ff0f242f55872ca5e7418f03cd9d3cd9b808a18b",
+      "retrieved_utc": "2026-11-28T14:46:01+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2015.xls",
+      "url": "https://www.pmda.go.jp/files/000233678.xls",
+      "bytes": 80896,
+      "sha256": "8bb4b7c2948bea405c49bde4f3b33cec9e000075083c07253a9589495dc85b54",
+      "retrieved_utc": "2026-11-28T14:46:01+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2014.xls",
+      "url": "https://www.pmda.go.jp/files/000205150.xls",
+      "bytes": 88576,
+      "sha256": "1e545e5ffcac238a8ff795347b94a2b71f55908b17cc5bca05c61fd6224d5607",
+      "retrieved_utc": "2026-11-28T14:46:01+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2013.xls",
+      "url": "https://www.pmda.go.jp/files/000232599.xls",
+      "bytes": 89088,
+      "sha256": "eddfa25a6e610e1049d9c92c3919b467a4f038933727980011854d7fb6d2e223",
+      "retrieved_utc": "2026-11-28T14:46:02+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2012.xls",
+      "url": "https://www.pmda.go.jp/files/000160967.xls",
+      "bytes": 77824,
+      "sha256": "78a9a46d973fc4e2344cd7a79c7e275f4dd5c334146ab180131ecf15dc8589b5",
+      "retrieved_utc": "2026-11-28T14:46:03+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2011.pdf",
+      "url": "https://www.pmda.go.jp/files/000160193.pdf",
+      "bytes": 335040,
+      "sha256": "8e62cf71bc95b0ca545baf7439675e37236eea882fcda428955383b25076aae7",
+      "retrieved_utc": "2026-11-28T14:46:02+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2010.pdf",
+      "url": "https://www.pmda.go.jp/files/000160448.pdf",
+      "bytes": 236241,
+      "sha256": "ca915e1cc8bf2575eccf5cccb755bead754c8c58042c0e42b3fc6025743cb73d",
+      "retrieved_utc": "2026-11-28T14:46:02+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2009.pdf",
+      "url": "https://www.pmda.go.jp/files/000161449.pdf",
+      "bytes": 251202,
+      "sha256": "f03f762c291b8f659be4a26c97b70c5eedb6692e6add10700f087fb93630685d",
+      "retrieved_utc": "2026-11-28T14:46:03+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2008.pdf",
+      "url": "https://www.pmda.go.jp/files/000160211.pdf",
+      "bytes": 208890,
+      "sha256": "43740d4c0d4857737217ecee3a7f76a40223ae0d40eddc227653c70b46091134",
+      "retrieved_utc": "2026-11-28T14:46:03+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2007.pdf",
+      "url": "https://www.pmda.go.jp/files/000160955.pdf",
+      "bytes": 230403,
+      "sha256": "357f75c88c7f81b5e8d0e7bdf75da11961d062a83def0c7a825e55b0a8026431",
+      "retrieved_utc": "2026-11-28T14:46:03+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2006.pdf",
+      "url": "https://www.pmda.go.jp/files/000160942.pdf",
+      "bytes": 355855,
+      "sha256": "df69b66c5fa344ccbe88f9c15ffde37de2c4f146ec09836df24d86d5d422f32b",
+      "retrieved_utc": "2026-11-28T14:46:04+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2005.pdf",
+      "url": "https://www.pmda.go.jp/files/000161001.pdf",
+      "bytes": 29317,
+      "sha256": "5a54dc5cb63960d6cbd9429e490d5bca3427c437d92963308986584aab697649",
+      "retrieved_utc": "2026-11-28T14:46:03+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-fy2004.pdf",
+      "url": "https://www.pmda.go.jp/files/000159977.pdf",
+      "bytes": 26574,
+      "sha256": "2cadef42bbca545fb09626f1713f913ff2a324af9710731676fb99989e5397f4",
+      "retrieved_utc": "2026-11-28T14:46:04+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-nhi-r04.zip",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/etc/R04_y.zip",
+      "bytes": 857729,
+      "sha256": "e12655fc3016cd10355bcec25b1c07eb419cfa3bb81d016b3c024302b7dd07b7",
+      "retrieved_utc": "2026-11-28T15:02:44+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-nhi-r05.zip",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/etc/R05_y.zip",
+      "bytes": 825755,
+      "sha256": "09c3d6c2b347baac958436561d19b1248dbfa475259eaa1869f40caee60db7b4",
+      "retrieved_utc": "2026-11-28T15:02:44+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-nhi-r06.zip",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/etc/R06_y.zip",
+      "bytes": 926916,
+      "sha256": "6d102830277fa63517872e47d2ce7a0e421efdde650db2f8da3f58d26a2ed748",
+      "retrieved_utc": "2026-11-28T15:02:44+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-nhi-r07.zip",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/etc/R07_y.zip",
+      "bytes": 890051,
+      "sha256": "614d12f48ca1ea8fcfbeea12225720866f2c7c9454056e8ba6a93f728e182f68",
+      "retrieved_utc": "2026-11-28T15:02:44+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-nhi-master-spec.pdf",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R08rec1.pdf",
+      "bytes": 896541,
+      "sha256": "7d8ef1c6940c0be848ac1e70758ac82a3a1d49b9ae60c45f66fe034638c9a49f",
+      "retrieved_utc": "2026-11-28T15:02:44+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-nhi-field36.pdf",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/info/ymente240308.pdf",
+      "bytes": 111617,
+      "sha256": "ce41571782734656374598e9a1bcc2b7afa872114760ff2ca8124adb263c3755",
+      "retrieved_utc": "2026-11-28T15:02:45+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-nhi-master-index.html",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/downloadMenu/",
+      "bytes": 20742,
+      "sha256": "073167d8a37b27c0af12be2a3533e945e74e9a9745e837ab9186f09f6f8d55a2",
+      "retrieved_utc": "2026-11-28T15:02:45+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "ca-patent-full.zip",
+      "url": "https://pr-rdb.hc-sc.gc.ca/patent/Patent.zip",
+      "error": "curl: (28) Operation timed out after 115005 milliseconds with 1733885 out of 4318576 bytes received",
+      "retrieved_utc": "2026-11-28T14:43:38+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "jp-2025-dec.pdf",
+      "url": "https://www.mhlw.go.jp/hourei/doc/tsuchi/T251205S0010.pdf",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "retrieved_utc": "2026-11-28T14:41:44+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-2024-june.pdf",
+      "url": "https://kouseikyoku.mhlw.go.jp/tohoku/000365765.pdf",
+      "bytes": 385585,
+      "sha256": "66900715ff5c3949d5ac0b59e91df721465f950026276163d49737465e56d8b4",
+      "retrieved_utc": "2026-11-28T14:41:44+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-2024-may.pdf",
+      "url": "https://kouseikyoku.mhlw.go.jp/tohoku/000365758.pdf",
+      "bytes": 361731,
+      "sha256": "bde056d9d9a74e26544b02a51808e1231d9d4f06f74fa81dc3bb43c8301bad5b",
+      "retrieved_utc": "2026-11-28T14:41:45+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-2023-dec.pdf",
+      "url": "https://kouseikyoku.mhlw.go.jp/kyushu/000298301.pdf",
+      "bytes": 344855,
+      "sha256": "c39563dd66d5107743f7e904189ba1d6049e68c1cdf338384bb509cb85e129fe",
+      "retrieved_utc": "2026-11-28T14:41:45+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-fy2024-dec.pdf",
+      "url": "https://www.mhlw.go.jp/content/10808000/001357343.pdf",
+      "bytes": 12387102,
+      "sha256": "0a0745eb996819a4c96c1ff3ea683d4a7d81a6fab40c21ff27282fedaad24f10",
+      "retrieved_utc": "2026-11-28T14:41:46+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "ca-noc-curl.zip",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/drug-products/notice-compliance/database/noc_files.zip",
+      "bytes": 4583179,
+      "sha256": "7e49a5040459ab8a1497c1c09b0a08131efe8b3338ba5b85ad19789ef858bedb",
+      "retrieved_utc": "2026-11-28T14:39:01+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-rid-curl.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/register-innovative-drugs.html",
+      "bytes": 249350,
+      "sha256": "0e78eadf9d24b68118b7d697949874a3ccd9da75928fed94ef5ca5fff774868e",
+      "retrieved_utc": "2026-11-28T14:39:02+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "ca-main.txt",
+      "url": "https://open.canada.ca/data/dataset/e36f617d-f8b1-48a3-a42d-b6378aa4c683/resource/070bde39-b1a6-4b4e-854e-94982c7d77eb/download/noc_main.txt",
+      "bytes": 13699856,
+      "sha256": "c5e934328012219587fccd7537d1e4e65ac66c0e3ebcb1c30bf51d1596f7fdce",
+      "retrieved_utc": "2026-11-28T14:39:06+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-ingredients.txt",
+      "url": "https://open.canada.ca/data/dataset/52bb749a-4006-4253-a4a5-63e51d2f880f/resource/9e98c693-41c1-4f96-81ab-9c30f31b8b07/download/noc_product_ingredient.txt",
+      "bytes": 6643493,
+      "sha256": "b61f984eed262cd3e9c839deed1086e853824886ff13be936f7813c47511cb28",
+      "retrieved_utc": "2026-11-28T14:39:04+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-api-doc.html",
+      "url": "https://health-products.canada.ca/api/documentation/noc-documentation-en.html?wbdisable=true",
+      "bytes": 74613,
+      "sha256": "68457f6441a3af744ebaf3d65797390352fd31435768804126105704bb752e8b",
+      "retrieved_utc": "2026-11-28T14:39:01+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-api-main.json",
+      "url": "https://health-products.canada.ca/api/notice-of-compliance/noc/?lang=en",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "retrieved_utc": "2026-11-28T14:39:02+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-api-main-alt.json",
+      "url": "https://health-products.canada.ca/api/notice-of-compliance/noticeofcompliance/?lang=en",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "retrieved_utc": "2026-11-28T14:39:02+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-main-ckan.json",
+      "url": "https://open.canada.ca/data/api/3/action/package_show?id=e36f617d-f8b1-48a3-a42d-b6378aa4c683",
+      "bytes": 5521,
+      "sha256": "2752cb3d544843d8ab4b9eb014e8daae4659b43470243c2ba70c421f26fdcad7",
+      "retrieved_utc": "2026-11-28T14:39:04+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "jp-fy2024-curl.pdf",
+      "url": "https://www.mhlw.go.jp/content/10808000/001374473.pdf",
+      "bytes": 7626878,
+      "sha256": "f6f54e82e6be2e33cb5a496caf9005574fc78dd0dbe5c8a07e437bc3b743fdf6",
+      "retrieved_utc": "2026-11-28T14:39:05+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-2025-june-curl.html",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc9492&dataType=1&pageNo=1",
+      "bytes": 70495,
+      "sha256": "50158fe0494f7266c8cd76395a693cd7da275c165894997fdcfe24070730544e",
+      "retrieved_utc": "2026-11-28T14:39:04+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-pdl-curl.html",
+      "url": "https://www.digital.go.jp/en/resources/open_data/public_data_license_v1.0",
+      "bytes": 58018,
+      "sha256": "55a66a083382534ddbcfa7697097184de607a75fcc1ac7b2e7f0c09dc6973142",
+      "retrieved_utc": "2026-11-28T14:39:06+00:00",
+      "terms": "PDL"
+    },
+    {
+      "file": "jp-mhlw-terms-curl.html",
+      "url": "https://www.mhlw.go.jp/chosakuken/",
+      "bytes": 51593,
+      "sha256": "a1a23c3e29af0f4e1a8b3f25a779342295eeacfe48dba78d7ffc006ddbc74fd9",
+      "retrieved_utc": "2026-11-28T14:39:05+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-ropivacaine-master.pdf",
+      "url": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/info/ymente241112.pdf",
+      "bytes": 73327,
+      "sha256": "8afc673c4ec705dd6a34de8778bd1300cb344afb2bdde4cc12e3db0311c9ef21",
+      "retrieved_utc": "2026-11-28T14:55:55+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-ropivacaine-product.html",
+      "url": "https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/1214405A1025_2?user=1",
+      "bytes": 13465,
+      "sha256": "d5f8b1d478ae925e9f2541636838a53220afa04d84d30b0c9407309e1b2542b0",
+      "retrieved_utc": "2026-11-28T14:55:55+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-erlotinib-product.html",
+      "url": "https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/4291016F1020_2?user=1",
+      "bytes": 15129,
+      "sha256": "b5d8b62683463a61a7821b7ee9ced88ee8c4841fb73db2c783be4002100c57cb",
+      "retrieved_utc": "2026-11-28T14:55:54+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-lenalidomide-product.html",
+      "url": "https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/4291024M1024_2?user=1",
+      "bytes": 20570,
+      "sha256": "3d7b64ae41f6e98e216e3f31d9e0c0321ed8891fff1a7264f49f6cc379511af4",
+      "retrieved_utc": "2026-11-28T14:55:55+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-pmda-robots.txt",
+      "url": "https://www.pmda.go.jp/robots.txt",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "retrieved_utc": "2026-11-28T14:55:54+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-mhlw-robots.txt",
+      "url": "https://www.mhlw.go.jp/robots.txt",
+      "bytes": 169,
+      "sha256": "d410a20234092a01e07cc6531920a5fedda6a96faaa073d94b95bd4c4a436144",
+      "retrieved_utc": "2026-11-28T14:55:56+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-pmda-report-terms.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0020.html",
+      "bytes": 134791,
+      "sha256": "bb560f6fadf81ff3b121b69f0fa29fa8009319571f24d9288a679a5c367efe89",
+      "retrieved_utc": "2026-11-28T14:55:56+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "us-openfda-terms.html",
+      "url": "https://open.fda.gov/terms/",
+      "bytes": 130895,
+      "sha256": "5ceb7c418afde98298b30b72fbbf90d4ab38c8950df4802bde6f1533ed69b0db",
+      "retrieved_utc": "2026-11-28T14:55:58+00:00",
+      "terms": "FDA"
+    },
+    {
+      "file": "us-gsrs-terms.html",
+      "url": "https://gsrs.ncats.nih.gov/licensing",
+      "bytes": 61273,
+      "sha256": "c303d7dba00a75b602d138c7e7a2806ef555bd17a30e2ca1374243148c61f721",
+      "retrieved_utc": "2026-11-28T14:55:59+00:00",
+      "terms": "GSRS"
+    },
+    {
+      "file": "ca-noc.zip",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/drug-products/notice-compliance/database/noc_files.zip",
+      "error": "The read operation timed out",
+      "retrieved_utc": "2026-11-28T14:38:04+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-noc-page.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/notice-compliance/database/data-extract.html",
+      "error": "Remote end closed connection without response",
+      "retrieved_utc": "2026-11-28T14:37:49+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-noc-schema.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/notice-compliance/database/read-file.html",
+      "error": "The read operation timed out",
+      "retrieved_utc": "2026-11-28T14:38:04+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-noc-types.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/notice-compliance/database/terminology.html",
+      "error": "Remote end closed connection without response",
+      "retrieved_utc": "2026-11-28T14:37:49+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-noc-licence.html",
+      "url": "https://open.canada.ca/data/info/67995d41-0928-4a9f-b012-f38a90036812",
+      "last_modified": null,
+      "bytes": 244,
+      "sha256": "95c790ad85b3e08b903012eba683e6954259082169e204820e591c1b88417ed8",
+      "retrieved_utc": "2026-11-28T14:37:30+00:00",
+      "error": "HTTP 200 challenge body. No usable source content.",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-dpd-page.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database/what-data-extract-drug-product-database.html",
+      "error": "The read operation timed out",
+      "retrieved_utc": "2026-11-28T14:38:05+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-patent-page.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/patent-register/database-download.html",
+      "error": "The read operation timed out",
+      "retrieved_utc": "2026-11-28T14:38:24+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-patent-catalogue.html",
+      "url": "https://open.canada.ca/data/en/dataset/1674baf5-6822-4788-afb3-f8659531d7c0",
+      "last_modified": null,
+      "bytes": 244,
+      "sha256": "ca6878d0a5801a1ade873c7c49d127a265b152cfde5f18035687b76214c71a4c",
+      "retrieved_utc": "2026-11-28T14:37:50+00:00",
+      "error": "HTTP 200 challenge body. No usable source content.",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-rid.html",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/register-innovative-drugs.html",
+      "error": "Remote end closed connection without response",
+      "retrieved_utc": "2026-11-28T14:38:09+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "ca-rid-feb-2026.pdf",
+      "url": "https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/drug-products/applications-submissions/register-innovative-drugs/reg-innov-dr-eng-11-feb-2026.pdf",
+      "error": "Remote end closed connection without response",
+      "retrieved_utc": "2026-11-28T14:38:24+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "ca-ogl.html",
+      "url": "https://open.canada.ca/en/open-government-licence-canada",
+      "last_modified": null,
+      "bytes": 244,
+      "sha256": "dd6724146a4901fa2551ffd14805ef272c075b32d27d4195b1fd3d9133ccca9f",
+      "retrieved_utc": "2026-11-28T14:38:06+00:00",
+      "error": "HTTP 200 challenge body. No usable source content.",
+      "terms": "OGL"
+    },
+    {
+      "file": "ca-terms.html",
+      "url": "https://www.canada.ca/en/transparency/terms.html",
+      "error": "The read operation timed out",
+      "retrieved_utc": "2026-11-28T14:38:40+00:00",
+      "terms": "CA_RESEARCH"
+    },
+    {
+      "file": "jp-mhlw-terms.html",
+      "url": "https://www.mhlw.go.jp/chosakuken/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "retrieved_utc": "2026-11-28T14:38:06+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-pdl.html",
+      "url": "https://www.digital.go.jp/en/resources/open_data/public_data_license_v1.0",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "retrieved_utc": "2026-11-28T14:38:06+00:00",
+      "terms": "PDL"
+    },
+    {
+      "file": "jp-pmda-terms.html",
+      "url": "https://www.pmda.go.jp/english/0013.html",
+      "last_modified": "Thu, 26 Nov 2026 09:43:59 GMT",
+      "bytes": 44339,
+      "sha256": "3c4314a5fb246f85b1b8308a1046b654b0f790e9bfbf6220a946119d40de503b",
+      "retrieved_utc": "2026-11-28T14:38:07+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-pmda-archive.html",
+      "url": "https://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0010.html",
+      "last_modified": "Thu, 26 Nov 2026 10:26:53 GMT",
+      "bytes": 127067,
+      "sha256": "2ccbce53c1ff98038ff4f863d6b93579d688000af8482c70abda4a30beebb02e",
+      "retrieved_utc": "2026-11-28T14:38:07+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-fy2024.pdf",
+      "url": "https://www.mhlw.go.jp/content/10808000/001374473.pdf",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "retrieved_utc": "2026-11-28T14:38:07+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-2025-june.html",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc9492&dataType=1&pageNo=1",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "retrieved_utc": "2026-11-28T14:38:07+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-reexamination.pdf",
+      "url": "https://www.pmda.go.jp/files/000247811.pdf",
+      "last_modified": "Thu, 25 Dec 2025 03:02:28 GMT",
+      "bytes": 1188208,
+      "sha256": "99d7dca661193a4b73e7fc8f8b369f9525a0e01830e8bbfea0c45415c3a16f39",
+      "retrieved_utc": "2026-11-28T14:38:09+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-rivaroxaban-review.pdf",
+      "url": "https://www.pmda.go.jp/drugs/2012/P201200011/630004000_22400AMX00041_A100_2.pdf",
+      "bytes": 1301017,
+      "sha256": "14a285ad7224f89ca12375d315a7f6e7acd77024f7a21bc16ec1b7447be7c510",
+      "retrieved_utc": "2026-11-28T14:51:37+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "jp-rivaroxaban-product.html",
+      "url": "https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/3339003C1028_1?user=1",
+      "bytes": 17035,
+      "sha256": "b0da0d41dbd9917633cd4a44d0ff841f22413c515fbf3af73c164131e8062848",
+      "retrieved_utc": "2026-11-28T14:51:37+00:00",
+      "terms": "PMDA_PDL"
+    },
+    {
+      "file": "ca-ofev-dpd.html",
+      "url": "https://health-products.canada.ca/dpd-bdpp/info?code=92761&lang=eng",
+      "bytes": 30466,
+      "sha256": "34fbfe4752d950f792e516a914a88bb63221ea5ba5fea63eb0bbd63a0ecf3168",
+      "retrieved_utc": "2026-11-28T14:51:38+00:00",
+      "terms": "OGL"
+    },
+    {
+      "file": "jp-ropivacaine-list.pdf",
+      "url": "https://www.mhlw.go.jp/topics/2024/04/dl/tp20250201-01_02.pdf",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "retrieved_utc": "2026-11-28T14:51:36+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "jp-2025-dec.html",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc9603&dataType=1&pageNo=1",
+      "bytes": 81681,
+      "sha256": "e1f35c410634b93c2b400bc7394691e66e51fc42c2d9079632c9e0279493cb12",
+      "retrieved_utc": "2026-11-28T14:51:37+00:00",
+      "terms": "MHLW_PDL"
+    },
+    {
+      "file": "us-pomalyst-label.pdf",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=2b25ef01-5c9e-11e1-b86c-0800200c9a66&type=pdf",
+      "bytes": 567879,
+      "sha256": "b4b0a08d15cdb70eba5e720ccef573cb9487ae407d36bbd694fc961448a69955",
+      "retrieved_utc": "2026-11-28T14:59:52+00:00",
+      "terms": "LABEL_FACTS"
+    },
+    {
+      "file": "us-xarelto-label.html",
+      "url": "https://www.dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610&type=display",
+      "bytes": 366782,
+      "sha256": "c1a7950fda1a4ce055ae93b979ab0fa743a6a4455e3ba8f9dad4b68d62525033",
+      "retrieved_utc": "2026-11-28T14:59:39+00:00",
+      "terms": "LABEL_FACTS"
+    },
+    {
+      "file": "us-2020-first-generics.html",
+      "url": "https://www.fda.gov/drugs/first-generic-drug-approvals/2020-first-generic-drug-approvals",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "retrieved_utc": "2026-11-28T14:59:15+00:00",
+      "terms": "FDA"
+    },
+    {
+      "file": "us-2025-first-generics.html",
+      "url": "https://www.fda.gov/drugs/drug-and-biologic-approval-and-ind-activity-reports/2025-first-generic-drug-approvals",
+      "bytes": 84839,
+      "sha256": "4fd5c3af678341a5c76e4de0a6bd8c0cf0f1e86ae5c123033cc3dc1115bd7566",
+      "retrieved_utc": "2026-11-28T14:59:15+00:00",
+      "terms": "FDA"
+    }
+  ],
+  "previously_pinned_public_us_sources": [
+    {
+      "file": "ob_nda.jsonl",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:N&limit=1000&skip=<k*1000>",
+      "retrieved_utc": "2026-11-27T10:23:14.478072+00:00",
+      "bytes": 8264858,
+      "sha256": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f",
+      "terms": "FDA"
+    },
+    {
+      "file": "ob_anda_pre1982.jsonl",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:A+AND+approved_prior_to_1982:true&limit=1000&skip=<k*1000>",
+      "retrieved_utc": "2026-11-27T10:23:14.478072+00:00",
+      "bytes": 1568659,
+      "sha256": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "terms": "FDA"
+    },
+    {
+      "file": "ob_anda_to2009.jsonl",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:A+AND+approval_date:[19000101+TO+20091231]&limit=1000&skip=<k*1000>",
+      "retrieved_utc": "2026-11-27T10:23:14.478072+00:00",
+      "bytes": 6815189,
+      "sha256": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "terms": "FDA"
+    },
+    {
+      "file": "ob_anda_2010s.jsonl",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:A+AND+approval_date:[20100101+TO+20191231]&limit=1000&skip=<k*1000>",
+      "retrieved_utc": "2026-11-27T10:23:14.478072+00:00",
+      "bytes": 6060496,
+      "sha256": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "terms": "FDA"
+    },
+    {
+      "file": "ob_anda_2020plus.jsonl",
+      "url_template": "https://api.fda.gov/drug/orangebook.json?search=products.application_type:A+AND+approval_date:[20200101+TO+20991231]&limit=1000&skip=<k*1000>",
+      "retrieved_utc": "2026-11-27T10:23:14.478072+00:00",
+      "bytes": 5126486,
+      "sha256": "9f8752a5afb834feb59e635dd00be17e2f089ab36447b191de06eaccf3a51b54",
+      "terms": "FDA"
+    },
+    {
+      "file": "df_nda.jsonl",
+      "url_template": "https://api.fda.gov/drug/drugsfda.json?search=application_number:NDA*&limit=1000&skip=<k*1000>",
+      "retrieved_utc": "2026-11-27T10:23:14.478072+00:00",
+      "bytes": 36779165,
+      "sha256": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+      "terms": "FDA"
+    },
+    {
+      "file": "df_anda.jsonl",
+      "url_template": "https://api.fda.gov/drug/drugsfda.json?search=application_number:ANDA*&limit=1000&skip=<k*1000>",
+      "retrieved_utc": "2026-11-27T10:23:14.478072+00:00",
+      "bytes": 44270168,
+      "sha256": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "terms": "FDA"
+    },
+    {
+      "file": "dump-public-2026-08-06.gsrs",
+      "url": "https://gsrs.ncats.nih.gov/assets/downloads/dump-public-2026-08-06.gsrs",
+      "retrieved_utc": "2026-11-27T11:09:46+00:00",
+      "retrieved_utc_basis": "Pinned HTTP Date header",
+      "bytes": 329396273,
+      "sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad",
+      "terms": "GSRS"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+ingredient_en,ingredient_ja,listing_date,listing_source,listing_locator,approval_date,approval_source,approval_locator,disposition
+SUGAMMADEX SODIUM,スガマデクス,2024-05-22,jp-2024-may.pdf,0521-1 and annex 1,2010-01-20,jp-pmda-fy2009.pdf,pdf 2,first_by_strength_witness_history_unverified
+SUGAMMADEX SODIUM,スガマデクス,2024-06-14,jp-2024-june.pdf,0613-1 and annex 1,2010-01-20,jp-pmda-fy2009.pdf,pdf 2,later_strength_same_moiety
+USTEKINUMAB,ウステキヌマブ,2024-05-22,jp-2024-may.pdf,0521-1 and annex 1,,,,biosimilar
+ROPIVACAINE HYDROCHLORIDE,ロピバカイン,2024-11-12,jp-ropivacaine-master.pdf,622975301 and 622975401,,jp-ropivacaine-product.html,2001-04-04 review archive metadata,first_by_strength_NAS_class_unverified
+EZETIMIBE;ROSUVASTATIN,エゼロス,2024-12-06,jp-2024-dec.pdf,622974201,,,,full_set_NAS_unverified
+RIVAROXABAN,リバーロキサバン,2024-12-06,jp-2024-dec.pdf,622976001,2012-01-18,jp-rivaroxaban-review.pdf,initial review and PMDA 2012-01-18 approval reference,first_by_strength_witness_history_unverified
+VILDAGLIPTIN,ビルダグリプチン,2024-12-06,jp-2024-dec.pdf,622975601,2010-01-20,jp-pmda-fy2009.pdf,pdf 4,first_by_strength_witness_history_unverified
+SAXAGLIPTIN,サキサグリプチン,2024-12-06,jp-2024-dec.pdf,622974101,2013-03-25,jp-pmda-fy2012.pdf,pdf 6 no 99,first_by_strength_witness_history_unverified
+HYDROXYCHLOROQUINE SULFATE,ヒドロキシクロロキン,2024-12-06,jp-2024-dec.pdf,622975201,2015-07-03,jp-pmda-fy2015.pdf,pdf 3 no 58,first_by_strength_witness_history_unverified
+SUNITINIB MALATE,スニチニブ,2024-12-06,jp-2024-dec.pdf,622972201,2008-04-16,jp-pmda-fy2008.pdf,pdf 4 no 63,first_by_strength_witness_history_unverified
+ERIBULIN MESYLATE,エリブリン,2024-12-06,jp-2024-dec.pdf,622976201,2011-04-22,jp-pmda-fy2011.pdf,pdf 7 no 100,first_by_strength_witness_history_unverified
+METRONIDAZOLE,メトロニダゾール,2024-12-06,jp-2024-dec.pdf,622979501,,,,route_only_firstness_unverified
+EPINASTINE HYDROCHLORIDE,エピナスチン,2024-12-06,jp-2024-dec.pdf,622978401 and 622978901,,jp-pmda-fy2013.pdf,pdf 5 no 82 lists a new route,route_only_firstness_unverified
+ERLOTINIB HYDROCHLORIDE,エルロチニブ,2023-06-16,jp-2023-june.pdf,annex 1 pdf 6 and annex 3 pdf 10,2007-10-19,jp-pmda-fy2007.pdf,pdf 6 no 71,generic_listing_witness_history_unverified
+LENALIDOMIDE,レナリドミド,2023-12-08,jp-2023-dec.pdf,annexes 1 and 3,2010-06-25,jp-pmda-fy2010.pdf,pdf 1 no 13,generic_listing_witness_history_unverified
+LACOSAMIDE,ラコサミド,2025-12-05,jp-2025-dec-alt.pdf,annex 1 pdf 4 and 5,2016-07-04,jp-pmda-fy2016.pdf,pdf 2 no 28,generic_listing_witness_history_unverified
+ABIRATERONE ACETATE,アビラテロン,2025-12-05,jp-2025-dec-alt.pdf,annex 1 pdf 6,2014-07-04,jp-pmda-fy2014.pdf,pdf 4 no 81,generic_listing_witness_history_unverified

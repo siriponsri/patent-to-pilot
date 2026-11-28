@@ -1,0 +1,11 @@
+first_notice,disposition,source_and_reason
+30153,include_local_identity,Exact POMALIDOMIDE on both NOC 15139 and 30153 with POMALYST reference and RID submission 165891. Pomalyst SPL lists active-moiety UNII D2UX06XLB5.
+31976,include_local_identity,Exact RIVAROXABAN on NOC 9785 and same-day ANDS group with XARELTO reference and RID submission 119111. Xarelto SPL lists active-moiety UNII 9NDF7JZ4M3.
+30700,include,SPIRIVA is Health Canada DPD DIN 02246793 from NOC 803. HANDIHALER is the device qualifier on the ANDS reference.
+34478,include,NOC 8664 lists GADOVIST 1.0 with GADOBUTROL following NAS NOC 1829 for GADOVIST.
+34711,include,RUPALL DPD DINs 02456451 and 02456478 match NAS NOC 18290. RID submission 186488 records the same approval date.
+34833,include,APTIOM DPD DINs 02426862 02426870 02426889 02426897 match NAS NOC 15782.
+35259,include,NOC 16640 and RID submission 139413 link JINARC to the same moiety as SAMSCA NAS NOC 12536.
+35907,include,NOC 17142 and DPD DIN 02444038 document MIFEGYMISO. ANDS NOC 35907 spells the reference MEFEGYMISO and names the same full two-ingredient set and reference manufacturer.
+31619,exclude_modality,Glatiramer acetate is a heterogeneous synthetic polypeptide. Pharmaceutical-class sensitivity retains it.
+34933,exclude_modality,Lanreotide acetate is a synthetic peptide. Pharmaceutical-class sensitivity retains it.
