@@ -15,7 +15,7 @@ import numpy as np
 from loe_bench import tracka_outcomes, tracka_statistics
 from loe_bench.score_release import main, release_directory, score
 from loe_bench.tracka_release import (
-    ARMS, C9, CORE, FREEZE, IDENTITY, LLM, MANIFEST, PRIOR, ROSTER, SCORER, T0, VERSION,
+    ARMS, C9, CORE, FREEZE, IDENTITY, LLM, MANIFEST, PRIOR, ROSTER, SCORER, T0, TRACKA_FREEZE_SCHEMA, VERSION,
     digest, dump, load, read_release,
 )
 
@@ -198,6 +198,48 @@ class ScoreReleaseTest(unittest.TestCase):
         self.assertEqual(rc, 1)
         self.assertIn("SHA-256 mismatch", output.getvalue())
         self.assertFalse((self.root / "bad").exists())
+
+    def test_per_arm_freeze_binds_each_score_to_its_arm(self):
+        folder = self.release.folder
+        manifest = load(folder / MANIFEST)
+        dictionary = load(folder / ARMS)
+        predictions = {}
+        l1_inputs = folder / "L1DEV_inputs.jsonl"
+        for arm, source in dictionary.items():
+            filename = f"{arm}_predictions.jsonl"
+            rows = []
+            for original in source["files"].values():
+                for line in (folder / original).read_text(encoding="utf-8").splitlines():
+                    row = json.loads(line)
+                    if arm in CORE + PRIOR:
+                        row.update(row.pop("arms")[arm])
+                    if arm in LLM:
+                        row["entity"] = "Display name for " + row.pop("key")
+                    rows.append(row)
+            if arm == "L1":
+                jsonl(l1_inputs, [{k: row[k] for k in ("entity", "horizon_months", "t0")} for row in rows])
+            jsonl(folder / filename, rows)
+            source["files"] = dict.fromkeys(source["files"], filename)
+            predictions[arm] = {"file": filename, "sha256": digest(folder / filename), "status": "ADMITTED"}
+        roster_hash = digest(folder / ROSTER)
+        dump(folder / FREEZE, {"schema": TRACKA_FREEZE_SCHEMA, "t0": T0.isoformat(),
+                               "git_tag": manifest["freeze_tag"], "predictions": predictions,
+                               "roster": {"canonical_file": ROSTER, "sha256": roster_hash},
+                               "upstream_private_sha256": {ROSTER: roster_hash, l1_inputs.name: digest(l1_inputs)}})
+        manifest["osf_manifest_sha256"] = digest(folder / FREEZE)
+        names = [ROSTER, *(record["file"] for record in predictions.values())]
+        manifest["frozen_files"] = {name: name for name in names}
+        manifest["files_sha256"] = {name: digest(folder / name) for name in (*names, IDENTITY, FREEZE, SCORER)}
+        dump(folder / ARMS, dictionary)
+        manifest["files_sha256"][ARMS] = digest(folder / ARMS)
+        dump(folder / MANIFEST, manifest)
+        self.assertEqual(read_release(folder, manifest["osf_manifest_sha256"]).scores, self.release.scores)
+        dictionary["M3"]["files"] = dictionary["B1"]["files"]
+        dump(folder / ARMS, dictionary)
+        manifest["files_sha256"][ARMS] = digest(folder / ARMS)
+        dump(folder / MANIFEST, manifest)
+        with self.assertRaisesRegex(ValueError, "pinned to another arm"):
+            read_release(folder, manifest["osf_manifest_sha256"])
 
     def test_wrong_order_stops_even_with_matching_hashes(self):
         folder = self.release.folder

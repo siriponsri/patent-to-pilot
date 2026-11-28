@@ -28,6 +28,7 @@ ROSTER = "roster.jsonl"
 SCORER = "scorer-version.json"
 DIGEST = re.compile(r"[0-9a-f]{64}")
 FILENAME = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_.-]*")
+TRACKA_FREEZE_SCHEMA = "loe-track-a-freeze-v1"
 
 
 def digest(path):
@@ -57,6 +58,24 @@ def safe_name(name):
     return name
 
 
+def frozen_pins(freeze):
+    if freeze.get("schema") != TRACKA_FREEZE_SCHEMA:
+        return freeze["files_sha256"]
+    require(freeze["t0"] == T0.isoformat() and freeze["roster"]["canonical_file"] == ROSTER,
+            "Invalid Track A freeze roster or cutoff")
+    predictions = freeze["predictions"]
+    require(set(CORE) <= predictions.keys() <= set(CORE + PRIOR + LLM + C9),
+            "Invalid Track A freeze arm inventory")
+    pins = dict(freeze["upstream_private_sha256"])
+    require(pins.get(ROSTER) == freeze["roster"]["sha256"], "Inconsistent roster freeze pins")
+    for arm, record in predictions.items():
+        name = safe_name(record["file"])
+        require(record["status"] == "ADMITTED" and name not in pins,
+                f"Invalid or duplicate frozen prediction for {arm}")
+        pins[name] = record["sha256"]
+    return pins
+
+
 def verify_file(folder, name, expected):
     path = folder / safe_name(name)
     require(isinstance(expected, str) and DIGEST.fullmatch(expected), f"Invalid SHA-256 for {name}")
@@ -74,6 +93,19 @@ def ordered_rows(path, expected, horizon=None):
     ids = [row_id(row) for row in rows]
     target = expected if horizon is None else [key for key in expected if key[2] == horizon]
     require(ids == target, f"Roster order or row count differs in {path.name}")
+    return rows
+
+
+def ordered_llm_rows(path, expected, input_sha256):
+    rows = list(read_jsonl(path))
+    require([(row["t0"], row["horizon_months"]) for row in rows] == [(t, h) for _, t, h in expected],
+            f"Roster order or row count differs in {path.name}")
+    # TRACKA-CORE exported the L1 prompt identities in canonical roster order.
+    # Both arms carry that same projection, with ingredient names in place of keys.
+    identities = [{key: row[key] for key in ("entity", "horizon_months", "t0")} for row in rows]
+    projected = "".join(json.dumps(row, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n"
+                        for row in identities).encode("utf-8")
+    require(sha256(projected).hexdigest() == input_sha256, f"Frozen L1 input identities differ in {path.name}")
     return rows
 
 
@@ -134,7 +166,11 @@ def read_release(folder, expected_freeze=None):
                 "Missing or inconsistent freeze attestation")
         require(manifest["analysis"] == "exploratory" or
                 (manifest["analysis"] == "replication" and stamped < DEADLINE), "Invalid Track A analysis type")
-    frozen_files = freeze["files_sha256"]
+    frozen_files = frozen_pins(freeze)
+    native_freeze = freeze.get("schema") == TRACKA_FREEZE_SCHEMA
+    if native_freeze:
+        require(manifest["freeze"] == "frozen" and manifest["freeze_tag"] == freeze["git_tag"],
+                "Release tag differs from the Track A freeze")
     for name, frozen_name in manifest["frozen_files"].items():
         require(name in files and files[name] == frozen_files.get(frozen_name),
                 f"Release does not match the freeze manifest for {name}")
@@ -158,6 +194,10 @@ def read_release(folder, expected_freeze=None):
     for arm, source in dictionary.items():
         require(source["status"] in ("INCLUDED", "NOT_RUN", "WITHHELD"), f"Unknown arm status: {arm}")
         supplied = source["files"]
+        if native_freeze:
+            admitted = freeze["predictions"].get(arm)
+            require((source["status"] == "NOT_RUN") == (admitted is None),
+                    f"Incorrect freeze availability for {arm}")
         if source["status"] != "INCLUDED":
             require(arm not in CORE and not supplied, f"Invalid omitted arm: {arm}")
             continue
@@ -167,14 +207,23 @@ def read_release(folder, expected_freeze=None):
         for h in horizons:
             name = supplied[str(h)]
             require(name in manifest["frozen_files"], f"Prediction not covered by freeze manifest: {name}")
-            rows = ordered_rows(folder / name, expected, None if single_file else h)
+            if native_freeze:
+                require(manifest["frozen_files"][name] == admitted["file"],
+                        f"Prediction is pinned to another arm: {arm}")
+            if native_freeze and arm in LLM:
+                rows = ordered_llm_rows(folder / name, expected, frozen_files["L1DEV_inputs.jsonl"])
+            else:
+                rows = ordered_rows(folder / name, expected, None if single_file else h)
             if single_file:
                 rows = [row for row in rows if row_id(row)[2] == h]
             if arm in CORE + PRIOR:
                 group = CORE if arm in CORE else tuple(a for a in PRIOR if dictionary[a]["status"] == "INCLUDED")
-                require(all(set(row["arms"]) == set(group) for row in rows),
-                        f"Arm columns differ from arm dictionary for {name}")
-                scores[h][arm] = [model_scores(arm, row["arms"][arm]) for row in rows]
+                if native_freeze:
+                    scores[h][arm] = [model_scores(arm, row) for row in rows]
+                else:
+                    require(all(set(row["arms"]) == set(group) for row in rows),
+                            f"Arm columns differ from arm dictionary for {name}")
+                    scores[h][arm] = [model_scores(arm, row["arms"][arm]) for row in rows]
             else:
                 scores[h][arm] = [llm_scores(arm, row) for row in rows]
     require((C9[0] in scores[24]) == (C9[1] in scores[24]), "C9 must be supplied as a matched pair")
