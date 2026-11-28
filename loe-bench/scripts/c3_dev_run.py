@@ -2,6 +2,7 @@
 
 import argparse
 from collections import Counter, defaultdict
+from dataclasses import asdict
 from datetime import date
 from hashlib import sha256
 import json
@@ -9,15 +10,19 @@ from pathlib import Path
 import re
 from unittest.mock import patch
 
+from c3_dev_guard import nda_reader
 from freeze_run import manifest, read_json
+from c3_edition_applicants import collect_listings
 from t1v3_run import require_closed_seal
 from t2_dev_run import ROOT, _verify
 from t4_power import (approved_by, composite_items, project_development_anda, project_orange,
                       projected_annotation, projected_product, select_members)
-from devx_run import OB_APPROVAL, OB_HISTORICAL
+from devx_run import OB_APPROVAL, OB_HISTORICAL, without_later_approvals
+import t4_power
 
 from loe_bench import c3, dataset, moiety
-from loe_bench.common import read_jsonl
+from loe_bench.common import add_months, read_jsonl
+from loe_bench.nber_ob import DEFAULT_NBER_DIR
 from loe_bench.ob_history import DEFAULT_DIR
 
 
@@ -98,7 +103,7 @@ def _inputs(raw):
         if path.name == "df_anda.jsonl":
             yield from identities
         elif path.name in ("ob_nda.jsonl", "df_nda.jsonl"):
-            yield from read_jsonl(path)
+            yield from nda_reader(path, read_jsonl, projector=t4_power, redact_dates=without_later_approvals)
         elif path.name in OB_HISTORICAL:
             with path.open("rb") as handle:
                 for line in handle:
@@ -136,7 +141,7 @@ def _inputs(raw):
             approvals.append(c3.Approval(group, app, approved, proof))
             entity = entities[group]
             entity.anda_first = min(entity.anda_first or approved, approved)
-    return entities, approvals, metadata, unlinked, {name: hashes[name] for name in names}
+    return entities, approvals, metadata, unlinked, {name: hashes[name] for name in names}, source["fetched_at_utc"]
 
 
 def _history(path, digest, metadata):
@@ -160,21 +165,37 @@ def _history(path, digest, metadata):
     return c3.ApplicantIndex(history, aliases)
 
 
-def _scores(path, digest, config_digest, roster):
+def _scores(path, digest, config_digest, roster, frozen_cutoffs):
     _verify(path, digest)
-    source = json.loads(path.read_bytes())
+    fields = dict(composite_items(path.read_bytes()))
+    source = json.loads(select_members(fields, {b"status", b"prediction_horizon_months", b"frozen_config_sha256"}))
     if (source["status"], source["prediction_horizon_months"], source["frozen_config_sha256"]) != (
             "DEVELOPMENT_ONLY", 24, config_digest):
         raise ValueError("Scores must come from the pinned frozen development queue")
+    approved = {json.dumps(day).encode("ascii"): day for day in frozen_cutoffs
+                if date.fromisoformat(day) < c3.FIRST_TEST}
     results = {arm: {} for arm in c3.ARMS}
-    for row in source["rows"]:
+    seen = set()
+    counts = Counter()
+    for _, raw in _items(fields, b"rows"):
+        cutoff = dict(composite_items(raw)).get(b"cutoff")
+        if cutoff not in approved:
+            raise ValueError("Frozen score export contains an inadmissible cutoff")
+        row = json.loads(raw)
         if set(row) != {"key", "cutoff", *c3.ARMS}:
             raise ValueError("Frozen score exports must contain only identifiers and native scores")
         key = row["key"], date.fromisoformat(row["cutoff"])
-        if key not in roster or key in results["M3"]:
-            raise ValueError("Frozen score export contains an unexpected or duplicate row")
-        for arm in c3.ARMS:
-            results[arm][key] = row[arm]
+        if key in seen:
+            raise ValueError("Frozen score export contains a duplicate row")
+        seen.add(key)
+        counts[approved[cutoff]] += 1
+        if key[1] in SCORED_DAYS:
+            if key not in roster:
+                raise ValueError("Frozen score export contains an unexpected C3 row")
+            for arm in c3.ARMS:
+                results[arm][key] = row[arm]
+    if dict(counts) != frozen_cutoffs or results["M3"].keys() != roster:
+        raise ValueError("Frozen score export does not cover the full development rosters")
     return results
 
 
@@ -208,6 +229,109 @@ def _fixtures(roster, labels, metadata):
     return dict(selected)
 
 
+def _unique(names):
+    return next(iter(names)) if len(names) == 1 else None
+
+
+class WindowApplicants:
+    """A pre-resolved index of applicant names for the audited applications."""
+
+    def __init__(self, names):
+        self.names = names
+
+    def at_approval(self, approval):
+        return self.names.get(approval.application)
+
+
+def _historical_identity(approval, history, listings):
+    direct = history.approval_records(approval)
+    if direct:
+        names = history.canonical_names((record.name for record in direct), approval.approved)
+        evidence = [{**asdict(record.evidence), "name": record.name,
+                     "effective_start": record.start.isoformat(), "effective_end": record.end.isoformat()}
+                    for record in direct]
+        return {"name": _unique(names), "source_kind": "approval_day", "evidence": evidence, "edition": None}
+    eligible = [item for item in listings if approval.approved <= item.date <= add_months(approval.approved, 12)]
+    if not eligible:
+        return {"name": None, "source_kind": "no_listing", "evidence": [], "edition": None}
+    first = min(item.date for item in eligible)
+    selected = [item for item in eligible if item.date == first]
+    names = history.canonical_names((item.name for item in selected if item.name), first)
+    evidence = [{**asdict(item.evidence), "name": item.name, "source_kind": item.kind} for item in selected]
+    kinds = "+".join(sorted({item.kind for item in selected}))
+    return {"name": _unique(names), "source_kind": kinds, "evidence": evidence, "edition": first.isoformat()}
+
+
+def _applicant_inputs(args, approvals, roster, history, metadata, snapshot_version):
+    unresolved = c3.build_labels(roster, approvals, c3.ApplicantIndex(), observed_through=c3.DEVELOPMENT_END)
+    used = {app for label in unresolved.values() for app in label.applications}
+    by_app = {approval.application: approval for approval in approvals if approval.application in used}
+    listings, inventory = collect_listings({app: approval.approved for app, approval in by_app.items()},
+                                           args.ob_dir, args.nber_dir)
+    snapshot_date = date.fromisoformat(snapshot_version.split("T")[0])
+    records = {}
+    for app, approval in sorted(by_app.items()):
+        sponsor = metadata[app]["snapshot_sponsor"]
+        names = history.canonical_names((sponsor,), snapshot_date) if sponsor and sponsor.strip() else set()
+        records[app] = {
+            "approval": approval.approved.isoformat(), "approval_evidence": asdict(approval.evidence),
+            "primary": _historical_identity(approval, history, listings.get(app, ())),
+            "sensitivity": {"name": _unique(names), "listed_name": sponsor,
+                            "evidence": {**asdict(approval.evidence), "locator": f"line {metadata[app]['line']}, sponsor_name"}},
+        }
+    return records, inventory
+
+
+def _comparison(roster, primary, sensitivity, records):
+    applications = {app for row in roster for app in primary[row].applications}
+    resolved_sources = Counter()
+    unresolved_sources = Counter()
+    comparable = agreements = 0
+    for app in applications:
+        left, right = (records[app][rule] for rule in ("primary", "sensitivity"))
+        source = "/".join(part for part in (left["source_kind"], left["edition"]) if part)
+        if left["name"] is None:
+            unresolved_sources[source] += 1
+        else:
+            resolved_sources[source] += 1
+        if left["name"] is not None and right["name"] is not None:
+            comparable += 1
+            agreements += left["name"] == right["name"]
+    transitions = Counter()
+    for row in roster:
+        left, right = primary[row].event, sensitivity[row].event
+        if left != right:
+            transitions[left, right] += 1
+    return {
+        "comparable_applications": comparable, "agreeing_applications": agreements,
+        "applicant_agreement": agreements / comparable if comparable else None,
+        "resolved_by_source": dict(resolved_sources), "unresolved_by_source": dict(unresolved_sources),
+        "determinate_threshold_label_differences": transitions[True, False] + transitions[False, True],
+        "label_status_differences": sum(transitions.values()),
+        "label_transitions": {f"{left} -> {right}": count for (left, right), count in transitions.items()},
+    }
+
+
+def _evaluate(rule, roster, panel, approvals, applicant_records, metadata, scores):
+    index = WindowApplicants({app: record[rule]["name"] for app, record in applicant_records.items()})
+    labels = c3.build_labels(roster, approvals, index, observed_through=c3.DEVELOPMENT_END)
+    panel_labels = {row: labels[row].event for row in panel}
+    panel_audit = _audit(panel, labels, metadata)
+    irrecoverable = bool(panel_audit["recorded_window_applications"] and
+                         panel_audit["recorded_window_applications"] == panel_audit["unresolved_applications"])
+    irrecoverable |= any(labels[row].event is None and not labels[row].confirmed_applicants for row in panel)
+    ranking = (c3.score(panel_labels, scores, observed_through=c3.DEVELOPMENT_END, history_irrecoverable=irrecoverable)
+               if scores is not None else {"status": "BLOCKED_FROZEN_QUEUE_UNAVAILABLE", "event_rows": None,
+                                           "recall": None, "delta": None, "ci95": None, "capture_bounds": None})
+    return labels, {
+        "history_irrecoverable": irrecoverable,
+        "audit": _audit(roster, labels, metadata),
+        "by_cutoff": {day.isoformat(): _audit({row for row in roster if row[1] == day}, labels, metadata)
+                      for day in AUDIT_DAYS},
+        "frozen_queue_panel": panel_audit, "ranking": ranking,
+    }
+
+
 def run(args):
     require_closed_seal()
     c3.window_ends(AUDIT_DAYS, c3.DEVELOPMENT_END)
@@ -219,7 +343,7 @@ def run(args):
     config_digest = manifest(CONFIG)["sha256"]
     if config_digest != spec["frozen_queue"]["config_sha256"]:
         raise ValueError("C3 requires the canonical frozen configuration")
-    entities, approvals, metadata, unlinked, hashes = _inputs(args.raw)
+    entities, approvals, metadata, unlinked, hashes, snapshot_version = _inputs(args.raw)
     roster = {(row["key"], row["t"]): row for row in dataset.build_samples(
         entities, list(AUDIT_DAYS), c3.HORIZON, c3.DEVELOPMENT_END)}
     panel = {row for row in roster if row[1] in SCORED_DAYS}
@@ -228,31 +352,31 @@ def run(args):
                 date.fromisoformat(row["cutoff"]) in SCORED_DAYS}
     if dict(Counter(day for _, day in panel)) != expected:
         raise ValueError("C3 development roster count differs from FREEZE")
-    applicants = _history(args.history, args.history_sha256, metadata)
-    labels = c3.build_labels(roster, approvals, applicants, observed_through=c3.DEVELOPMENT_END)
-    panel_labels = {row: labels[row].event for row in panel}
-    irrecoverable = args.history is None or any(
-        labels[row].event is None and not labels[row].confirmed_applicants for row in panel)
-    ranking = {"status": "BLOCKED_FROZEN_QUEUE_UNAVAILABLE", "event_rows": None, "recall": None,
-               "delta": None, "ci95": None, "capture_bounds": None}
-    if args.frozen_scores is not None:
-        scores = _scores(args.frozen_scores, args.scores_sha256, config_digest, panel)
-        ranking = c3.score(panel_labels, scores, observed_through=c3.DEVELOPMENT_END,
-                           history_irrecoverable=irrecoverable)
+    frozen_cutoffs = {row["cutoff"]: row["rows"] for row in checks}
+    scores = (_scores(args.frozen_scores, args.scores_sha256, config_digest, panel, frozen_cutoffs)
+              if args.frozen_scores is not None else None)
+    history = _history(args.history, args.history_sha256, metadata)
+    applicant_records, inventory = _applicant_inputs(args, approvals, roster, history, metadata, snapshot_version)
+    primary, primary_report = _evaluate("primary", roster, panel, approvals, applicant_records, metadata, scores)
+    sensitivity, sensitivity_report = _evaluate(
+        "sensitivity", roster, panel, approvals, applicant_records, metadata, scores)
     require_closed_seal()
     return {
         "status": "DEVELOPMENT_ONLY", "spec_sha256": spec_digest, "s0_raw_sha256": hashes,
         "gsrs_sha256": moiety.GSRS_SHA256, "history_sha256": args.history_sha256,
-        "frozen_scores_sha256": args.scores_sha256, "history_irrecoverable": irrecoverable,
+        "frozen_scores_sha256": args.scores_sha256,
         "admitted_original_final_andas": len(metadata), "admitted_without_linked_group": unlinked,
         "observation_end": c3.DEVELOPMENT_END.isoformat(),
-        "audit": _audit(roster, labels, metadata),
-        "by_cutoff": {day.isoformat(): _audit({row for row in roster if row[1] == day}, labels, metadata)
-                      for day in AUDIT_DAYS},
+        **primary_report, "sensitivity": sensitivity_report,
+        "applicant_comparison": {
+            "pooled": _comparison(roster, primary, sensitivity, applicant_records),
+            "by_cutoff": {day.isoformat(): _comparison({row for row in roster if row[1] == day},
+                                                       primary, sensitivity, applicant_records) for day in AUDIT_DAYS},
+        },
+        "applicant_evidence": applicant_records, "edition_inventory": inventory,
         "frozen_queue_cutoffs": [day.isoformat() for day in SCORED_DAYS],
-        "frozen_queue_panel": _audit(panel, labels, metadata),
         "frozen_queue_slots": {day.isoformat(): rows // 5 for day, rows in expected.items()},
-        "ranking": ranking, "fixtures": _fixtures(panel, labels, metadata),
+        "fixtures": _fixtures(panel, primary, metadata),
     }
 
 
@@ -261,6 +385,8 @@ def main():
     parser.add_argument("--raw", type=Path, default=Path(DEFAULT_DIR).parent / "raw-20261127")
     parser.add_argument("--history", type=Path)
     parser.add_argument("--history-sha256")
+    parser.add_argument("--ob-dir", type=Path, default=Path(DEFAULT_DIR))
+    parser.add_argument("--nber-dir", type=Path, default=Path(DEFAULT_NBER_DIR))
     parser.add_argument("--frozen-scores", type=Path)
     parser.add_argument("--scores-sha256")
     parser.add_argument("--output", type=Path, required=True, help="Development-only report path")

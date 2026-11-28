@@ -2,14 +2,17 @@ import json
 from datetime import date
 from pathlib import Path
 import sys
+from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
+from zipfile import ZipFile
 
 from loe_bench import c3
 
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
-from c3_dev_run import approval_metadata, project_development_anda, project_identity
+from c3_dev_run import _historical_identity, approval_metadata, project_development_anda, project_identity
+from c3_edition_applicants import Listing, _zip_rows
 
 
 DAY = date(2013, 1, 1)
@@ -82,6 +85,51 @@ class ApplicantEndpointTest(unittest.TestCase):
             with self.assertRaises(PermissionError):
                 c3.build_labels([("group", date(2017, 1, 1))], unread(), c3.ApplicantIndex(),
                                 observed_through=date(2028, 1, 1))
+
+
+class HistoricalApplicantTest(unittest.TestCase):
+    def setUp(self):
+        self.app = application(1)
+        self.approved = date(2014, 2, 28)
+        self.approval = c3.Approval("group", self.app, self.approved, PROOF)
+
+    def test_earliest_edition_and_calendar_boundaries(self):
+        before = Listing(self.app, date(2014, 2, 27), "Pre-approval", "fda_zip", PROOF)
+        same = Listing(self.app, self.approved, "Same day", "fda_zip", PROOF)
+        edge = Listing(self.app, date(2015, 2, 28), "Twelve months", "nber_annual", PROOF)
+        outside = Listing(self.app, date(2015, 3, 1), "Late holder", "fda_zip", PROOF)
+        history = c3.ApplicantIndex()
+        self.assertEqual(_historical_identity(self.approval, history, [outside, edge, before, same])["name"],
+                         "same day")
+        self.assertEqual(_historical_identity(self.approval, history, [outside, edge, before])["name"],
+                         "twelve months")
+        self.assertIsNone(_historical_identity(self.approval, history, [outside, before])["name"])
+
+    def test_conflict_and_dated_override(self):
+        first = date(2014, 3, 1)
+        entries = [Listing(self.app, first, "Alpha legacy", "fda_zip", PROOF),
+                   Listing(self.app, first, "Alpha", "nber_annual", PROOF)]
+        self.assertIsNone(_historical_identity(self.approval, c3.ApplicantIndex(), entries)["name"])
+        alias = c3.NameAlias("Alpha legacy", "Alpha", first, first, PROOF)
+        resolved = _historical_identity(self.approval, c3.ApplicantIndex(aliases=[alias]), entries)
+        self.assertEqual((resolved["edition"], resolved["name"]), (first.isoformat(), "alpha"))
+        override = c3.ApplicantHistory(self.app, "Original holder", self.approved, self.approved, PROOF)
+        transfer = c3.ApplicantHistory(self.app, "Later holder", first, END, PROOF)
+        resolved = _historical_identity(self.approval, c3.ApplicantIndex([override, transfer]), entries)
+        self.assertEqual((resolved["source_kind"], resolved["name"]), ("approval_day", "original holder"))
+
+    def test_zip_filters_application_type_number_and_test_dates(self):
+        data = (b"Appl_Type~Appl_No~Approval_Date~Applicant\n"
+                b"N~000001~Feb 28, 2014~Wrong application type\n"
+                b"A~000002~Feb 28, 2014~Outside cohort\n"
+                b"A~000001~Jan 01, 2017~Protected fixture\n"
+                b"A~000001~Feb 28, 2014~Original holder\n")
+        with TemporaryDirectory() as tmp:
+            path = Path(tmp) / "fixture.zip"
+            with ZipFile(path, "w") as archive:
+                archive.writestr("products.txt", data)
+            self.assertEqual(list(_zip_rows(path, {b"000001": self.app})),
+                             [(self.app, "Original holder", "products.txt data row 4")])
 
 
 class FrozenQueueTest(unittest.TestCase):

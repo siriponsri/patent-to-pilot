@@ -138,14 +138,21 @@ class ApplicantIndex:
                for records in self.aliases.values() for alias in records):
             raise ValueError("Use a single-hop applicant alias table")
 
+    def canonical_names(self, names, when):
+        canonical = set()
+        for name in names:
+            raw = name_key(name)
+            targets = {name_key(alias.canonical_name) for alias in self.aliases.get(raw, ())
+                       if alias.start <= when <= alias.end}
+            canonical.update(targets or (raw,))
+        return canonical
+
+    def approval_records(self, approval):
+        return [record for record in self.history.get(approval.application, ())
+                if record.start <= approval.approved <= record.end]
+
     def at_approval(self, approval):
-        names = set()
-        for record in self.history.get(approval.application, ()):
-            if record.start <= approval.approved <= record.end:
-                raw = name_key(record.name)
-                targets = {name_key(alias.canonical_name) for alias in self.aliases.get(raw, ())
-                           if alias.start <= approval.approved <= alias.end}
-                names.update(targets or (raw,))
+        names = self.canonical_names((record.name for record in self.approval_records(approval)), approval.approved)
         return next(iter(names)) if len(names) == 1 else None
 
 
