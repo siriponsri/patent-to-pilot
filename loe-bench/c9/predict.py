@@ -37,7 +37,8 @@ def predict(checkpoint, roster, roster_sha, trained, arm, output, *, dry=False):
             or run["training_roster_sha256"] != file_digest(training)
             or run["initial_sha256"] != file_digest(trained / "initial.safetensors")
             or training_manifest["spec_lf_sha256"] != SPEC_SHA256
-            or training_manifest["checkpoint"] != model_info or training_manifest["runtime"] != versions):
+            or training_manifest["checkpoint"] != model_info or training_manifest["runtime"] != versions
+            or run["runtime"] != versions):
         raise ValueError("adapter or paired training manifest mismatch")
     rows, tokenizer, prompts = prepare_track(checkpoint, roster, roster_sha, spec)
     set_seed(spec["prediction"]["seed"])
@@ -55,6 +56,7 @@ def predict(checkpoint, roster, roster_sha, trained, arm, output, *, dry=False):
     path = output / "predictions.jsonl"
     write_jsonl(path, predictions)
     result = {"status": "COMPLETE", "arm": arm, "dry_run": dry, "spec_lf_sha256": SPEC_SHA256,
+              "runtime": versions,
               "track_a_roster_sha256": roster_sha, **roster_hashes(rows, prompts),
               "adapter_run_sha256": file_digest(adapter / "run.json"),
               "predictions_sha256": file_digest(path), "rows": len(predictions),
