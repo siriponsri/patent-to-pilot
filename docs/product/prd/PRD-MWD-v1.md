@@ -48,7 +48,7 @@ Forbidden: FTO or legal conclusions, investment advice, user counts, time saving
 - v1.0 serves both audiences, demo first: the IS2 committee gets a complete product with the four wow demos, and the structure stays ready for real pilot users after v1.0.
 - Users search the 651-drug current queue by name and choose a planned launch date that maps to the 12- or 24-month window. No new forecasts are computed, so every shown forecast stays the frozen Track A forecast.
 - The Thai layer shows "unknown" with the next question: search terms, the agency to ask (DIP, Thai FDA) and the responsible person. No manual or automated Thai status collection in v1.0.
-- Public hosting is GitHub Pages.
+- Public hosting is Cloudflare Pages on a free `*.pages.dev` address under the owner's Cloudflare account (changed from GitHub Pages on 28 Nov; no custom domain).
 
 Priority: P0 blocks the release, P1 is expected, P2 ships if time allows.
 
@@ -58,7 +58,7 @@ Priority: P0 blocks the release, P1 is expected, P2 ships if time allows.
 | R1b | P0 | **Search and launch-date window** | Search by active moiety or display name across the 651 drugs (TH/EN, case-insensitive, partial match). A planned launch date selects the 12- or 24-month window that covers it and says so; a date beyond 24 months shows "outside the forecast horizon" instead of a number |
 | R2 | P0 | **PDF dossier from the real queue, in the F2 report design** | Same drug, date, language and version as the screen. Thai checklist lists search terms, WO and priority numbers (empty when unverified), the agency, the task owner and the missing status. Disclaimer identical to the screen. Page one carries the decision, endpoint (first final US generic approval, not launch, demand or Thai permission), horizon, uncertainty and next action; long evidence tables move to an appendix (one current export runs to 59 pages in Thai). Screen and PDF fields match for drug, jurisdiction, date, horizon, version, forecast, disclaimer and open tasks. Renders TH and EN for the top 10 queued drugs per horizon plus one boundary or unknown case, with Thai glyphs and page breaks inspected |
 | R3 | P0 | **Honest landing page** with confirmed results | Evidence panel shows recall 66.85% always beside precision 26.62% at 20% capacity, H1 PASS, H2 FAIL, L1e exploratory, and Track A frozen with outcomes PENDING with links to OSF and receipts. No number without a receipt |
-| R4 | P0 | **Public web deployment on GitHub Pages** (D-W approved) | Disclaimer on every page; works with no runtime CDN; checksums published; planner review before the first public push |
+| R4 | P0 | **Public web deployment on Cloudflare Pages** (D-W approved; `*.pages.dev`, no custom domain) | Disclaimer on every page; works with no runtime CDN; checksums published; planner review before the first public push |
 | R5 | P0 | **Windows installer** rebuilt on v1.0 data | Clean-machine test: install, offline use, PDF export, uninstall. SHA-256 published. Unsigned unless the owner buys a certificate |
 | R6 | P1 | **Wow demo 1: time machine before the reveal** (historical solifenacin miss) | Guided path: open the dossier, choose what to send to a specialist, reveal the outcome and the later FDA letter. Also exercise one catch and the false alarm. Deep links, print and language switching never reveal early; any export made after the reveal is marked as revealed |
 | R7 | P1 | **Wow demo 2: equal budget, who finds more** | 1-in-5 slot animation revealing B1 46.48%, M1 65.49%, M3 66.85%, L1e 12.36%, then M3 precision 26.62%. Reduced-motion fallback is a static table |
@@ -96,7 +96,7 @@ No LLM output is ground truth (standing rule 12). Quality is measured with deter
 **Platform (planner proposal for web, desktop, a future mobile app and an organization trial).**
 
 ```
- Web app (GitHub Pages)   Desktop app (Tauri)   Mobile (later: PWA or Tauri mobile)
+ Web app (Cloudflare Pages)   Desktop app (Tauri)   Mobile (later: PWA or Tauri mobile)
             \                    |                     /
              one shared front end: product/demo (F2, static HTML/CSS/JS)
                                  |  HTTPS, JSON
@@ -109,19 +109,19 @@ No LLM output is ground truth (standing rule 12). Quality is measured with deter
 - **One front end, three shells.** The existing static app stays the only UI code. GitHub Pages serves the public web app, Tauri wraps it for Windows (and later macOS), and a responsive layout plus a web-app manifest prepares the mobile path without a second code base.
 - **One gateway.** A small Python FastAPI service holds provider keys server-side, so keys never reach a browser. A provider is a preset of base URL, model name and key name; switching provider or moving to a local model changes configuration, not code. The gateway reuses the project budget ledger (`src/patent_to_pilot/budget/`) to stop calls at the envelope and logs model, tokens, cost and prompt version per call.
 - **Where it runs (owner, 28 Nov).**
-  1. *Public web (GitHub Pages)*: the queue, sources and printable dossier, with no AI and no keys. A "Use AI with your organization" link opens the trial origin.
-  2. *Organization demo, phase 1*: one Docker Compose package (gateway, web app, persistent SQLite ledger) runs on the owner's machine for a team demonstration.
+  1. *Public web (Cloudflare Pages, `*.pages.dev`)*: the queue, sources and printable dossier, with no AI and no keys. A "Use AI with your organization" link opens the trial origin.
+  2. *Organization demo, phase 1*: one Docker Compose package (gateway, web app, persistent SQLite ledger) runs on the owner's machine for a team demonstration, bound to localhost. Without a domain there is no public AI endpoint (owner, 28 Nov), so colleagues see the AI live on the owner's screen.
   3. *External server, phase 2*: the same package deploys to an external server such as dr-train. Any dr-train step follows the remote-work rules and the [artifact runbook](../../maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md) and needs a dated owner approval. dr-train's approved V100 is also the first candidate for local AI.
   4. *Desktop (Tauri)*: the bundled reader and PDF stay offline. An online window opens the gateway origin with the open case preserved. No Python sidecar.
   Browser "bring your own key" is dropped: CORS gives no key secrecy, and keys stay only on the gateway host.
-- **Sign-in.** Email with a one-time code and an explicit allowlist of 3–5 invited colleagues (emails supplied later by the owner), 5 requests per user per day, one outstanding request per user. Implementation options for B4: Cloudflare Access one-time PIN behind a Cloudflare Tunnel (no open ports; needs a domain on Cloudflare) or a gateway-native code sent by email (needs an SMTP sender). B4 proposes, the owner chooses.
+- **Sign-in.** For the localhost demo, one allowlisted account: the owner's own email (kept outside Git, in the gateway's local configuration). Email one-time-code sign-in for invited colleagues (3–5, 5 requests per user per day) waits until a domain exists on Cloudflare, where Cloudflare Access one-time PIN behind a Cloudflare Tunnel is the chosen route (owner, 28 Nov).
 - **Providers.** One Chat Completions client with per-provider presets (Typhoon, OpenRouter, OpenAI, Anthropic, Gemini, Qwen, DeepSeek, vLLM, Ollama). Live compatibility and Thai quality are NOT_RUN for every provider; only a provider-model-task tuple that passes the frozen gates is enabled. Typhoon's free tier collects usage data, so it receives public dossier data only and no user free text (owner, 28 Nov).
 - **Local AI later (v1.1).** Serve an open model such as Typhoon or Qwen with vLLM or Ollama, which expose an OpenAI-compatible endpoint. The gateway changes its base URL; the model needs recorded rights, sizing and its own Thai evaluation.
 - **Subscriptions instead of API keys.** Consumer ChatGPT Plus or Claude Pro plans are for one person through the official apps; routing a shared product through a personal subscription is not offered and is not planned. The legitimate subscription route is the reverse: expose MWD as a read-only MCP connector that each user adds to their own ChatGPT or Claude account. That is a candidate for v1.1, pending an owner decision, and its answers would sit outside the gateway's validator.
 
 **Budget.** A D43 envelope of USD 10 gross until the end of 15 Dec 2026 (Bangkok), separate from the research envelopes, with an operational stop at USD 8 or 200 attempts, and a pause on unknown billing or a price or route change. The co-planner's indicative estimate for 200 attempts on `openai/gpt-4o-mini` through OpenRouter is USD 0.15 in tokens (price to be verified live).
 
-**Open owner decisions.** The allowlist emails; the sign-in implementation (Cloudflare domain or SMTP sender); the dr-train deployment date; the MCP connector for v1.1.
+**Open owner decisions.** A domain on Cloudflare (needed before colleagues can use the AI remotely); the dr-train deployment date; the MCP connector for v1.1.
 
 ## 5. Plan and cards for the Product Owner
 
@@ -143,7 +143,7 @@ Backend cards for Codex (D43), dispatched by the planner once the owner approves
 | B1 | BE-GATEWAY | GPT-6.2 Sol high | FastAPI gateway, typed task API, provider presets, D43 ledger envelope with the USD 8 stop, audit log, Docker Compose package that runs on the owner's machine, fixture provider (no paid call in tests). Contract frozen by 30 Nov | 3 Dec |
 | B2 | BE-GROUND | GPT-6.2 Sol xhigh | Dossier-claim grounding and the deterministic citation and value validator for A1–A3, with a fixed evaluation sample | 5 Dec |
 | B3 | BE-CLAIMS | GPT-6.2 Sol high | Open claim-text source and adapter for A4 (rights recorded) | 8 Dec |
-| B4 | BE-ORG | GPT-6.2 Sol high | Email one-time-code sign-in with allowlist, per-user limits, revocation; a deployment recipe for an external server such as dr-train (no remote step without owner approval) | 9 Dec |
+| B4 | BE-ORG | GPT-6.2 Sol high | Localhost binding and single-account allowlist for the owner demo; a documented Cloudflare Tunnel + Access (email one-time PIN) recipe ready for when a domain exists; per-user limits and revocation; a deployment recipe for an external server such as dr-train (no remote step without owner approval) | 9 Dec |
 
 The Product Owner builds the AI panels (PO-AI: A1–A4 in the dossier view, the "AI draft" label, the editor for the hand-off letter) against the B1 fixture provider, so UI and backend proceed in parallel.
 
