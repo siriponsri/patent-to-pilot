@@ -13,11 +13,21 @@ import urllib.request
 
 REG_ID = "p2smd"
 API = f"https://api.osf.io/v2/registrations/{REG_ID}/"
+# The lock binds the ORIGINAL registration responses (schema response marked is_original_response),
+# so later OSF registration updates do not change the digest.
 
 
 def fetch(url):
     with urllib.request.urlopen(url, timeout=60) as r:
         return json.load(r)
+
+
+def original_responses():
+    rows = fetch(API + "schema_responses/")["data"]
+    orig = [r for r in rows if r["attributes"].get("is_original_response")]
+    if not orig:
+        raise RuntimeError("original schema response not found")
+    return orig[0]["attributes"]["revision_responses"]
 
 
 def canonical_record():
@@ -32,7 +42,7 @@ def canonical_record():
         "registration_supplement": attrs["registration_supplement"],
         "title": attrs["title"],
         "description": attrs["description"],
-        "registration_responses": attrs["registration_responses"],
+        "registration_responses": original_responses(),
     }
     return json.dumps(record, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
 
