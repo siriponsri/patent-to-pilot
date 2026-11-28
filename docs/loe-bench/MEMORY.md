@@ -135,3 +135,4 @@
     - 12 m: L1 26.58%, L1e 14.50%, B1 50.64%, M3 67.33%.
   - L1e−M3 is −54.48 pp at 24 m and −52.83 pp at 12 m. L1e−L1 is −13.78 and −12.08: giving the evidence in the prompt made the 7B LLM worse. This replicates the development pattern.
   - RunPod USD 2.543. Pod hmo8vrw0fq4pw2 was deleted 09:06 UTC, about 36 minutes of idle billing after completion because the PC was off. Total GPU is about USD 3.51 of USD 23.
+- **28 Nov 16:10, OSF update 3 approved** (09:09 UTC, schema response 6b0a99f9…): C9 trains after the C′ gate and before the core Track A freeze, with no calendar month. The lock still reproduces 3f911452…. Dispatched C9TRAIN (L4, cap about USD 4.5), TRACKA-CORE (CPU retrain and t0 predictions, no freeze) and the Astra IS2 critique. Scheduled task 58a1b3e5 is disabled.
