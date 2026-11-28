@@ -228,4 +228,9 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
   - **D-W.** The web app goes on a public static host (Vercel or GitHub Pages), with the disclaimer on every page.
   - **D-F.** If no L4 is available by 10 Dec 2026, use another GPU type for all remaining GPU arms (L1, L1e, C9), with a dated hardware deviation. C9 would then predict on a different GPU than it trained on, and the deviation must say so. Each pod's rate is still quoted before creation, within the USD 1.50 all-in cap unless the owner raises it.
   - **D-J.** The journal choice (CPT or Pharmaceutical Sciences Asia) is due by 8 Jan.
+- 28 Nov 2026, late night: the owner asked that the writing skills no-ai-slop and zero-slop (both MIT, installed project-locally) be used on the IS2 text in both languages. After seeing the IS2STORY revision, the owner asked for an audit and a new revision:
+  - more formal, professional language
+  - professional Thai and English titles; the question-form title is withdrawn pending research on research-writing and title guidelines
+  - figures in academic style rather than slide style, after research on academic-figure guidelines
+  The co-planner is consulted anew. The revision may wait until all experimental results are in (the Track A freeze).
 
