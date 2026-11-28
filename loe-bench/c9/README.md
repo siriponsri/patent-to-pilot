@@ -39,6 +39,8 @@ python -m c9.roster --checkpoint /private/checkpoint --projection /private/train
 
 The manifest pins ordered keys, serialized messages, token IDs, model and input hashes. Both arms repeat this preparation and verify the same manifest before training. The 2,048-token limit applies after the checkpoint's chat template.
 
+Use the [C9PROJ receipt](../../docs/loe-bench/receipts/C9PROJ.md) for the frozen development artifacts, their provenance and the training-only launch with a roster hash check.
+
 ## Approved RunPod execution
 
 Admission requires the C′ gate pass, the approved development projection and a live itemized quote approved before creation. The C9 runtime accepts one approved 24 GB NVIDIA A10 or NVIDIA L4. Both arms and Track A prediction must match the detected GPU and runtime in the shared training manifest. The C9RUN2 deviation limits its placement to one L4 on Secure Cloud in US-MO-2. Use the pinned CUDA 12.8 and Torch 2.8 runtime, Linux with Python 3.12 and direct OpenSSH/SCP access. Verify the pod's SSH host key using the approved identity record. Record the pod creation or billing start at the earliest billed instant and round time reservations conservatively. Schedule teardown before either arm's cap or the core Track A freeze. [C9RUN2 receipt](../../docs/loe-bench/receipts/C9RUN2.md)
