@@ -136,3 +136,16 @@
   - L1e−M3 is −54.48 pp at 24 m and −52.83 pp at 12 m. L1e−L1 is −13.78 and −12.08: giving the evidence in the prompt made the 7B LLM worse. This replicates the development pattern.
   - RunPod USD 2.543. Pod hmo8vrw0fq4pw2 was deleted 09:06 UTC, about 36 minutes of idle billing after completion because the PC was off. Total GPU is about USD 3.51 of USD 23.
 - **28 Nov 16:10, OSF update 3 approved** (09:09 UTC, schema response 6b0a99f9…): C9 trains after the C′ gate and before the core Track A freeze, with no calendar month. The lock still reproduces 3f911452…. Dispatched C9TRAIN (L4, cap about USD 4.5), TRACKA-CORE (CPU retrain and t0 predictions, no freeze) and the Astra IS2 critique. Scheduled task 58a1b3e5 is disabled.
+
+## 28 Nov 2026, evening: prior-method comparison locked
+
+- **Decision.** The owner approved two routes for comparing against prior work: reproduce prior methods as exploratory Track A arms, and report our arms in the metrics prior studies use. A post-hoc rerun of new arms on C′ was not approved.
+- **Evidence.** The co-planner memo (Astra with SciSpace) found that no prior study shares our endpoint, cohort or metric.
+  - Hu 2019 is a submission endpoint. Its journal abstract reports no numerical performance; C-index 0.767 comes from Hu's 2021 presentation only.
+  - Hopefl 2025, NCE / non-NCE RSF C-index: leave-one-product-out 0.769 / 0.736; 5-fold CV 0.675 ± 0.026 / 0.754 ± 0.044.
+  - Kerr & Glos 2020 uses the first generic approval endpoint and reports association HRs only, with no prediction metric.
+  - Beall 2018 reports 42% of estimates within one quarter.
+  - Memedovich 2025 (Paragraph IV challenge) reports AUC 0.807 (forest) and 0.770 (elastic net).
+- **Locked.** Two arms, P1-RSF-OPEN and P2-COX-OPEN ([spec](PRIOR-ARMS-SPEC.md), ledger K26 and K27). B3 is not a Beall reproduction. The C′ supplement is aggregate AUC and accuracy for B1, M1 and M3 only, with an analysis note committed first.
+- **Limitation.** Proprietary inputs are omitted, so the arms measure open-input adaptations, not the authors' fitted models. The Hu 2019 full text has not been verified.
+- **Next.** PRIORARMS is dispatched to Sol xhigh. TRACKA-CORE is merged (4ca5ce4d), C9TRAIN2 and IS2FIT are running, and the freeze card follows.
