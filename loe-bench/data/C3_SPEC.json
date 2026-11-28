@@ -1,9 +1,9 @@
 {
   "id": "C3",
   "technique_ledger": "K25",
-  "version": 1,
+  "version": 2,
   "status": "EXPLORATORY_SPECIFICATION",
-  "code_commit_sha": "bcf8f4789760e58adbae4e4427ce81cc41e21ae6",
+  "predecessor_implementation_sha": "bcf8f4789760e58adbae4e4427ce81cc41e21ae6",
   "scope": "US FDA small-molecule regulatory crowding for the Market Window Dossier",
   "endpoint": {
     "roster": "The full C1 criteria-v3 at-risk active-moiety NME roster at each admitted cutoff. Keep its exact row keys and cutoff eligibility.",
@@ -21,10 +21,13 @@
   },
   "applicant_identity": {
     "unit": "The FDA applicant at the first qualifying approval, collapsed across duplicate strengths and repeated ANDAs within a group.",
-    "evidence": "Require an FDA action letter or other authoritative dated evidence identifying the application's holder on the approval day. Documented transfers use an evidenced effective interval covering that day. A later holder, an undated current sponsor and a later Orange Book listing are corroboration or discovery leads only.",
+    "rationale": "C3 v1 required exact-day evidence and resolved four of 221 linked applications in the scored development window. The first near-approval Orange Book listing supplies a dated proxy, subject to transfers between the approval and edition dates.",
+    "primary_rule": "For each approved ANDA, use the first dated FDA Orange Book ZIP or NBER-hosted FDA annual edition listing that application on or after original final approval and within 12 calendar months inclusive. Exact-day FDA evidence, including an original action letter or an evidenced transfer interval covering approval, overrides this proxy. No eligible listing leaves the applicant unknown.",
+    "edition_rule": "Use the existing edition-date convention: documented date for FDA ZIPs and documented publication date or December 31 of the printed edition year for NBER annual editions. Label editions require a known date under that convention. Predictor availability proof is unnecessary. Use the printed FDA Applicant name from either format. Conflicting candidates on the first listing date or a first listing without a usable name leave the applicant unresolved. Capture every selected edition's date, source, hash and exact locator.",
+    "sensitivity_rule": "Use the current Drugs@FDA sponsor field with no historical override. On each development window and pooled, report applicant-name agreement among applications resolved by both rules and threshold label differences on commonly determinate rows. Report indeterminate transitions separately.",
     "name_normalization": "Unicode NFC, casefold and whitespace folding. Preserve punctuation, legal suffixes and name differences unless dated source evidence explicitly identifies the same legal applicant.",
     "alias_rules": "Use a single-hop, date-scoped, evidence-backed alias to a canonical legal applicant. Prohibit fuzzy merges, affiliate and parent rollups, transitive guesses and retrospective changes due to later acquisitions. Conflicting applicable evidence leaves the identity unresolved.",
-    "required_provenance": ["source ID or URL", "version or date", "SHA-256", "exact locator", "ANDA number", "applicant name", "inclusive effective dates"],
+    "required_provenance": ["source ID or URL", "version or date", "SHA-256", "exact locator", "ANDA number", "applicant name", "edition date or inclusive effective dates where applicable"],
     "row_bounds": "For recorded, linked qualifying approvals, lower bound is the greater of the number of confirmed distinct applicants and one when there is any application. Upper bound is the number of confirmed distinct applicants plus one distinct applicant per unresolved application. An upper bound below three is negative. A lower bound at least three is positive. Otherwise the label is unknown.",
     "audit_rule": "Count unresolved unique applications and threshold-ambiguous group-cutoff rows overall and by cutoff. On the frozen development queue panel, list the first three rows in each band of exactly two and exactly three distinct qualifying applications, sorted by canonical key and cutoff. Check original final FDA letters with the same application and approval date, or an FDA record explicitly naming the applicant for that action. Use snapshot names only as audit leads. This fixture selection operates independently of scores."
   },
