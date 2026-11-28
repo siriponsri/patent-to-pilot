@@ -93,24 +93,55 @@ def draft_result(scope, bundle, folder, release_sha, capture):
     return result
 
 
+def h3_promotion_allowed(scope, release_sha, result, folder):
+    if scope.horizon != 24:
+        return True
+
+    panel, evidence = tracka_vintage.discover(scope.repository, scope.doi, scope.freeze, release_sha, folder)
+    if panel is None:
+        reason = evidence["reason"]
+        detail = evidence.get("detail")
+        reason = f"{reason}. {detail}" if detail else reason
+    else:
+        reference = result["h3_input"]
+        staged = reference.get("original")
+        original = evidence["original"]
+        if (isinstance(staged, dict)
+                and reference.get("results_sha256") == staged.get("results_sha256") == original["results_sha256"]
+                and staged.get("outcome_source_manifest_sha256") == original["outcome_source_manifest_sha256"]):
+            return True
+        reason = "The staged H3 result or FDA source-manifest SHA-256 differs from the verified first 12-month result."
+
+    summary(f"{custody.HOLD}. 24-month publication withheld. First 12-month result: {reason}")
+    output("publish", "false")
+    return False
+
+
 def stage_result(scope, area, today):
     state = custody.inspect(scope, area, include_draft=True)
-    with release_directory(scope.doi) as folder:
+    with release_directory(scope.doi) as folder, TemporaryDirectory() as temporary:
         release = read_release(folder, scope.freeze)
+        received = Path(temporary)
         if state["status"] == "DRAFT":
             require(not result_issues(scope), "A scored issue survives alongside the result draft")
-            with TemporaryDirectory() as temporary:
-                received = Path(temporary)
-                _, capture = tracka_capture.discover(scope, received / "capture")
-                draft_result(scope, area / scope.archive, received / "result", release.manifest_sha256, capture)
+            _, capture = tracka_capture.discover(scope, received / "capture")
+            result = draft_result(scope, area / scope.archive, received / "result", release.manifest_sha256, capture)
         else:
-            _, scored = score(release, scope.horizon, area / "readout", today=today)
+            _, scored = score(release, scope.horizon, area / "readout", today=today,
+                              repository=scope.repository, doi=scope.doi)
             result = load(scored / RESULTS)
             if not result["publication_eligible"]:
+                output("publish", "false")
                 summary(f"Family status: {result['family_status']}.")
+                if detail := result.get("h3_input", {}).get("detail"):
+                    summary(f"First 12-month result: {detail}")
                 summary((scored / tracka_vintage.REPORT).read_text(encoding="utf-8"))
                 return
             require(state["status"] == "EMPTY", "Track A result custody changed before draft creation")
+
+        if not h3_promotion_allowed(scope, release.manifest_sha256, result, received / "first-12"):
+            return
+        if state["status"] == "EMPTY":
             prepared = area / "result"
             prepare_publication(scored, prepared)
             custody.pack(prepared, tracka_vintage.ASSETS, area / scope.archive)
@@ -142,7 +173,9 @@ def publish(scope, area):
             with release_directory(scope.doi) as frozen:
                 release = read_release(frozen, scope.freeze)
                 prepared = folder / "result"
-                draft_result(scope, folder / scope.archive, prepared, release.manifest_sha256, capture)
+                result = draft_result(scope, folder / scope.archive, prepared, release.manifest_sha256, capture)
+                if not h3_promotion_allowed(scope, release.manifest_sha256, result, folder / "first-12"):
+                    return
             contents.append((prepared / tracka_vintage.REPORT).read_text(encoding="utf-8"))
         notes.write_text("\n\n".join(contents) + "\n", encoding="utf-8")
         gh("api", "--method", "PATCH", f"repos/{scope.repository}/releases/{state['release_id']}",

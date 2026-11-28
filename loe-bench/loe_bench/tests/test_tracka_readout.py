@@ -5,6 +5,7 @@ from datetime import datetime, time, timedelta, timezone
 from hashlib import sha256
 import json
 from pathlib import Path
+import re
 from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import unittest
@@ -13,7 +14,7 @@ from unittest.mock import patch
 from loe_bench import tracka_capture, tracka_custody as custody, tracka_outcomes, tracka_publish, tracka_vintage
 from loe_bench.score_release import RESULTS, SOURCES, score as legacy_score
 from loe_bench.tracka_readout import prepare_publication, score
-from loe_bench.tracka_release import FREEZE, digest, load
+from loe_bench.tracka_release import FREEZE, digest, dump, load
 from loe_bench.tests.test_score_release import H12, H24, approval, fake_fda, synthetic_release, zip_json
 
 REPO = "example/fictional-track-a"
@@ -141,6 +142,21 @@ class ReadoutTest(unittest.TestCase):
             self.release_bundle(self.scope(horizon, "result"), bundle, day)
         return staged, bundle
 
+    def scored_issue(self, number, body):
+        return {"user": {"login": "maintainer"}, "author_association": "OWNER",
+                "title": "Track A 12-month readout", "body": body,
+                "html_url": f"https://github.com/{REPO}/issues/{number}"}
+
+    def stage_24_context(self):
+        self.capture("first12", 12, H12)
+        first, _ = self.archive(12, H12)
+        self.capture("first24", 24, H24)
+        scope = self.scope(24, "result")
+        area = self.root / "stage"
+        area.mkdir()
+        self.patch(tracka_publish, "release_directory", return_value=nullcontext(self.release.folder))
+        return first, scope, area
+
     def test_capture_preserves_raw_index_and_both_exports_before_outcomes(self):
         edition = sources(H12)
         with patch.object(tracka_outcomes, "resolve_first_approvals", side_effect=AssertionError):
@@ -224,6 +240,109 @@ class ReadoutTest(unittest.TestCase):
             tracka_publish.stage_result(self.scope(12, "result"), area, H12 + timedelta(days=8))
         self.assertEqual(digest(area / self.scope(12, "result").archive), digest(bundle))
         output.assert_any_call("attest", "false")
+
+    def test_fresh_24_month_publication_stages_with_registered_scope(self):
+        first, scope, area = self.stage_24_context()
+        with (patch.object(tracka_publish, "create_draft") as create_draft,
+              patch.object(tracka_publish, "output") as output):
+            tracka_publish.stage_result(scope, area, H24)
+        create_draft.assert_called_once_with(scope, area)
+        output.assert_any_call("publish", "true")
+        original = load(area / "result" / RESULTS)["h3_input"]["original"]
+        self.assertEqual(original["results_sha256"], digest(first / RESULTS))
+        self.assertEqual(original["outcome_source_manifest_sha256"], digest(first / SOURCES))
+
+    def test_24_month_12_month_pin_conflict_holds_fresh_and_restored_drafts(self):
+        first, scope, area = self.stage_24_context()
+        _, bundle = self.archive(24, H24, publish=False)
+        _, record = tracka_vintage.publication_scope(self.freeze, DOI)
+        marker = f"<!-- tracka:12:SCORED:{record} -->"
+        trusted = self.scored_issue(1, f"{marker}\nFirst result SHA-256 `{digest(first / RESULTS)}`.")
+        conflict = self.scored_issue(2, f"{marker}\nFirst result SHA-256 `{'0' * 64}`.")
+        self.issues = [trusted, conflict]
+        _, _, result = self.readout("fresh-conflict", 24, H24)
+        self.assertEqual(result["family_status"], custody.HOLD)
+        self.assertFalse(result["publication_eligible"])
+
+        output = self.patch(tracka_publish, "output")
+        summary = self.patch(tracka_publish, "summary")
+        gh = self.patch(tracka_publish, "gh")
+        tracka_publish.stage_result(scope, area, H24)
+        output.assert_called_once_with("publish", "false")
+        self.assertIn("witnesses disagree", str(summary.call_args_list))
+        gh.assert_not_called()
+        self.assertFalse((area / scope.archive).exists())
+
+        self.release_bundle(scope, bundle, H24, draft=True)
+        self.patch(tracka_publish, "score", side_effect=AssertionError("Unexpected rescoring"))
+        output.reset_mock()
+        summary.reset_mock()
+        tracka_publish.stage_result(scope, area, H24 + timedelta(days=1))
+        output.assert_called_once_with("publish", "false")
+        self.assertIn("witnesses disagree", summary.call_args.args[0])
+        original_bytes = bundle.read_bytes()
+        self.assertEqual((area / scope.archive).read_bytes(), original_bytes)
+
+        self.issues = [trusted]
+        output.reset_mock()
+        tracka_publish.stage_result(scope, area, H24 + timedelta(days=1))
+        output.assert_any_call("attest", "false")
+        output.assert_any_call("publish", "true")
+
+        self.issues.append(conflict)  # A witness can change after the staging gate.
+        output.reset_mock()
+        tracka_publish.publish(scope, area)
+        output.assert_called_once_with("publish", "false")
+        self.assertIn("witnesses disagree", summary.call_args.args[0])
+        gh.assert_not_called()
+
+        self.issues = [trusted]
+
+        def promote(*args):
+            self.assertEqual(args[:4], ("api", "--method", "PATCH", f"repos/{REPO}/releases/10"))
+            self.assertIn("draft=false", args)
+            self.assertEqual(self.responses[f"{scope.api}/releases/assets/20"], original_bytes)
+            self.release_bundle(scope, bundle, H24)
+
+        gh.side_effect = promote
+        tracka_publish.publish(scope, area)
+        gh.assert_called_once()
+        panel, evidence = tracka_vintage.discover(REPO, DOI, self.freeze, self.release.manifest_sha256,
+                                                 self.root / "published24", horizon=24)
+        self.assertIsNotNone(panel, evidence)
+        self.assertEqual(evidence["original"]["bundle_sha256"], digest(bundle))
+        self.assertEqual((area / scope.archive).read_bytes(), original_bytes)
+
+    def test_24_month_staged_h3_digest_mismatches_hold_promotion(self):
+        _, scope, area = self.stage_24_context()
+        staged, _ = self.archive(24, H24, publish=False)
+        result = load(staged / RESULTS)
+        self.patch(tracka_publish, "score", side_effect=AssertionError("Unexpected rescoring"))
+        output = self.patch(tracka_publish, "output")
+        summary = self.patch(tracka_publish, "summary")
+        gh = self.patch(tracka_publish, "gh")
+
+        for field in ("results_sha256", "outcome_source_manifest_sha256"):
+            with self.subTest(field=field):
+                h3 = result["h3_input"]
+                reference = {**h3, "original": {**h3["original"], field: "0" * 64}}
+                if field == "results_sha256":
+                    reference[field] = "0" * 64
+                dump(staged / RESULTS, {**result, "h3_input": reference})
+                (staged / tracka_vintage.CHECKSUM).write_text(f"{digest(staged / RESULTS)}  {RESULTS}\n", encoding="ascii")
+                bundle = self.root / f"wrong-{field}.zip"
+                custody.pack(staged, tracka_vintage.ASSETS, bundle)
+                self.release_bundle(scope, bundle, H24, draft=True)
+
+                output.reset_mock()
+                tracka_publish.stage_result(scope, area, H24)
+                output.assert_called_once_with("publish", "false")
+                output.reset_mock()
+                tracka_publish.publish(scope, area)
+                output.assert_called_once_with("publish", "false")
+                self.assertIn("differs from the verified first 12-month result", summary.call_args.args[0])
+                self.assertEqual((area / scope.archive).read_bytes(), bundle.read_bytes())
+        gh.assert_not_called()
 
     def test_capture_publication_records_verified_signer_and_bundle(self):
         scope = self.scope()
@@ -334,6 +453,36 @@ class ReadoutTest(unittest.TestCase):
         self.assertEqual(result["family_status"], custody.HOLD)
         self.assertEqual(len(result["publication_discovery"]["issue_urls"]), 2)
         self.assertIn("witnesses disagree", result["publication_discovery"]["detail"])
+
+    def test_reader_verifies_the_documented_maintainer_acknowledgement(self):
+        guide = Path(__file__).resolve().parents[3] / "docs/loe-bench/HOW-TO-SCORE-TRACK-A.md"
+        example, = re.findall(r"^```text\n(<!-- tracka:12:SCORED:[\s\S]*?)\n```$",
+                              guide.read_text(encoding="utf-8"), re.MULTILINE)
+        pins = {name: [] for name in tracka_vintage.PIN_LABELS}
+        self.assertEqual(tracka_vintage.publish_pins(example, "guide", pins), [])
+        example_result, = pins[RESULTS]
+        example_manifest, = pins[SOURCES]
+
+        self.capture("first", 12, H12)
+        first, _ = self.archive(12, H12)
+        _, record = tracka_vintage.publication_scope(self.freeze, DOI)
+        marker, remainder = example.split("\n", 1)
+        scope = f"<!-- tracka:12:SCORED:{record} -->"
+        self.assertRegex(marker, r"^<!-- tracka:12:SCORED:[0-9a-f]{64}:\d+ -->$")
+        body = scope + "\n" + remainder.replace(example_result["sha256"], digest(first / RESULTS)).replace(
+            example_manifest["sha256"], digest(first / SOURCES))
+        self.issues = [self.scored_issue(1, body)]
+        panel, evidence = tracka_vintage.discover(REPO, DOI, self.freeze, self.release.manifest_sha256,
+                                                 self.root / "maintainer")
+        self.assertIsNotNone(panel, evidence)
+        self.assertEqual(evidence["original"]["results_sha256"], digest(first / RESULTS))
+        self.assertEqual(evidence["original"]["outcome_source_manifest_sha256"], digest(first / SOURCES))
+        self.issues = [self.scored_issue(1, scope + "\n\nReadout report.")]
+        panel, evidence = tracka_vintage.discover(REPO, DOI, self.freeze, self.release.manifest_sha256,
+                                                 self.root / "incomplete")
+        self.assertIsNone(panel)
+        self.assertEqual(evidence["reason"], custody.HOLD)
+        self.assertIn("Missing publication result digest", evidence["detail"])
 
     def test_recovery_preserves_result_bytes_without_fda(self):
         self.capture("capture12", 12, H12)
