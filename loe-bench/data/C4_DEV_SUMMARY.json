@@ -1,0 +1,383 @@
+{
+  "by_vintage": {
+    "AS_OF_PROVEN": {
+      "mapped_diagnostic": {
+        "evaluable_origins": 0,
+        "ingredients": 0,
+        "paired_rows": 0,
+        "status": "NOT_RUN"
+      },
+      "origins": [],
+      "primary": {
+        "evaluable_origins": 0,
+        "ingredients": 0,
+        "paired_rows": 0,
+        "status": "NOT_RUN"
+      }
+    },
+    "RETROSPECTIVE_VINTAGE_UNCONTROLLED": {
+      "mapped_diagnostic": {
+        "carry_forward_bias": -7541.695275590551,
+        "carry_forward_mae": 25002.109448818897,
+        "drift_bias": 12998.13194600675,
+        "drift_mae": 31113.967716535433,
+        "evaluable_origins": 7,
+        "ingredients": 403,
+        "paired_mae_difference_drift_minus_carry": 6111.858267716534,
+        "paired_rows": 1270,
+        "status": "ESTIMATED"
+      },
+      "origins": [
+        {
+          "candidate_ingredients": 908,
+          "exclusions": {
+            "incomplete_history": 846,
+            "incomplete_outcome": 9
+          },
+          "last_fit_quarter": "2010Q2",
+          "mapped_diagnostic": {
+            "carry_forward_bias": -22410.33962264151,
+            "carry_forward_mae": 39747.018867924526,
+            "drift_bias": 61050.857142857145,
+            "drift_mae": 69381.61185983829,
+            "ingredients": 53,
+            "paired_mae_difference_drift_minus_carry": 29634.592991913752,
+            "paired_rows": 53,
+            "status": "ESTIMATED"
+          },
+          "origin": "2010-12-31",
+          "outcome_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 94,
+            "missing_national_type": 2577,
+            "national_rows": 235954,
+            "packages": 135324,
+            "quarters": 4,
+            "quarters_with_national_rows": 4,
+            "suppressed": 5581,
+            "suppressed_national_rows": 67624,
+            "unresolved_packages": 110601
+          },
+          "primary": {
+            "ingredients": 0,
+            "paired_rows": 0,
+            "status": "NOT_ESTIMABLE"
+          },
+          "training_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 36,
+            "missing_national_type": 2452,
+            "national_rows": 289146,
+            "packages": 251189,
+            "quarters": 8,
+            "quarters_with_national_rows": 8,
+            "suppressed": 5713,
+            "suppressed_national_rows": 79689,
+            "unresolved_packages": 215258
+          }
+        },
+        {
+          "candidate_ingredients": 993,
+          "exclusions": {
+            "incomplete_history": 928,
+            "incomplete_outcome": 8
+          },
+          "last_fit_quarter": "2011Q2",
+          "mapped_diagnostic": {
+            "carry_forward_bias": -22264.19298245614,
+            "carry_forward_mae": 52873.14035087719,
+            "drift_bias": 68736.96992481203,
+            "drift_mae": 89817.23558897244,
+            "ingredients": 57,
+            "paired_mae_difference_drift_minus_carry": 36944.09523809524,
+            "paired_rows": 57,
+            "status": "ESTIMATED"
+          },
+          "origin": "2011-12-31",
+          "outcome_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 41,
+            "missing_national_type": 2068,
+            "national_rows": 249830,
+            "packages": 139577,
+            "quarters": 4,
+            "quarters_with_national_rows": 4,
+            "suppressed": 5566,
+            "suppressed_national_rows": 69471,
+            "unresolved_packages": 111198
+          },
+          "primary": {
+            "ingredients": 0,
+            "paired_rows": 0,
+            "status": "NOT_ESTIMABLE"
+          },
+          "training_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 125,
+            "missing_national_type": 5293,
+            "national_rows": 399249,
+            "packages": 264865,
+            "quarters": 8,
+            "quarters_with_national_rows": 8,
+            "suppressed": 9604,
+            "suppressed_national_rows": 117169,
+            "unresolved_packages": 222345
+          }
+        },
+        {
+          "candidate_ingredients": 1044,
+          "exclusions": {
+            "incomplete_history": 840,
+            "incomplete_outcome": 32
+          },
+          "last_fit_quarter": "2012Q2",
+          "mapped_diagnostic": {
+            "carry_forward_bias": 5231.78488372093,
+            "carry_forward_mae": 23944.308139534885,
+            "drift_bias": 20595.415282392027,
+            "drift_mae": 42515.6245847176,
+            "ingredients": 172,
+            "paired_mae_difference_drift_minus_carry": 18571.316445182725,
+            "paired_rows": 172,
+            "status": "ESTIMATED"
+          },
+          "origin": "2012-12-31",
+          "outcome_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 50,
+            "missing_national_type": 2185,
+            "national_rows": 257113,
+            "packages": 143002,
+            "quarters": 4,
+            "quarters_with_national_rows": 4,
+            "suppressed": 6104,
+            "suppressed_national_rows": 70499,
+            "unresolved_packages": 111111
+          },
+          "primary": {
+            "ingredients": 0,
+            "paired_rows": 0,
+            "status": "NOT_ESTIMABLE"
+          },
+          "training_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 125,
+            "missing_national_type": 5049,
+            "national_rows": 474154,
+            "packages": 272186,
+            "quarters": 8,
+            "quarters_with_national_rows": 8,
+            "suppressed": 10962,
+            "suppressed_national_rows": 135772,
+            "unresolved_packages": 222773
+          }
+        },
+        {
+          "candidate_ingredients": 1116,
+          "exclusions": {
+            "incomplete_history": 855,
+            "incomplete_outcome": 41
+          },
+          "last_fit_quarter": "2013Q2",
+          "mapped_diagnostic": {
+            "carry_forward_bias": -15154.463636363636,
+            "carry_forward_mae": 31025.827272727274,
+            "drift_bias": 5579.324675324673,
+            "drift_mae": 27429.885714285716,
+            "ingredients": 220,
+            "paired_mae_difference_drift_minus_carry": -3595.94155844156,
+            "paired_rows": 220,
+            "status": "ESTIMATED"
+          },
+          "origin": "2013-12-31",
+          "outcome_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 42,
+            "missing_national_type": 2464,
+            "national_rows": 259579,
+            "packages": 143727,
+            "quarters": 4,
+            "quarters_with_national_rows": 4,
+            "suppressed": 6856,
+            "suppressed_national_rows": 67644,
+            "unresolved_packages": 107671
+          },
+          "primary": {
+            "ingredients": 0,
+            "paired_rows": 0,
+            "status": "NOT_ESTIMABLE"
+          },
+          "training_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 77,
+            "missing_national_type": 4293,
+            "national_rows": 496542,
+            "packages": 278084,
+            "quarters": 8,
+            "quarters_with_national_rows": 8,
+            "suppressed": 11349,
+            "suppressed_national_rows": 138253,
+            "unresolved_packages": 221363
+          }
+        },
+        {
+          "candidate_ingredients": 1158,
+          "exclusions": {
+            "incomplete_history": 854,
+            "incomplete_outcome": 69
+          },
+          "last_fit_quarter": "2014Q2",
+          "mapped_diagnostic": {
+            "carry_forward_bias": -7844.744680851064,
+            "carry_forward_mae": 18835.64680851064,
+            "drift_bias": 1108.2012158054729,
+            "drift_mae": 19879.438905775074,
+            "ingredients": 235,
+            "paired_mae_difference_drift_minus_carry": 1043.7920972644354,
+            "paired_rows": 235,
+            "status": "ESTIMATED"
+          },
+          "origin": "2014-12-31",
+          "outcome_coverage": {
+            "complete_frame_quarters": 0,
+            "missing_national_type": 2691,
+            "national_rows": 265036,
+            "packages": 145830,
+            "quarters": 4,
+            "quarters_with_national_rows": 4,
+            "suppressed": 7617,
+            "suppressed_national_rows": 65629,
+            "unresolved_packages": 104809
+          },
+          "primary": {
+            "ingredients": 0,
+            "paired_rows": 0,
+            "status": "NOT_ESTIMABLE"
+          },
+          "training_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 119,
+            "missing_national_type": 4423,
+            "national_rows": 513393,
+            "packages": 285510,
+            "quarters": 8,
+            "quarters_with_national_rows": 8,
+            "suppressed": 12307,
+            "suppressed_national_rows": 140197,
+            "unresolved_packages": 221482
+          }
+        },
+        {
+          "candidate_ingredients": 1255,
+          "exclusions": {
+            "incomplete_history": 940,
+            "incomplete_outcome": 53
+          },
+          "last_fit_quarter": "2015Q2",
+          "mapped_diagnostic": {
+            "carry_forward_bias": -5457.286259541985,
+            "carry_forward_mae": 24887.13358778626,
+            "drift_bias": 9575.895856052346,
+            "drift_mae": 27258.802071973827,
+            "ingredients": 262,
+            "paired_mae_difference_drift_minus_carry": 2371.6684841875667,
+            "paired_rows": 262,
+            "status": "ESTIMATED"
+          },
+          "origin": "2015-12-31",
+          "outcome_coverage": {
+            "complete_frame_quarters": 0,
+            "missing_national_type": 3000,
+            "national_rows": 266632,
+            "packages": 146168,
+            "quarters": 4,
+            "quarters_with_national_rows": 4,
+            "suppressed": 8477,
+            "suppressed_national_rows": 63105,
+            "unresolved_packages": 100284
+          },
+          "primary": {
+            "ingredients": 0,
+            "paired_rows": 0,
+            "status": "NOT_ESTIMABLE"
+          },
+          "training_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 63,
+            "missing_national_type": 4927,
+            "national_rows": 519939,
+            "packages": 287819,
+            "quarters": 8,
+            "quarters_with_national_rows": 8,
+            "suppressed": 13707,
+            "suppressed_national_rows": 135655,
+            "unresolved_packages": 215508
+          }
+        },
+        {
+          "candidate_ingredients": 1345,
+          "exclusions": {
+            "incomplete_history": 1014,
+            "incomplete_outcome": 60
+          },
+          "last_fit_quarter": "2016Q2",
+          "mapped_diagnostic": {
+            "carry_forward_bias": -5216.630996309963,
+            "carry_forward_mae": 17495.974169741698,
+            "drift_bias": 6696.49446494465,
+            "drift_mae": 20506.253031101736,
+            "ingredients": 271,
+            "paired_mae_difference_drift_minus_carry": 3010.278861360039,
+            "paired_rows": 271,
+            "status": "ESTIMATED"
+          },
+          "origin": "2016-12-31",
+          "outcome_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 6,
+            "missing_national_type": 3764,
+            "national_rows": 274082,
+            "packages": 150373,
+            "quarters": 4,
+            "quarters_with_national_rows": 4,
+            "suppressed": 9858,
+            "suppressed_national_rows": 64752,
+            "unresolved_packages": 98246
+          },
+          "primary": {
+            "ingredients": 0,
+            "paired_rows": 0,
+            "status": "NOT_ESTIMABLE"
+          },
+          "training_coverage": {
+            "complete_frame_quarters": 0,
+            "invalid_ndc11": 1,
+            "missing_national_type": 5398,
+            "national_rows": 527855,
+            "packages": 290596,
+            "quarters": 8,
+            "quarters_with_national_rows": 8,
+            "suppressed": 15175,
+            "suppressed_national_rows": 130348,
+            "unresolved_packages": 208756
+          }
+        }
+      ],
+      "primary": {
+        "evaluable_origins": 0,
+        "ingredients": 0,
+        "paired_rows": 0,
+        "status": "NOT_ESTIMABLE"
+      }
+    }
+  },
+  "input_manifest_sha256": "b5298819fb5d5870c5f8c7c375361fe1f2732333383793cb821aa7e259d60721",
+  "linkage": {
+    "candidates": 1374,
+    "linked_candidates": 1258,
+    "linked_paired_diagnostic_ingredients": 378,
+    "paired_diagnostic_ingredients": 403
+  },
+  "scope": "DEVELOPMENT_ONLY",
+  "spec_sha256": "97849e4ce21d6fc529af9f9253fdbb302fd7c54bc28789f9707cf27fdb2145c7"
+}
