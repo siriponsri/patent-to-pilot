@@ -120,7 +120,7 @@ Keep eligible rows with missing predictors. Apply the frozen zero-plus-indicator
 
 The repository contains the original package, aggregate smoke output, development receipts and source audits. These are the project disseminations documented in the available record. [Package evidence ledger](https://github.com/siriponsri/patent-to-pilot/blob/66dfa7994fb3dc47772fd36904b8ca5c038fefcd/docs/loe-bench/owner-source/package-docs/10-REFERENCES-AND-EVIDENCE-LEDGER.md)
 
-Neither author has published, presented or otherwise disseminated analyses of these data beyond the public repository records cited here. The first author's earlier conference paper on patent reranking (iSAI-NLP 2026) used an unrelated dataset and shares no data with this study. [AUTHOR CONFIRMS]
+Neither author has published, presented or otherwise disseminated analyses of these data beyond the public repository records cited here. The first author's earlier conference paper on patent reranking (iSAI-NLP 2026) used an unrelated dataset and shares no data with this study.
 
 ### Prior knowledge of the data
 
@@ -161,10 +161,10 @@ H2 was −1.10 pp [−4.67, +3.33] under pre-REG coding and +5.49 pp [−2.00, +
 
 **Auto-clear decision chronology.** T1v3 recorded `FAILED_DEVELOPMENT_ACCEPTANCE`, including failures of its safety and defined-endpoint checks. Its estimable missed-clear intervals all had upper bounds above 3%, and the B1 24-month safety rate was unevaluable because it cleared zero rows. After seeing those development results, the analysis lead removed auto-clear safety from acceptance and retained queue capacity and defined endpoints. FREEZE replayed the merged pipeline under those revised acceptance checks and kept auto-clear as a secondary safety measure. Again all five estimable upper bounds exceeded 3%, with B1 at 24 months unevaluable. Every case outside the review queue follows the evaluator's normal process. [T1v3](https://github.com/siriponsri/patent-to-pilot/blob/66dfa7994fb3dc47772fd36904b8ca5c038fefcd/docs/loe-bench/receipts/T1v3.md) · [Criteria v3 decision](https://github.com/siriponsri/patent-to-pilot/blob/66dfa7994fb3dc47772fd36904b8ca5c038fefcd/docs/loe-bench/PLAN.md#confirmatory-criteria-v3-owner-approved-27-november-2026-supersedes-v2-endpoints) · [FREEZE](https://github.com/siriponsri/patent-to-pilot/blob/66dfa7994fb3dc47772fd36904b8ca5c038fefcd/docs/loe-bench/receipts/FREEZE.md#development-results)
 
-- Siripon Srihangpiboon directed AI coding agents that produced and inspected the development outputs listed above; no protected test outcome or metric was viewed. [AUTHOR CONFIRMS]
-- Tuchsanai Ploysuwan has not accessed the data or any outputs. [AUTHOR CONFIRMS]
+- Siripon Srihangpiboon directed AI coding agents that produced and inspected the development outputs listed above; no protected test outcome or metric was viewed.
+- Tuchsanai Ploysuwan has not accessed the data or any outputs.
 
-Neither author has accessed the data beyond the disclosures above. The authors declare no competing interests. The study received no external funding, and the first author paid the computing costs. [AUTHOR CONFIRMS]
+Neither author has accessed the data beyond the disclosures above. The authors declare no competing interests. The study received no external funding, and the first author paid the computing costs.
 
 ## Analyses
 
