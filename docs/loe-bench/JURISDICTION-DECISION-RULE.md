@@ -42,3 +42,25 @@ Applied against the rule above using [JURISDICTION-FEASIBILITY](JURISDICTION-FEA
 **Reason a reviewer can check.** The expansion exists to give H2 (the graph increment) power. H2 is only testable where dated patent and exclusivity or data-protection evidence exists, because the graph states are built from it. Canada publishes both registers with dates, so Canadian origins add information to H2 as well as H1. Japan adds first-generic events for H1 but, without an open patent crosswalk, its graph features would be largely empty, so it cannot raise H2 power much. China and the ASEAN registries fail the open-terms or as-of criteria, which the benchmark needs for reproducibility and leakage control.
 
 **Next.** JURIS-COUNT measures, for Canada and Japan, the licence text, archived editions and unique eligible first-generic events per year over three complete years after removing US-duplicated moiety sets. The final decision follows the rule's materiality test with POWER-SIM rerun on the measured rates.
+
+## Final decision (planner, 28 November 2026, 22:09 Bangkok by the system clock)
+
+Applied strictly against the rule above, which was committed (c206bc96) before the feasibility, simulation and count evidence. Evidence: [JURIS-COUNT](receipts/JURIS-COUNT.md) (merged a088e612) and [POWER-SIM](receipts/POWER-SIM.md) (merged 7e068c99).
+
+| Jurisdiction | M1 | M2 | M3 | M4 | Materiality (H2 power gain at the +5 pp design effect, annual calendar) | Owner burden | Decision |
+|---|---|---|---|---|---|---|---|
+| **Canada** | PASS (OGL Canada for NOC, DPD and Patent Register; RID under non-commercial site terms) | PASS | **UNVERIFIED**: no per-row update history binds the record versions at past cutoffs | PASS | **+0.20 pp** (C 99.80% to F 100.00%), below the +10 pp threshold; an earlier readout was not simulated | 0.5–1.5 h per quarter (estimate), at or above the 1 h limit | **Not admitted** |
+| **Japan** | PASS (PDL 1.0) | **UNVERIFIED** at the first-generic-per-moiety grain | **UNVERIFIED** | PASS | Not estimable (no admissible annual rate) | 1–3 h per quarter (estimate) | **Not admitted** |
+| China, Thailand, Singapore, Malaysia | Unchanged from the interim table | | | | | | **Not admitted** |
+
+**Decision: keep the US-only design and report the H2 power limitation transparently**, as the rule's fallback requires. No jurisdiction passes all of M1–M4, and Canada's gain at the registered +5 pp design effect is immaterial because the US annual design already reaches about 99.8% in the generator.
+
+**No POWER-SIM rerun.** The measured Canadian intake, 11.0 events per year gross and 9.0 US-distinct, lies inside the simulated sensitivity range (8 to 16 per year), and the decision does not depend on the rate: Canada fails M3 and the materiality test at any rate in that range.
+
+**Disclosed, not used to decide.** At the observed +1.36 pp effect, adding Canada raised simulated H2 power from 25.80% to 37.75% (+11.95 pp). The rule fixed materiality at the +5 pp design effect before any result, so this figure is reported only. It is the strongest argument for future Canadian work.
+
+**Future path (not a commitment).** Canada becomes admissible only if a separate card proves M3, for example by archiving dated weekly NOC, DPD, Patent Register and RID snapshots from now on and testing a replay. Any such design, including the expansion itself, is registered before its outcomes exist and returns to the owner before any OSF filing. Japan and the ASEAN registries remain descriptive Thai-context material only.
+
+**Limitations of this evidence.** JURIS-COUNT committed its counting manifest in the same commit as its counts; the three-year window was fixed earlier in this rule's "Next" paragraph. The burden figures are executor estimates, not measurements. The simulated generator's variance per event drug is below the planning value, so all +5 pp powers are optimistic.
+
+Next: the co-planner reviews this decision as part of the external review of the research record.
