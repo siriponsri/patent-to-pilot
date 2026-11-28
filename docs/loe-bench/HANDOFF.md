@@ -6,7 +6,7 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 The owner runs the orchestrator on two Claude accounts. Per-account chat memory is not shared, so this section and [MEMORY.md](MEMORY.md) are the main memory. Update both, then commit and push, after every step (owner rule, 28 Nov 2026, night).
 
-Last update: 28 Nov 2026, about 23:40 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
+Last update: 28 Nov 2026, about 23:55 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov).
 
 | Line | State | Next action |
 |---|---|---|
@@ -14,7 +14,7 @@ Last update: 28 Nov 2026, about 23:40 Bangkok time. The orchestrator plans and r
 | Slides | Folder structure only | Wait for the owner's reading |
 | Journals (STA conditional, JAMIA) | JAMIA v2 (outside Git) audited: PASS with minor fixes F1–F5 ([audit](receipts/JAMIA-AUDIT-v2.md)). PSA and MDM dropped. Owner is asking STA about AI drafting and prior public versions | JAMIAFIG (Claude Sonnet) makes Figures 1–2 and applies F1, F3, F4; then planner re-check and advisor review by 8 Jan |
 | Product | Merged: PO-CURRENT (1ff2db22), PO-LANDING (1ae7f500), BE-GATEWAY B1 (4922cc83), BE-MCP B5 (aa6865b9), PO-PDF (02e432e5; one print layout, 64/64 parity, Semaglutide TH 59→30 pages; 39 tests rerun). B5 follow-ups: ROW_TOO_LARGE on 10 oversized records, first-call CPU vs Workers Free 10 ms, remote clients NOT_RUN until the owner deploys | Running: PO-WOW (Sonnet; also fixes the historical References-tab reveal leak, the "biosimilar" hero word and the 128 old exports), BE-GROUND B2 (Sol xhigh), BE-CLAIMS B3 (Sol high), JAMIAFIG (Sonnet). Next: PO-AI after PO-WOW, B4, PO-QA, PO-SHIP. Owner actions later: Cloudflare Pages and Worker deploy |
-| Track A | Frozen; OSF update 4 verified | Zenodo release when the owner logs in |
+| Research (open items) | Done: C1 confirmatory, C2/C3/C9 exploratory, C6–C8 pilots, Track A freeze and OSF update 4, scorer. Still open: C′ prior-study-metric supplement (NOT_RUN until now), Track A release kit and Zenodo DOI, a post-January custodian, RunPod volume 8n6rnzljwg (USD 2.10/month). Stays NOT_RUN: C4 on C′, C10 (no ethics review). Track A readouts mature 27 Nov 2027 and 2028 | Running: CPRIME-SUPP (Sol xhigh), RELEASE-KIT (Sol high; owner uploads to Zenodo). Owner decisions: delete the RunPod volume; name a custodian or record none |
 | Integration | `main` equals `research/loe-bench` at 23af56eb | Fast-forward main after each merge |
 
 ## Current state (28 November 2026, afternoon, D41 accelerated plan)
