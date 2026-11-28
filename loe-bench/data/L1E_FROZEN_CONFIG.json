@@ -1,0 +1,232 @@
+{
+  "arm": "L1e",
+  "crosswalk": {
+    "additional_graph_sources": {
+      "challenge_witnesses": "Distinct source and date pairs underlying the graph v1 challenge leaf",
+      "latest_exclusivity_expiry": "Maximum of graph v1 snapshot.excl_exp, or null for an empty clock",
+      "latest_patent_expiry": "Maximum of graph v1 snapshot.patent_exp, or null for an empty clock"
+    },
+    "as_of_evidence": {
+      "age_sq": "Squared age in years divided by 10",
+      "age_years": "Years since first NDA approval as of cutoff",
+      "challenge_missing": "Challenge status unknown as of cutoff, including an undated matched filing",
+      "challenge_present": "Dated, admitted challenge witness present as of cutoff",
+      "form_route_count": "Observed distinct dosage-form and route pairs",
+      "form_route_missing": "Incomplete or absent form-route coverage",
+      "injectable": "Injectable route observed by cutoff",
+      "listed_patent_count": "Distinct listed patent numbers in the selected edition",
+      "listed_patent_count_missing": "Missingness of the patent count",
+      "n_nda_prior": "Count from the NDA approval dates available by cutoff",
+      "nce_remaining_years": "Nonnegative years until the latest NCE exclusivity expiry",
+      "nce_remaining_years_missing": "Missingness of the NCE exclusivity value",
+      "nme": "Dated new molecular entity flag",
+      "oral": "Oral route observed by cutoff",
+      "orphan": "Dated orphan designation flag",
+      "other_exclusivity_remaining_years": "Nonnegative years until the latest other exclusivity expiry",
+      "other_exclusivity_remaining_years_missing": "Missingness of the other exclusivity value",
+      "priority": "Dated priority review flag",
+      "strength_count": "Observed distinct normalized form-route and strength presentations",
+      "strength_missing": "Incomplete or absent strength coverage",
+      "years_since_earliest_patent_submission": "Years since the earliest available listed patent submission",
+      "years_since_earliest_patent_submission_missing": "Missingness of the earliest patent submission value",
+      "years_to_last_patent_expiry": "Signed years until the latest listed patent expiry",
+      "years_to_last_patent_expiry_missing": "Missingness of the latest patent expiry value"
+    },
+    "b1_hazard_supplied": false,
+    "excluded_m3_columns": [
+      "b1_age_hazard_logit",
+      "verdict_OPEN",
+      "verdict_BLOCKED",
+      "verdict_CONTESTED"
+    ],
+    "graph_verdict_supplied": false,
+    "identity": [
+      "entity",
+      "horizon_months",
+      "t0"
+    ]
+  },
+  "decoder": {
+    "batch_size": 8,
+    "do_sample": false,
+    "dtype": "float16",
+    "max_new_tokens": 160,
+    "memory_fraction": 0.9,
+    "num_beams": 1,
+    "pad_token": "tokenizer EOS",
+    "padding_side": "left",
+    "seed": 20261127
+  },
+  "development_input": {
+    "cutoffs": {
+      "12": [
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "24": [
+        "2013-01-01",
+        "2014-01-01"
+      ]
+    },
+    "fields": [
+      "as_of_evidence",
+      "entity",
+      "horizon_months",
+      "t0"
+    ],
+    "frozen_pipeline_lf_sha256": "d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39",
+    "l1_rows_sha256": "b4fcbb06eac119cb1433c9b7855e0f38160313d1c74da937d1b41b2cf9a57837",
+    "name": "pinned GSRS display name then preferred then lexical; native fallback names",
+    "order": "horizon, cutoff, frozen active-moiety key",
+    "rows": 3244,
+    "sha256": "5828b0cfbc421784ed34dcadac8a6dddc3a71b5f1588ef4f3afeff71bffc8850"
+  },
+  "evaluation": {
+    "ap": "pooled grouped native score AP",
+    "bootstrap": {
+      "draws": 2000,
+      "interval": "two-sided 95% percentile",
+      "seed_per_horizon": 20261127,
+      "unit": "whole drug with common draws for all arms"
+    },
+    "comparators": [
+      "L1",
+      "M3",
+      "B1"
+    ],
+    "failure_rule": "Stop at 200 if fewer than 180 valid. Any failed, incomplete or unverifiable run yields NOT_RUN. The L1 comparator requires its original verified outputs. Invalid responses have native risk -1.0.",
+    "queue": "per-cutoff floor(N/5), expected boundary ties",
+    "require_full_roster": true,
+    "risk": "p_entry including schema-valid abstentions; ignore action for ranking"
+  },
+  "harness_lf_sha256": {
+    "loe_bench/l1e_prompt.py": "07e43988f7aeecacf9a8078b2cf1f519608eaf5828666110def92fd380f9f1e9",
+    "loe_bench/llm_arm.py": "a0f3681e0ceba5d6128900f7fc2cf4243d5522821b7118b49bcddd0216d4dca6",
+    "scripts/l1dev_protocol.py": "6c0c91c9792838792027d8f303fe80c4cca7a65f1703158d1931d06e74eb4ac0",
+    "scripts/l1e_protocol.py": "3cbb0f24522afead79004f3d1fb18ff36b4b1dc447caac5ab65945251d3cad42",
+    "scripts/runpod_l1dev.py": "90a72ee607bef5987f7bed8a1fd6e8d7571fee86c3e02f5150829eb9a31fec2b",
+    "scripts/runpod_l1e.py": "fd1e3f7d5d08fb1a878cfc371fac21a30eb3375b9cd81949688c5b1ec30183d9"
+  },
+  "image": {
+    "license_evidence": "Torch is included in the image; dependency wheel rights are recorded below.",
+    "publisher_amd64_digest": "sha256:4d1721e62b56d345c83b4fd6090664be6daf9312caab5b2e76f23d8231941851",
+    "publisher_index_digest": "sha256:0a360022e8de4375af99430f84e8b38951acc397252163a37ceac7204d01be35",
+    "tag": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404"
+  },
+  "l1_config_lf_sha256": "e5e5ade357ee5faf83efa0ce24ad25feddacdfcbf49ddd817a6b10e494a9ef16",
+  "model": {
+    "files": [
+      {
+        "bytes": 11343,
+        "name": "LICENSE",
+        "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+      },
+      {
+        "bytes": 6240,
+        "name": "README.md",
+        "sha256": "f366f33bbf6bcadbb7d87f0a21a7b65584a56b8d58b0743c77c88bee625b93a6"
+      },
+      {
+        "bytes": 663,
+        "name": "config.json",
+        "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c"
+      },
+      {
+        "bytes": 243,
+        "name": "generation_config.json",
+        "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f"
+      },
+      {
+        "bytes": 1671839,
+        "name": "merges.txt",
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "bytes": 3945441440,
+        "name": "model-00001-of-00004.safetensors",
+        "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+      },
+      {
+        "bytes": 3864726352,
+        "name": "model-00002-of-00004.safetensors",
+        "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+      },
+      {
+        "bytes": 3864726424,
+        "name": "model-00003-of-00004.safetensors",
+        "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+      },
+      {
+        "bytes": 3556377672,
+        "name": "model-00004-of-00004.safetensors",
+        "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+      },
+      {
+        "bytes": 27752,
+        "name": "model.safetensors.index.json",
+        "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+      },
+      {
+        "bytes": 7031645,
+        "name": "tokenizer.json",
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "bytes": 7305,
+        "name": "tokenizer_config.json",
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+      },
+      {
+        "bytes": 2776833,
+        "name": "vocab.json",
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "id": "Qwen/Qwen2.5-7B-Instruct",
+    "license": "Apache-2.0",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "parser": {
+    "entrypoint": "loe_bench.llm_arm.parse_response",
+    "invalid": "abstain; tie below all valid native scores for queue and AP",
+    "schema": [
+      "p_entry",
+      "action",
+      "missing_evidence"
+    ]
+  },
+  "prompt": {
+    "chat_template": "pinned tokenizer; add_generation_prompt=true; enable_thinking=false",
+    "messages_bytes": "LF-terminated UTF-8 JSON arrays of [system, user] before tokenization",
+    "messages_jsonl_sha256": "049a695ded6f54af3aea9526e703f66b214ba3389c0206041768c26e7674df3b",
+    "system_utf8_sha256": "d38691696321eede3e21bb588574976cdfef853ce517c8bb33eb076f948d9592",
+    "template_utf8_sha256": "360f91b8d955ce73bdbf009dff5639807315bdf47ab48afdc8d3f0b58db22994"
+  },
+  "quality_gate": {
+    "minimum_schema_valid": 180,
+    "result": {
+      "evaluated_rows": 200,
+      "full_roster": true,
+      "rows_returned": 3244,
+      "run_status": "COMPLETE",
+      "schema_valid": 200,
+      "status": "PASS"
+    },
+    "rows": 200
+  },
+  "restage_lf_sha256": {
+    "data/E4b_model.json": "4d62b27ca8f05fb7273f46c57a9fe1073e8fc152f4e5ed575a4a255f585ff148",
+    "data/E4b_stage.json": "11f35142b43e87e9d4e36992cdbe4ec60613988376636d678de36292ec092e0e",
+    "scripts/runpod_e4b_stage.py": "b2d170b16e13fc65f12f9ee0ea1167c76619411fe9e29b163e27b60ebad9ea18",
+    "scripts/runpod_l1e_restage.py": "5b31c33d0b0b365b7ea86327b5b1b7a7c5a49e319ae61d698f6045c57b794d17"
+  },
+  "role": "secondary exploratory",
+  "run_output_sha256": "3fdf6781b1ce3d97c84dafa2c5328db12dd2046a1f00afd54f7058d996da5f20",
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.55.2"
+  },
+  "status": "FROZEN_FOR_DEVELOPMENT_RUN"
+}

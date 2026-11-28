@@ -128,12 +128,12 @@ def prepare(args, inputs):
     print(f"{len(inputs)} label-free forecast rows, SHA-256 {digest}", flush=True)
 
 
-def score_panel(rows, native, days):
+def score_panel(rows, native, days, *, arms=ARMS):
     cutoffs = [row["t"] for row in rows]
     labels = np.array([row["y"] for row in rows])
     _, groups = np.unique([row["key"] for row in rows], return_inverse=True)
     n = int(groups.max()) + 1
-    queues = [ReviewQueue(native[arm], cutoffs) for arm in ARMS]
+    queues = [ReviewQueue(native[arm], cutoffs) for arm in arms]
     zeros = np.zeros(len(rows))
 
     def measure(copies):
@@ -156,15 +156,15 @@ def score_panel(rows, native, days):
         idx = np.asarray(cutoffs) == day
         capacity = int(idx.sum()) // t1v3.REVIEW_DIVISOR
         if not np.isclose(fractions[idx].sum(), capacity, rtol=0, atol=1e-9):
-            raise ValueError("L1 queue differs from the frozen review budget")
+            raise ValueError(f"{arms[0]} queue differs from the frozen review budget")
         allocations.append({"cutoff": day.isoformat(), "rows": int(idx.sum()), "capacity": capacity,
                             "boundary_tie_rows": int(((fractions[idx] > 0) & (fractions[idx] < 1)).sum()),
                             "expected_queued_events": float(fractions[idx] @ labels[idx])})
     return {"rows": len(rows), "drug_clusters": n, "event_rows": int(labels.sum()),
-            "queue_slots": slots, "L1_cutoffs": allocations,
-            "levels": {arm: intervals(point[i], draws[:, i]) for i, arm in enumerate(ARMS)},
-            "contrasts": {f"L1-{arm}": intervals(point[0] - point[i], draws[:, 0] - draws[:, i])
-                          for i, arm in enumerate(ARMS) if i}}
+            "queue_slots": slots, f"{arms[0]}_cutoffs": allocations,
+            "levels": {arm: intervals(point[i], draws[:, i]) for i, arm in enumerate(arms)},
+            "contrasts": {f"{arms[0]}-{arm}": intervals(point[0] - point[i], draws[:, 0] - draws[:, i])
+                          for i, arm in enumerate(arms) if i}}
 
 
 def score(args, inputs, rows_by_h, entities, builder, reference):
