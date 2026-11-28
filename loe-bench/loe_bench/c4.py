@@ -26,6 +26,8 @@ SHA256 = re.compile(r"[a-f0-9]{64}")
 TYPES = ("FFSU", "MCOU")
 FIELDS = ("State", "NDC", "Year", "Quarter", "Utilization Type",
           "Suppression Used", "Number of Prescriptions")
+REIMBURSEMENT_FIELD = "Total Amount Reimbursed"
+USD = re.compile(r"([0-9]+)(?:\.([0-9]{1,2}))?")
 
 
 def quarter(year, number):
@@ -115,6 +117,7 @@ class DrugQuarter:
     state_types: set[str] = field(default_factory=set)
     suppressed_rows: int = 0
     national_rows: int = 0
+    reimbursed_cents: dict[str, int | None] = field(default_factory=dict)
 
 
 def parse_count(flag, count):
@@ -126,7 +129,14 @@ def parse_count(flag, count):
     return None, "unknown_count"
 
 
-def read_sdud(path, year):
+def parse_reimbursement(flag, amount):
+    match = USD.fullmatch(amount.strip())
+    if flag.strip().lower() not in {"false", "0", "n", "no"} or match is None:
+        return None
+    return 100 * int(match[1]) + int((match[2] or "0").ljust(2, "0"))
+
+
+def read_sdud(path, year, *, include_reimbursement=False):
     """Use XX values only. State rows supply evidence that a package/type exists."""
     quarters = defaultdict(dict)
     with path.open(encoding="utf-8-sig", newline="") as stream:
@@ -135,6 +145,7 @@ def read_sdud(path, year):
         state_i, ndc_i, year_i, q_i, type_i, flag_i, count_i = [
             header.index(name) for name in FIELDS
         ]
+        amount_i = header.index(REIMBURSEMENT_FIELD) if include_reimbursement else None
         for row in reader:
             if len(row) != len(header) or row[year_i] != str(year):
                 raise ValueError(f"{path.name}:{reader.line_num}: invalid row or year")
@@ -152,8 +163,12 @@ def read_sdud(path, year):
             drug.suppressed_rows += status == "suppressed"
             if kind in drug.national:
                 drug.national[kind] = (None, "duplicate_national_key")
+                if include_reimbursement:
+                    drug.reimbursed_cents[kind] = None
             else:
                 drug.national[kind] = (count, status)
+                if include_reimbursement and status != "suppressed":
+                    drug.reimbursed_cents[kind] = parse_reimbursement(row[flag_i], row[amount_i])
     return quarters
 
 
@@ -161,56 +176,83 @@ def read_sdud(path, year):
 class IngredientQuarter:
     counts: dict[str, int | None] = field(default_factory=dict)
     issues: Counter = field(default_factory=Counter)
+    reimbursed_cents: dict[str, int | None] = field(default_factory=dict)
+    mapped_packages: Counter = field(default_factory=Counter)
+    count_complete_packages: Counter = field(default_factory=Counter)
+    amount_complete_packages: Counter = field(default_factory=Counter)
+    joint_complete_packages: Counter = field(default_factory=Counter)
 
     @property
     def frame_complete(self):
         return bool(self.issues["national_rows"]) and not self.issues["unresolved_packages"]
 
 
-def aggregate(period, rows, crosswalk):
+def aggregate(period, rows, crosswalk, *, include_reimbursement=False):
     result = IngredientQuarter()
     totals = Counter()
     incomplete = set()
+    amounts = Counter()
+    incomplete_amount = set()
     required = set(TYPES if period >= quarter(2010, 1) else TYPES[:1])
+    end = quarter_end(period)
     for ndc, drug in rows.items():
         result.issues["packages"] += 1
         result.issues["national_rows"] += drug.national_rows
         result.issues["suppressed_national_rows"] += drug.suppressed_rows
         package = crosswalk.get(ndc) if NDC11.fullmatch(ndc) else None
-        if package is None or package.first_listed > quarter_end(period):
+        if package is None or package.first_listed > end:
             result.issues["unresolved_packages"] += 1
             if not NDC11.fullmatch(ndc):
                 result.issues["invalid_ndc11"] += 1
             continue
-        problems = {status for _, status in drug.national.values()} - {"known"}
+        structural_problems = set()
         if (drug.national.keys() | drug.state_types) - required:
-            problems.add("unexpected_utilization_type")
+            structural_problems.add("unexpected_utilization_type")
         if required - drug.national.keys():
-            problems.add("missing_national_type")
+            structural_problems.add("missing_national_type")
         if not drug.national:
-            problems.add("state_only_package")
+            structural_problems.add("state_only_package")
+        problems = structural_problems | ({status for _, status in drug.national.values()} - {"known"})
         if problems:
             result.issues.update(problems)
             incomplete.update(package.ingredients)
         else:
             count = sum(drug.national[kind][0] for kind in required)
             totals.update({ingredient: count for ingredient in package.ingredients})
+        if include_reimbursement:
+            reported = [drug.reimbursed_cents.get(kind) for kind in required]
+            result.mapped_packages.update(package.ingredients)
+            if not problems:
+                result.count_complete_packages.update(package.ingredients)
+            if structural_problems or None in reported:
+                incomplete_amount.update(package.ingredients)
+            else:
+                result.amount_complete_packages.update(package.ingredients)
+                if not problems:
+                    result.joint_complete_packages.update(package.ingredients)
+                amounts.update({ingredient: sum(reported) for ingredient in package.ingredients})
     result.counts = dict(totals)
     result.counts.update(dict.fromkeys(incomplete))
+    result.reimbursed_cents = dict(amounts)
+    result.reimbursed_cents.update(dict.fromkeys(incomplete_amount))
     return result
 
 
-def forecast(history, lag):
+def project_quarters(history, lag):
     if len(history) != HISTORY or any(value is None or value < 0 for value in history):
         raise ValueError("Forecast requires eight consecutive observed nonnegative counts")
     if lag < 0:
         raise ValueError("Forecast anchor must not follow the origin")
     slope = (history[-1] - history[0]) / (HISTORY - 1)
     return {
-        "carry_forward": HORIZON * history[-1],
-        "drift": sum(max(0, history[-1] + step * slope)
-                     for step in range(lag + 1, lag + HORIZON + 1)),
+        "carry_forward": [history[-1]] * HORIZON,
+        "drift": [max(0, history[-1] + step * slope)
+                  for step in range(lag + 1, lag + HORIZON + 1)],
     }
+
+
+def forecast(history, lag):
+    return {arm: sum(values) for arm, values in project_quarters(history, lag).items()}
 
 
 def score_origin(origin, anchor, training, outcomes):
@@ -296,8 +338,7 @@ def proven_before(record, origin):
             and timestamp.date() < origin)
 
 
-def run_pilot(spec, manifest, root, registry):
-    # Validate every origin before opening any SDUD or FDA payload.
+def pilot_origins(spec, manifest):
     origins = {}
     for entry in manifest["origins"]:
         origin = date.fromisoformat(entry["origin"])
@@ -309,6 +350,12 @@ def run_pilot(spec, manifest, root, registry):
         origins[index] = entry
     if list(origins) != [dev_origin(date.fromisoformat(value)) for value in spec["development_origins"]]:
         raise ValueError("Origin manifest differs from the frozen C4 protocol")
+    return origins
+
+
+def pilot_windows(spec, manifest, root, *, include_reimbursement=False):
+    # Validate every origin before opening any SDUD or FDA payload.
+    origins = pilot_origins(spec, manifest)
     files = manifest["files"]
     outcome_lock = manifest["outcome_freeze"]
 
@@ -323,8 +370,10 @@ def run_pilot(spec, manifest, root, registry):
     @lru_cache(maxsize=None)
     def quarter_series(file_id, map_id):
         file = files[file_id]
-        return {period: aggregate(period, rows, crosswalk(map_id))
-                for period, rows in read_sdud(checked(file_id), file["year"]).items()}
+        source = read_sdud(checked(file_id), file["year"], include_reimbursement=include_reimbursement)
+        return {period: aggregate(period, rows, crosswalk(map_id),
+                                  include_reimbursement=include_reimbursement)
+                for period, rows in source.items()}
 
     @lru_cache(maxsize=None)
     def crosswalk(file_id):
@@ -337,9 +386,6 @@ def run_pilot(spec, manifest, root, registry):
                 if str(period // 4) in year_files
                 and period in quarter_series(year_files[str(period // 4)], map_id)}
 
-    by_vintage = {verdict: {"origins": []} for verdict in (AS_OF, RETROSPECTIVE)}
-    pooled = defaultdict(list)
-    all_ingredients, paired = set(), set()
     for index, entry in origins.items():
         origin = date.fromisoformat(entry["origin"])
         verdict = entry["verdict"]
@@ -357,13 +403,24 @@ def run_pilot(spec, manifest, root, registry):
                 raise ValueError("AS_OF_PROVEN requires pre-origin proofs for SDUD and crosswalk bytes")
         fit = series(fit_periods, entry["training_files"], entry["crosswalk"])
         target = series(target_periods, outcome_lock["files"], outcome_lock["crosswalk"])
+        yield origin, verdict, anchor, fit, target
+
+
+def run_pilot(spec, manifest, root, registry):
+    by_vintage = {verdict: {"origins": []} for verdict in (AS_OF, RETROSPECTIVE)}
+    pooled = defaultdict(list)
+    all_ingredients, paired = set(), set()
+    for origin, verdict, anchor, fit, target in pilot_windows(spec, manifest, root):
+        index = dev_origin(origin)
+        fit_periods = range(anchor - HISTORY + 1, anchor + 1)
+        target_periods = range(index + 1, index + HORIZON + 1)
         ingredients, primary, diagnostic, missing = score_origin(origin, anchor, fit, target)
         pooled[verdict, "primary"].extend(primary)
         pooled[verdict, "mapped_diagnostic"].extend(diagnostic)
         all_ingredients.update(ingredients)
         paired.update(row[0] for row in diagnostic)
         by_vintage[verdict]["origins"].append({
-            "origin": entry["origin"],
+            "origin": origin.isoformat(),
             "last_fit_quarter": quarter_label(anchor),
             "candidate_ingredients": len(ingredients),
             "exclusions": missing,
@@ -408,6 +465,8 @@ def main():
     args = parser.parse_args()
     spec_bytes = lock_bytes(args.spec)
     spec = json.loads(spec_bytes)
+    if spec["protocol_version"] != "C4-v1":
+        parser.error("C4 v2 uses python -m loe_bench.c4b")
     manifest_bytes = lock_bytes(args.inputs)
     if hashlib.sha256(manifest_bytes).hexdigest() != spec["input_manifest_sha256"]:
         raise ValueError("C4 input manifest SHA-256 mismatch")
