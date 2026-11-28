@@ -234,3 +234,11 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
   - figures in academic style rather than slide style, after research on academic-figure guidelines
   The co-planner is consulted anew. The revision may wait until all experimental results are in (the Track A freeze).
 - 28 Nov 2026, late night: the owner chose the formal IS2 title, option 1 in the [style guide](../writing/is2/mwd/STYLE-GUIDE.md): TH การประเมินหลักฐานด้านการกำกับดูแลยาเพื่อจัดลำดับการทบทวนรายการยาก่อนการอนุมัติยาสามัญครั้งแรกในสหรัฐอเมริกา / EN Evaluating Regulatory Evidence for Prioritizing Drug Reviews Ahead of First US Generic Approvals.
+- 28 Nov 2026, night: owner instructions.
+  - Figures use direction A (Nature clean).
+  - OSF update 4 was filed; the planner verified it as approved at 11:30:06 UTC.
+  - Journal manuscripts are wanted for Pharmaceutical Sciences Asia and Science & Technology Asia (Thai journals, both of which publish in English) and for Medical Decision Making and JAMIA (international). The co-planner is always consulted on journal writing. The owner will help find author guidelines if they are missing.
+  - IS2, slides and journal documents are delivered to `C:/Users/User/Desktop/myDegree/IS/IS_2_new` in a categorized structure. Misplaced originals on the Desktop may be deleted.
+  - For KMITL graduation, IS2 alone suffices, but the owner wants a "wow" result that extends to a real product, so the product line opens now.
+  - Slides wait until the owner reads the new short paper; only the folder structure is created.
+
