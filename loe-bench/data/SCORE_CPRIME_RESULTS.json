@@ -1,0 +1,3361 @@
+{
+  "C3": {
+    "edition_inventory": [
+      {
+        "edition": "2017-10-13",
+        "matching_applications": 20,
+        "sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+        "source": "https://web.archive.org/web/20171114202140id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "edition": "2018-01-12",
+        "matching_applications": 35,
+        "sha256": "47b46e4a9854170055d2471eceeea2c3c01a2ba9f15529b557c78de9b510baef",
+        "source": "https://web.archive.org/web/20180125053257id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "edition": "2018-08-17",
+        "matching_applications": 52,
+        "sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+        "source": "https://web.archive.org/web/20180908074144id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "edition": "2019-01-18",
+        "matching_applications": 103,
+        "sha256": "1b5de2f495e32e5c45d9d08865f421fa85fa8f6cd0f00a68809ab7d664892180",
+        "source": "https://web.archive.org/web/20190207233819id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "edition": "2019-12-13",
+        "matching_applications": 165,
+        "sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+        "source": "https://web.archive.org/web/20191214001219id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2020-11-02",
+        "matching_applications": 97,
+        "sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+        "source": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2021-02-12",
+        "matching_applications": 113,
+        "sha256": "5aa47cf7b7d76889df59fec815738a04a1fce6f876f742a377f02f312acf5f13",
+        "source": "https://web.archive.org/web/20210312103027id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2021-12-10",
+        "matching_applications": 97,
+        "sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+        "source": "https://web.archive.org/web/20211228215048id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2022-02-11",
+        "matching_applications": 92,
+        "sha256": "bb7c543d1eb45c21ab675ad27b78818dea29dcb7eb52595f0fadf231e5eb6a4d",
+        "source": "https://web.archive.org/web/20220309013510id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2022-11-10",
+        "matching_applications": 138,
+        "sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+        "source": "https://web.archive.org/web/20221128232655id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2023-01-13",
+        "matching_applications": 142,
+        "sha256": "3bdfa0b2c4d77a71e3f4adf6c5af4a6a91cf89e23cf758676832c463f635819d",
+        "source": "https://web.archive.org/web/20230126055817id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2023-12-08",
+        "matching_applications": 118,
+        "sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+        "source": "https://web.archive.org/web/20231220045755id_/https://www.fda.gov/media/76860/download?attachment"
+      },
+      {
+        "edition": "2024-02-09",
+        "matching_applications": 106,
+        "sha256": "1c564ffb4f4465fa63cf36e0db67f358b4ee4f1453976ebc0ef15aad5ab9748c",
+        "source": "https://web.archive.org/web/20240218071235id_/https://www.fda.gov/media/76860/download?attachment"
+      },
+      {
+        "edition": "2024-12-13",
+        "matching_applications": 65,
+        "sha256": "2680178bc6a63ddcaa93ddf5f810c34369ce39d493cca40834c8552f26394086",
+        "source": "https://web.archive.org/web/20241226235539id_/https://www.fda.gov/media/76860/download?attachment"
+      },
+      {
+        "edition": "2025-01-10",
+        "matching_applications": 69,
+        "sha256": "03ed91905a0d575e9ed4d9687ea587f6928627130f20b2f4d16c25760fe02012",
+        "source": "https://web.archive.org/web/20250119175942id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2026-07-10",
+        "matching_applications": 35,
+        "sha256": "a50c72e98297a9957a85986f7a60bf4f549de430d2ea8cce282ee6c1e6195d2c",
+        "source": "https://web.archive.org/web/20260726025555id_/https://www.fda.gov/media/76860/download"
+      },
+      {
+        "edition": "2026-11-13",
+        "matching_applications": 12,
+        "sha256": "d4dbc9d85df4fbd78c5e448f130a55b05054f529d2054a46df10735437792241",
+        "source": "https://www.fda.gov/media/76860/download?attachment"
+      }
+    ],
+    "identity_comparison": {
+      "by_cutoff": {
+        "2017-01-01": {
+          "agreeing_applications": 145,
+          "applicant_agreement": 0.48986486486486486,
+          "comparable_applications": 296,
+          "determinate_threshold_label_differences": 0,
+          "label_status_differences": 0,
+          "label_transitions": {},
+          "resolved_by_source": {
+            "fda_zip/2017-10-13": 20,
+            "fda_zip/2018-01-12": 15,
+            "fda_zip/2018-08-17": 33,
+            "fda_zip/2019-01-18": 71,
+            "fda_zip/2019-12-13": 146,
+            "fda_zip/2020-11-02": 11
+          },
+          "unresolved_by_source": {}
+        },
+        "2018-01-01": {
+          "agreeing_applications": 194,
+          "applicant_agreement": 0.5808383233532934,
+          "comparable_applications": 334,
+          "determinate_threshold_label_differences": 0,
+          "label_status_differences": 0,
+          "label_transitions": {},
+          "resolved_by_source": {
+            "fda_zip/2018-08-17": 21,
+            "fda_zip/2019-01-18": 55,
+            "fda_zip/2019-12-13": 136,
+            "fda_zip/2020-11-02": 86,
+            "fda_zip/2021-02-12": 36
+          },
+          "unresolved_by_source": {}
+        },
+        "2019-01-01": {
+          "agreeing_applications": 176,
+          "applicant_agreement": 0.6848249027237354,
+          "comparable_applications": 257,
+          "determinate_threshold_label_differences": 1,
+          "label_status_differences": 1,
+          "label_transitions": {
+            "True -> False": 1
+          },
+          "resolved_by_source": {
+            "fda_zip/2019-01-18": 8,
+            "fda_zip/2019-12-13": 71,
+            "fda_zip/2020-11-02": 62,
+            "fda_zip/2021-02-12": 36,
+            "fda_zip/2021-12-10": 76,
+            "fda_zip/2022-02-11": 4
+          },
+          "unresolved_by_source": {}
+        },
+        "2020-01-01": {
+          "agreeing_applications": 161,
+          "applicant_agreement": 0.7285067873303167,
+          "comparable_applications": 221,
+          "determinate_threshold_label_differences": 0,
+          "label_status_differences": 0,
+          "label_transitions": {},
+          "resolved_by_source": {
+            "fda_zip/2020-11-02": 20,
+            "fda_zip/2021-02-12": 20,
+            "fda_zip/2021-12-10": 40,
+            "fda_zip/2022-02-11": 15,
+            "fda_zip/2022-11-10": 112,
+            "fda_zip/2023-01-13": 14
+          },
+          "unresolved_by_source": {}
+        },
+        "2021-01-01": {
+          "agreeing_applications": 212,
+          "applicant_agreement": 0.7737226277372263,
+          "comparable_applications": 274,
+          "determinate_threshold_label_differences": 0,
+          "label_status_differences": 0,
+          "label_transitions": {},
+          "resolved_by_source": {
+            "fda_zip/2021-02-12": 1,
+            "fda_zip/2021-12-10": 31,
+            "fda_zip/2022-02-11": 12,
+            "fda_zip/2022-11-10": 105,
+            "fda_zip/2023-01-13": 17,
+            "fda_zip/2023-12-08": 104,
+            "fda_zip/2024-02-09": 4
+          },
+          "unresolved_by_source": {}
+        },
+        "2022-01-01": {
+          "agreeing_applications": 193,
+          "applicant_agreement": 0.7782258064516129,
+          "comparable_applications": 248,
+          "determinate_threshold_label_differences": 0,
+          "label_status_differences": 0,
+          "label_transitions": {},
+          "resolved_by_source": {
+            "fda_zip/2022-02-11": 7,
+            "fda_zip/2022-11-10": 90,
+            "fda_zip/2023-01-13": 12,
+            "fda_zip/2023-12-08": 66,
+            "fda_zip/2024-02-09": 10,
+            "fda_zip/2024-12-13": 56,
+            "fda_zip/2025-01-10": 7
+          },
+          "unresolved_by_source": {}
+        },
+        "2023-01-01": {
+          "agreeing_applications": 100,
+          "applicant_agreement": 0.8547008547008547,
+          "comparable_applications": 117,
+          "determinate_threshold_label_differences": 0,
+          "label_status_differences": 4,
+          "label_transitions": {
+            "None -> True": 4
+          },
+          "resolved_by_source": {
+            "fda_zip/2023-12-08": 31,
+            "fda_zip/2024-02-09": 6,
+            "fda_zip/2024-12-13": 39,
+            "fda_zip/2025-01-10": 6,
+            "fda_zip/2026-07-10": 35
+          },
+          "unresolved_by_source": {
+            "no_listing": 50
+          }
+        }
+      },
+      "pooled": {
+        "agreeing_applications": 568,
+        "applicant_agreement": 0.6658851113716295,
+        "comparable_applications": 853,
+        "determinate_threshold_label_differences": 1,
+        "label_status_differences": 5,
+        "label_transitions": {
+          "None -> True": 4,
+          "True -> False": 1
+        },
+        "resolved_by_source": {
+          "fda_zip/2017-10-13": 20,
+          "fda_zip/2018-01-12": 15,
+          "fda_zip/2018-08-17": 33,
+          "fda_zip/2019-01-18": 71,
+          "fda_zip/2019-12-13": 146,
+          "fda_zip/2020-11-02": 87,
+          "fda_zip/2021-02-12": 45,
+          "fda_zip/2021-12-10": 76,
+          "fda_zip/2022-02-11": 16,
+          "fda_zip/2022-11-10": 112,
+          "fda_zip/2023-01-13": 19,
+          "fda_zip/2023-12-08": 104,
+          "fda_zip/2024-02-09": 11,
+          "fda_zip/2024-12-13": 56,
+          "fda_zip/2025-01-10": 7,
+          "fda_zip/2026-07-10": 35
+        },
+        "unresolved_by_source": {
+          "no_listing": 50
+        }
+      }
+    },
+    "primary": {
+      "M3_minus_B1": {
+        "bounds": {
+          "all_unknown_negative": 0.30108196235363865,
+          "all_unknown_positive": 0.2999275677241779,
+          "range_given_nonzero_events": [
+            0.29594988344988343,
+            0.30509873268493953
+          ]
+        },
+        "ci95": [
+          0.2016149497634208,
+          0.3685681740030341
+        ],
+        "delta": 0.30108196235363865,
+        "draws_run": 2000,
+        "undefined_draws": 0
+      },
+      "arms": {
+        "B1": {
+          "bounds": {
+            "all_unknown_negative": 0.4966058989180376,
+            "all_unknown_positive": 0.49103288425322317,
+            "range_given_nonzero_events": [
+              0.48814102564102557,
+              0.49949896846448566
+            ]
+          },
+          "recall": 0.4966058989180376
+        },
+        "M3": {
+          "bounds": {
+            "all_unknown_negative": 0.7976878612716763,
+            "all_unknown_positive": 0.7909604519774012,
+            "range_given_nonzero_events": [
+              0.7885714285714286,
+              0.8
+            ]
+          },
+          "recall": 0.7976878612716763
+        }
+      },
+      "by_cutoff": {
+        "2017-01-01": {
+          "labels": {
+            "negative": 511,
+            "positive": 32,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2018-01-01": {
+          "labels": {
+            "negative": 529,
+            "positive": 27,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2019-01-01": {
+          "labels": {
+            "negative": 545,
+            "positive": 24,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2020-01-01": {
+          "labels": {
+            "negative": 548,
+            "positive": 22,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2021-01-01": {
+          "labels": {
+            "negative": 564,
+            "positive": 29,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2022-01-01": {
+          "labels": {
+            "negative": 576,
+            "positive": 23,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2023-01-01": {
+          "labels": {
+            "negative": 574,
+            "positive": 16,
+            "unknown": 4
+          },
+          "unresolved_applications": 50
+        }
+      },
+      "distinct_linked_applications": 903,
+      "event_drugs": 92,
+      "event_rows": 173,
+      "rows": 4024,
+      "slots_by_cutoff": {
+        "2017-01-01": 108,
+        "2018-01-01": 111,
+        "2019-01-01": 113,
+        "2020-01-01": 114,
+        "2021-01-01": 118,
+        "2022-01-01": 119,
+        "2023-01-01": 118
+      },
+      "status": "EVALUATED",
+      "unknown_drugs": 4,
+      "unknown_rows": 4,
+      "unresolved_applications": 50
+    },
+    "sensitivity": {
+      "M3_minus_B1": {
+        "bounds": {
+          "all_unknown_negative": 0.3016317016317016,
+          "all_unknown_positive": 0.3016317016317016,
+          "range_given_nonzero_events": [
+            0.3016317016317016,
+            0.3016317016317016
+          ]
+        },
+        "ci95": [
+          0.2031945788283201,
+          0.36865655951436205
+        ],
+        "delta": 0.3016317016317016,
+        "draws_run": 2000,
+        "undefined_draws": 0
+      },
+      "arms": {
+        "B1": {
+          "bounds": {
+            "all_unknown_negative": 0.49382284382284375,
+            "all_unknown_positive": 0.49382284382284375,
+            "range_given_nonzero_events": [
+              0.49382284382284375,
+              0.49382284382284375
+            ]
+          },
+          "recall": 0.49382284382284375
+        },
+        "M3": {
+          "bounds": {
+            "all_unknown_negative": 0.7954545454545454,
+            "all_unknown_positive": 0.7954545454545454,
+            "range_given_nonzero_events": [
+              0.7954545454545454,
+              0.7954545454545454
+            ]
+          },
+          "recall": 0.7954545454545454
+        }
+      },
+      "by_cutoff": {
+        "2017-01-01": {
+          "labels": {
+            "negative": 511,
+            "positive": 32,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2018-01-01": {
+          "labels": {
+            "negative": 529,
+            "positive": 27,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2019-01-01": {
+          "labels": {
+            "negative": 546,
+            "positive": 23,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2020-01-01": {
+          "labels": {
+            "negative": 548,
+            "positive": 22,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2021-01-01": {
+          "labels": {
+            "negative": 564,
+            "positive": 29,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2022-01-01": {
+          "labels": {
+            "negative": 576,
+            "positive": 23,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        },
+        "2023-01-01": {
+          "labels": {
+            "negative": 574,
+            "positive": 20,
+            "unknown": 0
+          },
+          "unresolved_applications": 0
+        }
+      },
+      "distinct_linked_applications": 903,
+      "event_drugs": 95,
+      "event_rows": 176,
+      "rows": 4024,
+      "slots_by_cutoff": {
+        "2017-01-01": 108,
+        "2018-01-01": 111,
+        "2019-01-01": 113,
+        "2020-01-01": 114,
+        "2021-01-01": 118,
+        "2022-01-01": 119,
+        "2023-01-01": 118
+      },
+      "status": "EVALUATED",
+      "unknown_drugs": 0,
+      "unknown_rows": 0,
+      "unresolved_applications": 0
+    }
+  },
+  "C3_applicant_evidence": {
+    "path": "C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench/score/C3_applicant_evidence.json",
+    "sha256": "11a9fac50e8266635f9614f28cd704fa015e6964fbed482f860b0b35d55ad340"
+  },
+  "C4": {
+    "B1_adjusted": "NOT_RUN",
+    "M3_adjusted": "NOT_RUN",
+    "as_of_proven": "NOT_RUN",
+    "carry_forward": "NOT_RUN",
+    "coverage": "NOT_RUN",
+    "covered_frozen_outcome_span": "2011Q1 through 2017Q4, only outcomes of development origins",
+    "drift": "NOT_RUN",
+    "earliest_missing_outcome_year": 2018,
+    "origins_scored": 0,
+    "reason": "Reserved origins and no pinned target coverage from 2018",
+    "status": "NOT_RUN",
+    "vintage": "RETROSPECTIVE_VINTAGE_UNCONTROLLED"
+  },
+  "bootstrap_draws": {
+    "axes": [
+      "draw",
+      [
+        "B1",
+        "M1",
+        "M3"
+      ],
+      [
+        "recall",
+        "precision",
+        "distinct_event_drug_capture",
+        "average_precision",
+        "decision_loss",
+        "aurc80",
+        "e_aurc",
+        "brier",
+        "ece"
+      ]
+    ],
+    "path": "C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench/score/C1_bootstrap_draws.npz",
+    "sha256": "492fbb8afb9b316517ce2f784f236bd2587476f6ea569fb93b43310c56532ff4"
+  },
+  "deviations": [],
+  "horizons": {
+    "12": {
+      "arms": {
+        "B1": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "conflict_referrals": 0,
+            "flag_events": 19,
+            "missed_clear_ci95": [
+              0.08517348336864752,
+              0.37163148271950813
+            ],
+            "missed_clear_events": 14,
+            "missed_clear_rate": 0.19444444444444445,
+            "rates": {
+              "clear": 0.013690815744438107,
+              "flag": 0.29891614375356534,
+              "refer": 0.6873930405019966
+            },
+            "referred_events": 169,
+            "rows": {
+              "clear": 72,
+              "flag": 1572,
+              "refer": 3615
+            }
+          },
+          "cutoffs": {
+            "2017-01-01": {
+              "boundary_tie_rows": 20,
+              "calibrated_mean": 0.0480377011201843,
+              "event_rate": 0.03130755064456722,
+              "expected_queued_events": 10.35,
+              "native_mean": 0.03671848414728332,
+              "slots": 108
+            },
+            "2018-01-01": {
+              "boundary_tie_rows": 23,
+              "calibrated_mean": 0.048059749952161154,
+              "event_rate": 0.04316546762589928,
+              "expected_queued_events": 11.478260869565217,
+              "native_mean": 0.03633760345529583,
+              "slots": 111
+            },
+            "2019-01-01": {
+              "boundary_tie_rows": 25,
+              "calibrated_mean": 0.04803845722874087,
+              "event_rate": 0.05975395430579965,
+              "expected_queued_events": 17.159999999999997,
+              "native_mean": 0.03777276489160644,
+              "slots": 113
+            },
+            "2020-01-01": {
+              "boundary_tie_rows": 24,
+              "calibrated_mean": 0.0480369405418057,
+              "event_rate": 0.028070175438596492,
+              "expected_queued_events": 5.333333333333334,
+              "native_mean": 0.03696296746640134,
+              "slots": 114
+            },
+            "2021-01-01": {
+              "boundary_tie_rows": 23,
+              "calibrated_mean": 0.048044639035596436,
+              "event_rate": 0.04215851602023609,
+              "expected_queued_events": 11.956521739130434,
+              "native_mean": 0.037674687351830397,
+              "slots": 118
+            },
+            "2022-01-01": {
+              "boundary_tie_rows": 17,
+              "calibrated_mean": 0.048623385086657825,
+              "event_rate": 0.041736227045075125,
+              "expected_queued_events": 14.117647058823529,
+              "native_mean": 0.034450145291645536,
+              "slots": 119
+            },
+            "2023-01-01": {
+              "boundary_tie_rows": 29,
+              "calibrated_mean": 0.048309522292220804,
+              "event_rate": 0.025252525252525252,
+              "expected_queued_events": 7.896551724137931,
+              "native_mean": 0.03519889170950446,
+              "slots": 118
+            },
+            "2024-01-01": {
+              "boundary_tie_rows": 33,
+              "calibrated_mean": 0.048456481777151575,
+              "event_rate": 0.04390243902439024,
+              "expected_queued_events": 16.545454545454547,
+              "native_mean": 0.03315376198589134,
+              "slots": 123
+            },
+            "2025-01-01": {
+              "boundary_tie_rows": 31,
+              "calibrated_mean": 0.04829109332269653,
+              "event_rate": 0.03064516129032258,
+              "expected_queued_events": 7.451612903225806,
+              "native_mean": 0.03421623096759282,
+              "slots": 124
+            }
+          },
+          "ece_bin_counts": [
+            5259,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "expected_captured_event_drugs": 102.2893821736708,
+          "expected_queued_events": 102.28938217367079,
+          "legacy_policy_90": {
+            "answered": 4072,
+            "aurc80": null,
+            "aurc80_reachable": false,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 3877,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 1180,
+                "rows": 5057
+              },
+              "1": {
+                "answered": 195,
+                "error_rate": 1.0,
+                "errors": 195,
+                "referrals": 7,
+                "rows": 202
+              }
+            },
+            "coverage": 0.774291690435444,
+            "e_aurc": null,
+            "errors": 195,
+            "referrals": 1187,
+            "rows": 5259,
+            "selective_risk": 0.047888015717092336,
+            "within_tolerance": false
+          }
+        },
+        "M1": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "conflict_referrals": 0,
+            "flag_events": 117,
+            "missed_clear_ci95": [
+              0.000351578461180574,
+              0.04916362463648028
+            ],
+            "missed_clear_events": 14,
+            "missed_clear_rate": 0.009880028228652082,
+            "rates": {
+              "clear": 0.26944285985928884,
+              "flag": 0.1504088229701464,
+              "refer": 0.5801483171705647
+            },
+            "referred_events": 71,
+            "rows": {
+              "clear": 1417,
+              "flag": 791,
+              "refer": 3051
+            }
+          },
+          "cutoffs": {
+            "2017-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04368091510791407,
+              "event_rate": 0.03130755064456722,
+              "expected_queued_events": 12.0,
+              "native_mean": 0.04383199399148734,
+              "slots": 108
+            },
+            "2018-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04356718819454866,
+              "event_rate": 0.04316546762589928,
+              "expected_queued_events": 13.0,
+              "native_mean": 0.04371648650589806,
+              "slots": 111
+            },
+            "2019-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.043376732662926014,
+              "event_rate": 0.05975395430579965,
+              "expected_queued_events": 23.0,
+              "native_mean": 0.043521787543210226,
+              "slots": 113
+            },
+            "2020-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04291525350421938,
+              "event_rate": 0.028070175438596492,
+              "expected_queued_events": 10.0,
+              "native_mean": 0.043068067718426646,
+              "slots": 114
+            },
+            "2021-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.043237724647441085,
+              "event_rate": 0.04215851602023609,
+              "expected_queued_events": 20.0,
+              "native_mean": 0.04338060931594553,
+              "slots": 118
+            },
+            "2022-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.041833517765161865,
+              "event_rate": 0.041736227045075125,
+              "expected_queued_events": 18.0,
+              "native_mean": 0.04200097374574261,
+              "slots": 119
+            },
+            "2023-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.041620790049788504,
+              "event_rate": 0.025252525252525252,
+              "expected_queued_events": 12.0,
+              "native_mean": 0.04179586715138352,
+              "slots": 118
+            },
+            "2024-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04441022297584232,
+              "event_rate": 0.04390243902439024,
+              "expected_queued_events": 14.0,
+              "native_mean": 0.044575752851902795,
+              "slots": 123
+            },
+            "2025-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.041962073790450964,
+              "event_rate": 0.03064516129032258,
+              "expected_queued_events": 15.0,
+              "native_mean": 0.042139589351307974,
+              "slots": 124
+            }
+          },
+          "ece_bin_counts": [
+            5162,
+            97,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "expected_captured_event_drugs": 137.0,
+          "expected_queued_events": 137.0,
+          "legacy_policy_90": {
+            "answered": 4731,
+            "aurc80": 0.009241788891179655,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 4629,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 428,
+                "rows": 5057
+              },
+              "1": {
+                "answered": 102,
+                "error_rate": 1.0,
+                "errors": 102,
+                "referrals": 100,
+                "rows": 202
+              }
+            },
+            "coverage": 0.8996006845407872,
+            "e_aurc": null,
+            "errors": 102,
+            "referrals": 528,
+            "rows": 5259,
+            "selective_risk": 0.02155992390615092,
+            "within_tolerance": true
+          }
+        },
+        "M3": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "conflict_referrals": 494,
+            "flag_events": 109,
+            "missed_clear_ci95": [
+              0.0004623079592422081,
+              0.043874544795708695
+            ],
+            "missed_clear_events": 16,
+            "missed_clear_rate": 0.009535160905840286,
+            "rates": {
+              "clear": 0.319072066932877,
+              "flag": 0.1595360334664385,
+              "refer": 0.5213918996006845
+            },
+            "referred_events": 77,
+            "rows": {
+              "clear": 1678,
+              "flag": 839,
+              "refer": 2742
+            }
+          },
+          "cutoffs": {
+            "2017-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.044592176004235505,
+              "event_rate": 0.03130755064456722,
+              "expected_queued_events": 12.0,
+              "native_mean": 0.04471907493561727,
+              "slots": 108
+            },
+            "2018-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04436070570564493,
+              "event_rate": 0.04316546762589928,
+              "expected_queued_events": 15.0,
+              "native_mean": 0.04448702757890704,
+              "slots": 111
+            },
+            "2019-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04391620019542887,
+              "event_rate": 0.05975395430579965,
+              "expected_queued_events": 22.0,
+              "native_mean": 0.044041440515392154,
+              "slots": 113
+            },
+            "2020-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.043286851154685946,
+              "event_rate": 0.028070175438596492,
+              "expected_queued_events": 9.0,
+              "native_mean": 0.04341105606588335,
+              "slots": 114
+            },
+            "2021-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04377940695131996,
+              "event_rate": 0.04215851602023609,
+              "expected_queued_events": 19.0,
+              "native_mean": 0.04390357246106946,
+              "slots": 118
+            },
+            "2022-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04202786353807486,
+              "event_rate": 0.041736227045075125,
+              "expected_queued_events": 18.0,
+              "native_mean": 0.042149750432940794,
+              "slots": 119
+            },
+            "2023-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.04166128141876116,
+              "event_rate": 0.025252525252525252,
+              "expected_queued_events": 12.0,
+              "native_mean": 0.041782978740779346,
+              "slots": 118
+            },
+            "2024-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.045006916191940693,
+              "event_rate": 0.04390243902439024,
+              "expected_queued_events": 13.0,
+              "native_mean": 0.04513672641544847,
+              "slots": 123
+            },
+            "2025-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.041931141322984714,
+              "event_rate": 0.03064516129032258,
+              "expected_queued_events": 16.0,
+              "native_mean": 0.04205384680726196,
+              "slots": 124
+            }
+          },
+          "ece_bin_counts": [
+            5116,
+            143,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "expected_captured_event_drugs": 136.0,
+          "expected_queued_events": 136.0,
+          "legacy_policy_90": {
+            "answered": 4759,
+            "aurc80": 0.007971635518421559,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 4642,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 415,
+                "rows": 5057
+              },
+              "1": {
+                "answered": 117,
+                "error_rate": 1.0,
+                "errors": 117,
+                "referrals": 85,
+                "rows": 202
+              }
+            },
+            "coverage": 0.9049248906636242,
+            "e_aurc": null,
+            "errors": 117,
+            "referrals": 500,
+            "rows": 5259,
+            "selective_risk": 0.02458499684807733,
+            "within_tolerance": true
+          }
+        }
+      },
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261127,
+      "contrasts": {
+        "M1-B1": {
+          "aurc80": {
+            "ci95": [
+              -0.07784988683208538,
+              -0.05248991812971826
+            ],
+            "estimate": -0.06481449128390958,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.05024320812850406,
+              0.10182923882332433
+            ],
+            "estimate": 0.06970737611161189,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.002293845395575861,
+              -0.001614948316175169
+            ],
+            "estimate": -0.0019406600857769449,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.25078255033801394,
+              -0.1907297863404904
+            ],
+            "estimate": -0.22076440387906443,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.09875427048103914,
+              0.24057468031489487
+            ],
+            "estimate": 0.17183474171450108,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.06659936764882093,
+              -0.0454395970307252
+            ],
+            "estimate": -0.05557402613403231,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              -0.004571498850853467,
+              0.002038311058690303
+            ],
+            "estimate": -0.0013914814528276555,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.018756551975731426,
+              0.046661486864399825
+            ],
+            "estimate": 0.033120818536573685,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.09875427048103914,
+              0.24057468031489482
+            ],
+            "estimate": 0.17183474171450108,
+            "undefined_draws": 0
+          }
+        },
+        "M3-B1": {
+          "aurc80": {
+            "ci95": [
+              -0.07929545681279639,
+              -0.053936983863937554
+            ],
+            "estimate": -0.06608464465667288,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.05439287913902399,
+              0.11768214268855355
+            ],
+            "estimate": 0.07723423487275104,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.002483134814371965,
+              -0.0017331286836423671
+            ],
+            "estimate": -0.0020961542651810813,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.2663801092236765,
+              -0.20460592510882947
+            ],
+            "estimate": -0.23569119604487543,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.09975633310676597,
+              0.24214724916185107
+            ],
+            "estimate": 0.16688424666499613,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.06779292944133357,
+              -0.04666476656436385
+            ],
+            "estimate": -0.05668541073652193,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              -0.0029092864630211788,
+              0.005597085652645168
+            ],
+            "estimate": 0.0011730435086292033,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.019168363705098234,
+              0.047666006519911555
+            ],
+            "estimate": 0.032166620063291226,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.09975633310676608,
+              0.24214724916185107
+            ],
+            "estimate": 0.16688424666499613,
+            "undefined_draws": 0
+          }
+        },
+        "M3-M1": {
+          "aurc80": {
+            "ci95": [
+              -0.002060302018760858,
+              -0.0005258892479938702
+            ],
+            "estimate": -0.0012701533727632938,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              -0.008077542618360953,
+              0.026001786187957548
+            ],
+            "estimate": 0.007526858761139149,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.00024524331219640693,
+              -6.639047268427927e-05
+            ],
+            "estimate": -0.00015549417940413646,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.025513302250360193,
+              -0.0035253125586299783
+            ],
+            "estimate": -0.014926792165810998,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              -0.030769230769230663,
+              0.0319161080345867
+            ],
+            "estimate": -0.004950495049504955,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.0017702731699836504,
+              -0.0005165935530213176
+            ],
+            "estimate": -0.0011113846024896207,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              2.428746932753713e-05,
+              0.005415255791920117
+            ],
+            "estimate": 0.002564524961456859,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.005769648023143691,
+              0.00649395952884325
+            ],
+            "estimate": -0.0009541984732824582,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.030769230769230663,
+              0.0319161080345867
+            ],
+            "estimate": -0.004950495049504955,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "drug_clusters": 803,
+      "eligibility_and_coverage": {
+        "2017-01-01": {
+          "dated_nda_drugs": 1846,
+          "eligible_rows": 543,
+          "events": 17,
+          "graph_verdict": {
+            "BLOCKED": 188,
+            "CONTESTED": 325,
+            "OPEN": 30
+          },
+          "low_confidence_keys": 39,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 4,
+            "listed_patent_count_missing": 4,
+            "nce_remaining_years_missing": 4,
+            "other_exclusivity_remaining_years_missing": 4,
+            "strength_missing": 19,
+            "years_since_earliest_patent_submission_missing": 543,
+            "years_to_last_patent_expiry_missing": 280
+          },
+          "no_eligible_type1": 712,
+          "orange_book_edition": {
+            "age_days": 16,
+            "availability_proof": {
+              "date": "2016-12-27",
+              "edition_sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20161227030040id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20161227030040"
+            },
+            "chosen_edition": "2016-12-16",
+            "freshness_floor": "2016-07-01",
+            "latest_proven_age_days": 16,
+            "latest_proven_availability": {
+              "date": "2016-12-27",
+              "edition_sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20161227030040id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20161227030040"
+            },
+            "latest_proven_edition": "2016-12-16",
+            "source": {
+              "file": "ob_20170111194915.zip",
+              "kind": "fda_zip",
+              "sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+              "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 539,
+            "NOT_LISTED": 4
+          },
+          "prior_final_anda": 591
+        },
+        "2018-01-01": {
+          "dated_nda_drugs": 1892,
+          "eligible_rows": 556,
+          "events": 24,
+          "graph_verdict": {
+            "BLOCKED": 197,
+            "CONTESTED": 332,
+            "OPEN": 27
+          },
+          "low_confidence_keys": 37,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 9,
+            "listed_patent_count_missing": 9,
+            "nce_remaining_years_missing": 9,
+            "other_exclusivity_remaining_years_missing": 9,
+            "strength_missing": 24,
+            "years_since_earliest_patent_submission_missing": 556,
+            "years_to_last_patent_expiry_missing": 289
+          },
+          "no_eligible_type1": 728,
+          "orange_book_edition": {
+            "age_days": 80,
+            "availability_proof": {
+              "date": "2017-11-14",
+              "edition_sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20171114202140id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20171114202140"
+            },
+            "chosen_edition": "2017-10-13",
+            "freshness_floor": "2017-07-01",
+            "latest_proven_age_days": 80,
+            "latest_proven_availability": {
+              "date": "2017-11-14",
+              "edition_sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20171114202140id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20171114202140"
+            },
+            "latest_proven_edition": "2017-10-13",
+            "source": {
+              "file": "ob_20171114202140.zip",
+              "kind": "fda_zip",
+              "sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+              "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 547,
+            "NOT_LISTED": 9
+          },
+          "prior_final_anda": 608
+        },
+        "2019-01-01": {
+          "dated_nda_drugs": 1944,
+          "eligible_rows": 569,
+          "events": 34,
+          "graph_verdict": {
+            "BLOCKED": 210,
+            "CONTESTED": 332,
+            "OPEN": 27
+          },
+          "low_confidence_keys": 37,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 22,
+            "listed_patent_count_missing": 22,
+            "nce_remaining_years_missing": 22,
+            "other_exclusivity_remaining_years_missing": 22,
+            "strength_missing": 37,
+            "years_since_earliest_patent_submission_missing": 339,
+            "years_to_last_patent_expiry_missing": 307
+          },
+          "no_eligible_type1": 743,
+          "orange_book_edition": {
+            "age_days": 137,
+            "availability_proof": {
+              "date": "2018-09-08",
+              "edition_sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20180908074144id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20180908074144"
+            },
+            "chosen_edition": "2018-08-17",
+            "freshness_floor": "2018-07-01",
+            "latest_proven_age_days": 137,
+            "latest_proven_availability": {
+              "date": "2018-09-08",
+              "edition_sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20180908074144id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20180908074144"
+            },
+            "latest_proven_edition": "2018-08-17",
+            "source": {
+              "file": "ob_20180908074144.zip",
+              "kind": "fda_zip",
+              "sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+              "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 547,
+            "NOT_LISTED": 22
+          },
+          "prior_final_anda": 632
+        },
+        "2020-01-01": {
+          "dated_nda_drugs": 1994,
+          "eligible_rows": 570,
+          "events": 16,
+          "graph_verdict": {
+            "BLOCKED": 240,
+            "CONTESTED": 305,
+            "OPEN": 25
+          },
+          "low_confidence_keys": 34,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 9,
+            "listed_patent_count_missing": 9,
+            "nce_remaining_years_missing": 9,
+            "other_exclusivity_remaining_years_missing": 9,
+            "strength_missing": 23,
+            "years_since_earliest_patent_submission_missing": 318,
+            "years_to_last_patent_expiry_missing": 292
+          },
+          "no_eligible_type1": 758,
+          "orange_book_edition": {
+            "age_days": 19,
+            "availability_proof": {
+              "date": "2019-12-14",
+              "edition_sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20191214001219id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20191214001219"
+            },
+            "chosen_edition": "2019-12-13",
+            "freshness_floor": "2019-07-01",
+            "latest_proven_age_days": 19,
+            "latest_proven_availability": {
+              "date": "2019-12-14",
+              "edition_sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20191214001219id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20191214001219"
+            },
+            "latest_proven_edition": "2019-12-13",
+            "source": {
+              "file": "ob_20191214001219.zip",
+              "kind": "fda_zip",
+              "sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+              "source_url": "https://www.fda.gov/media/76860/download"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 561,
+            "NOT_LISTED": 9
+          },
+          "prior_final_anda": 666
+        },
+        "2021-01-01": {
+          "dated_nda_drugs": 2045,
+          "eligible_rows": 593,
+          "events": 25,
+          "graph_verdict": {
+            "BLOCKED": 256,
+            "CONTESTED": 308,
+            "OPEN": 29
+          },
+          "low_confidence_keys": 33,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 12,
+            "listed_patent_count_missing": 12,
+            "nce_remaining_years_missing": 12,
+            "other_exclusivity_remaining_years_missing": 12,
+            "strength_missing": 26,
+            "years_since_earliest_patent_submission_missing": 313,
+            "years_to_last_patent_expiry_missing": 294
+          },
+          "no_eligible_type1": 770,
+          "orange_book_edition": {
+            "age_days": 60,
+            "availability_proof": {
+              "date": "2020-11-12",
+              "edition_sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20201112023717"
+            },
+            "chosen_edition": "2020-11-02",
+            "freshness_floor": "2020-07-01",
+            "latest_proven_age_days": 60,
+            "latest_proven_availability": {
+              "date": "2020-11-12",
+              "edition_sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20201112023717"
+            },
+            "latest_proven_edition": "2020-11-02",
+            "source": {
+              "file": "ob_20201112023717.zip",
+              "kind": "fda_zip",
+              "sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+              "source_url": "https://www.fda.gov/media/76860/download"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 581,
+            "NOT_LISTED": 12
+          },
+          "prior_final_anda": 682
+        },
+        "2022-01-01": {
+          "dated_nda_drugs": 2087,
+          "eligible_rows": 599,
+          "events": 25,
+          "graph_verdict": {
+            "BLOCKED": 272,
+            "CONTESTED": 308,
+            "OPEN": 19
+          },
+          "low_confidence_keys": 32,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 4,
+            "listed_patent_count_missing": 4,
+            "nce_remaining_years_missing": 4,
+            "other_exclusivity_remaining_years_missing": 4,
+            "strength_missing": 18,
+            "years_since_earliest_patent_submission_missing": 305,
+            "years_to_last_patent_expiry_missing": 289
+          },
+          "no_eligible_type1": 781,
+          "orange_book_edition": {
+            "age_days": 22,
+            "availability_proof": {
+              "date": "2021-12-28",
+              "edition_sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20211228215048id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20211228215048"
+            },
+            "chosen_edition": "2021-12-10",
+            "freshness_floor": "2021-07-01",
+            "latest_proven_age_days": 22,
+            "latest_proven_availability": {
+              "date": "2021-12-28",
+              "edition_sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20211228215048id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20211228215048"
+            },
+            "latest_proven_edition": "2021-12-10",
+            "source": {
+              "file": "ob_20211228215048.zip",
+              "kind": "fda_zip",
+              "sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+              "source_url": "https://www.fda.gov/media/76860/download"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 595,
+            "NOT_LISTED": 4
+          },
+          "prior_final_anda": 707
+        },
+        "2023-01-01": {
+          "dated_nda_drugs": 2115,
+          "eligible_rows": 594,
+          "events": 15,
+          "graph_verdict": {
+            "BLOCKED": 272,
+            "CONTESTED": 306,
+            "OPEN": 16
+          },
+          "low_confidence_keys": 32,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 7,
+            "listed_patent_count_missing": 7,
+            "nce_remaining_years_missing": 7,
+            "other_exclusivity_remaining_years_missing": 7,
+            "strength_missing": 22,
+            "years_since_earliest_patent_submission_missing": 299,
+            "years_to_last_patent_expiry_missing": 286
+          },
+          "no_eligible_type1": 789,
+          "orange_book_edition": {
+            "age_days": 52,
+            "availability_proof": {
+              "date": "2022-11-28",
+              "edition_sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20221128232655id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20221128232655"
+            },
+            "chosen_edition": "2022-11-10",
+            "freshness_floor": "2022-07-01",
+            "latest_proven_age_days": 52,
+            "latest_proven_availability": {
+              "date": "2022-11-28",
+              "edition_sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20221128232655id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20221128232655"
+            },
+            "latest_proven_edition": "2022-11-10",
+            "source": {
+              "file": "ob_20221128232655.zip",
+              "kind": "fda_zip",
+              "sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+              "source_url": "https://www.fda.gov/media/76860/download"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 587,
+            "NOT_LISTED": 7
+          },
+          "prior_final_anda": 732
+        },
+        "2024-01-01": {
+          "dated_nda_drugs": 2162,
+          "eligible_rows": 615,
+          "events": 27,
+          "graph_verdict": {
+            "BLOCKED": 220,
+            "CONTESTED": 390,
+            "OPEN": 5
+          },
+          "low_confidence_keys": 31,
+          "missing_features": {
+            "challenge_missing": 572,
+            "form_route_missing": 5,
+            "listed_patent_count_missing": 5,
+            "nce_remaining_years_missing": 5,
+            "other_exclusivity_remaining_years_missing": 5,
+            "strength_missing": 21,
+            "years_since_earliest_patent_submission_missing": 292,
+            "years_to_last_patent_expiry_missing": 283
+          },
+          "no_eligible_type1": 800,
+          "orange_book_edition": {
+            "age_days": 24,
+            "availability_proof": {
+              "date": "2023-12-20",
+              "edition_sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20231220045755id_/https://www.fda.gov/media/76860/download?attachment",
+              "wayback_ts": "20231220045755"
+            },
+            "chosen_edition": "2023-12-08",
+            "freshness_floor": "2023-07-01",
+            "latest_proven_age_days": 24,
+            "latest_proven_availability": {
+              "date": "2023-12-20",
+              "edition_sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20231220045755id_/https://www.fda.gov/media/76860/download?attachment",
+              "wayback_ts": "20231220045755"
+            },
+            "latest_proven_edition": "2023-12-08",
+            "source": {
+              "file": "ob_20231220045755.zip",
+              "kind": "fda_zip",
+              "sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+              "source_url": "https://www.fda.gov/media/76860/download?attachment"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 610,
+            "NOT_LISTED": 5
+          },
+          "prior_final_anda": 747
+        },
+        "2025-01-01": {
+          "dated_nda_drugs": 2199,
+          "eligible_rows": 620,
+          "events": 19,
+          "graph_verdict": {
+            "BLOCKED": 297,
+            "CONTESTED": 302,
+            "OPEN": 21
+          },
+          "low_confidence_keys": 30,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 6,
+            "listed_patent_count_missing": 6,
+            "nce_remaining_years_missing": 6,
+            "other_exclusivity_remaining_years_missing": 6,
+            "strength_missing": 22,
+            "years_since_earliest_patent_submission_missing": 287,
+            "years_to_last_patent_expiry_missing": 280
+          },
+          "no_eligible_type1": 805,
+          "orange_book_edition": {
+            "age_days": 19,
+            "availability_proof": {
+              "date": "2024-12-26",
+              "edition_sha256": "2680178bc6a63ddcaa93ddf5f810c34369ce39d493cca40834c8552f26394086",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20241226235539id_/https://www.fda.gov/media/76860/download?attachment",
+              "wayback_ts": "20241226235539"
+            },
+            "chosen_edition": "2024-12-13",
+            "freshness_floor": "2024-07-01",
+            "latest_proven_age_days": 19,
+            "latest_proven_availability": {
+              "date": "2024-12-26",
+              "edition_sha256": "2680178bc6a63ddcaa93ddf5f810c34369ce39d493cca40834c8552f26394086",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20241226235539id_/https://www.fda.gov/media/76860/download?attachment",
+              "wayback_ts": "20241226235539"
+            },
+            "latest_proven_edition": "2024-12-13",
+            "source": {
+              "file": "ob_20241226235539.zip",
+              "kind": "fda_zip",
+              "sha256": "2680178bc6a63ddcaa93ddf5f810c34369ce39d493cca40834c8552f26394086",
+              "source_url": "https://www.fda.gov/media/76860/download?attachment"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 614,
+            "NOT_LISTED": 6
+          },
+          "prior_final_anda": 774
+        }
+      },
+      "event_drugs": 202,
+      "event_rows": 202,
+      "levels": {
+        "B1": {
+          "aurc80": {
+            "ci95": [
+              0.06187323438851333,
+              0.08687813836642796
+            ],
+            "estimate": 0.0740562801750922,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.06901686589376572,
+              0.11158564839488846
+            ],
+            "estimate": 0.08707453821680493,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.032636324423901006,
+              0.04214406605616992
+            ],
+            "estimate": 0.037324154439038776,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.649496921078657,
+              0.6838553009848044
+            ],
+            "estimate": 0.6656208404639665,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.43334810319005734,
+              0.5705474749935822
+            ],
+            "estimate": 0.5063830800676772,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.05663768861005672,
+              0.07787000644061462
+            ],
+            "estimate": 0.06706417262397232,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.004566401731271624,
+              0.014973361708074609
+            ],
+            "estimate": 0.00980672750775041,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.08015782406583419,
+              0.11422485166790251
+            ],
+            "estimate": 0.09760437230312098,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.43334810319005734,
+              0.570547474993582
+            ],
+            "estimate": 0.5063830800676772,
+            "undefined_draws": 0
+          }
+        },
+        "M1": {
+          "aurc80": {
+            "ci95": [
+              0.006283958206440763,
+              0.012649645703003537
+            ],
+            "estimate": 0.009241788891182623,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.13001369662880785,
+              0.20170410465942562
+            ],
+            "estimate": 0.15678191432841682,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.03097462690871513,
+              0.040036230340750906
+            ],
+            "estimate": 0.03538349435326183,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.42506761873850485,
+              0.4650604113481874
+            ],
+            "estimate": 0.4448564365849021,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.6084500466853409,
+              0.732242507037589
+            ],
+            "estimate": 0.6782178217821783,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.008648050338756373,
+              0.014745652316260849
+            ],
+            "estimate": 0.011490146489940012,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.003481944801085609,
+              0.013463648221633486
+            ],
+            "estimate": 0.008415246054922755,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.11131721150448973,
+              0.14857238734419942
+            ],
+            "estimate": 0.13072519083969467,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.6084500466853409,
+              0.732242507037589
+            ],
+            "estimate": 0.6782178217821783,
+            "undefined_draws": 0
+          }
+        },
+        "M3": {
+          "aurc80": {
+            "ci95": [
+              0.005475899726583125,
+              0.010915731269890839
+            ],
+            "estimate": 0.00797163551841933,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.133616479597536,
+              0.2128460810880639
+            ],
+            "estimate": 0.16430877308955597,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.030807601088917842,
+              0.03986959925307459
+            ],
+            "estimate": 0.035228000173857694,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.4087443992301625,
+              0.45227780204694096
+            ],
+            "estimate": 0.4299296444190911,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.6076261518695729,
+              0.729169544198895
+            ],
+            "estimate": 0.6732673267326733,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.00793156858807575,
+              0.013175109106097895
+            ],
+            "estimate": 0.010378761887450391,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.006112210513545775,
+              0.01624011594524766
+            ],
+            "estimate": 0.010979771016379614,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.11005692599620494,
+              0.14945945446218528
+            ],
+            "estimate": 0.1297709923664122,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.6076261518695729,
+              0.729169544198895
+            ],
+            "estimate": 0.6732673267326733,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "rows": 5259,
+      "slots": 1048,
+      "undefined_draws_any_metric": 0,
+      "undefined_draws_recall_cause": "no event rows"
+    },
+    "24": {
+      "arms": {
+        "B1": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "UNEVALUABLE",
+            "conflict_referrals": 0,
+            "flag_events": 58,
+            "missed_clear_ci95": null,
+            "missed_clear_events": 0,
+            "missed_clear_rate": null,
+            "rates": {
+              "clear": 0.0,
+              "flag": 0.058633326147876696,
+              "refer": 0.9413666738521232
+            },
+            "referred_events": 310,
+            "rows": {
+              "clear": 0,
+              "flag": 272,
+              "refer": 4367
+            }
+          },
+          "cutoffs": {
+            "2017-01-01": {
+              "boundary_tie_rows": 11,
+              "calibrated_mean": 0.07796571214956007,
+              "event_rate": 0.07550644567219153,
+              "expected_queued_events": 18.636363636363637,
+              "native_mean": 0.06644270393699987,
+              "slots": 108
+            },
+            "2018-01-01": {
+              "boundary_tie_rows": 13,
+              "calibrated_mean": 0.07801168925296151,
+              "event_rate": 0.10431654676258993,
+              "expected_queued_events": 25.384615384615387,
+              "native_mean": 0.06688993516304104,
+              "slots": 111
+            },
+            "2019-01-01": {
+              "boundary_tie_rows": 13,
+              "calibrated_mean": 0.07815535196859096,
+              "event_rate": 0.08787346221441125,
+              "expected_queued_events": 20.076923076923077,
+              "native_mean": 0.06791435800382878,
+              "slots": 113
+            },
+            "2020-01-01": {
+              "boundary_tie_rows": 12,
+              "calibrated_mean": 0.07804418808034574,
+              "event_rate": 0.07192982456140351,
+              "expected_queued_events": 19.0,
+              "native_mean": 0.0670599074359957,
+              "slots": 114
+            },
+            "2021-01-01": {
+              "boundary_tie_rows": 20,
+              "calibrated_mean": 0.07806714459996111,
+              "event_rate": 0.08431703204047218,
+              "expected_queued_events": 22.0,
+              "native_mean": 0.06783304432476042,
+              "slots": 118
+            },
+            "2022-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.0762697736106255,
+              "event_rate": 0.0667779632721202,
+              "expected_queued_events": 19.0,
+              "native_mean": 0.06225979022257545,
+              "slots": 119
+            },
+            "2023-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07687101480620734,
+              "event_rate": 0.0707070707070707,
+              "expected_queued_events": 21.0,
+              "native_mean": 0.0629923367127183,
+              "slots": 118
+            },
+            "2024-01-01": {
+              "boundary_tie_rows": 18,
+              "calibrated_mean": 0.07683104676419449,
+              "event_rate": 0.07479674796747968,
+              "expected_queued_events": 25.944444444444443,
+              "native_mean": 0.062421065839029954,
+              "slots": 123
+            }
+          },
+          "ece_bin_counts": [
+            4061,
+            578,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "expected_captured_event_drugs": 127.65345765345765,
+          "expected_queued_events": 171.04234654234654,
+          "legacy_policy_90": {
+            "answered": 4496,
+            "aurc80": 0.025929504950865018,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 4168,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 103,
+                "rows": 4271
+              },
+              "1": {
+                "answered": 328,
+                "error_rate": 1.0,
+                "errors": 328,
+                "referrals": 40,
+                "rows": 368
+              }
+            },
+            "coverage": 0.9691743910325501,
+            "e_aurc": null,
+            "errors": 328,
+            "referrals": 143,
+            "rows": 4639,
+            "selective_risk": 0.07295373665480427,
+            "within_tolerance": false
+          },
+          "young_cohort": {
+            "cutoff": "2024-01-01",
+            "events": 0,
+            "expected_hits": 0.0,
+            "recall": null,
+            "rows": 36
+          }
+        },
+        "M1": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "conflict_referrals": 0,
+            "flag_events": 250,
+            "missed_clear_ci95": [
+              0.0013567402704124758,
+              0.05974640312848189
+            ],
+            "missed_clear_events": 17,
+            "missed_clear_rate": 0.015426497277676952,
+            "rates": {
+              "clear": 0.23755119637852987,
+              "flag": 0.22030610045268376,
+              "refer": 0.5421427031687863
+            },
+            "referred_events": 101,
+            "rows": {
+              "clear": 1102,
+              "flag": 1022,
+              "refer": 2515
+            }
+          },
+          "cutoffs": {
+            "2017-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07281333757570348,
+              "event_rate": 0.07550644567219153,
+              "expected_queued_events": 25.0,
+              "native_mean": 0.07611390521389319,
+              "slots": 108
+            },
+            "2018-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07272349286717658,
+              "event_rate": 0.10431654676258993,
+              "expected_queued_events": 36.0,
+              "native_mean": 0.07592790680204412,
+              "slots": 111
+            },
+            "2019-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07257783209264036,
+              "event_rate": 0.08787346221441125,
+              "expected_queued_events": 29.0,
+              "native_mean": 0.07552794563083215,
+              "slots": 113
+            },
+            "2020-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07005948567745811,
+              "event_rate": 0.07192982456140351,
+              "expected_queued_events": 29.0,
+              "native_mean": 0.07370440761126162,
+              "slots": 114
+            },
+            "2021-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07193135275962129,
+              "event_rate": 0.08431703204047218,
+              "expected_queued_events": 39.0,
+              "native_mean": 0.07477278122323015,
+              "slots": 118
+            },
+            "2022-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.06832051400309319,
+              "event_rate": 0.0667779632721202,
+              "expected_queued_events": 29.0,
+              "native_mean": 0.0721647489492136,
+              "slots": 119
+            },
+            "2023-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.06706994788611406,
+              "event_rate": 0.0707070707070707,
+              "expected_queued_events": 28.0,
+              "native_mean": 0.07152161711699712,
+              "slots": 118
+            },
+            "2024-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.1403303691278423,
+              "event_rate": 0.07479674796747968,
+              "expected_queued_events": 26.0,
+              "native_mean": 0.1265989756088828,
+              "slots": 123
+            }
+          },
+          "ece_bin_counts": [
+            3404,
+            910,
+            272,
+            45,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "expected_captured_event_drugs": 140.0,
+          "expected_queued_events": 241.0,
+          "legacy_policy_90": {
+            "answered": 4140,
+            "aurc80": 0.01903393483204179,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 3916,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 355,
+                "rows": 4271
+              },
+              "1": {
+                "answered": 224,
+                "error_rate": 1.0,
+                "errors": 224,
+                "referrals": 144,
+                "rows": 368
+              }
+            },
+            "coverage": 0.892433714162535,
+            "e_aurc": null,
+            "errors": 224,
+            "referrals": 499,
+            "rows": 4639,
+            "selective_risk": 0.05410628019323672,
+            "within_tolerance": true
+          },
+          "young_cohort": {
+            "cutoff": "2024-01-01",
+            "events": 0,
+            "expected_hits": 0.0,
+            "recall": null,
+            "rows": 36
+          }
+        },
+        "M3": {
+          "asymmetric_policy": {
+            "auto_clear_safety": "FAIL",
+            "conflict_referrals": 210,
+            "flag_events": 220,
+            "missed_clear_ci95": [
+              0.0029485735333616586,
+              0.06390366666811838
+            ],
+            "missed_clear_events": 28,
+            "missed_clear_rate": 0.019815994338287332,
+            "rates": {
+              "clear": 0.30459150679025654,
+              "flag": 0.23043759430911834,
+              "refer": 0.46497089890062515
+            },
+            "referred_events": 120,
+            "rows": {
+              "clear": 1413,
+              "flag": 1069,
+              "refer": 2157
+            }
+          },
+          "cutoffs": {
+            "2017-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07531022028411888,
+              "event_rate": 0.07550644567219153,
+              "expected_queued_events": 26.0,
+              "native_mean": 0.07788608361745677,
+              "slots": 108
+            },
+            "2018-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07472096779102186,
+              "event_rate": 0.10431654676258993,
+              "expected_queued_events": 36.0,
+              "native_mean": 0.077366725426067,
+              "slots": 111
+            },
+            "2019-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07439885706207205,
+              "event_rate": 0.08787346221441125,
+              "expected_queued_events": 33.0,
+              "native_mean": 0.07682414845000454,
+              "slots": 113
+            },
+            "2020-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07125163459774728,
+              "event_rate": 0.07192982456140351,
+              "expected_queued_events": 29.0,
+              "native_mean": 0.07444569178042929,
+              "slots": 114
+            },
+            "2021-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.07346485494520144,
+              "event_rate": 0.08431703204047218,
+              "expected_queued_events": 40.0,
+              "native_mean": 0.07568287767587,
+              "slots": 118
+            },
+            "2022-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.06823792754040459,
+              "event_rate": 0.0667779632721202,
+              "expected_queued_events": 29.0,
+              "native_mean": 0.07195171234055649,
+              "slots": 119
+            },
+            "2023-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.06727514371484974,
+              "event_rate": 0.0707070707070707,
+              "expected_queued_events": 29.0,
+              "native_mean": 0.0714229106817019,
+              "slots": 118
+            },
+            "2024-01-01": {
+              "boundary_tie_rows": 0,
+              "calibrated_mean": 0.1412636381304442,
+              "event_rate": 0.07479674796747968,
+              "expected_queued_events": 24.0,
+              "native_mean": 0.12804294832370167,
+              "slots": 123
+            }
+          },
+          "ece_bin_counts": [
+            3417,
+            811,
+            334,
+            66,
+            10,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "expected_captured_event_drugs": 143.0,
+          "expected_queued_events": 246.0,
+          "legacy_policy_90": {
+            "answered": 4056,
+            "aurc80": 0.01747749801606471,
+            "aurc80_reachable": true,
+            "blocked_conflict_referrals": 0,
+            "class_wise": {
+              "0": {
+                "answered": 3862,
+                "error_rate": 0.0,
+                "errors": 0,
+                "referrals": 409,
+                "rows": 4271
+              },
+              "1": {
+                "answered": 194,
+                "error_rate": 1.0,
+                "errors": 194,
+                "referrals": 174,
+                "rows": 368
+              }
+            },
+            "coverage": 0.8743263634403966,
+            "e_aurc": null,
+            "errors": 194,
+            "referrals": 583,
+            "rows": 4639,
+            "selective_risk": 0.04783037475345168,
+            "within_tolerance": true
+          },
+          "young_cohort": {
+            "cutoff": "2024-01-01",
+            "events": 0,
+            "expected_hits": 0.0,
+            "recall": null,
+            "rows": 36
+          }
+        }
+      },
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261127,
+      "contrasts": {
+        "M1-B1": {
+          "aurc80": {
+            "ci95": [
+              -0.011701748473461247,
+              -0.0021377657881198747
+            ],
+            "estimate": -0.006895570118827084,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.05537812935452436,
+              0.13001687120048372
+            ],
+            "estimate": 0.08693462679523256,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.0075164461666750336,
+              -0.004328259153195202
+            ],
+            "estimate": -0.005879627733771334,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.06619112516064647,
+              -0.01878701127913815
+            ],
+            "estimate": -0.042681612416469006,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.004490033979564893,
+              0.13223486362828707
+            ],
+            "estimate": 0.06112149676506107,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.011716905588913501,
+              -0.0036180679028311497
+            ],
+            "estimate": -0.007676961543876214,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              -0.012131073122731036,
+              0.010646381838329695
+            ],
+            "estimate": -0.0015889865390332839,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.05107936038588001,
+              0.10556307547642504
+            ],
+            "estimate": 0.07571174616629164,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.13335263056064942,
+              0.2561777777568839
+            ],
+            "estimate": 0.19010231917840614,
+            "undefined_draws": 0
+          }
+        },
+        "M3-B1": {
+          "aurc80": {
+            "ci95": [
+              -0.013001719370578943,
+              -0.00382415412283878
+            ],
+            "estimate": -0.008452006934800523,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.06109752935464134,
+              0.1369295620998041
+            ],
+            "estimate": 0.09383077573755122,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.008354030692207389,
+              -0.004868820374872912
+            ],
+            "estimate": -0.006584902046990165,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.06860663589065945,
+              -0.012059285019606607
+            ],
+            "estimate": -0.04095710282388443,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.016146800658669202,
+              0.14193528455314264
+            ],
+            "estimate": 0.07597298191357593,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.013055162358356999,
+              -0.005158438798057663
+            ],
+            "estimate": -0.009106732222589956,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              -0.011272773589205002,
+              0.011033845684644055
+            ],
+            "estimate": -0.0010110794480918048,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.05501586576738812,
+              0.10656119104128695
+            ],
+            "estimate": 0.08112300157754701,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.14369109147667547,
+              0.2616295354199167
+            ],
+            "estimate": 0.20368927570014528,
+            "undefined_draws": 0
+          }
+        },
+        "M3-M1": {
+          "aurc80": {
+            "ci95": [
+              -0.002676143871026845,
+              -0.0004888350063464325
+            ],
+            "estimate": -0.0015564368159734394,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              -0.00564402611546057,
+              0.019370579658697012
+            ],
+            "estimate": 0.006896148942318658,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              -0.0011180647195126849,
+              -0.00029949045943111546
+            ],
+            "estimate": -0.0007052743132188316,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.01506071271987124,
+              0.020485983350305537
+            ],
+            "estimate": 0.0017245095925845777,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              -0.019230769230769166,
+              0.04125330598585836
+            ],
+            "estimate": 0.014851485148514865,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              -0.0023378219665239875,
+              -0.0005311514903386616
+            ],
+            "estimate": -0.0014297706787137418,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              -0.0023972863765620873,
+              0.003577056551060814
+            ],
+            "estimate": 0.0005779070909414791,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              -0.008820773967971655,
+              0.01189221364221363
+            ],
+            "estimate": 0.005411255411255367,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              -0.02200895491827964,
+              0.030138848652899144
+            ],
+            "estimate": 0.013586956521739135,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "drug_clusters": 771,
+      "eligibility_and_coverage": {
+        "2017-01-01": {
+          "dated_nda_drugs": 1846,
+          "eligible_rows": 543,
+          "events": 41,
+          "graph_verdict": {
+            "BLOCKED": 171,
+            "CONTESTED": 330,
+            "OPEN": 42
+          },
+          "low_confidence_keys": 39,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 4,
+            "listed_patent_count_missing": 4,
+            "nce_remaining_years_missing": 4,
+            "other_exclusivity_remaining_years_missing": 4,
+            "strength_missing": 19,
+            "years_since_earliest_patent_submission_missing": 543,
+            "years_to_last_patent_expiry_missing": 280
+          },
+          "no_eligible_type1": 712,
+          "orange_book_edition": {
+            "age_days": 16,
+            "availability_proof": {
+              "date": "2016-12-27",
+              "edition_sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20161227030040id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20161227030040"
+            },
+            "chosen_edition": "2016-12-16",
+            "freshness_floor": "2016-07-01",
+            "latest_proven_age_days": 16,
+            "latest_proven_availability": {
+              "date": "2016-12-27",
+              "edition_sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20161227030040id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20161227030040"
+            },
+            "latest_proven_edition": "2016-12-16",
+            "source": {
+              "file": "ob_20170111194915.zip",
+              "kind": "fda_zip",
+              "sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+              "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 539,
+            "NOT_LISTED": 4
+          },
+          "prior_final_anda": 591
+        },
+        "2018-01-01": {
+          "dated_nda_drugs": 1892,
+          "eligible_rows": 556,
+          "events": 58,
+          "graph_verdict": {
+            "BLOCKED": 179,
+            "CONTESTED": 338,
+            "OPEN": 39
+          },
+          "low_confidence_keys": 37,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 9,
+            "listed_patent_count_missing": 9,
+            "nce_remaining_years_missing": 9,
+            "other_exclusivity_remaining_years_missing": 9,
+            "strength_missing": 24,
+            "years_since_earliest_patent_submission_missing": 556,
+            "years_to_last_patent_expiry_missing": 289
+          },
+          "no_eligible_type1": 728,
+          "orange_book_edition": {
+            "age_days": 80,
+            "availability_proof": {
+              "date": "2017-11-14",
+              "edition_sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20171114202140id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20171114202140"
+            },
+            "chosen_edition": "2017-10-13",
+            "freshness_floor": "2017-07-01",
+            "latest_proven_age_days": 80,
+            "latest_proven_availability": {
+              "date": "2017-11-14",
+              "edition_sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20171114202140id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20171114202140"
+            },
+            "latest_proven_edition": "2017-10-13",
+            "source": {
+              "file": "ob_20171114202140.zip",
+              "kind": "fda_zip",
+              "sha256": "5cf26590817ce674d30e363409661e35176648500904c2a15c802b8e3138ac31",
+              "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 547,
+            "NOT_LISTED": 9
+          },
+          "prior_final_anda": 608
+        },
+        "2019-01-01": {
+          "dated_nda_drugs": 1944,
+          "eligible_rows": 569,
+          "events": 50,
+          "graph_verdict": {
+            "BLOCKED": 188,
+            "CONTESTED": 335,
+            "OPEN": 46
+          },
+          "low_confidence_keys": 37,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 22,
+            "listed_patent_count_missing": 22,
+            "nce_remaining_years_missing": 22,
+            "other_exclusivity_remaining_years_missing": 22,
+            "strength_missing": 37,
+            "years_since_earliest_patent_submission_missing": 339,
+            "years_to_last_patent_expiry_missing": 307
+          },
+          "no_eligible_type1": 743,
+          "orange_book_edition": {
+            "age_days": 137,
+            "availability_proof": {
+              "date": "2018-09-08",
+              "edition_sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20180908074144id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20180908074144"
+            },
+            "chosen_edition": "2018-08-17",
+            "freshness_floor": "2018-07-01",
+            "latest_proven_age_days": 137,
+            "latest_proven_availability": {
+              "date": "2018-09-08",
+              "edition_sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20180908074144id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+              "wayback_ts": "20180908074144"
+            },
+            "latest_proven_edition": "2018-08-17",
+            "source": {
+              "file": "ob_20180908074144.zip",
+              "kind": "fda_zip",
+              "sha256": "e2313fab719435ed9d0ec322b39719ef7a58e9dea2aa729c12f9ec0ecb69d0dd",
+              "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 547,
+            "NOT_LISTED": 22
+          },
+          "prior_final_anda": 632
+        },
+        "2020-01-01": {
+          "dated_nda_drugs": 1994,
+          "eligible_rows": 570,
+          "events": 41,
+          "graph_verdict": {
+            "BLOCKED": 221,
+            "CONTESTED": 309,
+            "OPEN": 40
+          },
+          "low_confidence_keys": 34,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 9,
+            "listed_patent_count_missing": 9,
+            "nce_remaining_years_missing": 9,
+            "other_exclusivity_remaining_years_missing": 9,
+            "strength_missing": 23,
+            "years_since_earliest_patent_submission_missing": 318,
+            "years_to_last_patent_expiry_missing": 292
+          },
+          "no_eligible_type1": 758,
+          "orange_book_edition": {
+            "age_days": 19,
+            "availability_proof": {
+              "date": "2019-12-14",
+              "edition_sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20191214001219id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20191214001219"
+            },
+            "chosen_edition": "2019-12-13",
+            "freshness_floor": "2019-07-01",
+            "latest_proven_age_days": 19,
+            "latest_proven_availability": {
+              "date": "2019-12-14",
+              "edition_sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20191214001219id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20191214001219"
+            },
+            "latest_proven_edition": "2019-12-13",
+            "source": {
+              "file": "ob_20191214001219.zip",
+              "kind": "fda_zip",
+              "sha256": "3f01610625f2082abec49d4601cd9d3934b00b959f61b56f3e07ae1a08f4ab61",
+              "source_url": "https://www.fda.gov/media/76860/download"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 561,
+            "NOT_LISTED": 9
+          },
+          "prior_final_anda": 666
+        },
+        "2021-01-01": {
+          "dated_nda_drugs": 2045,
+          "eligible_rows": 593,
+          "events": 50,
+          "graph_verdict": {
+            "BLOCKED": 236,
+            "CONTESTED": 314,
+            "OPEN": 43
+          },
+          "low_confidence_keys": 33,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 12,
+            "listed_patent_count_missing": 12,
+            "nce_remaining_years_missing": 12,
+            "other_exclusivity_remaining_years_missing": 12,
+            "strength_missing": 26,
+            "years_since_earliest_patent_submission_missing": 313,
+            "years_to_last_patent_expiry_missing": 294
+          },
+          "no_eligible_type1": 770,
+          "orange_book_edition": {
+            "age_days": 60,
+            "availability_proof": {
+              "date": "2020-11-12",
+              "edition_sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20201112023717"
+            },
+            "chosen_edition": "2020-11-02",
+            "freshness_floor": "2020-07-01",
+            "latest_proven_age_days": 60,
+            "latest_proven_availability": {
+              "date": "2020-11-12",
+              "edition_sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20201112023717id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20201112023717"
+            },
+            "latest_proven_edition": "2020-11-02",
+            "source": {
+              "file": "ob_20201112023717.zip",
+              "kind": "fda_zip",
+              "sha256": "c0c555d07b60b3e53b25f0fdd78334b4c56a769b34195d701968269299ae1833",
+              "source_url": "https://www.fda.gov/media/76860/download"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 581,
+            "NOT_LISTED": 12
+          },
+          "prior_final_anda": 682
+        },
+        "2022-01-01": {
+          "dated_nda_drugs": 2087,
+          "eligible_rows": 599,
+          "events": 40,
+          "graph_verdict": {
+            "BLOCKED": 258,
+            "CONTESTED": 313,
+            "OPEN": 28
+          },
+          "low_confidence_keys": 32,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 4,
+            "listed_patent_count_missing": 4,
+            "nce_remaining_years_missing": 4,
+            "other_exclusivity_remaining_years_missing": 4,
+            "strength_missing": 18,
+            "years_since_earliest_patent_submission_missing": 305,
+            "years_to_last_patent_expiry_missing": 289
+          },
+          "no_eligible_type1": 781,
+          "orange_book_edition": {
+            "age_days": 22,
+            "availability_proof": {
+              "date": "2021-12-28",
+              "edition_sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20211228215048id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20211228215048"
+            },
+            "chosen_edition": "2021-12-10",
+            "freshness_floor": "2021-07-01",
+            "latest_proven_age_days": 22,
+            "latest_proven_availability": {
+              "date": "2021-12-28",
+              "edition_sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20211228215048id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20211228215048"
+            },
+            "latest_proven_edition": "2021-12-10",
+            "source": {
+              "file": "ob_20211228215048.zip",
+              "kind": "fda_zip",
+              "sha256": "782e0a99824c4aad3579bd5e44e85dc65fae76b621439438a840f3f7b5ab0dc3",
+              "source_url": "https://www.fda.gov/media/76860/download"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 595,
+            "NOT_LISTED": 4
+          },
+          "prior_final_anda": 707
+        },
+        "2023-01-01": {
+          "dated_nda_drugs": 2115,
+          "eligible_rows": 594,
+          "events": 42,
+          "graph_verdict": {
+            "BLOCKED": 252,
+            "CONTESTED": 312,
+            "OPEN": 30
+          },
+          "low_confidence_keys": 32,
+          "missing_features": {
+            "challenge_missing": 2,
+            "form_route_missing": 7,
+            "listed_patent_count_missing": 7,
+            "nce_remaining_years_missing": 7,
+            "other_exclusivity_remaining_years_missing": 7,
+            "strength_missing": 22,
+            "years_since_earliest_patent_submission_missing": 299,
+            "years_to_last_patent_expiry_missing": 286
+          },
+          "no_eligible_type1": 789,
+          "orange_book_edition": {
+            "age_days": 52,
+            "availability_proof": {
+              "date": "2022-11-28",
+              "edition_sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20221128232655id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20221128232655"
+            },
+            "chosen_edition": "2022-11-10",
+            "freshness_floor": "2022-07-01",
+            "latest_proven_age_days": 52,
+            "latest_proven_availability": {
+              "date": "2022-11-28",
+              "edition_sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20221128232655id_/https://www.fda.gov/media/76860/download",
+              "wayback_ts": "20221128232655"
+            },
+            "latest_proven_edition": "2022-11-10",
+            "source": {
+              "file": "ob_20221128232655.zip",
+              "kind": "fda_zip",
+              "sha256": "3a93d1ddd44b57c96534e2cc25bd5975ff93af1ef281af4db20e934128ef9ec1",
+              "source_url": "https://www.fda.gov/media/76860/download"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 587,
+            "NOT_LISTED": 7
+          },
+          "prior_final_anda": 732
+        },
+        "2024-01-01": {
+          "dated_nda_drugs": 2162,
+          "eligible_rows": 615,
+          "events": 46,
+          "graph_verdict": {
+            "BLOCKED": 169,
+            "CONTESTED": 436,
+            "OPEN": 10
+          },
+          "low_confidence_keys": 31,
+          "missing_features": {
+            "challenge_missing": 572,
+            "form_route_missing": 5,
+            "listed_patent_count_missing": 5,
+            "nce_remaining_years_missing": 5,
+            "other_exclusivity_remaining_years_missing": 5,
+            "strength_missing": 21,
+            "years_since_earliest_patent_submission_missing": 292,
+            "years_to_last_patent_expiry_missing": 283
+          },
+          "no_eligible_type1": 800,
+          "orange_book_edition": {
+            "age_days": 24,
+            "availability_proof": {
+              "date": "2023-12-20",
+              "edition_sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20231220045755id_/https://www.fda.gov/media/76860/download?attachment",
+              "wayback_ts": "20231220045755"
+            },
+            "chosen_edition": "2023-12-08",
+            "freshness_floor": "2023-07-01",
+            "latest_proven_age_days": 24,
+            "latest_proven_availability": {
+              "date": "2023-12-20",
+              "edition_sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+              "kind": "wayback",
+              "url": "https://web.archive.org/web/20231220045755id_/https://www.fda.gov/media/76860/download?attachment",
+              "wayback_ts": "20231220045755"
+            },
+            "latest_proven_edition": "2023-12-08",
+            "source": {
+              "file": "ob_20231220045755.zip",
+              "kind": "fda_zip",
+              "sha256": "ea1830bbd6c71a39e727e6e7595b3b988083eebd5c2443fa773cef08b1bbd306",
+              "source_url": "https://www.fda.gov/media/76860/download?attachment"
+            },
+            "status": "FRESH"
+          },
+          "orange_book_status": {
+            "FRESH": 610,
+            "NOT_LISTED": 5
+          },
+          "prior_final_anda": 747
+        }
+      },
+      "event_drugs": 202,
+      "event_rows": 368,
+      "levels": {
+        "B1": {
+          "aurc80": {
+            "ci95": [
+              0.02008358408769188,
+              0.032221592671111035
+            ],
+            "estimate": 0.025929504950866464,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.1427716088940284,
+              0.2102170918917607
+            ],
+            "estimate": 0.17225889582001652,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.0629810146146031,
+              0.08032062817770069
+            ],
+            "estimate": 0.07132646636880367,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.5126482677624259,
+              0.521453543920535
+            ],
+            "estimate": 0.5168139685276999,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.5640975001755495,
+              0.6976810117841634
+            ],
+            "estimate": 0.631947810165632,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.02503021918061774,
+              0.036803273676557724
+            ],
+            "estimate": 0.030729888870202778,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.013322208061842132,
+              0.030381107035483825
+            ],
+            "estimate": 0.0216075568104545,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.15672521530520456,
+              0.21502207222818637
+            ],
+            "estimate": 0.1851107646562192,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.40266768505277556,
+              0.5233984431445581
+            ],
+            "estimate": 0.4647889851694199,
+            "undefined_draws": 0
+          }
+        },
+        "M1": {
+          "aurc80": {
+            "ci95": [
+              0.013519072547762476,
+              0.024979034495049894
+            ],
+            "estimate": 0.01903393483203938,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.21979244445625704,
+              0.3158121179672752
+            ],
+            "estimate": 0.2591935226152491,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.057942831270817854,
+              0.07382084812473448
+            ],
+            "estimate": 0.06544683863503234,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.4502368012891336,
+              0.4977055580106297
+            ],
+            "estimate": 0.4741323561112309,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.6407729065533981,
+              0.756911996842936
+            ],
+            "estimate": 0.693069306930693,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.017779327739044046,
+              0.02875719481943063
+            ],
+            "estimate": 0.023052927326326564,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.012634194445484834,
+              0.02936196239616159
+            ],
+            "estimate": 0.020018570271421215,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.22507837620578777,
+              0.300446033707729
+            ],
+            "estimate": 0.26082251082251084,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.6046496796392975,
+              0.7190721649484536
+            ],
+            "estimate": 0.654891304347826,
+            "undefined_draws": 0
+          }
+        },
+        "M3": {
+          "aurc80": {
+            "ci95": [
+              0.012501479620630668,
+              0.022881794501356086
+            ],
+            "estimate": 0.01747749801606594,
+            "undefined_draws": 0
+          },
+          "average_precision": {
+            "ci95": [
+              0.22645802211331098,
+              0.32136048831789554
+            ],
+            "estimate": 0.26608967155756774,
+            "undefined_draws": 0
+          },
+          "brier": {
+            "ci95": [
+              0.05722227875627345,
+              0.07301679707489767
+            ],
+            "estimate": 0.06474156432181351,
+            "undefined_draws": 0
+          },
+          "decision_loss": {
+            "ci95": [
+              0.44759928435664004,
+              0.5062153955549908
+            ],
+            "estimate": 0.47585686570381547,
+            "undefined_draws": 0
+          },
+          "distinct_event_drug_capture": {
+            "ci95": [
+              0.6511597625968992,
+              0.7668431510639367
+            ],
+            "estimate": 0.7079207920792079,
+            "undefined_draws": 0
+          },
+          "e_aurc": {
+            "ci95": [
+              0.016628709634869808,
+              0.02670098101905297
+            ],
+            "estimate": 0.021623156647612822,
+            "undefined_draws": 0
+          },
+          "ece": {
+            "ci95": [
+              0.013276112978988733,
+              0.029996929285748482
+            ],
+            "estimate": 0.020596477362362694,
+            "undefined_draws": 0
+          },
+          "precision": {
+            "ci95": [
+              0.22935984560460732,
+              0.3015192798841812
+            ],
+            "estimate": 0.2662337662337662,
+            "undefined_draws": 0
+          },
+          "recall": {
+            "ci95": [
+              0.609547254816521,
+              0.7220822603826691
+            ],
+            "estimate": 0.6684782608695652,
+            "undefined_draws": 0
+          }
+        }
+      },
+      "rows": 4639,
+      "slots": 924,
+      "undefined_draws_any_metric": 0,
+      "undefined_draws_recall_cause": "no event rows"
+    }
+  },
+  "native_export_manifest": {
+    "path": "C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench/score/C1_score_export_manifest.json",
+    "sha256": "bb27ec7f972fecbe92bbfea9d31596dca56c51e0ad422083f70ce026c3c2bd07"
+  },
+  "native_exports": {
+    "12": {
+      "path": "C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench/score/C1_scores_12m.json",
+      "row_fields": [
+        "key",
+        "cutoff",
+        "y",
+        "B1",
+        "M1",
+        "M3"
+      ],
+      "rows": 5259,
+      "sha256": "a644f1d40271c9a59a5405b840724906332ce975854d2afedd3d22c4ded80891"
+    },
+    "24": {
+      "path": "C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench/score/C1_scores_24m.json",
+      "row_fields": [
+        "key",
+        "cutoff",
+        "y",
+        "B1",
+        "M1",
+        "M3"
+      ],
+      "rows": 4639,
+      "sha256": "c3b9e51891fd8f577dfce9f7fbbfb466f25f29ae50ed4edd9d8b2d0fcbcc84e7"
+    }
+  },
+  "primary": {
+    "H1": {
+      "ci95": [
+        0.14369109147667547,
+        0.2616295354199167
+      ],
+      "contrast": "M3-B1",
+      "decision": "PASS",
+      "estimate": 0.20368927570014528,
+      "horizon_months": 24,
+      "meets_plus_10pp": true,
+      "one_sided_lower": 0.14369109147667547,
+      "reached": true,
+      "undefined_draws": 0
+    },
+    "H2": {
+      "ci95": [
+        -0.02200895491827964,
+        0.030138848652899144
+      ],
+      "contrast": "M3-M1",
+      "decision": "FAIL",
+      "estimate": 0.013586956521739135,
+      "horizon_months": 24,
+      "meets_plus_10pp": false,
+      "one_sided_lower": -0.02200895491827964,
+      "reached": true,
+      "undefined_draws": 0
+    },
+    "H3": {
+      "ci95": [
+        0.09975633310676608,
+        0.24214724916185107
+      ],
+      "contrast": "M3-B1",
+      "decision": "NOT_REACHED_DESCRIPTIVE",
+      "estimate": 0.16688424666499613,
+      "horizon_months": 12,
+      "meets_plus_10pp": true,
+      "one_sided_lower": 0.09975633310676608,
+      "reached": false,
+      "undefined_draws": 0
+    }
+  },
+  "release": {
+    "approved_schema_responses": [
+      "6b0a5e871c2cd96b1746bce7",
+      "6b0a61a4341762fcbae66946"
+    ],
+    "base": "e0f1872e37928683e4d1b5006d958829a346473b",
+    "canonical_prereg_sha256": "3f91145251465b0ed9c89233337748e1b9fd84db8c4c2a6158860374670e1c77",
+    "checked_at_utc": "2026-11-28T05:29:44.256437+00:00",
+    "config_and_manifest_lf_sha256": {
+      "C3_SPEC.json": "8179101bb7a0adf9e8659bcb0978c73bd32ee869506a50027537741a45e3b0fd",
+      "C4_SPEC.json": "c0644bb4c1ed9d6050e256191c85bb34dd120a73b6da78850a1faf80e2c400f0",
+      "FROZEN_CONFIG.json": "d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39",
+      "S0_INPUT_MANIFEST.json": "7d40be5e2004d887480ce5f337afffd611909f26017622e90ad304a0386d2d1d"
+    },
+    "cpu_only": true,
+    "custodian_gate": "PASS",
+    "cutoff_edition_checks": "PASS",
+    "development_parity": "PASS",
+    "doi": "10.17605/OSF.IO/P2SMD",
+    "first_author_authorization": "PASS",
+    "implementation_pin": "f683017c4fb73aadd91bb97f3381f5dd9308c9ca",
+    "latest_schema_response": "6b0a61a4341762fcbae66946",
+    "lock_wrapper_sha256": "7e37bd53485ee7a2981025d1351896d7a263d6b45f30c60f1ecf1e560e970b99",
+    "observation_end": "2026-11-27",
+    "osf_id": "p2smd",
+    "registered_utc": "2026-11-28T03:59:09.365844",
+    "runtime": {
+      "numpy": "2.5.4",
+      "python": "3.12.10"
+    },
+    "scoring_adapter_sha256": "6b6f37e09d0ca209a4c83f65fdffd1a29cc295dd941fe64acde6e2eb2214450b",
+    "source_checks": "PASS",
+    "status": "PASS"
+  },
+  "status": "CONFIRMATORY_CPRIME"
+}
