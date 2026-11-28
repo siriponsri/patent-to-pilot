@@ -49,7 +49,7 @@ Applied strictly against the rule above, which was committed (c206bc96) before t
 
 | Jurisdiction | M1 | M2 | M3 | M4 | Materiality (H2 power gain at the +5 pp design effect, annual calendar) | Owner burden | Decision |
 |---|---|---|---|---|---|---|---|
-| **Canada** | PASS (OGL Canada for NOC, DPD and Patent Register; RID under non-commercial site terms) | PASS | **UNVERIFIED**: no per-row update history binds the record versions at past cutoffs | PASS | **+0.20 pp** (C 99.80% to F 100.00%), below the +10 pp threshold; an earlier readout was not simulated | 0.5–1.5 h per quarter (estimate), at or above the 1 h limit | **Not admitted** |
+| **Canada** | PASS (OGL Canada for NOC, DPD and Patent Register; RID under non-commercial site terms) | PASS | **UNVERIFIED**: no per-row update history binds the record versions at past cutoffs | PASS | **+0.20 pp** (C 99.80% to F 100.00%), below the +10 pp threshold; an earlier readout was not simulated | 0.5–1.5 h per quarter (estimate), straddles the 1 h limit | **Not admitted** |
 | **Japan** | PASS (PDL 1.0) | **UNVERIFIED** at the first-generic-per-moiety grain | **UNVERIFIED** | PASS | Not estimable (no admissible annual rate) | 1–3 h per quarter (estimate) | **Not admitted** |
 | China, Thailand, Singapore, Malaysia | Unchanged from the interim table | | | | | | **Not admitted** |
 

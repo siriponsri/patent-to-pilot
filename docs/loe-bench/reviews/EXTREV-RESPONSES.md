@@ -14,3 +14,13 @@ Main planner (Claude Opus 5.5). Each round of external review by the co-planner 
 | R6 | MINOR | **Fixed.** Both documents now say the rule and the window were committed first, and the detailed manifest arrived with the counts, so the counts are descriptive. | [Decision](../JURISDICTION-DECISION-RULE.md), [JURIS-COUNT planner note](../receipts/JURIS-COUNT.md#planner-provenance-note-28-november-2026-2223-bangkok) |
 
 Next: a fresh round 2 (EXTREV-R2) verifies all six responses against the frozen record.
+
+## Round 2 ([review](EXTERNAL-REVIEW-R2.md), answered 28 Nov 2026, 22:54 Bangkok)
+
+| ID | Severity | Response | Where |
+|---|---|---|---|
+| R1 remainder | (partial) | **Fixed.** The handoff close-out row now says OPEN and names the milestone. The superseded checklist instruction is dated and points to the external review row as the only remaining gate. | [Handoff](../HANDOFF.md), [checklist](../RESEARCH-COMPLETION.md) |
+| R2 remainder | (partial) | **Fixed.** The jurisdiction table says the burden straddles the 1 h limit. The handoff no longer calls the increment immaterial or asks for a rerun; it names M3 as the sufficient ground and the earlier-readout route as unevaluated. | [Decision](../JURISDICTION-DECISION-RULE.md), [handoff](../HANDOFF.md) |
+| N1 + R3 remainder | BLOCKING | **In progress (TRACKA-READOUT3, Sol xhigh).** Formal H3 must come only from canonical discovery or a verified offline disposition record; an unspecified source, unreadable copy or wrong pin is unverified input, never a formal fallback. Descriptive replay is labelled as such. Regression: identical FDA bytes and all three invocations give one formal H3. | Receipt to follow |
+| N2 | MAJOR | **In progress (same card).** Compare every available publication digest (release notes, issue, asset, embedded manifest), require a publication result digest for formal use, record an explicit disposition on disagreement; test release-only recovery and conflicting witnesses. | Receipt to follow |
+| N3 | MAJOR | **In progress (same card).** Publish and digest-pin the first 24-month aggregate, source manifest and draws as durable release assets, and rehearse retrieval of the safety fields after the transient artifact is gone. | Receipt to follow |
