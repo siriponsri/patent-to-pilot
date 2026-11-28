@@ -3,12 +3,12 @@
 import argparse
 from datetime import date, datetime, timezone
 import json
-from os import environ
 from pathlib import Path
+from tempfile import TemporaryDirectory
 import re
-from urllib.error import HTTPError
-from urllib.request import Request, urlopen
+from zipfile import BadZipFile
 
+from . import tracka_capture, tracka_custody as custody
 from .common import add_months
 from .score_release import DOI, RESULTS, SOURCES
 from .tracka_release import DIGEST, HORIZONS, T0, VERSION, digest, load, require, verify_file
@@ -36,46 +36,6 @@ def publication_scope(freeze_sha, doi, horizon=12):
     match = DOI.fullmatch(doi or "")
     require(match and DIGEST.fullmatch(freeze_sha) and horizon in HORIZONS, "Invalid first-readout publication scope")
     return f"track-a-{horizon}m-{match[2]}-{freeze_sha}", f"{freeze_sha}:{match[2]}"
-
-
-def verified_absence(evidence, release_sha):
-    """Check the scope and observations of a discovery record from a trusted source."""
-    repo, doi, freeze = (evidence.get(key) for key in ("repository", "doi", "freeze_manifest_sha256"))
-    if not (canonical_scope(repo, doi, freeze) and evidence.get("schema_version") == 1 and
-            evidence.get("reason") == "MISSING_ORIGINAL" and evidence.get("exact_tag_found") is False and
-            evidence.get("horizon_months") == 12 and evidence.get("release_sha256") == release_sha):
-        return False
-    tag, _ = publication_scope(freeze, doi)
-    api = f"https://api.github.com/repos/{repo}"
-    observations = {(query["url"], query["status"]) for query in evidence["queries"]
-                    if datetime.fromisoformat(query["queried_at_utc"]).tzinfo is not None}
-    return evidence["tag"] == tag and {
-        (f"{api}/issues?state=all&per_page=100&page=1", "FOUND"),
-        (f"{api}/releases/tags/{tag}", "NOT_FOUND"),
-        (f"{api}/git/matching-refs/tags/{tag}", "FOUND"),
-    } <= observations
-
-
-def fetch(url, limit):
-    request = Request(url, headers={"User-Agent": "loe-bench-tracka-readout"})
-    if url.startswith("https://api.github.com/") and (token := environ.get("GH_TOKEN")):
-        request.add_unredirected_header("Authorization", f"Bearer {token}")
-    try:
-        with urlopen(request, timeout=30) as response:
-            data = response.read(limit + 1)
-    except HTTPError as exc:
-        if exc.code == 404:
-            return None
-        raise
-    require(len(data) <= limit, "First-readout response exceeds the expected size")
-    return data
-
-
-def note_dates(body):
-    published = re.search(r"^First publication UTC (\S+)\.$", body, re.M)
-    scored = re.search(r"Scoring started ([0-9]{4}-[0-9]{2}-[0-9]{2}) UTC", body)
-    return {"published_at_utc": published[1] if published else None,
-            "scored_on_utc": scored[1] if scored else None}
 
 
 def publish_pins(body, locator, pins):
@@ -145,100 +105,75 @@ def verify_archive(folder, release_sha, freeze_sha, expected_sha=None, *, horizo
         require("estimate" in contrast and "ci95" in contrast, "First result lacks the registered H3 estimate")
     else:
         vintage = result["h3_input"]["status"]
-        require(vintage in ("FIRST_PUBLISHED", "REVISED_VINTAGE") and
+        require(vintage == "FIRST_PUBLISHED" and
                 result["hypotheses"]["H3"]["vintage_status"] == vintage,
                 "First 24-month result lacks a verified H3 vintage")
-        if vintage == "REVISED_VINTAGE":
-            require(verified_absence(result["h3_input"]["discovery"], release_sha),
-                    "First 24-month result lacks the canonical absence record")
     return panel, {"results_sha256": result_sha, "outcome_source_manifest_sha256": source_sha,
                    "scored_on_utc": scored, "fda_edition": sources["covered_through"]}
 
 
-def discover(repository, doi, freeze_sha, release_sha, folder, *, horizon=12):
-    """Return a verified panel and evidence, or an explicit publication disposition."""
-    require(REPO.fullmatch(repository) and DIGEST.fullmatch(release_sha), "Invalid publication repository or release pin")
+def discover(repository, doi, freeze_sha, release_sha, folder, *, horizon=12, capture=None):
+    """Return the first independently verified panel, or a continuity disposition."""
+    require(canonical_scope(repository, doi, freeze_sha) and DIGEST.fullmatch(release_sha),
+            "Invalid canonical publication identity")
     tag, record = publication_scope(freeze_sha, doi, horizon)
-    api = f"https://api.github.com/repos/{repository}"
+    scope = custody.Scope(repository, DOI.fullmatch(doi)[1].lower(), freeze_sha, horizon, "result")
     original, queries = {}, []
-    evidence = {"schema_version": 1, "repository": repository, "doi": DOI.fullmatch(doi)[1].lower(),
-                "freeze_manifest_sha256": freeze_sha, "release_sha256": release_sha,
-                "horizon_months": horizon, "tag": tag, "queries": queries, "original": original}
+    evidence = {"schema_version": 2, **vars(scope), "release_sha256": release_sha,
+                "tag": tag, "queries": queries, "original": original}
 
-    def query(url, limit):
-        at = datetime.now(timezone.utc).isoformat()
-        data = fetch(url, limit)
-        queries.append({"url": url, "queried_at_utc": at, "status": "NOT_FOUND" if data is None else "FOUND"})
+    def query(url, limit, **kwargs):
+        data = custody.fetch(url, limit, **kwargs)
+        # The attestation service can return expiring, signed bundle URLs.
+        if url.startswith(scope.api + "/") and not kwargs:
+            queries.append({"url": url, "queried_at_utc": datetime.now(timezone.utc).isoformat(),
+                            "status": "NOT_FOUND" if data is None else "FOUND"})
         return data
 
-    issues = scored_issues(query, api, record, horizon)
-    pins = {name: [] for name in PIN_LABELS}
-    evidence["publication_pins"] = pins
-    evidence["issue_urls"] = [issue["html_url"] for issue in issues]
-    disputes = []
-    for issue in issues:
-        locator = issue["html_url"]
-        count = len(pins[RESULTS])
-        disputes.extend(publish_pins(issue.get("body") or "", locator, pins))
-        if len(pins[RESULTS]) == count:
-            disputes.append(f"Missing publication result digest at {locator}")
-    if issues:
-        first = min(issues, key=lambda item: item["created_at"])
-        original.update(note_dates(first.get("body") or ""), issue_url=first["html_url"])
-    raw = query(f"{api}/releases/tags/{tag}", 2**20)
-    if raw is None:
-        refs = query(f"{api}/git/matching-refs/tags/{tag}", 2**20)
-        require(refs is not None, "Cannot inspect the canonical Track A tag history")
-        refs = json.loads(refs)
-        require(isinstance(refs, list), "Unexpected canonical Track A tag history")
-        evidence["exact_tag_found"] = any(ref["ref"] == f"refs/tags/{tag}" for ref in refs)
-        disputes.extend(pin_disputes(pins))
-        if disputes:
-            return None, {**evidence, "reason": "DISPUTED", "detail": "\n".join(disputes)}
-        if evidence["exact_tag_found"]:
-            return None, {**evidence, "reason": "INVALID_ORIGINAL", "detail": "Publication tag survives without a release"}
-        return None, {**evidence, "reason": "MISSING_ORIGINAL"}
-
-    release_url = f"https://github.com/{repository}/releases/tag/{tag}"
-    original["release_url"] = release_url
     try:
-        release = json.loads(raw)
-        notes = release.get("body") or ""
-        original["published_at_utc"] = release.get("published_at")
-        if not original.get("scored_on_utc"):
-            original["scored_on_utc"] = note_dates(notes)["scored_on_utc"]
-        require(not release["draft"] and release["tag_name"] == tag and
-                datetime.fromisoformat(release["published_at"]).tzinfo is not None,
-                "Unexpected GitHub publication identity")
-        malformed_notes = publish_pins(notes, release_url, pins)
+        issues = scored_issues(query, scope.api, record, horizon)
+        pins = {name: [] for name in PIN_LABELS}
+        evidence.update(publication_pins=pins, issue_urls=[issue["html_url"] for issue in issues])
+        disputes = []
+        for issue in issues:
+            locator = issue["html_url"]
+            count = len(pins[RESULTS])
+            disputes.extend(publish_pins(issue.get("body") or "", locator, pins))
+            if len(pins[RESULTS]) == count:
+                disputes.append(f"Missing publication result digest at {locator}")
         disputes.extend(pin_disputes(pins))
-        if disputes:
-            return None, {**evidence, "reason": "DISPUTED", "detail": "\n".join(disputes + malformed_notes)}
-        require(not malformed_notes, "\n".join(malformed_notes))
-        require(pins[RESULTS], "Missing publication result digest")
-        if horizon == 24:
-            require(all(pins.values()), "Missing 24-month publication asset digest")
-
-        files = {asset["name"]: asset for asset in release["assets"] if asset["state"] == "uploaded"}
-        folder.mkdir(parents=True, exist_ok=True)
-        for name, limit in ASSETS.items():
-            require(name in files, f"Missing release asset: {name}")
-            data = query(f"https://github.com/{repository}/releases/download/{tag}/{name}", limit)
-            require(data is not None, f"Unavailable release asset: {name}")
-            path = folder / name
-            path.write_bytes(data)
-            sha = digest(path)
-            asset_sha = files[name].get("digest")
-            require(asset_sha is None or asset_sha == f"sha256:{sha}", f"GitHub asset digest mismatch: {name}")
-            if pins.get(name):
-                require(pins[name][0]["sha256"] == sha, f"Publication digest disagrees with {name}")
-        panel, identity = verify_archive(folder, release_sha, freeze_sha, pins[RESULTS][0]["sha256"], horizon=horizon)
-        require(load(folder / RESULTS).get("family_status") == "FORMAL",
-                "First publication does not contain a formal family")
-    except (AttributeError, KeyError, TypeError, ValueError) as exc:
-        return None, {**evidence, "reason": "INVALID_ORIGINAL", "detail": str(exc)}
-    original.update(identity, archive_sha256={name: digest(folder / name) for name in ASSETS})
-    return panel, evidence
+        require(not disputes, "\n".join(disputes))
+        with TemporaryDirectory() as temp:
+            received = Path(temp)
+            archive = custody.inspect(scope, received, query=query)
+            evidence["custody"] = archive
+            if archive["status"] == "EMPTY" and not issues:
+                return None, {**evidence, "reason": "MISSING_ORIGINAL"}
+            require(archive["status"] == "VERIFIED",
+                    archive.get("detail", "Publication witnesses survive without an attested result"))
+            custody.unpack(received / scope.archive, folder, lambda names: names == ASSETS.keys())
+            panel, identity = verify_archive(folder, release_sha, freeze_sha, horizon=horizon)
+            result = load(folder / RESULTS)
+            require(result["family_status"] == "FORMAL", "First publication does not contain a formal family")
+            if capture is None:
+                _, capture = tracka_capture.discover(scope, received / "capture", query=query)
+            require(capture["status"] == "VERIFIED"
+                    and result["capture"]["bundle_sha256"] == capture["bundle_sha256"]
+                    and custody.utc_time(archive["provenance"]["signed_at_utc"]) >=
+                    custody.utc_time(capture["published_at_utc"]),
+                    "First result is not bound to its verified published capture")
+            require(all(capture["source_sha256"].get(entry["file"]) == entry["sha256"]
+                        for entry in load(folder / SOURCES)["sources"]),
+                    "First result used bytes outside its capture")
+            asset_hashes = {name: digest(folder / name) for name in ASSETS}
+            for name, witnesses in pins.items():
+                require(all(item["sha256"] == asset_hashes[name] for item in witnesses),
+                        f"Publication issue digest disagrees with {name}")
+            original.update(identity, archive_sha256=asset_hashes, **{
+                key: archive[key] for key in ("release_url", "published_at_utc", "provenance", "bundle_sha256")})
+            return panel, evidence
+    except (OSError, KeyError, TypeError, ValueError, BadZipFile) as exc:
+        return None, {**evidence, "reason": custody.HOLD, "detail": str(exc)}
 
 
 def main():

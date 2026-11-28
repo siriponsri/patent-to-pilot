@@ -75,13 +75,14 @@ async function dispatchDue(env, today, fetcher) {
     throw new Error(`Score Track A workflow is ${state}; check repository settings`);
   }
 
-  const outcomes = await Promise.allSettled(missing.map(horizon =>
-    request(`${workflow}/dispatches`, "POST", {
-      ref: env.GITHUB_REF,
-      inputs: { horizon },
-    })));
-  const failures = outcomes.flatMap((outcome, index) => outcome.status === "rejected"
-    ? [`${missing[index]} months: ${outcome.reason.message}`] : []);
+  const failures = [];
+  for (const horizon of missing) {
+    try {
+      await request(`${workflow}/dispatches`, "POST", { ref: env.GITHUB_REF, inputs: { horizon } });
+    } catch (error) {
+      failures.push(`${horizon} months: ${error.message}`);
+    }
+  }
   if (failures.length) throw new Error(failures.join("\n"));
 }
 

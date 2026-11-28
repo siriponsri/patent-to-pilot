@@ -2,12 +2,12 @@
 
 import numpy as np
 
-from . import evidence_graph as graph, metrics, power, t1v3
+from . import evidence_graph as graph, metrics, power, t1v3, t2
 from .common import read_jsonl
-from .tracka_release import ARMS, load, require, row_id
+from .tracka_release import ARMS, FREEZE, load, require, row_id
 from .tracka_statistics import DRAWS, SEED, finite
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 CORE = ("B1", "M1", "M3")
 ACTIONS = (graph.PREDICT_NO_ENTRY, graph.PREDICT_ENTRY, graph.ABSTAIN)
 MEASURES = ("brier", "ece", "aurc80", "e_aurc", "mean_decision_loss", "flag_rate", "referral_rate",
@@ -32,7 +32,54 @@ def full_area(counts, errors, harmonic):
     return (counts * rate + offset * (harmonic[ends] - harmonic[preceding])).sum(axis=-1) / ends[..., -1]
 
 
-def arm_measures(keys, p, labels, actions, weights):
+def legacy_actions(arm, probabilities, conflicts, threshold, diagnostic_hi):
+    clear, flag, refer = ACTIONS
+    require(0.5 <= threshold <= 1, "Invalid frozen legacy threshold")
+    if arm != "M3":
+        return [refer if max(p, 1 - p) < threshold else flag if p > 0.5 else clear
+                for p in probabilities]
+    lo = 1 - threshold
+    require(lo < threshold and 0 <= diagnostic_hi <= 1, "Invalid frozen M3 policy thresholds")
+    actions = []
+    for p, conflict in zip(probabilities, conflicts, strict=True):
+        if p <= lo:
+            actions.append(clear)
+        else:
+            require(p >= diagnostic_hi and type(conflict) is bool, "Frozen M3 conflict is not identifiable")
+            if conflict:
+                actions.append(clear if p < threshold else refer)
+            else:
+                actions.append(refer if p < threshold else flag)
+    return actions
+
+
+def legacy_measures(arm, probabilities, labels, conflicts, policy):
+    if policy is None:
+        return {"status": "NOT_ESTIMABLE", "reason": "FROZEN_LEGACY_THRESHOLD_MISSING"}
+    threshold = policy["legacy_90"]["threshold"]
+    try:
+        actions = legacy_actions(arm, probabilities, conflicts, threshold, policy["hi"])
+    except ValueError as exc:
+        return {"status": "NOT_ESTIMABLE", "reason": str(exc)}
+    predictions = [t2.Prediction(p, action) for p, action in zip(probabilities, actions, strict=True)]
+    answered = sum(action != graph.ABSTAIN for action in actions)
+    errors = sum((action == graph.PREDICT_ENTRY) != bool(y)
+                 for action, y in zip(actions, labels, strict=True) if action != graph.ABSTAIN)
+    n = len(labels)
+    full = answered == n
+    excess = None
+    if full:
+        area = metrics.aurc(probabilities, labels, scores=[item.score for item in predictions], actions=actions)
+        oracle = sum(i / (n - errors + i) for i in range(1, errors + 1)) / n
+        excess = area - oracle
+    return {"status": "ESTIMATED", "threshold": threshold, "answered": answered, "rows": n,
+            "realized_coverage": answered / n, "errors": errors,
+            "aurc80": finite(t2._aurc80(predictions, labels)),
+            "aurc80_coverage_met": 5 * answered >= 4 * n, "aurc80_minimum_coverage": 0.8,
+            "e_aurc": excess, "e_aurc_coverage_met": full, "e_aurc_minimum_coverage": 1.0}
+
+
+def arm_measures(keys, p, labels, actions, weights, *, arm=None, policy=None):
     """The first weight row gives the observed roster, followed by bootstrap draws."""
     p, labels = np.asarray(p), np.asarray(labels)
     n = len(keys)
@@ -54,9 +101,9 @@ def arm_measures(keys, p, labels, actions, weights):
         "aurc80": power.area(counts, errors, n, harmonic),
         "e_aurc": full_area(counts, errors, harmonic) - oracle,
     }
-    row = {"ece_bin_counts": list(calibration.bin_counts),
-           "legacy_policy_90": {"status": "NOT_ESTIMABLE", "reason": "LEGACY_ACTIONS_NOT_IN_RELEASE"}}
     names, conflicts = zip(*actions, strict=True)
+    row = {"ece_bin_counts": list(calibration.bin_counts),
+           "legacy_policy_90": legacy_measures(arm, p, labels, conflicts, policy)}
     require(all(action is None or action in ACTIONS for action in names), "Unknown frozen diagnostic action")
     if None in names:
         row["diagnostic"] = {"status": "NOT_ESTIMABLE", "reason": "FROZEN_DIAGNOSTIC_ACTION_MISSING"}
@@ -96,6 +143,9 @@ def summarize(release, horizon, labels, panel, primary_draws):
     weights = np.stack([np.ones(n, dtype=int), *(
         np.bincount(rng.integers(n, size=n), minlength=n) for _ in range(DRAWS))])
     arms, levels, draws = {}, {}, {}
+    frozen = load(release.folder / FREEZE)
+    policies = (frozen.get("models_and_policies", {}).get("core_prediction_policy", {})
+                .get(str(horizon), {}).get("policy_thresholds", {}))
 
     def intervals(name, samples):
         draws[name] = samples[1:]
@@ -104,7 +154,7 @@ def summarize(release, horizon, labels, panel, primary_draws):
     for arm in CORE:
         probabilities = [p for _, p, _ in release.scores[horizon][arm]]
         arms[arm], levels[arm] = arm_measures(keys, probabilities, labels, frozen_actions(release, arm, horizon),
-                                             weights)
+                                             weights, arm=arm, policy=policies.get(arm))
         arms[arm]["levels"] = {name: intervals(f"{arm}:{name}", values) for name, values in levels[arm].items()}
     contrasts = {}
     for left, right in t1v3.PAIRS:

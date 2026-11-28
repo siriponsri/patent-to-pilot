@@ -103,6 +103,40 @@ test("a maintainer can mark a verified public readout as recorded", async () => 
   api.verify();
 });
 
+test("waits for the earlier horizon dispatch response before requesting the later horizon", async () => {
+  const api = mock(
+    ["GET", "/issues?state=all&per_page=100&page=1", []],
+    ["GET", workflow, { state: "active" }],
+    ["POST", `${workflow}/dispatches`, null, 204],
+    ["POST", `${workflow}/dispatches`, null, 204],
+  );
+  let unblock;
+  let firstSent;
+  const firstPending = new Promise(resolve => { unblock = resolve; });
+  const reachedFirst = new Promise(resolve => { firstSent = resolve; });
+  const horizons = [];
+  const dispatch = run("2028-11-27", daily, async (url, init) => {
+    if (init.method === "POST") {
+      const { inputs: { horizon } } = JSON.parse(init.body);
+      horizons.push(horizon);
+      if (horizon === "12") {
+        firstSent();
+        await firstPending;
+      }
+    }
+    return api.fetch(url, init);
+  });
+  await reachedFirst;
+  try {
+    assert.deepEqual(horizons, ["12"]);
+  } finally {
+    unblock();
+    await dispatch;
+  }
+  assert.deepEqual(horizons, ["12", "24"]);
+  api.verify();
+});
+
 test("leaves an explicitly disabled workflow disabled", async () => {
   const api = mock(
     ["GET", "/issues?state=all&per_page=100&page=1", []],
