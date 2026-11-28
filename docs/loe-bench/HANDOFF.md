@@ -23,7 +23,7 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 | Release | C′ gate (custodian) | PASS |
 | Confirmatory | SCORE: H1–H3, secondary, C3, C4 | Done. See "Results" |
 | Exploratory | SCORELLM: L1/L1e on C′ | Done. L1e 12.36% and L1 26.14% versus M3 66.85% at 24 m. USD 2.543; pod deleted |
-| Exploratory | C9 GRPO/SFT: code, approved development projection (10,603 rows), frozen roster (256 rows) | Ready. Training is scheduled for 1 Dec 2026 00:15 UTC (scheduled task 58a1b3e5) on an L4 in US-MO-2 at USD 0.69/h, all-in cap about USD 4.5 |
+| Exploratory | C9 GRPO/SFT: code, approved development projection (10,603 rows), frozen roster (256 rows) | **Blocked (C9TRAIN, 28 Nov).** No US Secure Cloud L4 was available, so no pod was created (USD 0). OSF update 3 lets training start now. Scheduled task 58a1b3e5 is disabled. Awaiting owner approval of a placement: L4 in an EU data center at the same rate, or a different GPU type with a deviation |
 | Track A | Retrain on matured windows and freeze (hash, tag, OSF timestamp) | Not started. Runs after C9 trains, around 2–6 Dec, and before 2027-01-31 |
 | Product | PRD1 builder (32 dossiers, C8 audit 1,789/1,789), EVP (C6 3/5 documented restrictions; C7 17/17 family leads, 0/6 Thai statuses verified) | Done |
 | Product | UIBUILD: F2 web app, landing page, Tauri desktop installer (unsigned) | Done. Installer at `_private_artifacts/mwd-desktop/` |
@@ -47,24 +47,16 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
   - C4b: the erosion factor worsened MAE.
 
 **Resources.**
-- RunPod GPU spend is about USD 0.97 of the USD 20 envelope. SCORELLM (≤ 3) and C9 (≤ 4.5) are pending. Volume `8n6rnzljwg` costs USD 2.10 a month.
+- RunPod GPU spend is about USD 3.51 of the USD 23 envelope (SCORELLM USD 2.543 done). C9 (≤ 4.5) is pending. Volume `8n6rnzljwg` costs USD 2.10 a month.
 - Installed at user level for the desktop build: Rust 1.100.1 (GNU) with MinGW, plus Tauri CLI. Licences are in receipts/UIBUILD.md.
 - The fonts are self-hosted under SIL OFL.
 - External services: OSF (free) and a public GitHub repository.
 
-## Next action (owner returns 4 PM, 28 Nov)
+## Next action (28 Nov, evening)
 
-**SCORELLM resolved.** It completed, and the pod was deleted at 09:06 UTC.
+SCORELLM is merged and OSF update 3 is verified. TRACKA-CORE (CPU) and the Astra IS2 critique are running.
 
-**Earlier note.** The owner shut the PC down at about 13:35 Bangkok time while SCORELLM was running. Its executor process is gone, but RunPod pod `hmo8vrw0fq4pw2` (L4, US-GA-2, USD 0.69/h, started 05:28 UTC) may still be running.
-- Check it with the RunPod list-pods tool.
-- If the remote job finished, retrieve the outputs and hashes, delete the pod, and run the comparison against the SCORE per-row exports.
-- If not, delete the pod and rerun SCORELLM.
-- The envelope is now USD 23.
-
-**Then file OSF update 3** (`docs/loe-bench/OSF-UPDATE-3-SHEET.md`) so that C9 can train now, dispatch C9 training, and disable scheduled task 58a1b3e5 (the 1 Dec reminder) so it does not dispatch training twice.
-
-1. Merge SCORELLM when it finishes and fill the IS2 placeholder.
-2. Send IS2 to Astra for critique, then do the main-planner audit, build the KMITL docx (TH/EN) and make the slides (Claude).
-3. On 1 Dec, dispatch C9 training. After it finishes, dispatch the Track A freeze card.
+1. **C9 placement.** A live read at about 09:30 UTC showed Secure Cloud L4 available only at EU-RO-1 and EUR-IS-2, both USD 0.69/h. US Secure options were the RTX 4090 at USD 0.89/h (US-IL-1, US-NC-1) and the A100 SXM at USD 2.19/h. The planner recommends EU L4: the GPU type is unchanged, so the registration needs no new hardware deviation. Only the region changes; the earlier slow upload was from EU-SE-1, and the C9 upload is small. Owner approval is required before any pod is created.
+2. After C9 trains, dispatch the Track A freeze card: GPU predictions for L1, L1e and C9 on the t0 roster, the freeze manifest, a Git tag and the OSF update 4 sheet.
+3. Merge the Astra critique, run the main-planner audit, build the KMITL docx (TH/EN) and make the slides (Claude).
 4. Before v1.0: polish the product, sign the installer if a certificate becomes available, and remove the 3 duplicate images (DOCS2 inventory).
