@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Market Window Dossier</title>
-  <meta name="description" content="Review queue and dated, source-traced dossiers for planning generic development. Development data. Decision support only, not legal advice or an FTO opinion.">
+  <meta name="description" content="Review queue and dated, source-traced dossiers for planning generic development. Current queue and historical time machine. Decision support only, not legal advice or an FTO opinion.">
   <meta name="color-scheme" content="light">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
@@ -36,6 +36,14 @@
       <span id="notice-body" data-t="notice"></span></p>
   </div>
 
+  <section class="modebar" id="modebar" aria-label="Data mode and reference date" lang="en">
+    <div class="mode-switch" role="group" aria-label="Data mode">
+      <button type="button" data-mode="current" aria-pressed="true">Current queue</button>
+      <button type="button" data-mode="history" aria-pressed="false">Historical time machine</button>
+    </div>
+    <p class="mode-facts" id="mode-facts"></p>
+  </section>
+
   <div class="app" id="app">
     <section class="panel queue-panel" id="queue-panel" aria-labelledby="queue-h" tabindex="-1">
       <div class="panel-head" lang="en"><h2 id="queue-h">Review queue</h2><span class="panel-meta" id="queue-meta"></span></div>
@@ -44,11 +52,16 @@
           <select id="f-horizon"></select></label>
         <label class="field"><span>As of</span>
           <select id="f-asof"></select></label>
-        <label class="field field-wide"><span>Show</span>
+        <label class="field field-wide hist-only"><span>Show</span>
           <select id="f-show">
             <option value="dossiers">Molecules with a dossier</option>
             <option value="all">All ranked molecules</option>
           </select></label>
+        <label class="field field-wide cur-only"><span>Search drug (active moiety or name)</span>
+          <input type="search" id="f-search" autocomplete="off" spellcheck="false" aria-describedby="search-help" placeholder="e.g. semaglutide"></label>
+        <label class="field field-wide cur-only"><span>Planned launch date</span>
+          <input type="date" id="f-launch" aria-describedby="launch-msg"></label>
+        <p class="launch-msg cur-only" id="launch-msg" aria-live="polite"></p>
       </div>
       <div class="queue-scroll" id="queue-scroll">
         <table class="qtable" id="queue-table" aria-labelledby="queue-h" aria-describedby="queue-help">
@@ -57,6 +70,8 @@
         </table>
       </div>
       <p class="queue-help" id="queue-help" lang="en">Ranked by M3. Use the arrow keys to move through the queue.</p>
+      <details class="ties cur-only" id="ties"><summary lang="en">About this queue: search, ties, method result</summary>
+        <p id="search-help"></p><p id="ties-body"></p><p id="queue-method" data-t="method"></p></details>
     </section>
 
     <main class="panel dossier-panel" id="dossier" tabindex="-1" aria-live="polite" aria-busy="true">
@@ -71,7 +86,7 @@
 
   <footer class="footer" lang="en">
     <p>Market Window Dossier · Patent-to-Pilot project, King Mongkut's Institute of Technology Ladkrabang (KMITL)</p>
-    <p>Development data: US cutoffs before 2017. Analysis plan registered at <a href="https://doi.org/10.17605/OSF.IO/P2SMD">doi:10.17605/OSF.IO/P2SMD</a>.</p>
+    <p><span id="foot-data">Development data: US cutoffs before 2017.</span> Analysis plan registered at <a href="https://doi.org/10.17605/OSF.IO/P2SMD">doi:10.17605/OSF.IO/P2SMD</a>.</p>
   </footer>
 
   <div class="sr-only" aria-live="polite" id="announcer"></div>
