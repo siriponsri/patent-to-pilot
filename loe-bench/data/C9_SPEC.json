@@ -1,7 +1,7 @@
 {
   "card": "C9",
   "ledger": "K23",
-  "version": 1,
+  "version": 2,
   "specified_on": "2026-11-28",
   "role": "prospective Track A only, exploratory, outside H1-H3",
   "s0": {
@@ -31,7 +31,12 @@
   },
   "prompt": {
     "contract": "L1e (C2/K24), same renderer, dated source allowlist, field order, missingness and text bytes in both C9 arms",
-    "pin": "Reviewed C2 config and renderer revision plus SHA-256 in the submitted preregistration; no fallback contract",
+    "pin": "Use the pinned C2 configuration and renderer below, with no fallback contract. Development row and output digests are provenance for C2 only. Freeze fresh manifests for C9.",
+    "contract_path": "loe-bench/data/L1E_FROZEN_CONFIG.json",
+    "contract_lf_sha256": "dd1dd4ac0d592a48de081c5fc29f68e0ccc78fd7a8daad771d280c7f15901e40",
+    "contract_revision": "8f8e0568469e71cfce1c2d8e9b018429f122066e",
+    "renderer_path": "loe-bench/loe_bench/l1e_prompt.py",
+    "renderer_lf_sha256": "07e43988f7aeecacf9a8078b2cf1f519608eaf5828666110def92fd380f9f1e9",
     "evidence": "C2's label-free as-of M3 evidence projection with cutoff-eligible record dates and demonstrated source availability; preserve provenance in the manifest",
     "excluded_from_model_inputs": ["training labels", "reward", "evaluator metadata", "post-cutoff evidence", "other-arm scores"],
     "parser": "loe_bench.llm_arm.parse_response",
