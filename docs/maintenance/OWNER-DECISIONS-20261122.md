@@ -233,4 +233,4 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
   - professional Thai and English titles; the question-form title is withdrawn pending research on research-writing and title guidelines
   - figures in academic style rather than slide style, after research on academic-figure guidelines
   The co-planner is consulted anew. The revision may wait until all experimental results are in (the Track A freeze).
-
+- 28 Nov 2026, late night: the owner chose the formal IS2 title, option 1 in the [style guide](../writing/is2/mwd/STYLE-GUIDE.md): TH การประเมินหลักฐานด้านการกำกับดูแลยาเพื่อจัดลำดับการทบทวนรายการยาก่อนการอนุมัติยาสามัญครั้งแรกในสหรัฐอเมริกา / EN Evaluating Regulatory Evidence for Prioritizing Drug Reviews Ahead of First US Generic Approvals.
