@@ -123,6 +123,20 @@ No LLM output is ground truth (standing rule 12). Quality is measured with deter
 
 **Open owner decisions.** A domain on Cloudflare (needed before colleagues can use the AI remotely); the dr-train deployment date; the MCP connector for v1.1.
 
+## 4c. MCP connector and AI-agent access (owner request, 28 Nov 2026)
+
+The owner asked for an MCP connector that AI agents can use, naming computer-use agents, Grok and "OpenBot" as examples. Each user's own agent or subscription does the writing; MWD supplies dated, cited evidence. The connector holds no model and no keys, so it costs no API budget.
+
+| ID | Pri | Requirement | Acceptance criteria |
+|---|---|---|---|
+| M1 | P1 | **Read-only MCP server** over released public data: `search_drugs`, `get_queue` (as of, horizon, capacity), `get_dossier` (sections, claims), `get_sources` (issuer, edition, locator, SHA-256), `get_fto_checklist`, `get_method_card` (registered results with denominators, H2 FAIL, pending Track A) | Every result carries claim IDs, source locators, the as-of date, mode (development or Track A t0), and the fixed disclaimer. No outcome or reveal fields in the current view. Tool descriptions state that MWD gives decision support, not an FTO or legal opinion |
+| M2 | P1 | **Two transports from one tool definition** | Local stdio for desktop agents (Claude Desktop, Claude Code, Codex CLI and other local MCP clients). Remote Streamable HTTP on Cloudflare Workers at a free `*.workers.dev` address (no domain needed), serving only public data with no sign-in, rate-limited, for remote clients such as ChatGPT connectors, Claude custom connectors and the xAI (Grok) API's remote MCP tools |
+| M3 | P2 | **`check_draft` tool** | An agent submits its own draft text with claim IDs; the deterministic B2 validator returns per-sentence pass, fail or unknown with reasons. This keeps external answers checkable even though MWD does not control the agent's text |
+| M4 | P1 | **Agent-ready web UI for computer-use agents** | Semantic HTML, stable accessible names and roles for every control, URL deep links for each queue, dossier, tab and language, no information available only in canvas or images. A scripted computer-use walkthrough (open queue, search a drug, open a dossier, export the PDF) passes |
+| M5 | P2 | **OpenAPI description** of the same read-only endpoints | For agents that use function calling without MCP |
+
+Client compatibility is a test target, not a claim: each named client is recorded PASS, FAIL or NOT_RUN in the receipt with its version. Remote clients' terms and data handling belong to each user's own account. The planner needs the owner to identify "OpenBot" before it becomes a test target.
+
 ## 5. Plan and cards for the Product Owner
 
 Each card is small enough for one Sonnet 5.5 medium session. The Product Owner works on `loe/<card-id>` branches cut from `research/loe-bench` in its own worktree, writes a receipt in `docs/loe-bench/receipts/`, and asks the main planner for review before merge. Data-pipeline changes in `product/mwd/` or `loe_bench/` go to a GPT executor through the planner (owner decision, 28 Nov).
@@ -144,6 +158,9 @@ Backend cards for Codex (D43), dispatched by the planner once the owner approves
 | B2 | BE-GROUND | GPT-6.2 Sol xhigh | Dossier-claim grounding and the deterministic citation and value validator for A1–A3, with a fixed evaluation sample | 5 Dec |
 | B3 | BE-CLAIMS | GPT-6.2 Sol high | Open claim-text source and adapter for A4 (rights recorded) | 8 Dec |
 | B4 | BE-ORG | GPT-6.2 Sol high | Localhost binding and single-account allowlist for the owner demo; a documented Cloudflare Tunnel + Access (email one-time PIN) recipe ready for when a domain exists; per-user limits and revocation; a deployment recipe for an external server such as dr-train (no remote step without owner approval) | 9 Dec |
+| B5 | BE-MCP | GPT-6.2 Sol high | Section 4c M1, M2, M5 (M3 after B2): shared tool layer, stdio server, Cloudflare Workers remote server with a deploy recipe the owner runs from their own account, OpenAPI, client test matrix | 8 Dec |
+
+The Product Owner covers M4 in PO-QA (accessible names, deep links, a computer-use walkthrough).
 
 The Product Owner builds the AI panels (PO-AI: A1–A4 in the dossier view, the "AI draft" label, the editor for the hand-off letter) against the B1 fixture provider, so UI and backend proceed in parallel.
 
