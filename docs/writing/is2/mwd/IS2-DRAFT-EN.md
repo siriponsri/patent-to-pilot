@@ -157,7 +157,7 @@ The historical evaluation supports using dated regulatory evidence to prioritize
 
 The cohort covers eligible US new molecular entity histories. Historical edition gaps, later ingredient linkage, uncertain challenge dates and the number of independent event drugs limit inference. The Medicaid analysis lacks verified historical vintages, and the language-model comparison uses one checkpoint with unknown training exposure. Measuring commercial launch, Thai demand and reviewer time requires direct observation. Specialists still need to verify source support and Thai and ASEAN records for product-specific FTO review.
 
-We completed training for both C9 arms. The Track A core forecasts cover 651 drugs per horizon and use 27 November 2026 as the forecast reference date. [FREEZE STATUS] Follow-up at 12 and 24 months will end on 27 November 2027 and 27 November 2028, respectively.
+We completed training for both C9 arms. The Track A core forecasts cover 651 drugs per horizon and use 27 November 2026 as the forecast reference date. We froze the complete prediction package for all ten arms on 28 November 2026 at 11:18:44 UTC under Git tag loe-track-a-freeze-20261127; its external timestamp on OSF (update 4) was pending at the time of writing. The GRPO arm of C9 returned the abstention action for all 651 cases. Follow-up at 12 and 24 months will end on 27 November 2027 and 27 November 2028, respectively.
 
 Data and code availability. Code, frozen configurations, task receipts and the preregistration are available in the project repository [31] and the OSF registration [30]. The repository includes aggregate C′ results. Row-level test labels remain access-restricted.
 
