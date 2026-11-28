@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><title>B · Technical Plate</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--vellum:#f2efe6;--ink:#101418;--line:#101418;--faint:rgba(16,20,24,.14);--grid:rgba(16,20,24,.045);--red:#b3261e;--blue:#1f3a5f}
+*{box-sizing:border-box;margin:0}
+body{background:var(--vellum);color:var(--ink);font:16px/1.6 "IBM Plex Sans Thai",sans-serif;width:1440px;
+ background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+.cond{font-family:"IBM Plex Sans Condensed","IBM Plex Sans Thai",sans-serif}
+.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+section{position:relative;padding:36px}
+.label{position:absolute;right:46px;top:10px;font:600 12px "IBM Plex Sans Condensed";color:var(--red);letter-spacing:.08em}
+.sheet{border:2px solid var(--line);outline:1px solid var(--line);outline-offset:6px;background:rgba(242,239,230,.6);position:relative}
+.top{display:flex;justify-content:space-between;padding:18px 28px;border-bottom:1px solid var(--line)}
+.top .brand{font:600 20px "IBM Plex Sans Condensed";letter-spacing:.02em}
+.top .nav{display:flex;gap:28px;font:500 14px "IBM Plex Sans Condensed","IBM Plex Sans Thai"}
+.hero{display:grid;grid-template-columns:1fr 1.15fr;min-height:640px}
+.copy{padding:56px 48px;border-right:1px solid var(--line)}
+.copy h1{font:700 64px/1.1 "IBM Plex Sans Thai",sans-serif;letter-spacing:-.02em}
+.copy p{font:400 20px/1.6 "IBM Plex Serif","IBM Plex Sans Thai",serif;margin-top:22px;max-width:42ch;color:#2a3036}
+.btns{display:flex;gap:14px;margin-top:32px}
+.b{padding:13px 20px;border:1.5px solid var(--ink);font:600 15px "IBM Plex Sans Condensed","IBM Plex Sans Thai"}
+.b.f{background:var(--ink);color:var(--vellum)}
+.fig{padding:36px 40px;position:relative}
+.figcap{font:500 14px "IBM Plex Sans Condensed";letter-spacing:.12em;margin-top:8px}
+.tb{position:absolute;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,auto);border-top:1px solid var(--line);border-left:1px solid var(--line);font:500 12px "IBM Plex Sans Condensed","IBM Plex Sans Thai";background:var(--vellum)}
+.tb div{padding:6px 14px;border-right:1px solid var(--line)} .tb div:last-child{border-right:0}
+.tb span{display:block;font-size:10px;letter-spacing:.1em;color:#555}
+.app{display:grid;grid-template-columns:330px 1fr;min-height:820px}
+.parts{border-right:1px solid var(--line)}
+.parts h4,.sec h4{font:600 12px "IBM Plex Sans Condensed";letter-spacing:.14em;padding:12px 18px;border-bottom:1px solid var(--line)}
+.ctrl{display:flex;gap:0;margin:14px 18px;border:1px solid var(--line)} .ctrl span{flex:1;text-align:center;padding:6px 0;font:500 13px "IBM Plex Sans Condensed","IBM Plex Sans Thai"} .ctrl span.on{background:var(--ink);color:var(--vellum)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td{padding:8px 18px;border-bottom:1px solid var(--faint)}
+td.r{text-align:right} tr.on td{background:rgba(16,20,24,.07);font-weight:600}
+tr.capline td{border-bottom:1.5px dashed var(--line);padding:4px 18px;font:500 11px "IBM Plex Sans Condensed";letter-spacing:.12em;color:#444}
+.sec{position:relative}
+.head{display:flex;justify-content:space-between;align-items:end;padding:26px 32px;border-bottom:1px solid var(--line)}
+.head h2{font:700 44px/1 "IBM Plex Sans Thai";letter-spacing:-.02em}
+.head .q{font:500 14px "IBM Plex Sans Condensed","IBM Plex Sans Thai";text-align:right}
+.body{display:grid;grid-template-columns:1.1fr 1fr}
+.draw{padding:24px 32px;border-right:1px solid var(--line)}
+.claims{padding:8px 0}
+.c{display:grid;grid-template-columns:44px 1fr;padding:14px 28px 14px 0;border-bottom:1px solid var(--faint);font:400 16px/1.6 "IBM Plex Serif","IBM Plex Sans Thai"}
+.c .ref{font:500 13px "IBM Plex Mono";text-align:center;padding-top:3px}
+.mark{color:var(--red);font:600 13px "IBM Plex Sans Condensed","IBM Plex Sans Thai";border:1.5px solid var(--red);border-radius:50%;padding:2px 9px;margin-left:8px;display:inline-block;transform:rotate(-3deg)}
+.ok{color:var(--blue);font:600 12px "IBM Plex Sans Condensed","IBM Plex Sans Thai";margin-left:8px}
+</style></head><body>
+<section><div class="label">LANDING</div>
+<div class="sheet"><div class="top"><div class="brand">MARKET WINDOW DOSSIER</div><div class="nav"><span>วิธีการ</span><span>ตัวอย่างแฟ้ม</span><span>หลักฐานการทดสอบ</span><span>ดาวน์โหลด</span></div></div>
+<div class="hero"><div class="copy"><h1>วาดช่วงเวลาตลาด ก่อนลงทุนพัฒนายา</h1>
+<p>ทุกเส้นในแผนภาพมาจากเอกสารที่เผยแพร่แล้ว ณ วันนั้น ทุกจุดที่ยังไม่รู้ถูกวงด้วยหมึกแดงให้ผู้ประเมิน FTO ตรวจต่อ</p>
+<div class="btns"><span class="b f">เปิดแผ่นตัวอย่าง</span><span class="b">ดาวน์โหลดสำหรับ Windows</span></div></div>
+<div class="fig">
+<svg viewBox="0 0 640 420" width="100%" font-family="IBM Plex Sans Condensed, IBM Plex Sans Thai" font-size="12">
+ <g stroke="#101418" fill="none" stroke-width="1.2">
+  <line x1="40" y1="360" x2="610" y2="360"/>
+  <g stroke-width=".8"><line x1="40" y1="356" x2="40" y2="364"/><line x1="182" y1="356" x2="182" y2="364"/><line x1="325" y1="356" x2="325" y2="364"/><line x1="467" y1="356" x2="467" y2="364"/><line x1="610" y1="356" x2="610" y2="364"/></g>
+  <rect x="40" y="70" width="300" height="34"/><rect x="40" y="130" width="380" height="34"/><rect x="40" y="190" width="250" height="34" stroke-dasharray="5 4"/>
+  <path d="M420 300 C470 300 480 250 520 240 S600 232 610 230" stroke-width="1.6"/>
+  <line x1="430" y1="40" x2="430" y2="372" stroke-dasharray="2 4"/>
+ </g>
+ <g fill="#101418"><text x="44" y="380">2013</text><text x="186" y="380">2014</text><text x="329" y="380">2015</text><text x="471" y="380">2016</text>
+  <text x="348" y="92">สิทธิบัตรสารออกฤทธิ์ (12)</text><text x="428" y="152">สูตรตำรับ (14)</text><text x="298" y="212">วิธีใช้ — ถูกท้าทาย (16)</text>
+  <text x="436" y="54">วันวางตลาดที่วางแผน (20)</text><text x="520" y="222">ราคา (22)</text></g>
+ <ellipse cx="270" cy="207" rx="70" ry="30" fill="none" stroke="#b3261e" stroke-width="1.6" transform="rotate(-4 270 207)"/>
+ <text x="200" y="262" fill="#b3261e" font-weight="600">ต้องตรวจ: คดี PIV ยังไม่ชัด</text>
+</svg>
+<div class="figcap">FIG. 1 — ช่วงเวลาตลาดของ TALCOXIB (FIXTURE)</div>
+<div class="tb"><div><span>MOLECULE</span>Talcoxib</div><div><span>AS OF</span>2013-01-01</div><div><span>HORIZON</span>12 เดือน</div><div><span>SHEET</span>1 / 7</div></div>
+</div></div></div></section>
+<section><div class="label">APP</div>
+<div class="sheet"><div class="app">
+<div class="parts"><h4>คิวทบทวน · PARTS LIST</h4><div class="ctrl"><span class="on">12 เดือน</span><span>24 เดือน</span></div><div class="ctrl"><span>2012</span><span class="on">2013</span><span>2014</span><span>2015</span></div>
+<table><tr><td class="num">01</td><td>Halvudine</td><td class="r num">0.64</td></tr><tr><td class="num">02</td><td>Ibrastatin</td><td class="r num">0.61</td></tr><tr class="on"><td class="num">03</td><td>Talcoxib</td><td class="r num">0.54</td></tr><tr><td class="num">04</td><td>Fenoxitrel</td><td class="r num">0.53</td></tr><tr><td class="num">05</td><td>Oxacitabine</td><td class="r num">0.50</td></tr>
+<tr class="capline"><td colspan="3">ความจุ 5 / 25 ———</td></tr><tr><td class="num">06</td><td>Dulvaxetine</td><td class="r num">0.43</td></tr><tr><td class="num">07</td><td>Sertoxamine</td><td class="r num">0.40</td></tr><tr><td class="num">08</td><td>Zentrapine</td><td class="r num">0.38</td></tr></table></div>
+<div class="sec"><div class="head"><h2>Talcoxib</h2><div class="q">ลำดับ 3 จาก 25 · อยู่ในคิว<br><span class="num">M3 0.54 · B1 0.42</span></div></div>
+<div class="body"><div class="draw"><svg viewBox="0 0 460 300" width="100%" font-family="IBM Plex Sans Condensed, IBM Plex Sans Thai" font-size="12"><g stroke="#101418" fill="none" stroke-width="1.2"><line x1="20" y1="260" x2="440" y2="260"/><rect x="20" y="60" width="230" height="28"/><rect x="20" y="110" width="300" height="28"/><rect x="20" y="160" width="190" height="28" stroke-dasharray="5 4"/><line x1="330" y1="30" x2="330" y2="270" stroke-dasharray="2 4"/></g><g fill="#101418"><text x="258" y="79">(12)</text><text x="328" y="129">(14)</text><text x="218" y="179">(16)</text><text x="336" y="44">(20)</text></g><ellipse cx="200" cy="175" rx="58" ry="24" fill="none" stroke="#b3261e" stroke-width="1.6"/></svg><div class="figcap">FIG. 4 — สิทธิบัตรและสิทธิผูกขาด</div></div>
+<div class="claims">
+<div class="c"><span class="ref">(12)</span><span>สิทธิบัตรสารออกฤทธิ์หมดอายุก่อนวันวางตลาดที่วางแผน<span class="ok">ทราบ · [1]</span></span></div>
+<div class="c"><span class="ref">(14)</span><span>สิทธิบัตรสูตรตำรับหมดอายุหลังวันวางตลาด 4 เดือน<span class="ok">ทราบ · [1]</span></span></div>
+<div class="c"><span class="ref">(16)</span><span>สิทธิบัตรวิธีใช้ถูกท้าทาย แต่ยังไม่พบคำสั่งศาล<span class="mark">ต้องตรวจ</span></span></div>
+<div class="c"><span class="ref">(20)</span><span><i>สมมติวันวางตลาด 2014-06</i><span class="ok">สมมติฐาน</span></span></div></div></div>
+<div class="tb"><div><span>MOLECULE</span>Talcoxib</div><div><span>AS OF</span>2013-01-01</div><div><span>STATUS</span>ช่วงพัฒนา</div><div><span>SHEET</span>4 / 7</div></div>
+</div></div></div></section>
+</body></html>

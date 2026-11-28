@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><title>F1 · Institutional</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1b1b;--muted:#565c65;--line:#dfe1e2;--blue:#005ea2;--blue-d:#1a4480;--bg:#ffffff;--soft:#f0f0f0;--warn:#ffbe2e;--ok:#00a91c;--red:#b50909}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:18px/1.6 "IBM Plex Sans Thai","Public Sans",sans-serif;width:1440px}
+h1,h2,h3,h4,.en{font-family:"Public Sans",sans-serif}
+a{color:var(--blue);text-underline-offset:3px}
+section{position:relative} .label{position:absolute;right:16px;top:8px;font:700 11px "Public Sans";color:var(--red);letter-spacing:.08em;z-index:3}
+.banner{background:var(--soft);font:13px "Public Sans";color:var(--muted);padding:6px 64px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:20px 64px;border-bottom:1px solid var(--line)}
+.wm{font:700 22px "Public Sans";color:var(--ink)}
+.nav{display:flex;gap:28px;align-items:center;font:600 16px "Public Sans"} .nav a{color:var(--ink);text-decoration:none}
+.lang{display:flex;border:1px solid var(--ink);border-radius:4px;overflow:hidden;font:600 14px "Public Sans"} .lang span{padding:4px 12px} .lang .on{background:var(--ink);color:#fff}
+.hero{padding:64px 64px 56px;max-width:1440px;display:grid;grid-template-columns:7fr 5fr;gap:64px;border-bottom:1px solid var(--line)}
+.hero h1{font:700 52px/1.15 "Public Sans";letter-spacing:-.01em;max-width:20ch}
+.hero .lead{font-size:21px;margin-top:20px;max-width:42ch;color:#2d2e2f}
+.btns{display:flex;gap:16px;margin-top:32px}
+.btn{font:700 17px "Public Sans";padding:13px 22px;border-radius:4px;background:var(--blue);color:#fff;border:2px solid var(--blue)} .btn.s{background:#fff;color:var(--blue)}
+.summary{border-top:4px solid var(--blue-d);background:#f7f9fa;padding:24px 28px}
+.summary h2{font:700 20px "Public Sans";margin-bottom:12px}
+.sl{display:grid;grid-template-columns:1fr auto;padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
+.sl b{font:700 18px "Public Sans";font-variant-numeric:tabular-nums}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;padding:48px 64px}
+.how h3{font:700 22px "Public Sans";margin-bottom:8px}
+.how p{font-size:17px;color:#2d2e2f}
+.notice{margin:0 64px 48px;border-left:8px solid var(--warn);background:#faf3d1;padding:16px 20px;font-size:16px}
+.notice b{font-family:"Public Sans"}
+/* app */
+.app{display:grid;grid-template-columns:280px 1fr;border-top:1px solid var(--line);min-height:860px}
+.side{border-right:1px solid var(--line);padding:24px 0;background:#fafafa}
+.side h2{font:700 14px "Public Sans";text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding:0 24px 10px}
+.ctl{padding:0 24px 18px;display:grid;gap:10px}
+.sel{border:2px solid var(--ink);border-radius:2px;padding:7px 10px;font:600 15px "Public Sans";display:flex;justify-content:space-between;background:#fff}
+.qi{display:grid;grid-template-columns:28px 1fr auto;padding:10px 24px;font-size:16px;border-top:1px solid var(--line)}
+.qi .n{color:var(--muted);font:600 14px "Public Sans"} .qi .p{font:600 15px "Public Sans";font-variant-numeric:tabular-nums}
+.qi.on{background:#e7f2f8;box-shadow:inset 4px 0 0 var(--blue);font-weight:600}
+.qcap{padding:8px 24px;font:600 13px "Public Sans";color:var(--muted);border-top:2px solid var(--ink)}
+.main{padding:28px 56px}
+.crumb{font:14px "Public Sans";color:var(--muted)} .crumb a{color:var(--blue)}
+.main h1{font:700 40px/1.2 "Public Sans";margin:10px 0 4px}
+.meta{font-size:15px;color:var(--muted)}
+.tag{display:inline-block;font:700 13px "Public Sans";padding:2px 8px;border-radius:2px;margin-left:8px;vertical-align:3px}
+.tag.dev{background:#e6e6e6;color:#1b1b1b} .tag.q{background:#1a4480;color:#fff}
+.body{display:grid;grid-template-columns:220px 1fr;gap:40px;margin-top:24px}
+.toc{font:15px "Public Sans";border-left:1px solid var(--line)} .toc div{padding:6px 14px;color:var(--blue)} .toc .on{color:var(--ink);font-weight:700;box-shadow:inset 3px 0 0 var(--ink)}
+.content h2{font:700 28px "Public Sans";margin-bottom:14px}
+.kv{display:grid;grid-template-columns:260px 1fr;border-top:1px solid var(--line);font-size:17px}
+.kv div{padding:12px 0;border-bottom:1px solid var(--line)} .kv .k{font:600 16px "Public Sans";color:#2d2e2f}
+.content h3{font:700 20px "Public Sans";margin:28px 0 8px}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th{font:700 14px "Public Sans";text-align:left;padding:10px 12px;border-bottom:2px solid var(--ink)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.st{font:700 12px "Public Sans";padding:2px 8px;border-radius:2px;white-space:nowrap}
+.st.k{background:#ecf3ec;color:#154c21} .st.u{background:#fef0c8;color:#5c4400} .st.a{background:#e6e6e6;color:#1b1b1b}
+sup a{font:600 12px "Public Sans"}
+</style></head><body>
+<section><div class="label">LANDING</div>
+<div class="banner">Research software from King Mongkut's Institute of Technology Ladkrabang · Decision support only, not legal advice</div>
+<div class="header"><div class="wm">Market Window Dossier</div><div class="nav"><a>How it works</a><a>Dossier contents</a><a>Accuracy testing</a><a>Limits</a><a>Download</a><div class="lang"><span class="on">TH</span><span>EN</span></div></div></div>
+<div class="hero"><div><h1>Forecast generic competition before you invest in development</h1>
+<p class="lead">ระบบจัดลำดับยาที่ควรส่งให้ผู้ประเมิน FTO ตรวจก่อน และจัดทำแฟ้มหลักฐานที่ระบุแหล่งที่มาและวันที่ของทุกข้อความ</p>
+<div class="btns"><span class="btn">Open an example dossier</span><span class="btn s">Download for Windows</span></div></div>
+<div class="summary"><h2>Current evidence</h2>
+<div class="sl"><span>ยาที่ได้ยาสามัญรายแรก และอยู่ในคิวทบทวน (ช่วงพัฒนา, 24 เดือน)</span><b>49.45%</b></div>
+<div class="sl"><span>วิธีเทียบ: ใช้อายุยาอย่างเดียว</span><b>39.65%</b></div>
+<div class="sl"><span>แผนการวิเคราะห์ลงทะเบียนล่วงหน้า</span><b>OSF P2SMD</b></div>
+<div class="sl"><span>ผลชุดทดสอบปิดผนึก</span><b>รอผล</b></div></div></div>
+<div class="how"><div><h3>1. Enter the product</h3><p>ระบุตัวยา รูปแบบยา ประเทศ วันที่ตัดสินใจ และวันที่คาดว่าจะวางตลาด</p></div>
+<div><h3>2. Review the queue</h3><p>ระบบเรียงยาตามโอกาสที่ยาสามัญรายแรกจะได้รับอนุมัติ และแสดงว่าตรวจได้กี่รายการ</p></div>
+<div><h3>3. Hand off the dossier</h3><p>ส่งแฟ้ม 7 ส่วนให้ผู้ประเมิน FTO พร้อมรายการสิ่งที่ต้องตรวจต่อ</p></div></div>
+<div class="notice"><b>Not legal advice.</b> ผลลัพธ์ช่วยจัดลำดับการตรวจเท่านั้น การตัดสินเรื่อง FTO ต้องทำโดยผู้เชี่ยวชาญที่มีคุณสมบัติ</div></section>
+<section><div class="label">APP</div>
+<div class="header" style="padding:14px 32px"><div class="wm" style="font-size:19px">Market Window Dossier</div><div class="nav" style="font-size:15px"><a>Queue</a><a>Dossiers</a><a>Sources</a><div class="lang"><span class="on">TH</span><span>EN</span></div></div></div>
+<div class="app"><aside class="side"><h2>Review queue</h2><div class="ctl"><div class="sel"><span>Horizon: 12 months</span><span>▾</span></div><div class="sel"><span>As of: 1 Jan 2013</span><span>▾</span></div></div>
+<div class="qi"><span class="n">1</span>Halvudine<span class="p">64%</span></div><div class="qi"><span class="n">2</span>Ibrastatin<span class="p">61%</span></div><div class="qi on"><span class="n">3</span>Talcoxib<span class="p">54%</span></div><div class="qi"><span class="n">4</span>Fenoxitrel<span class="p">53%</span></div><div class="qi"><span class="n">5</span>Oxacitabine<span class="p">50%</span></div><div class="qcap">Review capacity: 5 of 25</div><div class="qi"><span class="n">6</span>Dulvaxetine<span class="p">43%</span></div><div class="qi"><span class="n">7</span>Sertoxamine<span class="p">40%</span></div><div class="qi"><span class="n">8</span>Zentrapine<span class="p">38%</span></div></aside>
+<main class="main"><div class="crumb"><a>Queue</a> › <a>12 months, 2013</a> › Talcoxib</div>
+<h1>Talcoxib <span class="tag q">In review queue</span><span class="tag dev">Development data</span></h1><div class="meta">ข้อมูล ณ 1 มกราคม 2013 · สหรัฐฯ · ข้อมูลสังเคราะห์ (FIXTURE)</div>
+<div class="body"><nav class="toc"><div class="on">Decision summary</div><div>Market window</div><div>Competition</div><div>Patents and exclusivity</div><div>Thailand and ASEAN</div><div>FTO hand-off</div><div>References</div></nav>
+<div class="content"><h2>Decision summary</h2>
+<div class="kv"><div class="k">Chance of first generic in 12 months</div><div><b class="en">54%</b> (M3) · เทียบ 42% จากอายุยา (B1)</div>
+<div class="k">Queue position</div><div>ลำดับที่ 3 จาก 25 · อยู่ในคิวทบทวน</div>
+<div class="k">Key assumption</div><div>สิทธิบัตรสารออกฤทธิ์หมดอายุตามวันที่ใน Orange Book</div>
+<div class="k">Open questions</div><div>4 ข้อ ต้องตรวจก่อนตัดสินใจ</div>
+<div class="k">Next step</div><div>ส่งให้ผู้ประเมิน FTO ตรวจรายการข้อ 1–3</div></div>
+<h3>Statements and sources</h3>
+<table><tr><th style="width:62%">Statement</th><th>Status</th><th>Source</th></tr>
+<tr><td>M3 ประเมินโอกาสยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายภายใน 12 เดือนที่ 54%</td><td><span class="st k">ทราบ</span></td><td><a>[1]</a> <a>[2]</a></td></tr>
+<tr><td><i>สมมติว่าสิทธิบัตรสารออกฤทธิ์หมดอายุตามวันที่ใน Orange Book และไม่มีการขยายอายุ</i></td><td><span class="st a">สมมติฐาน</span></td><td><a>[1]</a></td></tr>
+<tr><td>ยังไม่ได้ยืนยันว่ามีคดี Paragraph IV ค้างอยู่หรือไม่</td><td><span class="st u">ต้องตรวจ</span></td><td><a>[3]</a></td></tr></table></div></div></main></div></section>
+</body></html>

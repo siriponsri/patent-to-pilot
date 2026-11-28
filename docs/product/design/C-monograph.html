@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><title>C · Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fbfbf9;--ink:#0d0f12;--g:#6b7078;--hair:rgba(13,15,18,.14);--red:#d33a1f;--deep:#0d0f12}
+*{box-sizing:border-box;margin:0}
+body{background:var(--white);color:var(--ink);font:16px/1.55 "Inter Tight","IBM Plex Sans Thai",sans-serif;width:1440px}
+.th{font-family:"IBM Plex Sans Thai",sans-serif}
+section{position:relative}
+.label{position:absolute;right:24px;top:14px;font:600 12px "Inter Tight";color:var(--red);letter-spacing:.08em;z-index:2}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:0 64px}
+.bar{display:flex;justify-content:space-between;padding:22px 64px;font:600 15px "Inter Tight","IBM Plex Sans Thai"}
+.bar nav{display:flex;gap:32px;font-weight:500;color:var(--g)}
+.hero{padding-top:72px;padding-bottom:80px;border-bottom:1px solid var(--ink)}
+.hero h1{grid-column:1/10;font:700 104px/1.0 "IBM Plex Sans Thai","Inter Tight",sans-serif;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .lede{grid-column:1/6;margin-top:44px;font:400 21px/1.55 "IBM Plex Sans Thai";color:#2a2d33}
+.hero .facts{grid-column:8/13;margin-top:44px;border-top:3px solid var(--ink)}
+.f{display:grid;grid-template-columns:1fr auto;padding:12px 0;border-bottom:1px solid var(--hair);font-size:15px}
+.f b{font:700 20px "Inter Tight";font-variant-numeric:tabular-nums}
+.act{grid-column:1/6;margin-top:36px;display:flex;gap:12px}
+.a{padding:15px 24px;font:600 16px "IBM Plex Sans Thai";background:var(--ink);color:var(--white)} .a.o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.app{display:grid;grid-template-columns:320px 1fr;min-height:880px;border-top:12px solid var(--ink)}
+.q{padding:28px 0;border-right:1px solid var(--ink)}
+.q .h{padding:0 24px 14px;font:700 13px "Inter Tight","IBM Plex Sans Thai";letter-spacing:.04em;text-transform:uppercase}
+.seg{display:flex;margin:0 24px 10px;font:500 14px "IBM Plex Sans Thai"} .seg span{flex:1;padding:8px 0;text-align:center;border-bottom:2px solid var(--hair);color:var(--g)} .seg span.on{border-color:var(--ink);color:var(--ink);font-weight:600}
+.r{display:grid;grid-template-columns:34px 1fr 54px;align-items:center;padding:10px 24px;border-bottom:1px solid var(--hair);font-size:15px}
+.r .n{font:600 13px "Inter Tight";color:var(--g)} .r .p{text-align:right;font:600 15px "Inter Tight";font-variant-numeric:tabular-nums}
+.r.on{background:var(--ink);color:var(--white)} .r.on .n{color:#aeb3ba}
+.capr{padding:6px 24px;font:600 11px "Inter Tight","IBM Plex Sans Thai";letter-spacing:.06em;color:var(--red);border-bottom:2px solid var(--red)}
+.main{padding:40px 56px}
+.top{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end;border-bottom:1px solid var(--ink);padding-bottom:22px}
+.top h2{grid-column:1/8;font:800 72px/1 "Inter Tight";letter-spacing:-.035em}
+.top .m{grid-column:8/13;font:400 14px "IBM Plex Sans Thai";color:var(--g);text-align:right}
+.nums{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:26px 0;border-bottom:1px solid var(--hair)}
+.big{grid-column:span 4}
+.big .v{font:700 96px/0.9 "Inter Tight";letter-spacing:-.04em;font-variant-numeric:tabular-nums} .big .v.red{color:var(--red)}
+.big .k{font:500 14px "IBM Plex Sans Thai";color:var(--g);margin-top:10px}
+.tabs{display:flex;gap:0;margin-top:24px;border-bottom:1px solid var(--ink);font:500 14px "IBM Plex Sans Thai"} .tabs span{padding:10px 18px 10px 0;margin-right:18px;color:var(--g)} .tabs span.on{color:var(--ink);font-weight:700;box-shadow:inset 0 -3px 0 var(--ink)}
+.cl{display:grid;grid-template-columns:120px 1fr 40px;gap:20px;padding:16px 0;border-bottom:1px solid var(--hair);font:400 17px/1.6 "IBM Plex Sans Thai"}
+.cl .s{font:700 12px "Inter Tight","IBM Plex Sans Thai";letter-spacing:.04em;text-transform:uppercase;padding-top:4px}
+.cl .s.k{color:var(--ink)} .cl .s.u{color:var(--red)}
+.cl .c{font:600 13px "Inter Tight";color:var(--g);text-align:right;padding-top:3px}
+.foot{display:flex;justify-content:space-between;padding:14px 64px;background:var(--ink);color:#c9ccd1;font:400 12px "IBM Plex Sans Thai"}
+</style></head><body>
+<section><div class="label">LANDING</div>
+<div class="bar"><span>Market Window Dossier</span><nav><span>วิธีการ</span><span>หลักฐาน</span><span>แฟ้มตัวอย่าง</span><span>ดาวน์โหลด</span></nav></div>
+<div class="grid hero"><h1>ก่อนลงทุน ดูให้แน่ ว่าตลาด<em>ยังเปิด</em></h1>
+<p class="lede">คัดยาที่ควรส่งให้ผู้ประเมิน FTO ก่อน และส่งต่อพร้อมแฟ้มหลักฐานที่ตรวจย้อนได้ทุกบรรทัด เมื่อหลักฐานไม่พอ ระบบจะบอกว่าต้องตรวจ ไม่เดา</p>
+<div class="facts"><div class="f"><span>ยาที่ได้ยาสามัญรายแรก อยู่ในคิว (ช่วงพัฒนา 24 เดือน)</span><b>49.45%</b></div><div class="f"><span>วิธีตามอายุยา</span><b>39.65%</b></div><div class="f"><span>ลงทะเบียนแผนวิเคราะห์ล่วงหน้า</span><b>OSF P2SMD</b></div></div>
+<div class="act"><span class="a">เปิดแฟ้มตัวอย่าง</span><span class="a o">ดาวน์โหลดสำหรับ Windows</span></div></div></section>
+<section><div class="label">APP</div>
+<div class="app"><div class="q"><div class="h">คิวทบทวน</div><div class="seg"><span class="on">12 เดือน</span><span>24 เดือน</span></div><div class="seg"><span>2012</span><span class="on">2013</span><span>2014</span><span>2015</span></div>
+<div class="r"><span class="n">1</span>Halvudine<span class="p">64</span></div><div class="r"><span class="n">2</span>Ibrastatin<span class="p">61</span></div><div class="r on"><span class="n">3</span>Talcoxib<span class="p">54</span></div><div class="r"><span class="n">4</span>Fenoxitrel<span class="p">53</span></div><div class="r"><span class="n">5</span>Oxacitabine<span class="p">50</span></div><div class="capr">ความจุ 5 จาก 25</div><div class="r"><span class="n">6</span>Dulvaxetine<span class="p">43</span></div><div class="r"><span class="n">7</span>Sertoxamine<span class="p">40</span></div><div class="r"><span class="n">8</span>Zentrapine<span class="p">38</span></div></div>
+<div class="main"><div class="top"><h2>Talcoxib</h2><div class="m">ข้อมูล ณ 1 ม.ค. 2013 · 12 เดือน · สหรัฐฯ<br>ข้อมูลสังเคราะห์ (FIXTURE)</div></div>
+<div class="nums"><div class="big"><div class="v red">54</div><div class="k">% โอกาสยาสามัญรายแรก (M3)</div></div><div class="big"><div class="v">42</div><div class="k">% วิธีตามอายุยา (B1)</div></div><div class="big"><div class="v">3<span style="font-size:40px;color:#6b7078">/25</span></div><div class="k">ลำดับในคิว · อยู่ในคิว</div></div></div>
+<div class="tabs"><span class="on">หน้าตัดสินใจ</span><span>ช่วงเวลาตลาด</span><span>การแข่งขัน</span><span>สิทธิบัตร</span><span>ไทยและอาเซียน</span><span>ส่งต่อ FTO</span><span>อ้างอิง</span></div>
+<div class="cl"><span class="s k">ทราบ</span><span>M3 ประเมินโอกาสยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายภายใน 12 เดือนที่ 54%</span><span class="c">1 2</span></div>
+<div class="cl"><span class="s k">สมมติฐาน</span><span><i>สิทธิบัตรสารออกฤทธิ์หมดอายุตามวันที่ใน Orange Book และไม่มีการขยายอายุ</i></span><span class="c">1</span></div>
+<div class="cl"><span class="s u">ต้องตรวจ</span><span>ยังไม่ได้ยืนยันว่ามีคดี Paragraph IV ค้างอยู่หรือไม่</span><span class="c">3</span></div></div></div>
+<div class="foot"><span>สนับสนุนการตัดสินใจ ไม่ใช่ความเห็น FTO หรือความเห็นทางกฎหมาย</span><span>ข้อมูลช่วงพัฒนา ก่อนปี 2017 · ชุดทดสอบและ Track A รอผล</span></div></section>
+</body></html>

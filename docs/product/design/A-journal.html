@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><title>A · Journal of Record</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Noto+Serif+Thai:wght@400;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5f1e8;--ink:#15191f;--muted:#5a5f66;--rule:#15191f;--hair:rgba(21,25,31,.18);--green:#1d4a3a;--ox:#8a2432}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 "IBM Plex Sans Thai",sans-serif;width:1440px}
+.serif{font-family:"Newsreader","Noto Serif Thai",serif}
+.wrap{padding:0 72px}
+.mast{display:flex;justify-content:space-between;align-items:end;padding:28px 72px 14px;border-bottom:3px double var(--rule)}
+.mast .t{font:600 30px/1 "Newsreader","Noto Serif Thai",serif;letter-spacing:-.01em}
+.mast .d{font-size:13px;color:var(--muted)}
+.hero{display:grid;grid-template-columns:2.1fr 1fr;gap:56px;padding:56px 72px 64px;border-bottom:1px solid var(--rule)}
+.hero h1{font:700 76px/1.08 "Noto Serif Thai","Newsreader",serif;letter-spacing:-.015em}
+.hero p.stand{font:400 22px/1.55 "Noto Serif Thai",serif;color:#2b3038;margin-top:26px;max-width:46ch}
+.cta{display:flex;gap:18px;margin-top:34px}
+.btn{font:600 16px "IBM Plex Sans Thai";padding:14px 22px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper)}
+.btn.o{background:transparent;color:var(--ink)}
+.side{border-left:1px solid var(--hair);padding-left:32px;display:flex;flex-direction:column;gap:22px;font-size:14px}
+.side h3{font:600 15px "IBM Plex Sans Thai";border-bottom:1px solid var(--rule);padding-bottom:6px}
+.side .big{font:600 44px/1 "Newsreader",serif;font-variant-numeric:tabular-nums}
+.label{position:absolute;right:20px;top:14px;font:600 12px "IBM Plex Sans Thai";color:var(--ox)}
+section{position:relative}
+.app{display:grid;grid-template-columns:300px 1fr 300px;min-height:900px;border-top:6px solid var(--ink)}
+.idx{padding:28px 24px;border-right:1px solid var(--hair)}
+.idx h4,.notes h4{font:600 13px "IBM Plex Sans Thai";text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px}
+.ed{display:flex;gap:6px;margin-bottom:22px}
+.ed span{padding:6px 10px;border:1px solid var(--hair);font-size:13px}
+.ed span.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.row{display:flex;align-items:baseline;gap:8px;padding:7px 0;font-size:15px}
+.row .n{width:22px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row .dots{flex:1;border-bottom:1px dotted rgba(21,25,31,.35);transform:translateY(-4px)}
+.row .p{font-variant-numeric:tabular-nums}
+.row.on{font-weight:600}
+.cap{margin:10px 0;border-top:1px solid var(--ink);font-size:12px;color:var(--muted);padding-top:4px}
+.art{padding:40px 56px}
+.art .meta{font-size:13px;color:var(--muted);border-bottom:1px solid var(--hair);padding-bottom:10px}
+.art h2{font:700 46px/1.15 "Noto Serif Thai","Newsreader",serif;margin:14px 0 6px}
+.art .dek{font:400 19px/1.6 "Noto Serif Thai",serif;color:#2b3038;max-width:60ch}
+.verdict{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);margin:28px 0}
+.verdict div{padding:18px 0}
+.verdict div+div{border-left:1px solid var(--hair);padding-left:24px}
+.verdict .k{font-size:13px;color:var(--muted)}
+.verdict .v{font:600 54px/1 "Newsreader",serif;font-variant-numeric:tabular-nums}
+.verdict .v small{font-size:20px;color:var(--muted)}
+.tabs{display:flex;gap:26px;font-size:14px;border-bottom:1px solid var(--hair);margin-bottom:22px}
+.tabs span{padding:10px 0;color:var(--muted)} .tabs span.on{color:var(--ink);border-bottom:2px solid var(--ink);font-weight:600}
+.claim{display:grid;grid-template-columns:1fr auto;gap:18px;padding:14px 0;border-bottom:1px solid var(--hair);font:400 17px/1.65 "Noto Serif Thai",serif}
+.claim sup{color:var(--green);font:600 12px "IBM Plex Sans Thai"}
+.st{font:600 12px "IBM Plex Sans Thai";padding:3px 8px;border:1px solid currentColor;align-self:start;white-space:nowrap}
+.st.k{color:var(--green)} .st.u{color:var(--ox)}
+.notes{padding:28px 24px;border-left:1px solid var(--hair);font-size:13.5px}
+.note{padding:10px 0;border-bottom:1px solid var(--hair)} .note b{color:var(--green);font-variant-numeric:tabular-nums}
+.foot{padding:16px 72px;border-top:3px double var(--rule);font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+</style></head><body>
+<section><div class="label">LANDING</div>
+<div class="mast"><div class="t">Market Window Dossier</div><div class="d">ฉบับวันที่ 27 พฤศจิกายน 2026 · ไทย / English</div></div>
+<div class="hero">
+ <div><h1>รู้ก่อนลงทุน ว่าตลาดจะยังเปิดอยู่หรือไม่ ในวันที่ยาของคุณพร้อมขาย</h1>
+ <p class="stand">แฟ้มหลักฐานที่ระบุวันที่ทุกบรรทัด สำหรับทีมพัฒนาธุรกิจ ทีมวิจัย และผู้ประเมิน FTO ที่มีเวลาตรวจได้เพียงหนึ่งในห้า</p>
+ <div class="cta"><span class="btn">เปิดแฟ้มตัวอย่าง</span><span class="btn o">ดาวน์โหลดสำหรับ Windows</span></div></div>
+ <aside class="side"><div><h3>ประทับเวลาก่อนรู้ผล</h3><p>แผนการวิเคราะห์ลงทะเบียนสาธารณะบน OSF ก่อนเปิดชุดทดสอบ</p><p class="serif" style="margin-top:6px">doi:10.17605/OSF.IO/P2SMD</p></div>
+ <div><h3>ช่วงพัฒนา ที่ 24 เดือน</h3><div class="big">49.45%</div><p>ของยาที่ได้ยาสามัญรายแรกอยู่ในคิวทบทวน เทียบ 39.65% ของวิธีตามอายุยา</p></div>
+ <div><h3>ไม่ใช่ความเห็น FTO</h3><p>ข้อความที่ยังไม่มีหลักฐานแสดงเป็น “ต้องตรวจ” เสมอ</p></div></aside>
+</div></section>
+<section><div class="label">APP</div>
+<div class="app">
+ <nav class="idx"><h4>ฉบับย้อนหลัง</h4><div class="ed"><span>2012</span><span class="on">2013</span><span>2014</span><span>2015</span></div>
+ <h4>คิวทบทวน · 12 เดือน</h4>
+ <div class="row"><span class="n">1</span>Halvudine<span class="dots"></span><span class="p">64%</span></div>
+ <div class="row"><span class="n">2</span>Ibrastatin<span class="dots"></span><span class="p">61%</span></div>
+ <div class="row on"><span class="n">3</span>Talcoxib<span class="dots"></span><span class="p">54%</span></div>
+ <div class="row"><span class="n">4</span>Fenoxitrel<span class="dots"></span><span class="p">53%</span></div>
+ <div class="row"><span class="n">5</span>Oxacitabine<span class="dots"></span><span class="p">50%</span></div>
+ <div class="cap">ความจุ 5 ช่อง จาก 25</div>
+ <div class="row"><span class="n">6</span>Dulvaxetine<span class="dots"></span><span class="p">43%</span></div>
+ <div class="row"><span class="n">7</span>Sertoxamine<span class="dots"></span><span class="p">40%</span></div>
+ <div class="row"><span class="n">8</span>Zentrapine<span class="dots"></span><span class="p">38%</span></div></nav>
+ <article class="art"><div class="meta">ข้อมูล ณ 1 มกราคม 2013 · พยากรณ์ 12 เดือน · สหรัฐฯ · ข้อมูลสังเคราะห์ (FIXTURE)</div>
+ <h2>Talcoxib</h2><p class="dek">อยู่ลำดับที่ 3 ของคิว หลักฐานด้านสิทธิผูกขาดหมดอายุก่อนกำหนดวางตลาด แต่สถานะคดี Paragraph IV ยังต้องตรวจ</p>
+ <div class="verdict"><div><div class="k">โอกาสยาสามัญรายแรกภายใน 12 เดือน (M3)</div><div class="v">54<small>%</small></div></div><div><div class="k">วิธีฐานตามอายุยา (B1)</div><div class="v">42<small>%</small></div></div></div>
+ <div class="tabs"><span class="on">หน้าตัดสินใจ</span><span>ช่วงเวลาตลาด</span><span>การแข่งขัน</span><span>สิทธิบัตร</span><span>ไทยและอาเซียน</span><span>ส่งต่อ FTO</span><span>อ้างอิง</span></div>
+ <div class="claim"><div>M3 ประเมินโอกาสยาสามัญรายแรกได้รับอนุมัติขั้นสุดท้ายภายใน 12 เดือนที่ 54%<sup>1, 2</sup></div><span class="st k">ทราบ</span></div>
+ <div class="claim"><div><i>สมมติว่าสิทธิบัตรสารออกฤทธิ์หมดอายุตามวันที่ใน Orange Book และไม่มีการขยายอายุ</i><sup>1</sup></div><span class="st k">สมมติฐาน</span></div>
+ <div class="claim"><div>ยังไม่ได้ยืนยันว่ามีคดี Paragraph IV ค้างอยู่หรือไม่<sup>3</sup></div><span class="st u">ต้องตรวจ</span></div></article>
+ <aside class="notes"><h4>หมายเหตุอ้างอิง</h4>
+ <div class="note"><b>1</b> FDA Orange Book, ฉบับ ธ.ค. 2012 · ตาราง Patent · แถว 18842 · sha256 9f3a…</div>
+ <div class="note"><b>2</b> LOE-Bench FREEZE, คะแนนพื้นฐาน M3 · commit f683017</div>
+ <div class="note"><b>3</b> FDA Paragraph IV list, ฉบับ พ.ย. 2012 · ไม่พบรายการ · ต้องตรวจซ้ำ</div></aside>
+</div>
+<div class="foot"><span>สนับสนุนการตัดสินใจ ไม่ใช่ความเห็น FTO หรือความเห็นทางกฎหมาย</span><span>ข้อมูลช่วงพัฒนา ก่อนปี 2017</span></div></section>
+</body></html>
