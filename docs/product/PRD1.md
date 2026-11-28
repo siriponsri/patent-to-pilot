@@ -1,6 +1,6 @@
 # PRD1 development demo
 
-The demo packages a US first-final-ANDA forecast with a dated evidence bundle for BD, R&D and FTO review. Open the [Thai moxifloxacin dossier](../../product/demo/dossiers/U-U188XYD42P-2014-01-01-24m.th.html) or its [Thai PDF](../../product/demo/dossiers/U-U188XYD42P-2014-01-01-24m.th.pdf). The HTML links to the English edition. The development outcome reveal is collapsed in HTML and visible in the PDF.
+The demo packages a US first-final-ANDA forecast with a dated evidence bundle for BD, R&D and FTO review. Open the [Thai moxifloxacin dossier](../../product/demo/dossiers/U-U188XYD42P-2014-01-01-24m.th.html) or its [Thai PDF](../../product/demo/dossiers/U-U188XYD42P-2014-01-01-24m.th.pdf). The HTML links to the English edition. Since PO-PDF the report is hidden-by-default: the development outcome appears only when you render with `--reveal`, and a revealed export is marked on every page. The layout is described in the [app README](../../product/demo/README.md#print-and-pdf).
 
 ## Rebuild from the repository root
 
@@ -13,7 +13,7 @@ py -3.12 -m pytest product/mwd/tests
 
 The build uses NumPy through the guarded LOE-Bench C3 input adapter. HTML rendering and the C8 CLI use the standard library. The tests also require pytest and jsonschema. The default private artifact root is `C:/Users/User/Desktop/myProject/_private_artifacts/loe-bench`. Override it with `build --private-root`. Keep the frozen score exports, `raw-20261127`, `moiety`, `ob_editions`, `piv`, `challenge` and `medicaid_sdud` in their expected layout under that root.
 
-PDF output uses the Python Playwright package to control the installed headless Chrome at `C:/Program Files/Google/Chrome/Application/chrome.exe`. Install TH Sarabun New for the Thai output. The HTML falls back to Segoe UI. Pass `render --dossier <path>` to render one dossier, and `--output-dir <path>` to choose a destination. The committed HTML ships with embedded styles and needs no network to display.
+HTML and PDF output both use the Python Playwright package with the installed Chrome at `C:/Program Files/Google/Chrome/Application/chrome.exe`, because the layout is the shared `product/demo/assets/dossier-print.js`. The fonts (Source Sans 3 and Noto Sans Thai) are self-hosted and embedded, so no system font is needed. Pass `render --dossier <path>` to render one dossier, and `--output-dir <path>` to choose a destination. The HTML ships with embedded styles and needs no network to display. The 128 historical files already committed under `product/demo/dossiers/` were made by the earlier renderer and are not regenerated here.
 
 ## Contract
 

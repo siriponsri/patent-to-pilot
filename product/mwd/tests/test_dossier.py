@@ -10,7 +10,7 @@ import pytest
 from product.mwd.audit import audit_dossier
 from product.mwd.build import ranked_queue, select_demo
 from product.mwd.contract import CURRENT, DEMO, SECTIONS, TRACK_A_DISCLAIMER, TRACK_A_LABEL, read_json
-from product.mwd.render import render
+from product.mwd.render import CHROME, chrome_page, render
 
 
 def test_rank_uses_native_scores_key_ties_and_exact_capacity():
@@ -115,19 +115,61 @@ def test_track_a_requires_all_references_hashed_and_dated(dossier):
     source = dossier["sources"][0]
     source.update(sha256="0" * 64, public_date=None, evidence_cutoff="2026-11-27")
     assert not audit_dossier(dossier)["errors"]
-    html = render(dossier, "th", None)
-    assert TRACK_A_LABEL in html and TRACK_A_DISCLAIMER["th"] in html
-    assert "freeze: pending" in html and 'class="outcome"' not in html
     source["evidence_cutoff"] = "2026-11-28"
     assert audit_dossier(dossier)["errors"]
 
 
-def test_renderer_escapes_values_and_includes_toggle_and_numbered_refs(dossier):
-    html = render(dossier, "en", "case.th.html")
-    assert "<Drug>" not in html and "&lt;Drug&gt;" in html
-    assert 'href="case.th.html"' in html and 'href="#ref-1">[1]</a>' in html
-    assert '<details class="outcome">' in html
-    assert '<details class="outcome" open>' in render(dossier, "th", "case.en.html", for_print=True)
+@pytest.fixture(scope="module")
+def page():
+    pytest.importorskip("playwright.sync_api")
+    if not CHROME.is_file():
+        pytest.skip("Chrome is not installed at the expected path")
+    with chrome_page(CHROME) as chrome:
+        yield chrome
+
+
+def current_dossier():
+    return read_json(sorted(CURRENT.glob("dossier-*.json"))[0])
+
+
+def test_report_escapes_values_and_numbers_the_sources(dossier, page):
+    html = render(dossier, "en", "case.th.html", page=page)
+    assert "<Drug>" not in html and "&lt;Drug&gt;" in html and "Evidence &lt;material&gt;" in html
+    assert 'href="case.th.html"' in html and 'href="#pd-ref-1">[1]</a>' in html and 'id="pd-ref-1"' in html
+
+
+def test_historical_report_hides_the_outcome_until_asked_and_marks_a_reveal(dossier, page):
+    dossier["outcome_reveal"] = {"first_final_anda_date": "2014-02-18", "window_end": "2016-01-01", "source_ids": ["outcome"]}
+    dossier["sources"].append({"id": "outcome", "issuer": "FDA", "title": "Approval", "version": "2026", "public_date": "2014-02-18",
+                               "locator": "ORIG/AP 2014-02-18", "url": "https://www.fda.gov/", "sha256": None, "retrieved": None})
+    hidden = render(dossier, "th", None, page=page)
+    assert "2014-02-18" not in hidden and "18 Feb 2014" not in hidden
+    assert "Outcome" not in hidden.replace("Development data: outcome hidden", "") and "REVEALED" not in hidden
+    assert "Revealed export" not in hidden
+    shown = render(dossier, "th", None, page=page, reveal=True)
+    assert "Revealed export" in shown and "REVEALED: development outcome shown" in shown and 'id="pd-outcome"' in shown
+    assert "2014-02-18" in shown
+
+
+def test_current_report_page_one_and_no_outcome(page):
+    dossier = current_dossier()
+    for lang in ("th", "en"):
+        html = render(dossier, lang, None, page=page, horizon=24, total=651)
+        assert TRACK_A_LABEL in html and TRACK_A_DISCLAIMER[lang] in html
+        assert "66.85%" in html and "26.62%" in html and "outcome_reveal" not in html and "pd-outcome" not in html
+        assert dossier["version"]["tag"] in html
+    with pytest.raises(ValueError, match="never contains outcome"):
+        render(dossier, "en", None, page=page, horizon=24, reveal=True)
+    with pytest.raises(ValueError, match="never contains outcome"):
+        render({**dossier, "outcome_reveal": {"first_final_anda_date": None, "window_end": "2028-11-27"}}, "en", None, page=page, horizon=24)
+
+
+def test_report_horizon_and_long_lists(dossier, page):
+    with pytest.raises(ValueError, match="12-month horizon"):
+        render(dossier, "en", None, page=page, horizon=12)
+    dossier["claims"] = [{**dossier["claims"][0], "id": f"c{i}"} for i in range(30)]
+    html = render(dossier, "en", None, page=page)
+    assert html.count("Evidence &lt;material&gt;") == 30 and "22 more in Appendix A" in html and "Statements continued" in html
 
 
 def test_generated_dossiers_validate(validator):
