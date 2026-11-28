@@ -149,3 +149,11 @@
 - **Locked.** Two arms, P1-RSF-OPEN and P2-COX-OPEN ([spec](PRIOR-ARMS-SPEC.md), ledger K26 and K27). B3 is not a Beall reproduction. The C′ supplement is aggregate AUC and accuracy for B1, M1 and M3 only, with an analysis note committed first.
 - **Limitation.** Proprietary inputs are omitted, so the arms measure open-input adaptations, not the authors' fitted models. The Hu 2019 full text has not been verified.
 - **Next.** PRIORARMS is dispatched to Sol xhigh. TRACKA-CORE is merged (4ca5ce4d), C9TRAIN2 and IS2FIT are running, and the freeze card follows.
+
+## 28 Nov 2026, night: product owner, PRD v1, two-account continuity
+
+- **Decision.** D42: Claude Sonnet 5.5 (medium) is the Product Owner. The main planner and co-planner drafted [PRD v1](../product/prd/PRD-MWD-v1.md) from the [co-planner input](../product/prd/COPLANNER-INPUT.md). Owner requirement answers: demo first, search inside the 651-drug queue, Thai layer unknown plus next question, GitHub Pages.
+- **Owner rule.** The orchestrator alternates between two Claude accounts. Update the HANDOFF resume point and this file, then commit and push, after every step.
+- **New direction (pending requirements).** The product should be a real AI-assisted tool: API providers first for the demo, later a local model on a server, with one OpenAI-compatible interface (Typhoon, OpenRouter, GPT, Claude, Gemini, Qwen, DeepSeek). Codex executors build the backend. Paid API use still needs a recorded owner envelope (standing rule 2), and SCORELLM showed an LLM forecaster at 12.36%, so AI assists reading and hand-off; it does not replace M3.
+- **Limitation.** Most co-planner citations are external references not re-verified by the planner; Hopefl 2025 and Beall match LITB.
+- **Next.** Ask the owner the AI requirement questions, revise the PRD to v2, deliver the IS2 v2 to `IS_2_new`, and start the journal strategy with the co-planner.

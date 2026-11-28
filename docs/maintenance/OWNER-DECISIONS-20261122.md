@@ -241,4 +241,6 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
   - IS2, slides and journal documents are delivered to `C:/Users/User/Desktop/myDegree/IS/IS_2_new` in a categorized structure. Misplaced originals on the Desktop may be deleted.
   - For KMITL graduation, IS2 alone suffices, but the owner wants a "wow" result that extends to a real product, so the product line opens now.
   - Slides wait until the owner reads the new short paper; only the folder structure is created.
-
+- 28 Nov 2026, night (D42): the owner made Claude Sonnet 5.5 (medium effort) the Product Owner for Market Window Dossier. The main planner (Claude Opus 5.5) and the co-planner (GPT-6.2 Astra high) draft the product plan and PRD for the Product Owner ([PRD](../product/prd/PRD-MWD-v1.md)). The main planner remains the only reviewer; GPT executors still build data pipelines behind the product.
+  - Requirement answers for v1.0: serve both audiences with the IS2 demo first; search within the 651-drug current queue with a planned-launch-date window (no new forecasts); the Thai layer shows unknown plus the next question; public hosting on GitHub Pages.
+  - The owner asked to be consulted on requirements whenever the planner is unsure.
