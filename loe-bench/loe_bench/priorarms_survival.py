@@ -98,7 +98,8 @@ def fit_arm(arm, train, predict, target):
 
 def main():
     def offline(event, _args):
-        if event.startswith("socket."):
+        # On Windows SciPy's import queries the local hostname through platform.uname().
+        if event.startswith("socket.") and event != "socket.gethostname":
             raise RuntimeError(f"PRIORARMS forbids network access: {event}")
 
     sys.addaudithook(offline)

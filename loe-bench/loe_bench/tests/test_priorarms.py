@@ -1,6 +1,9 @@
 from datetime import date
 from importlib.util import find_spec
+import json
 from math import exp
+import subprocess
+import sys
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -54,6 +57,18 @@ class PriorArmsFixtures(unittest.TestCase):
 
 @unittest.skipUnless(find_spec("sksurv"), "requires the isolated PRIORARMS venv")
 class PriorArmsSurvivalFixtures(unittest.TestCase):
+    def test_offline_worker_entrypoint(self):
+        train = {arms.P1: [[i, 0, 1, 0, 0, 0, 1] for i in range(20)],
+                 arms.P2: [[i, 0, 1, 0, 0, 0, 2000 - i] for i in range(20)]}
+        probe = {arm: values[:2] for arm, values in train.items()}
+        target = [(bool(i % 2), 0.5 if i % 2 else 1) for i in range(20)]
+        result = subprocess.run([sys.executable, "-B", "-m", "loe_bench.priorarms_survival"],
+                                input=json.dumps({"train": train, "predict": probe, "target": target}),
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual({arm: fit["status"] for arm, fit in json.loads(result.stdout)["arms"].items()},
+                         {arms.P1: "PASS", arms.P2: "PASS"})
+
     def test_train_only_cox_scaling_and_zero_variance_drop(self):
         from loe_bench.priorarms_survival import cox_inputs, runtime
 
