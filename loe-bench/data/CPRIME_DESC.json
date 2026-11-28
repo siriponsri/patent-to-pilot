@@ -1,0 +1,2227 @@
+{
+  "status": "POST_HOC_DESCRIPTIVE",
+  "development_replay": "PASS",
+  "sha256": {
+    "data/FROZEN_CONFIG.json": "d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39",
+    "data/SCORE_CPRIME_RESULTS.json": "38f65240b57a4662349d3bdc89fd026908d888bdb2cfcb1ed63f430ed845d932",
+    "score/C1_scores_12m.json": "a644f1d40271c9a59a5405b840724906332ce975854d2afedd3d22c4ded80891",
+    "score/C1_scores_24m.json": "c3b9e51891fd8f577dfce9f7fbbfb466f25f29ae50ed4edd9d8b2d0fcbcc84e7",
+    "challenge/e7_ampyra.pdf": "aac33d48e18f9f1a3f99cd64c743a00aec0bec2e5d957e221672d6c44e049c92",
+    "challenge/e7_pennsaid.pdf": "ef1d22414ec0f5061248519b3101c94fade482c44b0e82cd7f238952cef18df8",
+    "challenge/e7_rai_4789869.tsv": "abb54817c8e6fbc90077007a42bb1cd7870a64940ce3aa7a7d36d83dafaa06e5",
+    "challenge/e7_rai_metadata.json": "4c3f680cbb251bd42a1c7be4a62bc0000783d705f8978d4e46753ef95ae12b36",
+    "challenge/e7_toviaz.pdf": "052e33e66b483d5fa67dcf42da93038b7f031bb63850cfc9a7b7b115a60ada4b",
+    "challenge/e7_xyrem_fda.pdf": "67b597f4d2a9c9d51de46f310f13df9ede37c1ac9f01801bd1ebd659837798d9",
+    "data/E7_sources.json": "c2e7ad988d860fb684cffffb4607ba1d1aca575f8209e4fc18d8ee47d3709c6f",
+    "data/OB_EDITIONS.json": "6b59c08899ab4b5b7c514544e5c9aebcf93fd6775a61502f25f9086a41e77103",
+    "data/PIV_EDITIONS.json": "f99562f2dd3344279ff788a20fae836cacc6c0acc87b540d0e94984175bc8352",
+    "data/S0_INPUT_MANIFEST.json": "7d40be5e2004d887480ce5f337afffd611909f26017622e90ad304a0386d2d1d",
+    "moiety/dump-public-2026-08-06.gsrs": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad",
+    "ob_editions/ob_20091104091455.zip": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+    "ob_editions/ob_20111229223919.zip": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+    "ob_editions/ob_20120921215526.zip": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+    "ob_editions/ob_20130906105914.zip": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+    "ob_editions/ob_20140915104404.zip": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+    "piv/1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b.pdf": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b",
+    "piv/324005e2507c9da03de5f72bcb89ce335984a0b88b18ac59ac093d81fb788969.pdf": "324005e2507c9da03de5f72bcb89ce335984a0b88b18ac59ac093d81fb788969",
+    "piv/a3e21f188d7bb0573ddece7f5572cf88a13845cbfc15eca4fc1311591cc5330f.pdf": "a3e21f188d7bb0573ddece7f5572cf88a13845cbfc15eca4fc1311591cc5330f",
+    "raw-20261127/df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+    "raw-20261127/df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+    "raw-20261127/ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+    "raw-20261127/ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+    "raw-20261127/ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+    "raw-20261127/ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f"
+  },
+  "unavailable": {
+    "cprime_predictors": "SCORE omits row-level values for features other than the native B1 logit.",
+    "cprime_prior_anda_split": "The exports omit exclusions and SCORE pools the two prior-ANDA reasons."
+  },
+  "horizons": {
+    "12": {
+      "calibration": {
+        "B1": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "upper_inclusive": false,
+            "rows": 5259,
+            "events": 202,
+            "mean_calibrated_probability": 0.0482170716796464,
+            "observed_event_rate": 0.038410344171895795,
+            "wilson_95": [
+              0.03354408217799343,
+              0.043950454188314635
+            ]
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "upper_inclusive": true,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          }
+        ],
+        "M1": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "upper_inclusive": false,
+            "rows": 5162,
+            "events": 181,
+            "mean_calibrated_probability": 0.04165930820924801,
+            "observed_event_rate": 0.035063928709802406,
+            "wilson_95": [
+              0.03038177118319007,
+              0.04043756420233913
+            ]
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "upper_inclusive": false,
+            "rows": 97,
+            "events": 21,
+            "mean_calibrated_probability": 0.11123268013710944,
+            "observed_event_rate": 0.21649484536082475,
+            "wilson_95": [
+              0.14618778380932268,
+              0.308401621746627
+            ]
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "upper_inclusive": true,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          }
+        ],
+        "M3": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "upper_inclusive": false,
+            "rows": 5116,
+            "events": 170,
+            "mean_calibrated_probability": 0.041423161025178526,
+            "observed_event_rate": 0.033229085222830336,
+            "wilson_95": [
+              0.02865729141211299,
+              0.038501323085277074
+            ]
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "upper_inclusive": false,
+            "rows": 143,
+            "events": 32,
+            "mean_calibrated_probability": 0.11313479741029998,
+            "observed_event_rate": 0.22377622377622378,
+            "wilson_95": [
+              0.16320621437454833,
+              0.2987985856699289
+            ]
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "upper_inclusive": true,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          }
+        ]
+      },
+      "predictors": {
+        "TRAIN": {
+          "rows": 547,
+          "features": {
+            "age_years": {
+              "count": 547,
+              "missing": "<5",
+              "mean": 19.896672410147065,
+              "sd": 16.636404759855683,
+              "quantiles": {
+                "5": 1.2476386036960987,
+                "25": 7.451060917180014,
+                "50": 13.289527720739219,
+                "75": 29.100616016427104,
+                "95": 53.672005475701575
+              }
+            },
+            "age_sq": {
+              "count": 547,
+              "missing": "<5",
+              "mean": 67.21415583353306,
+              "sd": 95.88784096343713,
+              "quantiles": {
+                "5": 0.1557170344072511,
+                "25": 5.551840061540739,
+                "50": 17.661154704029613,
+                "75": 84.68513169933675,
+                "95": 288.06841733578636
+              }
+            },
+            "nme": {
+              "levels": {
+                "0": "<5",
+                "1": 547
+              }
+            },
+            "orphan": {
+              "levels": {
+                "0": 453,
+                "1": 94
+              }
+            },
+            "priority": {
+              "levels": {
+                "0": 297,
+                "1": 250
+              }
+            },
+            "oral": {
+              "levels": {
+                "0": 547,
+                "1": "<5"
+              }
+            },
+            "injectable": {
+              "levels": {
+                "0": 547,
+                "1": "<5"
+              }
+            },
+            "n_nda_prior": {
+              "count": 547,
+              "missing": "<5",
+              "mean": 1.493601462522852,
+              "sd": 0.9518899699385701,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 1.0,
+                "75": 2.0,
+                "95": 3.0
+              }
+            },
+            "nce_remaining_years": {
+              "count": 543,
+              "missing": "<5",
+              "mean": 0.39229418534443095,
+              "sd": 1.0907823047717233,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 0.0,
+                "75": 0.0,
+                "95": 3.615605749486653
+              }
+            },
+            "other_exclusivity_remaining_years": {
+              "count": 543,
+              "missing": "<5",
+              "mean": 0.41806931098682376,
+              "sd": 1.1313668251823632,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 0.0,
+                "75": 0.0,
+                "95": 2.6105407255304587
+              }
+            },
+            "listed_patent_count": {
+              "count": 543,
+              "missing": "<5",
+              "mean": 2.10865561694291,
+              "sd": 3.1978398262910583,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 1.0,
+                "75": 3.0,
+                "95": 8.0
+              }
+            },
+            "years_to_last_patent_expiry": {
+              "count": 290,
+              "missing": 257,
+              "mean": 7.405744766220587,
+              "sd": 4.2842593380224585,
+              "quantiles": {
+                "5": 0.4591375770020534,
+                "25": 4.216290212183436,
+                "50": 7.586584531143053,
+                "75": 10.31006160164271,
+                "95": 14.401642710472279
+              }
+            },
+            "years_since_earliest_patent_submission": {
+              "count": "<5",
+              "missing": 547,
+              "mean": null,
+              "sd": null,
+              "quantiles": {
+                "5": null,
+                "25": null,
+                "50": null,
+                "75": null,
+                "95": null
+              }
+            },
+            "nce_remaining_years_missing": {
+              "levels": {
+                "0": 543,
+                "1": "<5"
+              }
+            },
+            "other_exclusivity_remaining_years_missing": {
+              "levels": {
+                "0": 543,
+                "1": "<5"
+              }
+            },
+            "listed_patent_count_missing": {
+              "levels": {
+                "0": 543,
+                "1": "<5"
+              }
+            },
+            "years_to_last_patent_expiry_missing": {
+              "levels": {
+                "0": 290,
+                "1": 257
+              }
+            },
+            "years_since_earliest_patent_submission_missing": {
+              "levels": {
+                "0": "<5",
+                "1": 547
+              }
+            },
+            "b1_age_hazard_logit": {
+              "count": 547,
+              "missing": "<5",
+              "mean": -3.3475990355325536,
+              "sd": 0.8353994417389651,
+              "quantiles": {
+                "5": -4.601643976211533,
+                "25": -4.023349688064476,
+                "50": -3.4617287495523206,
+                "75": -2.5922135882290624,
+                "95": -1.9774262403989096
+              }
+            },
+            "challenge_present": {
+              "levels": {
+                "0": 473,
+                "1": 74
+              }
+            },
+            "challenge_missing": {
+              "levels": {
+                "0": 536,
+                "1": 11
+              }
+            },
+            "strength_count": {
+              "count": 529,
+              "missing": 18,
+              "mean": 2.298676748582231,
+              "sd": 1.8147173342603982,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 2.0,
+                "75": 3.0,
+                "95": 5.0
+              }
+            },
+            "form_route_count": {
+              "count": 543,
+              "missing": "<5",
+              "mean": 1.278084714548803,
+              "sd": 0.5842477234909009,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 1.0,
+                "75": 1.0,
+                "95": 3.0
+              }
+            },
+            "strength_missing": {
+              "levels": {
+                "0": 529,
+                "1": 18
+              }
+            },
+            "form_route_missing": {
+              "levels": {
+                "0": 543,
+                "1": "<5"
+              }
+            },
+            "verdict_OPEN": {
+              "levels": {
+                "0": 526,
+                "1": 21
+              }
+            },
+            "verdict_BLOCKED": {
+              "levels": {
+                "0": 316,
+                "1": 231
+              }
+            },
+            "verdict_CONTESTED": {
+              "levels": {
+                "0": 252,
+                "1": 295
+              }
+            }
+          }
+        },
+        "VAL": {
+          "rows": 2161,
+          "features": {
+            "age_years": {
+              "count": 2161,
+              "missing": "<5",
+              "mean": 21.126626232373344,
+              "sd": 17.693888010265002,
+              "quantiles": {
+                "5": 1.1307323750855578,
+                "25": 7.170431211498974,
+                "50": 15.619438740588638,
+                "75": 31.252566735112936,
+                "95": 57.27857631759069
+              }
+            },
+            "age_sq": {
+              "count": 2161,
+              "missing": "<5",
+              "mean": 75.92631344384662,
+              "sd": 106.85821124094558,
+              "quantiles": {
+                "5": 0.12785557040666268,
+                "25": 5.1415083758838644,
+                "50": 24.39668665710012,
+                "75": 97.67229275326876,
+                "95": 328.0835304970061
+              }
+            },
+            "nme": {
+              "levels": {
+                "0": "<5",
+                "1": 2161
+              }
+            },
+            "orphan": {
+              "levels": {
+                "0": 1703,
+                "1": 458
+              }
+            },
+            "priority": {
+              "levels": {
+                "0": 1176,
+                "1": 985
+              }
+            },
+            "oral": {
+              "levels": {
+                "0": 2161,
+                "1": "<5"
+              }
+            },
+            "injectable": {
+              "levels": {
+                "0": 2161,
+                "1": "<5"
+              }
+            },
+            "n_nda_prior": {
+              "count": 2161,
+              "missing": "<5",
+              "mean": 1.4618232299861176,
+              "sd": 0.9538179655104471,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 1.0,
+                "75": 2.0,
+                "95": 3.0
+              }
+            },
+            "nce_remaining_years": {
+              "count": 2125,
+              "missing": 36,
+              "mean": 0.4260830212988686,
+              "sd": 1.0935991491946968,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 0.0,
+                "75": 0.0,
+                "95": 3.4962354551676933
+              }
+            },
+            "other_exclusivity_remaining_years": {
+              "count": 2125,
+              "missing": 36,
+              "mean": 0.5364100334178846,
+              "sd": 1.402948443470266,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 0.0,
+                "75": 0.0,
+                "95": 4.146201232032854
+              }
+            },
+            "listed_patent_count": {
+              "count": 2125,
+              "missing": 36,
+              "mean": 2.3105882352941176,
+              "sd": 3.6898989062283865,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 1.0,
+                "75": 3.0,
+                "95": 9.8
+              }
+            },
+            "years_to_last_patent_expiry": {
+              "count": 1091,
+              "missing": 1070,
+              "mean": 7.707070041676312,
+              "sd": 5.083481650967019,
+              "quantiles": {
+                "5": -0.14236824093086928,
+                "25": 3.611225188227242,
+                "50": 7.427789185489391,
+                "75": 12.135523613963038,
+                "95": 15.853524982888434
+              }
+            },
+            "years_since_earliest_patent_submission": {
+              "count": "<5",
+              "missing": 2161,
+              "mean": null,
+              "sd": null,
+              "quantiles": {
+                "5": null,
+                "25": null,
+                "50": null,
+                "75": null,
+                "95": null
+              }
+            },
+            "nce_remaining_years_missing": {
+              "levels": {
+                "0": 2125,
+                "1": 36
+              }
+            },
+            "other_exclusivity_remaining_years_missing": {
+              "levels": {
+                "0": 2125,
+                "1": 36
+              }
+            },
+            "listed_patent_count_missing": {
+              "levels": {
+                "0": 2125,
+                "1": 36
+              }
+            },
+            "years_to_last_patent_expiry_missing": {
+              "levels": {
+                "0": 1091,
+                "1": 1070
+              }
+            },
+            "years_since_earliest_patent_submission_missing": {
+              "levels": {
+                "0": "<5",
+                "1": 2161
+              }
+            },
+            "b1_age_hazard_logit": {
+              "count": 2161,
+              "missing": "<5",
+              "mean": -3.4744158764649113,
+              "sd": 0.8317244958177021,
+              "quantiles": {
+                "5": -4.601643976211533,
+                "25": -4.16883341421284,
+                "50": -3.4617287495523206,
+                "75": -3.118200085684513,
+                "95": -1.9774262403989096
+              }
+            },
+            "challenge_present": {
+              "levels": {
+                "0": 1910,
+                "1": 251
+              }
+            },
+            "challenge_missing": {
+              "levels": {
+                "0": 687,
+                "1": 1474
+              }
+            },
+            "strength_count": {
+              "count": 2067,
+              "missing": 94,
+              "mean": 2.280599903241413,
+              "sd": 1.9590745064049204,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 2.0,
+                "75": 3.0,
+                "95": 6.0
+              }
+            },
+            "form_route_count": {
+              "count": 2125,
+              "missing": 36,
+              "mean": 1.2545882352941176,
+              "sd": 0.5778669478105529,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 1.0,
+                "75": 1.0,
+                "95": 3.0
+              }
+            },
+            "strength_missing": {
+              "levels": {
+                "0": 2067,
+                "1": 94
+              }
+            },
+            "form_route_missing": {
+              "levels": {
+                "0": 2125,
+                "1": 36
+              }
+            },
+            "verdict_OPEN": {
+              "levels": {
+                "0": 2074,
+                "1": 87
+              }
+            },
+            "verdict_BLOCKED": {
+              "levels": {
+                "0": 1577,
+                "1": 584
+              }
+            },
+            "verdict_CONTESTED": {
+              "levels": {
+                "0": 671,
+                "1": 1490
+              }
+            }
+          }
+        },
+        "CPRIME": {
+          "rows": 5259,
+          "features": {
+            "age_years": {
+              "count": 5259,
+              "missing": "<5",
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "age_sq": {
+              "count": 5259,
+              "missing": "<5",
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "nme": {
+              "levels": {
+                "0": "<5",
+                "1": 5259
+              }
+            },
+            "orphan": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "priority": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "oral": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "injectable": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "n_nda_prior": {
+              "count": 5259,
+              "missing": "<5",
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "nce_remaining_years": {
+              "count": 5181,
+              "missing": 78,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "other_exclusivity_remaining_years": {
+              "count": 5181,
+              "missing": 78,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "listed_patent_count": {
+              "count": 5181,
+              "missing": 78,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "years_to_last_patent_expiry": {
+              "count": 2659,
+              "missing": 2600,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "years_since_earliest_patent_submission": {
+              "count": 2007,
+              "missing": 3252,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "nce_remaining_years_missing": {
+              "levels": {
+                "0": 5181,
+                "1": 78
+              }
+            },
+            "other_exclusivity_remaining_years_missing": {
+              "levels": {
+                "0": 5181,
+                "1": 78
+              }
+            },
+            "listed_patent_count_missing": {
+              "levels": {
+                "0": 5181,
+                "1": 78
+              }
+            },
+            "years_to_last_patent_expiry_missing": {
+              "levels": {
+                "0": 2659,
+                "1": 2600
+              }
+            },
+            "years_since_earliest_patent_submission_missing": {
+              "levels": {
+                "0": 2007,
+                "1": 3252
+              }
+            },
+            "b1_age_hazard_logit": {
+              "count": 5259,
+              "missing": "<5",
+              "mean": -3.593823599390377,
+              "sd": 0.7739659552796136,
+              "quantiles": {
+                "5": -4.685828089005546,
+                "25": -4.353730035518768,
+                "50": -3.4617287495523206,
+                "75": -3.2207787750142867,
+                "95": -2.0762576433397975
+              }
+            },
+            "challenge_present": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "challenge_missing": {
+              "levels": {
+                "0": 4671,
+                "1": 588
+              }
+            },
+            "strength_count": {
+              "count": 5047,
+              "missing": 212,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "form_route_count": {
+              "count": 5181,
+              "missing": 78,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "strength_missing": {
+              "levels": {
+                "0": 5047,
+                "1": 212
+              }
+            },
+            "form_route_missing": {
+              "levels": {
+                "0": 5181,
+                "1": 78
+              }
+            },
+            "verdict_OPEN": {
+              "levels": {
+                "0": 5060,
+                "1": 199
+              }
+            },
+            "verdict_BLOCKED": {
+              "levels": {
+                "0": 3107,
+                "1": 2152
+              }
+            },
+            "verdict_CONTESTED": {
+              "levels": {
+                "0": 2351,
+                "1": 2908
+              }
+            }
+          }
+        }
+      },
+      "eligibility_flow": {
+        "dated_nda_drugs": 18284,
+        "no_eligible_type1": 6886,
+        "prior_final_anda": 6139,
+        "eligible_rows": 5259,
+        "events": 202,
+        "dated_type1_candidates": 11398,
+        "prior_final_anda_before_nda": "UNAVAILABLE",
+        "prior_final_anda_other": "UNAVAILABLE"
+      }
+    },
+    "24": {
+      "calibration": {
+        "B1": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "upper_inclusive": false,
+            "rows": 4061,
+            "events": 252,
+            "mean_calibrated_probability": 0.07335567682059702,
+            "observed_event_rate": 0.06205368135927111,
+            "wilson_95": [
+              0.05503952021959631,
+              0.06989560061240555
+            ]
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "upper_inclusive": false,
+            "rows": 578,
+            "events": 116,
+            "mean_calibrated_probability": 0.10667810990440649,
+            "observed_event_rate": 0.20069204152249134,
+            "wilson_95": [
+              0.17006443164830182,
+              0.2352718592696908
+            ]
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "upper_inclusive": true,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          }
+        ],
+        "M1": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "upper_inclusive": false,
+            "rows": 3404,
+            "events": "WITHHELD",
+            "mean_calibrated_probability": 0.04594925064032911,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "upper_inclusive": false,
+            "rows": 910,
+            "events": 164,
+            "mean_calibrated_probability": 0.14513259711009738,
+            "observed_event_rate": 0.18021978021978022,
+            "wilson_95": [
+              0.15660695639851138,
+              0.20652108470495661
+            ]
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "upper_inclusive": false,
+            "rows": 272,
+            "events": 74,
+            "mean_calibrated_probability": 0.23491825631773877,
+            "observed_event_rate": 0.27205882352941174,
+            "wilson_95": [
+              0.22262060309687431,
+              0.3278458114510417
+            ]
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "upper_inclusive": false,
+            "rows": 45,
+            "events": 18,
+            "mean_calibrated_probability": 0.3346844233394836,
+            "observed_event_rate": 0.4,
+            "wilson_95": [
+              0.27024886565009165,
+              0.5454814540964862
+            ]
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "upper_inclusive": false,
+            "rows": 8,
+            "events": "<5",
+            "mean_calibrated_probability": 0.43551580604162865,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "upper_inclusive": true,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          }
+        ],
+        "M3": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "upper_inclusive": false,
+            "rows": 3417,
+            "events": 103,
+            "mean_calibrated_probability": 0.045146055652727606,
+            "observed_event_rate": 0.030143400643839625,
+            "wilson_95": [
+              0.024917092025611702,
+              0.03642496703988944
+            ]
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "upper_inclusive": false,
+            "rows": 811,
+            "events": 141,
+            "mean_calibrated_probability": 0.143574434115851,
+            "observed_event_rate": 0.17385943279901356,
+            "wilson_95": [
+              0.1493297752303579,
+              0.20146418073058142
+            ]
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "upper_inclusive": false,
+            "rows": 334,
+            "events": 94,
+            "mean_calibrated_probability": 0.23609587336297364,
+            "observed_event_rate": 0.281437125748503,
+            "wilson_95": [
+              0.23590508031408208,
+              0.3319395515743684
+            ]
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "upper_inclusive": false,
+            "rows": 66,
+            "events": 26,
+            "mean_calibrated_probability": 0.3373151929150996,
+            "observed_event_rate": 0.3939393939393939,
+            "wilson_95": [
+              0.28503000494619546,
+              0.5145159919960708
+            ]
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "upper_inclusive": false,
+            "rows": 10,
+            "events": "<5",
+            "mean_calibrated_probability": 0.43114551446782673,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "upper_inclusive": false,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "upper_inclusive": true,
+            "rows": "<5",
+            "events": "<5",
+            "mean_calibrated_probability": null,
+            "observed_event_rate": null,
+            "wilson_95": null
+          }
+        ]
+      },
+      "predictors": {
+        "TRAIN": {
+          "rows": 547,
+          "features": {
+            "age_years": {
+              "count": 547,
+              "missing": "<5",
+              "mean": 19.896672410147065,
+              "sd": 16.636404759855683,
+              "quantiles": {
+                "5": 1.2476386036960987,
+                "25": 7.451060917180014,
+                "50": 13.289527720739219,
+                "75": 29.100616016427104,
+                "95": 53.672005475701575
+              }
+            },
+            "age_sq": {
+              "count": 547,
+              "missing": "<5",
+              "mean": 67.21415583353306,
+              "sd": 95.88784096343713,
+              "quantiles": {
+                "5": 0.1557170344072511,
+                "25": 5.551840061540739,
+                "50": 17.661154704029613,
+                "75": 84.68513169933675,
+                "95": 288.06841733578636
+              }
+            },
+            "nme": {
+              "levels": {
+                "0": "<5",
+                "1": 547
+              }
+            },
+            "orphan": {
+              "levels": {
+                "0": 453,
+                "1": 94
+              }
+            },
+            "priority": {
+              "levels": {
+                "0": 297,
+                "1": 250
+              }
+            },
+            "oral": {
+              "levels": {
+                "0": 547,
+                "1": "<5"
+              }
+            },
+            "injectable": {
+              "levels": {
+                "0": 547,
+                "1": "<5"
+              }
+            },
+            "n_nda_prior": {
+              "count": 547,
+              "missing": "<5",
+              "mean": 1.493601462522852,
+              "sd": 0.9518899699385701,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 1.0,
+                "75": 2.0,
+                "95": 3.0
+              }
+            },
+            "nce_remaining_years": {
+              "count": 543,
+              "missing": "<5",
+              "mean": 0.39229418534443095,
+              "sd": 1.0907823047717233,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 0.0,
+                "75": 0.0,
+                "95": 3.615605749486653
+              }
+            },
+            "other_exclusivity_remaining_years": {
+              "count": 543,
+              "missing": "<5",
+              "mean": 0.41806931098682376,
+              "sd": 1.1313668251823632,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 0.0,
+                "75": 0.0,
+                "95": 2.6105407255304587
+              }
+            },
+            "listed_patent_count": {
+              "count": 543,
+              "missing": "<5",
+              "mean": 2.10865561694291,
+              "sd": 3.1978398262910583,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 1.0,
+                "75": 3.0,
+                "95": 8.0
+              }
+            },
+            "years_to_last_patent_expiry": {
+              "count": 290,
+              "missing": 257,
+              "mean": 7.405744766220587,
+              "sd": 4.2842593380224585,
+              "quantiles": {
+                "5": 0.4591375770020534,
+                "25": 4.216290212183436,
+                "50": 7.586584531143053,
+                "75": 10.31006160164271,
+                "95": 14.401642710472279
+              }
+            },
+            "years_since_earliest_patent_submission": {
+              "count": "<5",
+              "missing": 547,
+              "mean": null,
+              "sd": null,
+              "quantiles": {
+                "5": null,
+                "25": null,
+                "50": null,
+                "75": null,
+                "95": null
+              }
+            },
+            "nce_remaining_years_missing": {
+              "levels": {
+                "0": 543,
+                "1": "<5"
+              }
+            },
+            "other_exclusivity_remaining_years_missing": {
+              "levels": {
+                "0": 543,
+                "1": "<5"
+              }
+            },
+            "listed_patent_count_missing": {
+              "levels": {
+                "0": 543,
+                "1": "<5"
+              }
+            },
+            "years_to_last_patent_expiry_missing": {
+              "levels": {
+                "0": 290,
+                "1": 257
+              }
+            },
+            "years_since_earliest_patent_submission_missing": {
+              "levels": {
+                "0": "<5",
+                "1": 547
+              }
+            },
+            "b1_age_hazard_logit": {
+              "count": 547,
+              "missing": "<5",
+              "mean": -2.6448859614127698,
+              "sd": 0.8282148900771353,
+              "quantiles": {
+                "5": -3.983413001514819,
+                "25": -3.2252899926506435,
+                "50": -2.8753683048318655,
+                "75": -1.8872639841639247,
+                "95": -1.2710309507910686
+              }
+            },
+            "challenge_present": {
+              "levels": {
+                "0": 473,
+                "1": 74
+              }
+            },
+            "challenge_missing": {
+              "levels": {
+                "0": 536,
+                "1": 11
+              }
+            },
+            "strength_count": {
+              "count": 529,
+              "missing": 18,
+              "mean": 2.298676748582231,
+              "sd": 1.8147173342603982,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 2.0,
+                "75": 3.0,
+                "95": 5.0
+              }
+            },
+            "form_route_count": {
+              "count": 543,
+              "missing": "<5",
+              "mean": 1.278084714548803,
+              "sd": 0.5842477234909009,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 1.0,
+                "75": 1.0,
+                "95": 3.0
+              }
+            },
+            "strength_missing": {
+              "levels": {
+                "0": 529,
+                "1": 18
+              }
+            },
+            "form_route_missing": {
+              "levels": {
+                "0": 543,
+                "1": "<5"
+              }
+            },
+            "verdict_OPEN": {
+              "levels": {
+                "0": 512,
+                "1": 35
+              }
+            },
+            "verdict_BLOCKED": {
+              "levels": {
+                "0": 345,
+                "1": 202
+              }
+            },
+            "verdict_CONTESTED": {
+              "levels": {
+                "0": 237,
+                "1": 310
+              }
+            }
+          }
+        },
+        "VAL": {
+          "rows": 1083,
+          "features": {
+            "age_years": {
+              "count": 1083,
+              "missing": "<5",
+              "mean": 21.08499535159452,
+              "sd": 17.684923781674332,
+              "quantiles": {
+                "5": 1.0294318959616702,
+                "25": 7.1827515400410675,
+                "50": 15.9233401779603,
+                "75": 31.017111567419576,
+                "95": 56.87720739219713
+              }
+            },
+            "age_sq": {
+              "count": 1083,
+              "missing": "<5",
+              "mean": 75.70447709481827,
+              "sd": 106.65064490742218,
+              "quantiles": {
+                "5": 0.10597300284232389,
+                "25": 5.159193655157293,
+                "50": 25.355276242304477,
+                "75": 96.20612399690609,
+                "95": 323.5016893438856
+              }
+            },
+            "nme": {
+              "levels": {
+                "0": "<5",
+                "1": 1083
+              }
+            },
+            "orphan": {
+              "levels": {
+                "0": 850,
+                "1": 233
+              }
+            },
+            "priority": {
+              "levels": {
+                "0": 589,
+                "1": 494
+              }
+            },
+            "oral": {
+              "levels": {
+                "0": 1083,
+                "1": "<5"
+              }
+            },
+            "injectable": {
+              "levels": {
+                "0": 1083,
+                "1": "<5"
+              }
+            },
+            "n_nda_prior": {
+              "count": 1083,
+              "missing": "<5",
+              "mean": 1.4653739612188366,
+              "sd": 0.9716173244073272,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 1.0,
+                "75": 2.0,
+                "95": 3.0
+              }
+            },
+            "nce_remaining_years": {
+              "count": 1057,
+              "missing": 26,
+              "mean": 0.4012647989965531,
+              "sd": 1.0551253153094542,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 0.0,
+                "75": 0.0,
+                "95": 3.448596851471595
+              }
+            },
+            "other_exclusivity_remaining_years": {
+              "count": 1057,
+              "missing": 26,
+              "mean": 0.5200699097376961,
+              "sd": 1.343588357552832,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 0.0,
+                "75": 0.0,
+                "95": 3.740451745379877
+              }
+            },
+            "listed_patent_count": {
+              "count": 1057,
+              "missing": 26,
+              "mean": 2.2535477767265846,
+              "sd": 3.5457039193842474,
+              "quantiles": {
+                "5": 0.0,
+                "25": 0.0,
+                "50": 1.0,
+                "75": 3.0,
+                "95": 9.0
+              }
+            },
+            "years_to_last_patent_expiry": {
+              "count": 545,
+              "missing": 538,
+              "mean": 7.428025293722409,
+              "sd": 5.115033835414384,
+              "quantiles": {
+                "5": -0.24804928131416837,
+                "25": 3.4469541409993156,
+                "50": 7.104722792607803,
+                "75": 11.986310746064339,
+                "95": 15.633127994524298
+              }
+            },
+            "years_since_earliest_patent_submission": {
+              "count": "<5",
+              "missing": 1083,
+              "mean": null,
+              "sd": null,
+              "quantiles": {
+                "5": null,
+                "25": null,
+                "50": null,
+                "75": null,
+                "95": null
+              }
+            },
+            "nce_remaining_years_missing": {
+              "levels": {
+                "0": 1057,
+                "1": 26
+              }
+            },
+            "other_exclusivity_remaining_years_missing": {
+              "levels": {
+                "0": 1057,
+                "1": 26
+              }
+            },
+            "listed_patent_count_missing": {
+              "levels": {
+                "0": 1057,
+                "1": 26
+              }
+            },
+            "years_to_last_patent_expiry_missing": {
+              "levels": {
+                "0": 545,
+                "1": 538
+              }
+            },
+            "years_since_earliest_patent_submission_missing": {
+              "levels": {
+                "0": "<5",
+                "1": 1083
+              }
+            },
+            "b1_age_hazard_logit": {
+              "count": 1083,
+              "missing": "<5",
+              "mean": -2.7659573245875713,
+              "sd": 0.8200667315099429,
+              "quantiles": {
+                "5": -3.983413001514819,
+                "25": -3.3984399602792847,
+                "50": -2.8753683048318655,
+                "75": -2.0120126904243483,
+                "95": -1.2710309507910686
+              }
+            },
+            "challenge_present": {
+              "levels": {
+                "0": 988,
+                "1": 95
+              }
+            },
+            "challenge_missing": {
+              "levels": {
+                "0": 95,
+                "1": 988
+              }
+            },
+            "strength_count": {
+              "count": 1028,
+              "missing": 55,
+              "mean": 2.28988326848249,
+              "sd": 1.9660246580792113,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 2.0,
+                "75": 3.0,
+                "95": 6.0
+              }
+            },
+            "form_route_count": {
+              "count": 1057,
+              "missing": 26,
+              "mean": 1.2535477767265846,
+              "sd": 0.5757481922737672,
+              "quantiles": {
+                "5": 1.0,
+                "25": 1.0,
+                "50": 1.0,
+                "75": 1.0,
+                "95": 3.0
+              }
+            },
+            "strength_missing": {
+              "levels": {
+                "0": 1028,
+                "1": 55
+              }
+            },
+            "form_route_missing": {
+              "levels": {
+                "0": 1057,
+                "1": 26
+              }
+            },
+            "verdict_OPEN": {
+              "levels": {
+                "0": 1028,
+                "1": 55
+              }
+            },
+            "verdict_BLOCKED": {
+              "levels": {
+                "0": 902,
+                "1": 181
+              }
+            },
+            "verdict_CONTESTED": {
+              "levels": {
+                "0": 236,
+                "1": 847
+              }
+            }
+          }
+        },
+        "CPRIME": {
+          "rows": 4639,
+          "features": {
+            "age_years": {
+              "count": 4639,
+              "missing": "<5",
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "age_sq": {
+              "count": 4639,
+              "missing": "<5",
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "nme": {
+              "levels": {
+                "0": "<5",
+                "1": 4639
+              }
+            },
+            "orphan": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "priority": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "oral": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "injectable": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "n_nda_prior": {
+              "count": 4639,
+              "missing": "<5",
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "nce_remaining_years": {
+              "count": 4567,
+              "missing": 72,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "other_exclusivity_remaining_years": {
+              "count": 4567,
+              "missing": 72,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "listed_patent_count": {
+              "count": 4567,
+              "missing": 72,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "years_to_last_patent_expiry": {
+              "count": 2319,
+              "missing": 2320,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "years_since_earliest_patent_submission": {
+              "count": 1674,
+              "missing": 2965,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "nce_remaining_years_missing": {
+              "levels": {
+                "0": 4567,
+                "1": 72
+              }
+            },
+            "other_exclusivity_remaining_years_missing": {
+              "levels": {
+                "0": 4567,
+                "1": 72
+              }
+            },
+            "listed_patent_count_missing": {
+              "levels": {
+                "0": 4567,
+                "1": 72
+              }
+            },
+            "years_to_last_patent_expiry_missing": {
+              "levels": {
+                "0": 2319,
+                "1": 2320
+              }
+            },
+            "years_since_earliest_patent_submission_missing": {
+              "levels": {
+                "0": 1674,
+                "1": 2965
+              }
+            },
+            "b1_age_hazard_logit": {
+              "count": 4639,
+              "missing": "<5",
+              "mean": -2.9181011333033386,
+              "sd": 0.7698005426035038,
+              "quantiles": {
+                "5": -4.06828325977977,
+                "25": -3.6745379745243723,
+                "50": -2.8753683048318655,
+                "75": -2.503118454115529,
+                "95": -1.7245991859756429
+              }
+            },
+            "challenge_present": {
+              "levels": {
+                "0": "UNAVAILABLE",
+                "1": "UNAVAILABLE"
+              }
+            },
+            "challenge_missing": {
+              "levels": {
+                "0": 4053,
+                "1": 586
+              }
+            },
+            "strength_count": {
+              "count": 4449,
+              "missing": 190,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "form_route_count": {
+              "count": 4567,
+              "missing": 72,
+              "mean": "UNAVAILABLE",
+              "sd": "UNAVAILABLE",
+              "quantiles": {
+                "5": "UNAVAILABLE",
+                "25": "UNAVAILABLE",
+                "50": "UNAVAILABLE",
+                "75": "UNAVAILABLE",
+                "95": "UNAVAILABLE"
+              }
+            },
+            "strength_missing": {
+              "levels": {
+                "0": 4449,
+                "1": 190
+              }
+            },
+            "form_route_missing": {
+              "levels": {
+                "0": 4567,
+                "1": 72
+              }
+            },
+            "verdict_OPEN": {
+              "levels": {
+                "0": 4361,
+                "1": 278
+              }
+            },
+            "verdict_BLOCKED": {
+              "levels": {
+                "0": 2965,
+                "1": 1674
+              }
+            },
+            "verdict_CONTESTED": {
+              "levels": {
+                "0": 1952,
+                "1": 2687
+              }
+            }
+          }
+        }
+      },
+      "eligibility_flow": {
+        "dated_nda_drugs": 16085,
+        "no_eligible_type1": 6081,
+        "prior_final_anda": 5365,
+        "eligible_rows": 4639,
+        "events": 368,
+        "dated_type1_candidates": 10004,
+        "prior_final_anda_before_nda": "UNAVAILABLE",
+        "prior_final_anda_other": "UNAVAILABLE"
+      }
+    }
+  }
+}
