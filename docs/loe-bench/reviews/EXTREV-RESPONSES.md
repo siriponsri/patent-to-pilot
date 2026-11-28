@@ -116,3 +116,7 @@ Resolved by the reviewer: R8-A, R8-B; pins 25/25, forecasts 10/10, DOI readout P
 |---|---|---|
 | R9-A | MAJOR | **In progress (TRACKA-READOUT10, Sol high).** Every replay table is labelled "current recomputation (not used for inference)" and shown next to the retained estimate that supplies H3 or the formal family, with both values when they differ. |
 | R9-B | MINOR | **In progress (same card).** The guide documents `family_status` as publication and custody status, gives a 12-month JSON example, and points to `horizon_months` and per-hypothesis `reached` and `decision` for inference. |
+
+**Round 9 outcome (29 Nov, 02:11, TRACKA-READOUT10 merged).** Replay reports at both horizons label the table as a comparison recomputation and show the retained H3 estimate, interval and first-publication link (12-month fixture: recomputed −3.70 pp versus retained +33.33 pp). The guide documents `family_status` as publication and custody status, gives a 12-month JSON example, and points to `horizon_months`, `reached` and `decision` for inference. Source pins 25/25. [Receipt](../receipts/TRACKA-READOUT10.md)
+
+Next: EXTREV-R10.
