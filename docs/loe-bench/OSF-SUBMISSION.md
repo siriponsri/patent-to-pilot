@@ -1,24 +1,22 @@
 # OSF submission procedure (owner)
 
-This is the procedure for registering [PREREGISTRATION.md](PREREGISTRATION.md) on OSF. Only the owner can submit, because submission requires the owner's OSF account. The test stays sealed until step 6.
+Use the [OSF copy sheet](OSF-COPY-SHEET.md) to register the [Market Window Dossier preregistration](PREREGISTRATION.md) under the Secondary Data Preregistration template. The owner signs in and authorizes the final registration. The main planner audits the draft, obtains the author confirmations, and records the audited commit and hashes in the copy sheet before submission.
 
-1. **Account and project.** Sign in at https://osf.io (an institutional KMITL login also works if offered). Create a private project named "LOE-Bench".
-2. **Template.** Choose *Add a registration* and then the **"Preregistration for secondary data analysis"** template, using [OSF's guide](https://help.osf.io/article/330-create-a-preregistration).
-3. **Fill the form.** Copy each section of PREREGISTRATION.md into the matching template field. Complete every `[OWNER TO COMPLETE ...]` placeholder:
-   - authors and affiliations (owner; advisor Asst. Prof. Dr. Tuchsanai Ploysuwan if agreed)
-   - licence (suggested: CC BY 4.0 for the registration text)
-   - subjects (for example Medicine and Health Sciences; Computer Sciences)
-   - access (public, or embargoed until results)
-   - per-author prior-knowledge disclosures, which may follow the "Knowledge of Data" section as written
-4. **Attachments.** Upload these files from the repository at the commit named in the registration:
+1. **Set up the project.** Use the title, sole OSF contributor, licence, subjects and tags in the copy sheet. Keep the project private during preparation. The registration is public immediately with no embargo.
+2. **Fill the form.** Copy the mapped sections verbatim from the audited Markdown. Confirm each required string using the copy sheet.
+3. **Verify and upload attachments.** Use the commit-specific files and SHA-256 values in section 5 of the copy sheet. The draft [hash manifest](OSF-HASH-MANIFEST.txt) pins the text and JSON attachments. The audited list is:
+   - `docs/loe-bench/PREREGISTRATION.pdf`
    - `loe-bench/data/FROZEN_CONFIG.json`
    - `loe-bench/data/S0_INPUT_MANIFEST.json`
-   - `loe-bench/data/L1_FROZEN_CONFIG.json` (if present)
+   - `loe-bench/data/L1_FROZEN_CONFIG.json`
+   - `loe-bench/data/L1E_FROZEN_CONFIG.json`
+   - `loe-bench/data/C3_SPEC.json`
+   - `loe-bench/data/C4_SPEC.json`
+   - `loe-bench/data/C9_SPEC.json`
    - `docs/loe-bench/REGULATORY-RULES.md`
-5. **Submit.** Choose immediate registration or an embargo. OSF timestamps the registration.
-6. **Hand back.** Download the registered PDF and give it to the main planner. The main planner computes its SHA-256 and writes it to `loe-bench/data/PREREG_LOCK.json`, which is the only key that unseals the test. Then, in order:
-   1. Run the blinded C′ gate.
-   2. Score C′ with the frozen models.
-   3. Make the Track A prediction freeze before 2027-01-31 23:59 UTC.
+   - `docs/loe-bench/OSF-HASH-MANIFEST.txt`
+4. **Submit after approval.** Show the owner the copy-sheet checklist before the final Register action. Submit after the owner types `submit`, then record the registration URL, DOI if shown and OSF timestamp.
+5. **Hand back the registered PDF.** Download the PDF issued by OSF and give those bytes to the main planner. The main planner records their SHA-256 in `loe-bench/data/PREREG_LOCK.json`. The registered PDF digest is the seal key. The attached draft PDF has a separate digest.
+6. **Follow the registered sequence.** Run the blinded C′ gate and record its verdict. Score C′ only after PASS and authorized release. Complete the Track A freeze before **2027-01-31 23:59 UTC** and before any post-t0 outcome-source fetch.
 
-Do not edit the registration after submission. Any later change is recorded as a dated deviation.
+Use a dated deviation record for any later protocol change.
