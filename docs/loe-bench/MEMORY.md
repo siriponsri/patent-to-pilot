@@ -180,3 +180,4 @@
 - **29 Nov, about 01:20.** Owner: custodian on a best-effort basis; project continuation to Nov 2027 unconfirmed. Layered readout automation chosen (.ics, Cloudflare Worker cron -> GitHub workflow -> issue, public guide). Card TRACKA-AUTO dispatched.
 - **29 Nov, about 01:35.** RECORDS-SYNC merged (root HANDOFF, INDEX-PLAN, PLAN banner, DOCS-REVIEW, ENDGAME superseded note); the planner corrected the custodian line to best effort with automation.
 - **29 Nov, about 01:45.** DRTRAIN-RECON merged: rule 8 N/A for LOE-Bench (records show no dr-train writes after 25 Nov). Checklist row updated; RunPod cleanup still open.
+- **29 Nov, about 02:00.** RELEASE-KIT merged after review (ZIP hash re-verified, no NBER file, RIGHTS.csv present, builder adapted to the native freeze schema with stricter checks; release tests 9/9). Owner now publishes on Zenodo; then an independent executor restores from the DOI.

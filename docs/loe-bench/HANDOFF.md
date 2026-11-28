@@ -6,7 +6,7 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 
 The owner runs the orchestrator on two Claude accounts. Per-account chat memory is not shared, so this section and [MEMORY.md](MEMORY.md) are the main memory. Update both, then commit and push, after every step (owner rule, 28 Nov 2026, night).
 
-Last update: 29 Nov 2026, about 01:10 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov). **Focus (owner, 29 Nov): close every research result beyond reviewer doubt (main planner and co-planner review); product and writing paused. Then IS2 revision, then journals.**
+Last update: 29 Nov 2026, about 02:00 Bangkok time. The orchestrator plans and reviews only; executors do hands-on work (owner, 28 Nov). **Focus (owner, 29 Nov): close every research result beyond reviewer doubt (main planner and co-planner review); product and writing paused. Then IS2 revision, then journals.**
 
 | Line | State | Next action |
 |---|---|---|
@@ -14,7 +14,7 @@ Last update: 29 Nov 2026, about 01:10 Bangkok time. The orchestrator plans and r
 | Slides | Folder structure only | Wait for the owner's reading |
 | Journals (STA conditional, JAMIA) | JAMIA v2.1 outside Git with Figures 1–2 (JAMIAFIG merged; figures reviewed; 3,771 words incl. tables and captions; 12 pages in LibreOffice). PSA and MDM dropped | **PAUSED (owner, 29 Nov).** Resume after the research close-out: IS2 revision first, then journals. Owner items kept: degree, ORCIDs, corresponding author, OSF contributor, STA enquiry |
 | Product | Merged: PO-CURRENT (1ff2db22), PO-LANDING (1ae7f500), BE-GATEWAY B1 (4922cc83), BE-MCP B5 (aa6865b9), PO-PDF (02e432e5; one print layout, 64/64 parity, Semaglutide TH 59→30 pages; 39 tests rerun). B5 follow-ups: ROW_TOO_LARGE on 10 oversized records, first-call CPU vs Workers Free 10 ms, remote clients NOT_RUN until the owner deploys | **PAUSED by the owner (29 Nov).** PO-WOW, B2 and B3 were cancelled before any push; resume from the PRD card list after the research line is complete. Known blocker to fix on resume: historical References-tab reveal leak |
-| Research close-out | Checklist: [RESEARCH-COMPLETION.md](RESEARCH-COMPLETION.md) (co-planner audit, bc4dc19e). Target: scientific and archival sign-off by 15 Dec 2026 | Running: CPRIME-SUPP, RELEASE-KIT, RUNPOD-CLEANUP, REPRO-C1 (independent H1–H3 recomputation, Sol xhigh), CLOSE-DISP (C8 32-claim disposition, benchmark card, DEV checks, Sol xhigh), DRTRAIN-RECON (rule 8, Sol high), RECORDS-SYNC (entry points, Luna high). Then: Zenodo deposit (owner), independent restore from the DOI, joint Opus + Astra sign-off at one revision |
+| Research close-out | Checklist: [RESEARCH-COMPLETION.md](RESEARCH-COMPLETION.md) (co-planner audit, bc4dc19e). Target: scientific and archival sign-off by 15 Dec 2026 | Merged: RECORDS-SYNC, DRTRAIN-RECON (N/A), RELEASE-KIT (ZIP acb533af…, 10 arms byte-identical, clean restore PASS; [Zenodo sheet](ZENODO-UPLOAD-SHEET.md)). **Owner action: publish the ZIP on Zenodo.** Running: CPRIME-SUPP, RUNPOD-CLEANUP, REPRO-C1 (independent H1–H3 recomputation, Sol xhigh), CLOSE-DISP (C8 32-claim disposition, benchmark card, DEV checks, Sol xhigh),, TRACKA-AUTO. Then: Zenodo deposit (owner), independent restore from the DOI, joint Opus + Astra sign-off at one revision |
 | Integration | `main` equals `research/loe-bench` at 23af56eb | Fast-forward main after each merge |
 
 ## Current state (28 November 2026, afternoon, D41 accelerated plan)
