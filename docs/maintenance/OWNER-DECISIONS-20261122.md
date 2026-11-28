@@ -244,3 +244,9 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
 - 28 Nov 2026, night (D42): the owner made Claude Sonnet 5.5 (medium effort) the Product Owner for Market Window Dossier. The main planner (Claude Opus 5.5) and the co-planner (GPT-6.2 Astra high) draft the product plan and PRD for the Product Owner ([PRD](../product/prd/PRD-MWD-v1.md)). The main planner remains the only reviewer; GPT executors still build data pipelines behind the product.
   - Requirement answers for v1.0: serve both audiences with the IS2 demo first; search within the 651-drug current queue with a planned-launch-date window (no new forecasts); the Thai layer shows unknown plus the next question; public hosting on GitHub Pages.
   - The owner asked to be consulted on requirements whenever the planner is unsure.
+- 28 Nov 2026, night (D43): the owner asked that Market Window Dossier become a real AI-assisted product, using API providers first for presentation and later a local model on a server, through an interface compatible with Typhoon, OpenRouter, GPT, Claude, Gemini, Qwen and DeepSeek. Codex executors build the backend. Requirement answers:
+  - AI tasks: all four (Thai dossier summary, hand-off letter draft, questions about the open drug, patent-claim reading aid).
+  - Platform: both a web app and a desktop GUI app, ready for a later mobile app, and a trial for people in the organization. The planner proposes the platform in [PRD section 4b](../product/prd/PRD-MWD-v1.md#4b-ai-assistance-and-platform-d43-proposal-for-owner-approval).
+  - API envelope: USD 10 all-in until 15 Dec 2026.
+  - Journals: four venue-tailored drafts (PSA, STA, MDM, JAMIA) for the advisor; submit one at a time, the others as ordered fallbacks.
+  - The orchestrator alternates between two Claude accounts; the HANDOFF resume point and lane MEMORY are updated, committed and pushed after every step.

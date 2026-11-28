@@ -69,7 +69,47 @@ Priority: P0 blocks the release, P1 is expected, P2 ships if time allows.
 | R13 | P0 | **Rights inventory of shipped files** | Every shipped file lists its field sources, redistribution and commercial-use terms, version and hash. Restricted inputs (such as NBER) ship only as a recipe or link. Each shipped artifact shows its version, and the release states that the app, installer and scoring kit carry the frozen Track A bytes |
 | R12 | P2 | Repository hygiene | Remove the 3 duplicate images (DOCS2 inventory); Apache-2.0 NOTICE covers `product/` (D-L); NBER data ships as a recipe |
 
-**Not in v1.0:** auto-clear, investment recommendations, Thai price prediction, a general chatbot, biologics, user accounts, server-side code, or any workaround for Thai registry restrictions.
+**Not in v1.0:** auto-clear, investment recommendations, Thai price prediction, a general-purpose chatbot, AI forecasting, biologics, or any workaround for Thai registry restrictions.
+
+## 4b. AI assistance and platform (D43, proposal for owner approval)
+
+The owner wants a real product in which AI does useful work: API providers first for the demo, then a local model on a server, through one interface compatible with Typhoon, OpenRouter, GPT, Claude, Gemini, Qwen and DeepSeek. Codex executors build the backend. AI never forecasts: in the tested setting an LLM found 12.36% of events against 66.85% for M3 (SCORELLM). AI reads, explains and drafts. M3 ranks.
+
+**AI tasks (owner chose all four).**
+
+| ID | Pri | Task | Acceptance criteria |
+|---|---|---|---|
+| A1 | P0 | **Thai summary and explanation of the open dossier** | Every sentence cites one or more claim IDs from that dossier. A deterministic validator rejects a sentence with no citation, a citation to a missing claim, or a number or date not present in the cited claim; rejected sentences are replaced by "unknown: verify". Output is marked "AI draft" |
+| A2 | P0 | **Hand-off letter draft** in Thai to an FTO evaluator, DIP or Thai FDA | Built from the FTO checklist: what to check, which source, which agency and which person. Same citation validator. The user edits before export; the PDF records model, provider, prompt version and date |
+| A3 | P1 | **Questions about the open drug** | Answers only from that dossier's claims, with citations; otherwise says the evidence does not answer it. Not a general chatbot |
+| A4 | P1 | **Patent claim reading aid** | Quotes claim text verbatim with patent number, claim number and source edition, then lists the elements to check. Labelled "AI-assisted reading; a patent professional must verify". Needs an open claim-text source (a data card for Codex) |
+
+No LLM output is ground truth (standing rule 12). Quality is measured with deterministic citation and value checks plus a planner spot-check of a fixed sample, never an LLM judge.
+
+**Platform (planner proposal for web, desktop, a future mobile app and an organization trial).**
+
+```
+ Web app (GitHub Pages)   Desktop app (Tauri)   Mobile (later: PWA or Tauri mobile)
+            \                    |                     /
+             one shared front end: product/demo (F2, static HTML/CSS/JS)
+                                 |  HTTPS, JSON
+                     MWD AI Gateway (FastAPI, Codex)
+       grounding on dossier claims · citation validator · budget ledger · audit log
+                                 |  one OpenAI-compatible client
+   Typhoon · OpenRouter · OpenAI · Anthropic · Gemini · Qwen · DeepSeek · local vLLM/Ollama
+```
+
+- **One front end, three shells.** The existing static app stays the only UI code. GitHub Pages serves the public web app, Tauri wraps it for Windows (and later macOS), and a responsive layout plus a web-app manifest prepares the mobile path without a second code base.
+- **One gateway.** A small Python FastAPI service holds provider keys server-side, so keys never reach a browser. A provider is a preset of base URL, model name and key name; switching provider or moving to a local model changes configuration, not code. The gateway reuses the project budget ledger (`src/patent_to_pilot/budget/`) to stop calls at the envelope and logs model, tokens, cost and prompt version per call.
+- **Three ways to run it.**
+  1. *Public web (GitHub Pages)*: forecasts and dossiers work for everyone; AI features call the organization gateway only after sign-in, or a visitor's own key (bring your own key) kept in that browser.
+  2. *Organization trial*: the gateway and the web app run as one Docker Compose bundle on an organization server or small cloud VM, with invite-only sign-in and per-user daily limits, so colleagues try it from a browser with no install.
+  3. *Desktop*: the Tauri app points to the organization gateway by default and can switch to the visitor's own key or a local model for offline demos.
+- **Local AI later (v1.1).** Serve an open model such as Typhoon or Qwen with vLLM or Ollama, which already expose an OpenAI-compatible endpoint. The gateway only changes its base URL.
+
+**Budget.** USD 10 all-in for API calls until 15 Dec 2026 (owner, 28 Nov). Cheaper models through Typhoon and OpenRouter are the default; each call is logged against the ledger.
+
+**Open owner decisions.** Where the organization gateway runs (an existing organization server, or a paid cloud VM at an hourly or monthly quote), who the trial users are, and which sign-in method to use.
 
 ## 5. Plan and cards for the Product Owner
 
@@ -84,6 +124,17 @@ Each card is small enough for one Sonnet 5.5 medium session. The Product Owner w
 | 5 | PO-QA | R11 and R10 docs | PO-PDF, PO-WOW | 10 Dec |
 | 6 | PO-SHIP | R4, R5 and R13: deploy, installer, clean-machine test, checksums | PO-QA, planner review | 13–15 Dec |
 
+Backend cards for Codex (D43), dispatched by the planner once the owner approves section 4b:
+
+| Order | Card | Executor | Covers | Target |
+|---|---|---|---|---|
+| B1 | BE-GATEWAY | GPT-6.2 Sol high | FastAPI gateway, provider presets, budget ledger, audit log, Docker Compose, fixture provider for tests (no paid call in CI) | 3 Dec |
+| B2 | BE-GROUND | GPT-6.2 Sol xhigh | Dossier-claim grounding and the deterministic citation and value validator for A1–A3, with a fixed evaluation sample | 5 Dec |
+| B3 | BE-CLAIMS | GPT-6.2 Sol high | Open claim-text source and adapter for A4 (rights recorded) | 8 Dec |
+| B4 | BE-ORG | GPT-6.2 Sol high | Invite-only sign-in and per-user limits for the organization trial | after the hosting decision |
+
+The Product Owner builds the AI panels (PO-AI: A1–A4 in the dossier view, the "AI draft" label, the editor for the hand-off letter) against the B1 fixture provider, so UI and backend proceed in parallel.
+
 Token economy for the Product Owner: read this PRD, PRODUCT.md, DESIGN.md and the card's receipts only; do not re-read research protocols; reuse `product/demo/app.js` patterns; run only the product tests (`py -3.12 -m pytest product/mwd/tests`) plus a headless screenshot check per card.
 
 ## 6. Roles and governance (D42)
@@ -93,7 +144,7 @@ Token economy for the Product Owner: read this PRD, PRODUCT.md, DESIGN.md and th
 | Product Owner | Claude Sonnet 5.5, medium | Owns `product/` UI, `PRODUCT.md`, `DESIGN.md`, `docs/product/`; builds the UI, report design and wow demos; keeps this PRD's status table current |
 | Main planner and only reviewer | Claude Opus 5.5 | Writes and revises this PRD with the co-planner, reviews every product branch, integrates, reports to the owner in Thai |
 | Co-planner | GPT-6.2 Astra high | Product methodology, evidence and competitor critique; roadmap and metrics |
-| Data-pipeline executors | GPT-6.2 Sol high or xhigh | `product/mwd/` builders, adapters and audits, dispatched by the planner |
+| Data-pipeline and backend executors | GPT-6.2 Sol high or xhigh (Codex) | `product/mwd/` builders, adapters and audits, and the AI gateway backend (D43), dispatched by the planner |
 | Owner | Siripon Srihangpiboon | Approves outward-facing steps not already covered by D-W, certificates, pricing and any user study |
 
 ## 7. Evidence and competitors
