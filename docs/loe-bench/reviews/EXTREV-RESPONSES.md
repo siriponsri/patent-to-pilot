@@ -104,3 +104,6 @@ Resolved by the reviewer: R7-A (25/25 pins, DOI readout PENDING exit 0, CI detec
 | R8-A | MAJOR | **In progress (TRACKA-READOUT9, Sol high).** In the unpinned renderer, 12-month reports describe the first panel as verified and retained for later H3 use, descriptive only, testable only at 24 months if H1 and H2 pass; "formal" is reserved for the 24-month family. Pinned files stay untouched. |
 | R8-B | MINOR | **Fixed.** Both checklist entries now state the inclusive capture window (maturity through day seven), late scoring from retained attested bytes, and the descriptive-only disposition after a missed capture, with a link to the addendum. |
 
+**Round 8 outcome (29 Nov, 01:52, TRACKA-READOUT9 merged).** 12-month first publication, replay and recovery reports call the panel verified and retained for later H3 use, descriptive only, with H3 testable at the 24-month readout (on or after 27 Nov 2028) only if H1 and H2 pass. The 24-month wording is unchanged. Source-pin regression passes (25/25; `score_release.py` blob `7ea6b666`). [Receipt](../receipts/TRACKA-READOUT9.md)
+
+Next: EXTREV-R9.
