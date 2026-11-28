@@ -6,10 +6,15 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
-from c9_dev_projection import linkage_scope, sensitivity
+from c9_dev_projection import corroboration_date, linkage_scope, sensitivity
 
 
 class DevelopmentLinkageTest(unittest.TestCase):
+    def test_corroboration_requires_a_publication_day(self):
+        self.assertEqual(corroboration_date({"version": "2016-03-16, docket document 195"}),
+                         date(2016, 3, 16))
+        self.assertIsNone(corroboration_date({"version": "ANDA 202090 approval package, 2017"}))
+
     def test_attributable_ambiguity_and_unlinked_pool_are_separate(self):
         excluded = [
             dict(approval="1993-01-02", dated_groups=[], undated_groups=[], orange_book_leads=[]),

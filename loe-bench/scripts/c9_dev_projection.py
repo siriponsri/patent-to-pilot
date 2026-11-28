@@ -6,6 +6,7 @@ from datetime import date, timedelta
 from importlib.metadata import version
 from pathlib import Path
 import os
+import re
 import subprocess
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
@@ -129,6 +130,12 @@ def nda_proofs(records, cutoff, hashes, snapshot):
     return proofs
 
 
+def corroboration_date(document):
+    """Require an explicit publication day in the frozen source version."""
+    match = re.match(r"\d{4}-\d{2}-\d{2}\b", document["version"])
+    return date.fromisoformat(match.group()) if match else None
+
+
 def predictor_builder(raw, entities, trace, gsrs):
     """Rebuild the C2 feature inputs on all declared C9 dates with the guarded linker."""
     lock = read_json("FROZEN_CONFIG.json")["input_sha256"]
@@ -157,7 +164,8 @@ def predictor_builder(raw, entities, trace, gsrs):
     corroboration = []
     for case in sources["corroborated_cases"]:
         document = sources["corroborating_documents"][case["document"]]
-        if date.fromisoformat(document["version"][:10]) <= DAYS[-1]:
+        published = corroboration_date(document)
+        if published is not None and published <= DAYS[-1]:
             _verify(PRIVATE / "challenge" / document["file"], document["sha256"])
             corroboration.append({**case, **document})
     challenge = PatentChallengeHistory(
@@ -189,7 +197,7 @@ def predictor_proofs(builder, row):
         if witness.source == "FDA_PIV":
             available = builder.challenge.piv.edition_asof(cutoff).captured.date()
         elif witness.source == "RAI_COURT":
-            available = date.fromisoformat(witness.corroboration["version"][:10])
+            available = corroboration_date(witness.corroboration)
         elif witness.source == "RAI_OB_PATENT":
             for match in witness.corroboration["matches"]:
                 listing = match["orange_book"]
