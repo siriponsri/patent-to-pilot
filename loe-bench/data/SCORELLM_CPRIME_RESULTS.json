@@ -1,0 +1,1099 @@
+{
+  "comparisons": {
+    "L1-B1": "PASS",
+    "L1-M3": "PASS",
+    "L1e-B1": "PASS",
+    "L1e-L1": "PASS",
+    "L1e-M3": "PASS"
+  },
+  "horizons": {
+    "12": {
+      "L1": {
+        "L1_cutoffs": [
+          {
+            "boundary_tie_rows": 144,
+            "capacity": 108,
+            "cutoff": "2017-01-01",
+            "expected_queued_events": 5.25,
+            "rows": 543
+          },
+          {
+            "boundary_tie_rows": 235,
+            "capacity": 111,
+            "cutoff": "2018-01-01",
+            "expected_queued_events": 7.5574468085106385,
+            "rows": 556
+          },
+          {
+            "boundary_tie_rows": 455,
+            "capacity": 113,
+            "cutoff": "2019-01-01",
+            "expected_queued_events": 7.450549450549451,
+            "rows": 569
+          },
+          {
+            "boundary_tie_rows": 420,
+            "capacity": 114,
+            "cutoff": "2020-01-01",
+            "expected_queued_events": 5.0,
+            "rows": 570
+          },
+          {
+            "boundary_tie_rows": 486,
+            "capacity": 118,
+            "cutoff": "2021-01-01",
+            "expected_queued_events": 6.572016460905349,
+            "rows": 593
+          },
+          {
+            "boundary_tie_rows": 524,
+            "capacity": 119,
+            "cutoff": "2022-01-01",
+            "expected_queued_events": 5.486641221374046,
+            "rows": 599
+          },
+          {
+            "boundary_tie_rows": 458,
+            "capacity": 118,
+            "cutoff": "2023-01-01",
+            "expected_queued_events": 3.8646288209606983,
+            "rows": 594
+          },
+          {
+            "boundary_tie_rows": 440,
+            "capacity": 123,
+            "cutoff": "2024-01-01",
+            "expected_queued_events": 6.988636363636363,
+            "rows": 615
+          },
+          {
+            "boundary_tie_rows": 357,
+            "capacity": 124,
+            "cutoff": "2025-01-01",
+            "expected_queued_events": 5.512605042016807,
+            "rows": 620
+          }
+        ],
+        "contrasts": {
+          "L1-B1": {
+            "average_precision": {
+              "ci95": [
+                -0.060216691903117285,
+                -0.02247825700573372
+              ],
+              "estimate": -0.038497713431941964,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.06017143029447309,
+                -0.03190389148600247
+              ],
+              "estimate": -0.046380589700112065,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.3077873194462919,
+                -0.1658089921046596
+              ],
+              "estimate": -0.24062800992929428,
+              "undefined_draws": 0
+            }
+          },
+          "L1-M3": {
+            "average_precision": {
+              "ci95": [
+                -0.1639081348399525,
+                -0.08680602309914857
+              ],
+              "estimate": -0.115731948304693,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.09335020143674291,
+                -0.06294454807638554
+              ],
+              "estimate": -0.07854720976340329,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.4643946107587959,
+                -0.33983546272982024
+              ],
+              "estimate": -0.4075122565942904,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "drug_clusters": 803,
+        "event_rows": 202,
+        "levels": {
+          "B1": {
+            "average_precision": {
+              "ci95": [
+                0.06901686589376572,
+                0.11158564839488846
+              ],
+              "estimate": 0.08707453821680493,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.08015782406583419,
+                0.11422485166790251
+              ],
+              "estimate": 0.09760437230312098,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.43334810319005734,
+                0.570547474993582
+              ],
+              "estimate": 0.5063830800676772,
+              "undefined_draws": 0
+            }
+          },
+          "L1": {
+            "average_precision": {
+              "ci95": [
+                0.04144263246635396,
+                0.05743253324583076
+              ],
+              "estimate": 0.048576824784862964,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.043114565470194974,
+                0.059804791307432215
+              ],
+              "estimate": 0.051223782603008916,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.24069645782892937,
+                0.2928838542523181
+              ],
+              "estimate": 0.2657550701383829,
+              "undefined_draws": 0
+            }
+          },
+          "M3": {
+            "average_precision": {
+              "ci95": [
+                0.133616479597536,
+                0.2128460810880639
+              ],
+              "estimate": 0.16430877308955597,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.11005692599620494,
+                0.14945945446218528
+              ],
+              "estimate": 0.1297709923664122,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.6076261518695729,
+                0.729169544198895
+              ],
+              "estimate": 0.6732673267326733,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "queue_slots": 1048,
+        "rows": 5259
+      },
+      "L1e": {
+        "L1e_cutoffs": [
+          {
+            "boundary_tie_rows": 178,
+            "capacity": 108,
+            "cutoff": "2017-01-01",
+            "expected_queued_events": 1.7359550561797752,
+            "rows": 543
+          },
+          {
+            "boundary_tie_rows": 164,
+            "capacity": 111,
+            "cutoff": "2018-01-01",
+            "expected_queued_events": 2.658536585365854,
+            "rows": 556
+          },
+          {
+            "boundary_tie_rows": 173,
+            "capacity": 113,
+            "cutoff": "2019-01-01",
+            "expected_queued_events": 6.53179190751445,
+            "rows": 569
+          },
+          {
+            "boundary_tie_rows": 188,
+            "capacity": 114,
+            "cutoff": "2020-01-01",
+            "expected_queued_events": 1.771276595744681,
+            "rows": 570
+          },
+          {
+            "boundary_tie_rows": 213,
+            "capacity": 118,
+            "cutoff": "2021-01-01",
+            "expected_queued_events": 3.8450704225352115,
+            "rows": 593
+          },
+          {
+            "boundary_tie_rows": 230,
+            "capacity": 119,
+            "cutoff": "2022-01-01",
+            "expected_queued_events": 4.104347826086956,
+            "rows": 599
+          },
+          {
+            "boundary_tie_rows": 219,
+            "capacity": 118,
+            "cutoff": "2023-01-01",
+            "expected_queued_events": 2.136986301369863,
+            "rows": 594
+          },
+          {
+            "boundary_tie_rows": 126,
+            "capacity": 123,
+            "cutoff": "2024-01-01",
+            "expected_queued_events": 2.880952380952381,
+            "rows": 615
+          },
+          {
+            "boundary_tie_rows": 137,
+            "capacity": 124,
+            "cutoff": "2025-01-01",
+            "expected_queued_events": 3.6204379562043796,
+            "rows": 620
+          }
+        ],
+        "contrasts": {
+          "L1e-B1": {
+            "average_precision": {
+              "ci95": [
+                -0.06822527933338102,
+                -0.02992713450586771
+              ],
+              "estimate": -0.04591944515774304,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.08640505079481015,
+                -0.05236835013887342
+              ],
+              "estimate": -0.0696603312420966,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.4359007315567387,
+                -0.276010312802341
+              ],
+              "estimate": -0.36140607495899624,
+              "undefined_draws": 0
+            }
+          },
+          "L1e-L1": {
+            "average_precision": {
+              "ci95": [
+                -0.013979251816979284,
+                -0.0020977332786433077
+              ],
+              "estimate": -0.007421731725801073,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.03237423445759836,
+                -0.013907545909528828
+              ],
+              "estimate": -0.023279741541984533,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.1641366738562504,
+                -0.07453488115174363
+              ],
+              "estimate": -0.12077806502970195,
+              "undefined_draws": 0
+            }
+          },
+          "L1e-M3": {
+            "average_precision": {
+              "ci95": [
+                -0.17138403551182785,
+                -0.09439468447369284
+              ],
+              "estimate": -0.12315368003049407,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.11950156933229442,
+                -0.0832201688257609
+              ],
+              "estimate": -0.10182695130538783,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.5934276885516699,
+                -0.4518937436315604
+              ],
+              "estimate": -0.5282903216239924,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "drug_clusters": 803,
+        "event_rows": 202,
+        "levels": {
+          "B1": {
+            "average_precision": {
+              "ci95": [
+                0.06901686589376572,
+                0.11158564839488846
+              ],
+              "estimate": 0.08707453821680493,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.08015782406583419,
+                0.11422485166790251
+              ],
+              "estimate": 0.09760437230312098,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.43334810319005734,
+                0.570547474993582
+              ],
+              "estimate": 0.5063830800676772,
+              "undefined_draws": 0
+            }
+          },
+          "L1": {
+            "average_precision": {
+              "ci95": [
+                0.04144263246635396,
+                0.05743253324583076
+              ],
+              "estimate": 0.048576824784862964,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.043114565470194974,
+                0.059804791307432215
+              ],
+              "estimate": 0.051223782603008916,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.24069645782892937,
+                0.2928838542523181
+              ],
+              "estimate": 0.2657550701383829,
+              "undefined_draws": 0
+            }
+          },
+          "L1e": {
+            "average_precision": {
+              "ci95": [
+                0.0355336960529906,
+                0.04747480895323995
+              ],
+              "estimate": 0.04115509305906189,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.020513664843606155,
+                0.036790804758908356
+              ],
+              "estimate": 0.027944041061024383,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.10923313602271535,
+                0.18511069581653125
+              ],
+              "estimate": 0.14497700510868095,
+              "undefined_draws": 0
+            }
+          },
+          "M3": {
+            "average_precision": {
+              "ci95": [
+                0.133616479597536,
+                0.2128460810880639
+              ],
+              "estimate": 0.16430877308955597,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.11005692599620494,
+                0.14945945446218528
+              ],
+              "estimate": 0.1297709923664122,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.6076261518695729,
+                0.729169544198895
+              ],
+              "estimate": 0.6732673267326733,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "queue_slots": 1048,
+        "rows": 5259
+      }
+    },
+    "24": {
+      "L1": {
+        "L1_cutoffs": [
+          {
+            "boundary_tie_rows": 312,
+            "capacity": 108,
+            "cutoff": "2017-01-01",
+            "expected_queued_events": 11.76923076923077,
+            "rows": 543
+          },
+          {
+            "boundary_tie_rows": 344,
+            "capacity": 111,
+            "cutoff": "2018-01-01",
+            "expected_queued_events": 14.843023255813954,
+            "rows": 556
+          },
+          {
+            "boundary_tie_rows": 496,
+            "capacity": 113,
+            "cutoff": "2019-01-01",
+            "expected_queued_events": 10.935483870967742,
+            "rows": 569
+          },
+          {
+            "boundary_tie_rows": 125,
+            "capacity": 114,
+            "cutoff": "2020-01-01",
+            "expected_queued_events": 11.856000000000002,
+            "rows": 570
+          },
+          {
+            "boundary_tie_rows": 445,
+            "capacity": 118,
+            "cutoff": "2021-01-01",
+            "expected_queued_events": 16.59550561797753,
+            "rows": 593
+          },
+          {
+            "boundary_tie_rows": 529,
+            "capacity": 119,
+            "cutoff": "2022-01-01",
+            "expected_queued_events": 8.298676748582231,
+            "rows": 599
+          },
+          {
+            "boundary_tie_rows": 496,
+            "capacity": 118,
+            "cutoff": "2023-01-01",
+            "expected_queued_events": 9.671370967741936,
+            "rows": 594
+          },
+          {
+            "boundary_tie_rows": 422,
+            "capacity": 123,
+            "cutoff": "2024-01-01",
+            "expected_queued_events": 12.24170616113744,
+            "rows": 615
+          }
+        ],
+        "contrasts": {
+          "L1-B1": {
+            "average_precision": {
+              "ci95": [
+                -0.10721521627044839,
+                -0.047726183539367466
+              ],
+              "estimate": -0.07353908692065682,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.1049413768665784,
+                -0.05589910059489194
+              ],
+              "estimate": -0.08098630860486464,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.2621899511306651,
+                -0.13962953029994027
+              ],
+              "estimate": -0.2033460574752579,
+              "undefined_draws": 0
+            }
+          },
+          "L1-M3": {
+            "average_precision": {
+              "ci95": [
+                -0.21946536455693133,
+                -0.13019945003505143
+              ],
+              "estimate": -0.16736986265820802,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.18865197350504473,
+                -0.1338931133086383
+              ],
+              "estimate": -0.16210931018241165,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.4606150622026113,
+                -0.3480729637414811
+              ],
+              "estimate": -0.4070353331754032,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "drug_clusters": 771,
+        "event_rows": 368,
+        "levels": {
+          "B1": {
+            "average_precision": {
+              "ci95": [
+                0.1427716088940284,
+                0.2102170918917607
+              ],
+              "estimate": 0.17225889582001652,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.15672521530520456,
+                0.21502207222818637
+              ],
+              "estimate": 0.1851107646562192,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.4026676850527756,
+                0.5233984431445581
+              ],
+              "estimate": 0.4647889851694199,
+              "undefined_draws": 0
+            }
+          },
+          "L1": {
+            "average_precision": {
+              "ci95": [
+                0.08509856937724433,
+                0.1142013856143731
+              ],
+              "estimate": 0.0987198088993597,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.08929093534221369,
+                0.1206860928011941
+              ],
+              "estimate": 0.10412445605135456,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.2353938716207976,
+                0.28946310203589676
+              ],
+              "estimate": 0.261442927694162,
+              "undefined_draws": 0
+            }
+          },
+          "M3": {
+            "average_precision": {
+              "ci95": [
+                0.22645802211331098,
+                0.32136048831789554
+              ],
+              "estimate": 0.26608967155756774,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.22935984560460732,
+                0.3015192798841812
+              ],
+              "estimate": 0.2662337662337662,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.609547254816521,
+                0.7220822603826691
+              ],
+              "estimate": 0.6684782608695652,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "queue_slots": 924,
+        "rows": 4639
+      },
+      "L1e": {
+        "L1e_cutoffs": [
+          {
+            "boundary_tie_rows": 217,
+            "capacity": 108,
+            "cutoff": "2017-01-01",
+            "expected_queued_events": 6.110599078341014,
+            "rows": 543
+          },
+          {
+            "boundary_tie_rows": 208,
+            "capacity": 111,
+            "cutoff": "2018-01-01",
+            "expected_queued_events": 8.153846153846153,
+            "rows": 556
+          },
+          {
+            "boundary_tie_rows": 236,
+            "capacity": 113,
+            "cutoff": "2019-01-01",
+            "expected_queued_events": 6.22457627118644,
+            "rows": 569
+          },
+          {
+            "boundary_tie_rows": 241,
+            "capacity": 114,
+            "cutoff": "2020-01-01",
+            "expected_queued_events": 4.995850622406639,
+            "rows": 570
+          },
+          {
+            "boundary_tie_rows": 272,
+            "capacity": 118,
+            "cutoff": "2021-01-01",
+            "expected_queued_events": 5.591911764705882,
+            "rows": 593
+          },
+          {
+            "boundary_tie_rows": 268,
+            "capacity": 119,
+            "cutoff": "2022-01-01",
+            "expected_queued_events": 4.365671641791044,
+            "rows": 599
+          },
+          {
+            "boundary_tie_rows": 240,
+            "capacity": 118,
+            "cutoff": "2023-01-01",
+            "expected_queued_events": 4.3875,
+            "rows": 594
+          },
+          {
+            "boundary_tie_rows": 192,
+            "capacity": 123,
+            "cutoff": "2024-01-01",
+            "expected_queued_events": 5.671875,
+            "rows": 615
+          }
+        ],
+        "contrasts": {
+          "L1e-B1": {
+            "average_precision": {
+              "ci95": [
+                -0.12575090296631874,
+                -0.06553170722400767
+              ],
+              "estimate": -0.09102507124000771,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.16575755146964835,
+                -0.10673374123267233
+              ],
+              "estimate": -0.1358663593182569,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.41337965573553015,
+                -0.27290146768179996
+              ],
+              "estimate": -0.3411427065491015,
+              "undefined_draws": 0
+            }
+          },
+          "L1e-L1": {
+            "average_precision": {
+              "ci95": [
+                -0.0269714161918134,
+                -0.009366656478706823
+              ],
+              "estimate": -0.01748598431935089,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.07092876031824977,
+                -0.040454434244268644
+              ],
+              "estimate": -0.05488005071339226,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.17712816911839344,
+                -0.10319707988088081
+              ],
+              "estimate": -0.1377966490738436,
+              "undefined_draws": 0
+            }
+          },
+          "L1e-M3": {
+            "average_precision": {
+              "ci95": [
+                -0.2369847973397763,
+                -0.14830857247049758
+              ],
+              "estimate": -0.1848558469775589,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.2495497604785073,
+                -0.18213408044051008
+              ],
+              "estimate": -0.2169893608958039,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.6117519200180352,
+                -0.4761419067072459
+              ],
+              "estimate": -0.5448319822492468,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "drug_clusters": 771,
+        "event_rows": 368,
+        "levels": {
+          "B1": {
+            "average_precision": {
+              "ci95": [
+                0.1427716088940284,
+                0.2102170918917607
+              ],
+              "estimate": 0.17225889582001652,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.15672521530520456,
+                0.21502207222818637
+              ],
+              "estimate": 0.1851107646562192,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.4026676850527756,
+                0.5233984431445581
+              ],
+              "estimate": 0.4647889851694199,
+              "undefined_draws": 0
+            }
+          },
+          "L1": {
+            "average_precision": {
+              "ci95": [
+                0.08509856937724433,
+                0.1142013856143731
+              ],
+              "estimate": 0.0987198088993597,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.08929093534221369,
+                0.1206860928011941
+              ],
+              "estimate": 0.10412445605135456,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.2353938716207976,
+                0.28946310203589676
+              ],
+              "estimate": 0.261442927694162,
+              "undefined_draws": 0
+            }
+          },
+          "L1e": {
+            "average_precision": {
+              "ci95": [
+                0.07087261392278191,
+                0.09323050842142931
+              ],
+              "estimate": 0.08123382458000881,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.037322690871239544,
+                0.06214668719005509
+              ],
+              "estimate": 0.0492444053379623,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.0982149333118356,
+                0.1485185142497272
+              ],
+              "estimate": 0.12364627862031839,
+              "undefined_draws": 0
+            }
+          },
+          "M3": {
+            "average_precision": {
+              "ci95": [
+                0.22645802211331098,
+                0.32136048831789554
+              ],
+              "estimate": 0.26608967155756774,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.22935984560460732,
+                0.3015192798841812
+              ],
+              "estimate": 0.2662337662337662,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.609547254816521,
+                0.7220822603826691
+              ],
+              "estimate": 0.6684782608695652,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "queue_slots": 924,
+        "rows": 4639
+      }
+    }
+  },
+  "input_freeze": {
+    "arms": {
+      "L1": {
+        "input_sha256": "50fba18d9564e10bc2e0b818b07c91c3ebe5474dff18ca1bda10b45fcacc838c",
+        "messages_sha256": "5219d2db076dc5a855a067c17bd1c69312694373b31efceb95915c317385a3f6"
+      },
+      "L1e": {
+        "input_sha256": "2b351168e15ff94df8f40a11d1a90ad256dc211b90a2fcaf711d0add9196485e",
+        "messages_sha256": "94fd4de2b58e49275d30182e211ff64e73d0d64737c67912fdffed9eed8ada40"
+      }
+    },
+    "config_lf_sha256": {
+      "FROZEN_CONFIG.json": "d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39",
+      "L1E_FROZEN_CONFIG.json": "dd1dd4ac0d592a48de081c5fc29f68e0ccc78fd7a8daad771d280c7f15901e40",
+      "L1_FROZEN_CONFIG.json": "e5e5ade357ee5faf83efa0ce24ad25feddacdfcbf49ddd817a6b10e494a9ef16"
+    },
+    "cutoffs": {
+      "12": {
+        "2017-01-01": 543,
+        "2018-01-01": 556,
+        "2019-01-01": 569,
+        "2020-01-01": 570,
+        "2021-01-01": 593,
+        "2022-01-01": 599,
+        "2023-01-01": 594,
+        "2024-01-01": 615,
+        "2025-01-01": 620
+      },
+      "24": {
+        "2017-01-01": 543,
+        "2018-01-01": 556,
+        "2019-01-01": 569,
+        "2020-01-01": 570,
+        "2021-01-01": 593,
+        "2022-01-01": 599,
+        "2023-01-01": 594,
+        "2024-01-01": 615
+      }
+    },
+    "registration_sha256": "3f91145251465b0ed9c89233337748e1b9fd84db8c4c2a6158860374670e1c77",
+    "roster_sha256": "b39405c6a0cb67a1b0cae7234ac50c12e9bdace9ea20e0c23895fbaaad23d240",
+    "rows": 9898
+  },
+  "input_manifest_sha256": "56746270a57826da3b60bdd75ed60408fbccd619f65c4b70b6e4c783ccf68cfe",
+  "quality_gates": {
+    "L1": {
+      "abstains": 1019,
+      "arm_status": "COMPLETE",
+      "evaluated_rows": 200,
+      "full_roster": true,
+      "gpu": "NVIDIA L4",
+      "inference_wall_s": 4297.323680424015,
+      "output_sha256": "362b1f9920b8c7db78cb6fa7f17dfd46c6b074061c11bb73b575969bbc3978e6",
+      "predictions_sha256": "65bb85aef29a3e3320ed807072d996eb5dccf58bac8f9805fe4f7cac91f478c7",
+      "rendered_chat_hashes_sha256": "b9ade58e27629bf9a21607a631f90f13bb4f4d769888d99cb864372a4649d773",
+      "rows_returned": 9898,
+      "run_status": "COMPLETE",
+      "schema_valid": 200,
+      "status": "PASS",
+      "valid_json": 9898
+    },
+    "L1e": {
+      "abstains": 825,
+      "arm_status": "COMPLETE",
+      "evaluated_rows": 200,
+      "full_roster": true,
+      "gpu": "NVIDIA L4",
+      "inference_wall_s": 6158.325781536056,
+      "output_sha256": "35cdcb982ab12928a946888305cb9a115f4857792c6373d1dad44e557a82fc49",
+      "predictions_sha256": "4eed6b3b1e851fa93883a8c556dc9fd9cbc42ea9aebf396da3bde75c97f86bc6",
+      "rendered_chat_hashes_sha256": "7a8b41b8ac9b587f562603feb8130acbaee5066c6aeef567e33dfca8f935050f",
+      "rows_returned": 9898,
+      "run_status": "COMPLETE",
+      "schema_valid": 200,
+      "status": "PASS",
+      "valid_json": 9898
+    }
+  },
+  "role": "EXPLORATORY",
+  "runpod": {
+    "billing_at_close": {
+      "result": {
+        "metadata": {
+          "query": {
+            "bucketSize": "hour",
+            "endTime": "2026-11-28T10:00:00Z",
+            "podId": "hmo8vrw0fq4pw2",
+            "startTime": "2026-11-28T05:00:00Z"
+          },
+          "recordCount": 4,
+          "totals": {
+            "cpuAmount": 0,
+            "diskAmount": 0.018518518656492233,
+            "gpuAmount": 1.8122620079666376,
+            "totalAmount": 1.8307805266231298
+          },
+          "uniquePodCount": 1
+        },
+        "pagination": {
+          "hasNextPage": false,
+          "nextCursor": null,
+          "returned": 4,
+          "total": 4
+        },
+        "records": [
+          {
+            "cpuAmount": 0,
+            "diskAmount": 0.0034722222480922937,
+            "endTime": "2026-11-28T06:00:00Z",
+            "gpuAmount": 0.3162687849253416,
+            "podId": "hmo8vrw0fq4pw2",
+            "startTime": "2026-11-28T05:00:00Z",
+            "totalAmount": 0.3197410071734339
+          },
+          {
+            "cpuAmount": 0,
+            "diskAmount": 0.0069444444961845875,
+            "endTime": "2026-11-28T07:00:00Z",
+            "gpuAmount": 0.6910081692039967,
+            "podId": "hmo8vrw0fq4pw2",
+            "startTime": "2026-11-28T06:00:00Z",
+            "totalAmount": 0.6979526137001812
+          },
+          {
+            "cpuAmount": 0,
+            "diskAmount": 0.0069444444961845875,
+            "endTime": "2026-11-28T08:00:00Z",
+            "gpuAmount": 0.6892450265586376,
+            "podId": "hmo8vrw0fq4pw2",
+            "startTime": "2026-11-28T07:00:00Z",
+            "totalAmount": 0.6961894710548222
+          },
+          {
+            "cpuAmount": 0,
+            "diskAmount": 0.0011574074160307646,
+            "endTime": "2026-11-28T09:00:00Z",
+            "gpuAmount": 0.11574002727866173,
+            "podId": "hmo8vrw0fq4pw2",
+            "startTime": "2026-11-28T08:00:00Z",
+            "totalAmount": 0.11689743469469249
+          }
+        ]
+      },
+      "status": "PARTIALLY_POSTED"
+    },
+    "ceiling_usd": 3,
+    "cloud": "SECURE",
+    "compute_usd_per_hour": 0.69,
+    "container_disk_gb": 50,
+    "container_disk_usd_per_gb_month": 0.1,
+    "create_requested_utc": "2026-11-28T05:28:29Z",
+    "data_center": "US-GA-2",
+    "delete_confirmed_utc": "2026-11-28T09:06:29Z",
+    "delete_readback_status": 404,
+    "delete_requested_utc": "2026-11-28T09:06:25Z",
+    "delete_status": 204,
+    "elapsed_upper_bound_seconds": 13080,
+    "estimated_compute_usd": 2.5069999999999997,
+    "estimated_disk_usd": 0.025231481481481483,
+    "estimated_retained_volume_usd": 0.010597222222222221,
+    "estimated_total_usd": 2.5428287037037034,
+    "existing_volume_id": "8n6rnzljwg",
+    "existing_volume_mounted": false,
+    "existing_volume_usd_per_month": 2.1,
+    "gpu": "NVIDIA L4",
+    "inference_complete_utc": "2026-11-28T08:30:20Z",
+    "monitoring_gap": "Live monitoring cell was unavailable on resumption at 09:04:49 UTC. Inference had finished at 08:30:20 UTC.",
+    "pod_id": "hmo8vrw0fq4pw2",
+    "pod_started_utc": "2026-11-28T05:28:35.147Z",
+    "status": "CLOSED_POD_DELETED",
+    "transfer_verified": true
+  },
+  "score_export_manifest_sha256": "bb27ec7f972fecbe92bbfea9d31596dca56c51e0ad422083f70ce026c3c2bd07",
+  "status": "SCORED_EXPLORATORY"
+}
