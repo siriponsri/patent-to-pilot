@@ -106,18 +106,17 @@ jobs:
           FREEZE_SHA256: ${{ inputs.freeze_sha256 || vars.TRACKA_FREEZE_SHA256 }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          prior=()
-          if [[ "$HORIZON" == 24 ]]; then
-            prior=(--repository "$GITHUB_REPOSITORY")
-          fi
           status=0
           summary=$(python -m loe_bench.tracka_readout --release "$RELEASE_DOI" --horizon "$HORIZON" \
-            --freeze-sha256 "$FREEZE_SHA256" --out ../track-a-results "${prior[@]}") || status=$?
+            --freeze-sha256 "$FREEZE_SHA256" --out ../track-a-results --repository "$GITHUB_REPOSITORY") || status=$?
           printf '%s\n' "$summary"
           case "$status" in
             0|2|3)
               folder="${summary#* }"
               cat "$folder/REPORT.md" >> "$GITHUB_STEP_SUMMARY"
+              if [[ -f "$folder/REPLAY.md" ]]; then
+                cat "$folder/REPLAY.md" >> "$GITHUB_STEP_SUMMARY"
+              fi
               printf 'folder=%s\n' "${folder#../}" >> "$GITHUB_OUTPUT"
               ;;
             *) exit "$status" ;;
@@ -184,31 +183,32 @@ jobs:
               exit 1
             fi
             if [[ "$status" == SCORED ]]; then
-              if [[ "$HORIZON" == 24 ]] && ! jq -e '.h3_input.status | IN("FIRST_PUBLISHED", "REVISED_VINTAGE")' \
-                "$folder/results.json" > /dev/null; then
-                echo "::error::H3 input is unverified. Inspect the descriptive run artifact and recover the first publication."
+              if ! jq -e '.publication_eligible == true' "$folder/results.json" > /dev/null; then
+                echo "::error::The run is ineligible for a first publication. Inspect its discovery and H3 evidence."
                 exit 1
               fi
-              (cd "$folder" && sha256sum results.json > results.sha256)
-              read -r result_sha _ < "$folder/results.sha256"
-              read -r source_sha _ < <(sha256sum "$folder/outcome-source-manifest.json")
-              read -r draws_sha _ < <(sha256sum "$folder/bootstrap-draws.npz")
-              read -r report_sha _ < <(sha256sum "$folder/REPORT.md")
+              bundle_parent=$(mktemp -d)
+              bundle="$bundle_parent/first-publication"
+              PYTHONPATH=loe-bench python -c 'import sys; from pathlib import Path; from loe_bench.tracka_readout import prepare_publication; prepare_publication(Path(sys.argv[1]), Path(sys.argv[2]))' "$folder" "$bundle"
+              read -r result_sha _ < "$bundle/results.sha256"
+              read -r source_sha _ < <(sha256sum "$bundle/outcome-source-manifest.json")
+              read -r draws_sha _ < <(sha256sum "$bundle/bootstrap-draws.npz")
+              read -r report_sha _ < <(sha256sum "$bundle/REPORT.md")
               notes=$(mktemp)
               {
                 printf 'Scoring started %s UTC.\n\n' "$started"
                 print_pins "$result_sha" "$source_sha" "$draws_sha" "$report_sha"
                 printf '[Workflow run](%s/%s/actions/runs/%s)\n\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
-                cat "$folder/REPORT.md"
+                cat "$bundle/REPORT.md"
               } > "$notes"
               gh release create "$tag" --repo "$GITHUB_REPOSITORY" --latest=false --target "$GITHUB_SHA" \
                 --title "Track A first ${HORIZON}-month readout" --notes-file "$notes" \
-                "$folder/results.json" "$folder/results.sha256" "$folder/outcome-source-manifest.json" \
-                "$folder/REPORT.md" "$folder/bootstrap-draws.npz"
+                "$bundle/results.json" "$bundle/results.sha256" "$bundle/outcome-source-manifest.json" \
+                "$bundle/REPORT.md" "$bundle/bootstrap-draws.npz"
               evidence=$(discover)
             fi
           fi
-          if jq -e '.reason == "INVALID_ORIGINAL"' <<< "$evidence" > /dev/null; then
+          if jq -e '.reason | IN("INVALID_ORIGINAL", "DISPUTED")' <<< "$evidence" > /dev/null; then
             jq -r '.detail' <<< "$evidence"
             echo "::error::First release failed verification. Preserve its assets and investigate."
             exit 1
@@ -217,6 +217,7 @@ jobs:
           if [[ -n "$archive" ]]; then
             status=SCORED
             started=$(jq -er '.original.scored_on_utc' <<< "$evidence")
+            printf '\n[Verified first published aggregate and formal family](%s).\n' "$archive" >> "$GITHUB_STEP_SUMMARY"
             if [[ "$recorded" == true ]]; then
               echo "The first canonical scored readout and archive are already verified."
               exit 0

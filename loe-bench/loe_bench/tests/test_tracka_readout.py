@@ -11,7 +11,7 @@ from urllib.error import HTTPError
 
 from loe_bench import tracka_outcomes, tracka_vintage
 from loe_bench.score_release import RESULTS, SOURCES, score as legacy_score
-from loe_bench.tracka_readout import score
+from loe_bench.tracka_readout import prepare_publication, score
 from loe_bench.tracka_release import FREEZE, digest, load
 from loe_bench.tests.test_score_release import H12, H24, approval, fake_fda, synthetic_release
 
@@ -50,12 +50,15 @@ class ReadoutTest(unittest.TestCase):
         self.assertEqual(status, "SCORED")
         return folder, load(folder / RESULTS)
 
-    def archive(self, horizon=12, **options):
+    def archive(self, horizon=12, *, sources=None):
         today = H12 if horizon == 12 else H24
-        folder, result = self.readout(f"first-runner-{horizon}", horizon, today, fake_fda(today), **options)
-        sha = digest(folder / RESULTS)
-        (folder / tracka_vintage.CHECKSUM).write_text(f"{sha}  {RESULTS}\n", encoding="ascii")
-        return folder, sha, result
+        responses = self.empty_publications()
+        with patch.object(tracka_vintage, "fetch", side_effect=lambda url, _: responses[url]):
+            run, result = self.readout(f"first-runner-{horizon}", horizon, today, sources or fake_fda(today), doi=DOI)
+        self.assertEqual(result["family_status"], "PROVISIONAL")
+        folder = run / "release-bundle"
+        prepare_publication(run, folder)
+        return folder, digest(folder / RESULTS), load(folder / RESULTS)
 
     def issue(self, sha, *, horizon=12, manifest_sha=None):
         today = H12 if horizon == 12 else H24
@@ -126,15 +129,92 @@ class ReadoutTest(unittest.TestCase):
                 with self.subTest(name=name):
                     _, result = self.readout(name, 24, H24, sources, **options)
                     h3 = result["hypotheses"]["H3"]
-                    self.assertEqual((h3["decision"], h3["reached"], h3["vintage_status"]),
+                    self.assertEqual((h3["sequence_decision"], h3["reached"], h3["vintage_status"]),
                                      ("DESCRIPTIVE_ONLY", False, "UNVERIFIED_INPUT"))
                     self.assertAlmostEqual(h3["estimate"], estimate)
             fetch.assert_not_called()
-            _, formal = self.readout("canonical", 24, H24, sources, repository=REPO, doi=DOI)
-        h3 = formal["hypotheses"]["H3"]
-        self.assertEqual((h3["decision"], h3["reached"]), ("PASS", True))
+            _, candidate = self.readout("canonical", 24, H24, sources, repository=REPO, doi=DOI)
+        h3 = candidate["hypotheses"]["H3"]
+        self.assertEqual((h3["decision"], h3["sequence_decision"], h3["sequence_reached"]),
+                         ("PROVISIONAL", "PASS", True))
         self.assertEqual(h3["estimate"], original["hypotheses"]["H3"]["estimate"])
         self.assertEqual(h3["ci95"], original["hypotheses"]["H3"]["ci95"])
+
+    def caller_snapshot(self, name, today, sources):
+        folder, _ = self.readout(name, 24, today, sources)
+        return folder / "sources"
+
+    def assert_provisional_snapshots(self, responses, snapshots, today):
+        results = []
+        with patch.object(tracka_vintage, "fetch", side_effect=lambda url, _: responses[url]):
+            for snapshot in snapshots:
+                folder, result = self.readout("caller-probe", 24, today, {}, doi=DOI, snapshot=snapshot)
+                self.assertEqual(result["family_status"], "PROVISIONAL")
+                self.assertFalse(result["publication_eligible"])
+                self.assertEqual({step["decision"] for step in result["hypotheses"].values()}, {"PROVISIONAL"})
+                self.assertFalse(any(step["reached"] for step in result["hypotheses"].values()))
+                with self.assertRaisesRegex(ValueError, "ineligible"):
+                    prepare_publication(folder, folder / "forbidden-bundle")
+                results.append(result)
+        return results
+
+    def test_caller_editions_cannot_select_the_family_with_a_fixed_12_month_publication(self):
+        first, sha, _ = self.archive()
+        day = H24 + timedelta(days=2)
+        added = tuple(approval(i, "20271126", app=f"ANDA0001{i:02d}") for i in range(12, 20))
+        snapshots = (self.caller_snapshot("earlier-edition", H24, fake_fda(H24)),
+                     self.caller_snapshot("later-edition", day, fake_fda(day, extra=added)))
+        a, b = self.assert_provisional_snapshots(self.published(first, sha), snapshots, day)
+        self.assertEqual([r["hypotheses"]["H1"]["sequence_decision"] for r in (a, b)], ["PASS", "FAIL"])
+        self.assertEqual([r["hypotheses"]["H3"]["sequence_reached"] for r in (a, b)], [True, False])
+        self.assertEqual(a["hypotheses"]["H3"]["estimate"], b["hypotheses"]["H3"]["estimate"])
+        self.assertEqual([r["h3_input"]["results_sha256"] for r in (a, b)], [sha, sha])
+
+    def test_caller_editions_cannot_select_the_family_with_documented_absence(self):
+        day = H24 + timedelta(days=2)
+        snapshots = (self.caller_snapshot("earlier-edition", H24, fake_fda(H24)),
+                     self.caller_snapshot("later-edition", day, fake_fda(day, extra=(approval(16, "20271126"),))))
+        a, b = self.assert_provisional_snapshots(self.empty_publications(), snapshots, day)
+        self.assertEqual([r["h3_input"]["status"] for r in (a, b)], ["REVISED_VINTAGE"] * 2)
+        self.assertEqual([r["hypotheses"]["H3"]["sequence_reached"] for r in (a, b)], [True, True])
+        self.assertNotEqual(a["hypotheses"]["H3"]["estimate"], b["hypotheses"]["H3"]["estimate"])
+
+    def test_only_first_live_publication_controls_the_family_at_either_horizon(self):
+        for horizon, today in ((12, H12), (24, H24)):
+            with self.subTest(horizon=horizon):
+                original_sources = fake_fda(today)
+                first, sha, formal = self.archive(horizon, sources=original_sources)
+                self.assertEqual(formal["family_status"], "FORMAL")
+                self.assertEqual(formal["hypotheses"]["H3"]["reached"], horizon == 24)
+                responses = self.published(first, sha, horizon=horizon)
+                additions = tuple(approval(i, "20271126", app=f"ANDA0001{i:02d}") for i in range(12, 20))
+                sources = fake_fda(today, extra=additions)
+                with patch.object(tracka_vintage, "fetch", side_effect=lambda url, _: responses[url]):
+                    _, same = self.readout("identical", horizon, today, original_sources, doi=DOI)
+                    folder, changed = self.readout("revised", horizon, today, sources, doi=DOI)
+                    _, replay = self.readout("snapshot-replay", horizon, today, {}, doi=DOI,
+                                             snapshot=folder / "sources")
+                    with patch.object(tracka_outcomes, "fetch_bytes", side_effect=OSError("FDA unavailable")):
+                        status, blocked = score(self.release, horizon, self.root / "blocked-replay",
+                                                today=today, doi=DOI)
+                self.assertEqual(status, "BLOCKED_SOURCE")
+                blocked = load(blocked / RESULTS)
+                self.assertEqual(blocked["replay_comparison"]["status"], "NOT_RUN_BLOCKED_SOURCE")
+                self.assertEqual({result["family_status"] for result in (same, changed, replay, blocked)}, {"REPLAY"})
+                self.assertEqual({step["decision"] for step in changed["hypotheses"].values()}, {"REPLAY"})
+                self.assertEqual(same["replay_comparison"]["hypothesis_differences"], {f"H{i}": {} for i in range(1, 4)})
+                self.assertFalse(same["replay_comparison"]["changed_source_files"])
+                self.assertTrue(changed["replay_comparison"]["changed_source_files"])
+                self.assertTrue(any(changed["replay_comparison"]["changed_panel_fields"].values()))
+                if horizon == 24:
+                    self.assertEqual(changed["replay_comparison"]["hypothesis_differences"]["H1"]["decision"],
+                                     {"published": "PASS", "replay": "FAIL"})
+                self.assertEqual(replay["replay_comparison"]["hypothesis_differences"],
+                                 changed["replay_comparison"]["hypothesis_differences"])
+                self.assertIn("remains formal", (folder / "REPLAY.md").read_text(encoding="utf-8"))
+                self.assertEqual(digest(folder.parent / f"first-published-{sha}" / RESULTS), sha)
+                with self.assertRaisesRegex(ValueError, "ineligible"):
+                    prepare_publication(folder, folder / "forbidden-bundle")
 
     def test_missing_original_uses_explicit_revised_vintage_and_old_issue_date(self):
         first, sha, original = self.archive()
@@ -157,6 +237,37 @@ class ReadoutTest(unittest.TestCase):
         self.assertEqual([query["status"] for query in record["queries"]], ["FOUND", "NOT_FOUND", "FOUND"])
         self.assertFalse(tracka_vintage.verified_absence(record, "0" * 64))
 
+    def test_all_issue_witnesses_checked_before_absence(self):
+        sha, manifest = "1" * 64, "2" * 64
+        for case in ("agreeing", "conflicting-result", "conflicting-manifest", "malformed", "missing-result"):
+            with self.subTest(case=case):
+                a = self.issue(sha, manifest_sha="invalid" if case == "malformed" else manifest)
+                if case == "missing-result":
+                    a["body"] = "\n".join(line for line in a["body"].splitlines() if not line.startswith("First result"))
+                b = self.issue("0" * 64 if case == "conflicting-result" else sha,
+                               manifest_sha="0" * 64 if case == "conflicting-manifest" else manifest)
+                b["html_url"] = b["html_url"].replace("/issues/1", "/issues/2")
+                responses = self.empty_publications()
+                responses[self.issues_url] = json.dumps([a, b]).encode()
+                with patch.object(tracka_vintage, "fetch", side_effect=lambda url, _: responses[url]):
+                    folder, result = self.readout(case, 24, H24, fake_fda(H24), doi=DOI)
+                evidence = result["h3_input"]["discovery"]
+                self.assertEqual(evidence["issue_urls"], [a["html_url"], b["html_url"]])
+                for name in (RESULTS, SOURCES):
+                    self.assertEqual(evidence["publication_pins"][name][-1]["locator"], b["html_url"])
+                if case == "agreeing":
+                    self.assertEqual(evidence["reason"], "MISSING_ORIGINAL")
+                    self.assertEqual(result["h3_input"]["status"], "REVISED_VINTAGE")
+                    self.assertTrue(result["publication_eligible"])
+                else:
+                    self.assertEqual(evidence["reason"], "DISPUTED")
+                    self.assertEqual(result["h3_input"]["status"], "UNVERIFIED_INPUT")
+                    self.assertEqual(result["hypotheses"]["H3"]["sequence_decision"], "DESCRIPTIVE_ONLY")
+                    self.assertFalse(result["hypotheses"]["H3"]["sequence_reached"])
+                    self.assertFalse(result["publication_eligible"])
+                    with self.assertRaisesRegex(ValueError, "ineligible"):
+                        prepare_publication(folder, folder / "forbidden-bundle")
+
     def test_corrupt_asset_or_mismatched_issue_digest_is_invalid(self):
         first, sha, _ = self.archive()
         for name in (RESULTS, SOURCES, self.issues_url):
@@ -170,7 +281,7 @@ class ReadoutTest(unittest.TestCase):
                     panel, evidence = tracka_vintage.discover(REPO, DOI, self.freeze, self.release.manifest_sha256,
                                                                self.root / "download")
                 self.assertIsNone(panel)
-                self.assertEqual(evidence["reason"], "INVALID_ORIGINAL")
+                self.assertEqual(evidence["reason"], "DISPUTED" if name == self.issues_url else "INVALID_ORIGINAL")
                 self.assertEqual(evidence["original"]["published_at_utc"], PUB_DATE)
 
     def test_invalid_original_blocks_formal_h3(self):
@@ -181,7 +292,19 @@ class ReadoutTest(unittest.TestCase):
             _, final = self.readout("invalid-runner", 24, H24, fake_fda(H24), repository=REPO, doi=DOI)
         self.assertEqual(final["h3_input"]["reason"], "INVALID_ORIGINAL")
         self.assertEqual(final["hypotheses"]["H3"]["vintage_status"], "UNVERIFIED_INPUT")
-        self.assertEqual(final["hypotheses"]["H3"]["decision"], "DESCRIPTIVE_ONLY")
+        self.assertEqual(final["hypotheses"]["H3"]["sequence_decision"], "DESCRIPTIVE_ONLY")
+
+    def test_discovery_rejects_an_unpublished_family_at_the_scoped_tag(self):
+        folder, _ = self.readout("provisional", 12, H12, fake_fda(H12))
+        sha = digest(folder / RESULTS)
+        (folder / tracka_vintage.CHECKSUM).write_text(f"{sha}  {RESULTS}\n", encoding="ascii")
+        responses = self.published(folder, sha)
+        with patch.object(tracka_vintage, "fetch", side_effect=lambda url, _: responses[url]):
+            panel, evidence = tracka_vintage.discover(REPO, DOI, self.freeze, self.release.manifest_sha256,
+                                                       self.root / "reject-provisional")
+        self.assertIsNone(panel)
+        self.assertEqual((evidence["reason"], evidence["detail"]),
+                         ("INVALID_ORIGINAL", "First publication does not contain a formal family"))
 
     def test_surviving_tag_blocks_revised_vintage(self):
         responses = self.empty_publications()
@@ -189,7 +312,7 @@ class ReadoutTest(unittest.TestCase):
         with patch.object(tracka_vintage, "fetch", side_effect=lambda url, _: responses[url]):
             _, result = self.readout("tag-survives", 24, H24, fake_fda(H24), repository=REPO, doi=DOI)
         self.assertIn("tag survives", result["h3_input"]["detail"])
-        self.assertEqual(result["hypotheses"]["H3"]["decision"], "DESCRIPTIVE_ONLY")
+        self.assertEqual(result["hypotheses"]["H3"]["sequence_decision"], "DESCRIPTIVE_ONLY")
 
     def test_publication_witnesses_and_release_only_recovery(self):
         first, sha, _ = self.archive()
@@ -220,13 +343,12 @@ class ReadoutTest(unittest.TestCase):
                     self.assertEqual(evidence["original"]["results_sha256"], sha)
                 else:
                     self.assertIsNone(panel)
-                    self.assertEqual((evidence["reason"], evidence["detail"]), ("INVALID_ORIGINAL", error))
+                    reason = "DISPUTED" if error.startswith("Publication witnesses disagree") else "INVALID_ORIGINAL"
+                    self.assertEqual((evidence["reason"], evidence["detail"]), (reason, error))
 
     def test_first_24_month_release_recovers_safety_and_bytes_after_artifact_expiry(self):
         # The first 24-month run recorded canonical absence at 12 months.
-        responses = self.empty_publications()
-        with patch.object(tracka_vintage, "fetch", side_effect=lambda url, _: responses[url]):
-            transient, sha, first = self.archive(24, repository=REPO, doi=DOI)
+        transient, sha, first = self.archive(24)
         self.assertEqual(first["h3_input"]["status"], "REVISED_VINTAGE")
         self.assertTrue(first["hypotheses"]["H3"]["reached"])
         responses = self.published(transient, sha, horizon=24)
@@ -241,8 +363,11 @@ class ReadoutTest(unittest.TestCase):
         with (patch.object(tracka_vintage, "fetch", side_effect=lambda url, _: responses[url]) as fetch,
               patch.object(tracka_outcomes, "fetch_bytes", side_effect=AssertionError("Unexpected FDA fetch"))):
             status, folder = score(self.release, 24, self.root / "recovery", today=H24 + timedelta(days=2),
-                                   repository=REPO, doi=DOI)
-        self.assertEqual(status, "SCORED")
+                                   repository=REPO, doi=DOI, recover=True)
+        self.assertEqual(status, "RECOVERED")
+        self.assertEqual(load(folder / RESULTS)["family_status"], "REPLAY")
+        self.assertEqual(load(folder / RESULTS)["replay_comparison"]["status"], "NOT_RUN_RECOVERY_ONLY")
+        folder = folder.parent / f"first-published-{sha}"
         self.assertNotIn(self.release_url, [call.args[0] for call in fetch.call_args_list])
         self.assertEqual({name: (folder / name).read_bytes() for name in assets}, assets)
         recovered = load(folder / RESULTS)
