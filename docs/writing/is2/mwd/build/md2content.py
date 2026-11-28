@@ -91,7 +91,8 @@ def load(md_path, lang):
             h = s[3:].strip()
             h = re.sub(r"^(\d+) ", r"\1. ", h)
             in_refs = h in ("References", "เอกสารอ้างอิง")
-            body.append(("h1", h))
+            # Keep the body and its floating tables on a separate page from the front matter.
+            body.append(("h1", h, i == start))
         elif s.startswith("### "):
             body.append(("h2", s[4:].strip()))
         elif in_refs and s.startswith("["):
