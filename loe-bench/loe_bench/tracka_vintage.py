@@ -79,12 +79,21 @@ def note_dates(body):
 
 
 def publish_pins(body, locator, pins):
+    errors = []
     for filename, label in PIN_LABELS.items():
         for line in body.splitlines():
             if line.startswith(label):
                 suffix = re.fullmatch(r" `([0-9a-f]{64})`\.", line[len(label):])
-                require(suffix, f"Malformed {label} at {locator}")
-                pins[filename].append({"locator": locator, "sha256": suffix[1]})
+                if suffix:
+                    pins[filename].append({"locator": locator, "sha256": suffix[1]})
+                else:
+                    errors.append(f"Malformed {label} at {locator}")
+    return errors
+
+
+def pin_disputes(pins):
+    return [f"Publication witnesses disagree for {name}" for name, witnesses in pins.items()
+            if len({item["sha256"] for item in witnesses}) > 1]
 
 
 def scored_issues(query, api, record, horizon):
@@ -163,6 +172,16 @@ def discover(repository, doi, freeze_sha, release_sha, folder, *, horizon=12):
         return data
 
     issues = scored_issues(query, api, record, horizon)
+    pins = {name: [] for name in PIN_LABELS}
+    evidence["publication_pins"] = pins
+    evidence["issue_urls"] = [issue["html_url"] for issue in issues]
+    disputes = []
+    for issue in issues:
+        locator = issue["html_url"]
+        count = len(pins[RESULTS])
+        disputes.extend(publish_pins(issue.get("body") or "", locator, pins))
+        if len(pins[RESULTS]) == count:
+            disputes.append(f"Missing publication result digest at {locator}")
     if issues:
         first = min(issues, key=lambda item: item["created_at"])
         original.update(note_dates(first.get("body") or ""), issue_url=first["html_url"])
@@ -172,14 +191,16 @@ def discover(repository, doi, freeze_sha, release_sha, folder, *, horizon=12):
         require(refs is not None, "Cannot inspect the canonical Track A tag history")
         refs = json.loads(refs)
         require(isinstance(refs, list), "Unexpected canonical Track A tag history")
-        if any(ref["ref"] == f"refs/tags/{tag}" for ref in refs):
+        evidence["exact_tag_found"] = any(ref["ref"] == f"refs/tags/{tag}" for ref in refs)
+        disputes.extend(pin_disputes(pins))
+        if disputes:
+            return None, {**evidence, "reason": "DISPUTED", "detail": "\n".join(disputes)}
+        if evidence["exact_tag_found"]:
             return None, {**evidence, "reason": "INVALID_ORIGINAL", "detail": "Publication tag survives without a release"}
-        return None, {**evidence, "reason": "MISSING_ORIGINAL", "exact_tag_found": False}
+        return None, {**evidence, "reason": "MISSING_ORIGINAL"}
 
     release_url = f"https://github.com/{repository}/releases/tag/{tag}"
     original["release_url"] = release_url
-    pins = {name: [] for name in PIN_LABELS}
-    evidence["publication_pins"] = pins
     try:
         release = json.loads(raw)
         notes = release.get("body") or ""
@@ -189,12 +210,12 @@ def discover(repository, doi, freeze_sha, release_sha, folder, *, horizon=12):
         require(not release["draft"] and release["tag_name"] == tag and
                 datetime.fromisoformat(release["published_at"]).tzinfo is not None,
                 "Unexpected GitHub publication identity")
-        publish_pins(notes, release_url, pins)
-        for issue in issues:
-            publish_pins(issue.get("body") or "", issue["html_url"], pins)
+        malformed_notes = publish_pins(notes, release_url, pins)
+        disputes.extend(pin_disputes(pins))
+        if disputes:
+            return None, {**evidence, "reason": "DISPUTED", "detail": "\n".join(disputes + malformed_notes)}
+        require(not malformed_notes, "\n".join(malformed_notes))
         require(pins[RESULTS], "Missing publication result digest")
-        for name, witnesses in pins.items():
-            require(len({item["sha256"] for item in witnesses}) <= 1, f"Publication witnesses disagree for {name}")
         if horizon == 24:
             require(all(pins.values()), "Missing 24-month publication asset digest")
 
@@ -212,6 +233,8 @@ def discover(repository, doi, freeze_sha, release_sha, folder, *, horizon=12):
             if pins.get(name):
                 require(pins[name][0]["sha256"] == sha, f"Publication digest disagrees with {name}")
         panel, identity = verify_archive(folder, release_sha, freeze_sha, pins[RESULTS][0]["sha256"], horizon=horizon)
+        require(load(folder / RESULTS).get("family_status") == "FORMAL",
+                "First publication does not contain a formal family")
     except (AttributeError, KeyError, TypeError, ValueError) as exc:
         return None, {**evidence, "reason": "INVALID_ORIGINAL", "detail": str(exc)}
     original.update(identity, archive_sha256={name: digest(folder / name) for name in ASSETS})
