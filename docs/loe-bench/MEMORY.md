@@ -85,3 +85,9 @@
   - The blocking-patent label must be document-backed. Date coincidence yields unknown. Label supply is narrow: Rai has no ANDA field (E7b).
   - Thai family status: EPO DOCDB and INPADOC have almost no TH coverage. Use WIPO/ASEAN PATENTSCOPE and the ASEAN IP Register manually, and DIP manually or through an exchange request.
   - Proposed phases: decide K23–K25 → pre-OSF additions → confirmatory run → US label-yield pilot (30 products, at least 10 documented positives to continue) → Thai dossier pilot (10 traces) → demo → IS2 paper; customer discovery by the owner in parallel. The main planner's merged Goal-Phase plan is awaiting owner approval.
+- **28 Nov, owner redirect to a pharma market-research product.**
+  - The owner wants the final product to run from market research before development (P2) to an FTO hand-off report readable by FTO, R&D and BD, with clear hierarchy and references. The project may be renamed.
+  - IS2 draft due end of December 2026, final due end of January 2027. The owner has no contacts and no experts.
+  - Co-planner design: a launch-window forecast covering US entry timing (LOE-Bench), competition at launch (K25), a price-erosion scenario (FDA medians: manufacturer-price index 46 with 2 producers and 21 with 4) and a demand baseline (Medicaid SDUD, descriptive only; vintages unverified).
+  - Report: a seven-part hierarchy with claim-level citations and known/unknown/not-applicable states. Validation by scripted traceability audit. The reader test is optional because KMITL ethics review asks for about three months' notice.
+  - Weekly plan: freeze before OSF by 6 Dec, OSF 7–13 Dec, draft 31 Dec, Track A freeze mid-January. Merged Goal-Phase plan awaiting owner approval.
