@@ -1,8 +1,9 @@
 """Exercise first capture and result custody with fictional FDA editions."""
 
-from contextlib import nullcontext
+from contextlib import nullcontext, redirect_stdout
 from datetime import datetime, time, timedelta, timezone
 from hashlib import sha256
+from io import StringIO
 import json
 from pathlib import Path
 import re
@@ -11,8 +12,9 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-from loe_bench import tracka_capture, tracka_custody as custody, tracka_outcomes, tracka_publish, tracka_vintage
-from loe_bench.score_release import RESULTS, SOURCES, score as legacy_score
+from loe_bench import tracka_capture, tracka_custody as custody, tracka_outcomes, tracka_publish
+from loe_bench import tracka_readout, tracka_release, tracka_vintage
+from loe_bench.score_release import RECEIPT, RESULTS, SOURCES, score as legacy_score
 from loe_bench.tracka_readout import prepare_publication, score
 from loe_bench.tracka_release import FREEZE, digest, dump, load
 from loe_bench.tests.test_score_release import H12, H24, approval, fake_fda, synthetic_release, zip_json
@@ -21,6 +23,8 @@ REPO = "example/fictional-track-a"
 DOI = "10.5281/zenodo.1234"
 COMMIT = "c" * 40
 ORANGE = "https://download.open.fda.gov/drug/orangebook/example.json.zip"
+# scorer-version.json from the public Track A kit for DOI 10.5281/zenodo.24629100.
+PUBLISHED_SCORER = Path(__file__).with_name("fixtures") / "zenodo-24629100-scorer-version.json"
 
 
 def at(day, hour=1):
@@ -43,8 +47,9 @@ class ReadoutTest(unittest.TestCase):
         temporary = TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
+        self.source_pins = load(PUBLISHED_SCORER)["source_files_sha256"]
         self.release = synthetic_release(self.root / "release", diagnostic_fields={
-            "diagnostic_action": "PREDICT_NO_ENTRY", "graph_conflict": False})
+            "diagnostic_action": "PREDICT_NO_ENTRY", "graph_conflict": False}, source_pins=self.source_pins)
         self.freeze = self.release.manifest["files_sha256"][FREEZE]
         self.responses = {}
         self.issues = []
@@ -54,6 +59,40 @@ class ReadoutTest(unittest.TestCase):
         self.patch(tracka_vintage, "CANONICAL_FREEZE", self.freeze)
         self.patch(custody, "fetch", side_effect=self.query)
         self.patch(custody, "verify_statements", side_effect=self.verify_statements)
+
+    def test_cli_accepts_current_tree_with_published_source_pins(self):
+        self.assertEqual(len(self.source_pins), 25)
+        out = self.root / "cli-pending"
+        command = ["--release", str(self.release.folder), "--horizon", "12", "--out", str(out),
+                   "--freeze-sha256", self.freeze]
+        with patch.object(tracka_readout, "datetime") as clock, redirect_stdout(StringIO()) as stdout:
+            clock.now.return_value = at(H12 - timedelta(days=1))
+            self.assertEqual(tracka_readout.main(command), 0)
+        self.assertTrue(stdout.getvalue().startswith("PENDING "))
+        run, = sorted((out / "12m").iterdir())
+        self.assertEqual(load(run / RESULTS)["status"], "PENDING")
+        self.assertEqual(load(run / SOURCES)["sources"], [])
+        self.guard.assert_not_called()
+        custody.fetch.assert_not_called()
+
+    def test_published_source_pins_reject_a_change_to_each_file(self):
+        installed = Path(tracka_release.__file__).parent
+        isolated = self.root / "installed-scorer"
+        isolated.mkdir()
+        for name in self.source_pins:
+            (isolated / name).write_bytes((installed / name).read_bytes())
+        with patch.object(tracka_release, "__file__", str(isolated / "tracka_release.py")):
+            for name in self.source_pins:
+                with self.subTest(source=name):
+                    path = isolated / name
+                    original = path.read_bytes()
+                    path.write_bytes(original + b"\n# Altered after publication\n")
+                    try:
+                        with self.assertRaises(ValueError) as rejected:
+                            tracka_release.read_release(self.release.folder, self.freeze)
+                        self.assertEqual(str(rejected.exception), f"Installed scorer differs from the release for {name}")
+                    finally:
+                        path.write_bytes(original)
 
     def patch(self, obj, name, *args, **kwargs):
         patcher = patch.object(obj, name, *args, **kwargs)
@@ -463,6 +502,7 @@ class ReadoutTest(unittest.TestCase):
         discovery = result["publication_discovery"]
         self.assertEqual(len(discovery["issue_urls"]), 2)
         report = (folder / "REPORT.md").read_text(encoding="utf-8")
+        self.assertEqual(load(folder / RECEIPT)["files_sha256"]["REPORT.md"], digest(folder / "REPORT.md"))
         for text in ("\n".join(result["missing"]), report):
             self.assertIn(discovery["reason"], text)
             self.assertIn(discovery["detail"], text)
@@ -494,10 +534,11 @@ class ReadoutTest(unittest.TestCase):
 
         _, record = tracka_vintage.publication_scope(self.freeze, DOI)
         marker = f"<!-- tracka:12:SCORED:{record} -->"
-        trusted = self.scored_issue(1, f"{marker}\nFirst result SHA-256 `{digest(first12 / RESULTS)}`.")
-        conflict = self.scored_issue(2, f"{marker}\nFirst result SHA-256 `{'0' * 64}`.")
+        manifest_pin = f"FDA source manifest SHA-256 `{digest(first12 / SOURCES)}`."
+        trusted = self.scored_issue(1, f"{marker}\nFirst result SHA-256 `{digest(first12 / RESULTS)}`.\n{manifest_pin}")
+        conflict = self.scored_issue(2, f"{marker}\nFirst result SHA-256 `{'0' * 64}`.\n{manifest_pin}")
         self.issues = [trusted]
-        for expected in ("VERIFIED_CONSISTENT", "CURRENT_DISPUTE"):
+        for expected in ("VERIFIED_CONSISTENT", "CURRENT_DISPUTE", custody.HOLD):
             disputed = expected == "CURRENT_DISPUTE"
             if disputed:
                 self.issues.append(conflict)
@@ -505,6 +546,12 @@ class ReadoutTest(unittest.TestCase):
                                                            self.root / "standalone-dispute")
                 self.assertIsNone(panel)
                 self.assertEqual(discovery["reason"], custody.HOLD)
+            if expected == custody.HOLD:
+                self.issues.clear()
+                first12_scope = self.scope(12, "result")
+                self.responses.pop(f"{first12_scope.api}/releases/tags/{first12_scope.tag}")
+                self.responses.pop(f"{first12_scope.api}/git/matching-refs/tags/{first12_scope.tag}")
+                self.responses.pop(self.index_url(first12_scope))
             for recover, expected_run in ((False, "SCORED"), (True, "RECOVERED")):
                 with self.subTest(expected=expected, recover=recover):
                     status, folder, result = self.readout(f"published-{expected}-{recover}", 24,
@@ -515,17 +562,20 @@ class ReadoutTest(unittest.TestCase):
                     self.assertEqual(result["first_publication"]["published_at_utc"], at(publication_day, 5).isoformat())
                     check = result["current_12m_witness_check"]
                     self.assertEqual(check["status"], expected)
-                    self.assertEqual(check["custodian_reconciliation_required"], disputed)
+                    needs_reconciliation = expected != "VERIFIED_CONSISTENT"
+                    self.assertEqual(check["custodian_reconciliation_required"], needs_reconciliation)
                     self.assertEqual(check["discovery"]["issue_urls"], [issue["html_url"] for issue in self.issues])
+                    manifest = load(folder / RECEIPT)["files_sha256"]
                     for name in ("REPORT.md", "REPLAY.md"):
+                        self.assertEqual(manifest[name], digest(folder / name))
                         report = (folder / name).read_text(encoding="utf-8")
                         self.assertIn(f"formal as verified at publication on {publication_day}", report)
                         self.assertIn(f"Current 12-month witness check `{expected}`", report)
                         self.assertNotIn("remains formal", report)
-                        if disputed:
+                        if needs_reconciliation:
                             self.assertIn("custodian for reconciliation", report)
-                            for issue in self.issues:
-                                self.assertIn(issue["html_url"], report)
+                            for locator in check["witness_locators"]:
+                                self.assertIn(locator, report)
                     archived = folder.parent / f"first-published-{digest(first24 / RESULTS)}"
                     for name in tracka_vintage.ASSETS:
                         self.assertEqual((archived / name).read_bytes(), (first24 / name).read_bytes())

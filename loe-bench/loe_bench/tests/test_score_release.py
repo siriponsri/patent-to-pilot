@@ -29,7 +29,7 @@ def jsonl(path, rows):
     path.write_bytes("".join(json.dumps(row) + "\n" for row in rows).encode())
 
 
-def synthetic_release(folder, *, diagnostic_fields=None):
+def synthetic_release(folder, *, diagnostic_fields=None, source_pins=None):
     folder.mkdir()
     dictionary = {
         arm: {"status": "INCLUDED", "files": {
@@ -57,7 +57,8 @@ def synthetic_release(folder, *, diagnostic_fields=None):
     frozen = {path.name: digest(path) for path in folder.iterdir()}
     dump(folder / FREEZE, {"files_sha256": frozen})
     dump(folder / ARMS, dictionary)
-    dump(folder / SCORER, {"version": VERSION, "python": "3.12.10", "numpy": "2.5.4", "source_files_sha256": {}})
+    dump(folder / SCORER, {"version": VERSION, "python": "3.12.10", "numpy": "2.5.4",
+                           "source_files_sha256": source_pins or {}})
     dump(folder / IDENTITY, {"roster_nda_ids": {key: [f"NDA{i:06d}"] for i, key in enumerate(KEYS)},
                              "fix2c_aliases": {}, "registry_aliases": {}, "registry_targets": {},
                              "s0_final_anda_apps": ["ANDA000022"]})
