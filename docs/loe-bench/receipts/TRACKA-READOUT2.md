@@ -1,0 +1,33 @@
+# TRACKA-READOUT2 · prospective scoring and archive receipt
+
+28 November 2026. Branch `loe/TRACKA-READOUT2` starts at `2cad43972a2b861d1edd31bebaf1bcf334b5e616` on `origin/research/loe-bench`. Protocol `4a35f1e4b1dcde529f5f6e414da367255b0404aa` was committed and verified on the remote before implementation. Implementation `742b60125e4b41635132e2559a2160a6c2ebaf00` is the revision exercised by GitHub Actions. [Predeclared protocol](TRACKA-READOUT2-PROTOCOL.md) · [Review findings](../reviews/EXTERNAL-REVIEW-R1.md#findings-table).
+
+## Decision and evidence
+
+Use `loe_bench.tracka_readout` v`1.0.0` for the prospective release. It calls the digest-pinned Zenodo release reader, FDA outcome resolver, primary panel and fixed-sequence functions. The branch diff leaves these files, the freeze forecast files and manifest, and all filed records unchanged. The freeze tag still resolves to `6712f32cdfb1252d66e192d770deaa867808a375`. The synthetic 12-month fixture confirms equality of the prior primary panels and hypothesis JSON before adding secondaries.
+
+| Finding | Disposition and evidence |
+| --- | --- |
+| R3(a) | **PASS.** The first published 12-month JSON controls H3. Its SHA-256 binds the FDA source-manifest SHA-256 and the individual FDA snapshot digests. The scoring guide and dated registration-facing addendum give the timestamps and identity. [Guide](../HOW-TO-SCORE-TRACK-A.md) · [Addendum](../TRACKA-READOUT-ADDENDUM.md). |
+| R3(b) | **PASS, fixture and implementation.** The canonical 12-month workflow creates a release under the scope of the Zenodo version and freeze digest and writes the scored issue marker after verification. The release assets include the JSON, checksum, FDA manifest, report and draws. A repeated invocation recovers the existing release link. The 24-month workflow discovers by repository and scope, verifies the bytes and reuses the first panel. The Worker dispatch payload still uses only the horizon. [Workflow](../../../.github/workflows/score-track-a.yml) · [Operations](../../../ops/tracka-cron/README.md). |
+| R3(c) | **PASS.** A missing release or invalid digest gives `REVISED_VINTAGE`, with the known original date, fixed 12-month maturity, revised scoring date and FDA edition. The result records an unknown original date when no evidence survives. The original publication stays in place. HTTP access and transport failures cause a retry. On independent fixture roots, the first 12-month panel had 10 event rows. The later FDA export added an eligible year-one action and the revised panel had 11. Verified discovery kept the original H3 input and SHA-256 even with the revised year-two FDA snapshot. [Readout fixture](../../../loe-bench/loe_bench/tests/test_tracka_readout.py). |
+| R3(d) | **PASS.** GitHub's [synthetic dispatch](https://github.com/siriponsri/patent-to-pilot/actions/runs/46161252904) ran 11 fixtures and exited successfully. GitHub reported both production jobs skipped. The fixture test suite covers automatic discovery, bytes and issue-digest checks, missing and invalid original, a synthetic FDA revision and pre-maturity blocking. |
+| R4 | **PASS WITH LIMITATIONS.** The measure map cites filed scope and maps the result fields to the frozen inputs. `tracka_secondary` v`1.0.0` gives ten-bin ECE, probability-only AURC80 and E-AURC, distinct-drug capture, decision loss, flag/referral workload, event referrals and missed-clear counts, rate, registered interval and safety disposition. It adds paired descriptive intervals using the same whole-drug draws. The legacy 90% confidence-policy measures and unavailable predictor coverage or longitudinal drift are dated `NOT_ESTIMABLE` limitations. [Measure map](../TRACKA-MEASURE-MAP.md) · [Known answers](../../../loe-bench/loe_bench/tests/test_tracka_secondary.py). |
+
+## Verification
+
+Local Python was CPython 3.12.10 at `C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe` with NumPy 2.5.4. The Actions synthetic job selected CPython 3.12.10 and installed from `requirements-tracka.lock` with hash verification.
+
+| Command or check | Result |
+| --- | --- |
+| Repo root `rtk proxy python -m pytest -o addopts= -q --tb=short --basetemp "$env:LOCALAPPDATA\Temp\ptr2-root"` | **PASS under the standing exception.** 2,760 passed, 50 skipped, 1 xfailed, 8 failed, 2 warnings in 316.99 seconds, exit 1. All eight failures are the four registered pre-existing budget cases each in `test_sacr_r2_smoke_supervisor.py` and `test_sacr_r3_smoke_supervisor.py` (`nan`, `inflated`, `erased`, `insufficient`). |
+| From `loe-bench/`, `rtk proxy python -m unittest discover -s loe_bench/tests -t .` | **PASS.** 280 run, 270 passed, 10 skipped, exit 0. The Purple Book fixtures emitted resource warnings. The run includes the 11 new tests and the nine existing release-scorer tests. |
+| `rtk proxy npm --prefix ops/tracka-cron test`, Node v24.19.0 | **PASS.** 11 passed, exit 0. |
+| Local PyYAML parse, Git Bash `bash -n` and synthetic/production gate assertions | **PASS.** Six Bash blocks parsed. The first attempt found an unquoted colon in the synthetic install command. The block scalar fixed the YAML and the repeat passed. |
+| `rtk proxy gh workflow run score-track-a.yml --repo siriponsri/patent-to-pilot --ref loe/TRACKA-READOUT2 -f synthetic=true` | **PASS.** Dispatch exit 0. GitHub concluded `success` at the implementation SHA. The Linux fixture step reported 11 tests in 4.156 seconds, `OK`. [Run](https://github.com/siriponsri/patent-to-pilot/actions/runs/46161252904). |
+
+## Limits and next action
+
+Production release creation, canonical issue writes, live FDA scoring and Worker deployment are `NOT_RUN`. The first outcome window matures on 27 November 2027. The hosted run exercised mocked release retrieval and the synthetic calculation under the workflow's read-only gate. Its skipped production jobs leave the release-write permission and canonical issue path unverified on GitHub. Durable release assets preserve the aggregate and provenance needed by H3. Exact source-to-result replay also needs the FDA byte capture from the transient run artifact or an independent copy.
+
+No protected TEST, sealed or private material was opened. The card made no GPU allocation, paid API call, or OSF submission. Handoff to the Planner for R3/R4 review, integration to the default branch, and the external re-check. The Planner owns the lane handoff and memory updates. The owner can then enable the scheduled workflow using the [operations guide](../../../ops/tracka-cron/README.md). This receipt is the executor's handoff and record of the implementation and its evidence limits.
