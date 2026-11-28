@@ -1,0 +1,15 @@
+name: mwd-fixture
+services:
+  gateway:
+    build:
+      context: ../..
+      dockerfile: product/gateway/Dockerfile
+    environment:
+      MWD_PROVIDER: fixture
+      MWD_LEDGER_PATH: /state/ledger.sqlite3
+    ports:
+      - "127.0.0.1:${MWD_PORT:-8019}:8000"
+    volumes:
+      - ledger:/state
+volumes:
+  ledger:
